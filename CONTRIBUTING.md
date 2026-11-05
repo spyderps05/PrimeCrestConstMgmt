@@ -1,33 +1,19 @@
 # Contributing to PrimeCrest
 
-Thank you for your interest. PrimeCrest is an open-source platform for
-construction cost estimation, and the work that comes in from outside genuinely shapes
-what gets built. Read the next section before you write any code, because the route in
-is not the one most projects use.
+Thank you for your interest. PrimeCrest Construction Management is developed by
+Spyder Solutions for the Pakistan construction market.
 
 ## How contributions work here
 
-This project does not accept external pull requests. Not for a module, not for a one
-line typo fix, not from anyone outside the core team. Pull requests are not merged, not
-checked out and not copied from, and the same goes for patches, forks and dependency
-changes proposed from outside. That is a supply chain decision and it applies uniformly,
-so it says nothing about the quality of your work.
+Changes land through pull requests on
+[github.com/spyderps05/PrimeCrestConstMgmt](https://github.com/spyderps05/PrimeCrestConstMgmt).
+Every pull request is reviewed and must pass the checks below before it is merged.
 
-We say it here, first, because the alternative is that you build something and find out
-afterwards.
-
-What is wanted, and what the team acts on, is the part that is harder to write than the
-code. An issue with enough detail to act on. A specification of behaviour that is wrong
-or missing for your market, naming the standard or regulation it should follow. A
-reproduction: what you did, what happened, what should have happened instead. A report
-from adapting the platform to a national market, saying what you had to touch and what
-was not there. If you can describe the correct behaviour precisely, that is the
-contribution, and the team writes the implementation from scratch and credits the person
-who specified it.
-
-If you are running the platform on your own fork, that is what the AGPL-3.0 license is
-for and you owe nobody a pull request. Send the findings instead. They travel further
-than a diff does.
+Issues are just as valuable as code. The most useful ones say what you did, what happened
+and what should have happened. For Pakistan-specific behaviour, name the rule it should
+follow: FBR or provincial sales tax on services (PRA, SRB, KPRA, BRA), withholding tax,
+PEC contractor categories, PPRA procurement rules, or standard contract forms in use
+locally.
 
 [DEVELOPING.md](DEVELOPING.md) is the guide to working on the codebase itself, including
 how to brief an AI coding assistant on it.
@@ -36,8 +22,8 @@ how to brief an AI coding assistant on it.
 
 ```bash
 # 1. Clone
-git clone https://github.com/datadrivenconstruction/PrimeCrest.git
-cd PrimeCrest
+git clone https://github.com/spyderps05/PrimeCrestConstMgmt.git
+cd PrimeCrestConstMgmt
 
 # 2. Start dev environment
 docker compose up -d   # PostgreSQL + Redis
@@ -167,25 +153,18 @@ file-by-file walkthrough.
 
 ## Reporting Issues
 
-- Use [GitHub Issues](https://github.com/datadrivenconstruction/PrimeCrest/issues)
+- Use [GitHub Issues](https://github.com/spyderps05/PrimeCrestConstMgmt/issues)
 - Include: version, steps to reproduce, expected vs actual behavior
 - For security issues, see [SECURITY.md](SECURITY.md)
 
 ## Licensing
 
-PrimeCrest is dual licensed, AGPL-3.0 for the community edition and a
-commercial license for enterprise use. Because code is written by the core team rather
-than merged from outside, there is no contributor license agreement to sign and no bot
-that will ask you for one.
-
-Specifications, issue text and reproductions that you send in may be used to build the
-corresponding feature, which then ships under both licenses like everything else. If
-that matters for something you are about to send, say so and we will talk it through
-first.
+PrimeCrest is distributed under AGPL-3.0, inherited from the upstream OpenConstructionERP
+codebase (© Artem Boiko / DataDrivenConstruction). By submitting a contribution you agree
+that it is licensed under AGPL-3.0. Keep the existing copyright header lines in source
+files unchanged.
 
 ## Questions?
 
-- Open a [Discussion](https://github.com/datadrivenconstruction/PrimeCrest/discussions)
-- Join our community chat (coming soon)
-
-Thank you for helping make construction cost estimation open and accessible!
+- Open an [issue](https://github.com/spyderps05/PrimeCrestConstMgmt/issues)
+- Email support@primecrest.pk

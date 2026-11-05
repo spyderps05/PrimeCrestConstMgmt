@@ -1,20 +1,15 @@
-# Author
+# Authors
 
-PrimeCrest is authored, owned and maintained by **Artem Boiko**, founder of
-[DataDrivenConstruction](https://datadrivenconstruction.io). Artem is the author of the
-CWICR cost database (55,000+ items, 24 languages), the cad2data pipeline, and has 10+
-years in construction cost estimation.
+**PrimeCrest Construction Management** is developed and maintained by
+**Spyder Solutions** ([primecrest.pk](https://primecrest.pk), support@primecrest.pk).
 
-There is a single author. Authorship and copyright of PrimeCrest belong to
-DataDrivenConstruction. The project is dual-licensed: AGPL-3.0 for the community edition
-and a commercial license for enterprise use.
+© 2026 Spyder Solutions. PrimeCrest is based on OpenConstructionERP © Artem Boiko /
+DataDrivenConstruction, licensed under AGPL-3.0.
 
-Many people help improve the project by sending patches, fixes and feedback. They are
-contributors, not authors of the project, and they are credited in
-[CONTRIBUTORS.md](CONTRIBUTORS.md). By submitting a contribution they agree it can be
-distributed under both project licenses (see [CONTRIBUTING.md](CONTRIBUTING.md)), while
-authorship and copyright remain with DataDrivenConstruction.
+## Upstream authorship
 
-## Author and maintainer
-
-- **Artem Boiko**, founder of DataDrivenConstruction ([@boikoartem](https://github.com/boikoartem))
+The codebase is derived from **OpenConstructionERP**, authored by **Artem Boiko**, founder of
+[DataDrivenConstruction](https://datadrivenconstruction.io)
+([@boikoartem](https://github.com/boikoartem)), including the CWICR cost database and the
+cad2data conversion pipeline. Upstream copyright notices in source files are retained, and the
+upstream contributors are credited in [CONTRIBUTORS.md](CONTRIBUTORS.md).

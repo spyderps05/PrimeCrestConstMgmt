@@ -31,30 +31,16 @@ where a document and a configuration file disagree, the file is the one that run
 Some of what follows was measured at version 16.2.0. Counts move. Where a number matters to a
 decision you are making, count it yourself, and this file tries to tell you how.
 
-## How contributing actually works here
+## How contributing works here
 
-This project does not accept external pull requests. Not for this module, not for a one-line
-typo fix, not from anyone outside the core team. This is a security decision about a supply
-chain, not a judgement about your code, and it applies uniformly. Pull requests are not merged,
-not checked out, and not copied from. The same goes for patches, forks and dependency changes
-proposed from outside.
+PrimeCrest is developed by Spyder Solutions. Changes land through pull requests on
+[github.com/spyderps05/PrimeCrestConstMgmt](https://github.com/spyderps05/PrimeCrestConstMgmt);
+every change is reviewed before it is merged. The most useful thing you can send is an issue
+with enough detail to act on: what you did, what happened, what should have happened, and,
+for Pakistan-specific behaviour, the rule it should follow (FBR / PRA / SRB / KPRA / BRA
+sales tax on services, PEC contractor categories, PPRA procurement rules).
 
-Saying this early is the point. The alternative is that you write a module, open a pull request,
-and find out afterwards.
-
-What is genuinely wanted, and what the team acts on:
-
-Issues, in as much detail as you can give. A specification of behaviour that is wrong or missing
-for your market, with the standard or regulation it should follow. A reproduction: what you did,
-what happened, what should have happened. A report from adapting the platform to a national
-market, saying which of the things below you had to touch and what was not there. If you can
-describe the correct behaviour precisely, that is the contribution. The team writes the
-implementation from scratch and credits the person who specified it.
-
-If you are running a pilot on a fork for your own use, that is exactly what the AGPL-3.0 licence
-is for, and you owe nobody a pull request. Send the findings instead. They travel further.
-
-Questions and reports: info@datadrivenconstruction.io
+Questions and reports: support@primecrest.pk
 
 ## Getting it running
 
@@ -304,11 +290,10 @@ input and output format for issues, viewpoints and validation reports, without p
 geometry library. Do not treat IFC as native, it is one more format to convert. Do not write
 monolithic code, every capability is a module with a manifest. Do not make validation optional.
 Do not auto-apply AI output without human confirmation. Do not introduce vendor lock-in, all
-data stays exportable and all formats open. Do not take code from external pull requests, forks
-or patches. Do not publish internal working documents. Do not write developer-facing text in any
+data stays exportable and all formats open. Do not take code from unreviewed forks or patches. Do not publish internal working documents. Do not write developer-facing text in any
 language but English. Do not name competitor brands anywhere in the code, commits, builds or
 interface, and describe capabilities by category or function instead. Contact address is
-info@datadrivenconstruction.io and no other.
+support@primecrest.pk and no other.
 
 For backend work, hold the assistant to one module at a time, complete, in the order models,
 schemas, repository, service, router, tests. Core infrastructure gets tests first.
@@ -383,4 +368,4 @@ attention currently is.
 
 `SECURITY.md` for reporting a vulnerability, which should not go through a public issue.
 
-Everything else: info@datadrivenconstruction.io
+Everything else: support@primecrest.pk

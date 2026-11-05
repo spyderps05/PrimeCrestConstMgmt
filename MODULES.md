@@ -97,7 +97,7 @@ Measure quantities off drawings and models.
 ### BIM, CAD and coordination
 
 Convert, view, coordinate and clash-check models. CAD and BIM are always
-converted through DDC cad2data to the canonical format, never IfcOpenShell.
+converted through cad2data to the canonical format, never IfcOpenShell.
 
 - **CAD Import** `cad` - imports and converts DWG, DGN, RVT and IFC through the canonical pipeline.
 - **BIM Hub** `bim_hub` - model and element store with BOQ linking, quantity maps and model diffs.
@@ -502,15 +502,15 @@ Then enable it from the UI: **Settings, Modules & Marketplace, System Modules**.
 1. **i18n everywhere** - every user-visible string goes through `t()`. No
    hardcoded English. Fallbacks live in `frontend/src/app/i18n-fallbacks.ts`.
 2. **No IfcOpenShell, no native IFC parsing** - CAD and BIM are always converted
-   through DDC cad2data to the canonical JSON format. BCF is allowed as an open
+   through cad2data to the canonical JSON format. BCF is allowed as an open
    I/O format for issues, viewpoints and validation reports. See
    [`docs/adr/002-no-ifcopenshell-ddc-canonical-only.md`](docs/adr/002-no-ifcopenshell-ddc-canonical-only.md).
 3. **Validation is not optional** - any module that ingests data must declare
    validation rules. See `backend/app/core/validation/`.
 4. **Suggestions are confirmed by a person** - any suggested value must show a
    confidence score and require user confirmation before it mutates data.
-5. **AGPL-3.0 compliance** - contributions are dual-licensed (AGPL plus
-   Commercial). See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+5. **AGPL-3.0 compliance** - PrimeCrest is distributed under AGPL-3.0, inherited from
+   the upstream codebase. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ---
 

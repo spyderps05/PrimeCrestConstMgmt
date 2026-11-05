@@ -11,9 +11,9 @@ Public disclosure before a fix is available puts users at risk.
 ### How to Report
 
 1. **GitHub Security Advisories** (preferred):
-   [Create a new advisory](https://github.com/datadrivenconstruction/PrimeCrest/security/advisories/new)
+   [Create a new advisory](https://github.com/spyderps05/PrimeCrestConstMgmt/security/advisories/new)
 
-2. **Email:** `info@datadrivenconstruction.io`
+2. **Email:** `support@primecrest.pk`
 
 ### What to Include
 
@@ -47,7 +47,7 @@ through GitHub, which is a CVE Numbering Authority. We request the
 identifier ourselves so the record carries the verified facts: the
 component, the fixed release and the severity we assessed with the
 reporter. All published advisories are listed at
-<https://github.com/datadrivenconstruction/PrimeCrest/security/advisories>.
+<https://github.com/spyderps05/PrimeCrestConstMgmt/security/advisories>.
 
 Please keep a report private until we publish the advisory, and leave the
 CVE request to us, so that one accurate record exists rather than
@@ -69,8 +69,8 @@ advisory and in the CVE record unless they ask for anonymity.
 - Backend API (FastAPI services under `backend/app/`)
 - Frontend web application (`frontend/`)
 - Desktop client (`desktop/`)
-- Official Docker images published by DataDrivenConstruction and
-  the DDC-operated instance at `https://openconstructionerp.com`
+- Official Docker images published by Spyder Solutions and
+  the hosted instance at `https://primecrest.pk`
 - CLI tools distributed with the project
 - Build and release automation that produces signed artefacts
   (`.github/workflows/release*.yml`, `signatures/`)
@@ -91,16 +91,10 @@ advisory and in the CVE record unless they ask for anonymity.
 
 ## External Code and Pull Requests
 
-For security reasons we do not merge external pull requests into the
-codebase. When the community reports a bug, sends a patch, or proposes a
-change, we re-implement the fix ourselves in our own sandbox and review it
-before it ships. This keeps one audited source of truth for a platform that
-companies run in production, and it avoids taking in code we have not written
-and fully reviewed. We credit the original reporter in
-[CONTRIBUTORS.md](CONTRIBUTORS.md) and in the project acknowledgments, and the
-implementation is our own. The policy is enforced in continuous integration: a
-guard rejects any pull request that contains commits not authored by
-DataDrivenConstruction.
+Every pull request is reviewed by Spyder Solutions before it is merged, and must pass
+the continuous-integration checks. Security fixes reported privately are implemented
+and reviewed before disclosure, and the reporter is credited unless they ask for
+anonymity.
 
 ## Self-Hosting Security Checklist
 
@@ -144,7 +138,7 @@ to your installer, then run:
 cosign verify-blob \
   --certificate SHA256SUMS.pem \
   --signature SHA256SUMS.sig \
-  --certificate-identity-regexp 'https://github.com/datadrivenconstruction/PrimeCrest/.*' \
+  --certificate-identity-regexp 'https://github.com/spyderps05/PrimeCrestConstMgmt/.*' \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com \
   SHA256SUMS
 sha256sum -c SHA256SUMS --ignore-missing
@@ -155,26 +149,20 @@ your download matches it. Both have to pass.
 
 ## Regulatory Reporting
 
-Where required by EU Regulation 2024/2847 (Cyber Resilience Act,
-vulnerability-reporting obligations effective 11 September 2026),
-we report actively exploited vulnerabilities through the ENISA
-Single Reporting Platform and cooperate with the German Federal
-Office for Information Security (BSI) / CERT-Bund.
-
-The DDC-operated instance additionally complies with GDPR
-Art. 33 personal-data-breach notification (72 hours to the
-competent supervisory authority).
+Where personal data is affected, Spyder Solutions notifies affected customers without
+undue delay and cooperates with the competent authorities in Pakistan, including
+obligations under the Prevention of Electronic Crimes Act 2016 where applicable.
 
 ## No Bug Bounty
 
-DataDrivenConstruction currently does not operate a paid
+Spyder Solutions currently does not operate a paid
 bug-bounty programme. We gratefully acknowledge responsible
 researchers in the associated GitHub Security Advisories unless
 anonymity is requested.
 
 ## Contact
 
-All security communication: `info@datadrivenconstruction.io`.
+All security communication: `support@primecrest.pk`.
 Where GitHub Security Advisories are available, please use that
 channel for reports that include sensitive proof-of-concept
 material.

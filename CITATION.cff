@@ -1,31 +1,35 @@
 cff-version: 1.2.0
-message: "If you use PrimeCrest in your work, please cite it as below."
-title: "PrimeCrest"
+message: "If you use PrimeCrest Construction Management in your work, please cite it as below."
+title: "PrimeCrest Construction Management"
 type: software
 authors:
-  - name: "DataDrivenConstruction"
-    website: "https://datadrivenconstruction.io"
-  - given-names: "Artem"
-    family-names: "Boiko"
-repository-code: "https://github.com/datadrivenconstruction/PrimeCrest"
-url: "https://openconstructionerp.com"
+  - name: "Spyder Solutions"
+    website: "https://primecrest.pk"
+repository-code: "https://github.com/spyderps05/PrimeCrestConstMgmt"
+url: "https://primecrest.pk"
 license: "AGPL-3.0"
-version: "17.7.1"
-date-released: "2026-09-18"
 keywords:
   - construction
-  - erp
+  - construction-management
+  - pakistan
   - bill-of-quantities
   - cost-estimation
-  - bim
-  - cad
+  - quantity-surveying
   - takeoff
   - scheduling
-  - tendering
-  - open-source
+  - procurement
 abstract: >-
-  Open-source construction ERP platform with AI-powered BOQ editing,
-  multi-CAD import (DWG, RVT, IFC), PDF takeoff with computer vision,
-  4D scheduling, 5D cost modeling, tendering, and a validation pipeline
-  supporting DIN 276, NRM, MasterFormat, GAEB, and DPGF standards.
-  120,000+ priced cost items across 48 regional databases in 44 languages.
+  Construction management platform for the Pakistan market: BOQ and estimating
+  in PKR, quantity takeoff from PDF and CAD drawings, scheduling, procurement,
+  site management, interim payment certificates, and federal / provincial sales
+  tax on services (FBR, PRA, SRB, KPRA, BRA). Urdu and English interface.
+references:
+  - type: software
+    title: "OpenConstructionERP"
+    authors:
+      - given-names: "Artem"
+        family-names: "Boiko"
+      - name: "DataDrivenConstruction"
+        website: "https://datadrivenconstruction.io"
+    repository-code: "https://github.com/datadrivenconstruction/openconstructionerp"
+    license: "AGPL-3.0"
