@@ -55,6 +55,7 @@ const TIMEZONES = [
   'Europe/Moscow',
   'Europe/Istanbul',
   'Asia/Dubai',
+  'Asia/Karachi',
   'Asia/Kolkata',
   'Asia/Bangkok',
   'Asia/Singapore',
@@ -83,9 +84,10 @@ const PAPER_SIZES = [
 /** The unset paper size, matching `AUTO` in `app/core/paper_size.py`. */
 const PAPER_SIZE_AUTO = 'auto';
 
-// 'auto' is added in the component so its label can be translated; the three
+// 'auto' is added in the component so its label can be translated; the four
 // explicit orders are shown as their own example, which needs no translation.
 const DATE_FORMATS: { value: DateFormat; example: string }[] = [
+  { value: 'DD/MM/YYYY', example: '07/04/2026' },
   { value: 'DD.MM.YYYY', example: '07.04.2026' },
   { value: 'MM/DD/YYYY', example: '04/07/2026' },
   { value: 'YYYY-MM-DD', example: '2026-04-07' },
@@ -379,7 +381,7 @@ export function RegionalSettings({ animationDelay = '0ms' }: { animationDelay?: 
   });
 
   // Local state — seeded from backend, falls back to store
-  const timezone = prefs?.timezone ?? 'UTC';
+  const timezone = prefs?.timezone ?? 'Asia/Karachi';
   const measurementSystem = (prefs?.measurement_system as MeasurementSystem) ?? storeMeasurement;
   // Do NOT substitute 'A4' for a missing value, which is what this line used
   // to do. The account default is now 'auto' (follow the project's country),

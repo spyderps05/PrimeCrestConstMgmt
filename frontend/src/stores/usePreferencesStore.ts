@@ -45,7 +45,7 @@ export type MeasurementSystem = 'metric' | 'imperial';
  * wired into the date surfaces, so an account that never picked a format sees
  * no change. See `formatDateWithPreference` in `@/shared/lib/formatters`.
  */
-export type DateFormat = 'auto' | 'DD.MM.YYYY' | 'MM/DD/YYYY' | 'YYYY-MM-DD';
+export type DateFormat = 'auto' | 'DD.MM.YYYY' | 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'YYYY-MM-DD';
 /**
  * Number-format preference. `'auto'` means "follow the UI language" and is the
  * default, for the same reason `DateFormat` defaults that way: every other
@@ -279,7 +279,7 @@ export function secondaryCalendarFromWire(value: string | null | undefined): Sec
 // store actually understands - a stray or future server value is skipped, never
 // forced into the union.
 const MEASUREMENT_SYSTEMS: readonly MeasurementSystem[] = ['metric', 'imperial'];
-const DATE_FORMATS: readonly DateFormat[] = ['auto', 'DD.MM.YYYY', 'MM/DD/YYYY', 'YYYY-MM-DD'];
+const DATE_FORMATS: readonly DateFormat[] = ['auto', 'DD.MM.YYYY', 'DD/MM/YYYY', 'MM/DD/YYYY', 'YYYY-MM-DD'];
 
 /**
  * The value the account column carries when nobody ever picked a date format:

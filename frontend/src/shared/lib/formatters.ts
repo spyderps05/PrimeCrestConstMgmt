@@ -275,6 +275,9 @@ function joinByPreference(
   pref: Exclude<DateFormat, 'auto'>,
 ): string {
   switch (pref) {
+    case 'DD/MM/YYYY':
+      // Pakistan, the UK and most of the Commonwealth write the day first with slashes.
+      return `${day}/${month}/${year}`;
     case 'MM/DD/YYYY':
       return `${month}/${day}/${year}`;
     case 'YYYY-MM-DD':
