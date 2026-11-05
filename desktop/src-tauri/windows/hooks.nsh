@@ -159,8 +159,6 @@
     Pop $0
     nsExec::Exec /TIMEOUT=90000 `cmd /c taskkill /F /T /FI "IMAGENAME eq openconstructionerp-server.exe" /FI "USERNAME eq %USERNAME%"`
     Pop $0
-    nsExec::Exec /TIMEOUT=90000 `cmd /c taskkill /F /T /FI "IMAGENAME eq openestimate-server.exe" /FI "USERNAME eq %USERNAME%"`
-    Pop $0
   ${EndIf}
   ; Whatever the app's own exit did or did not manage, the cluster must not be
   ; left running. In the normal case this finds nothing, because closing the
