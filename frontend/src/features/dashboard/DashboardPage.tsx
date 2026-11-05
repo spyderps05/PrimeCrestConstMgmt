@@ -37,7 +37,6 @@ import {
   FileText,
   Calendar,
   Upload,
-  ExternalLink,
   AlertTriangle,
   TrendingUp,
   Users,
