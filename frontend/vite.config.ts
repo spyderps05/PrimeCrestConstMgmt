@@ -236,14 +236,14 @@ export default defineConfig({
       // server is HMR-driven and a stale workbox precache would mask
       // edits during development.  ``npm run build`` still emits both.
       devOptions: { enabled: false },
-      includeAssets: ['favicon.svg', 'pwa/*.svg'],
+      includeAssets: ['favicon.svg', 'favicon.ico', 'apple-touch-icon.png', 'pwa/*.svg', 'pwa/*.png'],
       manifest: {
-        name: 'PrimeCrest',
-        short_name: 'OCERP',
+        name: 'PrimeCrest Construction Management',
+        short_name: 'PrimeCrest',
         description:
-          'Open-source construction cost estimation, BIM takeoff, BOQ, tendering and field operations.',
-        theme_color: '#0284c7',
-        background_color: '#f7fbff',
+          'PrimeCrest Construction Management by Spyder Solutions: cost estimation, BIM takeoff, BOQ, tendering and field operations.',
+        theme_color: '#0B2545',
+        background_color: '#0B2545',
         display: 'standalone',
         orientation: 'any',
         start_url: '/',
@@ -255,6 +255,9 @@ export default defineConfig({
           { src: '/pwa/icon-384.svg', sizes: '384x384', type: 'image/svg+xml', purpose: 'any' },
           { src: '/pwa/icon-512.svg', sizes: '512x512', type: 'image/svg+xml', purpose: 'any' },
           { src: '/pwa/icon-maskable-512.svg', sizes: '512x512', type: 'image/svg+xml', purpose: 'maskable' },
+          { src: '/pwa/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: '/pwa/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+          { src: '/pwa/icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
       },
       workbox: {

@@ -1,16 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
-  <metadata>
-    <title>PrimeCrest Construction Management</title>
-    <creator>Spyder Solutions</creator>
-  </metadata>
-  <defs>
-    <linearGradient id="pc" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#12202B"/>
-      <stop offset="100%" stop-color="#1A3344"/>
-    </linearGradient>
-  </defs>
-  <path d="M256 40 L440 110 V250 C440 360 360 440 256 472 C152 440 72 360 72 250 V110 Z" fill="url(#pc)"/>
-  <path d="M256 56 L424 120 V248 C424 348 352 420 256 450 C160 420 88 348 88 248 V120 Z" fill="none" stroke="#C4622D" stroke-width="14" opacity=".9"/>
-  <text x="256" y="292" text-anchor="middle" fill="#F6F3EE" font-family="Georgia, 'Times New Roman', serif" font-size="168" font-weight="700" letter-spacing="-6">PC</text>
-  <rect x="168" y="328" width="176" height="12" rx="6" fill="#C4622D"/>
+  <defs><clipPath id="fc"><path d="M256 24 L456 88 V232 C456 356 374 448 256 488 C138 448 56 356 56 232 V88 Z"/></clipPath></defs>
+  <path d="M256 24 L456 88 V232 C456 356 374 448 256 488 C138 448 56 356 56 232 V88 Z" fill="#0B2545"/>
+  <g clip-path="url(#fc)">
+    <path d="M-30 520 L170 250 L320 460 Z" fill="#FFFFFF"/>
+    <path d="M130 520 L320 176 L560 520 Z" fill="#F2A900"/>
+  </g>
+  <path d="M256 24 L456 88 V232 C456 356 374 448 256 488 C138 448 56 356 56 232 V88 Z" stroke="#1D4E89" stroke-width="20" stroke-linejoin="round"/>
 </svg>
