@@ -2,7 +2,7 @@
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠``--version`` must answer, and answer the same thing the subcommand does.
 
-``openconstructionerp --version`` used to exit 2 with "unrecognized arguments"
+``primecrest --version`` used to exit 2 with "unrecognized arguments"
 because the only spelling wired up was the ``version`` subcommand. It is the
 first thing most people type at a tool they have just installed, so the first
 thing the tool said to them was an argparse error.
@@ -16,7 +16,7 @@ The version string is pinned to ``backend/pyproject.toml`` rather than to
 ``importlib.metadata``. That is deliberate and it is the same rule
 ``test_cli_version_matches_the_running_code`` enforces: the metadata reports
 whatever distribution happens to be installed in the environment, which on a
-source checkout that has ever seen ``pip install openconstructionerp`` is not
+source checkout that has ever seen ``pip install primecrest`` is not
 the code being executed. Measured on the machine this was written on, the
 metadata said 14.6.0 while the tree said 16.1.0. Asserting against it would
 encode the exact bug ``_resolve_version`` exists to prevent.

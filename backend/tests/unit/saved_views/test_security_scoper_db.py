@@ -12,8 +12,8 @@ from __future__ import annotations
 
 import os
 
-os.environ.setdefault("DATABASE_URL", "postgresql+asyncpg://oe:oe@localhost:5432/openestimate")
-os.environ.setdefault("DATABASE_SYNC_URL", "postgresql://oe:oe@localhost:5432/openestimate")
+os.environ.setdefault("DATABASE_URL", "postgresql+asyncpg://oe:oe@localhost:5432/primecrest")
+os.environ.setdefault("DATABASE_SYNC_URL", "postgresql://oe:oe@localhost:5432/primecrest")
 
 import uuid
 

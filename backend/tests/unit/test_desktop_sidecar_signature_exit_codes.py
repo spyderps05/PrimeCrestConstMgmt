@@ -38,7 +38,7 @@ import pytest
 
 SCRIPT_PATH = Path(__file__).resolve().parents[3] / "scripts" / "inspect_desktop_sidecar_signatures.py"
 
-EXE_NAME = "openconstructionerp-server"
+EXE_NAME = "primecrest-server"
 
 # Enough of a Mach-O for the magic-number test in the census; nothing reads further,
 # because describe() is what interprets the file and it is stubbed here.

@@ -107,7 +107,7 @@ def test_every_command_that_takes_a_data_dir_resolves_it_under_that_directory(an
 
 
 def test_a_command_without_the_flag_still_lands_in_the_data_directory(anchored: Path) -> None:
-    """The bare ``openconstructionerp`` invocation declares no flags at all."""
+    """The bare ``primecrest`` invocation declares no flags at all."""
     resolved = cli._data_dir_from_args(argparse.Namespace())
 
     assert resolved == anchored

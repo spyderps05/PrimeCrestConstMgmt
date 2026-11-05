@@ -44,7 +44,7 @@ class _SetupEnvReached(RuntimeError):
 
 
 def _serve_args(tmp_path: Path, port: int = 8080) -> argparse.Namespace:
-    """A parsed command line equivalent to a bare ``openconstructionerp serve``."""
+    """A parsed command line equivalent to a bare ``primecrest serve``."""
     return argparse.Namespace(
         host="127.0.0.1",
         port=port,

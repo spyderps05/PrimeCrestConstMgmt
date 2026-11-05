@@ -236,7 +236,7 @@ def test_stable_uid_and_determinism() -> None:
     text1 = calendar_from_meeting(meeting, dtstamp=DTSTAMP)
     text2 = calendar_from_meeting(meeting, dtstamp=DTSTAMP)
     assert text1 == text2  # pure + deterministic
-    assert "UID:meeting-abc-123@openconstructionerp" in _unfold(text1)
+    assert "UID:meeting-abc-123@primecrest" in _unfold(text1)
 
 
 def test_dtstart_dtend_are_utc_zulu_with_default_time_and_duration() -> None:
@@ -343,7 +343,7 @@ def test_multiple_attendee_lines_one_per_attendee() -> None:
         assert "mailto:" in ln
     assert any("CN=Sam Carter" in ln and "mailto:sam@example.com" in ln for ln in attendees)
     # Missing email is synthesised on the reserved .invalid TLD.
-    assert any("mailto:pat.lee@openconstructionerp.invalid" in ln for ln in attendees)
+    assert any("mailto:pat.lee@primecrest.invalid" in ln for ln in attendees)
 
 
 def test_attendee_cn_with_comma_is_quoted() -> None:
@@ -408,7 +408,7 @@ def test_long_summary_is_folded_and_round_trips() -> None:
 
 def test_build_vevent_lines_direct() -> None:
     event = CalendarEvent(
-        uid="meeting-9@openconstructionerp",
+        uid="meeting-9@primecrest",
         start=datetime(2026, 1, 2, 8, 0, tzinfo=UTC),
         end=datetime(2026, 1, 2, 9, 0, tzinfo=UTC),
         summary="Toolbox talk",
@@ -422,7 +422,7 @@ def test_build_vevent_lines_direct() -> None:
     lines = build_vevent_lines(event)
     assert lines[0] == "BEGIN:VEVENT"
     assert lines[-1] == "END:VEVENT"
-    assert "UID:meeting-9@openconstructionerp" in lines
+    assert "UID:meeting-9@primecrest" in lines
     assert "DTSTART:20260102T080000Z" in lines
     assert "DTEND:20260102T090000Z" in lines
     assert "RRULE:FREQ=DAILY;COUNT=3" in lines
@@ -436,5 +436,5 @@ def test_build_calendar_multiple_events() -> None:
     ev2 = event_from_meeting(_meeting(id="b", title="Two"), dtstamp=DTSTAMP)
     lines = _unfold(build_calendar([ev1, ev2]))
     assert lines.count("BEGIN:VEVENT") == 2
-    assert "UID:meeting-a@openconstructionerp" in lines
-    assert "UID:meeting-b@openconstructionerp" in lines
+    assert "UID:meeting-a@primecrest" in lines
+    assert "UID:meeting-b@primecrest" in lines

@@ -232,7 +232,7 @@ class TestTheOcrExtraAnswersInBothDirections:
         found = self._cv_check(monkeypatch, engine=False)
         remedy = found[0].hint or ""
         assert "paddlepaddle" in remedy, f"the remedy must name the engine, got {remedy!r}"
-        assert "openconstructionerp[cv]" not in remedy, (
+        assert "primecrest[cv]" not in remedy, (
             "reinstalling the extra installs the same wheels again and lands back here"
         )
 

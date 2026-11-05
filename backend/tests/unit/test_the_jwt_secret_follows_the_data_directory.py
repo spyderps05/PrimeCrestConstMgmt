@@ -1,6 +1,6 @@
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The development JWT secret lives in the data directory, not in the home folder.
 
-``openconstructionerp serve --data-dir X`` resolves every path through the
+``primecrest serve --data-dir X`` resolves every path through the
 data directory: the embedded cluster, the uploads, the demo credentials. The
 one thing that did not follow was the JWT signing secret. ``main.py`` computed
 its own location, ``~/.openestimate/.jwt-secret``, while ``app.config`` already

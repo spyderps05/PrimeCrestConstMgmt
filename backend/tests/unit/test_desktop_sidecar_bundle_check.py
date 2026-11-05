@@ -69,7 +69,7 @@ def script():
 
 def _run(script, monkeypatch, tmp_path, names, *, make_file=True) -> int:
     """Call main() against a stubbed archive and return its exit code."""
-    executable = tmp_path / "openconstructionerp-server"
+    executable = tmp_path / "primecrest-server"
     if make_file:
         executable.write_bytes(b"not really an executable")
     monkeypatch.setattr(script, "_archive_names", lambda _path: set(names))

@@ -68,7 +68,7 @@ async def test_initialize_negotiates_the_version_and_declares_tools_only(session
         result = resp.json()["result"]
         assert result["protocolVersion"] == PROTOCOL_VERSION
         assert result["capabilities"] == {"tools": {"listChanged": False}}
-        assert result["serverInfo"]["name"] == "openconstructionerp"
+        assert result["serverInfo"]["name"] == "primecrest"
         assert "propose_" in result["instructions"]
         assert "mcp-session-id" not in {k.lower() for k in resp.headers}
 

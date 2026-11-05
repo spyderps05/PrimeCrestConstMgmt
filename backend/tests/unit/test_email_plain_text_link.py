@@ -33,8 +33,8 @@ from app.core.email import (
 )
 from app.core.email.smtp import _html_to_text
 
-RESET_URL = "https://app.openconstructionerp.com/reset-password?token=abc123&uid=42"
-ACTION_URL = "https://app.openconstructionerp.com/go?id=7&ref=mail"
+RESET_URL = "https://app.primecrest.pk/reset-password?token=abc123&uid=42"
+ACTION_URL = "https://app.primecrest.pk/go?id=7&ref=mail"
 
 
 def _smtp_settings(**overrides) -> Settings:
@@ -43,7 +43,7 @@ def _smtp_settings(**overrides) -> Settings:
         "smtp_port": 587,
         "smtp_user": "",
         "smtp_password": "",
-        "smtp_from": "info@datadrivenconstruction.io",
+        "smtp_from": "support@primecrest.pk",
         "smtp_tls": True,
     }
     base.update(overrides)
@@ -118,8 +118,8 @@ class TestAnchorRendering:
         assert text == "https://x.io/page"
 
     def test_an_address_shown_as_its_own_label_is_not_printed_twice(self):
-        text = _html_to_text('<a href="mailto:info@datadrivenconstruction.io">info@datadrivenconstruction.io</a>')
-        assert text == "info@datadrivenconstruction.io"
+        text = _html_to_text('<a href="mailto:support@primecrest.pk">support@primecrest.pk</a>')
+        assert text == "support@primecrest.pk"
 
     def test_character_references_in_the_target_are_decoded(self):
         text = _html_to_text('<a href="https://x.io/r?a=1&amp;b=2">Go</a>')

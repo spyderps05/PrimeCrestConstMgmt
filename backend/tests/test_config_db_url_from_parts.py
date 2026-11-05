@@ -5,7 +5,7 @@ on ``socket.gaierror: [Errno -2] Name or service not known`` while PostgreSQL
 next to it stayed healthy on the same password. The cause was the URL, not the
 network. A compose file interpolates the password straight into
 
-    postgresql+asyncpg://oe:${POSTGRES_PASSWORD}@postgres:5432/openestimate
+    postgresql+asyncpg://oe:${POSTGRES_PASSWORD}@postgres:5432/primecrest
 
 and a URL splits its user info at the *first* ``@``, so the password ``pa@ss``
 makes the host ``ss@postgres``. PostgreSQL never noticed because it receives
@@ -71,7 +71,7 @@ def test_interpolating_the_password_is_what_breaks(monkeypatch: pytest.MonkeyPat
     version that does nothing, because most passwords are harmless. This pins
     the one input that separates the two.
     """
-    naive = make_url("postgresql+asyncpg://oe:pa@ss@postgres:5432/openestimate")
+    naive = make_url("postgresql+asyncpg://oe:pa@ss@postgres:5432/primecrest")
     assert naive.host == "ss@postgres"
 
     monkeypatch.setenv("OE_DB_PASSWORD", "pa@ss")
@@ -100,8 +100,8 @@ def test_a_mangled_url_loses_to_the_parts(monkeypatch: pytest.MonkeyPatch) -> No
     normally wins. It does not win here: a host containing ``@`` is not a host,
     so the URL is unusable however it was meant.
     """
-    monkeypatch.setenv("DATABASE_URL", "postgresql+asyncpg://oe:pa@ss@postgres:5432/openestimate")
-    monkeypatch.setenv("DATABASE_SYNC_URL", "postgresql://oe:pa@ss@postgres:5432/openestimate")
+    monkeypatch.setenv("DATABASE_URL", "postgresql+asyncpg://oe:pa@ss@postgres:5432/primecrest")
+    monkeypatch.setenv("DATABASE_SYNC_URL", "postgresql://oe:pa@ss@postgres:5432/primecrest")
     monkeypatch.setenv("OE_DB_HOST", "postgres")
     monkeypatch.setenv("OE_DB_PORT", "5432")
     monkeypatch.setenv("OE_DB_USER", "oe")

@@ -107,7 +107,7 @@ class TestSmtpBackend:
             "smtp_port": 587,
             "smtp_user": "",
             "smtp_password": "",
-            "smtp_from": "info@datadrivenconstruction.io",
+            "smtp_from": "support@primecrest.pk",
             "smtp_tls": True,
         }
         base.update(overrides)

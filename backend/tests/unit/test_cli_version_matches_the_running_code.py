@@ -4,7 +4,7 @@
 
 ``_resolve_version`` used to ask ``importlib.metadata`` first, which returns
 whatever distribution is installed in the environment. On a source checkout
-that had ever seen ``pip install openconstructionerp``, that is not the code
+that had ever seen ``pip install primecrest``, that is not the code
 being executed: the CLI printed v15.2.0 for a tree at 15.9.1 while
 ``/api/health`` on the same interpreter correctly said 15.9.1, and there was no
 test to notice. ``config._detect_version`` exists precisely to prefer the

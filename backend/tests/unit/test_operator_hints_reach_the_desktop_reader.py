@@ -22,11 +22,11 @@ lock. Choosing between the two is a reading of the call site and stays with the
 author; what this file gates is that the choice was made at all.
 
 What is in scope and why: a string that instructs somebody to install a NAMED
-distribution or a NAMED ``openconstructionerp`` extra. Two deliberate exclusions,
+distribution or a NAMED ``primecrest`` extra. Two deliberate exclusions,
 both stated rather than listed, so that a new site cannot fall outside the rule
 by being absent from a hand-maintained roster:
 
-* Advice that only names ``openconstructionerp`` itself is the app-reinstall
+* Advice that only names ``primecrest`` itself is the app-reinstall
   class, governed by ``FROZEN_REFUSAL`` and the upgrade endpoints instead.
 * ``apt``/``brew``/``npm`` instructions are followable on a frozen desktop's
   host, because they do not run through ``sys.executable``. That boundary is
@@ -102,7 +102,7 @@ _NOUN_PHRASE = re.compile(
 )
 
 _EXTRA = re.compile(
-    r"openconstructionerp\s*\[\s*([\w,-]+)\s*\]|\[(\w[\w-]*)\]\s+extra|\bthe\s+'?(\w[\w-]*)'?\s+extra\b",
+    r"(?:primecrest|openconstructionerp)\s*\[\s*([\w,-]+)\s*\]|\[(\w[\w-]*)\]\s+extra|\bthe\s+'?(\w[\w-]*)'?\s+extra\b",
     re.IGNORECASE,
 )
 
@@ -146,7 +146,7 @@ def _declared() -> tuple[set[str], set[str]]:
     dists = {_requirement_name(s) for s in project.get("dependencies", [])}
     for specs in extras.values():
         dists |= {_requirement_name(s) for s in specs}
-    dists -= {"openconstructionerp", ""}
+    dists -= {"primecrest", "openconstructionerp", ""}
     return dists, set(extras)
 
 
@@ -264,7 +264,7 @@ def _is_instruction(text: str, vocab: _Vocabulary) -> bool:
             continue
         rest = text[match.end() :]
         dists, extras = vocab.names_in(rest)
-        if dists or extras or "openconstructionerp" in rest.lower():
+        if dists or extras or "primecrest" in rest.lower() or "openconstructionerp" in rest.lower():
             return True
     return False
 
@@ -359,7 +359,7 @@ def test_every_install_instruction_that_names_a_package_is_routed_through_repair
 def test_every_extra_a_hint_names_is_declared_in_pyproject() -> None:
     """A hint may not send anybody after an extra that does not exist.
 
-    ``coord_transforms`` told operators to run ``pip install openconstructionerp[geo]``
+    ``coord_transforms`` told operators to run ``pip install primecrest[geo]``
     for a while before any such extra existed. pip answers that with a warning
     and no package, so the instruction read as followed and the capability was
     still missing - the quietest possible way for advice to be wrong.
@@ -382,7 +382,7 @@ def _census_of_source(source: str, vocab: _Vocabulary, tmp_path: Path) -> list[d
 def test_an_unrouted_hint_naming_an_unshipped_package_is_reported(tmp_path: Path) -> None:
     """Control, the direction that must fail: a new hint arrives unrouted."""
     rows = _census_of_source(
-        'def blow_up():\n    raise RuntimeError("pye57 is missing. Install it with: pip install openconstructionerp[pointcloud]")\n',
+        'def blow_up():\n    raise RuntimeError("pye57 is missing. Install it with: pip install primecrest[pointcloud]")\n',
         _Vocabulary(),
         tmp_path,
     )
@@ -398,7 +398,7 @@ def test_a_correctly_routed_hint_is_accepted(tmp_path: Path) -> None:
         "def blow_up():\n"
         "    from app.core.self_upgrade import DESKTOP_NO_EXTRA, repair_hint\n"
         '    raise RuntimeError("pye57 is missing. " + repair_hint(\n'
-        '        "Install it with: pip install openconstructionerp[pointcloud]", DESKTOP_NO_EXTRA))\n',
+        '        "Install it with: pip install primecrest[pointcloud]", DESKTOP_NO_EXTRA))\n',
         _Vocabulary(),
         tmp_path,
     )
@@ -545,7 +545,7 @@ _RUNTIME_SITES = [
         "app/core/embedding_installer.py::_message_for",
         _install_advice_from_message_for,
         "DESKTOP_REPAIR",
-        "pip install openconstructionerp[semantic]",
+        "pip install primecrest[semantic]",
     ),
     (
         "app/modules/dwg_takeoff/dxf_processor.py::_require_ezdxf",
@@ -563,7 +563,7 @@ _RUNTIME_SITES = [
         "app/modules/costs/qdrant_adapter.py::_encoder_missing_message",
         _install_advice_from_cwicr_encoder,
         "DESKTOP_NO_EXTRA",
-        "pip install openconstructionerp[semantic]",
+        "pip install primecrest[semantic]",
     ),
 ]
 
@@ -672,7 +672,7 @@ def test_the_two_import_time_hints_word_themselves_for_the_build_they_load_in(
     assert "pip install" not in frozen_card, f"a marketplace card offered pip to a frozen reader: {frozen_card}"
     assert DESKTOP_REPAIR in frozen_card
 
-    assert "pip install openconstructionerp[semantic-clients]" in ordinary_client
+    assert "pip install primecrest[semantic-clients]" in ordinary_client
     assert "pip install" not in frozen_client, f"the client hint offered pip to a frozen reader: {frozen_client}"
     assert DESKTOP_REPAIR in frozen_client
 
@@ -715,7 +715,7 @@ def test_the_embedder_card_drops_its_copy_box_rather_than_filling_it_with_a_dead
         print(f"    frozen   pip_command  -> {frozen['pip_command']!r}")
         print(f"    frozen   install_hint -> {frozen['install_hint']}")
 
-    assert ordinary["pip_command"] == "pip install --upgrade openconstructionerp[semantic]"
+    assert ordinary["pip_command"] == "pip install --upgrade primecrest[semantic]"
     assert "command above" in ordinary["install_hint"]
 
     assert frozen["pip_command"] == "", (

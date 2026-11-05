@@ -157,7 +157,7 @@ class TestTheAdviceSuitsTheInstallReadingIt:
         with pytest.raises(HTTPException) as caught:
             require_vector_backend()
 
-        assert "openconstructionerp[vector]" in _detail(caught.value)["message"]
+        assert "primecrest[vector]" in _detail(caught.value)["message"]
 
     @pytest.mark.parametrize(
         ("present", "loads"),

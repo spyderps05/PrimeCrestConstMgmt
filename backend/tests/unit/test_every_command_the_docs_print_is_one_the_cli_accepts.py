@@ -6,11 +6,11 @@ A command line in a document is a claim: this program exists, it takes these
 arguments, and typing it does what the surrounding paragraph says. Nothing
 checked that claim, and it went wrong in the worst possible place.
 ``docs/INSTALL_LINUX.md`` answered the single most common first-run failure,
-a busy port, with ``openconstructionerp --port 9090``. ``--port`` is declared
+a busy port, with ``primecrest --port 9090``. ``--port`` is declared
 on the ``serve`` and ``doctor`` subparsers and nowhere else, so the top-level
 parser answers ``exit 2`` and the one page a stuck reader reaches told them to
 type something that cannot work. The same section offered
-``OE_PORT=9090 openconstructionerp`` as a fallback; no code under
+``OE_PORT=9090 primecrest`` as a fallback; no code under
 ``backend/app`` reads ``OE_PORT`` at all, so that one starts on 8080 again and
 says nothing.
 
@@ -98,19 +98,19 @@ MUST_BE_COVERED = (
 MINIMUM_FILES = 100
 MINIMUM_INVOCATIONS = 60
 
-PROGRAM_NAMES = ("openconstructionerp", "openestimate")
+PROGRAM_NAMES = ("primecrest", "openconstructionerp", "openestimate")
 
-# `python -m openconstructionerp ...`, the spelling the docs recommend when the
+# `python -m primecrest ...`, the spelling the docs recommend when the
 # console script is not on PATH. It reaches the same `main` through
 # `backend/openconstructionerp/__main__.py`, so the same parser answers it.
 # The lookahead keeps the separator out of the match, so what follows the
 # module name is the argv and nothing has to be re-split off the front.
-PY_MODULE = re.compile(r"^(?:python3?(?:\.\d+)?|py)\s+-m\s+(?:openconstructionerp|openestimate)(?=\s|$)")
-# `VAR=value ` prefixes, as in `OE_PACK=us-texas openconstructionerp serve`.
+PY_MODULE = re.compile(r"^(?:python3?(?:\.\d+)?|py)\s+-m\s+(?:primecrest|openconstructionerp|openestimate)(?=\s|$)")
+# `VAR=value ` prefixes, as in `OE_PACK=us-texas primecrest serve`.
 ENV_PREFIX = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*)=(\"[^\"]*\"|'[^']*'|\S*)\s+")
 # A systemd unit line: `ExecStart=/home/oe/venv/bin/openconstructionerp serve ...`
 UNIT_EXEC = re.compile(r"^Exec(?:Start|Stop|StartPre|StartPost|Reload)=")
-# `openconstructionerp v6.4.2` is a version report the CLI prints, not a
+# `primecrest v6.4.2` is a version report the CLI prints, not a
 # command line. Named here rather than dropped by a heuristic.
 VERSION_REPORT = re.compile(r"^v\d")
 # `<slug>`, `<archive.zip>`: the reader substitutes their own value. Fed to the
@@ -296,7 +296,7 @@ def rejection(argv: list[str], parser: argparse.ArgumentParser) -> str | None:
     # exists can be accepted as a prefix of one that does.
     target, chain = resolve(parser, filled)
     allowed = option_strings(target)
-    where = " ".join(["openconstructionerp", *chain])
+    where = " ".join(["primecrest", *chain])
     for token in filled:
         if not token.startswith("--"):
             continue
@@ -311,7 +311,7 @@ def _synopsis_rejection(argv: list[str], parser: argparse.ArgumentParser) -> str
     path = [token for token in argv if "[" not in token and "]" not in token and not token.startswith("<")]
     target, chain = resolve(parser, path)
     allowed = option_strings(target)
-    where = " ".join(["openconstructionerp", *chain])
+    where = " ".join(["primecrest", *chain])
     for group in re.findall(r"\[([^\]]+)\]", " ".join(argv)):
         flag = group.split()[0]
         if not flag.startswith("-"):
@@ -425,9 +425,9 @@ def _env_names_the_app_reads() -> frozenset[str]:
 
 
 def test_an_environment_variable_set_in_front_of_the_cli_is_one_the_app_reads() -> None:
-    """``VAR=value openconstructionerp ...`` must name a variable something reads.
+    """``VAR=value primecrest ...`` must name a variable something reads.
 
-    The parser cannot catch this half. ``OE_PORT=9090 openconstructionerp``
+    The parser cannot catch this half. ``OE_PORT=9090 primecrest``
     parses perfectly, starts on 8080 and says nothing, which is worse than the
     flag that at least exits 2 and tells the reader something is wrong.
     """
@@ -463,17 +463,17 @@ def _prose_rejection(text: str, parser: argparse.ArgumentParser) -> str | None:
     failure. Only the subcommand and the flags are checked, which is what the
     reader has to get right.
     """
-    match = re.search(r"\bopenconstructionerp\b(?![-.:])", text)
+    match = re.search(r"\b(?:primecrest|openconstructionerp)\b(?![-.:])", text)
     if match is None:
         return "it names no command to type"
     tail = text[match.end() :]
     tokens = tail.replace("'", " ").replace("`", " ").split()
     subcommands = _subparsers(parser).choices  # type: ignore[union-attr]
     # The first word after the program name has to be a subcommand. Without this
-    # a future hint reading "run openconstructionerp start" would pass, because
+    # a future hint reading "run primecrest start" would pass, because
     # the flag loop below has nothing to complain about when there are no flags.
     if tokens and not tokens[0].startswith("-") and tokens[0] not in subcommands:
-        return f"`openconstructionerp {tokens[0]}` is not a subcommand"
+        return f"`primecrest {tokens[0]}` is not a subcommand"
     chain = []
     target = parser
     for token in tokens:
@@ -485,7 +485,7 @@ def _prose_rejection(text: str, parser: argparse.ArgumentParser) -> str | None:
             continue
         break
     allowed = option_strings(target)
-    where = " ".join(["openconstructionerp", *chain])
+    where = " ".join(["primecrest", *chain])
     flags = [token for token in tokens if token.startswith("--")]
     if not flags:
         return None
@@ -498,7 +498,7 @@ def _prose_rejection(text: str, parser: argparse.ArgumentParser) -> str | None:
 def test_the_hint_for_a_busy_port_names_a_command_that_accepts_the_flag() -> None:
     """The check that fires on the commonest first-run failure must be typable.
 
-    A reader who typed the one command the docs teach, ``openconstructionerp``,
+    A reader who typed the one command the docs teach, ``primecrest``,
     and hit a busy port is shown this hint. It used to say "use --port 8081"
     and name no command, so following it literally produced the same exit 2
     the documentation defect produced.

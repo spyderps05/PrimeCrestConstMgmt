@@ -1281,7 +1281,7 @@ async def test_the_cleanup_removes_the_contacts_of_a_removed_demo(boot_factory) 
 
 
 async def test_the_cli_changes_nothing_without_apply_and_commits_with_it(boot_factory) -> None:
-    """``openconstructionerp demo-cleanup`` and ``demo-cleanup --apply``, through the command's own code."""
+    """``primecrest demo-cleanup`` and ``demo-cleanup --apply``, through the command's own code."""
     from app.cli import run_demo_cleanup
 
     async with boot_factory() as s:

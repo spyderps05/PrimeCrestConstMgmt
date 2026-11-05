@@ -114,7 +114,7 @@ class TestAFailureCanBeRead:
         assert "could not find a version" in job.stderr
 
     def test_a_clean_exit_is_succeeded_and_keeps_the_log(self) -> None:
-        job, _ = claim_upgrade(_echo("Successfully installed openconstructionerp"), "14.6.0")
+        job, _ = claim_upgrade(_echo("Successfully installed primecrest"), "14.6.0")
         run_upgrade(job)
 
         assert job.status == SUCCEEDED

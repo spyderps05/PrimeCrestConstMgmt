@@ -5,7 +5,7 @@
 Nineteen packs sat in the repository and no pip or desktop install had ever
 listed one. Two independent defects, either of which alone was enough:
 
-1. ``backend/pyproject.toml`` packaged ``app`` and ``openconstructionerp`` and
+1. ``backend/pyproject.toml`` packaged ``app`` and ``primecrest`` and
    nothing else, so the ``packs/`` tree never entered the wheel.
 2. ``app/core/partner_pack/discovery.py`` located the tree by counting five
    parent directories up from its own file. That reaches the repo root in a

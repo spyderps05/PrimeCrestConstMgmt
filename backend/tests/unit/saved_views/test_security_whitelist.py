@@ -12,8 +12,8 @@ import os
 
 # A PostgreSQL-shaped URL so ``app.database`` imports without booting a cluster;
 # these tests never open a connection.
-os.environ.setdefault("DATABASE_URL", "postgresql+asyncpg://oe:oe@localhost:5432/openestimate")
-os.environ.setdefault("DATABASE_SYNC_URL", "postgresql://oe:oe@localhost:5432/openestimate")
+os.environ.setdefault("DATABASE_URL", "postgresql+asyncpg://oe:oe@localhost:5432/primecrest")
+os.environ.setdefault("DATABASE_SYNC_URL", "postgresql://oe:oe@localhost:5432/primecrest")
 
 import pytest
 from pydantic import ValidationError

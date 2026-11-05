@@ -109,7 +109,7 @@ class TestWildcardHandlerRegistration:
         handler is registered unconditionally at import time, alongside the
         per-event vector handlers.
         """
-        mod = _reload_boq_events("postgresql+asyncpg://oe:oe@localhost:5432/openestimate")
+        mod = _reload_boq_events("postgresql+asyncpg://oe:oe@localhost:5432/primecrest")
 
         assert mod._log_boq_activity in event_bus._wildcard_handlers
         assert mod._on_position_created in event_bus._handlers.get("boq.position.created", [])
@@ -144,7 +144,7 @@ def _index_session(position_ids: list[uuid.UUID]) -> AsyncMock:
 class TestVectorIndexFailureLogging:
     @pytest.mark.asyncio
     async def test_single_failure_logs_at_warning(self, caplog):
-        mod = _reload_boq_events("postgresql+asyncpg://oe:oe@localhost:5432/openestimate")
+        mod = _reload_boq_events("postgresql+asyncpg://oe:oe@localhost:5432/primecrest")
 
         # Make the inner index call blow up — the key thing we want to
         # assert is that the failure surfaces at WARNING, not DEBUG.
@@ -181,7 +181,7 @@ class TestVectorIndexFailureLogging:
     @pytest.mark.asyncio
     async def test_duplicate_failure_within_window_is_suppressed(self, caplog):
         """Second identical failure within 60 s must not produce a log line."""
-        mod = _reload_boq_events("postgresql+asyncpg://oe:oe@localhost:5432/openestimate")
+        mod = _reload_boq_events("postgresql+asyncpg://oe:oe@localhost:5432/primecrest")
 
         # Install a fresh rate limiter scoped to this test, with 60s
         # window — we'll call the handler twice and expect exactly one
@@ -220,7 +220,7 @@ class TestVectorIndexFailureLogging:
     @pytest.mark.asyncio
     async def test_delete_failure_logs_distinct_operation(self, caplog):
         """Index and delete are separate buckets in the limiter."""
-        mod = _reload_boq_events("postgresql+asyncpg://oe:oe@localhost:5432/openestimate")
+        mod = _reload_boq_events("postgresql+asyncpg://oe:oe@localhost:5432/primecrest")
         mod._vector_warn = cache_mod._RateLimitedLogger(window_seconds=60.0)
 
         with (

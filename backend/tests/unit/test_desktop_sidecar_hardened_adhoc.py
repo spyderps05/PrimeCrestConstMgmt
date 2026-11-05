@@ -44,7 +44,7 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 SCRIPT_PATH = REPO_ROOT / "scripts" / "inspect_desktop_sidecar_signatures.py"
 SPEC_PATH = REPO_ROOT / "desktop" / "pyinstaller.spec"
 
-EXE_NAME = "openconstructionerp-server"
+EXE_NAME = "primecrest-server"
 
 CS_ADHOC = 0x00000002
 CS_RUNTIME = 0x00010000

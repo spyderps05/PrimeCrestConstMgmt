@@ -63,7 +63,7 @@ def test_a_missing_url_is_refused_by_name(run_entrypoint) -> None:
 
 
 def test_a_literal_at_sign_in_the_password_is_refused(run_entrypoint) -> None:
-    url = "postgresql+asyncpg://oe:pa@ss@postgres:5432/openestimate"
+    url = "postgresql+asyncpg://oe:pa@ss@postgres:5432/primecrest"
     result = run_entrypoint(DATABASE_URL=url)
     assert result.returncode == 1
     assert "contains an '@'" in result.stderr
@@ -77,7 +77,7 @@ def test_a_slash_before_the_at_sign_does_not_hide_it(run_entrypoint) -> None:
     truncated text was "oe:pa", the count was zero, and the URL was waved
     through to fail later as a DNS error for a host nobody typed.
     """
-    url = "postgresql+asyncpg://oe:pa/b@ss@postgres:5432/openestimate"
+    url = "postgresql+asyncpg://oe:pa/b@ss@postgres:5432/primecrest"
     result = run_entrypoint(DATABASE_URL=url)
     assert result.returncode == 1
     assert "contains an '@'" in result.stderr
@@ -92,7 +92,7 @@ def test_a_question_mark_before_the_at_sign_does_not_hide_it_either(run_entrypoi
     what closes the whole class, so this URL is caught for the same reason the
     one above is: make_url reads both with host "ss@postgres".
     """
-    url = "postgresql+asyncpg://oe:pa?b@ss@postgres:5432/openestimate"
+    url = "postgresql+asyncpg://oe:pa?b@ss@postgres:5432/primecrest"
     result = run_entrypoint(DATABASE_URL=url)
     assert result.returncode == 1
     assert "contains an '@'" in result.stderr
@@ -125,7 +125,7 @@ def test_an_at_sign_past_the_host_is_not_the_damage(run_entrypoint, url: str) ->
     ],
 )
 def test_a_password_without_a_literal_at_sign_starts(run_entrypoint, password: str) -> None:
-    url = f"postgresql+asyncpg://oe:{password}@postgres:5432/openestimate"
+    url = f"postgresql+asyncpg://oe:{password}@postgres:5432/primecrest"
     result = run_entrypoint(DATABASE_URL=url)
     assert result.returncode == 0, result.stderr
     assert "more than one '@'" not in result.stderr
@@ -133,7 +133,7 @@ def test_a_password_without_a_literal_at_sign_starts(run_entrypoint, password: s
 
 def test_a_mangled_url_is_survivable_when_the_parts_are_there(run_entrypoint) -> None:
     """Compose passes both so one file works with an image older than itself."""
-    url = "postgresql+asyncpg://oe:pa@ss@postgres:5432/openestimate"
+    url = "postgresql+asyncpg://oe:pa@ss@postgres:5432/primecrest"
     result = run_entrypoint(DATABASE_URL=url, OE_DB_PASSWORD="pa@ss", OE_DB_HOST="postgres")
     assert result.returncode == 0, result.stderr
     assert "NOTE:" in result.stderr
@@ -141,7 +141,7 @@ def test_a_mangled_url_is_survivable_when_the_parts_are_there(run_entrypoint) ->
 
 
 def test_a_non_postgres_url_is_refused_without_echoing_it(run_entrypoint) -> None:
-    result = run_entrypoint(DATABASE_URL="mysql://oe:secretpassword@db:3306/openestimate")
+    result = run_entrypoint(DATABASE_URL="mysql://oe:secretpassword@db:3306/primecrest")
     assert result.returncode == 1
     assert "must be a PostgreSQL URL" in result.stderr
     assert "secretpassword" not in result.stderr

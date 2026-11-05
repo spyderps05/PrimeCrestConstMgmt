@@ -146,7 +146,7 @@ async def test_user_agent_header_set_correctly():
     assert captured, "Nominatim was never called"
     ua = captured[0].headers.get("User-Agent") or ""
     assert "PrimeCrest" in ua
-    assert "info@datadrivenconstruction.io" in ua
+    assert "support@primecrest.pk" in ua
 
 
 @pytest.mark.asyncio

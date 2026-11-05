@@ -87,7 +87,7 @@ def test_the_refusal_names_the_route_that_works() -> None:
 def test_cli_upgrade_refuses_and_never_shells_out(
     frozen: None, no_subprocess: None, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    """``openconstructionerp upgrade`` stops before building the pip command.
+    """``primecrest upgrade`` stops before building the pip command.
 
     The subprocess trap is the defect itself, so failing the test on any
     execution attempt is the assertion that matters. Checking only the printed

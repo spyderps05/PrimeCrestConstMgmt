@@ -4,7 +4,7 @@
 
 Every hint in the doctor was written for a pip install, which is where most of
 them are read. The desktop build has no pip in it: ``sys.executable`` is the
-app binary, so "pip install --force-reinstall openconstructionerp" cannot be
+app binary, so "pip install --force-reinstall primecrest" cannot be
 run there at all. An operator who follows it learns only that the tool which
 found the fault also cannot fix it, and the next report they read gets less
 trust than it deserves.
@@ -196,7 +196,7 @@ class TestTheServerInstallStillGetsPipAdvice:
     def test_pip_advice_survives_where_pip_exists(self, monkeypatch: pytest.MonkeyPatch) -> None:
         monkeypatch.setattr(sys, "frozen", False, raising=False)
         assert (
-            cli._repair_hint("pip install 'openconstructionerp[vector]'") == "pip install 'openconstructionerp[vector]'"
+            cli._repair_hint("pip install 'primecrest[vector]'") == "pip install 'primecrest[vector]'"
         )
 
     def test_the_bundle_gets_the_bundle_answer(self, monkeypatch: pytest.MonkeyPatch) -> None:

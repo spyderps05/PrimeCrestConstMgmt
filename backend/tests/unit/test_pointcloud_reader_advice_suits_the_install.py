@@ -32,7 +32,7 @@ from app.modules.pointcloud.service import PointCloudService
 #: The advice exactly as it stood before it was routed. Asserted verbatim on a
 #: pip install, so the frozen arm can only ever be a redirection: a change that
 #: quietly stopped telling the larger audience what to do would fail here.
-PIP_ADVICE = "install the 'pointcloud' extra (pip install openconstructionerp[pointcloud]) to add E57 support."
+PIP_ADVICE = "install the 'pointcloud' extra (pip install primecrest[pointcloud]) to add E57 support."
 
 
 @pytest.fixture

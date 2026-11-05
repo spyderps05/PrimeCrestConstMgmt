@@ -201,7 +201,7 @@ class TestPresentButBrokenIsNotOk:
 
         assert check.status == "error"
         assert "--force-reinstall" in check.hint, f"the pip audience lost its remedy: {check.hint!r}"
-        assert "openconstructionerp[vector]" in check.hint
+        assert "primecrest[vector]" in check.hint
 
 
 class TestTheOtherTwoStatesStillBehave:
@@ -230,7 +230,7 @@ class TestTheOtherTwoStatesStillBehave:
         check = _named(cli.check_optional_extras(), VECTOR)
 
         assert check.status == "warn"
-        assert "openconstructionerp[vector]" in check.hint, (
+        assert "primecrest[vector]" in check.hint, (
             f"the reader who can run pip was not told what to run: {check.hint!r}"
         )
 

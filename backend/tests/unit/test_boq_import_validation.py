@@ -5,7 +5,7 @@ CSV / GAEB X83/X84) so DIN276, NRM, GAEB, MasterFormat, DPGF and the
 universal ``boq_quality`` rule packs fire AT import time instead of
 later via the standalone ``POST /boqs/{id}/validate/`` endpoint.
 
-Per the OpenEstimate philosophy:
+Per the PrimeCrest philosophy:
 
 * validation is a first-class citizen of the core workflow,
 * the marketing pitch promises "Validierungs-Pipeline beim Import —

@@ -6,7 +6,7 @@
 ``importlib.metadata`` when that raises. It was the other way round until
 41bc99c00, and the order matters: metadata reports whatever distribution is
 installed in the environment, so a source checkout with any earlier
-``pip install openconstructionerp`` beside it printed the installed version
+``pip install primecrest`` beside it printed the installed version
 while ``/api/health`` on the same interpreter printed the running one.
 
 The Settings branch reads ``Settings.model_fields["app_version"]``, and
