@@ -36,7 +36,7 @@ classifiers = [
 # The country pack is a hard dependency: this pack's manifest is built from
 # the country pack's at import time and carries no copy of it.
 dependencies = [
-    "openconstructionerp>=5.5.0",
+    "primecrest>=5.5.0",
     "primecrest-turkey-tr>=0.2.0",
 ]
 

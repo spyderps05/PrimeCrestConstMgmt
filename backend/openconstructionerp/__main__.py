@@ -1,8 +1,4 @@
-"""``python -m openconstructionerp`` entry point.
-
-Delegates to the same ``main`` the ``openconstructionerp`` console script uses,
-so this module form is a drop-in, PATH-independent way to launch the app.
-"""
+"""``python -m openconstructionerp`` legacy entry point (alias of ``python -m primecrest``)."""
 
 from __future__ import annotations
 

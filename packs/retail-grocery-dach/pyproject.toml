@@ -36,7 +36,7 @@ classifiers = [
     "Natural Language :: German",
 ]
 dependencies = [
-    "openconstructionerp>=7.7.0",
+    "primecrest>=7.7.0",
 ]
 
 [project.urls]

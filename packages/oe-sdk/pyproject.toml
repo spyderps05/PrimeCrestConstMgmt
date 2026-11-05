@@ -41,7 +41,7 @@ classifiers = [
 # tracks the platform release that introduced this package layout; bump it
 # deliberately when the SDK starts to rely on a newer core surface.
 dependencies = [
-    "openconstructionerp>=10.9.0",
+    "primecrest>=10.9.0",
 ]
 
 [project.scripts]

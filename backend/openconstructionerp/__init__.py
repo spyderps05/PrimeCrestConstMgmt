@@ -1,11 +1,7 @@
-"""Brand-named launcher package.
+"""Legacy launcher alias.
 
-This package exists so ``python -m openconstructionerp`` works straight after
-``pip install openconstructionerp`` even when the pip console-script directory is
-not on PATH. That is the common situation on Windows, where Python's Scripts
-folder is often not added to PATH, so the bare ``openconstructionerp`` command is
-not found in a fresh shell. The real application and CLI live in the ``app``
-package; this is a thin shim that re-exports the CLI entry point.
+Kept so ``python -m openconstructionerp`` from installs and scripts that predate
+the PrimeCrest rename keeps working. New code and docs use ``primecrest``.
 """
 
 from __future__ import annotations

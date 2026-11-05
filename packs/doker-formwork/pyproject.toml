@@ -29,7 +29,7 @@ classifiers = [
     "Topic :: Office/Business :: Industry-Specific",
 ]
 dependencies = [
-    "openconstructionerp>=5.5.0",
+    "primecrest>=5.5.0",
     "pydantic>=2.6",
 ]
 

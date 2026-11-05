@@ -54,7 +54,16 @@ logger = logging.getLogger(__name__)
 # reason registers under both is resolved once, with the new group winning.
 ENTRY_POINT_GROUP = "openconstructionerp.packs"
 ENTRY_POINT_GROUP_LEGACY = "openconstructionerp.partner_packs"
-ENTRY_POINT_GROUPS = (ENTRY_POINT_GROUP_LEGACY, ENTRY_POINT_GROUP)
+# PrimeCrest-branded aliases of the same two groups. Packs register under both
+# spellings; discovery reads all four and dedups by entry-point name.
+ENTRY_POINT_GROUP_PRIMECREST = "primecrest.packs"
+ENTRY_POINT_GROUP_PRIMECREST_LEGACY = "primecrest.partner_packs"
+ENTRY_POINT_GROUPS = (
+    ENTRY_POINT_GROUP_LEGACY,
+    ENTRY_POINT_GROUP_PRIMECREST_LEGACY,
+    ENTRY_POINT_GROUP,
+    ENTRY_POINT_GROUP_PRIMECREST,
+)
 
 
 def _iter_entry_points() -> list[EntryPoint]:

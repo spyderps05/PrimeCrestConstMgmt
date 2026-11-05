@@ -1,5 +1,5 @@
 [project]
-name = "openconstructionerp"
+name = "primecrest"
 version = "18.9.0"
 description = "PrimeCrest Construction Management by Spyder Solutions: BOQ, CAD/BIM takeoff, AI cost matching. 44 languages, 190+ modules."
 license = "LicenseRef-Proprietary"
@@ -29,14 +29,14 @@ license = "LicenseRef-Proprietary"
 license-files = ["LICENSE", "NOTICE"]
 requires-python = ">=3.12"
 authors = [
-    { name = "DataDrivenConstruction", email = "info@datadrivenconstruction.io" }
+    { name = "Spyder Solutions", email = "support@primecrest.pk" }
 ]
 maintainers = [
-    { name = "Data Driven Construction", email = "info@datadrivenconstruction.io" }
+    { name = "Spyder Solutions", email = "support@primecrest.pk" }
 ]
 readme = "README.md"
 keywords = [
-    "openconstructionerp",
+    "primecrest",
     "construction",
     "construction-management",
     "ERP",
@@ -195,15 +195,17 @@ dependencies = [
     "simpleeval>=0.9.13,<2",
 ]
 [project.scripts]
-openestimate = "app.cli:main"
+primecrest = "app.cli:main"
+# Legacy upstream command names, kept as aliases for existing scripts.
 openconstructionerp = "app.cli:main"
+openestimate = "app.cli:main"
 
 [project.urls]
-Homepage = "https://openconstructionerp.com"
-Documentation = "https://openconstructionerp.com/docs"
-Repository = "https://github.com/datadrivenconstruction/PrimeCrest"
-Issues = "https://github.com/datadrivenconstruction/PrimeCrest/issues"
-Changelog = "https://github.com/datadrivenconstruction/PrimeCrest/blob/main/CHANGELOG.md"
+Homepage = "https://primecrest.pk"
+Documentation = "https://docs.primecrest.pk"
+Repository = "https://github.com/spyderps05/PrimeCrestConstMgmt"
+Issues = "https://github.com/spyderps05/PrimeCrestConstMgmt/issues"
+Changelog = "https://github.com/spyderps05/PrimeCrestConstMgmt/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 # Production add-ons: background tasks (Redis/Celery) + S3 storage. The
@@ -296,7 +298,7 @@ semantic-clients = [
 # that consumes it. Do not fold it into [semantic-clients]: the docker image and
 # the 3 GB server resolve that one, and they must keep resolving it without torch.
 semantic-encoder = [
-    "openconstructionerp[semantic-clients]",
+    "primecrest[semantic-clients]",
     "sentence-transformers>=3.3.0,<7",
 ]
 # Semantic search: Qdrant vector DB + sentence-transformers embeddings.
@@ -308,7 +310,7 @@ semantic-encoder = [
 # of dead wheels on the user's disk. API keys live in the database and
 # `~/.openestimate/config.json`, not in SDK clients.
 semantic = [
-    "openconstructionerp[semantic-encoder]",
+    "primecrest[semantic-encoder]",
     # BAAI/bge-m3 multilingual encoder - 1024-dim dense + sparse + colbert
     # in one forward pass, MIT license, 100+ languages. Powers the CWICR
     # 30-collection Qdrant store (cwicr_<lang>) where every point holds
@@ -326,9 +328,9 @@ semantic = [
     "polars>=1.0.0,<2",
 ]
 # Backwards-compat alias. Deprecated since v1.3.14 - prefer `[semantic]`.
-# Kept so existing `pip install openconstructionerp[ai]` commands still work.
+# Kept so existing `pip install primecrest[ai]` commands still work.
 ai = [
-    "openconstructionerp[semantic]",
+    "primecrest[semantic]",
 ]
 # Optional OCR for PDF takeoff. pypdfium2 (vector reader) and
 # opencv-python-headless (raster room/wall detector) are base dependencies,
@@ -346,7 +348,7 @@ cv = [
 # stays opt-in. Without it the header sniff records "metadata pending" for E57
 # and the viewer answers a clear 501 for E57 only - the import guards in
 # sniff.py / decode.py degrade gracefully rather than crash. Install with
-# ``pip install openconstructionerp[pointcloud]`` to add E57 support.
+# ``pip install primecrest[pointcloud]`` to add E57 support.
 pointcloud = [
     "pye57>=0.4.0,<1",
 ]
@@ -358,7 +360,7 @@ pointcloud = [
 #
 # This adds no dependency. pyproj was already what those two ask for, and
 # coord_transforms has been telling operators to run
-# ``pip install openconstructionerp[geo]`` since before any such extra existed,
+# ``pip install primecrest[geo]`` since before any such extra existed,
 # which pip answers with a warning and no package - so the instruction read as
 # followed and the capability was still missing. The extra gives the thing they
 # were already being sent to fetch a name they can actually ask for.
@@ -369,7 +371,7 @@ geo = [
     "pyproj>=3.6.1,<4",
 ]
 # Deprecated alias since v2.5.0 - `duckdb` is in base deps now.
-# Kept so existing `pip install openconstructionerp[analytics]` commands
+# Kept so existing `pip install primecrest[analytics]` commands
 # continue to work without failing.
 analytics = []
 # S3-compatible object storage backend (MinIO / AWS S3 / Backblaze B2 /
@@ -380,7 +382,7 @@ s3 = [
 ]
 # Everything
 all = [
-    "openconstructionerp[server,vector,semantic,cv,s3,pointcloud,geo,analytics]",
+    "primecrest[server,vector,semantic,cv,s3,pointcloud,geo,analytics]",
 ]
 # Development tools
 dev = [
@@ -438,7 +440,7 @@ build-backend = "hatchling.build"
 path = "hatch_build.py"
 
 [tool.hatch.build.targets.wheel]
-packages = ["app", "openconstructionerp"]
+packages = ["app", "primecrest", "openconstructionerp"]
 # Never ship internal working notes. Underscore-prefixed markdown / text
 # files that end up next to source (agent handoffs, audit residue, planning
 # notes) are local-only per repo policy (constraint #9); exclude them from the
@@ -711,9 +713,9 @@ artifacts = ["app/scripts/flagship_assets/site_photos/*.jpg"]
 #      pre-build so hatchling versions that walk the map regardless of the
 #      overrides above still find the path.
 [tool.hatch.build.targets.editable]
-packages = ["app", "openconstructionerp"]
+packages = ["app", "primecrest", "openconstructionerp"]
 dev-mode-dirs = ["."]
-only-include = ["app", "openconstructionerp"]
+only-include = ["app", "primecrest", "openconstructionerp"]
 
 [tool.hatch.build.targets.editable.force-include]
 
@@ -816,7 +818,7 @@ known-first-party = ["app"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 # Prepend the backend source dir so tests always import the local ``app``
-# package, never a stale ``pip install openconstructionerp`` in site-packages.
+# package, never a stale ``pip install primecrest`` in site-packages.
 pythonpath = ["."]
 asyncio_mode = "auto"
 # Restore a single shared event loop for the whole test session. These suites
