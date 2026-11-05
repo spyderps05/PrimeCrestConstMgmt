@@ -6,7 +6,7 @@
   "regulator": "Standards New Zealand",
   "publication_year": 2023,
   "supersedes": "NZS 3910:2013 (replaced effective 2023-10-23)",
-  "description": "Enables OCERP built-in validation rules that check tender packs and contract documents against NZS 3910:2023 — the current general conditions for building and civil engineering construction in New Zealand. Replaces NZS 3910:2013. Splits the previous Engineer role into Contract Administrator + Independent Certifier and updates payment, dispute and risk allocation provisions.",
+  "description": "Enables PrimeCrest built-in validation rules that check tender packs and contract documents against NZS 3910:2023 — the current general conditions for building and civil engineering construction in New Zealand. Replaces NZS 3910:2013. Splits the previous Engineer role into Contract Administrator + Independent Certifier and updates payment, dispute and risk allocation provisions.",
   "key_changes_vs_2013": [
     "Engineer role split into Contract Administrator and Independent Certifier",
     "Payment provisions aligned with Construction Contracts Act 2002 (CCA) amendments",

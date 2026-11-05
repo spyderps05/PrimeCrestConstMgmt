@@ -3,16 +3,16 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-germany-de"
+name = "primecrest-germany-de"
 version = "0.1.0"
 description = "Flagship country pack for German construction estimating - DIN 276:2018 cost groups, VOB 2019 (Parts A/B/C trade structure), GAEB DA XML 3.3 exchange, HOAI 2021 fee scale, BKI benchmarks, EUR with 19% Umsatzsteuer. German + English UI."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
-keywords = ["openconstructionerp", "ocerp", "partner-pack", "germany", "din276", "gaeb", "vob", "hoai"]
+keywords = ["primecrest", "partner-pack", "germany", "din276", "gaeb", "vob", "hoai"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
@@ -29,9 +29,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+germany-de = "openconstructionerp_germany_de:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 germany-de = "openconstructionerp_germany_de:MANIFEST"
 
 [tool.setuptools]

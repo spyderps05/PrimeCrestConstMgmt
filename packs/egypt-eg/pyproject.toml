@@ -3,18 +3,17 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-egypt-eg"
+name = "primecrest-egypt-eg"
 version = "0.1.0"
 description = "Country pack for the Egyptian market: division-based classification, EGP currency, construction VAT by date, Public Contracts Law 182/2018 limits, FIDIC for private works, Egyptian Tax Authority e-invoicing and the Sunday to Thursday work week."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 keywords = [
-    "openconstructionerp",
-    "ocerp",
+    "primecrest",
     "country-pack",
     "egypt",
     "cairo",
@@ -40,9 +39,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+egypt-eg = "openconstructionerp_egypt_eg:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 egypt-eg = "openconstructionerp_egypt_eg:MANIFEST"
 
 [tool.setuptools]

@@ -7,7 +7,7 @@
   "regulator": "Adopted by NEOM, RCJY, Saudi Aramco, RCRC, and the Ministry of Investment for mega-projects.",
   "publication_year": 2018,
   "applies_to": ["projects", "bim", "validation"],
-  "description": "Enables OCERP built-in validation rules that check BIM federations against ISO 19650-1/-2/-5 — Exchange Information Requirements (EIR) attached, BIM Execution Plan (BEP) version-controlled, Common Data Environment (CDE) configured with WIP / Shared / Published / Archive states, MIDP (Master Information Delivery Plan) and TIDP (Task Information Delivery Plans) present, and ISO 19650-5 security triage for sensitive Aramco / NEOM / military-adjacent assets.",
+  "description": "Enables PrimeCrest built-in validation rules that check BIM federations against ISO 19650-1/-2/-5 — Exchange Information Requirements (EIR) attached, BIM Execution Plan (BEP) version-controlled, Common Data Environment (CDE) configured with WIP / Shared / Published / Archive states, MIDP (Master Information Delivery Plan) and TIDP (Task Information Delivery Plans) present, and ISO 19650-5 security triage for sensitive Aramco / NEOM / military-adjacent assets.",
   "description_ar": "تفعيل قواعد التحقق لمستويات معلومات BIM وفق ISO 19650 — متطلبات تبادل المعلومات EIR، خطة تنفيذ BIM، بيئة البيانات المشتركة CDE.",
   "severity_overrides": {},
   "enables_rule_ids": [],

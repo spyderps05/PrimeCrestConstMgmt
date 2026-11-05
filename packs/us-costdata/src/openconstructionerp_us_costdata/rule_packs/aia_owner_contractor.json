@@ -4,7 +4,7 @@
   "standard": "AIA Contract Family — Owner-Contractor",
   "jurisdiction": "US",
   "edition": "2017 series (A141 Design-Build is 2014)",
-  "description": "Enables OCERP built-in validation rules that check the chosen AIA Owner-Contractor agreement variant carries its mandatory articles, attachments, and complements AIA A201-2017 General Conditions (which is incorporated by reference into all of these).",
+  "description": "Enables PrimeCrest built-in validation rules that check the chosen AIA Owner-Contractor agreement variant carries its mandatory articles, attachments, and complements AIA A201-2017 General Conditions (which is incorporated by reference into all of these).",
   "issuer": "American Institute of Architects (AIA)",
   "variants_covered": {
     "A101-2017": "Owner-Contractor, Stipulated Sum (single lump-sum price)",

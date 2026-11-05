@@ -3,16 +3,16 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-brazil-sinapi"
+name = "primecrest-brazil-sinapi"
 version = "0.2.0"
 description = "Pre-configured partner pack for Brazilian construction companies — SINAPI cost database, NBR 12721 CUB, ABNT NBR 6118/8800/9050/5419, Lei 14.133/2021, RPS/NFS-e PDF, municipal ISS taxes."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
-keywords = ["openconstructionerp", "ocerp", "partner-pack", "brazil", "brasil", "sinapi", "nbr", "abnt", "lei-14133", "rps", "nfse", "iss", "cub", "bdi"]
+keywords = ["primecrest", "partner-pack", "brazil", "brasil", "sinapi", "nbr", "abnt", "lei-14133", "rps", "nfse", "iss", "cub", "bdi"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
@@ -28,9 +28,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+brazil-sinapi = "openconstructionerp_brazil_sinapi:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 brazil-sinapi = "openconstructionerp_brazil_sinapi:MANIFEST"
 
 [tool.setuptools]

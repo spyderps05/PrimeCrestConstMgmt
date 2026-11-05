@@ -3,18 +3,17 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-croatia-hr"
+name = "primecrest-croatia-hr"
 version = "0.1.0"
 description = "Country pack for the Croatian market: troškovnik estimating with all-in unit rates, EUR currency, PDV at 25% with the 13%, 5% and 0% rates, Zakon o gradnji and Zakon o javnoj nabavi references, DIN 276 as the nearest supported cost hierarchy."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 keywords = [
-    "openconstructionerp",
-    "ocerp",
+    "primecrest",
     "country-pack",
     "croatia",
     "hrvatska",
@@ -39,9 +38,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+croatia-hr = "openconstructionerp_croatia_hr:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 croatia-hr = "openconstructionerp_croatia_hr:MANIFEST"
 
 [tool.setuptools]

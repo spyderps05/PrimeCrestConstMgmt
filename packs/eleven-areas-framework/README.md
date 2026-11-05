@@ -41,4 +41,5 @@ folder that holds `manifest.json` into `<data dir>/packs/`: that manifest is val
 
 ## License
 
-AGPL-3.0-or-later. PrimeCrest is authored and owned by DataDrivenConstruction.
+AGPL-3.0-or-later. © 2026 Spyder Solutions. PrimeCrest is based on OpenConstructionERP
+© Artem Boiko / DataDrivenConstruction, licensed under AGPL-3.0.

@@ -25,7 +25,7 @@
     {"id": "part_11", "title": "Approach to Sustainability"},
     {"id": "part_12", "title": "Asset & Facility Management"}
   ],
-  "description": "Enables OCERP built-in validation rules that check building projects against the National Building Code of India 2016 + 2024 amendments. Validates fire & life safety (Part 4: travel distance, refuge area, sprinkler requirement), structural design basis (Part 6: IS-code reference present per material), building services (Part 8: lift requirement vs occupancy, fire-detection), plumbing (Part 9: water-supply demand, drainage slope), and landscape/sustainability (Parts 10-11).",
+  "description": "Enables PrimeCrest built-in validation rules that check building projects against the National Building Code of India 2016 + 2024 amendments. Validates fire & life safety (Part 4: travel distance, refuge area, sprinkler requirement), structural design basis (Part 6: IS-code reference present per material), building services (Part 8: lift requirement vs occupancy, fire-detection), plumbing (Part 9: water-supply demand, drainage slope), and landscape/sustainability (Parts 10-11).",
   "description_hi": "एनबीसी 2016 + 2024 संशोधनों के अनुसार भवन परियोजनाओं की जाँच — अग्नि एवं जीवन सुरक्षा, संरचनात्मक डिज़ाइन, भवन सेवाएँ एवं नल-व्यवस्था।",
   "enables_rule_ids": [],
   "planned_not_built_rule_ids": [

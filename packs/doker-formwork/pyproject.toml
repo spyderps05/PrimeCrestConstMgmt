@@ -3,17 +3,17 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-doker-formwork"
+name = "primecrest-doker-formwork"
 version = "0.2.0"
 description = "Formwork pack for PrimeCrest - DIN 18218, EN 12812, EN 13670, EN 206, VOB/C 18331, DGUV 101-008 + formwork systems catalogue."
 readme = "README.md"
 requires-python = ">=3.12"
 license = { text = "AGPL-3.0-or-later" }
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 keywords = [
-    "openconstructionerp",
+    "primecrest",
     "partner-pack",
     "formwork",
     "schalung",
@@ -34,10 +34,13 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/DataDrivenConstruction/openconstructionerp"
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Homepage = "https://github.com/spyderps05/PrimeCrestConstMgmt"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+doker-formwork = "openconstructionerp_doker_formwork:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 doker-formwork = "openconstructionerp_doker_formwork:MANIFEST"
 
 [tool.setuptools]

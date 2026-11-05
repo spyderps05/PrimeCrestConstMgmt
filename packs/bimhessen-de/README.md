@@ -60,7 +60,7 @@ Partner Packs: click Rescan, find "BIM-Cluster Hessen", then Activate pack.
 To run a workspace that boots straight into it:
 
 ```bash
-OE_PACK=bimhessen-de openconstructionerp serve
+OE_PACK=bimhessen-de primecrest serve
 ```
 
 ## License

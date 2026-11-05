@@ -4,7 +4,7 @@
   "standard": "City cost index (user-supplied)",
   "jurisdiction": "US/CA",
   "edition": "Whichever release the user's own index subscription provides",
-  "description": "Enables OCERP validation rules that apply a city cost index to localise national average unit prices, validate that the chosen city and ZIP3 are within the coverage of the index the user imported, confirm the index period currency (must be within 12 months for unit costs, 24 for installed costs), enforce material/labor/equipment factor application, and flag estimates that diverge from indexed benchmarks beyond a configurable band. No index data ships with this pack; the rules run against the figures the user imports.",
+  "description": "Enables PrimeCrest validation rules that apply a city cost index to localise national average unit prices, validate that the chosen city and ZIP3 are within the coverage of the index the user imported, confirm the index period currency (must be within 12 months for unit costs, 24 for installed costs), enforce material/labor/equipment factor application, and flag estimates that diverge from indexed benchmarks beyond a configurable band. No index data ships with this pack; the rules run against the figures the user imports.",
   "issuer": "The index publisher the user subscribes to",
   "metrics_referenced": "Total Index, Material Index, Labor Index, Equipment Index, Installed Index — all relative to the index base = 100.0",
   "enables_rule_ids": [],

@@ -3,16 +3,16 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-renewables-epc"
+name = "primecrest-renewables-epc"
 version = "0.2.0"
 description = "Pre-configured partner pack for solar / wind / BESS EPC contractors — PV array takeoff, turbine BOM, MV cable schedules, LCOE templates (NREL ATB + LBNL + BNEF), IEC 61400 family (wind), IEC 61215 + IEC 61730 + IEC 62548 (PV), NFPA 855 + IEC 62619 + UL 9540 (BESS), ENTSO-E RfG + UK NGC + IEEE 1547 + FERC 2222 grid compliance."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
-keywords = ["openconstructionerp", "ocerp", "partner-pack", "renewables", "solar", "wind", "bess", "epc", "iec", "nfpa-855", "lcoe", "grid-code"]
+keywords = ["primecrest", "partner-pack", "renewables", "solar", "wind", "bess", "epc", "iec", "nfpa-855", "lcoe", "grid-code"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
@@ -28,9 +28,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+renewables-epc = "openconstructionerp_renewables_epc:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 renewables-epc = "openconstructionerp_renewables_epc:MANIFEST"
 
 [tool.setuptools]

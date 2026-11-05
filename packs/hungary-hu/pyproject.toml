@@ -3,18 +3,17 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-hungary-hu"
+name = "primecrest-hungary-hu"
 version = "0.1.0"
 description = "Country pack for the Hungarian market: the seventeen-chapter building item order, the infrastructure item order with per-project item numbers and code dictionaries, the material and fee split, contingency and VAT on the summary sheet, forint at zero decimals."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 keywords = [
-    "openconstructionerp",
-    "ocerp",
+    "primecrest",
     "country-pack",
     "hungary",
     "tetelrend",
@@ -40,9 +39,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+hungary-hu = "openconstructionerp_hungary_hu:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 hungary-hu = "openconstructionerp_hungary_hu:MANIFEST"
 
 [tool.setuptools]

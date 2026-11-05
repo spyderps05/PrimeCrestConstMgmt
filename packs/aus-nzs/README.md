@@ -1,4 +1,4 @@
-# `openconstructionerp-aus-nzs` — DEPRECATED
+# `primecrest-aus-nzs` — DEPRECATED
 
 This combined Australia + New Zealand partner pack has been **split** into
 two single-jurisdiction packs because AU and NZ use different defaults
@@ -17,11 +17,11 @@ that cannot live in one `PartnerPackManifest`:
 Install the appropriate per-country pack instead:
 
 ```bash
-pip install openconstructionerp-aus   # Australia
-pip install openconstructionerp-nzs   # New Zealand
+pip install primecrest-aus   # Australia
+pip install primecrest-nzs   # New Zealand
 ```
 
-The legacy `openconstructionerp-aus-nzs` is preserved as a backward-
-compatibility shim that depends on `openconstructionerp-aus` and re-
+The legacy `primecrest-aus-nzs` is preserved as a backward-
+compatibility shim that depends on `primecrest-aus` and re-
 exports its manifest unchanged. Importing it emits a
 `DeprecationWarning`. It will be removed in a future major release.

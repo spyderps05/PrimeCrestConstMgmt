@@ -7,7 +7,7 @@
   "regulator": "Saudi Aramco — Engineering Services / Project Management Office",
   "publication_year": 2024,
   "applies_to": ["projects", "tendering", "submittals", "validation"],
-  "description": "Enables OCERP built-in validation rules that enforce the Saudi Aramco approval sequence on every drawing, document and tender package: Proponent (operating organisation owning the asset) -> Engineering Discipline Lead -> PMT Project Engineer -> Project Manager -> Inspection (mandatory for safety-critical items) -> Approved-for-Construction (AFC) stamp. Each stage must be present and time-ordered; missing intermediate sign-off blocks issue-for-construction. Pairs with `aramco_saes_samss` (engineering refs) and `aramco_pim_qualification` (vendor pre-qual).",
+  "description": "Enables PrimeCrest built-in validation rules that enforce the Saudi Aramco approval sequence on every drawing, document and tender package: Proponent (operating organisation owning the asset) -> Engineering Discipline Lead -> PMT Project Engineer -> Project Manager -> Inspection (mandatory for safety-critical items) -> Approved-for-Construction (AFC) stamp. Each stage must be present and time-ordered; missing intermediate sign-off blocks issue-for-construction. Pairs with `aramco_saes_samss` (engineering refs) and `aramco_pim_qualification` (vendor pre-qual).",
   "description_ar": "تفعيل قواعد التحقق لمسار اعتماد أرامكو الهندسي — جهة المستفيد، رئيس التخصص، مهندس المشروع، مدير المشروع، الفحص، ثم الاعتماد للتنفيذ.",
   "severity_overrides": {
     "aramco.proponent_approval_present": "ERROR",

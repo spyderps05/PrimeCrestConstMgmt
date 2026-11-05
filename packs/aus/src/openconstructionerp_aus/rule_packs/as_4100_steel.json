@@ -6,7 +6,7 @@
   "regulator": "Standards Australia",
   "publication_year": 2020,
   "current_revision": "AS 4100:2020",
-  "description": "Enables OCERP built-in validation rules for steel structures designed to AS 4100:2020 — steel grade selection, section classification, connection design, fire protection (FRL), corrosion protection per AS/NZS 2312, fabrication tolerances per AS/NZS 5131.",
+  "description": "Enables PrimeCrest built-in validation rules for steel structures designed to AS 4100:2020 — steel grade selection, section classification, connection design, fire protection (FRL), corrosion protection per AS/NZS 2312, fabrication tolerances per AS/NZS 5131.",
   "steel_grades": ["300", "350", "400", "450"],
   "fabrication_construction_categories": ["CC1", "CC2", "CC3", "CC4"],
   "applies_to": ["projects", "boq", "validation", "bim"],

@@ -3,18 +3,17 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-uk-jct"
+name = "primecrest-uk-jct"
 version = "0.3.0"
 description = "Partner pack for UK contracting: RICS NRM measurement and cost planning, the JCT contract suite, the Construction Act payment regime, CIS and the VAT reverse charge, CDM 2015 and the Building Safety Act 2022."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 keywords = [
-    "openconstructionerp",
-    "ocerp",
+    "primecrest",
     "partner-pack",
     "uk",
     "nrm",
@@ -38,9 +37,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+uk-jct = "openconstructionerp_uk_jct:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 uk-jct = "openconstructionerp_uk_jct:MANIFEST"
 
 [tool.setuptools]

@@ -3,16 +3,16 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-japan-jp"
+name = "primecrest-japan-jp"
 version = "0.1.0"
 description = "Pre-configured country pack for Japanese construction - Sekisan Kijun estimation standards, JASS specifications, Building Standards Act, consumption tax 10%. Japanese + English UI."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
-keywords = ["openconstructionerp", "ocerp", "partner-pack", "japan", "sekisan", "jass", "building-standards-act"]
+keywords = ["primecrest", "partner-pack", "japan", "sekisan", "jass", "building-standards-act"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
@@ -29,9 +29,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+japan-jp = "openconstructionerp_japan_jp:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 japan-jp = "openconstructionerp_japan_jp:MANIFEST"
 
 [tool.setuptools]

@@ -9,7 +9,7 @@
     "national": "2023-05-01",
     "NSW_section_J_energy": "2023-10-01"
   },
-  "description": "Enables OCERP built-in validation rules covering the National Construction Code 2022 (Volume 1 — Class 2-9 commercial, Volume 2 — Class 1 + 10 housing, Volume 3 — plumbing/PCA). Supports both Performance-Solution and Deemed-to-Satisfy compliance pathways and the Section J energy-efficiency uplift introduced in NCC 2022.",
+  "description": "Enables PrimeCrest built-in validation rules covering the National Construction Code 2022 (Volume 1 — Class 2-9 commercial, Volume 2 — Class 1 + 10 housing, Volume 3 — plumbing/PCA). Supports both Performance-Solution and Deemed-to-Satisfy compliance pathways and the Section J energy-efficiency uplift introduced in NCC 2022.",
   "volumes": {
     "vol1": "BCA Class 2 to 9 buildings (commercial, multi-residential, industrial)",
     "vol2": "BCA Class 1 and 10 buildings (housing, ancillary structures)",

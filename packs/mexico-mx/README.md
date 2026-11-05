@@ -28,7 +28,7 @@ Packs: click Rescan, find "Mexico Construction Pack", then Apply.
 To run a workspace that boots straight into it:
 
 ```bash
-OE_PACK=mexico-mx openconstructionerp serve
+OE_PACK=mexico-mx primecrest serve
 ```
 
 ## Standards referenced
@@ -65,5 +65,5 @@ are not an official index.
 
 ## License
 
-AGPL-3.0-or-later. PrimeCrest is authored and owned by
-DataDrivenConstruction.
+AGPL-3.0-or-later. © 2026 Spyder Solutions. PrimeCrest is based on OpenConstructionERP
+© Artem Boiko / DataDrivenConstruction, licensed under AGPL-3.0.

@@ -3,16 +3,16 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-india-cpwd"
+name = "primecrest-india-cpwd"
 version = "0.2.0"
 description = "Pre-configured partner pack for Indian contractors, PSUs and private developers — CPWD Specs 2019 + Works Manual 2019 + DSR 2023, IS-codes bundle (456, 800, 1893, 875, 13920), NBC 2016 + 2024 amendments, RERA 2016, GST + TDS u/s 194C + BOCW labour cess. English + Hindi UI."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
-keywords = ["openconstructionerp", "ocerp", "partner-pack", "india", "cpwd", "dsr", "is-codes", "nbc", "rera", "gst", "tds-194c", "labour-cess", "hindi"]
+keywords = ["primecrest", "partner-pack", "india", "cpwd", "dsr", "is-codes", "nbc", "rera", "gst", "tds-194c", "labour-cess", "hindi"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
@@ -29,9 +29,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+india-cpwd = "openconstructionerp_india_cpwd:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 india-cpwd = "openconstructionerp_india_cpwd:MANIFEST"
 
 [tool.setuptools]

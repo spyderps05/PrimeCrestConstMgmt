@@ -15,7 +15,7 @@
     "IS 875 Parts 1-5:1987 (Design Loads — DL/IL/WL/SL/special)",
     "SP 16 + SP 34 (RCC design aids)"
   ],
-  "description": "Enables OCERP built-in validation rules that check concrete BOQ items and structural details against IS 456:2000 plus latest amendments — grade designation (M-series), minimum cement content per exposure class, durability requirements, nominal cover, max water/cement ratio, aggregate size, workability slump, curing period, and ductile-detailing prerequisites where IS 13920 applies.",
+  "description": "Enables PrimeCrest built-in validation rules that check concrete BOQ items and structural details against IS 456:2000 plus latest amendments — grade designation (M-series), minimum cement content per exposure class, durability requirements, nominal cover, max water/cement ratio, aggregate size, workability slump, curing period, and ductile-detailing prerequisites where IS 13920 applies.",
   "description_hi": "कंक्रीट बीओक्यू मदों एवं संरचनात्मक विवरण की आईएस 456:2000 + संशोधनों के अनुसार जाँच।",
   "enables_rule_ids": [],
   "planned_not_built_rule_ids": [

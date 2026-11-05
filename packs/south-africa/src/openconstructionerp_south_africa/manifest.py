@@ -3,7 +3,7 @@
 Kept in its own module so unit tests can import the manifest without
 triggering the package ``__init__`` side-effects.
 
-This is DataDrivenConstruction's first African market pack. It is built
+This is PrimeCrest's first African market pack. It is built
 entirely from public South African standards and regulations. The idea and
 a reference implementation were contributed by Aidan Koetaan.
 The implementation here is our own.
@@ -24,7 +24,7 @@ MANIFEST = PartnerPackManifest(
         "and ASAQS building measurement, CIDB contractor grading (1 to 9), the "
         "PPPFA 80/20 and 90/10 preferential procurement scoring, National "
         "Treasury infrastructure delivery gates, nine province cost regions, "
-        "and ZAR with 15 percent VAT. The first pack in DataDrivenConstruction's "
+        "and ZAR with 15 percent VAT. The first pack in PrimeCrest's "
         "African coverage."
     ),
     default_locale="en-ZA",
@@ -125,7 +125,7 @@ MANIFEST = PartnerPackManifest(
         # international-style works.
         "endorsed_contract_suite": ["JBCC", "GCC 2015 (SAICE)", "NEC4", "FIDIC"],
         "default_contract": "GCC 2015",
-        "support_email": "info@datadrivenconstruction.io",
+        "support_email": "support@primecrest.pk",
         # Credit for the proposal and reference implementation. The shipped pack
         # is written from the public standards (see CONTRIBUTORS.md).
         "acknowledgements": [

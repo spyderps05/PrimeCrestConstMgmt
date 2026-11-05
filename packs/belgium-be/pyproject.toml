@@ -3,18 +3,17 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-belgium-be"
+name = "primecrest-belgium-be"
 version = "0.1.0"
 description = "Country pack for Belgium: bilingual NL/FR interface, EUR currency, BB/SfB classification, Belgian meetstaat practice."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 keywords = [
-    "openconstructionerp",
-    "ocerp",
+    "primecrest",
     "country-pack",
     "belgium",
     "meetstaat",
@@ -38,9 +37,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+belgium-be = "openconstructionerp_belgium_be:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 belgium-be = "openconstructionerp_belgium_be:MANIFEST"
 
 [tool.setuptools]

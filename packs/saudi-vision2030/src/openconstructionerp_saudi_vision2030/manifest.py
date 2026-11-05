@@ -3,7 +3,7 @@
 Kept in its own module so unit tests can import the manifest without
 triggering the package ``__init__`` side-effects.
 
-Saudi Vision 2030 pack — pre-configures OCERP for KSA mega-project
+Saudi Vision 2030 pack — pre-configures PrimeCrest for KSA mega-project
 contractors (NEOM, Red Sea Global, Diriyah Gate, Qiddiya, RCJY, Aramco
 EPC). Loads the full Saudi standards stack:
 
@@ -145,6 +145,6 @@ MANIFEST = PartnerPackManifest(
             "surfaced in onboarding and resolve through the marketplace "
             "import when the user opts in."
         ),
-        "support_email": "info@datadrivenconstruction.io",
+        "support_email": "support@primecrest.pk",
     },
 )

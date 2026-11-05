@@ -3,7 +3,7 @@
   "name": "EN 1090 — Execution of steel and aluminium structures",
   "standard": "EN 1090",
   "jurisdiction": "EU",
-  "description": "Enables OCERP built-in validation rules that enforce EN 1090-2 execution requirements for steel modules: execution class, welding procedure (ISO 3834), CE-marking, traceability and inspection.",
+  "description": "Enables PrimeCrest built-in validation rules that enforce EN 1090-2 execution requirements for steel modules: execution class, welding procedure (ISO 3834), CE-marking, traceability and inspection.",
   "enables_rule_ids": [],
   "planned_not_built_rule_ids": [
     "en1090.execution_class_set",

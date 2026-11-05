@@ -11,7 +11,7 @@
   "derives_from_note": "Lineage stated for the SBC 2018 edition. SBC 2024 replaced it and is mandatory since 2025-06-30; the base editions the 2024 part adopts were not confirmed, so this list is kept as the 2018 lineage and needs expert review before it is relied on.",
   "derives_from_2018_edition": ["IFC 2018", "NFPA 1", "NFPA 101"],
   "applies_to": ["projects", "boq", "validation"],
-  "description": "Enables OCERP built-in validation rules that enforce SBC 801 (Fire Code) and the Saudi Civil Defense (Difaa Madani) submittal requirements: occupancy classification, means-of-egress sizing, fire-resistance ratings, automatic sprinkler coverage, fire alarm and detection, smoke control for atria and tall buildings (Makkah / Riyadh / NEOM towers), Hajj-specific crowd-flow analysis for assembly occupancies, and the mandatory Civil Defense permit attachment in the Balady portal.",
+  "description": "Enables PrimeCrest built-in validation rules that enforce SBC 801 (Fire Code) and the Saudi Civil Defense (Difaa Madani) submittal requirements: occupancy classification, means-of-egress sizing, fire-resistance ratings, automatic sprinkler coverage, fire alarm and detection, smoke control for atria and tall buildings (Makkah / Riyadh / NEOM towers), Hajj-specific crowd-flow analysis for assembly occupancies, and the mandatory Civil Defense permit attachment in the Balady portal.",
   "description_ar": "تفعيل قواعد التحقق لإنفاذ كود الحماية من الحريق SBC 801 ومتطلبات الدفاع المدني — تصنيف الإشغال، مخارج الطوارئ، مقاومة الحريق، أنظمة الرشاشات والإنذار، وموافقة الدفاع المدني.",
   "severity_overrides": {
     "sbc801.civil_defense_approval_referenced": "ERROR"

@@ -26,7 +26,7 @@ steps:
     skippable: false
     title_i18n:
       ar: "أهلاً بكم في PrimeCrest: إصدار المملكة العربية السعودية"
-      en: "Welcome to OCERP - Saudi Edition"
+      en: "Welcome to PrimeCrest - Saudi Edition"
     body_i18n:
       ar: "تم تهيئة PrimeCrest مسبقاً لسوق المملكة العربية السعودية - رؤية 2030. تسع خطوات سريعة وستكون جاهزاً لتقدير مشاريعك وفق معايير SBC و MoMRAH و أرامكو و نيوم."
       en: "Your PrimeCrest install is pre-configured for the Kingdom of Saudi Arabia - Vision 2030. Nine quick steps and you are ready to estimate against SBC, MoMRAH, Aramco and NEOM standards."
@@ -232,8 +232,8 @@ steps:
       ar: "اللغة والاتجاه والتقويم"
       en: "Language, direction & calendar"
     body_i18n:
-      ar: "تتطلب عطاءات المملكة وتقاريرها الحكومية اللغة العربية. سيعمل OCERP في وضع من اليمين إلى اليسار مع دعم التصدير ثنائي اللغة."
-      en: "Saudi tender packs and government submittals require Arabic. OCERP will run in right-to-left mode with bilingual exports."
+      ar: "تتطلب عطاءات المملكة وتقاريرها الحكومية اللغة العربية. سيعمل PrimeCrest في وضع من اليمين إلى اليسار مع دعم التصدير ثنائي اللغة."
+      en: "Saudi tender packs and government submittals require Arabic. PrimeCrest will run in right-to-left mode with bilingual exports."
     fields:
       - key: primary_locale
         type: radio

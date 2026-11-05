@@ -3,18 +3,17 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-russia-gesn"
+name = "primecrest-russia-gesn"
 version = "0.1.0"
 description = "Country pack for the Russian market: the GESN/FER norm base and its four-part code, the resource-index method with its labour, plant and material decomposition, overhead and profit taken on payroll, the twelve-chapter summary estimate, price level and conversion indices, rouble at two decimals."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 keywords = [
-    "openconstructionerp",
-    "ocerp",
+    "primecrest",
     "country-pack",
     "russia",
     "gesn",
@@ -40,9 +39,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+russia-gesn = "openconstructionerp_russia_gesn:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 russia-gesn = "openconstructionerp_russia_gesn:MANIFEST"
 
 [tool.setuptools]

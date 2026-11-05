@@ -1,6 +1,6 @@
 # PrimeCrest — Saudi Vision 2030 Pack
 
-Partner pack pre-configuring [PrimeCrest](https://github.com/DataDrivenConstruction/openconstructionerp)
+Partner pack pre-configuring [PrimeCrest](https://github.com/spyderps05/PrimeCrestConstMgmt)
 for Saudi Arabian mega-project contractors — NEOM, Red Sea Global,
 Diriyah Gate, Qiddiya, PIF giga-projects, Saudi Aramco EPC, RCJY,
 MoMRAH municipal works.
@@ -11,8 +11,8 @@ MoMRAH municipal works.
 
 ## What this pack does
 
-When installed alongside the OCERP core, this pack registers via the
-`openconstructionerp.partner_packs` entry-point and the host application:
+When installed alongside the PrimeCrest core, this pack registers via the
+`primecrest.partner_packs` entry-point (and the legacy `openconstructionerp.partner_packs` group) and the host application:
 
 - **Switches the default locale to `ar` (Arabic, Modern Standard Arabic)** with
   RTL layout. Falls back to `en` for untranslated keys.
@@ -44,7 +44,7 @@ When installed alongside the OCERP core, this pack registers via the
   localisation (locale + Hijri calendar + bilingual exports + IKTVA) → review.
 
 The pack ships **no** new validation rule classes (Shape A) — it only switches
-on rules already present in the OCERP core. No modules are hidden; the full
+on rules already present in the PrimeCrest core. No modules are hidden; the full
 sidebar remains available.
 
 ## Standards coverage
@@ -73,22 +73,22 @@ editions the 2024 parts adopt were not confirmed when the pack moved to SBC
 ## Install
 
 ```bash
-pip install openconstructionerp-saudi-vision2030
-# then restart the OCERP backend — the pack is auto-discovered.
+pip install primecrest-saudi-vision2030
+# then restart the PrimeCrest backend — the pack is auto-discovered.
 ```
 
-To deactivate, simply `pip uninstall openconstructionerp-saudi-vision2030`
+To deactivate, simply `pip uninstall primecrest-saudi-vision2030`
 and restart.
 
 To run alongside other partner packs and explicitly select Saudi:
 
 ```bash
-OE_PARTNER_PACK=saudi-vision2030 openconstructionerp serve
+OE_PARTNER_PACK=saudi-vision2030 primecrest serve
 ```
 
 ## License
 
-AGPL-3.0-or-later, same as the OCERP core. Standards names (SBC, MoMRAH,
+AGPL-3.0-or-later, same as the PrimeCrest core. Standards names (SBC, MoMRAH,
 Balady, Saudi Aramco, SAES, SAMSS, NEOM, Nitaqat, IKTVA, Saudi Green
 Initiative) are referenced for compatibility identification only — they
 remain the trademarks of their respective Saudi authorities. The pack

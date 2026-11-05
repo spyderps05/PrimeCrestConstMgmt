@@ -4,7 +4,7 @@
   "standard": "29 CFR Part 1926",
   "jurisdiction": "US",
   "edition": "Current as of 2024 (continuously updated by OSHA rulemaking)",
-  "description": "Enables OCERP built-in validation rules that check project HSE plans, daily reports, and tender packages for OSHA 29 CFR 1926 mandatory provisions: OSHA 10/30-hour cards, Site-Specific Safety Plan (SSSP), Subpart C General Safety, Subpart E PPE, Subpart M Fall Protection, Subpart P Excavations, Subpart Q Concrete & Masonry, Subpart R Steel Erection, Subpart S Underground Construction, Subpart X Stairways & Ladders. Several states (CA Cal/OSHA, MI MIOSHA, WA DOSH, etc.) operate their own approved plans — these rules flag where state plan deltas may apply.",
+  "description": "Enables PrimeCrest built-in validation rules that check project HSE plans, daily reports, and tender packages for OSHA 29 CFR 1926 mandatory provisions: OSHA 10/30-hour cards, Site-Specific Safety Plan (SSSP), Subpart C General Safety, Subpart E PPE, Subpart M Fall Protection, Subpart P Excavations, Subpart Q Concrete & Masonry, Subpart R Steel Erection, Subpart S Underground Construction, Subpart X Stairways & Ladders. Several states (CA Cal/OSHA, MI MIOSHA, WA DOSH, etc.) operate their own approved plans — these rules flag where state plan deltas may apply.",
   "issuer": "U.S. Department of Labor — Occupational Safety and Health Administration (OSHA)",
   "key_subparts": {
     "Subpart C": "1926.20-1926.35 General Safety & Health Provisions",

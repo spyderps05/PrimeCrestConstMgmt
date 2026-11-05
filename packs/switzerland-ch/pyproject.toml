@@ -3,18 +3,17 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-switzerland-ch"
+name = "primecrest-switzerland-ch"
 version = "0.1.0"
 description = "Country pack for Swiss construction estimating - SIA 451 cost planning, BKP (Baukostenplan) classification, SIA 118 contract conditions, CHF with 8.1% MWST/TVA. Trilingual DE/FR/IT."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 keywords = [
-    "openconstructionerp",
-    "ocerp",
+    "primecrest",
     "country-pack",
     "switzerland",
     "sia",
@@ -42,9 +41,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+switzerland-ch = "openconstructionerp_switzerland_ch:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 switzerland-ch = "openconstructionerp_switzerland_ch:MANIFEST"
 
 [tool.setuptools]

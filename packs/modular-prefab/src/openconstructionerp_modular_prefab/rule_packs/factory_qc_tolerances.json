@@ -3,7 +3,7 @@
   "name": "Factory QC — dimensional & geometric tolerances",
   "standard": "ICC/MBI 1200-2021 / EN 13670 / ISO 22156 / AS 5104",
   "jurisdiction": "INTL",
-  "description": "Enables OCERP built-in validation rules that enforce the tighter dimensional and geometric tolerances required for off-site / modular construction. Module-level checks (±3 mm typical), assembly-level (±10 mm at building face), structural plumb (< L/1000), squareness (diagonal-diff < 5 mm per 3 m), opening dimensions (±2 mm for joinery), connection bolt-hole tolerances per EN 1090-2 (±2 mm). References ICC/MBI 1200 Off-site construction — Manufactured commercial modules (US), EN 13670 Execution of concrete structures (when modules contain structural concrete), and AS 5104 reliability targets.",
+  "description": "Enables PrimeCrest built-in validation rules that enforce the tighter dimensional and geometric tolerances required for off-site / modular construction. Module-level checks (±3 mm typical), assembly-level (±10 mm at building face), structural plumb (< L/1000), squareness (diagonal-diff < 5 mm per 3 m), opening dimensions (±2 mm for joinery), connection bolt-hole tolerances per EN 1090-2 (±2 mm). References ICC/MBI 1200 Off-site construction — Manufactured commercial modules (US), EN 13670 Execution of concrete structures (when modules contain structural concrete), and AS 5104 reliability targets.",
   "enables_rule_ids": [],
   "planned_not_built_rule_ids": [
     "tol.module_length_within_3mm",

@@ -26,7 +26,7 @@ steps:
 
   - id: classification_standard
     title: "Cost classification (MasterFormat + UniFormat)"
-    body: "OCERP will structure your BOQs and cost reports against the chosen CSI standards. MasterFormat 2020 (35 active Divisions, spec-driven) is the default; UniFormat II (ASTM E1557, elemental) is recommended for conceptual / early-design estimates."
+    body: "PrimeCrest will structure your BOQs and cost reports against the chosen CSI standards. MasterFormat 2020 (35 active Divisions, spec-driven) is the default; UniFormat II (ASTM E1557, elemental) is recommended for conceptual / early-design estimates."
     fields:
       - { key: primary_classification, label: "Primary classification", type: radio, required: true, default: "MasterFormat 2020 (35 active Divisions)",
           options: ["MasterFormat 2020 (35 active Divisions)", "UniFormat II (elemental, ASTM E1557)", "Both (choose per project)"] }
@@ -65,11 +65,11 @@ steps:
       - { key: excavation_above_5ft,      label: "Enforce Subpart P - excavation protection above 5 ft", type: checkbox, default: true }
       - { key: silica_table_1,            label: "Reference Table 1 silica exposure controls in concrete & masonry scopes", type: checkbox, default: true }
       - { key: state_osha_plan,           label: "Operates in a State OSHA plan jurisdiction (CA Cal/OSHA, MI MIOSHA, WA DOSH, etc.)", type: checkbox, default: false,
-          help: "When checked, OCERP flags rules that may differ from federal OSHA - required addenda are added to the SSSP." }
+          help: "When checked, PrimeCrest flags rules that may differ from federal OSHA - required addenda are added to the SSSP." }
 
   - id: building_code
     title: "Building code (IBC) edition"
-    body: "Pick the IBC edition adopted by your primary jurisdiction. Many states amend the IBC - OCERP supports edition overrides per project. CA, FL, NY, MA have material amendments."
+    body: "Pick the IBC edition adopted by your primary jurisdiction. Many states amend the IBC - PrimeCrest supports edition overrides per project. CA, FL, NY, MA have material amendments."
     fields:
       - { key: ibc_edition, label: "Default IBC edition", type: select, required: true, default: "IBC 2021",
           options: ["IBC 2024 (where adopted)", "IBC 2021", "IBC 2018", "IBC 2015 (NY, MA still on 2015-based)"] }

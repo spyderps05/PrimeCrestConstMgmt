@@ -76,6 +76,6 @@ MANIFEST = PartnerPackManifest(
             "on 2026-10-19. The pack has not yet been reviewed by an Egyptian quantity surveyor or tax "
             "adviser; demo rates are illustrative and not a price list."
         ),
-        "support_email": "info@datadrivenconstruction.io",
+        "support_email": "support@primecrest.pk",
     },
 )

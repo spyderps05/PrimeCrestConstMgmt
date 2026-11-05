@@ -7,7 +7,7 @@
   "regulator": "Vision 2030 Realisation Programmes (oversight: Council of Economic and Development Affairs / CEDA)",
   "publication_year": 2030,
   "applies_to": ["projects", "boq", "validation", "tendering", "reporting"],
-  "description": "Enables OCERP built-in validation rules that report each project against Vision 2030 KPIs that procurement teams must answer in public tenders: IKTVA / Local Content score, Saudi Green Initiative carbon-budget alignment, energy intensity target (per Saudi Energy Efficiency Programme), water intensity target (50% non-potable substitution for new developments), waste-diversion-from-landfill (Vision 2030 target: 60% by 2035), and Saudi-supplier preference. Surfaces a Vision 2030 score chip on the project header.",
+  "description": "Enables PrimeCrest built-in validation rules that report each project against Vision 2030 KPIs that procurement teams must answer in public tenders: IKTVA / Local Content score, Saudi Green Initiative carbon-budget alignment, energy intensity target (per Saudi Energy Efficiency Programme), water intensity target (50% non-potable substitution for new developments), waste-diversion-from-landfill (Vision 2030 target: 60% by 2035), and Saudi-supplier preference. Surfaces a Vision 2030 score chip on the project header.",
   "description_ar": "تفعيل قواعد التحقق لقياس المشاريع وفق مؤشرات رؤية 2030 — المحتوى المحلي IKTVA، المبادرة السعودية الخضراء، كثافة الطاقة والمياه، وتحويل النفايات.",
   "severity_overrides": {
     "vision2030.local_content_score_disclosed": "ERROR"

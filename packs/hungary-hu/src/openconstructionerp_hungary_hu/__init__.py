@@ -6,7 +6,7 @@ This package exports a module-level ``MANIFEST`` instance of
     [project.entry-points."openconstructionerp.partner_packs"]
     hungary-hu = "openconstructionerp_hungary_hu:MANIFEST"
 
-The OCERP core discovers this entry point at boot, validates the
+The PrimeCrest core discovers this entry point at boot, validates the
 manifest, and applies the pack overrides (branding, locale, currency,
 validation rule sets, onboarding script).
 """

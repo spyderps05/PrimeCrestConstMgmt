@@ -3,17 +3,17 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-mexico-mx"
+name = "primecrest-mexico-mx"
 version = "0.1.0"
 description = "Pre-configured partner pack for Mexican construction: APU unit prices under LOPSRM, IVA 16/8 percent and retenciones, CFDI 4.0, INFONAVIT/FOVISSSTE/CONAVI social housing, IMSS and NOM-031-STPS safety, MXN."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 keywords = [
-    "openconstructionerp", "ocerp", "partner-pack",
+    "primecrest", "partner-pack",
     "mexico", "latam", "apu", "precios-unitarios", "lopsrm",
     "iva", "cfdi", "infonavit", "imss", "mxn",
 ]
@@ -32,14 +32,20 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 # Registered under both the canonical Packs umbrella group and the legacy
 # partner_packs alias so older and newer cores both discover it.
 [project.entry-points."openconstructionerp.packs"]
 mexico-mx = "openconstructionerp_mexico_mx:MANIFEST"
 
+[project.entry-points."primecrest.packs"]
+mexico-mx = "openconstructionerp_mexico_mx:MANIFEST"
+
 [project.entry-points."openconstructionerp.partner_packs"]
+mexico-mx = "openconstructionerp_mexico_mx:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 mexico-mx = "openconstructionerp_mexico_mx:MANIFEST"
 
 [tool.setuptools]

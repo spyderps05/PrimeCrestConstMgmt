@@ -6,7 +6,7 @@
   "regulator": "Standards Australia",
   "publication_year": 1997,
   "current_revision": "AS 4000-1997 (Reconfirmed 2018) / AS 4902-2000 (Reconfirmed 2017)",
-  "description": "Enables OCERP built-in validation rules that check tender packs and contract documents against AS 4000-1997 General Conditions (construct-only, 47 clauses) and AS 4902-2000 General Conditions for Design and Construct, including Annexure Part A (principal-completed) and Annexure Part B (contractor-completed amendments). Covers Master Builders amendments where applicable.",
+  "description": "Enables PrimeCrest built-in validation rules that check tender packs and contract documents against AS 4000-1997 General Conditions (construct-only, 47 clauses) and AS 4902-2000 General Conditions for Design and Construct, including Annexure Part A (principal-completed) and Annexure Part B (contractor-completed amendments). Covers Master Builders amendments where applicable.",
   "contract_variants": {
     "AS 4000-1997": "General Conditions of Contract (construct-only)",
     "AS 4902-2000": "General Conditions for Design and Construct (D&C)",

@@ -3,18 +3,17 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-retail-grocery-dach"
+name = "primecrest-retail-grocery-dach"
 version = "0.1.0"
 description = "Industry pack for German-speaking discount food-retail new-builds - three priced DIN 276 example projects (Heilbronn, Heidelberg, Karlsruhe) with full Leistungsverzeichnis, GAEB DA XML 3.3, LV quality and BKI benchmarks."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "DataDrivenConstruction", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 keywords = [
-    "openconstructionerp",
-    "ocerp",
+    "primecrest",
     "pack",
     "industry",
     "retail",
@@ -41,10 +40,13 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://datadrivenconstruction.io"
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Homepage = "https://primecrest.pk"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.packs"]
+retail-grocery-dach = "openconstructionerp_retail_grocery_dach:MANIFEST"
+
+[project.entry-points."primecrest.packs"]
 retail-grocery-dach = "openconstructionerp_retail_grocery_dach:MANIFEST"
 
 [tool.setuptools]

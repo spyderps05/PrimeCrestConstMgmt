@@ -1,6 +1,6 @@
 # PrimeCrest Canada Regional Pack
 
-Regional pack pre-configuring [PrimeCrest](https://github.com/DataDrivenConstruction/openconstructionerp)
+Regional pack pre-configuring [PrimeCrest](https://github.com/spyderps05/PrimeCrestConstMgmt)
 for Canadian construction companies.
 
 > **Pré-configuré pour les entreprises canadiennes de construction —
@@ -8,8 +8,8 @@ for Canadian construction companies.
 
 ## What this pack does
 
-When installed alongside the OCERP core, this pack registers via the
-`openconstructionerp.partner_packs` entry-point and the host application:
+When installed alongside the PrimeCrest core, this pack registers via the
+`primecrest.partner_packs` entry-point (and the legacy `openconstructionerp.partner_packs` group) and the host application:
 
 - Switches the default locale to **fr-CA** (Canadian French, Québec
   terminology), with **en-CA** available as a secondary locale. Falls back
@@ -35,19 +35,19 @@ When installed alongside the OCERP core, this pack registers via the
   team invites, bilingual EN-CA/FR-CA mode, summary).
 
 The pack ships **no** new validation rule classes (Shape A) — it only
-switches on rules already present in the OCERP core. No modules are hidden;
+switches on rules already present in the PrimeCrest core. No modules are hidden;
 the full sidebar remains available.
 
 ## Install
 
 ```bash
-pip install openconstructionerp-batimatech-ca
-# then restart the OCERP backend — the pack is auto-discovered.
+pip install primecrest-batimatech-ca
+# then restart the PrimeCrest backend — the pack is auto-discovered.
 ```
 
-To deactivate, simply `pip uninstall openconstructionerp-batimatech-ca`
+To deactivate, simply `pip uninstall primecrest-batimatech-ca`
 and restart.
 
 ## License
 
-AGPL-3.0-or-later, same as the OCERP core. No partner or third-party branding is bundled.
+AGPL-3.0-or-later, same as the PrimeCrest core. No partner or third-party branding is bundled.

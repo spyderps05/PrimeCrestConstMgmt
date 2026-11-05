@@ -97,7 +97,7 @@ Packs: click Rescan, find "Texas Construction Pack", then Activate pack.
 To run a workspace that boots straight into it:
 
 ```bash
-OE_PACK=us-texas openconstructionerp serve
+OE_PACK=us-texas primecrest serve
 ```
 
 ## What this pack is not

@@ -5,7 +5,7 @@ contractors** in the DACH region.
 
 ## What it does
 
-When installed alongside `openconstructionerp`, this pack:
+When installed alongside PrimeCrest, this pack:
 
 - Sets German (`de`) as the default locale, with **80+ formwork-trade
   term overrides** (Schalung, Schaltafel, Schalungsanker, Frischbetondruck,
@@ -48,11 +48,11 @@ When installed alongside `openconstructionerp`, this pack:
 ## Install
 
 ```bash
-pip install openconstructionerp-doker-formwork
+pip install primecrest-doker-formwork
 ```
 
 The pack is discovered automatically via the
-`openconstructionerp.partner_packs` entry-point group. To force-select
+`primecrest.partner_packs` entry-point (and the legacy `openconstructionerp.partner_packs` group) group. To force-select
 it when multiple packs are installed:
 
 ```bash

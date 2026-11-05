@@ -19,14 +19,14 @@ Pre-configures PrimeCrest for **Australian** general contractors.
 
 ## New Zealand?
 
-Use the separate `openconstructionerp-nzs` pack — NZD (15% GST), NZBC, NZS 3604:2011, NZS 3910:2023, MBIE acceptable solutions, Rawlinsons NZ.
+Use the separate `primecrest-nzs` pack — NZD (15% GST), NZBC, NZS 3604:2011, NZS 3910:2023, MBIE acceptable solutions, Rawlinsons NZ.
 
-The legacy `openconstructionerp-aus-nzs` pack is **deprecated** in favour of these two single-jurisdiction packs.
+The legacy `primecrest-aus-nzs` pack is **deprecated** in favour of these two single-jurisdiction packs.
 
 ## Install
 
 ```bash
-pip install openconstructionerp-aus
+pip install primecrest-aus
 export OE_PARTNER_PACK=aus
 ```
 

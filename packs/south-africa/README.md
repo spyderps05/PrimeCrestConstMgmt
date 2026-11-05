@@ -1,6 +1,6 @@
 # South Africa Construction Pack
 
-DataDrivenConstruction's first African market pack. It pre-configures
+PrimeCrest's first African market pack. It pre-configures
 PrimeCrest for South African construction with the local measurement
 standards, contractor grading, procurement framework, currency and tax.
 
@@ -25,7 +25,7 @@ Partner Packs: click Rescan, find "South Africa Construction Pack", then Apply.
 To run a workspace that boots straight into it:
 
 ```bash
-OE_PACK=south-africa openconstructionerp serve
+OE_PACK=south-africa primecrest serve
 ```
 
 ## Standards referenced
@@ -58,5 +58,5 @@ public standards listed above. See CONTRIBUTORS.md.
 
 ## License
 
-AGPL-3.0-or-later. PrimeCrest is authored and owned by
-DataDrivenConstruction.
+AGPL-3.0-or-later. © 2026 Spyder Solutions. PrimeCrest is based on OpenConstructionERP
+© Artem Boiko / DataDrivenConstruction, licensed under AGPL-3.0.

@@ -3,17 +3,17 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-south-africa"
+name = "primecrest-south-africa"
 version = "0.1.0"
 description = "Pre-configured partner pack for South African construction: SANS 1200, ASAQS, CIDB grading, PPPFA 80/20 and 90/10, FIDPM infrastructure gates, ZAR and 15 percent VAT."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 keywords = [
-    "openconstructionerp", "ocerp", "partner-pack",
+    "primecrest", "partner-pack",
     "south-africa", "africa", "sans1200", "asaqs", "cidb",
     "pppfa", "fidpm", "zar", "vat",
 ]
@@ -32,14 +32,20 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 # Registered under both the canonical Packs umbrella group and the legacy
 # partner_packs alias so older and newer cores both discover it.
 [project.entry-points."openconstructionerp.packs"]
 south-africa = "openconstructionerp_south_africa:MANIFEST"
 
+[project.entry-points."primecrest.packs"]
+south-africa = "openconstructionerp_south_africa:MANIFEST"
+
 [project.entry-points."openconstructionerp.partner_packs"]
+south-africa = "openconstructionerp_south_africa:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 south-africa = "openconstructionerp_south_africa:MANIFEST"
 
 [tool.setuptools]

@@ -254,9 +254,9 @@ steps:
       fr-CA: "Connectez votre équipe"
       en-CA: "Connect your team"
     body_i18n:
-      en: "Add the email addresses of estimators, project managers, site superintendents and field staff who will collaborate on this OCERP instance. You can do this later from Settings → Team."
-      fr-CA: "Ajoutez les courriels des estimateurs, gestionnaires de projet, surintendants et personnel de chantier qui collaboreront sur cette instance OCERP. Vous pourrez le faire plus tard via Paramètres → Équipe."
-      en-CA: "Add the email addresses of estimators, project managers, site superintendents and field staff who will collaborate on this OCERP instance. You can do this later from Settings → Team."
+      en: "Add the email addresses of estimators, project managers, site superintendents and field staff who will collaborate on this PrimeCrest instance. You can do this later from Settings → Team."
+      fr-CA: "Ajoutez les courriels des estimateurs, gestionnaires de projet, surintendants et personnel de chantier qui collaboreront sur cette instance PrimeCrest. Vous pourrez le faire plus tard via Paramètres → Équipe."
+      en-CA: "Add the email addresses of estimators, project managers, site superintendents and field staff who will collaborate on this PrimeCrest instance. You can do this later from Settings → Team."
     fields:
       - key: invites
         type: email_list
@@ -292,6 +292,6 @@ steps:
       fr-CA: "C'est prêt"
       en-CA: "All set"
     body_i18n:
-      en: "Your Canadian-edition OCERP is configured. You can re-run this onboarding any time from Settings → Onboarding. Next: create your first project from the Dashboard."
-      fr-CA: "Votre OCERP édition canadienne est configuré. Vous pouvez relancer cette intégration à tout moment depuis Paramètres → Intégration. Étape suivante : créez votre premier projet depuis le Tableau de bord."
-      en-CA: "Your Canadian-edition OCERP is configured. You can re-run this onboarding any time from Settings → Onboarding. Next: create your first project from the Dashboard."
+      en: "Your Canadian-edition PrimeCrest is configured. You can re-run this onboarding any time from Settings → Onboarding. Next: create your first project from the Dashboard."
+      fr-CA: "Votre PrimeCrest édition canadienne est configuré. Vous pouvez relancer cette intégration à tout moment depuis Paramètres → Intégration. Étape suivante : créez votre premier projet depuis le Tableau de bord."
+      en-CA: "Your Canadian-edition PrimeCrest is configured. You can re-run this onboarding any time from Settings → Onboarding. Next: create your first project from the Dashboard."

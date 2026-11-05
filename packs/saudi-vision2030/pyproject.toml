@@ -3,16 +3,16 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-saudi-vision2030"
+name = "primecrest-saudi-vision2030"
 version = "0.3.0"
 description = "Pre-configured partner pack for Saudi Arabian mega-projects — full SBC 2024 stack (per-Part), MoMRAH & Balady, Saudi Aramco (SAES/SAMSS/9COM/PIM), NEOM net-zero standards, Saudization (Nitaqat), ISO 19650 BIM, Vision 2030 KPIs. Bilingual Arabic (RTL) + English."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
-keywords = ["openconstructionerp", "ocerp", "partner-pack", "saudi-arabia", "vision-2030", "neom", "sbc", "aramco"]
+keywords = ["primecrest", "partner-pack", "saudi-arabia", "vision-2030", "neom", "sbc", "aramco"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
@@ -29,9 +29,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+saudi-vision2030 = "openconstructionerp_saudi_vision2030:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 saudi-vision2030 = "openconstructionerp_saudi_vision2030:MANIFEST"
 
 [tool.setuptools]

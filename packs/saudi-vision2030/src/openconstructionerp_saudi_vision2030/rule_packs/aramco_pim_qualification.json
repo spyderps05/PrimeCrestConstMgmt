@@ -7,7 +7,7 @@
   "regulator": "Saudi Aramco — Contracting Department + Inspection Department",
   "publication_year": 2024,
   "applies_to": ["projects", "tendering", "subcontractors", "validation"],
-  "description": "Enables OCERP built-in validation rules that gate every tender response to an Aramco package on the proper PIM / Schedule Q pre-qualification: contractor and major subcontractors must be on the Aramco Approved Vendor List (AVL) for the relevant work category (civil / mechanical / electrical / piping / coatings / instrumentation), Schedule Q safety-management questionnaire completed within validity window, IKTVA local-content score disclosed and meeting the package minimum, Nitaqat band Green or above, and prior-project performance evaluation references attached.",
+  "description": "Enables PrimeCrest built-in validation rules that gate every tender response to an Aramco package on the proper PIM / Schedule Q pre-qualification: contractor and major subcontractors must be on the Aramco Approved Vendor List (AVL) for the relevant work category (civil / mechanical / electrical / piping / coatings / instrumentation), Schedule Q safety-management questionnaire completed within validity window, IKTVA local-content score disclosed and meeting the package minimum, Nitaqat band Green or above, and prior-project performance evaluation references attached.",
   "description_ar": "تفعيل قواعد التحقق للتأهيل المسبق للموردين في أرامكو — قائمة الموردين المعتمدين AVL، استبيان السلامة Schedule Q، درجة IKTVA، ونطاق نطاقات.",
   "severity_overrides": {
     "aramco.avl_membership_for_category": "ERROR",

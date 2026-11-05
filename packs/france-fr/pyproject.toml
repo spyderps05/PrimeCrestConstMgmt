@@ -3,16 +3,16 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-france-fr"
+name = "primecrest-france-fr"
 version = "0.1.0"
 description = "Pre-configured country pack for French construction - DPGF decomposition, NF DTU standards, Code des marches publics, RE 2020, TVA 20%. French + English UI."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
-keywords = ["openconstructionerp", "ocerp", "partner-pack", "france", "dpgf", "cctp", "nf-dtu", "re2020", "tva"]
+keywords = ["primecrest", "partner-pack", "france", "dpgf", "cctp", "nf-dtu", "re2020", "tva"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
@@ -29,9 +29,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+france-fr = "openconstructionerp_france_fr:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 france-fr = "openconstructionerp_france_fr:MANIFEST"
 
 [tool.setuptools]

@@ -1,4 +1,4 @@
-# OCERP x Mexico partner pack - first-login onboarding script.
+# PrimeCrest x Mexico partner pack - first-login onboarding script.
 #
 # Replaces the default OnboardingWizard when this partner pack is active.
 # Each step is rendered by the frontend OnboardingWizard component.

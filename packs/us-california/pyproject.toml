@@ -3,18 +3,17 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-us-california"
+name = "primecrest-us-california"
 version = "0.1.0"
 description = "California state pack for PrimeCrest: district sales tax and the materials versus fixtures split, the state prevailing wage regime, the public and private retention caps, and the statutory payment and mechanics lien clocks."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 keywords = [
-    "openconstructionerp",
-    "ocerp",
+    "primecrest",
     "partner-pack",
     "usa",
     "california",
@@ -43,9 +42,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+us-california = "openconstructionerp_us_california:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 us-california = "openconstructionerp_us_california:MANIFEST"
 
 [tool.setuptools]

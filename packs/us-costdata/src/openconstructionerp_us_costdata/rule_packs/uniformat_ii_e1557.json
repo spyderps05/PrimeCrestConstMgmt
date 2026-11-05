@@ -4,7 +4,7 @@
   "standard": "ASTM E1557-09 (UniFormat II)",
   "jurisdiction": "US/INTL",
   "edition": "E1557-09(2020) — reapproved 2020",
-  "description": "Enables OCERP built-in validation rules that enforce the ASTM E1557 UniFormat II elemental hierarchy used for early-stage conceptual estimating (A Substructure → G Building Sitework, three levels deep: Major Group / Group / Individual Element). Complements MasterFormat — UniFormat for early design phases, MasterFormat for spec-driven detailed estimating.",
+  "description": "Enables PrimeCrest built-in validation rules that enforce the ASTM E1557 UniFormat II elemental hierarchy used for early-stage conceptual estimating (A Substructure → G Building Sitework, three levels deep: Major Group / Group / Individual Element). Complements MasterFormat — UniFormat for early design phases, MasterFormat for spec-driven detailed estimating.",
   "issuer": "ASTM International (Subcommittee E06.81)",
   "covers_elements": "A10 Foundations, A20 Basement Construction, B10 Superstructure, B20 Exterior Enclosure, B30 Roofing, C10 Interior Construction, C20 Stairs, C30 Interior Finishes, D10 Conveying, D20 Plumbing, D30 HVAC, D40 Fire Protection, D50 Electrical, E10 Equipment, E20 Furnishings, F10 Special Construction, F20 Selective Building Demolition, G10 Site Preparation, G20 Site Improvements, G30 Site Mechanical Utilities, G40 Site Electrical Utilities, G50 Other Site Construction",
   "enables_rule_ids": [],

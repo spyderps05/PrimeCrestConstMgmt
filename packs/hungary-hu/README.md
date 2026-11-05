@@ -59,7 +59,7 @@ Packs: click Rescan, find "Hungary Construction Pack", then Apply.
 To run a workspace that boots straight into it:
 
 ```bash
-OE_PACK=hungary-hu openconstructionerp serve
+OE_PACK=hungary-hu primecrest serve
 ```
 
 ## The building item order

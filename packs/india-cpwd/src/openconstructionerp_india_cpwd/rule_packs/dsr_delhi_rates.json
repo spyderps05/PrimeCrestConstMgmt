@@ -27,7 +27,7 @@
     "Horticulture & Landscape",
     "Demolition & Dismantling"
   ],
-  "description": "Enables OCERP built-in validation rules that align BOQ unit rates and item references with the CPWD Delhi Schedule of Rates 2023, apply the current quarterly Cost Index, validate item-code format (chapter.section.item), unit consistency (cum / sqm / Rmt / Quintal / Kg / each / lump-sum), and require labour+material+P&T breakup for extra-item analysis citing the Yardstick and Pamphlet of Rates. Flags positions deviating beyond the acceptable variance band.",
+  "description": "Enables PrimeCrest built-in validation rules that align BOQ unit rates and item references with the CPWD Delhi Schedule of Rates 2023, apply the current quarterly Cost Index, validate item-code format (chapter.section.item), unit consistency (cum / sqm / Rmt / Quintal / Kg / each / lump-sum), and require labour+material+P&T breakup for extra-item analysis citing the Yardstick and Pamphlet of Rates. Flags positions deviating beyond the acceptable variance band.",
   "description_hi": "बीओक्यू दरों को डीएसआर 2023 के अनुसार संरेखित करना, वर्तमान लागत सूचकांक लागू करना और स्वीकार्य भिन्नता बैंड से बाहर की मदों को फ़्लैग करना।",
   "enables_rule_ids": [],
   "planned_not_built_rule_ids": [

@@ -3,16 +3,16 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-sweden-se"
+name = "primecrest-sweden-se"
 version = "0.1.0"
 description = "Country pack for Swedish construction estimating - AMA specification system, AB 04/ABT 06 contract conditions, BSAB classification, SEK with 25% moms. Swedish + English UI."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
-keywords = ["openconstructionerp", "ocerp", "partner-pack", "sweden", "ama", "bsab", "ab04"]
+keywords = ["primecrest", "partner-pack", "sweden", "ama", "bsab", "ab04"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
@@ -29,9 +29,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+sweden-se = "openconstructionerp_sweden_se:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 sweden-se = "openconstructionerp_sweden_se:MANIFEST"
 
 [tool.setuptools]

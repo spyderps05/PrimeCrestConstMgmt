@@ -104,7 +104,7 @@ Packs: click Rescan, find "California Construction Pack", then Activate pack.
 To run a workspace that boots straight into it:
 
 ```bash
-OE_PACK=us-california openconstructionerp serve
+OE_PACK=us-california primecrest serve
 ```
 
 ## What this pack is not

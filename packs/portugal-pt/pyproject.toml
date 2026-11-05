@@ -3,18 +3,17 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-portugal-pt"
+name = "primecrest-portugal-pt"
 version = "0.1.0"
 description = "Country pack for Portugal: EUR currency, ProNIC classification references, Portuguese construction estimating practice."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 keywords = [
-    "openconstructionerp",
-    "ocerp",
+    "primecrest",
     "country-pack",
     "portugal",
     "pronic",
@@ -36,9 +35,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+portugal-pt = "openconstructionerp_portugal_pt:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 portugal-pt = "openconstructionerp_portugal_pt:MANIFEST"
 
 [tool.setuptools]

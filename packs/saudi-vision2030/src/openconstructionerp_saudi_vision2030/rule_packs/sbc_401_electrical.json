@@ -11,7 +11,7 @@
   "derives_from_note": "Lineage stated for the SBC 2018 edition. SBC 2024 replaced it and is mandatory since 2025-06-30; the base editions the 2024 part adopts were not confirmed, so this list is kept as the 2018 lineage and needs expert review before it is relied on.",
   "derives_from_2018_edition": ["NEC NFPA 70-2017"],
   "applies_to": ["projects", "boq", "validation"],
-  "description": "Enables OCERP built-in validation rules that enforce SBC 401 (Electrical Code) — KSA-specific 230 V single-phase / 400 V three-phase 60 Hz supply, SEC service-connection rules, fault-level coordination, earthing for high-ground-temperature soils, lightning protection for tall NEOM/Riyadh structures, EV charging provision (per Vision 2030 mobility targets), and SASO-certified equipment.",
+  "description": "Enables PrimeCrest built-in validation rules that enforce SBC 401 (Electrical Code) — KSA-specific 230 V single-phase / 400 V three-phase 60 Hz supply, SEC service-connection rules, fault-level coordination, earthing for high-ground-temperature soils, lightning protection for tall NEOM/Riyadh structures, EV charging provision (per Vision 2030 mobility targets), and SASO-certified equipment.",
   "description_ar": "تفعيل قواعد التحقق لإنفاذ الكود الكهربائي SBC 401 — متطلبات شركة الكهرباء السعودية، تنسيق مستويات العطل، التأريض، الحماية من الصواعق، وشحن المركبات الكهربائية.",
   "severity_overrides": {},
   "enables_rule_ids": [],

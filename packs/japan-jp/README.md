@@ -64,10 +64,10 @@ pack.
 To run a workspace that boots straight into it:
 
 ```bash
-OE_PACK=japan-jp openconstructionerp serve
+OE_PACK=japan-jp primecrest serve
 ```
 
 ## License
 
-AGPL-3.0-or-later. PrimeCrest is authored and owned by
-DataDrivenConstruction.
+AGPL-3.0-or-later. © 2026 Spyder Solutions. PrimeCrest is based on OpenConstructionERP
+© Artem Boiko / DataDrivenConstruction, licensed under AGPL-3.0.

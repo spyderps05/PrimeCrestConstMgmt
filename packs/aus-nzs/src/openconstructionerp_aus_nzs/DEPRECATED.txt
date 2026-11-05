@@ -1,4 +1,4 @@
-DEPRECATED — openconstructionerp-aus-nzs
+DEPRECATED — primecrest-aus-nzs
 ==========================================
 
 This combined AU + NZ pack is no longer maintained. AU and NZ use
@@ -8,9 +8,9 @@ cannot reasonably share a single PartnerPackManifest default.
 
 Migrate to one of:
 
-  pip install openconstructionerp-aus   # Australia
-  pip install openconstructionerp-nzs   # New Zealand
+  pip install primecrest-aus   # Australia
+  pip install primecrest-nzs   # New Zealand
 
-The aus-nzs shim re-exports the openconstructionerp-aus manifest
+The aus-nzs shim re-exports the primecrest-aus manifest
 unchanged for backward compatibility. It will be removed in a future
 major release.

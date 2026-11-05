@@ -3,17 +3,17 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-aus"
+name = "primecrest-aus"
 version = "0.1.0"
 description = "Pre-configured partner pack for Australian general contractors — NCC 2022, AS 1684 (Parts 1-4), AS 3600, AS 4100, AS 4000-1997 / AS 4902-2000, Rawlinsons 2024."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 keywords = [
-    "openconstructionerp", "ocerp", "partner-pack",
+    "primecrest", "partner-pack",
     "australia", "ncc", "as1684", "as3600", "as4100",
     "as4000", "as4902", "rawlinsons", "gst",
 ]
@@ -32,9 +32,12 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+aus = "openconstructionerp_aus:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 aus = "openconstructionerp_aus:MANIFEST"
 
 [tool.setuptools]

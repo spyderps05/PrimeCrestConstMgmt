@@ -6,7 +6,7 @@ This package exports a module-level ``MANIFEST`` instance of
     [project.entry-points."openconstructionerp.partner_packs"]
     uk-jct = "openconstructionerp_uk_jct:MANIFEST"
 
-The OCERP core discovers this entry point at boot, validates the
+The PrimeCrest core discovers this entry point at boot, validates the
 manifest, and applies the partner overrides (branding, locale,
 cost regions, validation rule packs, onboarding script).
 """

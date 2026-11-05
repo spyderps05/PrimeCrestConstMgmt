@@ -3,18 +3,17 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-turkey-tr-mep"
+name = "primecrest-turkey-tr-mep"
 version = "0.1.0"
 description = "Industry pack for a mechanical, electrical and plumbing contractor in Türkiye: the Türkiye country configuration plus a short menu built around site records, approvals, procurement, progress claims, quality, commissioning and handover."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 keywords = [
-    "openconstructionerp",
-    "ocerp",
+    "primecrest",
     "industry-pack",
     "turkey",
     "mep",
@@ -38,13 +37,16 @@ classifiers = [
 # the country pack's at import time and carries no copy of it.
 dependencies = [
     "openconstructionerp>=5.5.0",
-    "openconstructionerp-turkey-tr>=0.2.0",
+    "primecrest-turkey-tr>=0.2.0",
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+turkey-tr-mep = "openconstructionerp_turkey_tr_mep:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 turkey-tr-mep = "openconstructionerp_turkey_tr_mep:MANIFEST"
 
 [tool.setuptools]

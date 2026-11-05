@@ -20,7 +20,7 @@
     {"code": "IS 875-5:1987", "title": "Part 5 — Special Loads & Load Combinations"},
     {"code": "IS 13920:2016", "title": "Ductile Detailing of RCC Subjected to Seismic Forces"}
   ],
-  "description": "Enables OCERP built-in validation rules that check structural-design documents and BOQs against the full Indian seismic + loads code bundle. Covers seismic zone declaration (Zones II-V), response-reduction factor, importance factor, soil type, all five load categories (DL/IL/WL/SL/special), and ductile-detailing for RCC frames where applicable.",
+  "description": "Enables PrimeCrest built-in validation rules that check structural-design documents and BOQs against the full Indian seismic + loads code bundle. Covers seismic zone declaration (Zones II-V), response-reduction factor, importance factor, soil type, all five load categories (DL/IL/WL/SL/special), and ductile-detailing for RCC frames where applicable.",
   "description_hi": "संरचनात्मक डिज़ाइन एवं बीओक्यू की भारतीय भूकम्पीय + भार कोड बंडल के अनुसार जाँच।",
   "enables_rule_ids": [],
   "planned_not_built_rule_ids": [

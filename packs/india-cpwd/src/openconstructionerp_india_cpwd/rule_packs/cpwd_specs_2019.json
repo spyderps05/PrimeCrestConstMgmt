@@ -15,7 +15,7 @@
   ],
   "applies_to": ["projects", "boq", "tendering", "validation"],
   "scope": "Central PWD works only. State PWD works follow state-specific SoRs (MPPWD, RPWD, MJP, Kerala PWD, Tamil Nadu PWD, KSR, MSR, etc.).",
-  "description": "Enables OCERP built-in validation rules that check BOQ items, item analysis and tender documents against CPWD Specifications 2019 (Vols. I & II), Works Manual 2019 procedural rules, and DSR 2023 unit-rate references. Covers item nomenclature, mandatory subhead structure, labour+material+P&T breakup for extra/substituted items, and Cost Index alignment with the current CPWD quarter.",
+  "description": "Enables PrimeCrest built-in validation rules that check BOQ items, item analysis and tender documents against CPWD Specifications 2019 (Vols. I & II), Works Manual 2019 procedural rules, and DSR 2023 unit-rate references. Covers item nomenclature, mandatory subhead structure, labour+material+P&T breakup for extra/substituted items, and Cost Index alignment with the current CPWD quarter.",
   "description_hi": "सीपीडब्ल्यूडी विशिष्टियाँ 2019, वर्क्स मैनुअल 2019 और डीएसआर 2023 के अनुसार बीओक्यू, दर विश्लेषण एवं निविदा दस्तावेज़ों की जाँच।",
   "validates": {
     "item_code_format": "chapter.section.item (e.g. 2.5.1 = Earthwork > Earthwork in Excavation > In ordinary soil)",

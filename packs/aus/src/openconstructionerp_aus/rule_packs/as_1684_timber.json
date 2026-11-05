@@ -6,7 +6,7 @@
   "regulator": "Standards Australia",
   "publication_year": 2010,
   "current_revision": "AS 1684.2-2010 / AS 1684.3-2010 / AS 1684.4-2010 (Amendments 1+2 incorporated)",
-  "description": "Enables OCERP built-in validation rules that enforce AS 1684 across all four parts: Part 1 (Design Criteria), Part 2 (Non-Cyclonic Span Tables), Part 3 (Cyclonic Areas), Part 4 (Simplified — Non-Cyclonic Span Tables). Selects wind classification, member sizing, bracing, tie-down, stud spacing, roof pitch, timber stress grade and bushfire attack level.",
+  "description": "Enables PrimeCrest built-in validation rules that enforce AS 1684 across all four parts: Part 1 (Design Criteria), Part 2 (Non-Cyclonic Span Tables), Part 3 (Cyclonic Areas), Part 4 (Simplified — Non-Cyclonic Span Tables). Selects wind classification, member sizing, bracing, tie-down, stud spacing, roof pitch, timber stress grade and bushfire attack level.",
   "parts": {
     "part_1": {
       "title": "Design Criteria",

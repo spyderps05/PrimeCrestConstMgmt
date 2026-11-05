@@ -6,7 +6,7 @@ This package exports a module-level ``MANIFEST`` instance of
     [project.entry-points."openconstructionerp.partner_packs"]
     russia-gesn = "openconstructionerp_russia_gesn:MANIFEST"
 
-The OCERP core discovers this entry point at boot, validates the
+The PrimeCrest core discovers this entry point at boot, validates the
 manifest, and applies the pack overrides (branding, locale, currency,
 validation rule sets, onboarding script).
 """

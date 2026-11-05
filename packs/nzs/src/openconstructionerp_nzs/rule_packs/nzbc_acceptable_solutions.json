@@ -4,7 +4,7 @@
   "standard": "NZBC",
   "jurisdiction": "NZ",
   "regulator": "Ministry of Business, Innovation and Employment (MBIE)",
-  "description": "Enables OCERP built-in validation rules covering the performance-based New Zealand Building Code and the MBIE Acceptable Solutions / Verification Methods that demonstrate compliance. Covers the most commonly invoked clauses for residential and light commercial work: B1 Structure, B2 Durability, C Fire safety, E2 External moisture, F2/F4 Hazardous building materials & fall safety, G12 Water supplies, H1 Energy efficiency.",
+  "description": "Enables PrimeCrest built-in validation rules covering the performance-based New Zealand Building Code and the MBIE Acceptable Solutions / Verification Methods that demonstrate compliance. Covers the most commonly invoked clauses for residential and light commercial work: B1 Structure, B2 Durability, C Fire safety, E2 External moisture, F2/F4 Hazardous building materials & fall safety, G12 Water supplies, H1 Energy efficiency.",
   "compliance_paths": [
     "acceptable_solution",
     "verification_method",

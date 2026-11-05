@@ -11,8 +11,8 @@
   "derives_from_note": "Lineage stated for the SBC 2018 edition. SBC 2024 replaced it and is mandatory since 2025-06-30; the base editions the 2024 part adopts were not confirmed, so this list is kept as the 2018 lineage and needs expert review before it is relied on.",
   "derives_from_2018_edition": ["IECC 2018", "ASHRAE 90.1-2016"],
   "applies_to": ["projects", "boq", "validation"],
-  "description": "Enables OCERP built-in validation rules that enforce SBC 201 (Energy Conservation Code) — climate-zone assignment (KSA Zones B1 hot-dry / B2 hot-dry-cold / B3 hot-humid coastal), envelope U-values, glazing SHGC bands, mandatory insulation thicknesses, reflective roof coatings (SRI), MEPS-compliant HVAC equipment, and the Saudi Energy Efficiency Program (SEEP) labelling for white goods integrated into the build.",
-  "description_ar": "تفعيل قواعد التحقق من الصحة المضمنة في OCERP لإنفاذ متطلبات كود ترشيد الطاقة SBC 201 — تحديد المنطقة المناخية، قيم U للجدران والسقف، نسبة SHGC للزجاج، الحد الأدنى لسماكة العزل، الطلاء العاكس للأشعة الشمسية، وكفاءة معدات التكييف.",
+  "description": "Enables PrimeCrest built-in validation rules that enforce SBC 201 (Energy Conservation Code) — climate-zone assignment (KSA Zones B1 hot-dry / B2 hot-dry-cold / B3 hot-humid coastal), envelope U-values, glazing SHGC bands, mandatory insulation thicknesses, reflective roof coatings (SRI), MEPS-compliant HVAC equipment, and the Saudi Energy Efficiency Program (SEEP) labelling for white goods integrated into the build.",
+  "description_ar": "تفعيل قواعد التحقق من الصحة المضمنة في PrimeCrest لإنفاذ متطلبات كود ترشيد الطاقة SBC 201 — تحديد المنطقة المناخية، قيم U للجدران والسقف، نسبة SHGC للزجاج، الحد الأدنى لسماكة العزل، الطلاء العاكس للأشعة الشمسية، وكفاءة معدات التكييف.",
   "severity_overrides": {
     "boq_quality.position_has_quantity": "ERROR",
     "boq_quality.position_has_unit_rate": "ERROR"

@@ -16,7 +16,7 @@
     "quarterly_progress_report": "QPR uploaded each quarter to the State RERA portal — physical progress %, financial progress, photos, approvals status.",
     "delay_penalty": "Interest payable to buyer at SBI MCLR + 2% (effective rate currently ~11%) on the entire amount received, for every month of delay beyond the registered completion date."
   },
-  "description": "Enables OCERP built-in validation rules that check private real-estate project workflows against RERA Act 2016 — project registration certificate present, 70% escrow account configured, carpet-area quoting (not super-built-up) in agreements & marketing, Quarterly Progress Report (QPR) generation schedule, and delay-penalty interest accrual at SBI MCLR + 2% on receipts.",
+  "description": "Enables PrimeCrest built-in validation rules that check private real-estate project workflows against RERA Act 2016 — project registration certificate present, 70% escrow account configured, carpet-area quoting (not super-built-up) in agreements & marketing, Quarterly Progress Report (QPR) generation schedule, and delay-penalty interest accrual at SBI MCLR + 2% on receipts.",
   "description_hi": "रेरा अधिनियम 2016 के अनुसार निजी रियल एस्टेट परियोजनाओं की जाँच — परियोजना पंजीकरण, 70% एस्क्रो खाता, कारपेट क्षेत्र, त्रैमासिक प्रगति रिपोर्ट, विलंब पर ब्याज।",
   "enables_rule_ids": [],
   "planned_not_built_rule_ids": [
