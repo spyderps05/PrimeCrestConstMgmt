@@ -37,7 +37,7 @@ test('login page loads and shows all expected elements', async ({ page }) => {
   await expect(page.getByRole('link', { name: /create account/i })).toBeVisible();
 });
 
-test('login page shows the OpenEstimate logo', async ({ page }) => {
+test('login page shows the PrimeCrest logo', async ({ page }) => {
   await page.goto('/login');
 
   // The LogoWithText component renders inside the form panel

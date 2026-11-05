@@ -504,9 +504,10 @@ test('comprehensive E2E — all flows on one session', async ({ page }) => {
   await page.waitForTimeout(1_200);
   const ppCard = page.locator('#partner-packs');
   const ppCardVisible = await ppCard.isVisible({ timeout: 8_000 }).catch(() => false);
-  // The documented install entry-point group must reference openconstructionerp.
+  // The documented install entry-point group (primecrest, or the upstream
+  // openconstructionerp group kept for compatibility) must be shown.
   const installCmdOk = await page
-    .getByText(/openconstructionerp\.partner_packs/i)
+    .getByText(/(primecrest|openconstructionerp)\.partner_packs/i)
     .first()
     .isVisible({ timeout: 4_000 })
     .catch(() => false);
@@ -536,7 +537,7 @@ test('comprehensive E2E — all flows on one session', async ({ page }) => {
       flow: 'partner-packs',
       severity: 'low',
       area: 'Module Developer Guide',
-      detail: 'Documented install entry-point group does not show "openconstructionerp.partner_packs".',
+      detail: 'Documented install entry-point group does not show the partner_packs entry-point group.',
     });
 
   // Now the modules page partner-packs tab.

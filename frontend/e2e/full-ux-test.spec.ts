@@ -1,5 +1,5 @@
 /**
- * OpenEstimate — Full UI/UX Deep Test Suite
+ * PrimeCrest — Full UI/UX Deep Test Suite
  * ==========================================
  * Run: npx playwright test e2e/full-ux-test.spec.ts --headed
  */
@@ -261,7 +261,7 @@ test.describe('6. CAD/BIM Takeoff', () => {
 
   test('File drop zone and converters', async ({ page }) => {
     await expect(page.getByText('Drop your file here')).toBeVisible();
-    await expect(page.getByText('DDC Converter Modules')).toBeVisible();
+    await expect(page.getByText(/Converter Modules/).first()).toBeVisible();
     await expect(page.getByText('installed')).toBeVisible();
   });
 });
