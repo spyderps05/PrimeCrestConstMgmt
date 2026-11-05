@@ -1,8 +1,11 @@
-"""PrimeCrest - Pakistan construction partner pack (GST, provincial sales tax, PEC and PPRA forms).
+"""PrimeCrest Pakistan pack by Spyder Solutions (PKR, GST, provincial sales tax, PEC, PPRA, MRS/CSR, Urdu).
 
 Exports a module-level ``MANIFEST`` referenced from ``pyproject.toml``::
 
     [project.entry-points."openconstructionerp.partner_packs"]
+    pakistan-pk = "openconstructionerp_pakistan_pk:MANIFEST"
+
+    [project.entry-points."primecrest.partner_packs"]
     pakistan-pk = "openconstructionerp_pakistan_pk:MANIFEST"
 """
 

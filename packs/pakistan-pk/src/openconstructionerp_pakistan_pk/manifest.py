@@ -7,20 +7,23 @@ from app.core.partner_pack.manifest import PartnerBranding, PartnerPackManifest
 MANIFEST = PartnerPackManifest(
     slug="pakistan-pk",
     partner_name="Pakistan Construction Pack",
-    partner_url=None,
+    partner_url=None,  # None marks a first-party pack (a URL names an outside rights holder)
     pack_version="0.2.0",
     pack_type="country",
     description=(
-        "Pre-configured for contractors working in Pakistan, private and public: the bill with the sales tax "
-        "(federal GST on goods, provincial services tax by province) carried as a line of its own, income tax "
-        "withheld from contractor payments by payee class, interim payment certificates with the 10 percent "
-        "retention and the mobilization advance of the PEC standard bidding documents, the PPRA public works "
-        "defaults and the Clause 70 price adjustment, marla, kanal, sft, cft and rft as units, the Pakistani "
-        "public holidays, Pakistani rupee."
+        "The home-market pack of PrimeCrest Construction Management, by Spyder Solutions. Pre-configured for "
+        "contractors working in Pakistan, private and public: Pakistani rupee, the bill with the sales tax "
+        "(federal GST on goods, provincial sales tax on services by province: PRA, SRB, KPRA) carried as a "
+        "line of its own, income tax withheld from contractor payments by payee class, interim payment "
+        "certificates with the 10 percent retention and the mobilization advance of the PEC standard bidding "
+        "documents, PEC contractor categories, the PPRA public works defaults and the Clause 70 price "
+        "adjustment, the Punjab Market Rate System and provincial Composite Schedule of Rates layout, marla, "
+        "kanal, sft, cft and rft as units, the Pakistani public holidays, and Urdu."
     ),
     default_locale="en-GB",
     additional_locales={"ur": "locales/ur.json"},
-    # No Pakistani cost base is shipped: the provincial schedules of rates are a separate decision.
+    # No CWICR region: Pakistani rates come from the provincial MRS / CSR files through the importer
+    # described in rates.json, never from a bundled cost base.
     cwicr_regions=[],
     default_currency="PKR",
     default_tax_template=None,
@@ -86,8 +89,32 @@ MANIFEST = PartnerPackManifest(
             "flagged unconfirmed or provisional in the data tables. Pending review by a Pakistani quantity "
             "surveyor and a Pakistani tax adviser: do not rely on it for a tender or a tax filing before that review."
         ),
-        "support_email": "info@spydersolutions.local",
+        "publisher": "Spyder Solutions",
+        "support_email": "support@primecrest.pk",
         "support_name": "Spyder Solutions",
+        "support_url": "https://primecrest.pk",
+        "docs_url": "https://docs.primecrest.pk",
+        "sales_tax_authorities": {
+            "PK": "FBR (federal GST on goods)",
+            "PK-PB": "PRA (Punjab Revenue Authority)",
+            "PK-SD": "SRB (Sindh Revenue Board)",
+            "PK-KP": "KPRA (Khyber Pakhtunkhwa Revenue Authority)",
+            "PK-BA": "BRA (Balochistan Revenue Authority, rate not shipped)",
+        },
+        # PEC contractor licence categories and the single-contract limit in PKR million (None = no limit).
+        # Unconfirmed: PEC revises the limits by bye-law; advisory only, never blocks a bid.
+        "pec_contractor_categories": {
+            "C-A": None,
+            "C-B": 4000,
+            "C-1": 2500,
+            "C-2": 1000,
+            "C-3": 500,
+            "C-4": 200,
+            "C-5": 65,
+            "C-6": 25,
+        },
+        "pec_contractor_categories_status": "unconfirmed",
+        "rate_books": ["Punjab Market Rate System (MRS)", "Composite Schedule of Rates (CSR), provincial", "NHA composite rates"],
         "code_library_path": "codes.json",
         "rate_book_path": "rates.json",
     },

@@ -3,18 +3,17 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openconstructionerp-pakistan-pk"
-version = "0.1.0"
-description = "Country pack for Pakistan: federal GST and provincial sales tax on services, income tax withheld from contractor payments, retention and mobilization advance under the PEC standard bidding documents, PPRA procurement, local units, public holidays, PKR."
+name = "primecrest-pakistan-pk"
+version = "0.2.0"
+description = "PrimeCrest country pack for Pakistan by Spyder Solutions: PKR, federal GST and provincial sales tax on services (PRA, SRB, KPRA), income tax withheld under section 153, PEC standard bidding documents and contractor categories, PPRA procurement, Punjab MRS and provincial CSR rate books, marla and kanal, Urdu."
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 keywords = [
-    "openconstructionerp",
-    "ocerp",
+    "primecrest",
     "country-pack",
     "pakistan",
     "pec",
@@ -22,7 +21,14 @@ keywords = [
     "gst",
     "fbr",
     "marla",
+    "kanal",
     "pkr",
+    "pra",
+    "srb",
+    "kpra",
+    "mrs",
+    "csr",
+    "urdu",
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -40,9 +46,14 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/DataDrivenConstruction/openconstructionerp"
+Homepage = "https://primecrest.pk"
+Documentation = "https://docs.primecrest.pk"
+Source = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 [project.entry-points."openconstructionerp.partner_packs"]
+pakistan-pk = "openconstructionerp_pakistan_pk:MANIFEST"
+
+[project.entry-points."primecrest.partner_packs"]
 pakistan-pk = "openconstructionerp_pakistan_pk:MANIFEST"
 
 [tool.setuptools]
@@ -54,6 +65,8 @@ where = ["src"]
 [tool.setuptools.package-data]
 openconstructionerp_pakistan_pk = [
     "onboarding.yaml",
+    "codes.json",
+    "rates.json",
     "rule_packs/*.json",
     "locales/*.json",
 ]

@@ -1,4 +1,4 @@
-# Pakistan Construction Pack - first-login onboarding wizard.
+# PrimeCrest Pakistan pack (Spyder Solutions) - first-login onboarding wizard.
 version: 2
 locale: en-GB
 title: "Welcome to PrimeCrest - Pakistan"
@@ -13,6 +13,7 @@ steps:
       - { key: ntn, label: "National Tax Number (NTN)", type: text, required: false, placeholder: "1234567-8" }
       - { key: province, label: "Province of the site", type: select, required: true, default: "Punjab", options: ["Punjab", "Sindh", "Khyber Pakhtunkhwa", "Balochistan", "Islamabad Capital Territory", "Azad Jammu and Kashmir", "Gilgit-Baltistan"], help: "The services tax on construction is levied by the province, so the rate follows the site. A new job starts in Punjab." }
       - { key: marla_sqft, label: "Marla used on this firm's drawings", type: select, required: true, default: "225", options: ["225", "272.25"], help: "Punjab revenue practice counts a marla as 225 square feet. The federal survey count is 272.25 square feet. The figure chosen here is stored on the project. A kanal in the Lahore Development Authority regulations is 20 marlas." }
+      - { key: pec_category, label: "PEC contractor category", type: select, required: false, default: "C-4", options: ["C-A", "C-B", "C-1", "C-2", "C-3", "C-4", "C-5", "C-6", "Not registered with PEC"], help: "The Pakistan Engineering Council licence category caps the value of a single contract the firm may bid for. Advisory only: check the current limits on pec.org.pk." }
       - { key: active_taxpayer, label: "We are on the Active Taxpayer List of the Federal Board of Revenue", type: checkbox, default: true, help: "A payee off the list has income tax withheld at twice the rate." }
 
   - id: contract_type
