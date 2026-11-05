@@ -165,9 +165,9 @@ const resource = {
     "about.dev_model_p1": "PrimeCrest has been under continuous development for more than six years and has benefited from contributions, feedback, testing, and domain expertise from many different people.",
     "about.dev_model_p2": "To maintain a consistent architecture and reduce security, dependency, and integration risks, the project follows a centralised integration model. Most production code is ultimately reviewed, consolidated, tested, and published through a single maintainer account. As a result, the GitHub contributor history does not necessarily reflect the actual number of people who have contributed to the project.",
     "about.dev_model_p3": "Rather than allowing the codebase to evolve into a collection of loosely connected components, changes are integrated into one coherent development line and undergo review and testing before being merged into the main project. A single publishing account represents a controlled integration and release process designed to preserve stability, security, and architectural consistency.",
-    "about.team_name": "DataDrivenConstruction",
+    "about.team_name": "Spyder Solutions",
     "about.team_role": "Automation, data and open standards for construction",
-    "about.team_linkedin": "DataDrivenConstruction on LinkedIn",
+    "about.team_linkedin": "Spyder Solutions on LinkedIn",
 
     "subcontractors.cert_type.license": "Licence",
     "notifications.permits.condition_assigned.title": "A permit condition was assigned to you",
