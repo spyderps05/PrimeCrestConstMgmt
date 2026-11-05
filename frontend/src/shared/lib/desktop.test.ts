@@ -124,7 +124,7 @@ async function settle() {
   });
 }
 
-const LINK = 'https://docs.primecrest.pk';
+const LINK = 'https://docs.primecrest.pk/start';
 
 describe('a link that the shell refuses to open', () => {
   it('reaches the user instead of dying on the console', async () => {
@@ -337,7 +337,7 @@ describe('outbound links from the header menus', () => {
     installDesktopExternalLinks();
 
     const links: Array<[string, string]> = [
-      ['https://docs.primecrest.pk', '_blank'],
+      ['https://docs.primecrest.pk/start', '_blank'],
       ['https://github.com/spyderps05/PrimeCrestConstMgmt', '_blank'],
       ['mailto:support@primecrest.pk?subject=PrimeCrest%20Issue%20Report', ''],
       ['/how-it-works', ''],
@@ -362,7 +362,7 @@ describe('outbound links from the header menus', () => {
 
     expect(prevented).toEqual([true, true, true, false]);
     expect(invoke.mock.calls.map((call) => (call[1] as { url: string }).url)).toEqual([
-      'https://docs.primecrest.pk',
+      'https://docs.primecrest.pk/start',
       'https://github.com/spyderps05/PrimeCrestConstMgmt',
       'mailto:support@primecrest.pk?subject=PrimeCrest%20Issue%20Report',
     ]);

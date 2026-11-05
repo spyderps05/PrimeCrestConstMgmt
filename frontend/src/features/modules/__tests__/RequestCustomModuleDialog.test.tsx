@@ -63,7 +63,7 @@ describe('RequestCustomModuleDialog', () => {
       screen.getByRole('dialog', { name: /Tell us what your team needs/i }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('heading', { name: /Could help other teams too/i }),
+      screen.getByRole('heading', { name: /Request a product module/i }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole('heading', { name: /Built just for our company/i }),
@@ -76,14 +76,11 @@ describe('RequestCustomModuleDialog', () => {
   it('community option points at the public contact form with utm tags', () => {
     renderDialog(true);
     const link = screen.getByRole('link', {
-      name: /Propose on our roadmap/i,
+      name: /Contact Spyder Solutions/i,
     });
     expect(link).toHaveAttribute('target', '_blank');
     expect(link).toHaveAttribute('rel', expect.stringContaining('noopener'));
-    // Pinned at openconstructionerp.com — the canonical product
-    // marketing site. The pin catches accidental regressions back to
-    // the placeholder openconstructionerp.com / openestimate.io properties
-    // (parked / 405 as of 2026-05-13).
+    // Pinned at the product site (SITE_URL in @/shared/brand).
     expect(link.getAttribute('href')).toMatch(
       /primecrest\.pk\/contact\?topic=module_proposal_public/,
     );
@@ -105,7 +102,7 @@ describe('RequestCustomModuleDialog', () => {
     const user = userEvent.setup();
     const { onClose } = renderDialog(true);
     const link = screen.getByRole('link', {
-      name: /Propose on our roadmap/i,
+      name: /Contact Spyder Solutions/i,
     });
     // Prevent the test runner from following the external href.
     link.addEventListener('click', (e) => e.preventDefault());

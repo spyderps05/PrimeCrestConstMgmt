@@ -38,10 +38,12 @@ import {
   Plug,
   BarChart3,
 } from 'lucide-react';
-import brandMarkUrl from '/brand/primecrest-mark.svg';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import { PRODUCT_SHORT_NAME, SITE_URL } from '@/shared/brand';
+
+// Plain public path (not a module import): the test asset alias only covers raster files.
+const brandMarkUrl = '/brand/primecrest-mark.svg';
 
 interface Props {
   open: boolean;
