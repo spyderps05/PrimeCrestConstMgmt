@@ -26,16 +26,16 @@
 <p class="subtitle">Last updated: May 1, 2026</p>
 
 <div class="callout">
-<strong>This is a self-hosted application.</strong> When you install PrimeCrest on your own server (via <code>pip install</code>, Docker, or VPS), all data you create — accounts, projects, BOQs, CAD files, costs — stays on <em>your</em> machine. DataDrivenConstruction does not see, collect, or process any of it.
+<strong>This is a self-hosted application.</strong> When you install PrimeCrest on your own server (via <code>pip install</code>, Docker, or VPS), all data you create — accounts, projects, BOQs, CAD files, costs — stays on <em>your</em> machine. Spyder Solutions does not see, collect, or process any of it.
 </div>
 
 <h2>1. Who We Are</h2>
-<p>PrimeCrest is open-source software (AGPL-3.0) developed by DataDrivenConstruction, founded by Artem Boiko.<br>
-Contact: <a href="mailto:info@datadrivenconstruction.io">info@datadrivenconstruction.io</a><br>
-Website: <a href="https://datadrivenconstruction.io">datadrivenconstruction.io</a></p>
+<p>PrimeCrest Construction Management is developed by Spyder Solutions, Pakistan. PrimeCrest is based on OpenConstructionERP &copy; Artem Boiko / DataDrivenConstruction, licensed under AGPL-3.0.<br>
+Contact: <a href="mailto:support@primecrest.pk">support@primecrest.pk</a><br>
+Website: <a href="https://primecrest.pk">primecrest.pk</a></p>
 
 <h2>2. What This Policy Covers</h2>
-<p>This policy describes the privacy properties of the <strong>self-hosted application</strong> — the software you install and run on your own infrastructure. It does <em>not</em> cover the public demo at <a href="https://openconstructionerp.com">openconstructionerp.com</a>, which has a separate policy because that one is operated by us.</p>
+<p>This policy describes the privacy properties of the <strong>self-hosted application</strong> — the software you install and run on your own infrastructure. It does <em>not</em> cover any hosted demo or service operated by Spyder Solutions, which has its own policy.</p>
 
 <h2>3. Data You Create In Your Local Installation</h2>
 <p>When you register an account, create projects, import CAD files, or build BOQs in your self-hosted installation:</p>
@@ -45,7 +45,7 @@ Website: <a href="https://datadrivenconstruction.io">datadrivenconstruction.io</
 <li>Authentication tokens (JWT) are issued by <strong>your</strong> server and never leave it.</li>
 <li>PrimeCrest does <strong>not</strong> phone home, telemetry, or send analytics. Inspect the source — there are no outbound network calls except those listed in §5.</li>
 </ul>
-<p><strong>The role you assigned to this app under GDPR is "Verantwortlicher" (Controller). DataDrivenConstruction is neither a Controller nor a Processor of your project data.</strong></p>
+<p><strong>The role you assigned to this app under GDPR is "Verantwortlicher" (Controller). Spyder Solutions is neither a Controller nor a Processor of your project data.</strong></p>
 
 <h2>4. Personal Data Collected By The App</h2>
 <p>The application stores user-account fields (email, name, optionally company / role) in your local database — purely so users can log in and see their name in the UI. These fields are <em>your</em> data, governed by <em>your</em> privacy policy if you operate the app for others.</p>
@@ -55,9 +55,9 @@ Website: <a href="https://datadrivenconstruction.io">datadrivenconstruction.io</
 <table>
 <tr><th>Case</th><th>Destination</th><th>Triggered when</th></tr>
 <tr><td>AI features (estimation, classification)</td><td>OpenAI / Anthropic / Google APIs</td><td>You configure your own API key and call an AI feature. Prompts go to <em>your</em> chosen provider.</td></tr>
-<tr><td>CAD converter binaries</td><td>github.com/datadrivenconstruction releases</td><td>First-time install of a CAD format, downloading the converter executable.</td></tr>
-<tr><td>CWICR cost-database snapshots</td><td>github.com/datadrivenconstruction releases</td><td>You click "Install region" in <code>/costs/import</code>.</td></tr>
-<tr><td>Update check (optional)</td><td>pypi.org</td><td>Only when you run <code>pip install --upgrade openconstructionerp</code>.</td></tr>
+<tr><td>CAD converter binaries</td><td>Third-party converter releases on GitHub (github.com/datadrivenconstruction)</td><td>First-time install of a CAD format, downloading the converter executable.</td></tr>
+<tr><td>CWICR cost-database snapshots</td><td>Third-party dataset releases on GitHub (github.com/datadrivenconstruction)</td><td>You click "Install region" in <code>/costs/import</code>.</td></tr>
+<tr><td>Update check (optional)</td><td>pypi.org</td><td>Only when you run <code>pip install --upgrade primecrest</code>.</td></tr>
 </table>
 <p>None of these send your project data anywhere. They only fetch software / data <em>to</em> your server.</p>
 
@@ -74,14 +74,16 @@ Website: <a href="https://datadrivenconstruction.io">datadrivenconstruction.io</
 </ul>
 
 <h2>8. Public Demo</h2>
-<p>If you tried PrimeCrest via the public demo at <a href="https://openconstructionerp.com">openconstructionerp.com</a>, that instance <em>is</em> operated by us. Its separate privacy policy (linked from that site) describes what we collect for the demo. Demo data is periodically wiped and is not for production use.</p>
+<p>If you tried PrimeCrest via a hosted demo operated by Spyder Solutions (linked from <a href="https://primecrest.pk">primecrest.pk</a>), that instance <em>is</em> operated by us and its own privacy policy describes what we collect for the demo. Demo data is periodically wiped and is not for production use.</p>
 
 <h2>9. Changes</h2>
 <p>We may update this policy. Changes ride along with new releases of PrimeCrest and are visible in the CHANGELOG. The "Last updated" date at the top reflects the current version.</p>
 
 <h2>10. Contact</h2>
 <p>Questions about the software's privacy properties:<br>
-Email: <a href="mailto:info@datadrivenconstruction.io">info@datadrivenconstruction.io</a><br>
-GitHub: <a href="https://github.com/datadrivenconstruction/PrimeCrest">PrimeCrest</a></p>
+Spyder Solutions, Pakistan<br>
+Email: <a href="mailto:support@primecrest.pk">support@primecrest.pk</a><br>
+Website: <a href="https://primecrest.pk">primecrest.pk</a><br>
+Source: <a href="https://github.com/spyderps05/PrimeCrestConstMgmt">github.com/spyderps05/PrimeCrestConstMgmt</a></p>
 </body>
 </html>
