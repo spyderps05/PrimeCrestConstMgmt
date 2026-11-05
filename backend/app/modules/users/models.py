@@ -14,6 +14,7 @@ from datetime import datetime
 from sqlalchemy import JSON, Boolean, DateTime, ForeignKey, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
+from app.core.market_defaults import default_timezone
 from app.database import GUID, Base
 
 
@@ -52,7 +53,12 @@ class User(Base):
     )
 
     # Regional preferences
-    timezone: Mapped[str] = mapped_column(String(50), nullable=False, default="UTC", server_default="UTC")
+    # A new account starts in the market's zone (Asia/Karachi, overridable with
+    # PRIMECREST_DEFAULT_TIMEZONE). server_default stays "UTC" so the table DDL
+    # does not move; ORM inserts always supply the Python-side default.
+    timezone: Mapped[str] = mapped_column(
+        String(50), nullable=False, default=default_timezone, server_default="UTC"
+    )
     measurement_system: Mapped[str] = mapped_column(
         String(20), nullable=False, default="metric", server_default="metric"
     )

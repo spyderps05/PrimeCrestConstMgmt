@@ -378,7 +378,9 @@ def _setup_env(data_dir: Path, host: str, port: int) -> None:
     """
     # This product opens on the Pakistan pack. An operator who sets OE_PACK
     # or OE_PARTNER_PACK still wins, because setdefault leaves a real value.
-    os.environ.setdefault("OE_PACK", "pakistan-pk")
+    from app.core.market_defaults import default_pack
+
+    os.environ.setdefault("OE_PACK", default_pack())
     data_dir.mkdir(parents=True, exist_ok=True)
     (data_dir / "vectors").mkdir(exist_ok=True)
     (data_dir / "uploads").mkdir(exist_ok=True)
