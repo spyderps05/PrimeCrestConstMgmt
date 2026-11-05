@@ -196,7 +196,7 @@ def main() -> int:
         return 1
 
     state = json.loads(Path(state_path).read_text(encoding="utf-8"))
-    print(f"..    aged database was built by openconstructionerp {state['aged_from_version']}")
+    print(f"..    aged database was built by primecrest {state['aged_from_version']}")
 
     import sqlalchemy as sa
 

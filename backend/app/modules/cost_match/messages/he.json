@@ -1,7 +1,7 @@
 {
   "common.ok": "אישור",
   "module.display_name": "התאמת עלויות",
-  "match.semantic.not_installed": "התאמה סמנטית דורשת את הפקודה `pip install openconstructionerp[semantic]`. מוצגות כרגע רק התאמות מדויקות; התקינו את התוסף להתאמה מטושטשת של עלויות.",
+  "match.semantic.not_installed": "התאמה סמנטית דורשת את הפקודה `pip install primecrest[semantic]`. מוצגות כרגע רק התאמות מדויקות; התקינו את התוסף להתאמה מטושטשת של עלויות.",
   "match.reason.exact_match": "התאמה מדויקת לתיאור המנורמל.",
   "match.reason.strong_overlap": "כל מילות החיפוש נמצאו בסעיף העלות הזה.",
   "match.reason.partial_overlap": "חלק ממילות החיפוש נמצאו בסעיף העלות הזה.",

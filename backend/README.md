@@ -2,7 +2,7 @@
 
 Open-source construction cost estimation: BOQ, cost matching, CAD/BIM takeoff.
 
-> ### After `pip install`, type one command: **`openconstructionerp`**
+> ### After `pip install`, type one command: **`primecrest`**
 >
 > That's the only thing you need to remember. It prints a welcome,
 > asks you to **press `o` + Enter** to open the app in your browser, then
@@ -13,17 +13,17 @@ Open-source construction cost estimation: BOQ, cost matching, CAD/BIM takeoff.
 ## Install
 
 ```bash
-pip install openconstructionerp
+pip install primecrest
 ```
 
 Python 3.12+ required. No Docker, no separate PostgreSQL, no Redis. An embedded PostgreSQL database is bundled and starts on its own.
 
-Problem while installing or starting? See **[Installation help](https://openconstructionerp.com/install-help)** (also in the repo in [English](https://github.com/datadrivenconstruction/PrimeCrest/blob/main/docs/INSTALL_TROUBLESHOOTING.md), [Deutsch](https://github.com/datadrivenconstruction/PrimeCrest/blob/main/docs/INSTALL_TROUBLESHOOTING.de.md) and [Русский](https://github.com/datadrivenconstruction/PrimeCrest/blob/main/docs/INSTALL_TROUBLESHOOTING.ru.md)).
+Problem while installing or starting? See **[Installation help](https://docs.primecrest.pk/install-help)** (also in the repo in [English](https://github.com/spyderps05/PrimeCrestConstMgmt/blob/main/docs/INSTALL_TROUBLESHOOTING.md), [Deutsch](https://github.com/spyderps05/PrimeCrestConstMgmt/blob/main/docs/INSTALL_TROUBLESHOOTING.de.md) and [Русский](https://github.com/spyderps05/PrimeCrestConstMgmt/blob/main/docs/INSTALL_TROUBLESHOOTING.ru.md)).
 
 ## First run
 
 ```bash
-openconstructionerp
+primecrest
 ```
 
 This single command:
@@ -35,19 +35,19 @@ This single command:
 
 No config files. No environment variables. It just works.
 
-> **If `openconstructionerp` is not found** right after install, pip most likely
+> **If `primecrest` is not found** right after install, pip most likely
 > put the launcher in a Scripts folder that is not on your PATH (this is common
 > on Windows). Run it through Python instead. This works from any folder and is
 > the exact same app:
 >
 > ```bash
-> python -m openconstructionerp
+> python -m primecrest
 > ```
 
 ## Subsequent runs
 
 ```bash
-openconstructionerp
+primecrest
 ```
 
 Same command every time. Your data persists between runs.
@@ -55,20 +55,20 @@ Same command every time. Your data persists between runs.
 ## Other commands
 
 ```bash
-openconstructionerp init-db    # create the local database
-openconstructionerp serve      # start the server
-openconstructionerp doctor     # health check if anything looks wrong
-openconstructionerp welcome    # re-print the welcome screen
+primecrest init-db    # create the local database
+primecrest serve      # start the server
+primecrest doctor     # health check if anything looks wrong
+primecrest welcome    # re-print the welcome screen
 ```
 
 ## CLI reference
 
 ```bash
-openconstructionerp serve   [--host HOST] [--port PORT] [--data-dir DIR] [--open] [--quiet]
-openconstructionerp init-db [--data-dir DIR]    # Create the local database + data dirs
-openconstructionerp doctor  [--port PORT]       # Run installation health checks
-openconstructionerp seed    [--demo]            # Load demo project data
-openconstructionerp version                     # Show version
+primecrest serve   [--host HOST] [--port PORT] [--data-dir DIR] [--open] [--quiet]
+primecrest init-db [--data-dir DIR]    # Create the local database + data dirs
+primecrest doctor  [--port PORT]       # Run installation health checks
+primecrest seed    [--demo]            # Load demo project data
+primecrest version                     # Show version
 ```
 
 ## What you get
@@ -86,7 +86,7 @@ openconstructionerp version                     # Show version
 Everything works with zero config. To customise, pass flags or set environment variables:
 
 ```bash
-openconstructionerp serve --port 9000 --data-dir /var/lib/oce
+primecrest serve --port 9000 --data-dir /var/lib/oce
 
 # Or via environment:
 DATABASE_URL=postgresql+asyncpg://user:pass@host/db   # Use an external PostgreSQL instead of the embedded one
@@ -114,7 +114,7 @@ pip install -e ".[dev]"
 The simplest way is the CLI, which starts the embedded database, seeds demo data, and serves the API together with the built UI:
 
 ```bash
-openconstructionerp serve --port 8080
+primecrest serve --port 8080
 ```
 
 To run just the API with autoreload against the app factory:
@@ -149,10 +149,12 @@ The lint rule set is `E, F, W, I, N, UP, B, A, C4, PT, RET, SIM`. The exact conf
 
 ## Links
 
-- Docs: https://openconstructionerp.com
-- Issues: https://github.com/DataDrivenConstruction/PrimeCrest/issues
-- Source: https://github.com/DataDrivenConstruction/PrimeCrest
+- Docs: https://docs.primecrest.pk
+- Issues: https://github.com/spyderps05/PrimeCrestConstMgmt/issues
+- Source: https://github.com/spyderps05/PrimeCrestConstMgmt
 
 ## License
 
-AGPL-3.0-or-later. Commercial licensing available, contact info@datadrivenconstruction.io
+© 2026 Spyder Solutions. PrimeCrest is based on OpenConstructionERP © Artem Boiko / DataDrivenConstruction, licensed under AGPL-3.0. See `LICENSE` and `NOTICE`.
+
+Contact: support@primecrest.pk

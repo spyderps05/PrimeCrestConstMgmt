@@ -6,7 +6,7 @@
 
 Usage:
     uvicorn app.main:create_app --factory --reload --port 8000
-    openestimate serve  (CLI mode - also serves frontend)
+    primecrest serve  (CLI mode - also serves frontend)
 """
 
 # ── Runtime compatibility shims ─────────────────────────────────────────────
@@ -359,7 +359,7 @@ def should_prime_openapi_schema(
 
     Its only consumers are ``/api/docs``, ``/api/redoc`` and
     ``/api/openapi.json``, none of which a desktop user or a
-    ``openconstructionerp serve`` operator opens on the way in. So the old
+    ``primecrest serve`` operator opens on the way in. So the old
     default spent a minute of a core, in the window where somebody is watching a
     splash screen, filling a cache that install would never read.
 
@@ -879,7 +879,7 @@ def _init_vector_db() -> None:
             logger.warning(
                 "LanceDB init failed (%s). Semantic search is disabled. %s",
                 error,
-                repair_hint("Install the embedded vector backend with: pip install openconstructionerp[vector]"),
+                repair_hint("Install the embedded vector backend with: pip install primecrest[vector]"),
             )
     except Exception as exc:  # noqa: BLE001 - intentional: never fatal
         # Includes ImportError (missing optional extras), native crashes
@@ -2030,10 +2030,12 @@ def create_app() -> FastAPI:
         description="PrimeCrest Construction Management by Spyder Solutions",
         contact={
             "name": "Spyder Solutions",
-            "email": "info@spydersolutions.local",
+            "email": "support@primecrest.pk",
+            "url": "https://primecrest.pk",
         },
         license_info={
-            "name": "© 2026 Spyder Solutions. All rights reserved.",
+            "name": "AGPL-3.0",
+            "url": "https://github.com/spyderps05/PrimeCrestConstMgmt",
         },
         # Both reference pages are registered by hand further down instead of
         # by FastAPI, so they can load their CSS and JS from this install
@@ -2433,7 +2435,7 @@ def create_app() -> FastAPI:
         )
         cors_origins = [o for o in cors_origins if o != "*"]
         if not cors_origins:
-            cors_origins = ["https://openconstructionerp.com"]
+            cors_origins = ["https://primecrest.pk"]
 
     # Added before CORS so CORS wraps the 403 it answers for a hidden module.
     from app.core.module_guard import ModuleGuardMiddleware
@@ -3333,16 +3335,15 @@ def create_app() -> FastAPI:
 
     @app.get("/api/source", tags=["System"])
     async def source_code() -> dict:
-        """Product ownership notice for PrimeCrest Construction Management."""
+        """Licence and source-code notice for PrimeCrest Construction Management."""
         return {
-            "license": "Proprietary",
-            "copyright": "© 2026 Spyder Solutions. All rights reserved.",
+            "license": "AGPL-3.0",
+            "copyright": "© 2026 Spyder Solutions.",
             "notice": (
-                "PrimeCrest Construction Management Software is proprietary software "
-                "owned by Spyder Solutions and registered in Pakistan. "
-                "No one may copy, modify, or redistribute it without written "
-                "permission from Spyder Solutions."
+                "© 2026 Spyder Solutions. PrimeCrest is based on OpenConstructionERP "
+                "© Artem Boiko / DataDrivenConstruction, licensed under AGPL-3.0."
             ),
+            "source_code": "https://github.com/spyderps05/PrimeCrestConstMgmt",
             "product": "PrimeCrest Construction Management",
             "owner": "Spyder Solutions",
         }
@@ -3549,8 +3550,8 @@ def create_app() -> FastAPI:
             ai_providers=provider_names,
             registration_mode=settings.registration_mode,
             analytics_bundled=False,
-            license_name="Proprietary · © 2026 Spyder Solutions",
-            repository="",
+            license_name="AGPL-3.0",
+            repository="https://github.com/spyderps05/PrimeCrestConstMgmt",
         )
 
     def _semver_tuple(v: str) -> tuple[int, ...]:
@@ -3623,7 +3624,7 @@ def create_app() -> FastAPI:
         from app.core.update_check_policy import VERSION_CHECK_TTL_S, update_check_disabled
 
         current = settings.app_version
-        repo = "datadrivenconstruction/PrimeCrest"
+        repo = "spyderps05/PrimeCrestConstMgmt"
         cache_key = "_version_check_cache"
 
         # Turned off by the user from the desktop launcher's notice or by an
@@ -3642,7 +3643,7 @@ def create_app() -> FastAPI:
                 "assets": [],
                 "self_upgrade_supported": not is_frozen_build(),
                 "upgrade_command": repair_hint(
-                    "pip install --upgrade openconstructionerp",
+                    "pip install --upgrade primecrest",
                     "Download and run the latest installer",
                 ),
                 **await _runtime_upgrade_state(_user_id),
@@ -3664,7 +3665,7 @@ def create_app() -> FastAPI:
         try:
             async with httpx.AsyncClient(timeout=10) as client:
                 pypi = await client.get(
-                    "https://pypi.org/pypi/openconstructionerp/json",
+                    "https://pypi.org/pypi/primecrest/json",
                 )
                 if pypi.status_code == 200:
                     latest = pypi.json().get("info", {}).get("version") or None
@@ -3752,7 +3753,7 @@ def create_app() -> FastAPI:
             # This was the second hand-written copy of "which advice does this
             # install understand", and a copy is how the wording drifts.
             "upgrade_command": repair_hint(
-                "pip install --upgrade openconstructionerp",
+                "pip install --upgrade primecrest",
                 "Download and run the latest installer",
             ),
         }
@@ -3802,7 +3803,7 @@ def create_app() -> FastAPI:
         force: bool = False,
         user_id: str = Depends(get_current_user_id),
     ) -> JSONResponse:
-        """Start ``pip install --upgrade openconstructionerp`` in this venv.
+        """Start ``pip install --upgrade primecrest`` in this venv.
 
         Returns ``202`` with a job id as soon as the work is scheduled;
         poll ``GET /api/system/upgrade/status`` for the outcome and the
@@ -3825,7 +3826,7 @@ def create_app() -> FastAPI:
         swap modules already loaded. The finished job carries
         ``restart_required=true`` and the new version pulled from
         ``importlib.metadata`` so the UI can prompt the user to restart
-        their launcher (``openconstructionerp serve``) or, on managed
+        their launcher (``primecrest serve``) or, on managed
         installs, the host's systemd unit.
 
         **Admin only.** Requires an authenticated user with the ``admin``
@@ -3858,9 +3859,9 @@ def create_app() -> FastAPI:
                 detail=DEMO_ACCOUNT_REFUSAL if refusal == UPGRADE_DEMO_ACCOUNT else DISABLED_REFUSAL,
             )
 
-        target = "openconstructionerp"
+        target = "primecrest"
         if version and version.replace(".", "").replace("-", "").isalnum():
-            target = f"openconstructionerp=={version}"
+            target = f"primecrest=={version}"
 
         cmd = [sys.executable, "-m", "pip", "install", "--upgrade", target]
         if force:
@@ -3882,7 +3883,7 @@ def create_app() -> FastAPI:
                         "A forced reinstall would replace the PostgreSQL binaries this "
                         "application is currently running from. Stop the application "
                         "first and run `pip install --force-reinstall --upgrade "
-                        "openconstructionerp` from your shell, or upgrade without the "
+                        "primecrest` from your shell, or upgrade without the "
                         "force option, which does not touch them."
                     ),
                 )
@@ -5345,7 +5346,7 @@ def create_app() -> FastAPI:
                 logger.debug("Loop stall watchdog not started", exc_info=True)
 
         _section("Ready")
-        # Friendly multi-line ready banner. The CLI (`openestimate serve`)
+        # Friendly multi-line ready banner. The CLI (`primecrest serve`)
         # exposes OE_CLI_HOST / OE_CLI_PORT / OE_CLI_DATA_DIR so we can show
         # an accurate URL after the socket is actually bound. If those env
         # vars are absent (e.g. `uvicorn app.main:create_app --factory`), we
@@ -5369,7 +5370,7 @@ def create_app() -> FastAPI:
             )
             if _cli_data_dir:
                 logger.info("Data directory: %s", _cli_data_dir)
-            logger.info("Press Ctrl+C to stop. Docs: https://openconstructionerp.com/docs")
+            logger.info("Press Ctrl+C to stop. Docs: https://docs.primecrest.pk")
         else:
             logger.info("Application started successfully")
 
@@ -5463,7 +5464,7 @@ def create_app() -> FastAPI:
         # added is who pays. The document has exactly three consumers -
         # /api/docs, /api/redoc, /api/openapi.json - and none of them is on the
         # startup path, so every desktop launch and every
-        # ``openconstructionerp serve`` was spending over a minute of a core, in
+        # ``primecrest serve`` was spending over a minute of a core, in
         # the window where the user is staring at a splash screen, to fill a
         # cache that install would never read.
         #

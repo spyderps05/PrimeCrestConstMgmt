@@ -1,7 +1,7 @@
 {
   "common.ok": "ठीक है",
   "module.display_name": "लागत मिलान",
-  "match.semantic.not_installed": "सिमेंटिक मिलान के लिए `pip install openconstructionerp[semantic]` आवश्यक है। अभी केवल सटीक मिलान दिखाए जा रहे हैं; फ़ज़ी लागत मिलान के लिए यह एक्स्ट्रा इंस्टॉल करें।",
+  "match.semantic.not_installed": "सिमेंटिक मिलान के लिए `pip install primecrest[semantic]` आवश्यक है। अभी केवल सटीक मिलान दिखाए जा रहे हैं; फ़ज़ी लागत मिलान के लिए यह एक्स्ट्रा इंस्टॉल करें।",
   "match.reason.exact_match": "सामान्यीकृत विवरण पर सटीक मिलान।",
   "match.reason.strong_overlap": "खोज के सभी शब्द इस लागत मद में मिल गए।",
   "match.reason.partial_overlap": "खोज के कुछ शब्द इस लागत मद में मिल गए।",

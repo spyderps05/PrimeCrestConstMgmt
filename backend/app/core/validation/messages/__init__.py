@@ -2,7 +2,7 @@
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Locale-scoped message bundle for validation rules.
 
-OpenEstimate principle #2: i18n EVERYWHERE - zero hardcoded strings.
+PrimeCrest principle #2: i18n EVERYWHERE - zero hardcoded strings.
 
 This package ships a self-contained translation bundle for the 42+ built-in
 validation rules. Each rule's user-facing ``message`` and ``suggestion`` text

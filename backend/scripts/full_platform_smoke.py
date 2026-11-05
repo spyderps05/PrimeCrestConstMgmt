@@ -1,5 +1,5 @@
 """
-OpenEstimate - Full Platform Smoke Script
+PrimeCrest - Full Platform Smoke Script
 =========================================
 
 170+ endpoints x 5 languages x 6 regions.
@@ -70,7 +70,7 @@ class PlatformTestSuite:
         lines = [
             "",
             "=" * 70,
-            f"  OPENESTIMATE FULL PLATFORM TEST — {total} tests, {elapsed:.1f}s",
+            f"  PRIMECREST FULL PLATFORM TEST — {total} tests, {elapsed:.1f}s",
             "=" * 70,
             f"  PASSED: {passed}  |  FAILED: {failed}  |  TOTAL: {total}",
             f"  SUCCESS RATE: {passed / total * 100:.1f}%" if total else "  NO TESTS",
@@ -1640,7 +1640,7 @@ if __name__ == "__main__":
         sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 
     print("=" * 70)
-    print("  OPENESTIMATE — FULL PLATFORM INTEGRATION TEST")
+    print("  PRIMECREST — FULL PLATFORM INTEGRATION TEST")
     print(f"  Server: {BASE_URL}")
     print(f"  Languages: {', '.join(LOCALES)}")
     print(f"  Regions: {', '.join(REGIONS)}")

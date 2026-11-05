@@ -1,7 +1,7 @@
 {
   "common.ok": "OK",
   "module.display_name": "Xarajatlarni moslashtirish",
-  "match.semantic.not_installed": "Semantik moslashtirish uchun `pip install openconstructionerp[semantic]` kerak. Hozircha faqat aniq mos keladigan natijalar ko'rsatilmoqda; noaniq xarajatlarni moslashtirish uchun kengaytmani o'rnating.",
+  "match.semantic.not_installed": "Semantik moslashtirish uchun `pip install primecrest[semantic]` kerak. Hozircha faqat aniq mos keladigan natijalar ko'rsatilmoqda; noaniq xarajatlarni moslashtirish uchun kengaytmani o'rnating.",
   "match.reason.exact_match": "Normallashtirilgan tavsifga aniq mos keladi.",
   "match.reason.strong_overlap": "Qidiruv so'zlarining barchasi bu xarajat bandida topildi.",
   "match.reason.partial_overlap": "Qidiruv so'zlarining bir qismi bu xarajat bandida topildi.",

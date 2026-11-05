@@ -1,7 +1,7 @@
 {
   "common.ok": "ОК",
   "module.display_name": "Зіставлення витрат",
-  "match.semantic.not_installed": "Семантичне зіставлення потребує `pip install openconstructionerp[semantic]`. Наразі показано лише точні збіги; встановіть додаток для нечіткого зіставлення витрат.",
+  "match.semantic.not_installed": "Семантичне зіставлення потребує `pip install primecrest[semantic]`. Наразі показано лише точні збіги; встановіть додаток для нечіткого зіставлення витрат.",
   "match.reason.exact_match": "Точний збіг із нормалізованим описом.",
   "match.reason.strong_overlap": "Усі пошукові слова знайдено в цій позиції витрат.",
   "match.reason.partial_overlap": "Деякі пошукові слова знайдено в цій позиції витрат.",

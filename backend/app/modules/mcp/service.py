@@ -56,7 +56,7 @@ from app.modules.mcp.tools import (
 
 logger = logging.getLogger(__name__)
 
-SERVER_NAME = "openconstructionerp"
+SERVER_NAME = "primecrest"
 SERVER_TITLE = "PrimeCrest"
 MAX_TEXT_CHARS = 60_000
 SERVER_INSTRUCTIONS = (

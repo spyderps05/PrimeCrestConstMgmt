@@ -1,7 +1,7 @@
 {
   "common.ok": "Aceptar",
   "module.display_name": "Correspondencia de costes",
-  "match.semantic.not_installed": "La correspondencia semántica requiere `pip install openconstructionerp[semantic]`. Se muestran solo coincidencias exactas; instale el complemento para la correspondencia aproximada de costes.",
+  "match.semantic.not_installed": "La correspondencia semántica requiere `pip install primecrest[semantic]`. Se muestran solo coincidencias exactas; instale el complemento para la correspondencia aproximada de costes.",
   "match.reason.exact_match": "Coincidencia exacta con la descripción normalizada.",
   "match.reason.strong_overlap": "Se encontraron todos los términos de búsqueda en esta partida de coste.",
   "match.reason.partial_overlap": "Se encontraron algunos términos de búsqueda en esta partida de coste.",

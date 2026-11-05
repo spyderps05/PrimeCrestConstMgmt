@@ -43,8 +43,8 @@ SARIF_VERSION = "2.1.0"
 SARIF_SCHEMA = "https://json.schemastore.org/sarif-2.1.0.json"
 
 TOOL_NAME = "PrimeCrest"
-TOOL_INFORMATION_URI = "https://datadrivenconstruction.io/openconstructionerp"
-TOOL_ORG = "DataDrivenConstruction"
+TOOL_INFORMATION_URI = "https://primecrest.pk"
+TOOL_ORG = "Spyder Solutions"
 
 
 # ── Severity mapping ────────────────────────────────────────────────────────
@@ -70,7 +70,9 @@ def _get_tool_version() -> str:
         from importlib.metadata import PackageNotFoundError, version
 
         try:
-            return version("openconstructionerp")
+            from app.core.dist_name import installed_version
+
+            return installed_version()
         except PackageNotFoundError:
             pass
     except Exception:  # noqa: BLE001
@@ -303,7 +305,7 @@ def report_to_sarif(report: Any) -> dict[str, Any]:
             # Authorship pin - SARIF properties survive even when tool.driver
             # values get rebranded by a downstream consumer / fork.
             "engineSignature": "DDC-CWICR-OE-2026",
-            "engineUri": "https://datadrivenconstruction.io",
+            "engineUri": "https://primecrest.pk",
         },
     }
 
@@ -321,7 +323,7 @@ def report_to_sarif(report: Any) -> dict[str, Any]:
         "invocations": [invocation],
         "originalUriBaseIds": {
             "%SRCROOT%": {
-                "uri": f"openconstructionerp://{norm['target_type']}/{norm['target_id']}/",
+                "uri": f"primecrest://{norm['target_type']}/{norm['target_id']}/",
                 "description": {"text": f"PrimeCrest {norm['target_type']} {norm['target_id']}"},
             }
         },

@@ -191,7 +191,7 @@ def build_tileset(
 
     manifest: dict[str, Any] = {
         "tiler_version": TILER_VERSION,
-        "generator": "openconstructionerp-bim-tiler",
+        "generator": "primecrest-bim-tiler",
         # trimesh exports standard glTF (Y-up); identical orientation to the
         # monolithic GLB, so the viewer's existing up-axis handling applies.
         "up_axis": "Y",

@@ -1,7 +1,7 @@
 {
   "common.ok": "ОК",
   "module.display_name": "Шығын сәйкестендіру",
-  "match.semantic.not_installed": "Семантикалық сәйкестендіру үшін `pip install openconstructionerp[semantic]` қажет. Қазір тек дәл сәйкестіктер көрсетіледі; бұлыңғыр шығын сәйкестендіру үшін кеңейтімді орнатыңыз.",
+  "match.semantic.not_installed": "Семантикалық сәйкестендіру үшін `pip install primecrest[semantic]` қажет. Қазір тек дәл сәйкестіктер көрсетіледі; бұлыңғыр шығын сәйкестендіру үшін кеңейтімді орнатыңыз.",
   "match.reason.exact_match": "Қалыпқа келтірілген сипаттаманың дәл сәйкестігі.",
   "match.reason.strong_overlap": "Іздеу сөздерінің барлығы осы шығын позициясынан табылды.",
   "match.reason.partial_overlap": "Іздеу сөздерінің кейбірі осы шығын позициясынан табылды.",

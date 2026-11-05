@@ -797,7 +797,7 @@ class DocumentService:
 
         # Publish the standardized documents.document.created event so
         # cross-module subscribers (vector indexer, activity log, …) get
-        # a consistent name per OpenEstimate event conventions.
+        # a consistent name per PrimeCrest event conventions.
         try:
             from app.core.events import event_bus
 

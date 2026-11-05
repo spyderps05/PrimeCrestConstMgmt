@@ -1,7 +1,7 @@
 {
   "common.ok": "موافق",
   "module.display_name": "مطابقة التكاليف",
-  "match.semantic.not_installed": "تتطلب المطابقة الدلالية الأمر `pip install openconstructionerp[semantic]`. تُعرض حاليا نتائج المطابقة التامة فقط؛ ثبّت الإضافة للمطابقة الضبابية للتكاليف.",
+  "match.semantic.not_installed": "تتطلب المطابقة الدلالية الأمر `pip install primecrest[semantic]`. تُعرض حاليا نتائج المطابقة التامة فقط؛ ثبّت الإضافة للمطابقة الضبابية للتكاليف.",
   "match.reason.exact_match": "مطابقة تامة للوصف بعد التوحيد.",
   "match.reason.strong_overlap": "وُجدت كل كلمات البحث في بند التكلفة هذا.",
   "match.reason.partial_overlap": "وُجدت بعض كلمات البحث في بند التكلفة هذا.",

@@ -1,7 +1,7 @@
 {
   "common.ok": "OK",
   "module.display_name": "Rapprochement de coûts",
-  "match.semantic.not_installed": "La correspondance sémantique nécessite `pip install openconstructionerp[semantic]`. Seules les correspondances exactes sont affichées ; installez l'extension pour le rapprochement flou des coûts.",
+  "match.semantic.not_installed": "La correspondance sémantique nécessite `pip install primecrest[semantic]`. Seules les correspondances exactes sont affichées ; installez l'extension pour le rapprochement flou des coûts.",
   "match.reason.exact_match": "Correspondance exacte sur la description normalisée.",
   "match.reason.strong_overlap": "Tous les termes de recherche ont été trouvés dans cet élément de coût.",
   "match.reason.partial_overlap": "Certains termes de recherche ont été trouvés dans cet élément de coût.",

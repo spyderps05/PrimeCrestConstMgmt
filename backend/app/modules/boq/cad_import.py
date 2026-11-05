@@ -68,7 +68,7 @@ def _find_ddc_toolkit_bin() -> Path | None:
          the user runs the backend from a checked-out source tree.
       4. Sibling directories of the **working directory** the process was
          launched from. Critical for the wheel-install case: when the user
-         starts the service with ``pip install openconstructionerp`` and
+         starts the service with ``pip install primecrest`` and
          then runs ``uvicorn`` from inside their project root, the
          ``__file__`` path resolves to ``site-packages`` (parents[4].parent
          is ``anaconda3``) and the sibling-scan above completely misses a

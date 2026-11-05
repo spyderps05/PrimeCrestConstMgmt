@@ -2357,7 +2357,7 @@ class TakeoffService:
         try:
             from app.core import pdf_reader  # noqa: PLC0415 - lazy so a broken wheel degrades to a clear 400
         except ImportError as exc:
-            # The bundle ships the PDF reader, and "reinstall openconstructionerp"
+            # The bundle ships the PDF reader, and "reinstall primecrest"
             # is a pip command a frozen reader cannot run. Same reading, routed.
             #
             # Only the reinstall goes inside the call. ``repair_hint`` replaces
@@ -2372,7 +2372,7 @@ class TakeoffService:
                 detail=(
                     "Vector recognition could not load its PDF reader (pypdfium2). It ships with "
                     "the platform, so this usually means a broken install. "
-                    + repair_hint("Reinstall openconstructionerp.")
+                    + repair_hint("Reinstall primecrest.")
                     + " Or use the online AI analysis instead."
                 ),
             ) from exc
@@ -2531,7 +2531,7 @@ class TakeoffService:
                 detail=(
                     "Symbol search could not load its PDF reader (pypdfium2). It ships with "
                     "the platform, so this usually means a broken install. "
-                    + repair_hint("Reinstall openconstructionerp.")
+                    + repair_hint("Reinstall primecrest.")
                 ),
             ) from exc
 

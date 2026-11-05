@@ -204,7 +204,7 @@ class QdrantHealth:
 _MISSING_CLIENT_HINT = (
     "The vector client library is not part of this installation. "
     + repair_hint(
-        "Install the client extra to enable it: pip install openconstructionerp[semantic-clients]. "
+        "Install the client extra to enable it: pip install primecrest[semantic-clients]. "
         "That extra is the client alone and carries no embedding model, so it is a "
         "small install; the container image and the desktop build ship it already."
     )

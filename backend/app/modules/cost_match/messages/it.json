@@ -1,7 +1,7 @@
 {
   "common.ok": "OK",
   "module.display_name": "Abbinamento costi",
-  "match.semantic.not_installed": "L'abbinamento semantico richiede `pip install openconstructionerp[semantic]`. Vengono mostrate solo le corrispondenze esatte; installate l'estensione per l'abbinamento approssimato dei costi.",
+  "match.semantic.not_installed": "L'abbinamento semantico richiede `pip install primecrest[semantic]`. Vengono mostrate solo le corrispondenze esatte; installate l'estensione per l'abbinamento approssimato dei costi.",
   "match.reason.exact_match": "Corrispondenza esatta con la descrizione normalizzata.",
   "match.reason.strong_overlap": "Tutti i termini di ricerca sono stati trovati in questa voce di costo.",
   "match.reason.partial_overlap": "Alcuni termini di ricerca sono stati trovati in questa voce di costo.",

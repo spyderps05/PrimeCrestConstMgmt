@@ -1,7 +1,7 @@
 {
   "common.ok": "ঠিক আছে",
   "module.display_name": "খরচ মিলকরণ",
-  "match.semantic.not_installed": "অর্থভিত্তিক মিলকরণের জন্য `pip install openconstructionerp[semantic]` প্রয়োজন। আপাতত শুধু হুবহু মিলের ফলাফল দেখানো হচ্ছে; আনুমানিক খরচ মিলকরণের জন্য এই এক্সট্রা ইনস্টল করুন।",
+  "match.semantic.not_installed": "অর্থভিত্তিক মিলকরণের জন্য `pip install primecrest[semantic]` প্রয়োজন। আপাতত শুধু হুবহু মিলের ফলাফল দেখানো হচ্ছে; আনুমানিক খরচ মিলকরণের জন্য এই এক্সট্রা ইনস্টল করুন।",
   "match.reason.exact_match": "স্বাভাবিক করা বর্ণনার সঙ্গে হুবহু মিল।",
   "match.reason.strong_overlap": "অনুসন্ধানের সব শব্দ এই খরচের আইটেমে পাওয়া গেছে।",
   "match.reason.partial_overlap": "অনুসন্ধানের কিছু শব্দ এই খরচের আইটেমে পাওয়া গেছে।",

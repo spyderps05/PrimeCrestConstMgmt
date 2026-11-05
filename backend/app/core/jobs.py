@@ -37,7 +37,7 @@ _DEFAULT_REDIS_URL: str = "redis://localhost:6379/1"
 
 
 def make_celery_app(broker_url: str, result_backend: str) -> Celery:
-    """Build a fully-configured Celery app for the OpenEstimate job runner.
+    """Build a fully-configured Celery app for the PrimeCrest job runner.
 
     Args:
         broker_url: Where Celery enqueues tasks. Redis is the supported

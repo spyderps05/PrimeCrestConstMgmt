@@ -4,24 +4,24 @@
 
 The happy path for a new user is two commands:
 
-    pip install openconstructionerp
-    openconstructionerp
+    pip install primecrest
+    primecrest
 
-The bare ``openconstructionerp`` command creates the local database,
+The bare ``primecrest`` command creates the local database,
 loads the demo data, starts the server and opens the browser. The
 explicit subcommands are still there for advanced use:
 
-    openconstructionerp serve   [--host HOST] [--port PORT] [--data-dir DIR] [--open]
-    openconstructionerp init-db [--data-dir DIR]
-    openconstructionerp doctor  [--host HOST] [--port PORT] [--data-dir DIR]
-    openconstructionerp seed    [--demo] [--data-dir DIR]
-    openconstructionerp version
+    primecrest serve   [--host HOST] [--port PORT] [--data-dir DIR] [--open]
+    primecrest init-db [--data-dir DIR]
+    primecrest doctor  [--host HOST] [--port PORT] [--data-dir DIR]
+    primecrest seed    [--demo] [--data-dir DIR]
+    primecrest version
 
-``openconstructionerp --version`` (or ``-V``) prints the same report as the
+``primecrest --version`` (or ``-V``) prints the same report as the
 ``version`` subcommand. It is the spelling most people reach for first, and it
 used to exit 2 with an argparse error.
 
-``openconstructionerp doctor`` runs pre-flight checks and prints OK /
+``primecrest doctor`` runs pre-flight checks and prints OK /
 WARNING / ERROR per check so you can diagnose install problems.
 """
 
@@ -74,7 +74,7 @@ except Exception:
 # Measured on macos-latest in run 33834902654. The sidecar served the cold
 # start, and then on a restart over its own data printed
 #
-#     openconstructionerp: error: argument command: invalid choice:
+#     primecrest: error: argument command: invalid choice:
 #     'from multiprocessing.resource_tracker import main;main(18)'
 #
 # and died with ``Abort trap: 6`` without ever answering /api/health. On a
@@ -184,13 +184,12 @@ DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = 8080
 MIN_PYTHON = (3, 12)
 
-DOCS_URL = "https://openconstructionerp.com/docs"
+DOCS_URL = "https://docs.primecrest.pk"
 # Install and startup messages with what each means and what to do, kept
 # in step with docs/INSTALL_TROUBLESHOOTING.md.
-TROUBLESHOOTING_URL = "https://openconstructionerp.com/install-help"
-ISSUES_URL = "https://github.com/datadrivenconstruction/PrimeCrest/issues"
-COMMUNITY_URL = "https://t.me/datadrivenconstruction"
-GITHUB_URL = "https://github.com/datadrivenconstruction/PrimeCrest"
+TROUBLESHOOTING_URL = "https://docs.primecrest.pk/install-help"
+ISSUES_URL = "https://github.com/spyderps05/PrimeCrestConstMgmt/issues"
+GITHUB_URL = "https://github.com/spyderps05/PrimeCrestConstMgmt"
 
 logger = logging.getLogger("openestimate.cli")
 
@@ -360,9 +359,9 @@ def print_startup_banner(
     print(f"  {bar}     demo@openconstructionerp.com  {_dim('/')}  DemoPass1234!")
     print(f"  {bar}")
     print(f"  {bar}  {_dim('Stop'.ljust(11))} Ctrl+C")
-    print(f"  {bar}  {_dim('Start again'.ljust(11))} {_amber('openconstructionerp')}")
+    print(f"  {bar}  {_dim('Start again'.ljust(11))} {_amber('primecrest')}")
     print(
-        f"  {bar}  {_dim('or, anywhere'.ljust(11))} {_amber('python -m openconstructionerp')}  {_dim('(works without PATH)')}"
+        f"  {bar}  {_dim('or, anywhere'.ljust(11))} {_amber('python -m primecrest')}  {_dim('(works without PATH)')}"
     )
     print(f"  {bar}  {_dim('Data folder'.ljust(11))} {data_dir}")
     print(f"  {bar}  {_dim('Need help'.ljust(11))} {DOCS_URL}")
@@ -422,10 +421,10 @@ def _setup_env(data_dir: Path, host: str, port: int) -> None:
                 _red(_u("✗ ", "X "))
                 + "Embedded PostgreSQL could not start (already retried a few times). "
                 + _repair_hint(
-                    "Reinstall the package (pip install --upgrade --force-reinstall openconstructionerp), ",
+                    "Reinstall the package (pip install --upgrade --force-reinstall primecrest), ",
                     "Reinstall the app from its installer, ",
                 )
-                + "run 'openconstructionerp doctor' for details, or "
+                + "run 'primecrest doctor' for details, or "
                 + "set DATABASE_URL to an external PostgreSQL."
             )
             print(
@@ -434,7 +433,7 @@ def _setup_env(data_dir: Path, host: str, port: int) -> None:
                     + str(embedded_pg.resolve_pgdata(data_dir) / "log")
                     + " (and "
                     + str(Path.home() / ".openestimate" / "desktop-launcher.log")
-                    + "). If it keeps happening, send those logs to info@datadrivenconstruction.io."
+                    + "). If it keeps happening, send those logs to support@primecrest.pk."
                 )
             )
             print(_dim(f"  Installation help: {TROUBLESHOOTING_URL}"))
@@ -532,10 +531,10 @@ def check_python_version() -> Check:
 
 def check_package_installed() -> Check:
     try:
-        from importlib.metadata import version as _v
+        from app.core.dist_name import installed_version
 
-        v = _v("openconstructionerp")
-        return Check("Package installed", "ok", f"openconstructionerp v{v}")
+        v = installed_version()
+        return Check("Package installed", "ok", f"primecrest v{v}")
     except Exception:
         return Check(
             "Package installed",
@@ -543,7 +542,7 @@ def check_package_installed() -> Check:
             "running from source checkout (not pip-installed)",
             # A bundle that cannot read its own version is not a source
             # checkout and has nothing to install itself from.
-            _repair_hint("For production use: pip install openconstructionerp"),
+            _repair_hint("For production use: pip install primecrest"),
         )
 
 
@@ -561,10 +560,10 @@ def check_data_dir(data_dir: Path) -> Check:
             f"cannot write to {data_dir}: {exc}",
             # Names the command and not only the flag. A hint that says "use
             # --data-dir" is read as a command line, and typed as one it is
-            # `openconstructionerp --data-dir ...`, which exits 2: the flag is
+            # `primecrest --data-dir ...`, which exits 2: the flag is
             # declared on the subcommands, never on the top-level parser.
-            f"Start with a writable path, e.g. openconstructionerp serve "
-            f"--data-dir {Path.home() / 'openconstructionerp-data'}",
+            f"Start with a writable path, e.g. primecrest serve "
+            f"--data-dir {Path.home() / 'primecrest-data'}",
         )
 
 
@@ -620,7 +619,7 @@ def check_port_free(host: str, port: int) -> Check:
                         "error",
                         f"port {port} on {host} is already in use",
                         f"Stop the other process, or start on another port with "
-                        f"openconstructionerp serve --port {port + 1}",
+                        f"primecrest serve --port {port + 1}",
                     )
                 except (OSError, ConnectionRefusedError):
                     pass
@@ -634,7 +633,7 @@ def check_port_free(host: str, port: int) -> Check:
                         "error",
                         f"port {port} on {host} is already in use ({exc})",
                         f"Stop the other process, or start on another port with "
-                        f"openconstructionerp serve --port {port + 1}",
+                        f"primecrest serve --port {port + 1}",
                     )
         return Check("Port available", "ok", f"port {port} is free")
     except Exception as exc:
@@ -825,7 +824,7 @@ def check_core_tabular_deps() -> list[Check]:
     # Both are base dependencies, so a bundle missing one is damaged rather than
     # merely lean, and repair is the honest advice there.
     hint = _repair_hint(
-        "Cost database import requires pandas + pyarrow. Reinstall with: pip install --upgrade openconstructionerp"
+        "Cost database import requires pandas + pyarrow. Reinstall with: pip install --upgrade primecrest"
     )
     out: list[Check] = []
     for mod in ("pandas", "pyarrow"):
@@ -1005,7 +1004,7 @@ def check_optional_extras(data_dir: Path | None = None) -> list[Check]:
                 label,
                 "warn",
                 missing_msg,
-                _no_extra_hint(f"pip install 'openconstructionerp[{extra}]'"),
+                _no_extra_hint(f"pip install 'primecrest[{extra}]'"),
             )
         err = _import_error(mod)
         if err is None:
@@ -1014,7 +1013,7 @@ def check_optional_extras(data_dir: Path | None = None) -> list[Check]:
             label,
             "error",
             f"present but will not import: {err}",
-            _repair_hint(f"pip install --force-reinstall 'openconstructionerp[{extra}]'"),
+            _repair_hint(f"pip install --force-reinstall 'primecrest[{extra}]'"),
         )
 
     out: list[Check] = []
@@ -1071,7 +1070,7 @@ def check_optional_extras(data_dir: Path | None = None) -> list[Check]:
                 "PDF takeoff",
                 "error" if both_gone else "warn",
                 f"PDF reader will not import: {broken}",
-                _repair_hint("pip install --force-reinstall --no-cache-dir openconstructionerp"),
+                _repair_hint("pip install --force-reinstall --no-cache-dir primecrest"),
             )
         )
 
@@ -1159,7 +1158,7 @@ def check_optional_extras(data_dir: Path | None = None) -> list[Check]:
                 cv_label,
                 "warn",
                 "not installed (geometry detection still works; dimension-text reading disabled)",
-                _no_extra_hint("pip install 'openconstructionerp[cv]'"),
+                _no_extra_hint("pip install 'primecrest[cv]'"),
             )
         )
     elif (cv_err := _import_error("paddleocr")) is not None:
@@ -1168,7 +1167,7 @@ def check_optional_extras(data_dir: Path | None = None) -> list[Check]:
                 cv_label,
                 "error",
                 f"present but will not import: {cv_err}",
-                _repair_hint("pip install --force-reinstall 'openconstructionerp[cv]'"),
+                _repair_hint("pip install --force-reinstall 'primecrest[cv]'"),
             )
         )
     elif not _present("paddle") and not _engine_distribution_installed():
@@ -1297,7 +1296,7 @@ def _run_fatal_preflight(data_dir: Path, host: str, port: int) -> None:
     for c in fatal_checks:
         c.print()
     print()
-    print(_dim("Run 'openconstructionerp doctor' for full diagnostics."))
+    print(_dim("Run 'primecrest doctor' for full diagnostics."))
     print(_dim(f"Troubleshooting: {TROUBLESHOOTING_URL}"))
     sys.exit(1)
 
@@ -1474,7 +1473,7 @@ def cmd_serve(args: argparse.Namespace) -> None:
         if "address already in use" in str(exc).lower() or "10048" in str(exc):
             print(
                 _dim(
-                    f"  {arrow} Port {args.port} is already in use. Try: openconstructionerp serve --port {args.port + 1}"
+                    f"  {arrow} Port {args.port} is already in use. Try: primecrest serve --port {args.port + 1}"
                 )
             )
         print(_dim(f"  {arrow} Installation help: {TROUBLESHOOTING_URL}"))
@@ -1484,7 +1483,7 @@ def cmd_serve(args: argparse.Namespace) -> None:
         arrow = _u("\u2192", "->")
         print()
         print(_red(_bold("Unexpected startup error:")) + f" {type(exc).__name__}: {exc}")
-        print(_dim(f"  {arrow} Run 'openconstructionerp doctor' to diagnose."))
+        print(_dim(f"  {arrow} Run 'primecrest doctor' to diagnose."))
         print(_dim(f"  {arrow} Installation help: {TROUBLESHOOTING_URL}"))
         print(_dim(f"  {arrow} Report this at: {ISSUES_URL}"))
         sys.exit(1)
@@ -1679,7 +1678,7 @@ def cmd_init_db(args: argparse.Namespace) -> None:
         asyncio.run(_create())
     except Exception as exc:
         print(_red(f"Database initialisation failed: {exc}"))
-        print(_dim(f"  {_u('\u2192', '->')} Run 'openconstructionerp doctor' for diagnostics."))
+        print(_dim(f"  {_u('\u2192', '->')} Run 'primecrest doctor' for diagnostics."))
         sys.exit(1)
 
     print()
@@ -1696,12 +1695,12 @@ def cmd_init_db(args: argparse.Namespace) -> None:
             _dim(
                 f"  {_u('\u2192', '->')} "
                 + _repair_hint(
-                    "pip install --upgrade --force-reinstall openconstructionerp",
+                    "pip install --upgrade --force-reinstall primecrest",
                     "Reinstall the app from its installer",
                 )
             )
         )
-        print(_dim(f"  {_u('\u2192', '->')} Then run 'openconstructionerp doctor' to verify."))
+        print(_dim(f"  {_u('\u2192', '->')} Then run 'primecrest doctor' to verify."))
         sys.exit(1)
 
     print()
@@ -1713,7 +1712,7 @@ def cmd_init_db(args: argparse.Namespace) -> None:
     print(f"  {_dim('Vectors:')}  {data_dir / 'vectors'}")
     print(f"  {_dim('Uploads:')}  {data_dir / 'uploads'}")
     print()
-    print(f"Next: {_amber('openconstructionerp serve')}")
+    print(f"Next: {_amber('primecrest serve')}")
 
 
 def cmd_doctor(args: argparse.Namespace) -> None:
@@ -1736,7 +1735,7 @@ def cmd_doctor(args: argparse.Namespace) -> None:
     if errors:
         print(_red(_bold(f"  {len(errors)} error(s)")) + _dim(f", {len(warns)} warning(s)"))
         print()
-        print(_dim("Fix the errors above, then run 'openconstructionerp serve'."))
+        print(_dim("Fix the errors above, then run 'primecrest serve'."))
         print(_dim(f"Docs: {TROUBLESHOOTING_URL}"))
         sys.exit(1)
     elif warns:
@@ -1745,11 +1744,11 @@ def cmd_doctor(args: argparse.Namespace) -> None:
             + _dim(_u(" \u2014 non-fatal, server will run", " - non-fatal, server will run"))
         )
         print()
-        print(f"Run: {_amber('openconstructionerp serve')}")
+        print(f"Run: {_amber('primecrest serve')}")
     else:
         print(_green(_bold("  All checks passed.")))
         print()
-        print(f"Run: {_amber('openconstructionerp serve')}")
+        print(f"Run: {_amber('primecrest serve')}")
 
 
 def cmd_version(_args: argparse.Namespace) -> None:
@@ -1772,12 +1771,12 @@ def cmd_version(_args: argparse.Namespace) -> None:
 
 
 def cmd_upgrade(args: argparse.Namespace) -> None:
-    """Pip-upgrade openconstructionerp inside *this* interpreter's environment.
+    """Pip-upgrade primecrest inside *this* interpreter's environment.
 
     Issue #96: users who installed via the Windows installer get a launcher
     (``start.bat``) that points at a private venv under
     ``%LOCALAPPDATA%\\PrimeCrest\\venv``. Running ``pip install
-    --upgrade openconstructionerp`` in any other shell upgrades the user's
+    --upgrade primecrest`` in any other shell upgrades the user's
     GLOBAL Python - the venv keeps its old wheel, and the launcher keeps
     reporting the old version even though pip claims success. This command
     avoids the trap by always invoking ``sys.executable -m pip`` so the
@@ -1794,7 +1793,7 @@ def cmd_upgrade(args: argparse.Namespace) -> None:
 
     # In the PyInstaller desktop build ``sys.executable`` is the frozen binary,
     # not an interpreter, so the tokens below would come straight back into this
-    # CLI as ``openconstructionerp pip install ...`` and argparse would answer
+    # CLI as ``primecrest pip install ...`` and argparse would answer
     # ``invalid choice: 'pip'`` (issue #403). The bundle carries no pip; the
     # installer replaces the whole app.
     if is_frozen_build():
@@ -1832,12 +1831,12 @@ def cmd_upgrade(args: argparse.Namespace) -> None:
         print(_dim(f"  {resolve_pgdata(data_dir)}"))
         print()
         print(_dim("Upgrading now would replace files that process is executing from."))
-        print(_dim("Close the app (or stop `openconstructionerp serve`), then run this again."))
+        print(_dim("Close the app (or stop `primecrest serve`), then run this again."))
         sys.exit(1)
 
-    target = "openconstructionerp"
+    target = "primecrest"
     if args.version:
-        target = f"openconstructionerp=={args.version}"
+        target = f"primecrest=={args.version}"
 
     print(_dim(f"Interpreter: {sys.executable}"))
     print(_dim(f"Installing:  {target}"))
@@ -1853,13 +1852,13 @@ def cmd_upgrade(args: argparse.Namespace) -> None:
     if result.returncode != 0:
         print()
         print(_red(_bold(f"  Upgrade failed (exit {result.returncode})")))
-        print(_dim("Try: python -m pip install --upgrade openconstructionerp"))
+        print(_dim("Try: python -m pip install --upgrade primecrest"))
         sys.exit(result.returncode)
 
     new_version = _resolve_version()
     print()
     print(_green(_bold(f"  Upgraded to v{new_version}")))
-    print(_dim("Restart your launcher (start.bat / openconstructionerp serve) to pick it up."))
+    print(_dim("Restart your launcher (start.bat / primecrest serve) to pick it up."))
 
 
 def _resolve_version() -> str:
@@ -1869,7 +1868,7 @@ def _resolve_version() -> str:
     and that made this command disagree with the server it was standing next
     to. ``importlib.metadata`` reports whatever distribution is installed in
     the environment, which on a source checkout with any earlier
-    ``pip install openconstructionerp`` in it is not the code that is running:
+    ``pip install primecrest`` in it is not the code that is running:
     this printed v15.2.0 for a tree at 15.9.1 while ``/api/health`` on the same
     interpreter correctly said 15.9.1. Settings resolves through
     ``config._detect_version``, which prefers the pyproject beside the running
@@ -1900,9 +1899,9 @@ def _resolve_version() -> str:
         return str(field.default)
     except Exception:
         try:
-            from importlib.metadata import version as _v
+            from app.core.dist_name import installed_version
 
-            return _v("openconstructionerp")
+            return installed_version()
         except Exception:
             return "unknown"
 
@@ -1910,8 +1909,8 @@ def _resolve_version() -> str:
 def print_welcome(*, next_command_hint: bool = True) -> None:
     """Fast, zero-network welcome screen.
 
-    Shown on the first bare ``openconstructionerp`` invocation and when
-    the user runs ``openconstructionerp welcome`` explicitly. Tells them
+    Shown on the first bare ``primecrest`` invocation and when
+    the user runs ``primecrest welcome`` explicitly. Tells them
     the single command that starts everything, the demo login, and where
     to ask questions when something goes wrong.
 
@@ -1931,11 +1930,11 @@ def print_welcome(*, next_command_hint: bool = True) -> None:
     print()
     if next_command_hint:
         print(f"  {bar}  {_bold('To start, run one command')}")
-        print(f"  {bar}     {_amber('openconstructionerp')}")
+        print(f"  {bar}     {_amber('primecrest')}")
         print(f"  {bar}  {_dim('It sets up the database, loads the demo and opens your browser.')}")
         print(f"  {bar}")
         print(f"  {bar}  {_dim('Command not found? This always works, no PATH needed:')}")
-        print(f"  {bar}     {_amber('python -m openconstructionerp')}")
+        print(f"  {bar}     {_amber('python -m primecrest')}")
     else:
         print(f"  {bar}  {_bold('Setting things up for you')}")
         print(f"  {bar}  {_dim('Creating the database and loading the demo. The server starts in a moment.')}")
@@ -1944,16 +1943,15 @@ def print_welcome(*, next_command_hint: bool = True) -> None:
     print(f"  {bar}     {_amber(url)}")
     print(f"  {bar}     demo@openconstructionerp.com  {_dim('/')}  DemoPass1234!")
     print()
-    print(f"  {_dim('Advanced:')}  openconstructionerp serve {_dim('|')} init-db {_dim('|')} doctor {_dim('|')} --help")
+    print(f"  {_dim('Advanced:')}  primecrest serve {_dim('|')} init-db {_dim('|')} doctor {_dim('|')} --help")
     print()
     print(f"  {_bold('Help and community')}")
     print(f"    {_dim('Docs'.ljust(10))} {DOCS_URL}")
     print(f"    {_dim('GitHub'.ljust(10))} {GITHUB_URL}")
-    print(f"    {_dim('Community'.ljust(10))} {COMMUNITY_URL} {_dim('(Telegram)')}")
     print()
     if next_command_hint:
         print(
-            f"  {_dim('Tip: run')} {_amber('openconstructionerp')} {_dim('(or')} {_amber('python -m openconstructionerp')}{_dim(') any time to start the server.')}"
+            f"  {_dim('Tip: run')} {_amber('primecrest')} {_dim('(or')} {_amber('python -m primecrest')}{_dim(') any time to start the server.')}"
         )
         print()
 
@@ -2084,7 +2082,7 @@ async def _promote_user_to_admin(session: AsyncSession, email: str) -> str:
 def cmd_promote_admin(args: argparse.Namespace) -> None:
     """Promote an existing user to an active admin (operator recovery)."""
     if not (args.email or "").strip():
-        print(_red("Give the e-mail of the account to promote: openconstructionerp promote-admin <email>"))
+        print(_red("Give the e-mail of the account to promote: primecrest promote-admin <email>"))
         sys.exit(2)
     data_dir = _data_dir_from_args(args)
     _setup_env(data_dir, DEFAULT_HOST, DEFAULT_PORT)
@@ -2554,7 +2552,7 @@ def cmd_module_uninstall(args: argparse.Namespace) -> None:
 
     if manifest is None:
         print(_red(f"Module '{requested}' is not installed."))
-        print(_dim("Run 'openconstructionerp module list' to see installed modules."))
+        print(_dim("Run 'primecrest module list' to see installed modules."))
         sys.exit(1)
 
     manifest_name = getattr(manifest, "name", requested)
@@ -2803,11 +2801,11 @@ def _build_parser() -> argparse.ArgumentParser:
         The top-level parser, with all subparsers attached.
     """
     parser = argparse.ArgumentParser(
-        prog="openconstructionerp",
+        prog="primecrest",
         description=(
             "PrimeCrest, open-source construction cost estimation platform.\n\n"
             "Quick start, one command does everything:\n"
-            "    openconstructionerp\n\n"
+            "    primecrest\n\n"
             "It creates the local database, loads the demo data, starts the server\n"
             "and opens http://127.0.0.1:8080 (demo@openconstructionerp.com / DemoPass1234!)."
         ),
@@ -2891,7 +2889,7 @@ def _build_parser() -> argparse.ArgumentParser:
     # upgrade - pip-upgrade in *this* interpreter's env (Issue #96)
     upgrade_p = subparsers.add_parser(
         "upgrade",
-        help="Upgrade openconstructionerp in the same env this command runs in",
+        help="Upgrade primecrest in the same env this command runs in",
     )
     upgrade_p.add_argument(
         "--version",
@@ -2977,9 +2975,9 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Install, list, or uninstall modules",
         description=(
             "Manage PrimeCrest modules.\n\n"
-            "    openconstructionerp module install <archive.zip> [--force]\n"
-            "    openconstructionerp module list\n"
-            "    openconstructionerp module uninstall <name> [--force]\n\n"
+            "    primecrest module install <archive.zip> [--force]\n"
+            "    primecrest module list\n"
+            "    primecrest module uninstall <name> [--force]\n\n"
             "A module is a Python package with a manifest.py. Install extracts it\n"
             "into the modules directory; restart the server to load it."
         ),
@@ -3011,7 +3009,7 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Scaffold and manage partner packs",
         description=(
             "Manage PrimeCrest partner packs (declarative preset bundles).\n\n"
-            "    openconstructionerp pack new <slug> [--out DIR] [--force]\n\n"
+            "    primecrest pack new <slug> [--out DIR] [--force]\n\n"
             "Emits a minimal, valid pack folder (manifest.json + logo + onboarding\n"
             "+ README). Drop the folder (or a .zip of it) into <data-dir>/packs/ and\n"
             "activate it from the Modules page."
@@ -3033,7 +3031,7 @@ def _build_parser() -> argparse.ArgumentParser:
     )
 
     # Make each group's own parser reachable from its command so it can print
-    # help when invoked with no sub-action (``openconstructionerp module``).
+    # help when invoked with no sub-action (``primecrest module``).
     module_p.set_defaults(_module_parser=module_p)
     pack_p.set_defaults(_pack_parser=pack_p)
 
@@ -3090,7 +3088,7 @@ def main() -> None:
     elif args.command in ("welcome", "hello"):
         cmd_welcome(args)
     elif args.command is None:
-        # Default behaviour for bare ``openconstructionerp``:
+        # Default behaviour for bare ``primecrest``:
         # * First run (no data dir yet) - show the welcome screen and an
         #   interactive "open in browser?" prompt so the user sees the URL,
         #   demo login and community links BEFORE uvicorn eats the

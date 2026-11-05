@@ -1,6 +1,6 @@
 # DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
-"""Scaffold a new OpenEstimate module from the template.
+"""Scaffold a new PrimeCrest module from the template.
 
 Usage::
 

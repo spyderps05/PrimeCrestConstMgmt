@@ -1,7 +1,7 @@
 {
   "common.ok": "OK",
   "module.display_name": "Kulude sobitamine",
-  "match.semantic.not_installed": "Semantiline sobitamine nõuab käsku `pip install openconstructionerp[semantic]`. Näidatakse ainult täpseid vasteid; hägusa kulude sobitamise jaoks installige lisa.",
+  "match.semantic.not_installed": "Semantiline sobitamine nõuab käsku `pip install primecrest[semantic]`. Näidatakse ainult täpseid vasteid; hägusa kulude sobitamise jaoks installige lisa.",
   "match.reason.exact_match": "Normaliseeritud kirjelduse täpne vaste.",
   "match.reason.strong_overlap": "Kõik otsingusõnad leiti sellelt kulureralt.",
   "match.reason.partial_overlap": "Osa otsingusõnu leiti sellelt kulureralt.",

@@ -462,7 +462,7 @@ class UserService:
             logger.warning(
                 "Registration on an install with no active administrator: the new account "
                 "gets the default role, not admin. Promote an existing user with "
-                "'openconstructionerp promote-admin <email>' (or 'python -m app.cli "
+                "'primecrest promote-admin <email>' (or 'python -m app.cli "
                 "promote-admin <email>'), or in SQL: UPDATE oe_users_user SET role = 'admin', "
                 "is_active = true WHERE email = '<email>';"
             )

@@ -274,9 +274,9 @@ def _document(buffer: io.BytesIO, title: str, *, letterhead_on_first_page: bool 
         meta = {
             "author": "PrimeCrest",
             "subject": "Tender decision · DDC-CWICR-OE",
-            "creator": "PrimeCrest · DataDrivenConstruction",
-            "producer": "PrimeCrest / reportlab · datadrivenconstruction.io",
-            "keywords": "DDC-CWICR-OE-2026,PrimeCrest,Tendering,DataDrivenConstruction",
+            "creator": "PrimeCrest · Spyder Solutions",
+            "producer": "PrimeCrest / reportlab · primecrest.pk",
+            "keywords": "DDC-CWICR-OE-2026,PrimeCrest,Tendering,Spyder Solutions",
         }
     doc = BaseDocTemplate(
         buffer,

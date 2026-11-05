@@ -417,7 +417,7 @@ def _warn_missing_backend(operation: str) -> None:
         "cost-vector adapter: skipping %s - %s",
         operation,
         repair_hint(
-            "install the [vector] extra (`pip install openconstructionerp[vector]`) to enable cost semantic indexing."
+            "install the [vector] extra (`pip install primecrest[vector]`) to enable cost semantic indexing."
         ),
     )
 

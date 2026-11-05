@@ -130,7 +130,7 @@ def _detect_version() -> str:
     ``cd backend && python -m uvicorn app.main:create_app --factory``),
     the *source* file is what's actually executing - but
     ``importlib.metadata.version`` returns whatever is in ``site-packages``
-    if a stale ``pip install openconstructionerp==X`` happened earlier.
+    if a stale ``pip install primecrest==X`` happened earlier.
     That made ``/api/health`` claim a wrong version after every dev
     edit and made it impossible to tell, in a QA session, whether a
     just-edited file was actually serving requests.
@@ -139,7 +139,7 @@ def _detect_version() -> str:
       1. If ``app/__init__.py`` lives outside ``site-packages`` and a
          ``pyproject.toml`` is on disk above it, read that - the source
          tree is the source of truth.
-      2. Otherwise, ``importlib.metadata.version("openconstructionerp")``.
+      2. Otherwise, ``importlib.metadata.version("primecrest")`` (or the legacy upstream dist name).
       3. ``0.0.0+local`` sentinel when all else fails.
     """
     here = Path(__file__).resolve()
@@ -148,7 +148,9 @@ def _detect_version() -> str:
         if from_source:
             return from_source
     try:
-        return _pkg_version("openconstructionerp")
+        from app.core.dist_name import installed_version
+
+        return installed_version()
     except PackageNotFoundError:
         return _read_pyproject_version() or "0.0.0+local"
 
@@ -754,7 +756,7 @@ class Settings(BaseSettings):
         default=["boq_quality"],
         description="Default validation rule sets applied to all projects",
     )
-    # Per the OpenEstimate philosophy ("validation is a first-class citizen
+    # Per the PrimeCrest philosophy ("validation is a first-class citizen
     # - not optional, part of core workflow") every BOQ import (Excel / CSV
     # / GAEB X83 / X84) runs the configured rule packs before the response
     # is returned, so DIN276 / NRM / GAEB / MasterFormat / DPGF violations
@@ -869,7 +871,7 @@ class Settings(BaseSettings):
             f":{quote(password, safe='')}"
             f"@{os.environ.get('OE_DB_HOST', 'postgres')}"
             f":{os.environ.get('OE_DB_PORT', '5432')}"
-            f"/{os.environ.get('OE_DB_NAME', 'openestimate')}"
+            f"/{os.environ.get('OE_DB_NAME', 'primecrest')}"
         )
         self.database_url = f"postgresql+asyncpg://{authority}"
         self.database_sync_url = f"postgresql://{authority}"

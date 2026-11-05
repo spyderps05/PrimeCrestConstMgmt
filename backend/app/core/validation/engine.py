@@ -2,7 +2,7 @@
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Validation engine - configurable rule-based data validation.
 
-This is a FIRST-CLASS component of OpenEstimate. Every data import and
+This is a FIRST-CLASS component of PrimeCrest. Every data import and
 modification passes through validation. Rules are organized into rule sets
 (e.g., "din276", "gaeb", "boq_quality") that can be enabled per project.
 

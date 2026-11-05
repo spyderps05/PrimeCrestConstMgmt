@@ -499,18 +499,18 @@ def _check_infrastructure() -> str | None:
 
     if not (_installed("sentence_transformers") or _installed("fastembed")):
         return "no embedding model is installed. " + repair_hint(
-            "Install the semantic extra and rerun: pip install openconstructionerp[semantic]"
+            "Install the semantic extra and rerun: pip install primecrest[semantic]"
         )
     backend = os.environ.get("VECTOR_BACKEND", "lancedb").strip().lower()
     if backend == "qdrant":
         if not _installed("qdrant_client"):
             return "VECTOR_BACKEND=qdrant but qdrant-client is not installed. " + repair_hint(
                 "Install the client extra and start Qdrant, then rerun: "
-                "pip install openconstructionerp[semantic-clients]"
+                "pip install primecrest[semantic-clients]"
             )
     elif not _installed("lancedb"):
         return "the LanceDB vector store is not installed. " + repair_hint(
-            "Install the vector extra and rerun: pip install openconstructionerp[vector]"
+            "Install the vector extra and rerun: pip install primecrest[vector]"
         )
     return None
 
@@ -680,7 +680,7 @@ def main(argv: list[str] | None = None) -> int:
 
         print(
             "error: nothing was indexed. The embedding model may be missing or the vector store "
-            "may be unreachable. " + repair_hint("Install openconstructionerp[semantic], start the store, then rerun."),
+            "may be unreachable. " + repair_hint("Install primecrest[semantic], start the store, then rerun."),
             file=sys.stderr,
         )
         return 1

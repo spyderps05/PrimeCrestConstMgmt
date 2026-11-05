@@ -773,7 +773,7 @@ def parse_backup_zip(raw: bytes) -> tuple[dict[str, Any], dict[str, list[dict]]]
         raise ValueError("manifest.json is not valid JSON") from exc
 
     if manifest.get("app") != APP_ID:
-        raise ValueError(f"Not an OpenEstimate backup (app={manifest.get('app')})")
+        raise ValueError(f"Not a PrimeCrest backup (app={manifest.get('app')})")
 
     data: dict[str, list[dict]] = {}
     for name in zf.namelist():

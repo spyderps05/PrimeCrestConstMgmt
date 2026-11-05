@@ -2,7 +2,7 @@
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Built-in validation rules.
 
-Registers all standard rule sets that ship with OpenEstimate.
+Registers all standard rule sets that ship with PrimeCrest.
 Modules can register additional rules via the rule_registry.
 
 Every user-facing ``message`` and ``suggestion`` is resolved through

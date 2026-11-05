@@ -70,7 +70,7 @@ from pathlib import Path
 # Credentials for the account this script seeds. They are read back by the
 # verifier, which logs in with them to prove a real read path answers 200 and
 # not 401. Throwaway, in a database that exists for the length of one CI job.
-SEED_EMAIL = "upgrade-lane@datadrivenconstruction.io"
+SEED_EMAIL = "upgrade-lane@primecrest.pk"
 SEED_PASSWORD = "upgrade-lane-probe-1"
 
 
@@ -96,9 +96,9 @@ def main() -> int:
     # ── Provenance, before anything touches the database ────────────────────
     from importlib.metadata import version as dist_version
 
-    installed = dist_version("openconstructionerp")
+    installed = dist_version("primecrest")
     if installed != expected_version:
-        fail(f"this interpreter holds openconstructionerp {installed}, not the expected {expected_version}")
+        fail(f"this interpreter holds primecrest {installed}, not the expected {expected_version}")
     print(f"OK    installed release is {installed}")
 
     import app
@@ -114,7 +114,7 @@ def main() -> int:
 
     from app.main import create_app
 
-    print(f"..    booting openconstructionerp {installed} once against the empty database")
+    print(f"..    booting primecrest {installed} once against the empty database")
     with TestClient(create_app()) as client:
         response = client.get("/api/health")
         print(f"OK    the previous release booted and answered /api/health with {response.status_code}")

@@ -2,7 +2,7 @@
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Unicode font registration for every reportlab-generated PDF.
 
-OpenEstimate principle #2 is *i18n EVERYWHERE*. reportlab's built-in Type-1
+PrimeCrest principle #2 is *i18n EVERYWHERE*. reportlab's built-in Type-1
 fonts (Helvetica / Times / Courier) are Latin-1 only, so any PDF that renders
 Cyrillic (ru, bg, uk, sr), Greek, or the many accented Latin scripts with the
 default font shows empty boxes ("tofu") instead of text. A construction ERP

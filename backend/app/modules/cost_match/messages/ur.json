@@ -1,7 +1,7 @@
 {
   "common.ok": "ٹھیک ہے",
   "module.display_name": "لاگت کی مماثلت",
-  "match.semantic.not_installed": "معنیاتی مماثلت کے لیے `pip install openconstructionerp[semantic]` درکار ہے۔ اس وقت صرف مکمل مطابقت کے نتائج دکھائے جا رہے ہیں؛ غیر واضح لاگت مماثلت کے لیے یہ ایکسٹرا انسٹال کریں۔",
+  "match.semantic.not_installed": "معنیاتی مماثلت کے لیے `pip install primecrest[semantic]` درکار ہے۔ اس وقت صرف مکمل مطابقت کے نتائج دکھائے جا رہے ہیں؛ غیر واضح لاگت مماثلت کے لیے یہ ایکسٹرا انسٹال کریں۔",
   "match.reason.exact_match": "معیاری تفصیل کے ساتھ مکمل مطابقت۔",
   "match.reason.strong_overlap": "تلاش کے تمام الفاظ اس لاگت آئٹم میں مل گئے۔",
   "match.reason.partial_overlap": "تلاش کے کچھ الفاظ اس لاگت آئٹم میں مل گئے۔",

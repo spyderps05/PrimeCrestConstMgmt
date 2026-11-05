@@ -9,7 +9,7 @@ archive is never imported or executed before an administrator has seen every
 file and confirmed the install, that it can only write into the runtime module
 directory, and that a failed install leaves the existing modules untouched.
 
-The archive format is the CLI's (``openconstructionerp module install``): one
+The archive format is the CLI's (``primecrest module install``): one
 top-level package directory with a ``manifest.py``. An optional data-only
 ``module.json`` next to it declares platform compatibility and one hosted UI
 page for the sidebar.

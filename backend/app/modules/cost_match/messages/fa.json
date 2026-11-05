@@ -1,7 +1,7 @@
 {
   "common.ok": "تأیید",
   "module.display_name": "تطبیق هزینه",
-  "match.semantic.not_installed": "تطبیق معنایی به `pip install openconstructionerp[semantic]` نیاز دارد. در حال حاضر فقط نتایج تطبیق دقیق نمایش داده می‌شود؛ برای تطبیق تقریبی هزینه این افزونه را نصب کنید.",
+  "match.semantic.not_installed": "تطبیق معنایی به `pip install primecrest[semantic]` نیاز دارد. در حال حاضر فقط نتایج تطبیق دقیق نمایش داده می‌شود؛ برای تطبیق تقریبی هزینه این افزونه را نصب کنید.",
   "match.reason.exact_match": "تطابق دقیق با شرح استانداردسازی‌شده.",
   "match.reason.strong_overlap": "همه واژه‌های جستجو در این قلم هزینه پیدا شدند.",
   "match.reason.partial_overlap": "برخی واژه‌های جستجو در این قلم هزینه پیدا شدند.",

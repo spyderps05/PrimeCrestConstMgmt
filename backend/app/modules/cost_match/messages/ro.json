@@ -1,7 +1,7 @@
 {
   "common.ok": "OK",
   "module.display_name": "Potrivire costuri",
-  "match.semantic.not_installed": "Potrivirea semantică necesită `pip install openconstructionerp[semantic]`. Se afișează doar potrivirile exacte; instalați extensia pentru potrivirea aproximativă a costurilor.",
+  "match.semantic.not_installed": "Potrivirea semantică necesită `pip install primecrest[semantic]`. Se afișează doar potrivirile exacte; instalați extensia pentru potrivirea aproximativă a costurilor.",
   "match.reason.exact_match": "Potrivire exactă cu descrierea normalizată.",
   "match.reason.strong_overlap": "Toți termenii de căutare au fost găsiți în acest articol de cost.",
   "match.reason.partial_overlap": "Unii termeni de căutare au fost găsiți în acest articol de cost.",

@@ -4,7 +4,7 @@
 
 Usage:
     python -m app                    # Dev mode
-    openconstructionerp-server.exe   # Production (PyInstaller bundle)
+    primecrest-server.exe            # Production (PyInstaller bundle)
 """
 
 import multiprocessing

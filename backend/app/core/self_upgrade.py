@@ -53,7 +53,7 @@ from typing import Any
 
 logger = logging.getLogger(__name__)
 
-RELEASES_URL = "https://github.com/datadrivenconstruction/PrimeCrest/releases/latest"
+RELEASES_URL = "https://github.com/spyderps05/PrimeCrestConstMgmt/releases/latest"
 
 #: Shown verbatim to the user when a frozen build is asked to upgrade itself.
 FROZEN_REFUSAL = (
@@ -130,7 +130,7 @@ UPGRADE_DEMO_ACCOUNT = "demo_account"
 DISABLED_REFUSAL = (
     "Updating from the browser is disabled on this install. To switch it on, set "
     f"{RUNTIME_UPGRADE_ENV}=true in the server's environment and restart it. Or run "
-    "`pip install --upgrade openconstructionerp` from a shell on the server, then restart."
+    "`pip install --upgrade primecrest` from a shell on the server, then restart."
 )
 
 #: The refusal the route answers to a shared demo login.
@@ -230,7 +230,7 @@ class UpgradeJob:
             "running_version": self.running_version,
             "restart_required": self.restart_required,
             "restart_hint": (
-                "Restart your launcher (start.bat / `openconstructionerp serve`) "
+                "Restart your launcher (start.bat / `primecrest serve`) "
                 "or the host's systemd unit to load the new version."
             ),
         }
@@ -288,6 +288,8 @@ def _move_windows_launchers_aside(job: UpgradeJob) -> None:
         except OSError:
             pass  # a leftover still locked by an older process - skip
     for exe_name in (
+        "primecrest.exe",
+        "primecrest-server.exe",
         "openconstructionerp.exe",
         "openconstructionerp-server.exe",
         "openestimate.exe",
@@ -324,7 +326,9 @@ def _installed_version(fallback: str) -> str:
     try:
         from importlib.metadata import version
 
-        return version("openconstructionerp")
+        from app.core.dist_name import installed_version
+
+        return installed_version()
     except Exception:  # noqa: BLE001 - a missing or unreadable dist is not fatal here
         return fallback
 
@@ -353,7 +357,7 @@ def run_upgrade(job: UpgradeJob) -> UpgradeJob:
         job.status = FAILED
         job.error = (
             f"The upgrade did not finish within {UPGRADE_TIMEOUT_SECONDS} seconds and was stopped. "
-            "Run `pip install --upgrade openconstructionerp` from a shell to see where it stalls."
+            "Run `pip install --upgrade primecrest` from a shell to see where it stalls."
         )
         logger.warning("Upgrade job %s timed out after %ss", job.id, UPGRADE_TIMEOUT_SECONDS)
     except Exception as exc:  # noqa: BLE001 - reported through the job, not raised

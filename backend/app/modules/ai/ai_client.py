@@ -496,7 +496,7 @@ _OPENAI_COMPAT_CONFIG = {
     "openrouter": {
         "url": "https://openrouter.ai/api/v1/chat/completions",
         "model": OPENROUTER_MODEL,
-        "extra_headers": {"HTTP-Referer": "https://openconstructionerp.com"},
+        "extra_headers": {"HTTP-Referer": "https://primecrest.pk"},
     },
     "mistral": {
         "url": "https://api.mistral.ai/v1/chat/completions",

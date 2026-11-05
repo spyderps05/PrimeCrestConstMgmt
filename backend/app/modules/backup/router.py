@@ -96,7 +96,7 @@ async def export_backup(
     path = await asyncio.to_thread(spool_to_disk, spool)
 
     timestamp = manifest["created_at"].replace("-", "").replace(":", "")[:15]
-    filename = f"openconstructionerp_backup_{timestamp}.zip"
+    filename = f"primecrest_backup_{timestamp}.zip"
 
     return FileResponse(
         path=path,

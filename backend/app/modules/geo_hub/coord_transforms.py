@@ -19,7 +19,7 @@ What we ship out of the box:
 
 This keeps the common path (WGS84 + Web Mercator) working in a 4 GB
 VPS that doesn't have PROJ libs installed, while letting power users
-opt in to ``pip install openconstructionerp[geo]`` for the full set.
+opt in to ``pip install primecrest[geo]`` for the full set.
 """
 
 from __future__ import annotations
@@ -218,7 +218,7 @@ def transform(
 
     raise NotImplementedError(
         f"transform({src_epsg} -> {dst_epsg}) requires pyproj - "
-        + repair_hint("install openconstructionerp[geo] to enable it", DESKTOP_NO_EXTRA),
+        + repair_hint("install primecrest[geo] to enable it", DESKTOP_NO_EXTRA),
     )
 
 

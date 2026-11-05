@@ -1,7 +1,7 @@
 {
   "common.ok": "Tamam",
   "module.display_name": "Maliyet Eşleştirme",
-  "match.semantic.not_installed": "Anlamsal eşleştirme için `pip install openconstructionerp[semantic]` gerekir. Şu anda yalnızca tam eşleşmeler gösteriliyor; bulanık maliyet eşleştirmesi için bu eklentiyi kurun.",
+  "match.semantic.not_installed": "Anlamsal eşleştirme için `pip install primecrest[semantic]` gerekir. Şu anda yalnızca tam eşleşmeler gösteriliyor; bulanık maliyet eşleştirmesi için bu eklentiyi kurun.",
   "match.reason.exact_match": "Normalleştirilmiş açıklamayla tam eşleşme.",
   "match.reason.strong_overlap": "Arama terimlerinin tamamı bu maliyet kaleminde bulundu.",
   "match.reason.partial_overlap": "Arama terimlerinin bir kısmı bu maliyet kaleminde bulundu.",

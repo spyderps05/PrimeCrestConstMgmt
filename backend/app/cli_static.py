@@ -2,7 +2,7 @@
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Serve frontend static files from the installed package or dev build.
 
-When running via `openestimate serve` or with SERVE_FRONTEND=true,
+When running via `primecrest serve` or with SERVE_FRONTEND=true,
 the FastAPI app serves the pre-built React frontend directly - no Nginx needed.
 
 Frontend is found in two locations (checked in order):
@@ -39,7 +39,7 @@ logger = logging.getLogger(__name__)
 # a browser's network tab during a failed deploy.
 _NO_BUNDLE_DETAIL = (
     "This server started without a frontend bundle and is serving the API only. "
-    "Build the UI with 'npm run build' in frontend/, or install the openconstructionerp wheel. "
+    "Build the UI with 'npm run build' in frontend/, or install the primecrest wheel. "
     "The API itself is up, under /api."
 )
 _LOST_BUNDLE_DETAIL = (
@@ -181,7 +181,7 @@ def get_frontend_dir() -> Path:
     # a directory named index.html would pass resolution here and then 500 on
     # the first request. Resolution has to gate on what the server will need.
 
-    # Option 1: installed as package (pip install openconstructionerp)
+    # Option 1: installed as package (pip install primecrest)
     pkg_dir = Path(__file__).parent / "_frontend_dist"
     if pkg_dir.is_dir() and (pkg_dir / "index.html").is_file():
         return pkg_dir
@@ -198,13 +198,13 @@ def get_frontend_dir() -> Path:
     raise FileNotFoundError(
         f"Frontend dist not found. Looked for index.html in {pkg_dir} (wheel bundle) "
         f"and {dev_dist} (dev build). Run 'npm run build' in frontend/ or install "
-        f"the openconstructionerp wheel."
+        f"the primecrest wheel."
     )
 
 
 def _packed_cache_dir(base: Path) -> Path:
     key = hashlib.sha256(str(base.resolve()).encode("utf-8")).hexdigest()[:16]
-    return Path(tempfile.gettempdir()) / "openconstructionerp-ui" / key
+    return Path(tempfile.gettempdir()) / "primecrest-ui" / key
 
 
 def expand_packed_asset(base: Path, relative: str) -> Path | None:

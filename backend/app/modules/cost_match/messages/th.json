@@ -1,7 +1,7 @@
 {
   "common.ok": "ตกลง",
   "module.display_name": "การจับคู่ต้นทุน",
-  "match.semantic.not_installed": "การจับคู่เชิงความหมายต้องใช้คำสั่ง `pip install openconstructionerp[semantic]` ขณะนี้แสดงเฉพาะผลการจับคู่ที่ตรงทุกคำ ติดตั้งส่วนเสริมนี้เพื่อจับคู่ต้นทุนแบบประมาณ",
+  "match.semantic.not_installed": "การจับคู่เชิงความหมายต้องใช้คำสั่ง `pip install primecrest[semantic]` ขณะนี้แสดงเฉพาะผลการจับคู่ที่ตรงทุกคำ ติดตั้งส่วนเสริมนี้เพื่อจับคู่ต้นทุนแบบประมาณ",
   "match.reason.exact_match": "ตรงกับคำอธิบายที่ทำให้เป็นมาตรฐานแล้วทุกประการ",
   "match.reason.strong_overlap": "พบคำค้นหาทุกคำในรายการต้นทุนนี้",
   "match.reason.partial_overlap": "พบคำค้นหาบางคำในรายการต้นทุนนี้",

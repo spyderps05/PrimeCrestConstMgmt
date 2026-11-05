@@ -16,7 +16,7 @@ from __future__ import annotations
 
 from functools import lru_cache
 
-_LOGO_URL = "https://openconstructionerp.com/logo-128.png"
+_LOGO_URL = "https://primecrest.pk/logo-128.png"
 
 #: The product name every outgoing email carries: the ``From:`` display name,
 #: the line beside the logo and the closing line of the footer. It is a brand,

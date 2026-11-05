@@ -1,7 +1,7 @@
 {
   "common.ok": "OK",
   "module.display_name": "Dopasowanie kosztów",
-  "match.semantic.not_installed": "Dopasowanie semantyczne wymaga polecenia `pip install openconstructionerp[semantic]`. Wyświetlane są tylko dokładne dopasowania; zainstaluj dodatek, aby korzystać z rozmytego dopasowania kosztów.",
+  "match.semantic.not_installed": "Dopasowanie semantyczne wymaga polecenia `pip install primecrest[semantic]`. Wyświetlane są tylko dokładne dopasowania; zainstaluj dodatek, aby korzystać z rozmytego dopasowania kosztów.",
   "match.reason.exact_match": "Dokładne dopasowanie do znormalizowanego opisu.",
   "match.reason.strong_overlap": "Wszystkie wyszukiwane słowa znaleziono w tej pozycji kosztowej.",
   "match.reason.partial_overlap": "Niektóre wyszukiwane słowa znaleziono w tej pozycji kosztowej.",

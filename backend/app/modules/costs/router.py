@@ -2145,7 +2145,7 @@ async def embedder_status() -> dict[str, Any]:
         # So a bundle reading this really cannot get the encoder, and the empty
         # frozen branch is the point: a copy box is only honest where the thing
         # in it can be run. DESKTOP_NO_EXTRA carries the sentence instead.
-        "pip_command": repair_hint("pip install --upgrade openconstructionerp[semantic]", ""),
+        "pip_command": repair_hint("pip install --upgrade primecrest[semantic]", ""),
         "install_hint": repair_hint("Install it with the command above, then restart the backend.", DESKTOP_NO_EXTRA),
         # Which of the two cases this is, said as a value rather than left
         # for the reader to infer from the English prose above. The frontend
@@ -2232,7 +2232,7 @@ async def qdrant_smoke_search(
             detail=(
                 "Semantic search is not available on this deployment. "
                 + repair_hint(
-                    "Install the optional extra: pip install openconstructionerp[semantic]",
+                    "Install the optional extra: pip install primecrest[semantic]",
                     DESKTOP_NO_EXTRA,
                 )
             ),
@@ -3254,7 +3254,7 @@ async def install_v3_catalogue(
             "Installing cost databases is disabled on the public demo. Each "
             "catalogue is 400+ MB and the demo runs on a small shared box. To "
             "load this region or your own cost data, download and run "
-            "PrimeCrest on your own machine: pip install openconstructionerp.",
+            "PrimeCrest on your own machine: pip install primecrest.",
         )
 
     from app.modules.costs.qdrant_adapter import describe_server_write_mismatch
@@ -3427,7 +3427,7 @@ async def semantic_search(
             status_code=503,
             detail=(
                 "Semantic search is not available on this deployment. "
-                + repair_hint("Install the optional extra: pip install openconstructionerp[semantic]")
+                + repair_hint("Install the optional extra: pip install primecrest[semantic]")
             ),
             headers={"X-Semantic-State": str(state["state"])},
         ) from exc
@@ -5279,7 +5279,7 @@ def _download_to_file(url: str, dest: Path, timeout: float = 120.0) -> None:
         url,
         follow_redirects=True,
         timeout=timeout,
-        headers={"User-Agent": "openconstructionerp"},
+        headers={"User-Agent": "primecrest"},
     ) as resp:
         resp.raise_for_status()
         with open(dest, "wb") as f:
@@ -5303,7 +5303,7 @@ def _download_cwicr_from_github_sync(db_id: str) -> Path | None:
     if not github_path:
         _LAST_DOWNLOAD_ERROR[db_id] = (
             f"backend has no GitHub mapping for '{db_id}'. Upgrade with "
-            f"`pip install --upgrade openconstructionerp` (≥ v2.6.23 added "
+            f"`pip install --upgrade primecrest` (≥ v2.6.23 added "
             f"the 19 new regions; older backends know only the original 11)."
         )
         return None

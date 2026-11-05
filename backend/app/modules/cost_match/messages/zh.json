@@ -1,7 +1,7 @@
 {
   "common.ok": "确定",
   "module.display_name": "成本匹配",
-  "match.semantic.not_installed": "语义匹配需要安装 `pip install openconstructionerp[semantic]`。当前仅显示精确匹配结果；如需模糊成本匹配，请安装该扩展。",
+  "match.semantic.not_installed": "语义匹配需要安装 `pip install primecrest[semantic]`。当前仅显示精确匹配结果；如需模糊成本匹配，请安装该扩展。",
   "match.reason.exact_match": "与规范化描述完全匹配。",
   "match.reason.strong_overlap": "所有搜索词均在此成本项中找到。",
   "match.reason.partial_overlap": "部分搜索词在此成本项中找到。",

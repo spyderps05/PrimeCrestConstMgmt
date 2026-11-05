@@ -203,7 +203,7 @@ def _reports_dir() -> str:
     if base:
         os.makedirs(base, exist_ok=True)
         return base
-    base = os.path.join(tempfile.gettempdir(), "openconstructionerp_reports")
+    base = os.path.join(tempfile.gettempdir(), "primecrest_reports")
     os.makedirs(base, exist_ok=True)
     return base
 

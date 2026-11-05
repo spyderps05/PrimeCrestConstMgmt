@@ -1,7 +1,7 @@
 {
   "common.ok": "OK",
   "module.display_name": "コスト照合",
-  "match.semantic.not_installed": "意味的照合には `pip install openconstructionerp[semantic]` が必要です。現在は完全一致の結果のみを表示しています。あいまいなコスト照合を行うには、この拡張機能をインストールしてください。",
+  "match.semantic.not_installed": "意味的照合には `pip install primecrest[semantic]` が必要です。現在は完全一致の結果のみを表示しています。あいまいなコスト照合を行うには、この拡張機能をインストールしてください。",
   "match.reason.exact_match": "正規化された説明と完全に一致しています。",
   "match.reason.strong_overlap": "検索語がすべてこのコスト項目に含まれています。",
   "match.reason.partial_overlap": "検索語の一部がこのコスト項目に含まれています。",

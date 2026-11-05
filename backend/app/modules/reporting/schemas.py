@@ -41,7 +41,7 @@ _HTML_TAG_RE = re.compile(r"<[^>]*>")
 # chain, so it must be a well-formed 3-letter code before it can win.
 #
 # Soft shape check (3 uppercase letters), not a closed ISO-4217 enum - this
-# mirrors ``app.modules.projects.schemas._normalise_currency``: OpenEstimate
+# mirrors ``app.modules.projects.schemas._normalise_currency``: PrimeCrest
 # is a global product and we do not want to reject a valid but obscure code
 # just because it is not on a hand-maintained list. A 4-letter code such as
 # ``"EURO"`` or a 2-letter code is still rejected with HTTP 422.

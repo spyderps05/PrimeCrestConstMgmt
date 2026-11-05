@@ -2,7 +2,7 @@
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Locale-scoped message bundle for the BCF module.
 
-OpenEstimate principle #2: i18n EVERYWHERE - zero hardcoded user-facing
+PrimeCrest principle #2: i18n EVERYWHERE - zero hardcoded user-facing
 strings. This mirrors the design of :mod:`app.core.validation.messages`: a
 module-local ``messages/`` directory makes the BCF module "plugin-like" - it
 carries its own translations without touching the global locales.

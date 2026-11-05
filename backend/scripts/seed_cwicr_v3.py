@@ -4,7 +4,7 @@
 Solves the "fresh-install needs a human to visit /costs and click
 Install for every region" problem from task #39 in the 2-day match
 universalisation plan. Operators run this once after ``pip install
-openconstructionerp`` + ``alembic upgrade head`` and the deployment
+primecrest`` + ``alembic upgrade head`` and the deployment
 boots with the BGE-M3 v3 collections pre-loaded.
 
 Usage::
@@ -100,7 +100,7 @@ def _download_to_file(url: str, dest: Path, timeout: float = 600.0) -> None:
         url,
         follow_redirects=True,
         timeout=timeout,
-        headers={"User-Agent": "openconstructionerp-seed-cli"},
+        headers={"User-Agent": "primecrest-seed-cli"},
     ) as resp:
         resp.raise_for_status()
         with open(dest, "wb") as f:

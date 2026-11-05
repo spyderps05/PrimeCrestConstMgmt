@@ -711,7 +711,7 @@ def _get_client() -> Any:
 
         raise RuntimeError(
             "qdrant-client is not installed. "
-            + repair_hint("Install the [semantic-clients] extra: pip install openconstructionerp[semantic-clients]")
+            + repair_hint("Install the [semantic-clients] extra: pip install primecrest[semantic-clients]")
         ) from exc
 
     target = resolve_cwicr_target()
@@ -738,7 +738,7 @@ def _encoder_missing_message() -> str:
     from app.core.self_upgrade import DESKTOP_NO_EXTRA, repair_hint  # noqa: PLC0415
 
     return "CWICR encoder unavailable: the [semantic] extra is not installed. " + repair_hint(
-        "Run: pip install openconstructionerp[semantic]", DESKTOP_NO_EXTRA
+        "Run: pip install primecrest[semantic]", DESKTOP_NO_EXTRA
     )
 
 
@@ -797,7 +797,7 @@ def _get_encoder() -> Any:
             raise RuntimeError(
                 "FlagEmbedding is not installed. "
                 + repair_hint(
-                    "Install the [semantic] extra: pip install openconstructionerp[semantic]",
+                    "Install the [semantic] extra: pip install primecrest[semantic]",
                     DESKTOP_NO_EXTRA,
                 )
             ) from exc

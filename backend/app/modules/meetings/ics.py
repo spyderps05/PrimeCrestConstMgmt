@@ -55,13 +55,13 @@ __all__ = [
 ]
 
 # Product identifier written into every VCALENDAR (RFC 5545 section 3.7.3).
-PRODID = "-//DataDrivenConstruction//PrimeCrest Meetings//EN"
+PRODID = "-//Spyder Solutions//PrimeCrest Meetings//EN"
 # Right-hand side of the stable per-meeting UID.
-UID_DOMAIN = "openconstructionerp"
+UID_DOMAIN = "primecrest"
 # Reserved ``.invalid`` TLD (RFC 2606) used when an attendee has no real email:
 # it keeps the CAL-ADDRESS a syntactically valid ``mailto:`` while signalling
 # the address is a placeholder, not a deliverable mailbox.
-FALLBACK_EMAIL_DOMAIN = "openconstructionerp.invalid"
+FALLBACK_EMAIL_DOMAIN = "primecrest.invalid"
 # RFC 5545 section 3.1: content lines are folded at 75 octets (excluding CRLF).
 MAX_LINE_OCTETS = 75
 # HTTP media type of the produced document (RFC 5545 section 8.1).
@@ -264,7 +264,7 @@ class CalendarEvent:
 
 
 def _synth_email(name: str) -> str:
-    """Build a placeholder ``local@openconstructionerp.invalid`` from a name."""
+    """Build a placeholder ``local@primecrest.invalid`` from a name."""
     slug = re.sub(r"[^a-z0-9]+", ".", (name or "").strip().lower()).strip(".")
     return f"{slug or 'attendee'}@{FALLBACK_EMAIL_DOMAIN}"
 

@@ -569,7 +569,7 @@ def install_embedding_model(*, repo_id: str | None = None, force: bool = False) 
         raise RuntimeError(
             "The semantic search library is not part of this installation, so "
             "downloading encoder weights would fetch something nothing here "
-            "can load. " + repair_hint("Install the extra first: pip install openconstructionerp[semantic].")
+            "can load. " + repair_hint("Install the extra first: pip install primecrest[semantic].")
         )
 
     existing = find_installed_model(repo)
@@ -925,7 +925,7 @@ def _message_for(state: str, repo: str, enabled: bool, locked: bool = False) -> 
         from app.core.self_upgrade import repair_hint  # noqa: PLC0415
 
         return "Semantic search is not part of this installation. Everything else works without it. " + repair_hint(
-            "Install the extra to enable it: pip install openconstructionerp[semantic]."
+            "Install the extra to enable it: pip install primecrest[semantic]."
         )
     if state == STATE_DISABLED:
         return (

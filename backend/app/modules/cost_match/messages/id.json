@@ -1,7 +1,7 @@
 {
   "common.ok": "OK",
   "module.display_name": "Pencocokan Biaya",
-  "match.semantic.not_installed": "Pencocokan semantik memerlukan `pip install openconstructionerp[semantic]`. Saat ini hanya hasil yang cocok persis yang ditampilkan; pasang ekstensi ini untuk pencocokan biaya kabur.",
+  "match.semantic.not_installed": "Pencocokan semantik memerlukan `pip install primecrest[semantic]`. Saat ini hanya hasil yang cocok persis yang ditampilkan; pasang ekstensi ini untuk pencocokan biaya kabur.",
   "match.reason.exact_match": "Cocok persis dengan deskripsi yang dinormalisasi.",
   "match.reason.strong_overlap": "Semua kata pencarian ditemukan dalam item biaya ini.",
   "match.reason.partial_overlap": "Sebagian kata pencarian ditemukan dalam item biaya ini.",

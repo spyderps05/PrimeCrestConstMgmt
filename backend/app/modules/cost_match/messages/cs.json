@@ -1,7 +1,7 @@
 {
   "common.ok": "OK",
   "module.display_name": "Párování nákladů",
-  "match.semantic.not_installed": "Sémantické párování vyžaduje `pip install openconstructionerp[semantic]`. Zobrazují se pouze přesné shody; pro fuzzy párování nákladů nainstalujte tento doplněk.",
+  "match.semantic.not_installed": "Sémantické párování vyžaduje `pip install primecrest[semantic]`. Zobrazují se pouze přesné shody; pro fuzzy párování nákladů nainstalujte tento doplněk.",
   "match.reason.exact_match": "Přesná shoda normalizovaného popisu.",
   "match.reason.strong_overlap": "Všechny hledané výrazy byly nalezeny v této nákladové položce.",
   "match.reason.partial_overlap": "Některé hledané výrazy byly nalezeny v této nákladové položce.",

@@ -75,7 +75,7 @@ _TRUTHY = {"1", "true", "yes", "on"}
 _FALSY = {"0", "false", "no", "off"}
 
 #: Support contact surfaced (in the log) when embedded PostgreSQL cannot start.
-_CONTACT_EMAIL = "info@datadrivenconstruction.io"
+_CONTACT_EMAIL = "support@primecrest.pk"
 
 #: Name of the logger ``pixeltable-pgserver`` writes everything through. Both of
 #: its emitters (``postgres_server`` and ``pgexec``) take this one name, so a
@@ -132,7 +132,7 @@ def is_requested() -> bool:
     """True when the app should run on the embedded PostgreSQL cluster.
 
     Embedded PostgreSQL is the **default** runtime - a fresh
-    ``openconstructionerp serve`` boots a real in-process PG16 (no Docker). The
+    ``primecrest serve`` boots a real in-process PG16 (no Docker). The
     operator opts out in either of two ways, checked in order:
 
     * an explicit ``DATABASE_URL`` in the environment - "use my own database",
@@ -233,7 +233,7 @@ def boot(data_dir: Path | str) -> bool:
 
         hint = repair_hint(
             "reinstall the package: pip install --upgrade --force-reinstall "
-            "openconstructionerp, or install pixeltable-pgserver directly"
+            "primecrest, or install pixeltable-pgserver directly"
         )
         emit_stage(
             "pg",
@@ -296,7 +296,7 @@ def boot(data_dir: Path | str) -> bool:
     # would be a worse bug than the one this fixes.
     #
     # It is not hypothetical: reinstalling into a deeper directory while keeping
-    # the data directory reaches it. "openconstructionerp doctor" runs the same
+    # the data directory reaches it. "primecrest doctor" runs the same
     # measurement with no such gate, which is where that user finds it.
     too_deep = windows_path_limit_problem(pgdata)
     if too_deep is not None:
@@ -1911,7 +1911,7 @@ def windows_path_limit_problem(pgdata: Path | str) -> PathTooLong | None:
         "The folder the local database lives in sits too deep in the filesystem for Windows to "
         "let PostgreSQL open the files inside it.",
         "Start the application with a shorter data directory, for example "
-        "openconstructionerp serve --data-dir C:\\PrimeCrest\\data, or set the "
+        "primecrest serve --data-dir C:\\PrimeCrest\\data, or set the "
         "OE_DATA_DIR environment variable to that path.",
     )
 
@@ -2105,7 +2105,7 @@ def data_dir_version_conflict(pgdata: Path | str) -> VersionConflict | None:
         f"enough on its own, with one exception: '--embedded-pg' and a truthy OE_USE_EMBEDDED_PG "
         f"both override it and send the application back to this directory, so drop them if you "
         f"are using them. "
-        f"'openconstructionerp init-db --reset' also clears the conflict, and it clears it by "
+        f"'primecrest init-db --reset' also clears the conflict, and it clears it by "
         f"DELETING the cluster at {pgdata}: every project, price, document and user in it is gone "
         f"permanently. Run it only after a dump, or if this installation holds nothing you need."
     )

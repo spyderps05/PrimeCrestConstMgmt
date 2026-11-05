@@ -987,7 +987,7 @@ class PointCloudService:
                             "reader. LAS, LAZ and COPC work out of the box; "
                             + repair_hint(
                                 "install the 'pointcloud' extra "
-                                "(pip install openconstructionerp[pointcloud]) to add E57 support.",
+                                "(pip install primecrest[pointcloud]) to add E57 support.",
                                 DESKTOP_NO_EXTRA,
                             )
                         ),

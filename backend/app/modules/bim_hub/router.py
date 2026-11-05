@@ -3427,7 +3427,7 @@ async def get_model_geometry(
                     "source itself may be unsupported (2D-only DWG, IFC "
                     "schedule with no geometry, corrupted RVT) - try "
                     "exporting from your CAD tool again, or contact "
-                    "info@datadrivenconstruction.io and quote the "
+                    "support@primecrest.pk and quote the "
                     "Request ID shown below."
                 ),
                 "message": (f"Geometry file is not a valid {ext} payload: {reason_serve}"),
@@ -3562,7 +3562,7 @@ async def get_model_geometry(
                     "Open the model in the BIM tab and click Retry to run the "
                     "conversion again. If it keeps failing the source file may "
                     "be corrupt or unsupported - re-export it from your CAD "
-                    "tool, or contact info@datadrivenconstruction.io and "
+                    "tool, or contact support@primecrest.pk and "
                     "quote the Request ID below."
                 ),
             },
@@ -3648,7 +3648,7 @@ async def get_model_geometry(
                     "been deleted from storage. Re-upload the source CAD/BIM "
                     "file to regenerate it. If the file was not deleted "
                     "manually this is a server-side data problem - contact "
-                    "info@datadrivenconstruction.io and quote the Request ID "
+                    "support@primecrest.pk and quote the Request ID "
                     "below."
                 ),
             },
@@ -3682,7 +3682,7 @@ async def get_model_geometry(
                 "it may be a non-3D row, a demo entry, or an import that "
                 "produced no geometry. Re-upload the source CAD/BIM file to "
                 "generate geometry. If the same source repeatedly produces no "
-                "geometry, contact info@datadrivenconstruction.io and quote "
+                "geometry, contact support@primecrest.pk and quote "
                 "the Request ID below."
             ),
         },

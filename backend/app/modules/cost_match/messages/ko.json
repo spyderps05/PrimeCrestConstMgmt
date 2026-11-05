@@ -1,7 +1,7 @@
 {
   "common.ok": "확인",
   "module.display_name": "비용 매칭",
-  "match.semantic.not_installed": "의미 기반 매칭에는 `pip install openconstructionerp[semantic]`이 필요합니다. 현재는 정확히 일치하는 결과만 표시되며, 유사 비용 매칭을 쓰려면 이 추가 기능을 설치하세요.",
+  "match.semantic.not_installed": "의미 기반 매칭에는 `pip install primecrest[semantic]`이 필요합니다. 현재는 정확히 일치하는 결과만 표시되며, 유사 비용 매칭을 쓰려면 이 추가 기능을 설치하세요.",
   "match.reason.exact_match": "정규화된 설명과 정확히 일치합니다.",
   "match.reason.strong_overlap": "모든 검색어가 이 비용 항목에서 발견되었습니다.",
   "match.reason.partial_overlap": "일부 검색어가 이 비용 항목에서 발견되었습니다.",

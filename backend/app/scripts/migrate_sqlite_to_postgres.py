@@ -16,13 +16,13 @@ Usage (run from the ``backend`` directory)::
     # 1. dry run -- counts only, never connects to write
     python -m app.scripts.migrate_sqlite_to_postgres \\
         --source sqlite:////root/PrimeCrest/data/openestimate.db \\
-        --target postgresql+psycopg2://oe:PASS@localhost/openestimate \\
+        --target postgresql+psycopg2://oe:PASS@localhost/primecrest \\
         --dry-run
 
     # 2. real migration into an empty (or --truncate) target
     python -m app.scripts.migrate_sqlite_to_postgres \\
         --source sqlite:////root/PrimeCrest/data/openestimate.db \\
-        --target postgresql+psycopg2://oe:PASS@localhost/openestimate \\
+        --target postgresql+psycopg2://oe:PASS@localhost/primecrest \\
         --truncate
 
 Notes:

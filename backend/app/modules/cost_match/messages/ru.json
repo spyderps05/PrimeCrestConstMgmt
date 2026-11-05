@@ -1,7 +1,7 @@
 {
   "common.ok": "ОК",
   "module.display_name": "Cost Match",
-  "match.semantic.not_installed": "Для семантического сопоставления нужен `pip install openconstructionerp[semantic]`. Сейчас показаны только точные совпадения; установите extra для нечёткого сопоставления.",
+  "match.semantic.not_installed": "Для семантического сопоставления нужен `pip install primecrest[semantic]`. Сейчас показаны только точные совпадения; установите extra для нечёткого сопоставления.",
   "match.reason.exact_match": "Точное совпадение по нормализованному описанию.",
   "match.reason.strong_overlap": "Все слова запроса найдены в этой позиции сметы.",
   "match.reason.partial_overlap": "Часть слов запроса найдена в этой позиции сметы.",

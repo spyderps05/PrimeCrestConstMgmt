@@ -1,7 +1,7 @@
 {
   "common.ok": "U redu",
   "module.display_name": "Usklađivanje troškova",
-  "match.semantic.not_installed": "Semantičko usklađivanje zahtijeva `pip install openconstructionerp[semantic]`. Prikazuju se samo točna podudaranja; instalirajte proširenje za neodređeno usklađivanje troškova.",
+  "match.semantic.not_installed": "Semantičko usklađivanje zahtijeva `pip install primecrest[semantic]`. Prikazuju se samo točna podudaranja; instalirajte proširenje za neodređeno usklađivanje troškova.",
   "match.reason.exact_match": "Točno podudaranje s normaliziranim opisom.",
   "match.reason.strong_overlap": "Svi pojmovi pretrage pronađeni su u ovoj stavci troška.",
   "match.reason.partial_overlap": "Neki pojmovi pretrage pronađeni su u ovoj stavci troška.",

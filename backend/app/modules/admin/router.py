@@ -306,7 +306,7 @@ def require_vector_backend() -> None:
             detail={
                 "code": "vector_extra_missing",
                 "message": "lancedb not installed. "
-                + repair_hint("Install the [vector] extra: pip install openconstructionerp[vector]."),
+                + repair_hint("Install the [vector] extra: pip install primecrest[vector]."),
             },
         )
     try:
@@ -317,7 +317,7 @@ def require_vector_backend() -> None:
             detail={
                 "code": "vector_extra_broken",
                 "message": f"lancedb is installed but will not load: {type(exc).__name__}: {exc}. "
-                + repair_hint("Reinstall it: pip install --force-reinstall openconstructionerp[vector]."),
+                + repair_hint("Reinstall it: pip install --force-reinstall primecrest[vector]."),
             },
         ) from exc
 

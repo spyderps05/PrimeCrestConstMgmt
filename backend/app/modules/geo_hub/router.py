@@ -158,7 +158,7 @@ _MAX_SOURCE_ZOOM = 14
 _NATURAL_EARTH_MAX_ZOOM = 6
 
 _TILE_HEADERS = {
-    "User-Agent": "PrimeCrest/1.0 (+https://openconstructionerp.com)",
+    "User-Agent": "PrimeCrest/1.0 (+https://primecrest.pk)",
     "Accept": "*/*",
 }
 

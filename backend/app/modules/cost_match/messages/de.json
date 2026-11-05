@@ -1,7 +1,7 @@
 {
   "common.ok": "OK",
   "module.display_name": "Cost Match",
-  "match.semantic.not_installed": "Semantische Kostenzuordnung benötigt `pip install openconstructionerp[semantic]`. Es werden nur exakte Treffer angezeigt; installieren Sie das Extra für unscharfe Zuordnung.",
+  "match.semantic.not_installed": "Semantische Kostenzuordnung benötigt `pip install primecrest[semantic]`. Es werden nur exakte Treffer angezeigt; installieren Sie das Extra für unscharfe Zuordnung.",
   "match.reason.exact_match": "Exakter Treffer auf die normalisierte Beschreibung.",
   "match.reason.strong_overlap": "Alle Suchbegriffe wurden in dieser Kostenposition gefunden.",
   "match.reason.partial_overlap": "Einige Suchbegriffe wurden in dieser Kostenposition gefunden.",

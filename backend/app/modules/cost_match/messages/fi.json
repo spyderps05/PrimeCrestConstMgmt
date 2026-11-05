@@ -1,7 +1,7 @@
 {
   "common.ok": "OK",
   "module.display_name": "Kustannusvastaavuus",
-  "match.semantic.not_installed": "Semanttinen vastaavuus vaatii komennon `pip install openconstructionerp[semantic]`. Näytetään vain tarkat osumat; asenna lisäosa sumeaa kustannusvastaavuutta varten.",
+  "match.semantic.not_installed": "Semanttinen vastaavuus vaatii komennon `pip install primecrest[semantic]`. Näytetään vain tarkat osumat; asenna lisäosa sumeaa kustannusvastaavuutta varten.",
   "match.reason.exact_match": "Tarkka osuma normalisoituun kuvaukseen.",
   "match.reason.strong_overlap": "Kaikki hakusanat löytyivät tästä kustannuserästä.",
   "match.reason.partial_overlap": "Osa hakusanoista löytyi tästä kustannuserästä.",

@@ -553,7 +553,7 @@ async def main(argv: list[str] | None = None) -> None:
 
     async with httpx.AsyncClient(base_url=BASE, timeout=120.0) as client:
         print("=" * 70)
-        print("  OpenEstimate - Demo Showcase Seeder (3 projects, 6 CAD files)")
+        print("  PrimeCrest - Demo Showcase Seeder (3 projects, 6 CAD files)")
         print("=" * 70)
 
         # ── Auth, with whatever role the account already has ──

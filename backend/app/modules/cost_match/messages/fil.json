@@ -1,7 +1,7 @@
 {
   "common.ok": "OK",
   "module.display_name": "Cost Match",
-  "match.semantic.not_installed": "Kailangan ng semantic matching ang `pip install openconstructionerp[semantic]`. Ipinapakita muna ang eksaktong tugma; i-install ang extra para sa fuzzy cost matching.",
+  "match.semantic.not_installed": "Kailangan ng semantic matching ang `pip install primecrest[semantic]`. Ipinapakita muna ang eksaktong tugma; i-install ang extra para sa fuzzy cost matching.",
   "match.reason.exact_match": "Eksaktong tugma sa normalisadong deskripsyon.",
   "match.reason.strong_overlap": "Nahanap ang lahat ng search term sa cost item na ito.",
   "match.reason.partial_overlap": "Nahanap ang ilang search term sa cost item na ito.",

@@ -142,7 +142,7 @@ _DEFAULT_PHOTON_URL = "https://photon.komoot.io"
 
 # Default contact in the UA header - required by Nominatim's UA policy.
 # Falls back to the project email when no override is set.
-_DEFAULT_CONTACT_EMAIL = "info@datadrivenconstruction.io"
+_DEFAULT_CONTACT_EMAIL = "support@primecrest.pk"
 
 # Global rate-limit guard. Process-scoped (not container-scoped) - a
 # multi-worker uvicorn deployment behind a single egress IP will still

@@ -1,7 +1,7 @@
 {
   "common.ok": "OK",
   "module.display_name": "Omkostningsmatch",
-  "match.semantic.not_installed": "Semantisk matching kræver `pip install openconstructionerp[semantic]`. Der vises kun eksakte match; installér udvidelsen for fuzzy omkostningsmatch.",
+  "match.semantic.not_installed": "Semantisk matching kræver `pip install primecrest[semantic]`. Der vises kun eksakte match; installér udvidelsen for fuzzy omkostningsmatch.",
   "match.reason.exact_match": "Eksakt match på den normaliserede beskrivelse.",
   "match.reason.strong_overlap": "Alle søgeord blev fundet i denne omkostningspost.",
   "match.reason.partial_overlap": "Nogle søgeord blev fundet i denne omkostningspost.",

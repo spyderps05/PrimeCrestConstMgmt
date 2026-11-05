@@ -128,7 +128,7 @@ def _scan(parquet_path: str) -> Any:
         raise RuntimeError(
             "polars is not installed; "
             + repair_hint(
-                "install the [semantic] extra: pip install openconstructionerp[semantic]",
+                "install the [semantic] extra: pip install primecrest[semantic]",
                 DESKTOP_NO_EXTRA,
             )
         ) from exc

@@ -684,7 +684,7 @@ def build_gltf_for_tile(
         binary.append(0)
 
     gltf: dict[str, Any] = {
-        "asset": {"version": "2.0", "generator": "openconstructionerp/geo_hub"},
+        "asset": {"version": "2.0", "generator": "primecrest/geo_hub"},
         "extensionsUsed": [],
         "extensionsRequired": [],
         "buffers": [{"byteLength": len(binary)}],
@@ -708,7 +708,7 @@ def build_gltf_for_tile(
                         "Element": {
                             "name": "Element",
                             "description": (
-                                "Canonical BIM / CAD element exported to 3D Tiles by openconstructionerp.geo_hub"
+                                "Canonical BIM / CAD element exported to 3D Tiles by primecrest.geo_hub"
                             ),
                             "properties": {
                                 "element_id": {"type": "STRING"},
@@ -948,7 +948,7 @@ def build_tileset_json(
             "class": "tilesetRoot",
             "properties": {
                 "generated_at": datetime.now(UTC).isoformat(),
-                "generator": "openconstructionerp/geo_hub",
+                "generator": "primecrest/geo_hub",
             },
         },
     }
@@ -1070,7 +1070,7 @@ def build_point_cloud_tileset_json(
             "class": "tilesetRoot",
             "properties": {
                 "generated_at": datetime.now(UTC).isoformat(),
-                "generator": "openconstructionerp/geo_hub",
+                "generator": "primecrest/geo_hub",
                 # Records that this tileset references a pre-tiled cloud
                 # (``pnts`` octree or ``copc`` keystone) rather than the
                 # box-mesh b3dm path. Consumers can branch render settings

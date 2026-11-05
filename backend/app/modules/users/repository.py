@@ -137,7 +137,7 @@ class UserRepository:
         admin to whoever reached the public form first.
 
         The seeded demo account ``demo@openconstructionerp.com`` is intentionally
-        excluded: a fresh ``pip install openconstructionerp`` ships with
+        excluded: a fresh ``pip install primecrest`` ships with
         that admin already in the DB, and counting it would dead-lock the
         bootstrap path - every self-registered user would be created
         dormant in admin-approve mode with no real admin around to flip
