@@ -33,13 +33,13 @@ import { APP_VERSION, APP_BUILD_FINGERPRINT } from '@/shared/lib/version';
 import { useToastStore } from '@/stores/useToastStore';
 import { useI18nReady } from '@/shared/lib/useI18nReady';
 import { isTauri, openAppInBrowser, openLink } from '@/shared/lib/desktop';
-import { SubscribeButton } from './SubscribeButton';
 import { ProjectJourneyButton } from './ProjectJourney';
 import { PresenceAvatarStack } from '@/features/global_presence';
 import { getRouteIcon } from './routeIcons';
 import { useIconOverridesVersion } from './menuIcons';
 import { resolveStaleProject } from './staleProject';
 import { isModuleI18nKey } from '@/modules/_i18n';
+import { DOCS_URL, REPO_SLUG, SITE_HOST, SITE_URL, SUPPORT_EMAIL, SUPPORT_MAILTO } from '@/shared/brand';
 
 /**
  * Map the English page titles passed from App.tsx routes to i18n keys.
@@ -602,7 +602,6 @@ export function Header({ title, onMenuClick }: HeaderProps) {
             had no room for these three next to the project picker, and the
             right cluster ran off screen. */}
         <div className="hidden 2xl:block"><ModuleBuilderButton /></div>
-        <div className="hidden 2xl:block"><SubscribeButton /></div>
         <BugReportMenu />
         <HelpMenu />
 
@@ -693,7 +692,7 @@ export const MIN_DESCRIPTION_LENGTH = 20;
 
 /** File name for the session error log both menus offer for download. */
 function errorLogFilename(): string {
-  return `openconstructionerp-log-${new Date().toISOString().slice(0, 10)}.json`;
+  return `primecrest-log-${new Date().toISOString().slice(0, 10)}.json`;
 }
 
 export function BugReportMenu() {
@@ -797,7 +796,7 @@ export function BugReportMenu() {
     // not hand a navigation to mailto: to the mail client, so assigning it
     // there did nothing at all. openLink sends it to the OS opener instead.
     openLink(
-      `mailto:info@datadrivenconstruction.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(safeBody)}`,
+      `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(safeBody)}`,
     );
   };
 
@@ -811,7 +810,7 @@ export function BugReportMenu() {
       app_version: APP_VERSION,
       platform: navigator.userAgent.includes('Win') ? 'Windows' : navigator.userAgent.includes('Mac') ? 'macOS' : 'Linux',
     });
-    openLink(`https://openconstructionerp.com/contact.html?${params}`);
+    openLink(`${SITE_URL}/contact?${params}`);
   };
 
   const handleDownloadLog = () => {
@@ -864,7 +863,7 @@ export function BugReportMenu() {
       icon: MessageSquarePlus,
       iconColor: 'text-emerald-500',
       title: t('bug.channel_form', { defaultValue: 'Web feedback form' }),
-      desc: t('bug.channel_form_desc', { defaultValue: 'Richer fields and screenshots on openconstructionerp.com.' }),
+      desc: t('bug.channel_form_desc', { defaultValue: `Richer fields and screenshots on ${SITE_HOST}.` }),
       onClick: handleFeedbackForm,
       requiresDescription: false,
     },
@@ -1103,7 +1102,7 @@ function HelpMenu() {
       feedback: 'true',
       app_version: APP_VERSION,
     });
-    openLink(`https://openconstructionerp.com/contact.html?${params}`);
+    openLink(`${SITE_URL}/contact?${params}`);
   };
 
   return (
@@ -1149,7 +1148,7 @@ function HelpMenu() {
               site so users land on the maintained guides, not the raw repo. */}
           <a
             role="menuitem"
-            href="https://openconstructionerp.com/docs"
+            href={DOCS_URL}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
@@ -1209,7 +1208,7 @@ function HelpMenu() {
               gives bug reporting a single, obvious home. */}
           <a
             role="menuitem"
-            href="mailto:info@datadrivenconstruction.io?subject=PrimeCrest%20Issue%20Report"
+            href={`${SUPPORT_MAILTO}?subject=PrimeCrest%20Issue%20Report`}
             onClick={() => setOpen(false)}
             className="flex w-full items-center gap-2.5 px-3 py-2 text-sm text-content-primary hover:bg-surface-secondary transition-colors"
           >
@@ -1303,7 +1302,7 @@ function LanguageSwitcher({
 /* ── User Menu ─────────────────────────────────────────────────────────── */
 
 /** GitHub repo slug for "Report a bug". Empty string = clipboard fallback. */
-const GITHUB_REPO = 'datadrivenconstruction/PrimeCrest';
+const GITHUB_REPO = REPO_SLUG;
 /** Hard ceiling for the GitHub issue body inside a URL. ~8KB is safe across browsers. */
 const MAX_BODY_BYTES = 7800;
 

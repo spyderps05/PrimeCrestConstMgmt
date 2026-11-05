@@ -67,7 +67,7 @@ describe('bug menu channels', () => {
 
     expect(openLink).toHaveBeenCalledTimes(1);
     const url = openLink.mock.calls[0]![0] as string;
-    expect(url.startsWith('mailto:info@datadrivenconstruction.io?subject=')).toBe(true);
+    expect(url.startsWith('mailto:support@primecrest.pk?subject=')).toBe(true);
     expect(decodeURIComponent(url)).toContain(REAL_DESCRIPTION);
   });
 
@@ -76,7 +76,7 @@ describe('bug menu channels', () => {
     fireEvent.click(channel('Web feedback form'));
 
     expect(openLink).toHaveBeenCalledWith(
-      expect.stringMatching(/^https:\/\/openconstructionerp\.com\/contact\.html\?report=true/),
+      expect.stringMatching(/^https:\/\/primecrest\.pk\/contact\?report=true/),
     );
   });
 

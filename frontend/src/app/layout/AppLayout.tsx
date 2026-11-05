@@ -17,7 +17,6 @@ import { DwgUploadIndicator } from '@/shared/ui/DwgUploadIndicator';
 import { GlobalCatalogueInstallIndicator } from '@/shared/ui/GlobalCatalogueInstallIndicator';
 import { DemoBanner } from '@/shared/ui/DemoBanner';
 import { DemoSwitcherBar } from '@/shared/ui/DemoSwitcherBar';
-import { ReviewPromptCard } from '@/shared/ui/ReviewPromptCard';
 import { FloatingChatButton } from '@/features/erp-chat/FloatingChatButton';
 import { FloatingChatPanel } from '@/features/erp-chat/FloatingChatPanel';
 import {
@@ -214,15 +213,6 @@ export function AppLayout({ title, children }: AppLayoutProps) {
       <FloatingChatButton />
       <FloatingChatPanel />
 
-      {/* Occasional, non-blocking ask for a rating or review. Mounted here
-          rather than at App.tsx top level on purpose: this shell is behind
-          auth, and /login, /register, /forgot-password and /onboarding all
-          render OUTSIDE it, so those surfaces are excluded structurally
-          instead of by a route blocklist that would rot. AppLayout mounts
-          once per signed-in session (App.tsx `AppShell`), and every piece of
-          state the card needs lives in useReviewPromptStore anyway, not in
-          the component. */}
-      <ReviewPromptCard />
 
       {/* Global onboarding tour (ProductTour) mounts once at App.tsx
           top level — moving it out of here was the fix for
