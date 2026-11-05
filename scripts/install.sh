@@ -2,7 +2,7 @@
 # PrimeCrest - One-Line Installer for Linux / macOS
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/datadrivenconstruction/PrimeCrest/main/scripts/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/spyderps05/PrimeCrestConstMgmt/main/scripts/install.sh | bash
 #
 # What it does:
 #   1. If Docker is installed → runs via docker compose
@@ -11,18 +11,21 @@
 #
 # Environment variables:
 #   OE_VERSION     - Version to install (default: latest)
-#   OE_INSTALL_DIR - Installation directory (default: ~/.openconstructionerp)
+#   OE_INSTALL_DIR - Installation directory (default: ~/.primecrest)
 #   OE_METHOD      - Force method: docker, pip, uv (default: auto-detect)
 #   OE_PORT        - Port to run on (default: 8080)
+#   OE_PACKAGE     - Python package / wheel to install (default: primecrest)
 
 set -euo pipefail
 
 # ── Configuration ────────────────────────────────────────────────────
 OE_VERSION="${OE_VERSION:-latest}"
-OE_INSTALL_DIR="${OE_INSTALL_DIR:-$HOME/.openconstructionerp}"
+OE_INSTALL_DIR="${OE_INSTALL_DIR:-$HOME/.primecrest}"
 OE_METHOD="${OE_METHOD:-auto}"
 OE_PORT="${OE_PORT:-8080}"
-OE_REPO="https://github.com/datadrivenconstruction/PrimeCrest"
+OE_REPO="https://github.com/spyderps05/PrimeCrestConstMgmt"
+# Python package to install (pip/uv methods). Override with a wheel path or URL.
+OE_PACKAGE="${OE_PACKAGE:-primecrest}"
 
 # ── Colors ───────────────────────────────────────────────────────────
 RED='\033[0;31m'
@@ -294,9 +297,9 @@ install_uv() {
     # Install PrimeCrest (PyPI package name — see pyproject.toml).
     # Honour OE_VERSION env var (advertised in file header).
     if [ "$OE_VERSION" = "latest" ]; then
-        uv tool install openconstructionerp
+        uv tool install "$OE_PACKAGE"
     else
-        uv tool install "openconstructionerp==$OE_VERSION"
+        uv tool install "$OE_PACKAGE==$OE_VERSION"
     fi
     ok "PrimeCrest installed!"
 
@@ -306,8 +309,8 @@ install_uv() {
     fi
 
     echo ""
-    echo "Run: openconstructionerp serve --port $OE_PORT"
-    echo "     openconstructionerp serve --port $OE_PORT --open  # Also opens browser"
+    echo "Run: primecrest serve --port $OE_PORT"
+    echo "     primecrest serve --port $OE_PORT --open  # Also opens browser"
 }
 
 install_pip() {
@@ -341,9 +344,9 @@ install_pip() {
     # pin honours the env var advertised in the file header.
     pip install --upgrade pip
     if [ "$OE_VERSION" = "latest" ]; then
-        pip install --upgrade openconstructionerp
+        pip install --upgrade "$OE_PACKAGE"
     else
-        pip install --upgrade "openconstructionerp==$OE_VERSION"
+        pip install --upgrade "$OE_PACKAGE==$OE_VERSION"
     fi
 
     ok "PrimeCrest installed in $OE_INSTALL_DIR/venv"
@@ -352,14 +355,14 @@ install_pip() {
     cat > "$OE_INSTALL_DIR/start.sh" << 'SCRIPT'
 #!/bin/bash
 source "$(dirname "$0")/venv/bin/activate"
-openconstructionerp serve "$@"
+primecrest serve "$@"
 SCRIPT
     chmod +x "$OE_INSTALL_DIR/start.sh"
 
     # Put the command on PATH via ~/.local/bin, which is on PATH for most
-    # shells. This makes a bare `openconstructionerp` work in a new terminal.
+    # shells. This makes a bare `primecrest` work in a new terminal.
     mkdir -p "$HOME/.local/bin"
-    ln -sf "$OE_INSTALL_DIR/venv/bin/openconstructionerp" "$HOME/.local/bin/openconstructionerp"
+    ln -sf "$OE_INSTALL_DIR/venv/bin/primecrest" "$HOME/.local/bin/primecrest"
 
     echo ""
     echo "  +-------------------------------------------------+"
@@ -368,12 +371,12 @@ SCRIPT
     echo ""
     if echo "$PATH" | tr ':' '\n' | grep -qx "$HOME/.local/bin"; then
         echo "  Open a new terminal and run:"
-        echo "     openconstructionerp"
+        echo "     primecrest"
     else
         echo "  Add ~/.local/bin to your PATH once:"
         echo "     echo 'export PATH=\"\$HOME/.local/bin:\$PATH\"' >> ~/.bashrc && source ~/.bashrc"
         echo "  then run:"
-        echo "     openconstructionerp"
+        echo "     primecrest"
     fi
     echo ""
     echo "  That starts the server and serves http://localhost:$OE_PORT"
@@ -383,11 +386,11 @@ SCRIPT
 }
 
 create_systemd_service() {
-    local service_file="$HOME/.config/systemd/user/openconstructionerp.service"
+    local service_file="$HOME/.config/systemd/user/primecrest.service"
     mkdir -p "$(dirname "$service_file")"
 
     local oe_bin
-    oe_bin="$(which openconstructionerp 2>/dev/null || echo "$HOME/.local/bin/openconstructionerp")"
+    oe_bin="$(which primecrest 2>/dev/null || echo "$HOME/.local/bin/primecrest")"
 
     cat > "$service_file" << EOF
 [Unit]
@@ -405,7 +408,7 @@ WantedBy=default.target
 EOF
 
     systemctl --user daemon-reload
-    info "Systemd service created. Enable with: systemctl --user enable --now openconstructionerp"
+    info "Systemd service created. Enable with: systemctl --user enable --now primecrest"
 }
 
 # ── Main ─────────────────────────────────────────────────────────────

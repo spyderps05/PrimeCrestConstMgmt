@@ -136,7 +136,7 @@ _REQUIRED_BY_DEFAULT = ("pypdfium2", "pdfplumber", "fastapi", "sqlalchemy")
 # same environment we are inventorying. Our own licence is the premise of this
 # gate, not a finding of it. Skipped by name rather than allowlisted, because an
 # entry in ACCEPTED would read as "we tolerate this dependency".
-_SELF = {"openconstructionerp", "openestimate"}
+_SELF = {"primecrest", "openconstructionerp", "openestimate"}
 
 _NORMALISE = re.compile(r"[-_.]+")
 

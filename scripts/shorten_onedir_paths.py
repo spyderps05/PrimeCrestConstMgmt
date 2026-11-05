@@ -14,7 +14,7 @@ reported and fails the run, because silently dropping or renaming a runtime
 file would break the sidecar on a user's machine instead of here.
 
 Usage:
-    python scripts/shorten_onedir_paths.py desktop/dist/openconstructionerp-server
+    python scripts/shorten_onedir_paths.py desktop/dist/primecrest-server
 """
 
 from __future__ import annotations

@@ -2,7 +2,7 @@
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Commit attribution guard: forbid AI co-author / generated-by trailers.
 
 Project policy (see CLAUDE.md): commits are authored solely by
-DataDrivenConstruction. An automated assistant must never be recorded as a
+Spyder Solutions. An automated assistant must never be recorded as a
 contributor, so a commit message must not carry a ``Co-authored-by:`` trailer
 naming an AI assistant, nor a "Generated with ..." advertising footer.
 

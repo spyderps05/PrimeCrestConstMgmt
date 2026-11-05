@@ -127,7 +127,7 @@ def call_openrouter(record: dict, *, api_key: str, model: str, max_retries: int,
         req = request.Request(OPENROUTER_URL, method="POST", data=payload)
         req.add_header("Authorization", f"Bearer {api_key}")
         req.add_header("Content-Type", "application/json")
-        req.add_header("HTTP-Referer", "https://local.openconstructionerp.invalid")
+        req.add_header("HTTP-Referer", "https://local.primecrest.invalid")
         req.add_header("X-Title", "CWICR Translation Pipeline")
         try:
             with request.urlopen(req, timeout=120) as resp:

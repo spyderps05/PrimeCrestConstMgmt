@@ -22,7 +22,7 @@ guard on the output catch different things - the hook cannot see a file that a
 later build stage strips, and this cannot see a file the hook never offered.
 
 Usage:
-    python scripts/check_desktop_sidecar_bundle.py desktop/dist/openconstructionerp-server
+    python scripts/check_desktop_sidecar_bundle.py desktop/dist/primecrest-server
 """
 
 from __future__ import annotations

@@ -4,7 +4,7 @@
 The PrimeCrest frontend (``frontend/package.json``) and the
 Python package (``backend/pyproject.toml``) MUST report the same version
 because the running app reads its version from the installed Python
-package via ``importlib.metadata.version("openconstructionerp")``.
+package via ``importlib.metadata.version("primecrest")``.
 A drift between the two files means ``/api/health`` lies about which
 version users are actually running.
 

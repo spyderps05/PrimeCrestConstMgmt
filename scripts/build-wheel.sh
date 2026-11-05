@@ -1,20 +1,20 @@
 #!/bin/bash
-# Build OpenEstimate Python wheel with bundled frontend.
+# Build PrimeCrest Python wheel with bundled frontend.
 #
 # Usage: ./scripts/build-wheel.sh
-# Output: backend/dist/openestimate-*.whl
+# Output: backend/dist/primecrest-*.whl
 #
 # The wheel includes:
 #   - FastAPI backend (app/)
 #   - Pre-built React frontend (app/_frontend_dist/)
-#   - CLI entry point: `openestimate serve`
+#   - CLI entry point: `primecrest serve`
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-echo "=== OpenEstimate Wheel Builder ==="
+echo "=== PrimeCrest Wheel Builder ==="
 echo ""
 
 # Step 1: Build frontend
@@ -44,7 +44,7 @@ if [ -n "$WHEEL" ]; then
     echo "  pip install $WHEEL"
     echo ""
     echo "Run with:"
-    echo "  openestimate serve"
+    echo "  primecrest serve"
 else
     echo "ERROR: No wheel file found!"
     exit 1

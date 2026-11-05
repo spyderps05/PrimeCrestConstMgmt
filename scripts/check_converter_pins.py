@@ -36,7 +36,7 @@ def _load_source():
 
 
 def _get(url: str, *, api: bool = False) -> bytes:
-    headers = {"User-Agent": "openconstructionerp-pin-check"}
+    headers = {"User-Agent": "primecrest-pin-check"}
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     if api:
         headers["Accept"] = "application/vnd.github+json"

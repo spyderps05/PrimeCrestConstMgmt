@@ -92,10 +92,10 @@ real Developer ID is the correct end state described in docs/desktop/MACOS_NOTAR
 and a check that fired on it would be switched off exactly when it is most useful.
 
 Usage:
-    python scripts/inspect_desktop_sidecar_signatures.py desktop/dist/openconstructionerp-server
+    python scripts/inspect_desktop_sidecar_signatures.py desktop/dist/primecrest-server
 
 The path may be the raw PyInstaller output or the same binary sitting inside a bundle, for
-example PrimeCrest.app/Contents/MacOS/openconstructionerp-server. Nothing here
+example PrimeCrest.app/Contents/MacOS/primecrest-server. Nothing here
 treats a bundle specially: the member census reads the archive appended to the file, and
 codesign reports the file's own signature, both of which are the same questions wherever
 the file lives.
