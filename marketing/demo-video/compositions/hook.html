@@ -1,0 +1,129 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: Inter, sans-serif; color: #FFFFFF; overflow: hidden; }
+
+    /* beat 1: budget vs actual */
+    #root .b1 { position: absolute; left: 260px; top: 250px; width: 1400px; }
+    #root .row { position: relative; height: 120px; margin-bottom: 70px; }
+    #root .lbl { font-weight: 800; font-size: 34px; letter-spacing: 0.12em; margin-bottom: 14px; color: #C9D6E8; }
+    #root .bar { position: absolute; left: 0; top: 56px; height: 64px; border-radius: 8px; transform-origin: 0 50%; }
+    #root .bar-budget { width: 860px; background: #3E5C86; }
+    #root .bar-actual { width: 1240px; background: #E8492F; }
+    #root .bar-actual-ok { width: 860px; background: #F2A900; }
+    #root .limit { position: absolute; left: 860px; top: 0px; width: 0; height: 330px; border-left: 5px dashed #FFFFFF; }
+    #root .num { position: absolute; right: 0; top: -6px; font-family: "Archivo Black", sans-serif; font-size: 52px; }
+    #root .stamp { position: absolute; left: 1010px; top: 300px; font-family: "Archivo Black", sans-serif; font-size: 120px;
+      color: #E8492F; border: 10px solid #E8492F; border-radius: 14px; padding: 0 30px; transform-origin: 50% 50%; }
+
+    /* beat 2: paper stack */
+    #root .b2 { position: absolute; left: 0; top: 0; width: 1920px; height: 860px; }
+    #root .sheet { position: absolute; width: 340px; height: 440px; background: #F7F4EC; border-radius: 6px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35); padding: 34px 30px; color: #0B2545; }
+    #root .sheet h4 { font-family: "Archivo Black", sans-serif; font-size: 44px; margin-bottom: 22px; }
+    #root .sheet i { display: block; height: 12px; margin-bottom: 18px; background: #CFC8B8; border-radius: 6px; }
+    #root .sheet i:nth-child(3n) { width: 70%; }
+    #root .sheet .seal { position: absolute; right: 26px; bottom: 26px; width: 84px; height: 84px; border-radius: 50%;
+      border: 5px solid rgba(232, 73, 47, 0.7); }
+
+    /* beat 3: chat flood */
+    #root .b3 { position: absolute; left: 560px; top: 40px; width: 800px; height: 820px; }
+    #root .phone { position: absolute; inset: 0; background: #E9E4DC; border-radius: 40px; overflow: hidden;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5); border: 14px solid #05101F; }
+    #root .bar-top { height: 96px; background: #1F3B57; display: flex; align-items: center; padding: 0 30px; gap: 20px; }
+    #root .av { width: 56px; height: 56px; border-radius: 50%; background: #F2A900; }
+    #root .grp { font-weight: 800; font-size: 30px; color: #FFFFFF; }
+    #root .grp small { display: block; font-weight: 500; font-size: 22px; color: #C9D6E8; }
+    #root .badge { margin-left: auto; min-width: 92px; height: 52px; border-radius: 26px; background: #E8492F; color: #FFFFFF;
+      font-family: "Archivo Black", sans-serif; font-size: 30px; line-height: 52px; text-align: center; padding: 0 14px; }
+    #root .feed { position: absolute; left: 0; right: 0; top: 96px; bottom: 0; }
+    #root .msg { position: absolute; max-width: 560px; padding: 16px 22px; border-radius: 16px; font-size: 30px; font-weight: 600;
+      background: #FFFFFF; color: #13202F; box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12); }
+    #root .msg b { display: block; font-size: 24px; color: #B5651D; margin-bottom: 4px; }
+    #root .msg.me { background: #D6F0C6; }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1920" data-height="1080">
+    <!-- beat 1 -->
+    <div id="hook-b1" class="b1">
+      <div class="row">
+        <div class="lbl">BUDGET</div>
+        <div id="hook-bud" class="bar bar-budget"></div>
+        <div id="hook-budn" class="num" style="right: auto; left: 600px">Rs 4.0 Cr</div>
+      </div>
+      <div class="row">
+        <div class="lbl">ACTUAL COST</div>
+        <div id="hook-act" class="bar bar-actual"></div>
+        <div id="hook-actn" class="num">Rs 5.6 Cr</div>
+      </div>
+      <div id="hook-limit" class="limit"></div>
+      <div id="hook-stamp" class="stamp">+40%</div>
+    </div>
+
+    <!-- beat 2 -->
+    <div id="hook-b2" class="b2">
+      <div id="hook-s1" class="sheet" style="left: 420px; top: 210px"><h4>DPR</h4><i></i><i></i><i></i><i></i><i></i><i></i><i></i><div class="seal"></div></div>
+      <div id="hook-s2" class="sheet" style="left: 600px; top: 250px"><h4>IPC #7</h4><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div id="hook-s3" class="sheet" style="left: 790px; top: 190px"><h4>MB</h4><i></i><i></i><i></i><i></i><i></i><i></i><i></i><div class="seal"></div></div>
+      <div id="hook-s4" class="sheet" style="left: 980px; top: 240px"><h4>PO</h4><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div id="hook-s5" class="sheet" style="left: 1160px; top: 200px"><h4>RFI</h4><i></i><i></i><i></i><i></i><i></i><i></i><i></i><div class="seal"></div></div>
+      <div id="hook-s6" class="sheet" style="left: 700px; top: 330px"><h4>BOQ v9</h4><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div id="hook-s7" class="sheet" style="left: 900px; top: 350px"><h4>GRN</h4><i></i><i></i><i></i><i></i><i></i><i></i><i></i><div class="seal"></div></div>
+    </div>
+
+    <!-- beat 3 -->
+    <div id="hook-b3" class="b3">
+      <div class="phone">
+        <div class="bar-top">
+          <div class="av"></div>
+          <div class="grp">Site Team - Block 7<small>48 participants</small></div>
+          <div id="hook-badge" class="badge"><span id="hook-badge-n">243</span></div>
+        </div>
+        <div class="feed">
+          <div id="hook-m1" class="msg" style="left: 26px; top: 26px"><b>Foreman</b>Cement aa gaya?</div>
+          <div id="hook-m2" class="msg me" style="right: 26px; top: 136px">Rate kya final hua?</div>
+          <div id="hook-m3" class="msg" style="left: 26px; top: 222px"><b>QS</b>Which BOQ version is latest??</div>
+          <div id="hook-m4" class="msg" style="left: 26px; top: 340px"><b>Supplier</b>Payment kab tak? 3rd reminder</div>
+          <div id="hook-m5" class="msg me" style="right: 26px; top: 458px">Photo bhejo slab ki</div>
+          <div id="hook-m6" class="msg" style="left: 26px; top: 544px"><b>Client</b>Who approved this change?</div>
+          <div id="hook-m7" class="msg" style="left: 26px; top: 662px"><b>Engineer</b>Inspection report kahan hai?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // ---- beat 1: 0 - 2.5
+            tl.fromTo("#hook-bud", { scaleX: 0.35 }, { scaleX: 1, duration: 0.45, ease: "power3.out" }, 0);
+      tl.fromTo("#hook-limit", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 0.4);
+      tl.fromTo("#hook-act", { scaleX: 0.12 }, { scaleX: 1, duration: 1.1, ease: "power2.in" }, 0.45);
+      tl.fromTo("#hook-act", { backgroundColor: "#F2A900" }, { backgroundColor: "#E8492F", duration: 0.3 }, 1.0);
+      const n = { v: 0 };
+      tl.fromTo(n, { v: 0.7 }, { v: 5.6, duration: 1.1, ease: "power2.in",
+        onUpdate: () => { const el = document.getElementById("hook-actn"); if (el) el.textContent = "Rs " + n.v.toFixed(1) + " Cr"; } }, 0.45);
+      tl.fromTo("#hook-stamp", { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.22, ease: "power4.in" }, 1.6);
+      tl.fromTo("#hook-b1", { x: 0 }, { x: -14, duration: 0.05, yoyo: true, repeat: 3 }, 1.82);
+      tl.to("#hook-b1", { opacity: 0, y: -60, duration: 0.2, ease: "power2.in" }, 2.35);
+
+      // ---- beat 2: 2.5 - 5.0, sheets drop and pile
+      const rots = [-9, 6, -4, 11, -7, 3, -12];
+      for (let i = 0; i < 7; i++) {
+        tl.fromTo("#hook-s" + (i + 1), { y: -900, rotation: rots[i] * 2, opacity: 1 },
+          { y: 0, rotation: rots[i], duration: 0.34, ease: "power3.in" }, 2.5 + i * 0.22);
+      }
+      tl.fromTo("#hook-b2", { y: 0 }, { y: 10, duration: 0.05, yoyo: true, repeat: 1 }, 4.2);
+      tl.to("#hook-b2", { opacity: 0, y: 120, duration: 0.22, ease: "power2.in" }, 4.8);
+
+      // ---- beat 3: 5.0 - 8.0, chat flood
+      tl.fromTo("#hook-b3", { opacity: 0, y: 140, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.32, ease: "expo.out" }, 4.95);
+      for (let i = 1; i <= 7; i++) {
+        tl.fromTo("#hook-m" + i, { opacity: 0, scale: 0.6, y: 24 }, { opacity: 1, scale: 1, y: 0, duration: 0.18, ease: "back.out(2.5)" }, 5.2 + (i - 1) * 0.27);
+      }
+      const b = { v: 243 };
+      tl.fromTo(b, { v: 243 }, { v: 999, duration: 2.2, ease: "power2.in",
+        onUpdate: () => { const el = document.getElementById("hook-badge-n"); if (el) el.textContent = b.v >= 999 ? "999+" : String(Math.round(b.v)); } }, 5.2);
+      tl.fromTo("#hook-badge", { scale: 1 }, { scale: 1.25, duration: 0.12, yoyo: true, repeat: 5, ease: "power1.inOut" }, 6.3);
+      tl.to("#hook-b3", { scale: 1.6, opacity: 0, duration: 0.3, ease: "power3.in" }, 7.62);
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>

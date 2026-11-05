@@ -1,0 +1,13 @@
+{
+  "name": "primecrest-demo-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs && python tools/make_audio.py",
+    "dev": "npx --yes hyperframes@0.9.17 preview",
+    "check": "npx --yes hyperframes@0.9.17 check",
+    "snapshot": "npx --yes hyperframes@0.9.17 snapshot --review",
+    "render": "npm run build && npx --yes hyperframes@0.9.17 render -o out/primecrest-demo.mp4",
+    "draft": "npm run build && npx --yes hyperframes@0.9.17 render -o out/draft.mp4"
+  }
+}

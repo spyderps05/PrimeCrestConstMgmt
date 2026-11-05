@@ -1,0 +1,57 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: Inter, sans-serif; color: #FFFFFF; overflow: hidden; }
+    #root .lockup { position: absolute; left: 0; top: 150px; width: 1920px; text-align: center; }
+    #root .mark { display: block; margin: 0 auto 20px; width: 120px; height: 96px; }
+    #root .word { font-family: "Archivo Black", sans-serif; font-size: 132px; line-height: 1; letter-spacing: -0.02em; }
+    #root .word .c { color: #F2A900; }
+    #root .sub { margin-top: 18px; font-weight: 800; font-size: 30px; letter-spacing: 0.42em; color: #C9D6E8; }
+    #root .by { margin-top: 12px; font-weight: 600; font-size: 28px; }
+    #root .by b { color: #F2A900; }
+    #root .btn { position: absolute; left: 660px; top: 580px; width: 600px; height: 120px; border-radius: 14px; background: #F2A900;
+      color: #0B2545; font-family: "Archivo Black", sans-serif; font-size: 50px; line-height: 120px; text-align: center;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35); }
+    #root .contact { position: absolute; left: 0; top: 742px; width: 1920px; text-align: center; font-weight: 700; font-size: 38px; color: #FFFFFF; }
+    #root .contact span { color: #F2A900; padding: 0 18px; }
+    #root .cursor { position: absolute; left: 0; top: 0; width: 64px; height: 64px; }
+    #root .ripple { position: absolute; left: 960px; top: 640px; width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%;
+      border: 6px solid #FFFFFF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="cta" data-width="1920" data-height="1080">
+    <div class="lockup">
+      <svg id="cta-mark" class="mark" viewBox="0 0 150 120" fill="none">
+        <path id="cta-peak" d="M8 112 L75 10 L142 112" stroke="#F2A900" stroke-width="14" stroke-linejoin="round" stroke-linecap="round" />
+        <path id="cta-peak2" d="M44 112 L75 62 L106 112" stroke="#FFFFFF" stroke-width="12" stroke-linejoin="round" stroke-linecap="round" />
+      </svg>
+      <div id="cta-word" class="word">Prime<span class="c">Crest</span></div>
+      <div id="cta-sub" class="sub">CONSTRUCTION MANAGEMENT</div>
+      <div id="cta-by" class="by">by <b>Spyder Solutions</b></div>
+    </div>
+    <div id="cta-btn" class="btn">Book a free demo</div>
+    <div id="cta-ripple" class="ripple"></div>
+    <div id="cta-contact" class="contact">primecrest.pk<span>·</span>support@primecrest.pk</div>
+    <svg id="cta-cursor" class="cursor" viewBox="0 0 24 24">
+      <path d="M3 2 L3 20 L8 15 L11.5 22 L14.5 20.6 L11 13.8 L18 13.8 Z" fill="#FFFFFF" stroke="#0B2545" stroke-width="1.4" stroke-linejoin="round" />
+    </svg>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#cta-peak", { strokeDasharray: 260, strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, 0.1);
+      tl.fromTo("#cta-peak2", { strokeDasharray: 120, strokeDashoffset: 120 }, { strokeDashoffset: 0, duration: 0.4, ease: "power2.out" }, 0.3);
+      tl.fromTo("#cta-word", { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.4, ease: "expo.out" }, 0.25);
+      tl.fromTo("#cta-sub", { opacity: 0, scaleX: 1.6 }, { opacity: 1, scaleX: 1, duration: 0.6, ease: "expo.out" }, 0.55);
+      tl.fromTo("#cta-by", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.8);
+      tl.fromTo("#cta-btn", { opacity: 0, y: 60, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.8)" }, 1.0);
+      tl.fromTo("#cta-contact", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 1.3);
+      // cursor enters from off-screen, clicks the button: the click causes the press + ripple on the same frame
+      tl.fromTo("#cta-cursor", { x: 1700, y: 1150 }, { x: 990, y: 650, duration: 0.7, ease: "power3.out" }, 2.0);
+      tl.fromTo("#cta-btn", { scale: 1 }, { scale: 0.95, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 2.75);
+      tl.fromTo("#cta-ripple", { opacity: 0.9, scale: 0.2 }, { opacity: 0, scale: 9, duration: 0.6, ease: "power2.out", immediateRender: false }, 2.75);
+      tl.fromTo("#cta-btn", { backgroundColor: "#F2A900" }, { backgroundColor: "#FFC93A", duration: 0.1, yoyo: true, repeat: 1, immediateRender: false }, 2.75);
+      tl.to("#cta-cursor", { x: 1260, y: 760, opacity: 0, duration: 0.5, ease: "power2.in" }, 3.6);
+      tl.set({}, {}, 10);
+      window.__timelines["cta"] = tl;
+    })();
+  </script>
+</template>

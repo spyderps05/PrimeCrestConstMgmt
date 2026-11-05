@@ -1,0 +1,97 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: Inter, sans-serif; }
+    #root .persona { position: absolute; left: 0; top: 0; width: 320px; height: 868px;
+      display: flex; align-items: center; justify-content: center; }
+    #root .persona span { display: block; transform: rotate(-90deg); white-space: nowrap; color: #F2A900;
+      font-family: "Archivo Black", sans-serif; font-size: 56px; letter-spacing: 0.04em; }
+    #root .slam { position: absolute; left: 0; top: 330px; width: 1920px; text-align: center; color: #F2A900;
+      font-family: "Archivo Black", sans-serif; font-size: 170px; line-height: 1; letter-spacing: -0.01em; }
+    #root .slam small { display: block; color: #FFFFFF; font-family: Inter, sans-serif; font-weight: 700;
+      font-size: 34px; letter-spacing: 0.3em; margin-bottom: 18px; }
+    #root .win { position: absolute; left: 360px; top: 36px; width: 1408px; height: 832px;
+      border-radius: 14px; overflow: hidden; background: #13315C;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);  }
+    #root .chrome { height: 40px; display: flex; align-items: center; gap: 9px; padding: 0 18px; background: #13315C; }
+    #root .chrome b { width: 13px; height: 13px; border-radius: 50%; background: #3E5C86; }
+    #root .chrome .url { margin-left: 18px; flex: 1; max-width: 760px; height: 26px; border-radius: 6px; background: #0B2545;
+      color: #C9D6E8; font-size: 16px; line-height: 26px; padding: 0 12px; white-space: nowrap; overflow: hidden; }
+    #root .notch { position: absolute; left: 50%; top: 20px; width: 110px; height: 26px; margin-left: -55px; border-radius: 13px; background: #05101F; z-index: 3; }
+    #root .body { position: relative; width: 100%; height: 792px; overflow: hidden; background: #EEF1F5;
+       }
+    #root .cam { position: absolute; inset: 0; transform-origin: 45% 50%; }
+    #root .media { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    #root .callout { position: absolute; left: 26%; top: 34%; width: 38%; height: 32%;
+      border: 5px solid #F2A900; border-radius: 10px; box-shadow: 0 0 0 4000px rgba(11, 37, 69, 0.18); }
+    #root .tag { position: absolute; left: 1744px; top: 98px; transform-origin: 100% 50%;
+      background: #F2A900; color: #0B2545; font-weight: 800; font-size: 28px; padding: 12px 22px; border-radius: 6px; white-space: nowrap; }
+    #root .tag-in { display: block; }
+    #root .wipe { position: absolute; left: 0; top: 16px; width: 150px; height: 872px; background: #F2A900; opacity: 0; }
+    #root .fb { position: absolute; inset: 0; display: flex; background: #EEF1F5; }
+    #root .fb-side { width: 230px; background: #DDE3EB; padding: 28px 22px; display: flex; flex-direction: column; gap: 18px; }
+    #root .fb-side i { display: block; height: 16px; border-radius: 8px; background: #C3CCD8; }
+    #root .fb-side i:first-child { height: 30px; background: #0B2545; opacity: 0.25; margin-bottom: 14px; }
+    #root .fb-main { position: relative; flex: 1; padding: 34px 40px; }
+    #root .fb-skel { display: flex; flex-direction: column; gap: 22px; opacity: 0.6; }
+    #root .fb-skel i { display: block; height: 58px; border-radius: 10px; background: #DDE3EB; }
+    #root .fb-skel i:first-child { height: 34px; width: 46%; }
+    #root .fb-card { position: absolute; left: 70px; right: 70px; top: 50%; transform: translateY(-50%);
+      background: #FFFFFF; border-left: 10px solid #F2A900; border-radius: 12px; padding: 36px 44px;
+      box-shadow: 0 16px 40px rgba(11, 37, 69, 0.14); color: #0B2545; }
+    #root .fb-k { font-weight: 800; font-size: 22px; letter-spacing: 0.14em; color: #8A6400; }
+    #root .fb-file { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 40px; margin-top: 14px; word-break: break-all; }
+    #root .fb-route { font-family: "JetBrains Mono", monospace; font-size: 26px; margin-top: 10px; color: #3E5C86; }
+    #root .fb-show { font-size: 26px; line-height: 1.35; margin-top: 18px; color: #22344F; }
+    #root .fb-phone .fb-main { padding: 70px 22px 22px; }
+    #root .fb-phone .fb-card { left: 18px; right: 18px; padding: 24px 22px; }
+    #root .fb-phone .fb-k { font-size: 16px; letter-spacing: 0.08em; }
+    #root .fb-phone .fb-file { font-size: 26px; }
+    #root .fb-phone .fb-route { font-size: 22px; }
+  </style>
+  <div id="root" data-composition-id="pm-risks" data-width="1920" data-height="1080">
+    <div id="pm-risks-persona" class="persona"><span id="pm-risks-persona-t">PROJECT MANAGER</span></div>
+    
+    <div id="pm-risks-win" class="win" data-layout-allow-overflow>
+      <div class="chrome"><b></b><b></b><b></b><span class="url">primecrest.pk/risks</span></div>
+      <div class="body">
+        <div id="pm-risks-cam" class="cam">
+          <div class="fb">
+          <div class="fb-side"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="fb-main">
+            <div class="fb-skel"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="fb-card">
+              <div class="fb-k">CAPTURE PENDING · screenshot (.png)</div>
+              <div class="fb-file">captures/pm-risk-register.png</div>
+              <div class="fb-route">/risks</div>
+              <div class="fb-show">Risk register with probability x impact scores, owners and the heat matrix</div>
+            </div>
+          </div>
+        </div>
+          
+        </div>
+      </div>
+    </div>
+    <div id="pm-risks-wipe" class="wipe"></div>
+    <div id="pm-risks-tag" class="tag"><span class="tag-in">Risk register</span></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const q = (s) => "#pm-risks-" + s;
+      const t0 = 0.05;
+      tl.fromTo(q("persona-t"), { opacity: 1 }, { opacity: 1, duration: 0.01 }, 0);
+      // amber slab sweeps across, the window is revealed behind its trailing edge
+      tl.fromTo(q("wipe"), { x: 200 }, { x: 1788, duration: 0.5, ease: "power3.inOut" }, t0);
+      tl.fromTo(q("win"), { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.5, ease: "power3.inOut" }, t0);
+      tl.set(q("wipe"), { opacity: 1 }, t0);
+      tl.to(q("wipe"), { opacity: 0, duration: 0.08 }, t0 + 0.5);
+      // slow push toward the feature
+      tl.fromTo(q("cam"), { scale: 1 }, { scale: 1.14, duration: 3.75, ease: "sine.inOut" }, t0 + 0.2);
+      // callout frames the part the caption talks about
+      // no capture yet: no callout over the placeholder card
+      tl.fromTo(q("tag"), { opacity: 0, scale: 0.6, xPercent: -100 }, { opacity: 1, scale: 1, xPercent: -100, duration: 0.3, ease: "back.out(2.2)" }, t0 + 0.95);
+      tl.to(q("tag"), { opacity: 0, duration: 0.12 }, 3.86);
+      window.__timelines["pm-risks"] = tl;
+    })();
+  </script>
+</template>

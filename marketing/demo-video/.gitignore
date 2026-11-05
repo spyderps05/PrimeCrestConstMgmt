@@ -1,0 +1,15 @@
+# Rendered output
+out/
+snapshots/
+.hyperframes/
+
+# Generated audio (reproducible: python tools/make_audio.py)
+assets/audio/*.wav
+
+# Large capture media - screen recordings stay out of git; PNG screenshots may be committed
+captures/*.mp4
+captures/*.webm
+captures/*.mov
+
+node_modules/
+assets/audio/cuts.json

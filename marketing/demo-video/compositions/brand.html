@@ -1,0 +1,42 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: Inter, sans-serif; color: #FFFFFF; overflow: hidden; }
+    #root .slab { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: #F2A900; transform-origin: 0 50%; }
+    #root .lockup { position: absolute; left: 0; top: 250px; width: 1920px; text-align: center; }
+    #root .mark { display: block; margin: 0 auto 26px; width: 150px; height: 120px; }
+    #root .word { font-family: "Archivo Black", sans-serif; font-size: 176px; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
+    #root .word span { display: inline-block; }
+    #root .word .c { color: #F2A900; }
+    #root .sub { margin-top: 26px; font-weight: 800; font-size: 40px; letter-spacing: 0.42em; color: #C9D6E8; }
+    #root .by { margin-top: 22px; font-weight: 600; font-size: 32px; color: #FFFFFF; }
+    #root .by b { color: #F2A900; }
+  </style>
+  <div id="root" data-composition-id="brand" data-width="1920" data-height="1080">
+    <div id="brand-slab" class="slab"></div>
+    <div class="lockup">
+      <svg id="brand-mark" class="mark" viewBox="0 0 150 120" fill="none">
+        <path id="brand-peak" d="M8 112 L75 10 L142 112" stroke="#F2A900" stroke-width="14" stroke-linejoin="round" stroke-linecap="round" />
+        <path id="brand-peak2" d="M44 112 L75 62 L106 112" stroke="#FFFFFF" stroke-width="12" stroke-linejoin="round" stroke-linecap="round" />
+      </svg>
+      <div class="word">
+        <span class="l">P</span><span class="l">r</span><span class="l">i</span><span class="l">m</span><span class="l">e</span><span class="l c">C</span><span class="l c">r</span><span class="l c">e</span><span class="l c">s</span><span class="l c">t</span>
+      </div>
+      <div id="brand-sub" class="sub">CONSTRUCTION MANAGEMENT</div>
+      <div id="brand-by" class="by">by <b>Spyder Solutions</b></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // the chat-flood exits into an amber slab that wipes away to reveal the mark
+      tl.fromTo("#brand-slab", { scaleX: 1 }, { scaleX: 0, transformOrigin: "100% 50%", duration: 0.45, ease: "power4.inOut" }, 0.02);
+      tl.fromTo("#brand-peak", { strokeDasharray: 260, strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, 0.25);
+      tl.fromTo("#brand-peak2", { strokeDasharray: 120, strokeDashoffset: 120 }, { strokeDashoffset: 0, duration: 0.4, ease: "power2.out" }, 0.45);
+      tl.fromTo("#root .word .l", { opacity: 0, y: 90, rotationX: -70 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.42, ease: "expo.out", stagger: 0.035 }, 0.35);
+      tl.fromTo("#brand-sub", { opacity: 0, scaleX: 1.6 }, { opacity: 1, scaleX: 1, duration: 0.6, ease: "expo.out" }, 0.75);
+      tl.fromTo("#brand-by", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 1.05);
+      tl.to("#root .lockup", { opacity: 0, scale: 0.94, duration: 0.18, ease: "power2.in" }, 3.8);
+      window.__timelines["brand"] = tl;
+    })();
+  </script>
+</template>
