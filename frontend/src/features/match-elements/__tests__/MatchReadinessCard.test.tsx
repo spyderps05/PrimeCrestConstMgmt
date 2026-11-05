@@ -94,7 +94,7 @@ describe('MatchReadinessCard', () => {
 
   it.each([
     ['demo_mode', 'self-hosted install'],
-    ['search_client_missing', 'pip install openconstructionerp[semantic-clients]'],
+    ['search_client_missing', 'pip install primecrest[semantic-clients]'],
     ['search_unreachable', 'is not answering'],
     ['search_not_configured', 'CWICR_QDRANT_URL'],
   ] as const)('explains the %s blocker before any upload', async (code, phrase) => {

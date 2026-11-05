@@ -86,6 +86,7 @@ import {
   type PortalOverviewResponse,
 } from './api';
 import { fmtFixed, formatDateValue } from '@/shared/lib/formatters';
+import { SUPPORT_EMAIL, SUPPORT_MAILTO } from '@/shared/brand';
 
 // English fallbacks for the computed `buyer_portal.documents.cat.*` keys. The default used to be
 // the raw value, so until the key lands in a locale the screen shows the bare
@@ -1908,10 +1909,10 @@ function ShellWrapper({
               defaultValue: 'Questions? Email',
             })}{' '}
             <a
-              href="mailto:info@datadrivenconstruction.io"
+              href={SUPPORT_MAILTO}
               className="text-oe-blue hover:underline"
             >
-              info@datadrivenconstruction.io
+              {SUPPORT_EMAIL}
             </a>
           </span>
           <span>© 2026 Spyder Solutions</span>

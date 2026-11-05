@@ -3,6 +3,7 @@
 import { Sparkles, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { NEW_ISSUE_URL } from '@/shared/brand';
 
 const DISMISS_LS_PREFIX = 'beta-banner-dismissed:';
 
@@ -18,7 +19,7 @@ export function BetaBanner({
   moduleKey,
   title,
   description,
-  feedbackUrl = 'https://github.com/datadrivenconstruction/PrimeCrest/issues/new',
+  feedbackUrl = NEW_ISSUE_URL,
   className = '',
 }: BetaBannerProps) {
   const { t } = useTranslation();

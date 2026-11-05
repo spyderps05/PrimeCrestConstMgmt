@@ -69,6 +69,7 @@ import { getModulesByCategory } from '@/modules/_registry';
 import { translateManifestText } from '@/modules/_i18n';
 import { fmtList, fmtFixed } from '@/shared/lib/formatters';
 import { invalidateProjectLists } from '@/features/projects/invalidateProjectLists';
+import { SITE_HOST, SITE_URL, SUPPORT_MAILTO } from '@/shared/brand';
 
 /* ── Types ─────────────────────────────────────────────────────────────── */
 
@@ -1239,20 +1240,20 @@ function DataPackagesTab() {
               </p>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="mailto:info@datadrivenconstruction.io?subject=PrimeCrest%20Module%20Proposal"
+                  href={`${SUPPORT_MAILTO}?subject=PrimeCrest%20Module%20Proposal`}
                   className="inline-flex items-center gap-2 rounded-lg bg-purple-600 px-4 py-2 text-sm font-medium text-white hover:bg-purple-700 transition-colors"
                 >
                   <Package size={16} />
                   {t('modules.community_submit_email', { defaultValue: 'Submit Module via Email' })}
                 </a>
                 <a
-                  href="https://t.me/datadrivenconstruction"
+                  href={SITE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg border border-border-light bg-surface-secondary px-4 py-2 text-sm font-medium text-content-primary hover:bg-surface-secondary/80 transition-colors"
                 >
                   <Globe size={16} />
-                  {t('modules.community_telegram', { defaultValue: 'Discuss in Telegram' })}
+                  {SITE_HOST}
                 </a>
               </div>
             </div>

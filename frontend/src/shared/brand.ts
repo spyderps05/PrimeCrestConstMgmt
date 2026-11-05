@@ -21,6 +21,13 @@ export const REPO_URL = `https://github.com/${REPO_SLUG}`;
 export const ISSUES_URL = `${REPO_URL}/issues`;
 export const NEW_ISSUE_URL = `${ISSUES_URL}/new`;
 export const RELEASES_URL = `${REPO_URL}/releases`;
+export const DOWNLOAD_URL = `${SITE_URL}/download`;
+
+/** Python distribution and CLI names shown in install instructions. */
+export const PIP_PACKAGE = 'primecrest';
+export const CLI_COMMAND = 'primecrest';
+export const PIP_INSTALL_CMD = `pip install ${PIP_PACKAGE}`;
+export const PIP_UPGRADE_CMD = `pip install --upgrade ${PIP_PACKAGE}`;
 
 /**
  * Upstream attribution. PrimeCrest is a derivative of OpenConstructionERP,

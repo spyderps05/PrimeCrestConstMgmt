@@ -23,9 +23,10 @@ import clsx from 'clsx';
 
 import { useFocusTrap } from '@/shared/hooks/useFocusTrap';
 import { useDemoReadOnlyStore } from '@/stores/useDemoReadOnlyStore';
+import { DOWNLOAD_URL as BRAND_DOWNLOAD_URL, PIP_INSTALL_CMD } from '@/shared/brand';
 
 /** Where the real builds live. Already the download link used elsewhere in the app. */
-const DOWNLOAD_URL = 'https://openconstructionerp.com/download';
+const DOWNLOAD_URL = BRAND_DOWNLOAD_URL;
 
 /**
  * The install options, in the order a visitor is likely to want them.
@@ -42,7 +43,7 @@ const INSTALL_OPTIONS: { key: string; fallback: string }[] = [
   { key: 'demo_read_only.install_macos', fallback: 'macOS: a disk image for Apple Silicon' },
   { key: 'demo_read_only.install_linux', fallback: 'Linux: a .deb for Debian and Ubuntu, an .rpm for Fedora and openSUSE, or an AppImage that runs anywhere' },
   { key: 'demo_read_only.install_docker', fallback: 'Docker: one container image from the public registry' },
-  { key: 'demo_read_only.install_python', fallback: 'Python: install the package with pip install openconstructionerp' },
+  { key: 'demo_read_only.install_python', fallback: `Python: install the package with ${PIP_INSTALL_CMD}` },
   { key: 'demo_read_only.install_source', fallback: 'From source: clone the repository and run make quickstart' },
 ];
 

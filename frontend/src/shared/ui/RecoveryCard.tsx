@@ -24,6 +24,7 @@ import { AlertTriangle, LogIn, Lock, RefreshCw } from 'lucide-react';
 import { EmptyState } from './EmptyState';
 import { Button } from './Button';
 import { getErrorMessage } from '@/shared/lib/api';
+import { SUPPORT_MAILTO } from '@/shared/brand';
 
 export interface RecoveryCardProps {
   /** The unknown error caught from a query, mutation, or fetch. */
@@ -81,7 +82,7 @@ export function RecoveryCard({ error, onRetry, redirectTo }: RecoveryCardProps) 
         })}
         action={
           <a
-            href="mailto:info@datadrivenconstruction.io?subject=Access%20request"
+            href={`${SUPPORT_MAILTO}?subject=Access%20request`}
             className="inline-flex h-10 items-center justify-center rounded-md border border-border bg-surface-primary px-4 text-sm font-medium text-content-primary hover:bg-surface-secondary transition-colors"
           >
             {t('recovery.request_access', { defaultValue: 'Request access' })}

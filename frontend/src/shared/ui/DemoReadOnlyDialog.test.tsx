@@ -197,7 +197,7 @@ describe('a refused write on the public demonstration', () => {
 
     expect(screen.getByTestId('demo-read-only-download')).toHaveAttribute(
       'href',
-      'https://openconstructionerp.com/download',
+      'https://primecrest.pk/download',
     );
   });
 

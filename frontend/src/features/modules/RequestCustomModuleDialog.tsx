@@ -38,29 +38,24 @@ import {
   Plug,
   BarChart3,
 } from 'lucide-react';
-import ddcLogoUrl from '/brand/ddc-logo.webp';
+import brandMarkUrl from '/brand/primecrest-mark.svg';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
+import { PRODUCT_SHORT_NAME, SITE_URL } from '@/shared/brand';
 
 interface Props {
   open: boolean;
   onClose: () => void;
 }
 
-// Hosted contact endpoints on the marketing site. The query string
-// pre-fills the form's "Topic" field so the receiving team can route
-// the lead without manual triage. ``utm_source`` lets analytics
-// attribute conversions back to this in-app CTA so we can measure
-// whether the popup pays for itself.
-//
-// 2026-05-13: pointed at openconstructionerp.com/contact (the canonical
-// product marketing site, confirmed 200 with a real Contact page).
-// The earlier-tried openconstructionerp.com / openestimate.io hosts are
-// parked / 405 and dead-ended the buttons.
+// Hosted contact endpoints on the product site (SITE_URL). The query
+// string pre-fills the form's "Topic" field so the receiving team can
+// route the lead without manual triage. ``utm_source`` lets analytics
+// attribute conversions back to this in-app CTA.
 const URL_COMMUNITY =
-  'https://openconstructionerp.com/contact?topic=module_proposal_public&utm_source=oe_app&utm_medium=sidebar_cta&utm_campaign=request_module';
+  `${SITE_URL}/contact?topic=module_proposal_public&utm_source=oe_app&utm_medium=sidebar_cta&utm_campaign=request_module`;
 const URL_PRIVATE =
-  'https://openconstructionerp.com/contact?topic=module_proposal_private&utm_source=oe_app&utm_medium=sidebar_cta&utm_campaign=request_module_bespoke';
+  `${SITE_URL}/contact?topic=module_proposal_private&utm_source=oe_app&utm_medium=sidebar_cta&utm_campaign=request_module_bespoke`;
 
 export function RequestCustomModuleDialog({ open, onClose }: Props) {
   const { t } = useTranslation();
@@ -172,8 +167,8 @@ export function RequestCustomModuleDialog({ open, onClose }: Props) {
           <div className="relative px-6 sm:px-10 py-8 sm:py-10 text-center">
             <div className="inline-flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center mb-4">
               <img
-                src={ddcLogoUrl}
-                alt="DataDrivenConstruction"
+                src={brandMarkUrl}
+                alt={PRODUCT_SHORT_NAME}
                 className="max-h-full max-w-full object-contain"
                 width="96"
                 height="96"
@@ -231,7 +226,7 @@ export function RequestCustomModuleDialog({ open, onClose }: Props) {
                 </h3>
                 <p className="mt-1 text-xs text-content-tertiary uppercase tracking-wider font-semibold">
                   {t('modules.request_card_community_tag', {
-                    defaultValue: 'Proprietary · Spyder Solutions',
+                    defaultValue: 'Spyder Solutions',
                   })}
                 </p>
               </div>
@@ -239,7 +234,7 @@ export function RequestCustomModuleDialog({ open, onClose }: Props) {
             <p className="text-sm text-content-secondary leading-relaxed">
               {t('modules.request_card_community_body', {
                 defaultValue:
-                  'Tell Spyder Solutions what you need. PrimeCrest Construction Management is proprietary software. It is not free and it is not built in the open. Modules are scoped and delivered under your licence.',
+                  'Tell Spyder Solutions what you need. Modules are scoped, built and delivered by the PrimeCrest team.',
               })}
             </p>
             <ul className="space-y-1.5 text-xs text-content-secondary">

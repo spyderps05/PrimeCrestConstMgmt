@@ -78,7 +78,7 @@ describe('RecoveryCard - 403 (no access)', () => {
     expect(screen.getByText(/don’t have access here/i)).toBeInTheDocument();
     const mailto = screen.getByRole('link', { name: /Request access/i });
     expect(mailto.getAttribute('href')).toBe(
-      'mailto:info@datadrivenconstruction.io?subject=Access%20request',
+      'mailto:support@primecrest.pk?subject=Access%20request',
     );
   });
 

@@ -111,7 +111,7 @@ function sentence(item: MatchReadinessItem, t: TFunction, locale: string): strin
     case 'search_client_missing':
       return t('match_readiness.search_client_missing', {
         defaultValue:
-          'The AI search client is not installed on this server, so cost catalogues cannot be searched. Install it with "pip install openconstructionerp[semantic-clients]" and restart the app.',
+          'The AI search client is not installed on this server, so cost catalogues cannot be searched. Install it with "pip install primecrest[semantic-clients]" and restart the app.',
       });
     case 'search_unreachable':
       if (p.local_install === 'available') {

@@ -85,7 +85,7 @@ describe('RequestCustomModuleDialog', () => {
     // the placeholder openconstructionerp.com / openestimate.io properties
     // (parked / 405 as of 2026-05-13).
     expect(link.getAttribute('href')).toMatch(
-      /openconstructionerp\.com\/contact\?topic=module_proposal_public/,
+      /primecrest\.pk\/contact\?topic=module_proposal_public/,
     );
     expect(link.getAttribute('href')).toMatch(/utm_source=oe_app/);
   });

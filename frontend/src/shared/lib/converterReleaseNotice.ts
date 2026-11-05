@@ -6,11 +6,13 @@
  * To extend the notice, change the date below; nothing else needs touching.
  */
 
+import { NEW_ISSUE_URL, SUPPORT_EMAIL } from '@/shared/brand';
+
 /** Last moment the notice is shown, in local time (31 Oct 2026, 23:59:59). */
 export const CONVERTER_NOTICE_UNTIL = new Date(2026, 9, 31, 23, 59, 59);
 
-export const CONVERTER_ISSUES_URL = 'https://github.com/datadrivenconstruction/PrimeCrest/issues/new';
-export const CONVERTER_CONTACT_EMAIL = 'info@datadrivenconstruction.io';
+export const CONVERTER_ISSUES_URL = NEW_ISSUE_URL;
+export const CONVERTER_CONTACT_EMAIL = SUPPORT_EMAIL;
 
 export function isConverterNoticeActive(now: Date = new Date()): boolean {
   return now.getTime() <= CONVERTER_NOTICE_UNTIL.getTime();

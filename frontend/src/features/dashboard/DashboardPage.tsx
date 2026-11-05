@@ -70,6 +70,7 @@ import {
 } from './context/DashboardRollupContext';
 import { useDashboardRollup } from './hooks/useDashboardRollup';
 import { getNumberLocale } from '@/stores/usePreferencesStore';
+import { PRODUCT_SHORT_NAME, SITE_HOST, SITE_URL } from '@/shared/brand';
 
 // Static Tailwind class strings (dynamic `lg:col-span-${n}` would be purged).
 const DASH_SPAN_CLASS: Record<number, string> = {
@@ -2882,20 +2883,20 @@ function DashboardPageInner() {
 
       {/* ─── 2. Hero · row B - thin meta-strip ───────────────────────── */}
       <div className="flex items-center flex-wrap gap-x-4 gap-y-2 pl-2 animate-stagger-in" style={{ animationDelay: '140ms' }}>
-        {/* DDC attribution - slim inline link with tiny logo */}
+        {/* Product attribution - slim inline link with tiny mark */}
         <a
-          href="https://datadrivenconstruction.io/?utm_source=erp"
+          href={SITE_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="group/ddc inline-flex items-center gap-1.5 text-[11px] text-content-tertiary hover:text-content-secondary transition-colors"
         >
           <img
-            src="/brand/ddc-logo.webp"
-            alt="DataDrivenConstruction"
+            src="/brand/primecrest-mark.svg"
+            alt={PRODUCT_SHORT_NAME}
             className="h-3.5 w-auto opacity-60 group-hover/ddc:opacity-100 transition-opacity"
           />
           <span className="hidden sm:inline">
-            {t('dashboard.developed_by_short', { defaultValue: 'by DataDrivenConstruction' })}
+            {SITE_HOST}
           </span>
         </a>
 

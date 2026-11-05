@@ -103,6 +103,7 @@ import {
 import { fmtFixed } from '@/shared/lib/formatters';
 import { getNumberLocale } from '@/stores/usePreferencesStore';
 import { SemanticSearchOffHint } from '@/features/settings/SemanticSearchOffHint';
+import { NEW_ISSUE_URL } from '@/shared/brand';
 
 // ─────────────────────────────────────────────────────────────────────────
 //  Stage model — the single source of truth for the one-and-only rail
@@ -1254,7 +1255,7 @@ export function MatchWizardFlow() {
           })}
         </p>
         <a
-          href="https://github.com/datadrivenconstruction/PrimeCrest/issues/new?labels=match-elements&template=bug_report.yml"
+          href={`${NEW_ISSUE_URL}?labels=match-elements&template=bug_report.yml`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex shrink-0 items-center gap-1 rounded-full border border-amber-300/60 bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-amber-900 shadow-sm transition-all hover:-translate-y-px hover:bg-amber-50 dark:border-amber-700/40 dark:bg-surface-primary/80 dark:text-amber-100 dark:hover:bg-amber-900/30"

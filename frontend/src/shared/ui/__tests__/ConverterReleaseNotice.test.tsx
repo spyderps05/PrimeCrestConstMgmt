@@ -48,6 +48,6 @@ describe('converter release notice', () => {
     expect(url).toContain('issues/new?title=Converter: ');
     expect(url).toContain('Format: IFC');
     expect(url).toContain('Converter version: 18.0.0.0');
-    expect(converterMailtoUrl(info)).toMatch(/^mailto:info@datadrivenconstruction\.io\?/);
+    expect(converterMailtoUrl(info)).toMatch(/^mailto:support@primecrest\.pk\?/);
   });
 });

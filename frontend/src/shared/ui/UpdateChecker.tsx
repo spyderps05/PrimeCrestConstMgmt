@@ -47,6 +47,7 @@ import { copyToClipboard } from '@/shared/lib/browser';
 import { isTauri, openExternalUrl, openInNewTab } from '@/shared/lib/desktop';
 import { getIntlLocale } from '@/shared/lib/formatters';
 import { compareVersions, parseVersion } from '@/shared/lib/version';
+import { PIP_UPGRADE_CMD } from '@/shared/brand';
 
 /* ── One-click upgrade — starts `pip install --upgrade` server-side ───
  *
@@ -1004,7 +1005,7 @@ function UpdateFullModal({
             key: 'pip',
             title: t('update.method_pip', { defaultValue: 'pip / PyPI' }),
             subtitle: t('update.method_pip_sub', { defaultValue: 'Recommended for Python installs' }),
-            cmd: release.upgrade_command || 'pip install --upgrade openconstructionerp',
+            cmd: release.upgrade_command || PIP_UPGRADE_CMD,
           },
           {
             key: 'source',

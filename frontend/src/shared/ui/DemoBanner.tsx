@@ -22,6 +22,7 @@ import { useTranslation } from 'react-i18next';
 import { AlertTriangle, Gauge, X, Download, ExternalLink, UploadCloud } from 'lucide-react';
 import { apiGet } from '@/shared/lib/api';
 import { markDemoReadOnly } from '@/stores/useDemoReadOnlyStore';
+import { CLI_COMMAND, DOWNLOAD_URL, PIP_INSTALL_CMD, REPO_URL } from '@/shared/brand';
 
 const SESSION_KEY = 'oe_demo_modal_dismissed';
 
@@ -91,12 +92,12 @@ export function DemoBanner() {
           </span>
         )}
         <code className="hidden md:inline px-1.5 py-0.5 rounded bg-amber-900/15 text-amber-950 font-mono text-[11px] dark:bg-amber-100/10 dark:text-amber-100">
-          pip install openconstructionerp
+          {PIP_INSTALL_CMD}
         </code>
         <span className="hidden items-center gap-2.5 md:flex">
           <span className="opacity-80">{t('demo_banner.strip_or_download')}</span>
           <a
-            href="https://openconstructionerp.com/download"
+            href={DOWNLOAD_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 underline underline-offset-2 hover:text-amber-900 dark:hover:text-amber-50"
@@ -105,7 +106,7 @@ export function DemoBanner() {
             Windows
           </a>
           <a
-            href="https://openconstructionerp.com/download"
+            href={DOWNLOAD_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-2 hover:text-amber-900 dark:hover:text-amber-50"
@@ -113,7 +114,7 @@ export function DemoBanner() {
             macOS
           </a>
           <a
-            href="https://openconstructionerp.com/download"
+            href={DOWNLOAD_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-2 hover:text-amber-900 dark:hover:text-amber-50"
@@ -225,11 +226,11 @@ export function DemoBanner() {
                   {t('demo_banner.modal_install_box_label')}
                 </div>
                 <code className="block font-mono text-[12px] text-content-primary leading-relaxed">
-                  pip install openconstructionerp
+                  {PIP_INSTALL_CMD}
                   <br />
-                  openestimate init-db
+                  {CLI_COMMAND} init-db
                   <br />
-                  openestimate serve
+                  {CLI_COMMAND} serve
                 </code>
               </div>
             </div>
@@ -237,22 +238,13 @@ export function DemoBanner() {
             {/* Footer */}
             <div className="flex items-center justify-end gap-2 px-6 py-4 border-t border-border-light">
               <a
-                href="https://github.com/datadrivenconstruction/PrimeCrest"
+                href={REPO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-content-secondary hover:text-content-primary border border-border-light rounded-lg hover:bg-surface-secondary transition-colors"
               >
                 <ExternalLink size={13} />
                 GitHub
-              </a>
-              <a
-                href="https://pypi.org/project/openconstructionerp/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-content-secondary hover:text-content-primary border border-border-light rounded-lg hover:bg-surface-secondary transition-colors"
-              >
-                <Download size={13} />
-                PyPI
               </a>
               <button
                 type="button"

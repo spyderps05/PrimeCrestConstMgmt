@@ -162,7 +162,7 @@ function InstallButton({
   if (status === 'coming_soon') {
     return (
       <span className="text-[11px] text-content-quaternary italic">
-        {t('catalogues.coming_soon_hint', 'Not yet published by DDC')}
+        {t('catalogues.coming_soon_hint', 'Not yet published')}
       </span>
     );
   }

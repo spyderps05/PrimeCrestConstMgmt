@@ -8,6 +8,7 @@ import clsx from 'clsx';
 import { apiPost } from '@/shared/lib/api';
 import { openLink } from '@/shared/lib/desktop';
 import { useToastStore } from '@/stores/useToastStore';
+import { NEW_ISSUE_URL } from '@/shared/brand';
 
 interface FeedbackDialogProps {
   open: boolean;
@@ -22,8 +23,7 @@ const CATEGORIES: { key: FeedbackCategory; icon: typeof Bug; labelKey: string; d
   { key: 'general', icon: MessageCircle, labelKey: 'feedback.category_general', defaultLabel: 'General' },
 ];
 
-const GITHUB_ISSUES_URL =
-  'https://github.com/datadrivenconstruction/PrimeCrest/issues/new';
+const GITHUB_ISSUES_URL = NEW_ISSUE_URL;
 
 export function FeedbackDialog({ open, onClose }: FeedbackDialogProps) {
   const { t } = useTranslation();

@@ -87,6 +87,7 @@ import {
 import { getNumberLocale } from '@/stores/usePreferencesStore';
 import { apiGet } from '@/shared/lib/api';
 import { fmtList } from '@/shared/lib/formatters';
+import { DOWNLOAD_URL } from '@/shared/brand';
 
 interface PartnerPackApplyDialogProps {
   open: boolean;
@@ -212,7 +213,7 @@ function baseCountry(flag: string | null | undefined, market: string | null | un
 }
 
 /** Where someone who may only view packs can get a copy they administer. */
-export const PACK_INSTALL_DOWNLOAD_URL = 'https://openconstructionerp.com/download';
+export const PACK_INSTALL_DOWNLOAD_URL = DOWNLOAD_URL;
 
 /**
  * Whether this server is the public demo. Same shared ``['system-status']``

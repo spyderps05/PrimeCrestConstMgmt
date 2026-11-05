@@ -47,7 +47,7 @@ describe('brand assets referenced from src', () => {
   const literals = brandLiterals();
 
   it('finds the known references (parser control)', () => {
-    expect(literals.has('/brand/ddc-logo.webp')).toBe(true);
+    expect(literals.has('/brand/primecrest-mark.svg')).toBe(true);
     expect(literals.size).toBeGreaterThanOrEqual(1);
   });
 

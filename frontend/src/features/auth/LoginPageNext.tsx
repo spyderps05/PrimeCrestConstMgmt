@@ -37,6 +37,7 @@ import { loginFailureKindFromResponse } from './loginError';
 import { AuthBackground } from './AuthBackground';
 import { SUPPORTED_LANGUAGES } from '@/app/i18n';
 import { sortLanguagesByName } from '@/shared/lib/languageOrder';
+import { COMPANY, PRODUCT_SHORT_NAME, SITE_URL, SUPPORT_EMAIL, SUPPORT_MAILTO } from '@/shared/brand';
 
 interface ModuleTile {
   icon: LucideIcon;
@@ -571,15 +572,15 @@ export function LoginPageNext() {
           <div className="relative mt-auto pt-10 text-[11px] text-content-tertiary/80 dark:text-white/40">
             © 2026{' '}
             <a
-              href="https://www.linkedin.com/in/boikoartem/"
+              href={SITE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-content-secondary hover:text-oe-blue transition-colors dark:text-white/70 dark:hover:text-oe-blue"
             >
-              Artem Boiko
+              {COMPANY}
             </a>{' '}
-            · PrimeCrest
-            · <a href="mailto:info@datadrivenconstruction.io" className="hover:text-content-secondary transition-colors">info@datadrivenconstruction.io</a>
+            · {PRODUCT_SHORT_NAME}
+            · <a href={SUPPORT_MAILTO} className="hover:text-content-secondary transition-colors">{SUPPORT_EMAIL}</a>
           </div>
         </div>
 

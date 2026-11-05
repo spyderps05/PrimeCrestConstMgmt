@@ -32,6 +32,7 @@ import {
 import { Logo } from '@/shared/ui';
 import { accessShareLink, fetchShareLinkInfo } from './api';
 import type { ShareLinkPublicInfo } from './types';
+import { PRODUCT_SHORT_NAME, SITE_HOST } from '@/shared/brand';
 
 type FetchState =
   | { kind: 'loading' }
@@ -308,7 +309,7 @@ export function SharePage() {
         </div>
 
         <p className="mt-4 text-center text-2xs text-content-quaternary">
-          PrimeCrest · datadrivenconstruction.io
+          {PRODUCT_SHORT_NAME} · {SITE_HOST}
         </p>
       </div>
     </div>

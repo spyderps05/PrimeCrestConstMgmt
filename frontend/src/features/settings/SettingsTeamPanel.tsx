@@ -12,7 +12,7 @@
  * and the public system endpoint:
  *   - GET   /api/health       (version, build, env - for the License & Plan card)
  *
- * PrimeCrest is proprietary software of Spyder Solutions. The License & Plan
+ * PrimeCrest is developed by Spyder Solutions (AGPL-3.0). The License & Plan
  * card states that plainly and points to an enterprise agreement. There is
  * no payment flow and no fake plan tier - none exists server-side.
  *
@@ -46,9 +46,10 @@ import { Card, CardHeader, CardContent, Badge, Button, Skeleton } from '@/shared
 import { apiGet, ApiError } from '@/shared/lib/api';
 import { useAuthStore } from '@/stores/useAuthStore';
 import { fetchUsers, type User, type UserRole } from '@/features/users/api';
+import { SITE_URL, UPSTREAM_LICENSE } from '@/shared/brand';
 
 // Enterprise agreement request. There is no in-app payment flow.
-const LICENSE_REQUEST_URL = 'https://openconstructionerp.com/license-request.html';
+const LICENSE_REQUEST_URL = `${SITE_URL}/contact?topic=enterprise`;
 
 // ── Role display config (icon + badge variant). The human labels are read
 // from the SAME i18n keys the User Management page uses (users.roles.*), so
@@ -386,13 +387,13 @@ export function SettingsTeamPanel() {
                   {t('settings.license_edition_community', { defaultValue: 'Enterprise' })}
                 </span>
                 <Badge variant="blue" size="sm">
-                  {t('about.license_badge_free', { defaultValue: 'Proprietary' })}
+                  {UPSTREAM_LICENSE}
                 </Badge>
               </div>
               <p className="mt-1 max-w-prose text-xs leading-relaxed text-content-secondary">
                 {t('settings.license_community_desc', {
                   defaultValue:
-                    'PrimeCrest Construction Management is proprietary software of Spyder Solutions. It is not free and it is not built in the open. Use it under your Spyder Solutions licence.',
+                    'PrimeCrest Construction Management is developed by Spyder Solutions. It is based on OpenConstructionERP and licensed under AGPL-3.0.',
                 })}
               </p>
             </div>
@@ -446,7 +447,7 @@ export function SettingsTeamPanel() {
                   rel="noopener noreferrer"
                   className="mt-2.5 inline-flex items-center gap-1.5 rounded-full border border-oe-blue/30 bg-surface-elevated px-4 py-2 text-sm font-medium text-oe-blue transition-colors hover:bg-oe-blue/10"
                 >
-                  {t('settings.license_request_cta', { defaultValue: 'Request a commercial license' })}
+                  {t('settings.license_request_cta', { defaultValue: 'Contact Spyder Solutions' })}
                   <ExternalLink size={13} />
                 </a>
               </div>
