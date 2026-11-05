@@ -3,7 +3,7 @@
 **Status:** accepted
 **Date:** 2026-05-03
 **Versions:** Phase 0 v2.7.2 · Phase 1 v2.7.3 · Phase 2 v2.7.4 · Phase 3+4 in flight
-**Related:** ADR 002 (DDC canonical format), `app/core/match_service/`, `tests/eval/`
+**Related:** ADR 002 (cad2data canonical format), `app/core/match_service/`, `tests/eval/`
 
 ## Context
 

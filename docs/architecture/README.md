@@ -1,8 +1,9 @@
 # Architecture overview
 
 PrimeCrest is an open, modular platform for construction estimating and
-construction management, published by DataDrivenConstruction under AGPL-3.0 with a
-commercial option for enterprises. This page is the entry point to the architecture
+construction management, developed by Spyder Solutions for the Pakistan construction
+market and distributed under AGPL-3.0 (derived from OpenConstructionERP by Artem Boiko /
+DataDrivenConstruction). This page is the entry point to the architecture
 docs. It explains how the codebase fits together: the monorepo layout, the module
 system, the validation pipeline, the canonical data format, the data stores, and the
 split between the backend and the frontend. It describes the platform at the version
@@ -25,7 +26,7 @@ A few ideas shape every part of the code:
 - **Validation is not optional.** Imported and edited data passes through a rule-based
   validation step that is part of the core workflow, not an afterthought.
 - **CAD and BIM through conversion.** All drawing and model formats convert into one
-  canonical JSON format through the DDC cad2data pipeline. We do not parse IFC natively
+  canonical JSON format through the cad2data pipeline. We do not parse IFC natively
   and do not use IfcOpenShell.
 - **Assisted, human-confirmed.** The platform suggests classifications, quantities, and
   cost matches with confidence scores. A person reviews and confirms before anything is
@@ -43,7 +44,7 @@ A few ideas shape every part of the code:
 | Database | PostgreSQL only (embedded PostgreSQL 16 for local dev) |
 | Vector search | Qdrant, or an embedded in-process store for local installs |
 | File storage | Local filesystem, or any S3-compatible bucket such as MinIO |
-| CAD and BIM | DDC cad2data pipeline into one canonical JSON format |
+| CAD and BIM | cad2data pipeline into one canonical JSON format |
 | Desktop | An optional desktop shell wraps the same backend and frontend |
 
 ## Monorepo layout
@@ -192,7 +193,7 @@ flowchart LR
 ```
 
 - **Import.** Upload a PDF, photo, or CAD file. The format is detected and routed.
-- **Convert.** CAD and BIM go through DDC cad2data into the canonical format. PDFs go
+- **Convert.** CAD and BIM go through cad2data into the canonical format. PDFs go
   through vector extraction and OCR, photos through computer vision.
 - **Validate.** Structure, classification, completeness, and consistency checks produce
   a report the user resolves before moving on.
@@ -205,9 +206,9 @@ flowchart LR
 - **Tender and report.** Generate tender documents, compare bids, and export to GAEB
   XML, Excel, CSV, PDF, and JSON.
 
-## Canonical data format and DDC cad2data
+## Canonical data format and cad2data
 
-Every CAD and BIM source (DWG, DGN, RVT, IFC) is converted by the DDC cad2data pipeline
+Every CAD and BIM source (DWG, DGN, RVT, IFC) is converted by the cad2data pipeline
 into one canonical JSON document. That document carries source metadata plus a flat list
 of elements, where each element has its category, its classification (DIN 276,
 MasterFormat, and so on), its geometry, its computed quantities, its properties, and its
@@ -242,7 +243,7 @@ Two optional stores add capability without becoming hard requirements:
 - **Architecture Decision Records** record the non-obvious choices and their
   consequences. Start with the [ADR index](../adr/README.md). The most load-bearing
   ones are the [snapshot storage model](../adr/001-snapshot-storage-model.md),
-  [no IfcOpenShell, DDC canonical only](../adr/002-no-ifcopenshell-ddc-canonical-only.md),
+  [no IfcOpenShell, cad2data canonical only](../adr/002-no-ifcopenshell-ddc-canonical-only.md),
   the [vector match service](../adr/003-vector-match-service.md), and the
   [partner-pack architecture](../adr/2026-05-28-partner-pack-architecture.md).
 - **RFCs** capture the rationale behind larger feature designs. See the

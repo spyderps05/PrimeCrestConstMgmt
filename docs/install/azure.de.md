@@ -73,7 +73,7 @@ Erstellen Sie eine Ubuntu-24.04-LTS-VM in `snet-vm`, fügen Sie eine Managed Dat
 Der Container läuft als Nicht-Root-Benutzer `oe`. Ermitteln Sie dessen numerische ID und übergeben Sie ihm den Ordner:
 
 ```bash
-docker run --rm --entrypoint id ghcr.io/datadrivenconstruction/openconstructionerp:<version>
+docker run --rm --entrypoint id ghcr.io/spyderps05/primecrestconstmgmt:<version>
 sudo chown -R <uid>:<gid> /srv/oce-data
 ```
 
@@ -95,7 +95,7 @@ Mit `APP_ENV=production` verweigert der Server den Start bei einem kurzen oder b
 ```yaml
 services:
   app:
-    image: ghcr.io/datadrivenconstruction/openconstructionerp:<version>   # veröffentlichte Version festlegen
+    image: ghcr.io/spyderps05/primecrestconstmgmt:<version>   # veröffentlichte Version festlegen
     restart: unless-stopped
     env_file: .env
     volumes:
@@ -131,7 +131,7 @@ docker compose logs -f app        # der erste Start dauert einige Minuten
 
 Legen Sie die Umgebung in derselben Region und im selben VNet an, dazu eine Azure-Files-Freigabe für `/data` und eine App mit:
 
-- Image `ghcr.io/datadrivenconstruction/openconstructionerp:<version>`, Zielport **8080**, externer Ingress;
+- Image `ghcr.io/spyderps05/primecrestconstmgmt:<version>`, Zielport **8080**, externer Ingress;
 - CPU 2, Speicher 4 Gi, **Min. und Max. Replikate 1**;
 - die Freigabe unter `/data` eingebunden;
 - die Variablen der obigen `.env`, wobei `JWT_SECRET` und die beiden Datenbank-URLs als Container-Apps-Secrets abgelegt werden.

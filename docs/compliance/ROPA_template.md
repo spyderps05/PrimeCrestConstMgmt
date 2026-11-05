@@ -11,13 +11,13 @@ of most controllers and processors.
 
 > **Scope note.**
 > When you self-host PrimeCrest, **you are the
-> controller** for the personal data you process. DDC has no
+> controller** for the personal data you process. cad2data has no
 > access to that data and is not a processor. This template is
 > provided as a starting point for *your own* RoPA; it is not
-> binding on DDC.
+> binding on cad2data.
 >
-> If you use a DDC-operated hosted instance under a separate
-> commercial agreement, a DDC-specific RoPA and a Data
+> If you use a Spyder Solutions-operated hosted instance under a separate
+> commercial agreement, a Spyder Solutions-specific RoPA and a Data
 > Processing Agreement under Art. 28 GDPR are executed.
 
 ## How to use this template
@@ -127,4 +127,4 @@ client.*
 not legal advice; have your DPO or data-protection counsel
 review the completed RoPA before filing.*
 
-Contact: `info@datadrivenconstruction.io`
+Contact: `support@primecrest.pk`

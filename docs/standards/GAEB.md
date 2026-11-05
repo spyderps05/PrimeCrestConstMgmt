@@ -140,4 +140,4 @@ the whole standard, validate it against the schema set GAEB publishes.
 - BVBS imprint, which carries the copyright and use terms quoted above:
   <https://www.bvbs.de/impressum/>
 
-Questions about this page: info@datadrivenconstruction.io
+Questions about this page: support@primecrest.pk

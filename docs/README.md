@@ -64,7 +64,7 @@ For developers extending or building on PrimeCrest.
 
 ## Architecture and decision records
 
-- [Architecture decision records (ADR)](./adr/README.md) - why the platform is built the way it is, including the decision to convert all CAD and BIM through the DDC canonical pipeline rather than parse IFC natively.
+- [Architecture decision records (ADR)](./adr/README.md) - why the platform is built the way it is, including the decision to convert all CAD and BIM through the cad2data canonical pipeline rather than parse IFC natively.
 - [RFCs](./rfc/README.md) - longer design proposals and the options weighed behind bigger changes.
 - [BIM storage architecture](./BIM-STORAGE-ARCHITECTURE.md) - how BIM projects of every size are stored and queried.
 - [Field worker mobile design](./architecture/FIELD_WORKER_MOBILE_DESIGN.md) - the design for the on-site mobile experience.

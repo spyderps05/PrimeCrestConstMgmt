@@ -6,7 +6,7 @@
 **Related:**
 - `OCE_EAC_Implementation_Spec_v2_International.md` (1748 lines, six sections: engine, aliases, block editor, Excel import, classifier composition, 4D)
 - RFC 34 — OCE_TECH_SPEC_GLOBAL integration plan
-- ADR 002 — No IfcOpenShell, DDC canonical format is single source of truth
+- ADR 002 — No IfcOpenShell, cad2data canonical format is single source of truth
 
 ## 1. Why this RFC exists, and how it relates to RFC 34
 
@@ -34,7 +34,7 @@ Audited via parallel Explore agent across `backend/app/modules/{validation,compl
 | §1 EAC engine | `core/validation/engine.py` (`ValidationRule` ABC, `RuleRegistry`), `validation/service.py`, `compliance_ai/` skeleton | **30 %** | No `EacRule`/`EacRuleset`/`EacRun` ORM. No constraint-operator vocabulary. No `aggregate`/`clash` output modes. No formula/safe-eval. Rules are static Python classes, not a declarative `definition_json`. |
 | §2 Parameter aliases | — | **0 %** | Greenfield. Zero references to "alias" / "synonym" in backend. |
 | §3 Block editor + IDS round-trip | `bim_requirements/parsers/ids_parser.py`, `ids_exporter.py` (read-only IDS); no block UI | **15 %** | IDS parser exists (good); block UI greenfield; IDS↔EAC mapping greenfield; no live counter, no test panel, no template gallery. |
-| §4 Excel import | `bim_requirements/parsers/excel_parser.py` (BIM requirement extract), `boq/cad_import.py` (DDC pipeline) | **20 %** | No EAC DSL Excel format. No round-trip. No column-mapping wizard. No partial-import. |
+| §4 Excel import | `bim_requirements/parsers/excel_parser.py` (BIM requirement extract), `boq/cad_import.py` (cad2data pipeline) | **20 %** | No EAC DSL Excel format. No round-trip. No column-mapping wizard. No partial-import. |
 | §5 Classifier composition | `cad/classification_mapper.py` (Revit→DIN276/NRM/MasterFormat lookup tables), `catalog/models.py` (CatalogResource) | **35 %** | No `EacClassifier` / `EacClassifierComposition` / `EacMappingRule` tables. No CWICR-as-classifier (it's raw CSV). No parametric items, no intermediate items, no conflict resolver. Built-in classifiers (Uniformat, Uniclass, OmniClass, NRM2/3, ÖNORM) absent. |
 | §6 4D module | `schedule/models.py` (Schedule, Activity, Relationship, Baseline, Progress), `schedule/router.py` (CRUD) | **30 %** | Schema exists. No PMXML/MSPDI import. No `EacScheduleLink`. No simulation, no S-curve dashboard, no mobile PWA, no AI auto-link. |
 | §7 Tests + bench | `backend/tests/` (pytest), `frontend/e2e/` (Playwright) | n/a | Coverage targets and benchmarks must be applied per ticket; existing harness is fine. |
@@ -146,7 +146,7 @@ The block editor, Excel import, composition, and 4D linker are all **adapters**:
 
 - **Files**: `eac/engine/clash/{kernel,obb,exact}.py`.
 - Spec §1.7 ClashConfig (`exact|obb|sphere` × `min_distance|intersection_volume|enclosed`).
-- **Recommendation**: defer to a separate spike. The DDC canonical Parquet already includes triangulated meshes (per ADR 002). The kernel is a CPU geometry library wrapper — likely `trimesh` or `pyvista` — and a spike must validate it against a 50 k-element fixture before we lock the API.
+- **Recommendation**: defer to a separate spike. The cad2data canonical Parquet already includes triangulated meshes (per ADR 002). The kernel is a CPU geometry library wrapper — likely `trimesh` or `pyvista` — and a spike must validate it against a 50 k-element fixture before we lock the API.
 - **Acceptance for EAC-1.0 milestone**: clash mode returns a structured `ClashKernelNotConfigured` warning; UI hides the clash mode option until EAC-1.6 ships.
 
 ### EAC-1.7 — Public REST API `/api/v2/eac/`
@@ -229,7 +229,7 @@ The block editor, Excel import, composition, and 4D linker are all **adapters**:
   - `property` → AttributeRef with pset_name.
   - `classification` → EntitySelector classification_code.
   - `material` → predicate on material attribute.
-  - `partOf` → predicate on parent-child (requires DDC canonical relation column — verify in W0.2 spike).
+  - `partOf` → predicate on parent-child (requires cad2data canonical relation column — verify in W0.2 spike).
 - **Tests first**:
   - `tests/unit/eac/ids/test_ids_roundtrip.py` — 10 buildingSMART sample IDS files, each: parse → EAC → export → byte-compare canonicalised XML (AC-3.2).
   - `tests/integration/eac/ids/test_ids_xsd_validate.py` — exported XML validates against the official IDS-1.0.xsd.

@@ -2,7 +2,7 @@
 
 **Status:** proposed
 **Date:** 2026-04-26
-**Owners:** Artem (DDC), Claude (impl)
+**Owners:** cad2data upstream, Spyder Solutions (impl)
 **Supersedes (extends):** RFC 35 (EAC v2 Platform), ADR 002 (No IfcOpenShell)
 **Target releases:** v2.6.0 → v2.6.5 (incremental, 3-4 weeks total)
 
@@ -12,7 +12,7 @@ This RFC plans Wave 1 of the EAC deep-features programme described in
 `NextTasks 26042026.txt` (sections 2.x and 4.x). It is intentionally
 **simplified**: only items that need no new heavy dependencies and no
 geometry-pipeline extensions are in scope. Geometry-heavy items (2.3, 2.6,
-2.7, 2.8) move to Wave 2 once DDC `cad2data` adapter is extended with the
+2.7, 2.8) move to Wave 2 once cad2data `cad2data` adapter is extended with the
 required signals; AI-heavy items (4.1, 4.3, 4.5) move to Wave 2/3.
 
 **In scope (Wave 1, 6 items):**
@@ -37,8 +37,8 @@ These are non-negotiable for Wave 1 (and the rest of the programme):
 
 1. **ADR-002 holds**: no `ifcopenshell`, no `pythonocc-core`, no `web-ifc`
    on the backend. Where the spec depends on B-Rep Open Cascade
-   geometry, we extend DDC `cad2data` (which Artem owns) instead.
-2. **DDC is in-house**: extension PRs land in the DDC repo synchronously
+   geometry, we extend `cad2data` (maintained upstream) instead.
+2. **cad2data is in-house**: extension PRs land in the cad2data repo synchronously
    with backend changes that consume new fields.
 3. **BCF is allowed** as I/O format (issues / viewpoints / validation
    reports). Hand-rolled XML or AGPL-compatible library, no IfcOpenShell
@@ -296,7 +296,7 @@ These are tracked but resolution can lag the implementation:
 
 - **Q-1**: which IDS conformance test corpus do we treat as canon? (Wave
   1 default: buildingSMART `IDS-tools/Documentation/Examples/`.)
-- **Q-2**: when DDC adapter ships geometry signatures (Wave 2 prep), do
+- **Q-2**: when cad2data adapter ships geometry signatures (Wave 2 prep), do
   we backfill old uploaded models or only forward-process new ones? (Soft
   default: forward-only; backfill on demand via CLI.)
 - **Q-3**: receipt retention — keep forever or rotate after N days?
@@ -365,13 +365,13 @@ CHANGELOG.md                              # one entry per release
 
 Documented here so they don't get lost:
 
-- 2.3 Geometric Quantity Engine (7 calculators) — Wave 2, requires DDC
+- 2.3 Geometric Quantity Engine (7 calculators) — Wave 2, requires cad2data
   geometry_signature extension.
 - 2.4 vector + LLM classification tiers — Wave 2, requires pgvector
   embeddings on classifier catalogue.
 - 2.5 real-time validation gate — Wave 2, requires WebSocket
   infrastructure.
-- 2.6 Spatial Boundary Resolution — Wave 2, requires DDC IfcSpace boundary
+- 2.6 Spatial Boundary Resolution — Wave 2, requires cad2data IfcSpace boundary
   emission.
 - 2.7 Visual Data Layer (palettes, IFC bake) — Wave 2/3.
 - 2.8 Cost Intelligence pipeline (full E2E) — Wave 2.

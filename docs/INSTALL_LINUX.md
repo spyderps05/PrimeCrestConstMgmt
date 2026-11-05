@@ -4,7 +4,7 @@ This page covers the Linux-specific gotchas that the generic `pip install openco
 
 Tested on Ubuntu 22.04, 24.04, 26.04 and Debian 12.
 
-A message during install or start that this page does not cover? See [Installation help](INSTALL_TROUBLESHOOTING.md) (also [online](https://openconstructionerp.com/install-help)).
+A message during install or start that this page does not cover? See [Installation help](INSTALL_TROUBLESHOOTING.md) (also [online](https://primecrest.pk/install-help)).
 
 ---
 
@@ -259,7 +259,7 @@ Only `https://host[:port]` origins and `http://localhost[:port]` are accepted. P
 ## 7. BIM/CAD converters (.rvt / .ifc / .dwg)
 
 Native CAD/BIM files are turned into element data (and, for RVT, 3D geometry) by
-the DDC converters (`datadrivenconstruction/cad2data-Revit-IFC-DWG`, release 2026.10).
+the cad2data converters (`datadrivenconstruction/cad2data-Revit-IFC-DWG`, release 2026.10).
 Linux builds exist for **x64 and arm64** (glibc), next to the Windows x64 and macOS builds:
 
 | Format | Linux package | What it produces |
@@ -296,4 +296,4 @@ build; convert to DXF or IFC elsewhere and upload that.
 | Opens with `curl` on the server, unreachable from any other machine | The default bind is `127.0.0.1` | Start it as `openconstructionerp serve --host 0.0.0.0 --port 8080` (section 6) |
 | An RVT/DWG upload says the converter is not installed | The converter package has not been downloaded yet | Install it from Settings -> Converters, or copy the installed folder onto an offline server (section 7) |
 
-If you still cannot install, run `openconstructionerp doctor` (or `python -m openconstructionerp doctor`) and open an issue with the full output: https://github.com/datadrivenconstruction/PrimeCrest/issues
+If you still cannot install, run `openconstructionerp doctor` (or `python -m openconstructionerp doctor`) and open an issue with the full output: https://github.com/spyderps05/PrimeCrestConstMgmt/issues

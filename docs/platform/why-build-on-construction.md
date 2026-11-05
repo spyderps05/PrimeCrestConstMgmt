@@ -65,22 +65,18 @@ your platform, and that is a deliberate choice rather than a gap.
 
 ## The licence model
 
-PrimeCrest is released under AGPL-3.0 for the community edition, with a
-separate commercial licence for organisations that need terms the AGPL does not
-give them. In practice:
+PrimeCrest is distributed under AGPL-3.0, inherited from the upstream
+OpenConstructionERP codebase (Artem Boiko / DataDrivenConstruction). In practice:
 
-- The community edition is the full modular platform. You can run it, study it,
-  modify it and build modules on it under the AGPL.
+- The full modular platform is available under the AGPL. You can run it, study it,
+  modify it and build modules on it.
 - Because the licence is AGPL, a modified version offered to others over a
   network carries the AGPL obligation to share the corresponding source. If you
   distribute or host a modified platform, plan for that.
-- The commercial licence exists for enterprise and white-label situations where
-  the AGPL terms do not fit. That is a separate agreement, not a paywalled core.
 
-Nothing in the module system is gated behind the commercial licence. The loader,
-the event bus, the hook registry, the validation engine, the scaffolder and the
-module template are all part of the open core. The developer story in this
-section works entirely on the community edition.
+Nothing in the module system is gated. The loader, the event bus, the hook
+registry, the validation engine, the scaffolder and the module template are all
+part of the open core.
 
 ## What "open" buys you as a builder
 

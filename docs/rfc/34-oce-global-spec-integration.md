@@ -6,7 +6,7 @@
 **Related:**
 - `OCE_TECH_SPEC_GLOBAL.md` (1941 lines, six modules: CDE, BIM Diff, Validation EAC, Classification, QTO, AI Copilot)
 - `OCE_EAC_Implementation_Spec_v2_International.md` (1748 lines, six sections: engine, aliases, block editor, Excel import, composition, 4D)
-- ADR 002 — No IfcOpenShell, DDC canonical format is single source of truth
+- ADR 002 — No IfcOpenShell, cad2data canonical format is single source of truth
 - RFC 33 — CDE module deep audit (continues)
 - **RFC 35 — EAC v2 platform implementation (deep plan for §3+§4 of this RFC plus a new §10 Wave 6 4D module)**
 
@@ -20,7 +20,7 @@ This RFC is the **strategic integration plan** that locks decisions, names the g
 
 ### What the user locked in (2026-04-25)
 
-1. **DDC `cad2data` only.** No IfcOpenShell, no `web-ifc`, no `ifctester` runtime parsing — see ADR 002.
+1. **cad2data `cad2data` only.** No IfcOpenShell, no `web-ifc`, no `ifctester` runtime parsing — see ADR 002.
 2. **Stack: pick what's best for fast iteration.** I'm choosing Celery (already in `the architecture guide` stack, mature, integrates with Redis we already need), pgvector (single PG dep, no separate Qdrant), `bge-m3` for multilingual embeddings (open-source, multilingual, dense+sparse modes — perfect for hybrid search).
 3. **TDD + browser-verified.** Every ticket = unit/integration tests written **first**, then implementation, then Playwright E2E with screenshot. No ticket is "done" without a screenshot in `frontend/test-results/`.
 
@@ -43,7 +43,7 @@ Existing modules vs. spec coverage (verified via two parallel codebase audits):
 
 | # | Decision | Rationale |
 |---|---|---|
-| L1 | **DDC `cad2data`** is the single CAD/BIM parser. All six modules read its canonical Parquet/JSON. | ADR 002. User-confirmed 2026-04-25. |
+| L1 | **cad2data `cad2data`** is the single CAD/BIM parser. All six modules read its canonical Parquet/JSON. | ADR 002. User-confirmed 2026-04-25. |
 | L2 | **Celery + Redis** is the async job runner. `JobRun` table records all background work. | Already in `the architecture guide` stack table. Mature. Integrates with existing Redis. |
 | L3 | **pgvector** is the vector store. No Qdrant in core; Qdrant remains as an optional enterprise plugin. | User emphasis on pgvector. One DB to operate. PostgreSQL 16 already required. |
 | L4 | **`bge-m3`** is the embedding model (1024-dim dense + sparse). Loaded via `sentence-transformers` or via `infinity` server (CPU-tolerant). | Multilingual (50+ langs), open-source, dense + sparse out of the box, retrieval-tuned, runs on CPU for on-prem. |
@@ -94,9 +94,9 @@ This is **the prerequisite** for everything in Waves 1–5. Nothing else can pro
   - `tests/e2e/jobs-status.spec.ts` (Playwright) — submit job via API, poll status, screenshot the loading→complete UI.
 - **Acceptance**: `make dev` brings up `worker` container; submitting a no-op task returns a `job_run_id`; polling shows progress 0→100; screenshot saved at `frontend/test-results/jobs-happy.png`.
 
-### W0.2 — DDC adapter extension for spec parity
+### W0.2 — cad2data adapter extension for spec parity
 
-- **Files**: `backend/app/modules/bim_hub/ddc_extras.py` — new helpers that DDC's existing output already supports but isn't exposed: `geometry_signature(element) -> SignatureV1` (mesh_sha256, vertex_count, volume, surface_area, centroid, bbox), `property_set_diff(left, right) -> list[PropertyChange]`, `material_signature(element) -> str`.
+- **Files**: `backend/app/modules/bim_hub/ddc_extras.py` — new helpers that cad2data's existing output already supports but isn't exposed: `geometry_signature(element) -> SignatureV1` (mesh_sha256, vertex_count, volume, surface_area, centroid, bbox), `property_set_diff(left, right) -> list[PropertyChange]`, `material_signature(element) -> str`.
 - **Tests**: golden samples — one DWG, one RVT-converted IFC, one DGN canonical Parquet — assert per-element signatures are stable across re-conversions (idempotency) and tolerant to 0.1 mm rounding (no false-positive geometry diffs).
 - **Acceptance**: `pytest backend/tests/unit/test_ddc_extras.py -v` passes; signature is stable between two conversions of the same source file (modulo `created_at`).
 
@@ -158,7 +158,7 @@ Spec Module 1 is 75 % done. Wave 1 closes the gaps to ISO 19650-2 conformance.
 ### W1.4 — Format extractor registry (50 formats)
 
 - **Files**: `cde/extractors/registry.py` (Protocol-based registry); per-format adapters under `cde/extractors/{pdf,dwg,docx,xlsx,e57,ifc_canonical,…}.py`. Each adapter declares `supported_mime_types` and returns a JSON-serialisable metadata dict.
-- **IFC adapter goes through DDC**, not IfcOpenShell — see ADR 002.
+- **IFC adapter goes through cad2data**, not IfcOpenShell — see ADR 002.
 - **Tests first**: golden sample per format; metadata extraction is byte-stable.
 - **Acceptance**: uploading a DWG, IFC, RVT, PDF, DOCX, XLSX, E57 each yields a populated `metadata_jsonb` field on the `cde_file_version` row.
 - **Visual**: `cde-extractor-results.png`.
@@ -187,7 +187,7 @@ Largest gap (25 % → 100 %). Pure greenfield engine on top of canonical format.
 - **Files**: `backend/app/modules/bim_hub/diff/engine.py`, `bim_hub/diff/categorize.py`, `bim_hub/diff/signatures.py` (uses W0.2 helpers).
 - **Algorithm** (DDC-canonical version of spec §2.3):
   1. Load both versions' canonical Parquet via DuckDB.
-  2. Build `stable_id` index (DDC's persistent element identity, replaces `GlobalId`).
+  2. Build `stable_id` index (cad2data's persistent element identity, replaces `GlobalId`).
   3. Set difference: `removed`, `added`, `common`.
   4. For each `common` element, compute property diff (JSONB delta), geometry signature compare (mesh_sha256, then bbox/centroid distance with 1 mm tolerance), classification compare, material compare, containment compare.
   5. Emit categorized `BIMModelDiffChange` rows.
@@ -420,7 +420,7 @@ Wave 1 and Wave EAC can run in parallel after Wave 0 (different code paths). Wav
 
 | Risk | Likelihood | Impact | Mitigation |
 |---|---|---|---|
-| DDC `cad2data` doesn't expose mesh-hash → Wave 2 blocked | Medium | High | W0.2 spike (1 day) verifies on real samples; if missing, escalate to DDC team for a small extension before Wave 2 starts. |
+| cad2data `cad2data` doesn't expose mesh-hash → Wave 2 blocked | Medium | High | W0.2 spike (1 day) verifies on real samples; if missing, escalate to cad2data team for a small extension before Wave 2 starts. |
 | `bge-m3` is too slow on CPU for on-prem deployments | Medium | Medium | Fallback: `multilingual-e5-large` (smaller). Worker pool can warm-cache embeddings. |
 | GAEB DA XML 3.3 round-trip mismatch on edge cases | High | Medium | Use the official GAEB validator XSD as a fuzz seed; 100+ real-world fixtures from DACH partners. |
 | Multi-tenant RLS regression breaks existing tenants | High | High | W0.4 staged: enable RLS in `audit-only` mode first; promote to `enforce` after one week of clean audit. |

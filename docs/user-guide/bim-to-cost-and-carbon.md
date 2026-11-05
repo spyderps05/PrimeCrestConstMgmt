@@ -8,7 +8,7 @@ The point is to price and assess a design from the model itself, not from a re-m
 
 ## How models come in
 
-All CAD and BIM formats, including RVT, IFC and DWG, are converted with DDC Converters 2.0 into a single structured format. The result is a federated model you can open in the browser, with a category and storey breakdown, and elements that carry quantities, properties and classification.
+All CAD and BIM formats, including RVT, IFC and DWG, are converted with cad2data converters into a single structured format. The result is a federated model you can open in the browser, with a category and storey breakdown, and elements that carry quantities, properties and classification.
 
 ## The steps
 

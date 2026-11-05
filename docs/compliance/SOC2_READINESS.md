@@ -3,7 +3,7 @@
 **Version 1.0 — April 2026**
 
 This document describes the state of readiness of
-PrimeCrest and of the DDC-operated hosted instance
+PrimeCrest and of the Spyder Solutions-operated hosted instance
 against the AICPA Trust Services Criteria (TSC) 2017 (revised
 2022). It is intended for enterprise procurement teams asking
 "are you SOC 2 ready?".
@@ -16,9 +16,9 @@ against the AICPA Trust Services Criteria (TSC) 2017 (revised
 ## 1. Scope
 
 - Software: PrimeCrest (all modules distributed under
-  AGPL-3.0-or-later and the commercial licence).
-- Systems: the DDC-operated hosted instance at
-  <https://openconstructionerp.com> (if and when operated),
+  AGPL-3.0-or-later).
+- Systems: the Spyder Solutions-operated hosted instance at
+  <https://primecrest.pk> (if and when operated),
   including the production database, object storage, and
   release-automation pipeline.
 - Subservice organisations: Hetzner Online GmbH (or equivalent
@@ -32,7 +32,7 @@ against the AICPA Trust Services Criteria (TSC) 2017 (revised
 
 | Control ID | Description | Implementation |
 |---|---|---|
-| CC1.1 | Code of Conduct | Published as CODE_OF_CONDUCT.md (Contributor Covenant). Enforcement via info@datadrivenconstruction.io. |
+| CC1.1 | Code of Conduct | Published as CODE_OF_CONDUCT.md (Contributor Covenant). Enforcement via support@primecrest.pk. |
 | CC2.1 | Board / owner oversight | Sole proprietor governance; single-owner decision log maintained in private repo. |
 | CC3.2 | Risk identification | Annual threat-model review (STRIDE) for backend and frontend; logged in private ISMS. |
 | CC5.2 | Policies | LICENSE, NOTICE, SECURITY, PRIVACY, TERMS, COOKIES, CLA, PATENTS, TRADEMARK, ACCESSIBILITY, EXPORT-COMPLIANCE all published and maintained in this repository. |
@@ -69,13 +69,13 @@ against the AICPA Trust Services Criteria (TSC) 2017 (revised
 | PI1.4 | Processing completeness | Idempotency keys on financial endpoints; audit trail via accounting ledger. |
 | PI1.5 | Output reconciliation | GAEB X86 and DATEV export validators; signed report checksums. |
 
-### 2.5 Privacy — P series (for the DDC-operated instance)
+### 2.5 Privacy — P series (for the Spyder Solutions-operated instance)
 
 | Control ID | Description | Implementation |
 |---|---|---|
 | P1.1 | Notice to data subjects | docs/legal/PRIVACY.md published at the hosted instance. |
 | P2.1 | Consent capture | Cookie-banner consent (see docs/legal/COOKIES.md); AI-interaction opt-in. |
-| P4.1 | Access | GDPR Art. 15 handled within 30 days via info@datadrivenconstruction.io. |
+| P4.1 | Access | GDPR Art. 15 handled within 30 days via support@primecrest.pk. |
 | P5.1 | Disclosure to third parties | Sub-processor list maintained; notification on material change (30-day advance notice for the hosted instance). |
 | P6.2 | Incident response | GDPR Art. 33 72-hour supervisory-authority notification; Art. 34 data-subject notification when required. |
 | P8.1 | Monitoring and enforcement | Annual self-review against this readiness document; external audit on procurement demand. |
@@ -115,5 +115,5 @@ required:
 
 ## 6. Contact
 
-`info@datadrivenconstruction.io` — procurement, questionnaire
+`support@primecrest.pk` — procurement, questionnaire
 completion, and audit coordination.

@@ -60,7 +60,7 @@ The frontend is a React 18 + TypeScript single-page application.
 | Background tasks | Celery + Redis |
 | Frontend | React 18, TypeScript, AG Grid, Three.js, PDF.js, Yjs |
 | Database | PostgreSQL 16+ (pg_duckdb, pgvector, PostGIS) |
-| CAD conversion | DDC cad2data pipeline |
+| CAD conversion | cad2data pipeline |
 | CV/OCR | PaddleOCR 3.0 + YOLOv11 |
 | Vector search | Qdrant (prod) / pgvector (simple deploy) |
 | File storage | MinIO (S3-compatible) / local filesystem (dev) |
@@ -70,7 +70,7 @@ The frontend is a React 18 + TypeScript single-page application.
 
 - **Modules as plugins.** Drop a module into the modules directory and restart. No central registry to edit.
 - **Validation is first-class.** Every module declares validation rules. Validation is mandatory in all workflows, not optional.
-- **CAD via conversion.** No IfcOpenShell dependency. All BIM/CAD formats are converted to a canonical internal format through the DDC cad2data pipeline. Modules read and write canonical data only.
+- **CAD via conversion.** No IfcOpenShell dependency. All BIM/CAD formats are converted to a canonical internal format through the cad2data pipeline. Modules read and write canonical data only.
 - **i18n everywhere.** Zero hardcoded user-facing strings. All text goes through the translation system.
 - **AI-augmented, human-confirmed.** AI features produce suggestions with confidence scores. A human always reviews and approves before anything is applied.
 - **Single-database simplicity.** PostgreSQL is the only required infrastructure dependency.
@@ -80,7 +80,7 @@ The frontend is a React 18 + TypeScript single-page application.
 ```
 Any CAD/BIM format
        |
-  DDC cad2data (conversion)
+  cad2data (conversion)
        |
   Canonical format (internal)
        |

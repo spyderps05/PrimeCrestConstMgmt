@@ -193,7 +193,7 @@ xattr -dr com.apple.quarantine /Applications/PrimeCrest.app
 
 ## Если не помогло
 
-Напишите на info@datadrivenconstruction.io или откройте issue на [github.com/datadrivenconstruction/PrimeCrest/issues](https://github.com/datadrivenconstruction/PrimeCrest/issues). Пожалуйста, укажите:
+Напишите на support@primecrest.pk или откройте issue на [github.com/spyderps05/PrimeCrestConstMgmt/issues](https://github.com/spyderps05/PrimeCrestConstMgmt/issues). Пожалуйста, укажите:
 
 - какую версию и каким способом вы поставили (установщик Windows, `.dmg`, `.deb`, `.rpm`, AppImage, pip или Docker),
 - вашу систему (Windows: Пуск, введите `winver`; macOS: меню Apple, Об этом Mac),

@@ -2,7 +2,7 @@
 
 Also available in [Deutsch](WINDOWS_BLOCKED.de.md) and [Русский](WINDOWS_BLOCKED.ru.md).
 
-For any other warning or error while installing or starting, see [Installation help](../INSTALL_TROUBLESHOOTING.md) (also [online](https://openconstructionerp.com/install-help)).
+For any other warning or error while installing or starting, see [Installation help](../INSTALL_TROUBLESHOOTING.md) (also [online](https://primecrest.pk/install-help)).
 
 This page is for you if Windows refuses to start PrimeCrest, calls it an app from an unknown or unverified publisher, or let it run once and blocks it on every start since.
 
@@ -58,8 +58,8 @@ If Protection history shows a Microsoft Defender Antivirus detection instead, an
 2. Create a folder, for example `C:\PrimeCrest`, open **Windows PowerShell** in it, and run:
 
 ```powershell
-curl.exe -fsSL https://raw.githubusercontent.com/datadrivenconstruction/PrimeCrest/main/docker-compose.quickstart.yml -o docker-compose.yml
-curl.exe -fsSL https://raw.githubusercontent.com/datadrivenconstruction/PrimeCrest/main/docker-compose.quickstart.image.yml -o docker-compose.override.yml
+curl.exe -fsSL https://raw.githubusercontent.com/spyderps05/PrimeCrestConstMgmt/main/docker-compose.quickstart.yml -o docker-compose.yml
+curl.exe -fsSL https://raw.githubusercontent.com/spyderps05/PrimeCrestConstMgmt/main/docker-compose.quickstart.image.yml -o docker-compose.override.yml
 function New-Secret([int]$n) { $b = New-Object byte[] $n; [Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($b); -join ($b | ForEach-Object { $_.ToString("x2") }) }
 Set-Content -Path .env -Encoding ascii -Value @("POSTGRES_PASSWORD=$(New-Secret 24)", "JWT_SECRET=$(New-Secret 32)")
 docker compose pull app
@@ -110,11 +110,11 @@ $line = Select-String -Path SHA256SUMS -Pattern $exe.Name -SimpleMatch
 (Get-FileHash $exe.FullName -Algorithm SHA256).Hash -eq $line.Line.Split(' ')[0]
 ```
 
-`True` means the file is exactly the one our release build produced. `False` means it was damaged or changed on the way, so do not run it. A red error instead of `True` or `False` means the folder holds a `SHA256SUMS` from a different release than the installer, so download both from the same release page. If `False` persists, download it again from the [GitHub release page](https://github.com/datadrivenconstruction/PrimeCrest/releases/latest). The check proves the file is intact. It does not change what SmartScreen or Smart App Control decide. For a stronger check, `SHA256SUMS` itself carries a Sigstore signature, described in [RELEASE_SIGNATURE_INVENTORY.md](RELEASE_SIGNATURE_INVENTORY.md).
+`True` means the file is exactly the one our release build produced. `False` means it was damaged or changed on the way, so do not run it. A red error instead of `True` or `False` means the folder holds a `SHA256SUMS` from a different release than the installer, so download both from the same release page. If `False` persists, download it again from the [GitHub release page](https://github.com/spyderps05/PrimeCrestConstMgmt/releases/latest). The check proves the file is intact. It does not change what SmartScreen or Smart App Control decide. For a stronger check, `SHA256SUMS` itself carries a Sigstore signature, described in [RELEASE_SIGNATURE_INVENTORY.md](RELEASE_SIGNATURE_INVENTORY.md).
 
 ## Still stuck
 
-Write to info@datadrivenconstruction.io or open an issue on GitHub. Tell us your Windows version (Start, type `winver`), what the Smart App Control settings page shows, and the exact text of the message.
+Write to support@primecrest.pk or open an issue on GitHub. Tell us your Windows version (Start, type `winver`), what the Smart App Control settings page shows, and the exact text of the message.
 
 ## Sources
 

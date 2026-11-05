@@ -73,7 +73,7 @@ Flexible Server по умолчанию требует TLS, поэтому в а
 Контейнер работает от непривилегированного пользователя `oe`. Узнайте его числовой идентификатор и передайте ему папку:
 
 ```bash
-docker run --rm --entrypoint id ghcr.io/datadrivenconstruction/openconstructionerp:<версия>
+docker run --rm --entrypoint id ghcr.io/spyderps05/primecrestconstmgmt:<версия>
 sudo chown -R <uid>:<gid> /srv/oce-data
 ```
 
@@ -95,7 +95,7 @@ REGISTRATION_MODE=admin-approve
 ```yaml
 services:
   app:
-    image: ghcr.io/datadrivenconstruction/openconstructionerp:<версия>   # зафиксируйте выпущенную версию
+    image: ghcr.io/spyderps05/primecrestconstmgmt:<версия>   # зафиксируйте выпущенную версию
     restart: unless-stopped
     env_file: .env
     volumes:
@@ -131,7 +131,7 @@ docker compose logs -f app        # первый запуск занимает �
 
 Создайте среду в том же регионе и той же VNet, общий ресурс Azure Files для `/data` и одно приложение:
 
-- образ `ghcr.io/datadrivenconstruction/openconstructionerp:<версия>`, целевой порт **8080**, внешний ingress;
+- образ `ghcr.io/spyderps05/primecrestconstmgmt:<версия>`, целевой порт **8080**, внешний ingress;
 - CPU 2, память 4 Gi, **мин. и макс. реплик 1**;
 - общий ресурс смонтирован в `/data`;
 - переменные из `.env` выше, при этом `JWT_SECRET` и два адреса базы хранятся как секреты Container Apps.

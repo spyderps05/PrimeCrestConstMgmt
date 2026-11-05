@@ -37,7 +37,7 @@ The rates and resources an estimate draws on, and the tools to search and compar
 
 ## BIM, CAD and reality capture
 
-Bring any model or drawing in, coordinate it, and turn it into structured quantities. All formats convert through the DDC canonical pipeline rather than native IFC parsing.
+Bring any model or drawing in, coordinate it, and turn it into structured quantities. All formats convert through the cad2data canonical pipeline rather than native IFC parsing.
 
 - BIM Hub - model and element management, BOQ linking, quantity maps and model diffs.
 - CAD Import - the CAD conversion pipeline for DWG, DGN, RVT and IFC.

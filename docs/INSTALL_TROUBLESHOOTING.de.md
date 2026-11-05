@@ -193,7 +193,7 @@ Die Deinstallation entfernt das Programm und behält Ihre Projekte. Sie liegen i
 
 ## Immer noch Probleme?
 
-Schreiben Sie an info@datadrivenconstruction.io oder eröffnen Sie ein Issue unter [github.com/datadrivenconstruction/PrimeCrest/issues](https://github.com/datadrivenconstruction/PrimeCrest/issues). Bitte nennen Sie:
+Schreiben Sie an support@primecrest.pk oder eröffnen Sie ein Issue unter [github.com/spyderps05/PrimeCrestConstMgmt/issues](https://github.com/spyderps05/PrimeCrestConstMgmt/issues). Bitte nennen Sie:
 
 - die installierte Version und den Weg (Windows-Installationsprogramm, `.dmg`, `.deb`, `.rpm`, AppImage, pip oder Docker),
 - Ihr System (Windows: Start, `winver` eingeben; macOS: Apple-Menü, Über diesen Mac),

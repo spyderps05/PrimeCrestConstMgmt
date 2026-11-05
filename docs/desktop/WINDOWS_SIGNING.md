@@ -96,4 +96,4 @@ Microsoft, SmartScreen reputation for Windows app developers, the source for EV 
 
 Microsoft, signtool: https://learn.microsoft.com/en-us/windows/win32/seccrypto/signtool
 
-Questions: info@datadrivenconstruction.io. Licensed under AGPL-3.0.
+Questions: support@primecrest.pk. Licensed under AGPL-3.0.

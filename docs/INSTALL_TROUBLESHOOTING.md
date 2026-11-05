@@ -191,7 +191,7 @@ Uninstalling removes the program and keeps your projects. They live in the `.ope
 
 ## Still stuck
 
-Write to info@datadrivenconstruction.io or open an issue at [github.com/datadrivenconstruction/PrimeCrest/issues](https://github.com/datadrivenconstruction/PrimeCrest/issues). Please include:
+Write to support@primecrest.pk or open an issue at [github.com/spyderps05/PrimeCrestConstMgmt/issues](https://github.com/spyderps05/PrimeCrestConstMgmt/issues). Please include:
 
 - the version you installed and how (Windows installer, `.dmg`, `.deb`, `.rpm`, AppImage, pip or Docker),
 - your system (Windows: Start, type `winver`; macOS: Apple menu, About This Mac),

@@ -1,8 +1,8 @@
 # Install PrimeCrest
 
-PrimeCrest by DataDrivenConstruction is an open-source platform for construction cost estimation, bills of quantities, and data validation, with CAD and BIM quantity takeoff and multi-currency support. The desktop app puts the whole thing on your computer. You download one installer and run it. There is no Python, no pip, no Docker, and no database to set up. Everything it needs is already inside.
+PrimeCrest Construction Management by Spyder Solutions is a platform for construction cost estimation, bills of quantities, and data validation, with CAD and BIM quantity takeoff and multi-currency support. The desktop app puts the whole thing on your computer. You download one installer and run it. There is no Python, no pip, no Docker, and no database to set up. Everything it needs is already inside.
 
-This guide walks you through installing it and signing in for the first time. If a warning or an error shows up along the way, [Installation help](../INSTALL_TROUBLESHOOTING.md) says what it means and what to do (also [online](https://openconstructionerp.com/install-help), in [Deutsch](../INSTALL_TROUBLESHOOTING.de.md) and [Русский](../INSTALL_TROUBLESHOOTING.ru.md)).
+This guide walks you through installing it and signing in for the first time. If a warning or an error shows up along the way, [Installation help](../INSTALL_TROUBLESHOOTING.md) says what it means and what to do (also [online](https://primecrest.pk/install-help), in [Deutsch](../INSTALL_TROUBLESHOOTING.de.md) and [Русский](../INSTALL_TROUBLESHOOTING.ru.md)).
 
 ## Where to download
 
@@ -86,4 +86,4 @@ To start genuinely from scratch, uninstall the app and then delete the `.openest
 
 If you see a warning or an error, look it up in [Installation help and troubleshooting](../INSTALL_TROUBLESHOOTING.md) first. It lists the messages the installer, the app and your system show, and what to do about each.
 
-If something does not work or you have a question, email us at info@datadrivenconstruction.io, or open an issue on the project's GitHub issues page. We are happy to help.
+If something does not work or you have a question, email us at support@primecrest.pk, or open an issue on the project's GitHub issues page. We are happy to help.

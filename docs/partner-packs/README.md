@@ -570,8 +570,8 @@ Develop your pack alongside the core:
 
 ```bash
 # 1. Clone the monorepo
-git clone https://github.com/DataDrivenConstruction/openconstructionerp
-cd openconstructionerp
+git clone https://github.com/spyderps05/PrimeCrestConstMgmt
+cd PrimeCrestConstMgmt
 
 # 2. Editable install of the core + your pack
 # The distribution lives in backend/, there is no pyproject.toml at the clone root.
@@ -656,4 +656,4 @@ against a core version that predates the entry-point group.
   - `router.py` — five public endpoints
 - **Reference packs**: `packs/<slug>/`
 
-For partnership inquiries: <info@datadrivenconstruction.io>.
+For partnership inquiries: <support@primecrest.pk> (Spyder Solutions).

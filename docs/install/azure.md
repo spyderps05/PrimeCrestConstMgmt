@@ -73,7 +73,7 @@ Create an Ubuntu 24.04 LTS VM in `snet-vm`, add a managed data disk, and allow i
 The container runs as the non-root user `oe`. Find its numeric id and give it the folder:
 
 ```bash
-docker run --rm --entrypoint id ghcr.io/datadrivenconstruction/openconstructionerp:<version>
+docker run --rm --entrypoint id ghcr.io/spyderps05/primecrestconstmgmt:<version>
 sudo chown -R <uid>:<gid> /srv/oce-data
 ```
 
@@ -95,7 +95,7 @@ With `APP_ENV=production` the server refuses to start on a short or well known `
 ```yaml
 services:
   app:
-    image: ghcr.io/datadrivenconstruction/openconstructionerp:<version>   # pin a released version
+    image: ghcr.io/spyderps05/primecrestconstmgmt:<version>   # pin a released version
     restart: unless-stopped
     env_file: .env
     volumes:
@@ -131,7 +131,7 @@ Open `https://erp.example.com`. **The first user to register becomes the adminis
 
 Create the environment in the same region and VNet, an Azure Files share for `/data`, and one app with:
 
-- image `ghcr.io/datadrivenconstruction/openconstructionerp:<version>`, target port **8080**, external ingress;
+- image `ghcr.io/spyderps05/primecrestconstmgmt:<version>`, target port **8080**, external ingress;
 - CPU 2, memory 4 Gi, **minimum and maximum replicas 1**;
 - the share mounted at `/data`;
 - the variables of the `.env` above, with `JWT_SECRET` and the two database URLs stored as Container Apps secrets.

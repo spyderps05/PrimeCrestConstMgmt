@@ -45,7 +45,7 @@ Put these in `backend/.env`, or set them as environment variables on the service
 | `SMTP_TLS` | `true` | Upgrade the connection with STARTTLS after connecting. |
 | `SMTP_USER` | empty | Login name. Usually the full mailbox address. |
 | `SMTP_PASSWORD` | empty | Password for that login. Note the full word `PASSWORD`. |
-| `SMTP_FROM` | `info@datadrivenconstruction.io` | Address messages are sent from. Change this to your own. |
+| `SMTP_FROM` | `support@primecrest.pk` | Address messages are sent from. Change this to your own. |
 
 Two things about the names themselves, because both cost people an evening:
 
@@ -84,7 +84,7 @@ Port 465 expects the connection to be encrypted from the very first byte, which 
 different scheme from STARTTLS and one this platform does not currently speak. If your
 provider offers both, choose 587. If it offers only 465, the platform cannot send
 through it directly today; put a local relay in front that accepts submission on 587 and
-forwards onward, or ask us at info@datadrivenconstruction.io.
+forwards onward, or ask us at support@primecrest.pk.
 
 The platform now refuses port 465 immediately with a message saying so. Before that
 change, port 465 produced a fifteen-second pause followed by a message about the
@@ -174,4 +174,4 @@ mode. An administrator can set a password directly instead.
 ## Still stuck
 
 Collect the backend log around the moment of a send attempt and the settings you used
-with the password removed, and write to info@datadrivenconstruction.io.
+with the password removed, and write to support@primecrest.pk.

@@ -1,7 +1,7 @@
 # Field Worker Mobile Surface — Design Document
 
 Status: DESIGN (not yet implemented)
-Owner: Artem (info@datadrivenconstruction.io)
+Owner: Spyder Solutions (support@primecrest.pk)
 Last revised: 2026-05-24
 Target release: v4.8 (pilot) / v5.0 (full role matrix)
 Pilot scope: Daily Diary surface only, behind a new `field_worker` role
@@ -710,4 +710,4 @@ Photos are the heavy payload. The pilot uses the existing
   `frontend/src/shared/ui/PWAInstallPrompt.tsx` — existing offline /
   install-prompt UX
 
-Questions or scope changes: email info@datadrivenconstruction.io.
+Questions or scope changes: email support@primecrest.pk.

@@ -3,7 +3,7 @@
 Status: Draft 1
 Author: PrimeCrest Core Team
 Last updated: 2026-05-24
-Contact: info@datadrivenconstruction.io
+Contact: support@primecrest.pk
 Implementation target: single 4-to-6-week development wave
 
 ---
@@ -73,7 +73,7 @@ was late is a real and frequently un-attributed cost.
 tool; each of the large suppliers ships one. Output is a per-pour drawing
 plus a list of panels and accessories. PrimeCrest will not embed
 those tools; it ingests their output as a CSV/Excel/JSON parts list and
-optionally the IFC of the formwork assembly through the existing DDC
+optionally the IFC of the formwork assembly through the existing cad2data
 cad2data pipeline.
 
 ---
@@ -814,7 +814,7 @@ PrimeCrest **Formwork module** target differentiation:
 - Re-use cycle is a first-class metric (none of the above expose it cleanly).
 - Open REST API + event bus, integrates with the same project a customer uses
   for BOQ / schedule / HSE / EAC — no silo.
-- AGPL community edition with optional commercial; open data export
+- AGPL-3.0; open data export
   (CSV / XLSX / JSON) at every screen.
 
 The module's strategic claim: a contractor renting from any of the large

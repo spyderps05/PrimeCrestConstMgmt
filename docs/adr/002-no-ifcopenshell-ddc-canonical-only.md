@@ -1,4 +1,4 @@
-# ADR 002 — No IfcOpenShell, DDC canonical format is single source of truth
+# ADR 002 — No IfcOpenShell, cad2data canonical format is single source of truth
 
 **Status:** accepted
 **Date:** 2026-04-25
@@ -9,9 +9,9 @@
 
 `OCE_TECH_SPEC_GLOBAL.md` recommends **`ifcopenshell`** as the core IFC parser for Modules 2 (BIM Diff), 3 (Validation EAC), 4 (Classification ML), and 5 (QTO). Every code example in the spec assumes direct IFC parsing.
 
-PrimeCrest has explicitly banned IfcOpenShell since project inception (`the architecture guide` puts it plainly: we do not use IfcOpenShell, all BIM and CAD goes through the DDC cad2data pipeline). The reasoning:
+PrimeCrest has explicitly banned IfcOpenShell since project inception (`the architecture guide` puts it plainly: we do not use IfcOpenShell, all BIM and CAD goes through the cad2data pipeline). The reasoning:
 
-- DDC `cad2data` already converts DWG, DGN, RVT, **and IFC** into one canonical format (Parquet + JSON).
+- cad2data `cad2data` already converts DWG, DGN, RVT, **and IFC** into one canonical format (Parquet + JSON).
 - A single canonical schema means downstream code (diff, validation, QTO) handles all formats identically — DWG-only projects work the same as IFC-only projects.
 - IfcOpenShell would add a heavy native dependency (~80 MB compiled) and a second parser path that diverges over time.
 - Reading Parquet is faster than parsing 5 GB IFC each time a diff is requested.
@@ -20,7 +20,7 @@ The ban was reconfirmed on 2026-04-25: cad2data only, we have no need for IfcOpe
 
 ## Decision
 
-**Use DDC `cad2data` canonical format as the single source of truth for ALL BIM operations.** No IfcOpenShell, no `ifctester`, no `web-ifc` on the backend. The frontend BIM viewer (Three.js) consumes the same canonical Parquet/JSON and never touches IFC directly.
+**Use cad2data `cad2data` canonical format as the single source of truth for ALL BIM operations.** No IfcOpenShell, no `ifctester`, no `web-ifc` on the backend. The frontend BIM viewer (Three.js) consumes the same canonical Parquet/JSON and never touches IFC directly.
 
 Where the spec uses IfcOpenShell APIs, we map to the canonical-format equivalents:
 
@@ -29,11 +29,11 @@ Where the spec uses IfcOpenShell APIs, we map to the canonical-format equivalent
 | `ifc.by_type("IfcWall")` | DuckDB query on canonical Parquet: `SELECT * FROM elements WHERE category='IfcWall'` |
 | `entity.GlobalId` | `BIMElement.stable_id` (DDC-assigned, derived from RVT ElementId or IFC GlobalId) |
 | `IfcPropertySet` traversal | `BIMElement.properties: JSONB` (already flat) |
-| `IfcElementQuantity` | `BIMElement.quantities: JSONB` populated by DDC |
-| `ifcopenshell.geom.create_shape` | DDC pre-computes `geometry_signature` (volume, surface_area, bbox, mesh_hash) per element |
+| `IfcElementQuantity` | `BIMElement.quantities: JSONB` populated by cad2data |
+| `ifcopenshell.geom.create_shape` | cad2data pre-computes `geometry_signature` (volume, surface_area, bbox, mesh_hash) per element |
 | `IfcRelAssociatesClassification` | `element_classification` table (our schema) |
 
-For requirements where DDC currently does **not** emit the equivalent (e.g., per-property change history, geometry mesh-hash), we extend the DDC adapter rather than adding IfcOpenShell.
+For requirements where cad2data currently does **not** emit the equivalent (e.g., per-property change history, geometry mesh-hash), we extend the cad2data adapter rather than adding IfcOpenShell.
 
 ## Consequences
 
@@ -41,10 +41,10 @@ For requirements where DDC currently does **not** emit the equivalent (e.g., per
 - One CAD format pipeline, one canonical schema, one query layer (DuckDB).
 - BIM Diff / QTO / Validation work identically across DWG / DGN / RVT / IFC.
 - No new heavy native deps; existing `bim_hub/ifc_processor.py` remains the only IFC entry point.
-- Server can run on a 2 GB VPS (DDC binary bundled; no IfcOpenShell).
+- Server can run on a 2 GB VPS (cad2data binary bundled; no IfcOpenShell).
 
 **Negative / mitigated**
-- We re-implement what `ifcopenshell.geom` does (mesh hashing, area/volume from geometry). Mitigation: extend DDC to emit these once per element (it already emits triangulated meshes for the Three.js viewer; we add SHA-256 of the deduplicated vertex set).
+- We re-implement what `ifcopenshell.geom` does (mesh hashing, area/volume from geometry). Mitigation: extend cad2data to emit these once per element (it already emits triangulated meshes for the Three.js viewer; we add SHA-256 of the deduplicated vertex set).
 - Some IDS validators in the wild are written against IfcOpenShell APIs. Mitigation: our IDS round-trip operates on canonical entities; a thin shim can adapt when needed.
 - Spec code samples need translation. Mitigation: RFC 34 §5 provides the canonical-format equivalent for every spec algorithm.
 
