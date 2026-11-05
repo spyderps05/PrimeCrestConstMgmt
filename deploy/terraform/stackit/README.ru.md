@@ -170,7 +170,7 @@ rolling update, могли бы столкнуться. Том `/data` к том
 8. Значение `TRUSTED_PROXIES` по умолчанию покрывает обычные диапазоны подов и узлов (`10.0.0.0/8`,
    `100.64.0.0/10`, ...). Убедитесь, что CIDR подов вашего кластера входит в него.
 9. Числовой ID пользователя контейнера: пользователь образа `oe` системный; `run_as_uid` по
-   умолчанию 999. Проверка: `docker run --rm --entrypoint id ghcr.io/datadrivenconstruction/openconstructionerp:<tag>`.
+   умолчанию 999. Проверка: `docker run --rm --entrypoint id ghcr.io/spyderps05/primecrestconstmgmt:<tag>`.
 10. Формат имени набора записей DNS (используется полное имя с точкой в конце) и TTL.
 11. Object Storage: правила имён и уникальность бакета (`oce-<slug>-data`), не нужны ли учётным
     данным дополнительные права, и конечная точка S3 `https://object.storage.eu01.onstackit.cloud`

@@ -63,7 +63,7 @@ variable "image_tag" {
 variable "image_repository" {
   description = "Container image repository."
   type        = string
-  default     = "ghcr.io/datadrivenconstruction/openconstructionerp"
+  default     = "ghcr.io/spyderps05/primecrestconstmgmt"
 }
 
 # ── Networking and DNS ──────────────────────────────────────────────────────

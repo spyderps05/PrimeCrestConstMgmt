@@ -167,7 +167,7 @@ following. Check them on the first run (`terraform validate` and `plan` will poi
 8. `TRUSTED_PROXIES` default covers the usual pod and node ranges (`10.0.0.0/8`, `100.64.0.0/10`, ...).
    Verify the pod CIDR of your cluster is inside it.
 9. Container user ID: the image user `oe` is a system user; `run_as_uid` defaults to 999. Check
-   with `docker run --rm --entrypoint id ghcr.io/datadrivenconstruction/openconstructionerp:<tag>`.
+   with `docker run --rm --entrypoint id ghcr.io/spyderps05/primecrestconstmgmt:<tag>`.
 10. DNS record set `name` format (fully qualified with trailing dot is used) and the TTL.
 11. Object storage: bucket naming rules and uniqueness (`oce-<slug>-data`), that the credential
     needs no extra permission binding, and the S3 endpoint `https://object.storage.eu01.onstackit.cloud`

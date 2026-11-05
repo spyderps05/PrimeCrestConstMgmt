@@ -43,7 +43,7 @@ locals {
   labels = merge(
     var.labels,
     {
-      "app.kubernetes.io/name"       = "openconstructionerp"
+      "app.kubernetes.io/name"       = "primecrest"
       "app.kubernetes.io/instance"   = var.slug
       "app.kubernetes.io/managed-by" = "terraform"
       "oce/company"                  = var.slug
@@ -53,7 +53,7 @@ locals {
   )
 
   selector_labels = {
-    "app.kubernetes.io/name"     = "openconstructionerp"
+    "app.kubernetes.io/name"     = "primecrest"
     "app.kubernetes.io/instance" = var.slug
   }
 

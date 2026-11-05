@@ -1,4 +1,4 @@
-# OpenEstimate — Railway Deployment Configuration
+# PrimeCrest — Railway Deployment Configuration
 #
 # Deploy: click "Deploy on Railway" button in README, or:
 #   railway init
@@ -14,7 +14,7 @@ restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 3
 
 [[services]]
-name = "openestimate"
+name = "primecrest"
 
 [services.env]
 SERVE_FRONTEND = "true"

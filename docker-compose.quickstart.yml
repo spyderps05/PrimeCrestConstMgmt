@@ -32,8 +32,8 @@
 #   docker run -d -p 8080:8080 -v oe_data:/data \
 #     -e DATABASE_URL=postgresql+asyncpg://user:pass@host:5432/dbname \
 #     -e JWT_SECRET=$(openssl rand -hex 32) \
-#     openconstructionerp
-#   (Build first: docker build -t openconstructionerp -f deploy/docker/Dockerfile.unified .)
+#     primecrest
+#   (Build first: docker build -t primecrest -f deploy/docker/Dockerfile.unified .)
 
 services:
   postgres:
@@ -42,11 +42,11 @@ services:
     environment:
       POSTGRES_USER: oe
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set - generate with: openssl rand -base64 24}"
-      POSTGRES_DB: openestimate
+      POSTGRES_DB: primecrest
     volumes:
       - pg_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U oe -d openestimate"]
+      test: ["CMD-SHELL", "pg_isready -U oe -d primecrest"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -83,7 +83,7 @@ services:
       OE_DB_HOST: postgres
       OE_DB_PORT: "5432"
       OE_DB_USER: oe
-      OE_DB_NAME: openestimate
+      OE_DB_NAME: primecrest
       OE_DB_PASSWORD: "${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set - generate with: openssl rand -base64 24}"
       # Security - required, no default. Compose fails fast if blank.
       JWT_SECRET: "${JWT_SECRET:?JWT_SECRET must be set - generate with: openssl rand -hex 32}"

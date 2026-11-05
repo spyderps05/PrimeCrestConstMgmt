@@ -158,7 +158,7 @@ resource "kubernetes_persistent_volume_claim_v1" "data" {
 # attached to one node only. A rolling update would run two instances side by side.
 resource "kubernetes_deployment_v1" "this" {
   metadata {
-    name      = "openconstructionerp"
+    name      = "primecrest"
     namespace = kubernetes_namespace_v1.this.metadata[0].name
     labels    = local.labels
   }
@@ -294,7 +294,7 @@ resource "kubernetes_deployment_v1" "this" {
 
 resource "kubernetes_service_v1" "this" {
   metadata {
-    name      = "openconstructionerp"
+    name      = "primecrest"
     namespace = kubernetes_namespace_v1.this.metadata[0].name
     labels    = local.labels
   }
@@ -313,7 +313,7 @@ resource "kubernetes_service_v1" "this" {
 
 resource "kubernetes_ingress_v1" "this" {
   metadata {
-    name      = "openconstructionerp"
+    name      = "primecrest"
     namespace = kubernetes_namespace_v1.this.metadata[0].name
     labels    = local.labels
     annotations = {

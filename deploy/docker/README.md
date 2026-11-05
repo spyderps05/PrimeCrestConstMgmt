@@ -13,11 +13,11 @@ docker compose -f docker-compose.quickstart.yml up --build
 To run the image standalone against a PostgreSQL you already have:
 
 ```bash
-docker build -t openconstructionerp -f deploy/docker/Dockerfile.unified .
+docker build -t primecrest -f deploy/docker/Dockerfile.unified .
 docker run -d -p 8080:8080 -v oe_data:/data \
   -e DATABASE_URL=postgresql+asyncpg://user:pass@host:5432/dbname \
   -e JWT_SECRET=$(openssl rand -hex 32) \
-  openconstructionerp
+  primecrest
 ```
 
 After the container starts, the app responds on http://localhost:8080. Anything that has to survive a restart outside the database, like the vector store, gets written under the `/data` volume. If `DATABASE_URL` is missing or not a PostgreSQL URL, the entrypoint exits immediately with a message explaining both options above instead of crash-looping.

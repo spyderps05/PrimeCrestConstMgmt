@@ -42,16 +42,16 @@ variable "ssh_key_id" {
 variable "app_image" {
   description = "PrimeCrest container image to deploy"
   type        = string
-  default     = "ghcr.io/datadrivenconstruction/openconstructionerp:latest"
+  default     = "ghcr.io/spyderps05/primecrestconstmgmt:latest"
 }
 
 provider "digitalocean" {
   token = var.do_token
 }
 
-resource "digitalocean_droplet" "openconstructionerp" {
+resource "digitalocean_droplet" "primecrest" {
   image    = "docker-20-04"
-  name     = "openconstructionerp"
+  name     = "primecrest"
   region   = var.region
   size     = "s-2vcpu-4gb"
   ssh_keys = [var.ssh_key_id]
@@ -61,8 +61,8 @@ resource "digitalocean_droplet" "openconstructionerp" {
     set -euo pipefail
 
     # Create app directory
-    mkdir -p /opt/openconstructionerp
-    cd /opt/openconstructionerp
+    mkdir -p /opt/primecrest
+    cd /opt/primecrest
 
     # Generate secure secrets
     JWT_SECRET=$(openssl rand -hex 32)
@@ -88,11 +88,11 @@ resource "digitalocean_droplet" "openconstructionerp" {
         environment:
           POSTGRES_USER: oe
           POSTGRES_PASSWORD: $${POSTGRES_PASSWORD}
-          POSTGRES_DB: openestimate
+          POSTGRES_DB: primecrest
         volumes:
           - pg_data:/var/lib/postgresql/data
         healthcheck:
-          test: ["CMD-SHELL", "pg_isready -U oe -d openestimate"]
+          test: ["CMD-SHELL", "pg_isready -U oe -d primecrest"]
           interval: 10s
           timeout: 5s
           retries: 5
@@ -107,8 +107,8 @@ resource "digitalocean_droplet" "openconstructionerp" {
         ports:
           - "8080:8080"
         environment:
-          DATABASE_URL: postgresql+asyncpg://oe:$${POSTGRES_PASSWORD}@postgres:5432/openestimate
-          DATABASE_SYNC_URL: postgresql://oe:$${POSTGRES_PASSWORD}@postgres:5432/openestimate
+          DATABASE_URL: postgresql+asyncpg://oe:$${POSTGRES_PASSWORD}@postgres:5432/primecrest
+          DATABASE_SYNC_URL: postgresql://oe:$${POSTGRES_PASSWORD}@postgres:5432/primecrest
           JWT_SECRET: $${JWT_SECRET}
           SERVE_FRONTEND: "true"
           ALLOWED_ORIGINS: $${ALLOWED_ORIGINS}
@@ -135,12 +135,12 @@ resource "digitalocean_droplet" "openconstructionerp" {
     echo "PrimeCrest installed at $PUBLIC_IP:8080"
   CLOUDINIT
 
-  tags = ["openconstructionerp"]
+  tags = ["primecrest"]
 }
 
-resource "digitalocean_firewall" "openconstructionerp" {
-  name        = "openconstructionerp-fw"
-  droplet_ids = [digitalocean_droplet.openconstructionerp.id]
+resource "digitalocean_firewall" "primecrest" {
+  name        = "primecrest-fw"
+  droplet_ids = [digitalocean_droplet.primecrest.id]
 
   inbound_rule {
     protocol         = "tcp"
@@ -180,11 +180,11 @@ resource "digitalocean_firewall" "openconstructionerp" {
 }
 
 output "ip_address" {
-  value       = digitalocean_droplet.openconstructionerp.ipv4_address
+  value       = digitalocean_droplet.primecrest.ipv4_address
   description = "PrimeCrest server IP"
 }
 
 output "url" {
-  value       = "http://${digitalocean_droplet.openconstructionerp.ipv4_address}:8080"
+  value       = "http://${digitalocean_droplet.primecrest.ipv4_address}:8080"
   description = "PrimeCrest URL"
 }

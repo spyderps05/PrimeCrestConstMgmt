@@ -36,7 +36,7 @@
 
 services:
   app:
-    image: ghcr.io/datadrivenconstruction/openconstructionerp:${OE_IMAGE_TAG:-latest}
+    image: ghcr.io/spyderps05/primecrestconstmgmt:${OE_IMAGE_TAG:-latest}
     environment:
       # The one place where this file has to know it is running an image that
       # is older than the tree it sits in.
@@ -57,5 +57,5 @@ services:
       # These two lines can go once every image anyone is likely to pull knows
       # about the parts. Until then they are what makes `make quickstart-image`
       # work on the image that is actually out there.
-      DATABASE_URL: postgresql+asyncpg://oe:${POSTGRES_PASSWORD}@postgres:5432/openestimate
-      DATABASE_SYNC_URL: postgresql://oe:${POSTGRES_PASSWORD}@postgres:5432/openestimate
+      DATABASE_URL: postgresql+asyncpg://oe:${POSTGRES_PASSWORD}@postgres:5432/primecrest
+      DATABASE_SYNC_URL: postgresql://oe:${POSTGRES_PASSWORD}@postgres:5432/primecrest

@@ -122,8 +122,8 @@ seed-cwicr-v3: ## Install CWICR v3 catalogues (REGIONS="--top-n 3" by default; n
 	cd $(BACKEND_DIR) && python -m scripts.seed_cwicr_v3 $(REGIONS)
 
 db-reset: ## Drop and recreate database (DESTRUCTIVE)
-	$(DOCKER_COMPOSE) exec postgres psql -U oe -c "DROP DATABASE IF EXISTS openestimate;"
-	$(DOCKER_COMPOSE) exec postgres psql -U oe -c "CREATE DATABASE openestimate;"
+	$(DOCKER_COMPOSE) exec postgres psql -U oe -c "DROP DATABASE IF EXISTS primecrest;"
+	$(DOCKER_COMPOSE) exec postgres psql -U oe -c "CREATE DATABASE primecrest;"
 	$(MAKE) migrate
 	$(MAKE) seed
 
@@ -221,12 +221,12 @@ quickstart-reset: ## Reset quickstart (delete data)
 
 # ─── Build & Deploy ────────────────────────────────────────────────────────
 build: ## Build all Docker images
-	docker build -t openestimate:latest -f deploy/docker/Dockerfile.unified .
-	docker build -t openestimate-backend:latest --target api -f deploy/docker/Dockerfile.unified .
-	docker build -t openestimate-frontend:latest -f deploy/docker/Dockerfile.frontend .
+	docker build -t primecrest:latest -f deploy/docker/Dockerfile.unified .
+	docker build -t primecrest-backend:latest --target api -f deploy/docker/Dockerfile.unified .
+	docker build -t primecrest-frontend:latest -f deploy/docker/Dockerfile.frontend .
 
 build-unified: ## Build single all-in-one Docker image
-	docker build -t openestimate:latest -f deploy/docker/Dockerfile.unified .
+	docker build -t primecrest:latest -f deploy/docker/Dockerfile.unified .
 
 build-wheel: ## Build Python wheel (pip installable)
 	cd $(FRONTEND_DIR) && npm ci && npm run build

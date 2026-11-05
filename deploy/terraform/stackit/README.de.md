@@ -173,7 +173,7 @@ bestätigen. Prüfen Sie es beim ersten Lauf (`terraform validate` und `plan` we
 8. Der Standard von `TRUSTED_PROXIES` deckt die üblichen Pod- und Knotenbereiche ab (`10.0.0.0/8`,
    `100.64.0.0/10`, ...). Prüfen Sie, dass das Pod-CIDR Ihres Clusters darin liegt.
 9. Container-Benutzer-ID: Der Image-Benutzer `oe` ist ein Systembenutzer; `run_as_uid` ist standardmäßig
-   999. Prüfen mit `docker run --rm --entrypoint id ghcr.io/datadrivenconstruction/openconstructionerp:<tag>`.
+   999. Prüfen mit `docker run --rm --entrypoint id ghcr.io/spyderps05/primecrestconstmgmt:<tag>`.
 10. Format des DNS-Record-Set-Namens (verwendet wird der vollqualifizierte Name mit Punkt am Ende) und die TTL.
 11. Object Storage: Namensregeln und Eindeutigkeit des Buckets (`oce-<slug>-data`), ob das Credential
     keine zusätzliche Berechtigung braucht, und der S3-Endpunkt `https://object.storage.eu01.onstackit.cloud`

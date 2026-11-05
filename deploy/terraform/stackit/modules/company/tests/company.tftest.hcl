@@ -161,7 +161,7 @@ run "deployment_is_single_replica_recreate" {
   }
 
   assert {
-    condition     = kubernetes_deployment_v1.this.spec[0].template[0].spec[0].container[0].image == "ghcr.io/datadrivenconstruction/openconstructionerp:20.5.1"
+    condition     = kubernetes_deployment_v1.this.spec[0].template[0].spec[0].container[0].image == "ghcr.io/spyderps05/primecrestconstmgmt:20.5.1"
     error_message = "The image must be pinned to the requested tag."
   }
 
