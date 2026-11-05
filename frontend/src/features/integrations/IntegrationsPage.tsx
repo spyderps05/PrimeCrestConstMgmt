@@ -414,7 +414,7 @@ const CONNECTORS: ConnectorDef[] = [
       {
         key: 'webhook_url',
         label: 'Endpoint URL',
-        placeholder: 'https://your-server.com/webhooks/openconstructionerp',
+        placeholder: 'https://your-server.com/webhooks/primecrest',
       },
       {
         key: 'signing_secret',

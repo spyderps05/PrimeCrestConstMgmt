@@ -468,7 +468,7 @@ async function loadCesium(): Promise<CesiumLike | null> {
     // Enterprise tenants who *do* want Ion assets override this via the
     // Terrain admin page after viewer boot.
     try {
-      if (mod.Ion) mod.Ion.defaultAccessToken = 'disabled-by-openconstructionerp';
+      if (mod.Ion) mod.Ion.defaultAccessToken = 'disabled-by-primecrest';
     } catch {
       // Ion namespace shape changed between major versions — never block boot.
     }
