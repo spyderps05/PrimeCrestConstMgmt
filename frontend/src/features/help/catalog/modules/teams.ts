@@ -50,7 +50,7 @@ export const teamsModules: ModuleExplanation[] = [
       {
         key: 'howto.teams.how.5',
         default:
-          'Check the License & Plan card for your edition, version and modules loaded. PrimeCrest is proprietary software of Spyder Solutions.',
+          'Check the License & Plan card for your edition, version and modules loaded. PrimeCrest is developed by Spyder Solutions and licensed under AGPL-3.0.',
       },
     ],
     tips: [

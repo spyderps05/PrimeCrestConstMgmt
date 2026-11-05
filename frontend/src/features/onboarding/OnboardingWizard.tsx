@@ -5429,7 +5429,7 @@ export function OnboardingWizard() {
           <p className="mt-3 text-center text-[11px] text-content-tertiary">
             {t('onboarding.footer_trust', {
               defaultValue:
-                'Proprietary software of Spyder Solutions · Your data stays on your server · © 2026',
+                'PrimeCrest by Spyder Solutions · Your data stays on your server · © 2026',
             })}
           </p>
         </div>

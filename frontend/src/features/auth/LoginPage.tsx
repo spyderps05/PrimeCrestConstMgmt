@@ -743,7 +743,7 @@ export function LoginPage() {
         {/* Footer */}
         <div className="mt-4 space-y-1 animate-stagger-in" style={{ animationDelay: '380ms' }}>
           <div className="flex items-center gap-2 text-[11px] text-content-quaternary/60">
-            <span>© 2026 {PRODUCT_DEVELOPER}. All rights reserved.</span>
+            <span>© 2026 {PRODUCT_DEVELOPER}.</span>
           </div>
         </div>
       </div>
@@ -1055,7 +1055,7 @@ export function LoginPage() {
           )}
 
           <div className="mt-4 text-center text-2xs text-content-quaternary animate-stagger-in" style={{ animationDelay: '520ms' }}>
-            © 2026 {PRODUCT_DEVELOPER}. All rights reserved.
+            © 2026 {PRODUCT_DEVELOPER}.
           </div>
           {/* Running build version - always visible so it's obvious which
               version is live on a fresh open. Matches the Sidebar / About
@@ -1092,7 +1092,7 @@ export function LoginPage() {
                 {t('about.intro', 'PrimeCrest Construction Management is a modern platform for construction cost management. It covers the full estimation workflow - from creating a bill of quantities to tendering and bid comparison. Designed for professionals worldwide, it supports international standards and works in 24 languages.')}
               </p>
               <p className="mt-2 text-[13px] text-content-secondary leading-relaxed">
-                {t('about.intro2', 'Unlike traditional commercial solutions, PrimeCrest runs entirely on your computer. Your project data never leaves your machine - you have full ownership and control. © 2026 Spyder Solutions. All rights reserved.')}
+                {t('about.intro2', 'Unlike traditional commercial solutions, PrimeCrest runs entirely on your computer. Your project data never leaves your machine - you have full ownership and control. © 2026 Spyder Solutions.')}
               </p>
             </div>
 
@@ -1201,7 +1201,7 @@ export function LoginPage() {
             {/* Footer */}
             <div className="px-6 py-4 border-t border-border-light flex items-center justify-between">
               <div className="flex items-center gap-3 text-2xs text-content-quaternary">
-                <span>© 2026 {PRODUCT_DEVELOPER}. All rights reserved.</span>
+                <span>© 2026 {PRODUCT_DEVELOPER}.</span>
               </div>
               <Button variant="primary" size="sm" onClick={() => setShowInfo(false)}>
                 {t('about.close', 'Got it')}
