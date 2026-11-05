@@ -4,46 +4,46 @@
 #
 # Scope: legal, security, compliance, and CI release paths
 # require explicit approval from the repository owner. The
-# account @datadrivenconstruction is the formal owner; branch
+# account @spyderps05 is the formal owner; branch
 # protection on main should require Code Owner review for any
 # file matched here.
 
 # Default owner for everything
-*                                       @datadrivenconstruction
+*                                       @spyderps05
 
 # Root-level legal and policy files
-/LICENSE                                @datadrivenconstruction
-/NOTICE                                 @datadrivenconstruction
-/docs/legal/CLA.md                      @datadrivenconstruction
-/docs/legal/COMMERCIAL-LICENSE.md       @datadrivenconstruction
-/SECURITY.md                            @datadrivenconstruction
-/docs/legal/PRIVACY.md                  @datadrivenconstruction
-/docs/legal/TERMS.md                    @datadrivenconstruction
-/docs/legal/COOKIES.md                  @datadrivenconstruction
-/CODE_OF_CONDUCT.md                     @datadrivenconstruction
-/CONTRIBUTING.md                        @datadrivenconstruction
-/README.md                              @datadrivenconstruction
-/docs/legal/PATENTS.md                  @datadrivenconstruction
-/docs/legal/TRADEMARK.md                @datadrivenconstruction
-/docs/legal/ACCESSIBILITY.md            @datadrivenconstruction
-/docs/legal/THIRD_PARTY_LICENSES.md     @datadrivenconstruction
+/LICENSE                                @spyderps05
+/NOTICE                                 @spyderps05
+/docs/legal/CLA.md                      @spyderps05
+/docs/legal/COMMERCIAL-LICENSE.md       @spyderps05
+/SECURITY.md                            @spyderps05
+/docs/legal/PRIVACY.md                  @spyderps05
+/docs/legal/TERMS.md                    @spyderps05
+/docs/legal/COOKIES.md                  @spyderps05
+/CODE_OF_CONDUCT.md                     @spyderps05
+/CONTRIBUTING.md                        @spyderps05
+/README.md                              @spyderps05
+/docs/legal/PATENTS.md                  @spyderps05
+/docs/legal/TRADEMARK.md                @spyderps05
+/docs/legal/ACCESSIBILITY.md            @spyderps05
+/docs/legal/THIRD_PARTY_LICENSES.md     @spyderps05
 
 # Source trees
-/backend/                               @datadrivenconstruction
-/frontend/                              @datadrivenconstruction
-/desktop/                               @datadrivenconstruction
-/modules/                               @datadrivenconstruction
+/backend/                               @spyderps05
+/frontend/                              @spyderps05
+/desktop/                               @spyderps05
+/modules/                               @spyderps05
 
 # GitHub configuration - workflows touch signing, release,
 # and CLA enforcement, so gate them.
-/.github/                               @datadrivenconstruction
+/.github/                               @spyderps05
 
 # Infrastructure
-/deploy/                                @datadrivenconstruction
-docker-compose*.yml                     @datadrivenconstruction
+/deploy/                                @spyderps05
+docker-compose*.yml                     @spyderps05
 
 # Compliance documentation (RoPA template, SOC 2 readiness, etc.)
-/docs/compliance/                       @datadrivenconstruction
+/docs/compliance/                       @spyderps05
 
 # Release signatures
-/signatures/                            @datadrivenconstruction
+/signatures/                            @spyderps05

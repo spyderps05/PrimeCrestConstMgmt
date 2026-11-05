@@ -1812,11 +1812,11 @@ jobs:
         env:
           POSTGRES_USER: oe
           POSTGRES_PASSWORD: oe
-          POSTGRES_DB: openconstructionerp_upgrade
+          POSTGRES_DB: primecrest_upgrade
         ports:
           - 5432:5432
         options: >-
-          --health-cmd "pg_isready -U oe -d openconstructionerp_upgrade"
+          --health-cmd "pg_isready -U oe -d primecrest_upgrade"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
@@ -1871,10 +1871,12 @@ jobs:
       # dimension plus a per-cohort branch in check 4, not a new job. Not done
       # here: widening the DDL gate was the task, and changing what the
       # verifier asserts about a shipped behaviour is a separate decision.
+      # Baseline is the upstream openconstructionerp release on PyPI; PrimeCrest
+      # itself is not published there and inherits that schema history.
       OE_UPGRADE_FROM_VERSION: "15.3.0"
       OE_UPGRADE_AGED_STATE: ${{ github.workspace }}/aged-database-state.json
-      DATABASE_URL: postgresql+asyncpg://oe:oe@localhost:5432/openconstructionerp_upgrade
-      DATABASE_SYNC_URL: postgresql+psycopg2://oe:oe@localhost:5432/openconstructionerp_upgrade
+      DATABASE_URL: postgresql+asyncpg://oe:oe@localhost:5432/primecrest_upgrade
+      DATABASE_SYNC_URL: postgresql+psycopg2://oe:oe@localhost:5432/primecrest_upgrade
       # github.workspace and not runner.temp: the runner context is not
       # available in a job-level env block, and naming it there makes the
       # whole file invalid to GitHub, which then runs NO job from it at all.

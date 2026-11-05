@@ -1,14 +1,11 @@
 blank_issues_enabled: false
 contact_links:
   - name: Installation Help
-    url: https://openconstructionerp.com/install-help
+    url: https://docs.primecrest.pk/install-help
     about: A warning or an error while installing or starting? Check here first
-  - name: Community Chat
-    url: https://t.me/datadrivenconstruction
-    about: Ask questions and share ideas in our Telegram community
   - name: Security Vulnerability
-    url: https://github.com/datadrivenconstruction/PrimeCrest/security/advisories/new
+    url: https://github.com/spyderps05/PrimeCrestConstMgmt/security/advisories/new
     about: Report security vulnerabilities privately
-  - name: Professional Support
-    url: https://datadrivenconstruction.io/contact-support/
-    about: Enterprise deployment, training and consulting
+  - name: Support
+    url: https://primecrest.pk
+    about: Deployment, training and support from Spyder Solutions (support@primecrest.pk)

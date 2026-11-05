@@ -88,10 +88,10 @@ jobs:
         run: |
           docker network create "$NET"
           docker run -d --name oe-pg --network "$NET" \
-            -e POSTGRES_USER=oe -e POSTGRES_PASSWORD="$PG_PASSWORD" -e POSTGRES_DB=openestimate \
+            -e POSTGRES_USER=oe -e POSTGRES_PASSWORD="$PG_PASSWORD" -e POSTGRES_DB=primecrest \
             postgres:16-alpine
           for i in $(seq 1 30); do
-            docker exec oe-pg pg_isready -U oe -d openestimate && exit 0
+            docker exec oe-pg pg_isready -U oe -d primecrest && exit 0
             sleep 2
           done
           echo "::error::PostgreSQL did not become ready"
@@ -107,7 +107,7 @@ jobs:
           docker run -d --name oe-app --network "$NET" \
             --memory=3g --memory-swap=3g \
             -p "${APP_PORT}:8080" \
-            -e OE_DB_HOST=oe-pg -e OE_DB_PORT=5432 -e OE_DB_USER=oe -e OE_DB_NAME=openestimate \
+            -e OE_DB_HOST=oe-pg -e OE_DB_PORT=5432 -e OE_DB_USER=oe -e OE_DB_NAME=primecrest \
             -e OE_DB_PASSWORD="$PG_PASSWORD" \
             -e JWT_SECRET="$(openssl rand -hex 32)" \
             -e APP_ENV=development -e APP_DEBUG=false -e SEED_DEMO=true \

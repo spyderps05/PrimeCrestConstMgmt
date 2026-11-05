@@ -367,7 +367,7 @@ jobs:
               else
                 {
                   echo "- ${pkg} ${ver}: upstream publishes no source distribution for this"
-                  echo "  version. Write to info@datadrivenconstruction.io under the offer in"
+                  echo "  version. Write to support@primecrest.pk under the offer in"
                   echo "  NOTICE, naming this release."
                 } >> LGPL-SOURCES.md
               fi

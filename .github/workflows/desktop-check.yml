@@ -137,7 +137,7 @@ jobs:
         # minutes to a lane whose value is being quick, and the bytes it embeds
         # cannot change whether our Rust type checks.
         #
-        # externalBin points at binaries/openconstructionerp-server. tauri-build
+        # externalBin points at binaries/primecrest-server. tauri-build
         # appends the target triple, and a missing file is ResourcePathNotFound
         # and a failed build script. The real sidecar is a PyInstaller binary
         # built by an earlier job of the release workflow and is not committed,
@@ -160,7 +160,7 @@ jobs:
             *windows*) ext=".exe" ;;
             *) ext="" ;;
           esac
-          sidecar="desktop/src-tauri/binaries/openconstructionerp-server-${triple}${ext}"
+          sidecar="desktop/src-tauri/binaries/primecrest-server-${triple}${ext}"
           if [ ! -e "$sidecar" ]; then
             mkdir -p desktop/src-tauri/binaries
             : > "$sidecar"
@@ -170,7 +170,7 @@ jobs:
           # fails the build script the same way.
           if [ "$ext" = ".exe" ] && [ ! -e desktop/src-tauri/binaries/server ]; then
             mkdir -p desktop/src-tauri/binaries/server
-            : > desktop/src-tauri/binaries/server/openconstructionerp-server.exe
+            : > desktop/src-tauri/binaries/server/primecrest-server.exe
           fi
           echo "Target triple: ${triple}"
           echo "Sidecar stand-in: ${sidecar}"

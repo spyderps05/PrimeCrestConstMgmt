@@ -3,7 +3,7 @@
 The release gate workflow (``.github/workflows/release-gate.yml``) calls this
 script on Linux, Windows and macOS. Everything that differs between those
 systems lives here rather than in shell, so every runner executes the same
-logic: creating the virtualenv, installing, starting ``openconstructionerp
+logic: creating the virtualenv, installing, starting ``primecrest
 serve`` exactly as the install guides say, waiting for it, asking it
 questions over HTTP, and stopping it the way Ctrl+C does.
 
@@ -241,8 +241,24 @@ def venv_bin(venv: Path, name: str) -> Path:
     return venv / "bin" / name
 
 
+# The product's distribution and console script. The upgrade lanes start from
+# the upstream release on PyPI, which ships under the upstream name, so the
+# helpers below fall back to it when the PrimeCrest name is not installed.
+DIST_NAME = "primecrest"
+LEGACY_DIST_NAME = "openconstructionerp"
+
+
+def cli_exe(venv: Path) -> Path:
+    """The installed console script: ``primecrest``, else the upstream name."""
+    exe = venv_bin(venv, DIST_NAME)
+    if exe.exists():
+        return exe
+    legacy = venv_bin(venv, LEGACY_DIST_NAME)
+    return legacy if legacy.exists() else exe
+
+
 def default_data_dir() -> Path:
-    """The data dir a bare ``openconstructionerp serve`` uses (mirrors app.cli)."""
+    """The data dir a bare ``primecrest serve`` uses (mirrors app.cli)."""
     for var in ("OE_DATA_DIR", "DATA_DIR", "OE_CLI_DATA_DIR"):
         raw = os.environ.get(var, "").strip()
         if raw:
@@ -278,7 +294,7 @@ def http_json(method: str, url: str, **kw: Any) -> tuple[int, Any]:
 
 
 class Server:
-    """``openconstructionerp serve`` started as a user starts it."""
+    """``primecrest serve`` started as a user starts it."""
 
     def __init__(self, venv: Path, port: int, log_path: Path, extra_env: dict[str, str] | None = None) -> None:
         self.venv = venv
@@ -291,7 +307,7 @@ class Server:
         self.forced_stop = False
 
     def start(self) -> None:
-        exe = venv_bin(self.venv, "openconstructionerp")
+        exe = cli_exe(self.venv)
         if not exe.exists():
             raise SystemExit(f"::error::entry point {exe} is missing; the wheel did not install its console script")
         env = dict(os.environ)
@@ -453,12 +469,12 @@ def check_spa_and_public_api(server: Server, res: Result) -> None:
 
 
 def check_cli_version(venv: Path, expected: str, res: Result) -> None:
-    exe = venv_bin(venv, "openconstructionerp")
+    exe = cli_exe(venv)
     proc = subprocess.run([str(exe), "version"], capture_output=True, text=True, timeout=300, check=False)  # noqa: S603
     text = proc.stdout + proc.stderr
     res.check(
         proc.returncode == 0 and expected in text,
-        f"CLI version: 'openconstructionerp version' printed {text.strip()[:300]!r}, expected {expected}",
+        f"CLI version: '{exe.stem} version' printed {text.strip()[:300]!r}, expected {expected}",
     )
 
 
@@ -581,7 +597,9 @@ def cmd_install(args: argparse.Namespace) -> int:
     py = str(venv_bin(venv, "python"))
     subprocess.run([py, "-m", "pip", "install", "--upgrade", "pip"], check=True)  # noqa: S603
     if args.wheel_dir:
-        wheels = sorted(Path(args.wheel_dir).glob("openconstructionerp-*.whl"))
+        wheels = sorted(
+            [*Path(args.wheel_dir).glob(f"{DIST_NAME}-*.whl"), *Path(args.wheel_dir).glob(f"{LEGACY_DIST_NAME}-*.whl")]
+        )
         if len(wheels) != 1:
             print(f"::error::expected exactly one wheel in {args.wheel_dir}, found {wheels}")
             return 1
@@ -589,6 +607,11 @@ def cmd_install(args: argparse.Namespace) -> int:
         print(f"wheel version {wheel_version(wheels[0])}", flush=True)
     else:
         target = args.spec
+    if args.wheel_dir and Path(target).name.startswith(f"{DIST_NAME}-"):
+        # Upgrading from the upstream distribution: both ship the same ``app``
+        # package, so the old dist has to go before the new one lands. The data
+        # directory lives outside the virtualenv and is untouched by this.
+        subprocess.run([py, "-m", "pip", "uninstall", "-y", LEGACY_DIST_NAME], check=False)  # noqa: S603
     started = time.monotonic()
     proc = subprocess.run([py, "-m", "pip", "install", target], check=False)  # noqa: S603
     print(f"pip install took {time.monotonic() - started:.0f}s", flush=True)
@@ -596,7 +619,7 @@ def cmd_install(args: argparse.Namespace) -> int:
         print(f"::error::pip install {target} failed with exit code {proc.returncode}")
         return 1
     subprocess.run([py, "-m", "pip", "check"], check=False)  # noqa: S603 - informational
-    out = subprocess.run([py, "-m", "pip", "show", "openconstructionerp"], capture_output=True, text=True, check=False)  # noqa: S603
+    out = subprocess.run([py, "-m", "pip", "show", DIST_NAME, LEGACY_DIST_NAME], capture_output=True, text=True, check=False)  # noqa: S603
     print(out.stdout, flush=True)
     return 0
 

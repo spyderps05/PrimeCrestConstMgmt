@@ -6,5 +6,5 @@ matrix, scope, self-hosting checklist, and regulatory-reporting
 obligations under EU Regulation 2024/2847 (Cyber Resilience Act).
 
 **Report vulnerabilities privately via
-[GitHub Security Advisories](https://github.com/datadrivenconstruction/PrimeCrest/security/advisories/new)
-or by email to `info@datadrivenconstruction.io`.**
+[GitHub Security Advisories](https://github.com/spyderps05/PrimeCrestConstMgmt/security/advisories/new)
+or by email to `support@primecrest.pk`.**

@@ -104,7 +104,7 @@ jobs:
     # folder (exe plus _internal/), installed once as a Tauri resource; macOS
     # and Linux are a single onefile executable shipped as an externalBin.
     env:
-      SIDECAR_BIN: ${{ matrix.os == 'windows-latest' && 'desktop/dist/openconstructionerp-server/openconstructionerp-server.exe' || 'desktop/dist/openconstructionerp-server' }}
+      SIDECAR_BIN: ${{ matrix.os == 'windows-latest' && 'desktop/dist/primecrest-server/primecrest-server.exe' || 'desktop/dist/primecrest-server' }}
     strategy:
       # Build every OS even if one fails, so a single-platform break never
       # cancels the others and we still ship the installers that did build.
@@ -259,7 +259,7 @@ jobs:
       - name: Keep the onedir paths short enough to install (Windows)
         if: runner.os == 'Windows'
         shell: bash
-        run: python scripts/shorten_onedir_paths.py desktop/dist/openconstructionerp-server
+        run: python scripts/shorten_onedir_paths.py desktop/dist/primecrest-server
 
       # The onefile executable itself, signed before any check below runs it,
       # so those checks prove the bootloader still finds its archive behind
@@ -276,10 +276,10 @@ jobs:
           # The whole onedir folder: the exe PyInstaller wrote and anything in
           # _internal/ the pre-pack pass did not reach. Files that already
           # carry a signature are left as they are.
-          python scripts/sign_windows_binaries.py desktop/dist/openconstructionerp-server
+          python scripts/sign_windows_binaries.py desktop/dist/primecrest-server
           # "Signed and verified" above was said about files in site-packages.
           # This walks the folder that ships and asks about every PE in it.
-          python scripts/sign_windows_binaries.py --check-archive desktop/dist/openconstructionerp-server
+          python scripts/sign_windows_binaries.py --check-archive desktop/dist/primecrest-server
 
       # Ad-hoc sign the sidecar here, before anything runs it, rather than in
       # the bundling job. The signature is part of the file, so it survives the
@@ -300,7 +300,7 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           set -euo pipefail
-          f="desktop/dist/openconstructionerp-server"
+          f="desktop/dist/primecrest-server"
           codesign --force --sign - --timestamp=none "$f"
           codesign --verify --verbose=2 "$f"
 
@@ -842,7 +842,7 @@ jobs:
                 found=0
                 for d in "$HOME/Library/Logs/DiagnosticReports" /Library/Logs/DiagnosticReports; do
                   [ -d "$d" ] || continue
-                  for f in "$d"/openconstructionerp*; do
+                  for f in "$d"/primecrest*; do
                     [ -e "$f" ] || continue
                     found=1
                     echo "--- $f ---"
@@ -851,7 +851,7 @@ jobs:
                   done
                 done
                 if [ "$found" -eq 0 ]; then
-                  echo "(no report matching openconstructionerp*; the directories hold:)"
+                  echo "(no report matching primecrest*; the directories hold:)"
                   ls -la "$HOME/Library/Logs/DiagnosticReports" /Library/Logs/DiagnosticReports 2>/dev/null | head -n 40 || true
                 fi
               fi
@@ -886,9 +886,9 @@ jobs:
             # ps in this shell lists only what this shell started, so it
             # answered "(no matching processes)" in run 33860279598 while the
             # cold-start server was alive and holding the port. Ask Windows.
-            tasklist 2>/dev/null | grep -iE 'openconstructionerp|postgres' | head -n 30 || echo "(nothing matching in tasklist)"
+            tasklist 2>/dev/null | grep -iE 'primecrest|postgres' | head -n 30 || echo "(nothing matching in tasklist)"
           else
-            ps ax -o pid,rss,command 2>/dev/null | grep -iE 'openconstructionerp|postgres' | grep -v grep | head -n 30 || echo "(no matching processes)"
+            ps ax -o pid,rss,command 2>/dev/null | grep -iE 'primecrest|postgres' | grep -v grep | head -n 30 || echo "(no matching processes)"
           fi
           if port_held "$port"; then
             echo "port ${port} is still held here. The next leg will step over it onto a free one, so this is a note about the runner rather than a problem for the check."
@@ -967,7 +967,7 @@ jobs:
         run: |
           set -uo pipefail
           echo "=== sidecar ==="
-          codesign -dvvv desktop/dist/openconstructionerp-server 2>&1 \
+          codesign -dvvv desktop/dist/primecrest-server 2>&1 \
             | grep -Ei 'identifier=|teamidentifier|flags=|signature' || true
           echo "=== the build machine's Python framework, the copy PyInstaller collected ==="
           fw="$(python -c 'import sys, os; print(os.path.join(sys.base_prefix, "Python"))')"
@@ -1024,7 +1024,7 @@ jobs:
             --fail-on-foreign-team-id \
             --fail-on-hardened-adhoc \
             --require-member Python.framework \
-            desktop/dist/openconstructionerp-server
+            desktop/dist/primecrest-server
 
       - name: Copy sidecar binary
         shell: bash
@@ -1033,13 +1033,13 @@ jobs:
           if [ "${{ runner.os }}" = "Windows" ]; then
             # onedir build: the whole folder becomes the Tauri resource
             # server/ (tauri.windows.conf.json).
-            cp -r desktop/dist/openconstructionerp-server desktop/src-tauri/binaries/server
+            cp -r desktop/dist/primecrest-server desktop/src-tauri/binaries/server
             echo "onedir sidecar: $(find desktop/src-tauri/binaries/server -type f | wc -l) files, $(du -sh desktop/src-tauri/binaries/server | cut -f1)"
           else
             # onefile build: PyInstaller writes a single executable directly
             # into distpath.
-            cp "desktop/dist/openconstructionerp-server${{ matrix.ext }}" \
-               "desktop/src-tauri/binaries/openconstructionerp-server-${{ matrix.target }}${{ matrix.ext }}"
+            cp "desktop/dist/primecrest-server${{ matrix.ext }}" \
+               "desktop/src-tauri/binaries/primecrest-server-${{ matrix.target }}${{ matrix.ext }}"
           fi
 
       - name: Upload sidecar artifact
@@ -1055,7 +1055,7 @@ jobs:
           SOURCE_SHA: ${{ github.sha }}
         run: |
           if ((git rev-parse HEAD).Trim() -ne $env:SOURCE_SHA) { throw 'Diagnostic checkout SHA mismatch' }
-          python desktop/frontend_artifact.py pack --dist frontend/dist --artifact desktop/frontend-artifact --source-sha "$env:SOURCE_SHA" --run-id "${{ github.run_id }}" --run-attempt "${{ github.run_attempt }}" --sidecar desktop/src-tauri/binaries/server/openconstructionerp-server.exe
+          python desktop/frontend_artifact.py pack --dist frontend/dist --artifact desktop/frontend-artifact --source-sha "$env:SOURCE_SHA" --run-id "${{ github.run_id }}" --run-attempt "${{ github.run_attempt }}" --sidecar desktop/src-tauri/binaries/server/primecrest-server.exe
 
       - name: Upload the tested diagnostic frontend
         if: inputs.build_only_windows
@@ -1264,7 +1264,7 @@ jobs:
           SOURCE_SHA: ${{ github.sha }}
         run: |
           if ((git rev-parse HEAD).Trim() -ne $env:SOURCE_SHA) { throw 'Diagnostic checkout SHA mismatch' }
-          python desktop/frontend_artifact.py restore --dist frontend/dist --artifact desktop/frontend-artifact --source-sha "$env:SOURCE_SHA" --run-id "${{ github.run_id }}" --run-attempt "${{ github.run_attempt }}" --sidecar desktop/src-tauri/binaries/server/openconstructionerp-server.exe
+          python desktop/frontend_artifact.py restore --dist frontend/dist --artifact desktop/frontend-artifact --source-sha "$env:SOURCE_SHA" --run-id "${{ github.run_id }}" --run-attempt "${{ github.run_attempt }}" --sidecar desktop/src-tauri/binaries/server/primecrest-server.exe
 
       # tauri.conf.json opens the window on "splash.html", and that one file is
       # the launcher's entire channel for saying anything to a user. Every
@@ -1546,7 +1546,7 @@ jobs:
           if ($actual -ne $env:DIAGNOSTIC_SOURCE_SHA) { throw 'Diagnostic checkout does not match workflow SHA' }
           $installers = @(Get-ChildItem -LiteralPath desktop/src-tauri/target/release/bundle/nsis -Filter '*.exe')
           if ($installers.Count -eq 0) { throw 'NSIS installer missing' }
-          $sidecar = Get-Item -LiteralPath desktop/src-tauri/binaries/server/openconstructionerp-server.exe
+          $sidecar = Get-Item -LiteralPath desktop/src-tauri/binaries/server/primecrest-server.exe
           $files = @($installers) + @($sidecar)
           $fingerprints = @($files | ForEach-Object { @{ name = $_.Name; bytes = $_.Length; sha256 = (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant() } })
           $manifest = @{ purpose = 'diagnostic-only; not a published update'; source_sha = $actual; run_id = '${{ github.run_id }}'; run_attempt = '${{ github.run_attempt }}'; version = (Get-Content desktop/src-tauri/tauri.conf.json -Raw | ConvertFrom-Json).version; files = $fingerprints }
@@ -1717,9 +1717,9 @@ jobs:
           fi
           echo "App bundle: $APP"
 
-          SIDECAR=$(find "$APP/Contents/MacOS" -type f -name 'openconstructionerp-server*' 2>/dev/null | head -1)
+          SIDECAR=$(find "$APP/Contents/MacOS" -type f -name 'primecrest-server*' 2>/dev/null | head -1)
           if [ -z "${SIDECAR:-}" ]; then
-            echo "::error title=The macOS app carries no sidecar::No openconstructionerp-server binary was found in $APP/Contents/MacOS. The bundle would install and then never start a backend. Check that the externalBin entry in tauri.conf.json still matches the file name the Build Sidecar job uploads."
+            echo "::error title=The macOS app carries no sidecar::No primecrest-server binary was found in $APP/Contents/MacOS. The bundle would install and then never start a backend. Check that the externalBin entry in tauri.conf.json still matches the file name the Build Sidecar job uploads."
             ls -la "$APP/Contents/MacOS" || true
             exit 1
           fi

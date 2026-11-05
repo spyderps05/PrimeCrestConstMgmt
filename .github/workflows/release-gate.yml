@@ -1,12 +1,14 @@
 # Release gate: does the wheel install and upgrade the way a user does it?
 #
 # Run by hand on the branch or tag about to be released. It builds the wheel
-# with exactly the recipe pypi-publish.yml uses, then on Linux, Windows and
-# macOS installs it into a clean virtualenv, starts `openconstructionerp serve`
+# with the standard wheel recipe, then on Linux, Windows and
+# macOS installs it into a clean virtualenv, starts `primecrest serve`
 # as the install guides say, and asks the running server whether it is healthy,
 # reports the right version, serves the frontend and answers a public API route.
 #
-# The upgrade lanes install the previous release from PyPI first, let it seed
+# The upgrade lanes install the previous release from PyPI first (the upstream
+# openconstructionerp package: PrimeCrest is not published to PyPI, and the
+# upstream release is the schema baseline this fork upgrades from), let it seed
 # its demo data, register the first admin and create a project with a BOQ and
 # priced positions, stop it, pip install the new wheel over the same virtualenv
 # and data directory, and check that the same amounts come back.
@@ -68,7 +70,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: frontend/package-lock.json
 
-      # Same as pypi-publish.yml: the frontend bundle reaches the wheel through
+      # Same recipe the (removed upstream) PyPI publish used: the frontend bundle reaches the wheel through
       # the force-include map in backend/pyproject.toml, never by copying dist.
       - name: Build frontend bundle into wheel layout
         env:

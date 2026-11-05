@@ -1,7 +1,8 @@
 # Authors Guard
 #
-# Enforces the project policy that only DataDrivenConstruction authors land in
-# the tree. If a pull request contains any commit that is not authored by a
+# Enforces the project policy that only first-party (Spyder Solutions) authors
+# land in the tree. Upstream OpenConstructionERP identities stay allowed so that
+# upstream merges pass. If a pull request contains any commit that is not authored by a
 # first-party identity, this check fails so the PR cannot be merged. We read
 # community issues and write every fix in-house; we do not merge external code.
 # See CONTRIBUTORS.md for how to propose a change by opening an issue.
@@ -27,6 +28,7 @@ jobs:
         with:
           script: |
             const allowLogins = new Set([
+              'spyderps05',
               'boikoartem',
               'datadrivenconstruction',
               'dependabot[bot]',
@@ -34,6 +36,7 @@ jobs:
               'web-flow',
             ]);
             const allowEmails = new Set([
+              'support@primecrest.pk',
               'info@datadrivenconstruction.io',
               '94158709+datadrivenconstruction@users.noreply.github.com',
               'noreply@github.com',
@@ -43,7 +46,7 @@ jobs:
               const e = raw.toLowerCase();
               if (allowEmails.has(e)) return true;
               return e.endsWith('@users.noreply.github.com')
-                && (e.includes('datadrivenconstruction') || e.includes('boikoartem'));
+                && (e.includes('spyderps05') || e.includes('datadrivenconstruction') || e.includes('boikoartem'));
             };
             const { data: commits } = await github.rest.pulls.listCommits({
               owner: context.repo.owner,
@@ -66,7 +69,7 @@ jobs:
             if (offenders.length) {
               core.setFailed(
                 'This pull request contains commits that are not authored by '
-                + 'DataDrivenConstruction:\n'
+                + 'Spyder Solutions:\n'
                 + offenders.join('\n')
                 + '\n\nProject policy: we do not merge external code. Please open an '
                 + 'issue describing the change and we will implement it in-house.'
