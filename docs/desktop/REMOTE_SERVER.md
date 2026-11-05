@@ -65,7 +65,7 @@ One file per machine, in a conventional location that an unprivileged user canno
 |---|---|
 | Windows | `%ProgramData%\PrimeCrest\config.json` |
 | macOS | `/Library/Application Support/PrimeCrest/config.json` |
-| Linux | `/etc/openconstructionerp/config.json` |
+| Linux | `/etc/primecrest/config.json` |
 
 ```json
 {

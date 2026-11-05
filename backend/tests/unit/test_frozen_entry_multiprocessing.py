@@ -191,7 +191,7 @@ def test_a_frozen_build_runs_the_code_and_stops(monkeypatch: pytest.MonkeyPatch,
     code = f"import pathlib; pathlib.Path({str(marker)!r}).write_text('yes')"
 
     monkeypatch.setattr(sys, "frozen", True, raising=False)
-    monkeypatch.setattr(sys, "argv", ["openconstructionerp-server", "-S", "-c", code])
+    monkeypatch.setattr(sys, "argv", ["primecrest-server", "-S", "-c", code])
 
     with pytest.raises(SystemExit) as exit_info:
         _answer_multiprocessing_re_execution()

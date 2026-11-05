@@ -131,6 +131,6 @@ def test_snapshot_reports_a_missing_position(gate) -> None:
 
 
 def test_wheel_version_and_asset_refs(gate) -> None:
-    assert gate.wheel_version(Path("openconstructionerp-18.7.0-py3-none-any.whl")) == "18.7.0"
+    assert gate.wheel_version(Path("primecrest-18.7.0-py3-none-any.whl")) == "18.7.0"
     html = '<script type="module" src="/assets/index-abc.js"></script><link href="https://fonts.x/a.css">'
     assert gate.asset_refs(html) == ["/assets/index-abc.js"]

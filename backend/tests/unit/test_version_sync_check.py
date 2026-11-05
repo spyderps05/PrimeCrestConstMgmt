@@ -58,7 +58,7 @@ SCRIPT_PATH = REPO_ROOT / "scripts" / "check_version_sync.py"
 # to be mistaken for a release version by a reader that is not anchored.
 CONVENTIONAL = """\
 [package]
-name = "openconstructionerp-desktop"
+name = "primecrest-desktop"
 version = "9.9.9"
 
 [dependencies]
@@ -76,7 +76,7 @@ version = "0.12"
 features = ["json"]
 
 [package]
-name = "openconstructionerp-desktop"
+name = "primecrest-desktop"
 version = "9.9.9"
 """
 
@@ -85,7 +85,7 @@ version = "9.9.9"
 # answer is to fail. A first-match scan answers "0.12" and calls it the release.
 WORKSPACE_INHERITED = """\
 [package]
-name = "openconstructionerp-desktop"
+name = "primecrest-desktop"
 version.workspace = true
 
 [dependencies.reqwest]
@@ -180,11 +180,11 @@ def test_the_lockfile_entry_is_found_by_name_not_by_position(script, tmp_path):
     lock = tmp_path / "Cargo.lock"
     lock.write_text(
         '[[package]]\nname = "bbb-dep"\nversion = "2.0.1"\n\n'
-        '[[package]]\nname = "openconstructionerp-desktop"\nversion = "14.3.0"\n'
+        '[[package]]\nname = "primecrest-desktop"\nversion = "14.3.0"\n'
         '\n[[package]]\nname = "zzz-dep"\nversion = "0.4.0"\n',
         encoding="utf-8",
     )
-    found = script._read_cargo_lock_version(lock, "openconstructionerp-desktop")
+    found = script._read_cargo_lock_version(lock, "primecrest-desktop")
     assert found == "14.3.0"
 
 
@@ -193,8 +193,8 @@ def test_a_lockfile_without_the_crate_fails_by_name(script, tmp_path):
     lock = tmp_path / "Cargo.lock"
     lock.write_text('[[package]]\nname = "bbb-dep"\nversion = "2.0.1"\n', encoding="utf-8")
     with pytest.raises(SystemExit) as excinfo:
-        script._read_cargo_lock_version(lock, "openconstructionerp-desktop")
-    assert "openconstructionerp-desktop" in str(excinfo.value)
+        script._read_cargo_lock_version(lock, "primecrest-desktop")
+    assert "primecrest-desktop" in str(excinfo.value)
 
 
 def test_the_real_lockfile_agrees_with_a_real_toml_parser(script):

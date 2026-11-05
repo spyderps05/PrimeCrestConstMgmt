@@ -38,7 +38,7 @@ EXPRESSION = re.compile(r"\$\{\{(.*?)\}\}", re.S)
 # github.event.workflow_run.head_branch names only the github context.
 CONTEXT = re.compile(r"\b([a-z_][a-z0-9_]*)(?:\s*\.\s*[a-z_][a-z0-9_-]*)+")
 # A string literal inside an expression is data, not a context reference: the
-# "server" in 'dist/openconstructionerp-server.exe' is part of a file name.
+# "server" in 'dist/primecrest-server.exe' is part of a file name.
 # GitHub quotes literals with single quotes and escapes a quote by doubling it.
 STRING_LITERAL = re.compile(r"'(?:[^']|'')*'")
 
