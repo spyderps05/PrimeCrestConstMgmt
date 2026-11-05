@@ -112,8 +112,8 @@ Demo accounts and sample projects are created on first start:
 
 | Account | Email | Password | Role |
 |---------|-------|----------|------|
-| Admin | `demo@openconstructionerp.com` | `DemoPass1234!` | Full access |
-| Estimator | `estimator@openconstructionerp.com` | `DemoPass1234!` | Estimator |
+| Admin | `demo@primecrest.pk` | `DemoPass1234!` | Full access |
+| Estimator | `estimator@primecrest.pk` | `DemoPass1234!` | Estimator |
 | Manager | `manager@openconstructionerp.com` | `DemoPass1234!` | Manager |
 
 To set your own passwords, define `DEMO_USER_PASSWORD`, `DEMO_ESTIMATOR_PASSWORD` and
