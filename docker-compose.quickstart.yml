@@ -108,6 +108,9 @@ services:
       APP_ENV: development
       APP_DEBUG: "false"
       VECTOR_BACKEND: lancedb
+      # Home-market pack (PKR defaults); uvicorn skips cli._setup_env.
+      OE_PACK: pakistan-pk
+      PRIMECREST_DEFAULT_PACK: pakistan-pk
     volumes:
       - app_data:/data
     healthcheck:

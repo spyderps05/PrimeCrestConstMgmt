@@ -56,6 +56,9 @@ services:
       S3_SECRET_KEY: ${S3_SECRET_KEY:-}
       S3_BUCKET: ${S3_BUCKET:-primecrest}
       QDRANT_URL: ${QDRANT_URL:-}
+      # Home-market pack (PKR defaults); uvicorn skips cli._setup_env.
+      OE_PACK: ${OE_PACK:-pakistan-pk}
+      PRIMECREST_DEFAULT_PACK: ${PRIMECREST_DEFAULT_PACK:-pakistan-pk}
     volumes:
       - app_data:/data
     expose:

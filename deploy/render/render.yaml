@@ -18,6 +18,10 @@ services:
         value: production
       - key: VECTOR_BACKEND
         value: lancedb
+      - key: OE_PACK
+        value: pakistan-pk
+      - key: PRIMECREST_DEFAULT_PACK
+        value: pakistan-pk
       - key: JWT_SECRET
         generateValue: true
       - key: DATABASE_URL

@@ -184,7 +184,11 @@ RUN mkdir -p /data && chown oe:oe /data
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    OE_DATA_DIR=/data
+    OE_DATA_DIR=/data \
+    OE_PACK=pakistan-pk \
+    PRIMECREST_DEFAULT_PACK=pakistan-pk
+# uvicorn starts the app directly and skips cli._setup_env, so the home-market
+# pack (new projects default to PKR) is selected here instead.
 
 # --- Stage: api (backend only, port 8000) ----------------------------------
 # Paired with the nginx image from Dockerfile.frontend, which expects to reach
