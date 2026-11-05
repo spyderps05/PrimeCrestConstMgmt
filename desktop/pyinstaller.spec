@@ -355,14 +355,14 @@ for _pack_slug in _COMMUNITY_PACKS:
 # reads the version from the source tree first and only falls back to the
 # installed-wheel metadata if it cannot find a pyproject. In a frozen build
 # there is no source tree, so without this the sidecar would report whatever
-# openconstructionerp version happens to be pip-installed on the build
+# primecrest version happens to be pip-installed on the build
 # machine instead of the real product version. Landing it at the bundle root
 # (one level above app/) is exactly where _read_pyproject_version walks to.
 #
 # Stronger than that, and the reason not to tidy this away as redundant: this
 # spec calls copy_metadata nowhere, so a frozen bundle carries dist-info only
 # for whatever an upstream hook pulls in on its own. importlib.metadata is a
-# source-install instrument and answers no for openconstructionerp here, which
+# source-install instrument and answers no for primecrest here, which
 # means the fallback this line feeds is the only branch that can answer at all.
 # It also covers a second reader by accident: sarif_exporter walks
 # parents[3] / "pyproject.toml", which is backend/pyproject.toml in the source
@@ -543,7 +543,7 @@ _WINDOWS_RUNTIME_TMPDIR = r"%LOCALAPPDATA%\PrimeCrest\extract"
 # _WINDOWS_RUNTIME_TMPDIR on every start, which made every start slow, left
 # abandoned extractions behind after crashes and made antivirus scanners
 # inspect several hundred freshly written DLLs each time. The onedir folder
-# (openconstructionerp-server.exe plus _internal/) is installed once under
+# (primecrest-server.exe plus _internal/) is installed once under
 # Program Files as a Tauri resource (tauri.windows.conf.json), and the launcher
 # starts the exe from the resource directory rather than as an externalBin,
 # because externalBin ships exactly one file. _WINDOWS_RUNTIME_TMPDIR stays
@@ -564,7 +564,7 @@ if _ONEDIR:
         a.scripts,
         [],
         exclude_binaries=True,
-        name="openconstructionerp-server",
+        name="primecrest-server",
         debug=False,
         bootloader_ignore_signals=False,
         strip=False,
@@ -582,7 +582,7 @@ if _ONEDIR:
         a.datas,
         strip=False,
         upx=False,
-        name="openconstructionerp-server",
+        name="primecrest-server",
     )
 else:
     exe = EXE(
@@ -591,7 +591,7 @@ else:
         a.binaries,
         a.datas,
         [],
-        name="openconstructionerp-server",
+        name="primecrest-server",
         debug=False,
         bootloader_ignore_signals=False,
         strip=False,

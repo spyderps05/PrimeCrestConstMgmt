@@ -428,7 +428,7 @@ pub fn admin_config_path() -> Option<PathBuf> {
     }
     #[cfg(all(unix, not(target_os = "macos")))]
     {
-        Some(PathBuf::from("/etc/openconstructionerp").join(ADMIN_FILE))
+        Some(PathBuf::from("/etc/primecrest").join(ADMIN_FILE))
     }
 }
 

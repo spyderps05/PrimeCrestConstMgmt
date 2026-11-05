@@ -1,7 +1,7 @@
 ; PrimeCrest - NSIS installer hooks
 ;
 ; Windows keeps an exclusive lock on a running .exe. If the backend sidecar
-; (openconstructionerp-server.exe) is still running when the installer tries to
+; (primecrest-server.exe) is still running when the installer tries to
 ; overwrite it, or when the uninstaller tries to delete it, the operation fails
 ; with "file in use by another process". That is the reinstall error users hit:
 ; after the app is closed or uninstalled the sidecar can linger in the
@@ -155,6 +155,8 @@
     ; former product name is here too, because an upgrade from it is the one
     ; case a path match can miss: that install may live in another directory.
     DetailPrint "Falling back to stopping the processes by name..."
+    nsExec::Exec /TIMEOUT=90000 `cmd /c taskkill /F /T /FI "IMAGENAME eq primecrest-server.exe" /FI "USERNAME eq %USERNAME%"`
+    Pop $0
     nsExec::Exec /TIMEOUT=90000 `cmd /c taskkill /F /T /FI "IMAGENAME eq openconstructionerp-server.exe" /FI "USERNAME eq %USERNAME%"`
     Pop $0
     nsExec::Exec /TIMEOUT=90000 `cmd /c taskkill /F /T /FI "IMAGENAME eq openestimate-server.exe" /FI "USERNAME eq %USERNAME%"`

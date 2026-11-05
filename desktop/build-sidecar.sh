@@ -4,7 +4,7 @@
 # Usage: ./desktop/build-sidecar.sh [target-triple]
 #
 # The output binary is placed in desktop/src-tauri/binaries/
-# with the Tauri-required naming: openconstructionerp-server-{target-triple}
+# with the Tauri-required naming: primecrest-server-{target-triple}
 #
 # Target triples:
 #   x86_64-pc-windows-msvc    (Windows)
@@ -70,8 +70,8 @@ fi
 
 # onefile build: PyInstaller writes a single executable directly into distpath,
 # not a onedir subfolder.
-SRC="$SCRIPT_DIR/dist/openconstructionerp-server${EXT}"
-DST="$BINARIES_DIR/openconstructionerp-server-${TARGET}${EXT}"
+SRC="$SCRIPT_DIR/dist/primecrest-server${EXT}"
+DST="$BINARIES_DIR/primecrest-server-${TARGET}${EXT}"
 
 if [ -f "$SRC" ]; then
     cp "$SRC" "$DST"

@@ -1060,7 +1060,7 @@ const LIVENESS_SILENT_STRIKES: u32 = 12;
 const LOCAL_BACKEND_LOST_DETAIL: &str =
     "Nothing is listening on the local address any more, so this window can no longer load or \
 save anything. Please close it and start PrimeCrest again. If this keeps happening, \
-send the log file to info@datadrivenconstruction.io. Installation help: https://openconstructionerp.com/install-help";
+send the log file to support@primecrest.pk. Installation help: https://docs.primecrest.pk/install-help";
 
 /// What to say when a server somewhere else has gone.
 ///
@@ -1414,7 +1414,7 @@ fn show_main_window(handle: &tauri::AppHandle) {
 /// Ports an already-running PrimeCrest backend is likely to be on.
 ///
 /// Checked in order before we spawn our own sidecar. This is what lets the
-/// desktop app coexist with a developer backend or a CLI ``openconstructionerp
+/// desktop app coexist with a developer backend or a CLI ``primecrest
 /// serve`` already running on the same machine: rather than booting a SECOND
 /// backend that fights the first one over the shared embedded-PostgreSQL cluster
 /// at ``~/.openestimate/pgdata`` (a real founder-machine failure mode), we
@@ -1830,7 +1830,7 @@ enum BackendSource {
 ///
 /// Attach to an existing healthy backend instead of booting a second one.
 ///
-/// If a developer backend or a CLI `openconstructionerp serve` is already
+/// If a developer backend or a CLI `primecrest serve` is already
 /// running on this machine, it already owns the embedded PostgreSQL cluster at
 /// ~/.openestimate/pgdata. Spawning our own sidecar against the SAME default
 /// data dir makes two processes share one cluster; when the desktop app later
@@ -2252,7 +2252,7 @@ fn new_shutdown_token() -> String {
 /// simply did not say it.
 fn startup_timeout_message(stage: Option<&(String, String)>, kind: &TimeoutKind) -> String {
     let tail = "Please close this window and try again. If the problem persists, please send the \
-log file to info@datadrivenconstruction.io. Installation help: https://openconstructionerp.com/install-help";
+log file to support@primecrest.pk. Installation help: https://docs.primecrest.pk/install-help";
 
     // Said before anything is asked about the stage, because this is the one
     // case where there cannot be a stage: nothing was ever reported. It is a
@@ -3864,7 +3864,7 @@ fn extraction_space_allows_a_sidecar(handle: &tauri::AppHandle) -> bool {
 /// unpacked at start. Tauri's externalBin ships exactly one file, which is why
 /// the exe is resolved here and started as a plain command instead.
 #[cfg(windows)]
-const ONEDIR_SERVER_EXE: &str = "openconstructionerp-server.exe";
+const ONEDIR_SERVER_EXE: &str = "primecrest-server.exe";
 
 #[cfg(windows)]
 fn onedir_server_path(resource_dir: &std::path::Path) -> PathBuf {
@@ -3891,7 +3891,7 @@ fn backend_command(handle: &tauri::AppHandle) -> Result<tauri_plugin_shell::proc
 fn backend_command(handle: &tauri::AppHandle) -> Result<tauri_plugin_shell::process::Command, String> {
     handle
         .shell()
-        .sidecar("openconstructionerp-server")
+        .sidecar("primecrest-server")
         .map_err(|e| e.to_string())
 }
 
@@ -4277,7 +4277,7 @@ before it finished starting.",
                             // (the splash shows an Open-log button).
                             let detail = format!(
                                 "{core} Open the log file for the full details, and if \
-this keeps happening send it to info@datadrivenconstruction.io. Installation help: https://openconstructionerp.com/install-help"
+this keeps happening send it to support@primecrest.pk. Installation help: https://docs.primecrest.pk/install-help"
                             );
                             // The database step was set active before the
                             // process was spawned, and bootStage back-fills
@@ -4331,7 +4331,7 @@ this keeps happening send it to info@datadrivenconstruction.io. Installation hel
                                     "The backend exited unexpectedly (exit code {:?}), so \
 this window can no longer load or save anything. Please close it and start \
 PrimeCrest again. If this keeps happening, send the log file to \
-info@datadrivenconstruction.io. Installation help: https://openconstructionerp.com/install-help",
+support@primecrest.pk. Installation help: https://docs.primecrest.pk/install-help",
                                     payload.code
                                 ),
                             );
@@ -4358,7 +4358,7 @@ info@datadrivenconstruction.io. Installation help: https://openconstructionerp.c
                     "The connection to the application backend was lost",
                     "The launcher can no longer see the backend it started, so this \
 window may stop working. Please close it and start PrimeCrest again. If this keeps \
-happening, send the log file to info@datadrivenconstruction.io. Installation help: https://openconstructionerp.com/install-help",
+happening, send the log file to support@primecrest.pk. Installation help: https://docs.primecrest.pk/install-help",
                 );
             }
         });
@@ -4449,7 +4449,7 @@ happening, send the log file to info@datadrivenconstruction.io. Installation hel
                         &format!(
                             "The backend started, but {reason}, so the app cannot open. \
 Please close this window and try again. If the problem persists, please send the log file to \
-info@datadrivenconstruction.io. Installation help: https://openconstructionerp.com/install-help"
+support@primecrest.pk. Installation help: https://docs.primecrest.pk/install-help"
                         ),
                     );
                 }
@@ -5152,7 +5152,7 @@ fn show_startup_failure_dialog(message: &str) {
         .unwrap_or_default();
     let body = format!(
         "PrimeCrest could not start.\n\n{message}{log_hint}\n\n\
-If this keeps happening, please send the log file to info@datadrivenconstruction.io. Installation help: https://openconstructionerp.com/install-help"
+If this keeps happening, please send the log file to support@primecrest.pk. Installation help: https://docs.primecrest.pk/install-help"
     );
 
     let to_wide = |s: &str| -> Vec<u16> {
@@ -5646,7 +5646,7 @@ other explanation"
             "https://example.invalid/|calc",
             "http://example.invalid/?a=1&b=2",
             "https://example.invalid/^calc",
-            "mailto:info@datadrivenconstruction.io?subject=a&body=b",
+            "mailto:support@primecrest.pk?subject=a&body=b",
             "https://example.invalid/a%20b?q=%D0%BC%D0%B5%D1%82%D1%80",
             "https://example.invalid/?a=%CD%&b=%USERNAME%",
             "https://example.invalid/?a=%RANDOM%&b=%TIME%&c=%DATE%",
@@ -5973,14 +5973,14 @@ Content-Length: {}\r\nConnection: close\r\n\r\n{}",
         let message = startup_timeout_message(None, &TimeoutKind::TookTooLong);
         assert!(message.contains("did not start in time"), "got: {message}");
         assert!(
-            message.contains("info@datadrivenconstruction.io"),
+            message.contains("support@primecrest.pk"),
             "got: {message}"
         );
         assert!(
-            message.contains("https://openconstructionerp.com/install-help"),
+            message.contains("https://docs.primecrest.pk/install-help"),
             "got: {message}"
         );
-        assert!(LOCAL_BACKEND_LOST_DETAIL.contains("https://openconstructionerp.com/install-help"));
+        assert!(LOCAL_BACKEND_LOST_DETAIL.contains("https://docs.primecrest.pk/install-help"));
     }
 
     #[test]

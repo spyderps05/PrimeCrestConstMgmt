@@ -15,7 +15,7 @@ section: the main executable and the uninstaller binary are deleted with
 silently surviving. Two drop the template's name-based CheckIfAppIsRunning from
 the Install and Uninstall sections: in perMachine mode it kills every process on
 the machine named like our main binary, which includes the pip package's own
-openconstructionerp.exe, while our hooks already close what runs from the
+primecrest.exe, while our hooks already close what runs from the
 install directory by path. The reasons are written at length in that file.
 
 Vendoring it costs something, and this script is the payment. The template is a
@@ -362,7 +362,7 @@ LEFTOVER_FILE_AFTER = r"""    ; PrimeCrest fork, edit three of four (was three o
 # Upstream stops the app with CheckIfAppIsRunning on the main binary name, which
 # in perMachine mode kills every same-named process on the machine, matched
 # case-insensitively and without a prompt in silent mode. The pip console script
-# openconstructionerp.exe is such a process. windows/hooks.nsh closes what runs
+# primecrest.exe is such a process. windows/hooks.nsh closes what runs
 # from $INSTDIR by path before both sections, so the name-based call goes.
 
 NO_NAME_KILL_INSTALL_BEFORE = r"""    !insertmacro NSIS_HOOK_PREINSTALL
@@ -379,7 +379,7 @@ NO_NAME_KILL_INSTALL_AFTER = r"""    !insertmacro NSIS_HOOK_PREINSTALL
   ; that is nsis_tauri_utils::FindProcess plus KillProcess: every process on the
   ; machine with that image name, compared case-insensitively, in every session,
   ; and without asking when the installer runs silently. The pip package's own
-  ; console script is openconstructionerp.exe, so an upgrade of the desktop app
+  ; console script is primecrest.exe, so an upgrade of the desktop app
   ; killed any backend a user was serving from a Python install, which is not
   ; ours to stop. NSIS_HOOK_PREINSTALL above (windows/hooks.nsh) already closes
   ; whatever runs from $INSTDIR, matched by path, and NSIS_HOOK_PREUNINSTALL
@@ -536,7 +536,7 @@ def check_config_points_at_the_fork(config: Path) -> None:
 def fetch_upstream(version: str) -> str:
     """The stock template at `version`, or a failure. Never an empty success."""
     url = UPSTREAM_URL.format(version=version)
-    request = urllib.request.Request(url, headers={"User-Agent": "openconstructionerp-nsis-drift-check"})
+    request = urllib.request.Request(url, headers={"User-Agent": "primecrest-nsis-drift-check"})
     try:
         with urllib.request.urlopen(request, timeout=60) as response:  # noqa: S310 - fixed https host
             status = response.status

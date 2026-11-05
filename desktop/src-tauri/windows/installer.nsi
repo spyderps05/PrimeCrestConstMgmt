@@ -821,7 +821,7 @@ Section Install
   ; that is nsis_tauri_utils::FindProcess plus KillProcess: every process on the
   ; machine with that image name, compared case-insensitively, in every session,
   ; and without asking when the installer runs silently. The pip package's own
-  ; console script is openconstructionerp.exe, so an upgrade of the desktop app
+  ; console script is primecrest.exe, so an upgrade of the desktop app
   ; killed any backend a user was serving from a Python install, which is not
   ; ours to stop. NSIS_HOOK_PREINSTALL above (windows/hooks.nsh) already closes
   ; whatever runs from $INSTDIR, matched by path, and NSIS_HOOK_PREUNINSTALL
