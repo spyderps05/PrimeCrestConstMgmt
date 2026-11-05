@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Tests for :mod:`app.modules.bcf.writer` — the BCF 3.0 zip builder.
 
 Coverage matrix

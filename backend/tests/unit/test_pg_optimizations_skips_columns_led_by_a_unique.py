@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The performance-index pass must not index a column a table-level unique already leads.
 

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The payment terms a contract starts from, per country, and the money they decide.
 

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """The two tender workbooks: the bill sent out to bidders and the price comparison that comes back.
 
@@ -149,8 +149,8 @@ def classify_rate(rate: Decimal, line_rates: Sequence[Decimal]) -> str | None:
 
 
 def _set_properties(wb: Any, title: str) -> None:
-    wb.properties.creator = "OpenConstructionERP"
-    wb.properties.lastModifiedBy = "OpenConstructionERP"
+    wb.properties.creator = "PrimeCrest"
+    wb.properties.lastModifiedBy = "PrimeCrest"
     wb.properties.title = title
 
 

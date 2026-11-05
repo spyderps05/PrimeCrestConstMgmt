@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Property search over column names and cell text straight from a CAD export.
 

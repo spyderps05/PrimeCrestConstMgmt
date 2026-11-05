@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Regression tests pinning the v3 universality sweep behaviour.
 
 Each finding from the 2026-05-09 audit gets one test below — the goal

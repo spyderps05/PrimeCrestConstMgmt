@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * #412, second pass - the widgets the first fix did not reach.

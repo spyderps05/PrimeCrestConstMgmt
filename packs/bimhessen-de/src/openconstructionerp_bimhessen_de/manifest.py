@@ -1,6 +1,6 @@
 """Hessen BIM pack manifest.
 
-Pre-configures OpenConstructionERP for German BIM consultancies and
+Pre-configures PrimeCrest for German BIM consultancies and
 engineering offices, especially those active in Hessen (Frankfurt /
 Wiesbaden / Kassel / Darmstadt). Loads the German standards stack:
 
@@ -59,7 +59,7 @@ MANIFEST = PartnerPackManifest(
     branding=PartnerBranding(
         primary_color="#0071E3",
         accent_color="#1E293B",
-        powered_by_text="Powered by OpenConstructionERP",
+        powered_by_text="Powered by PrimeCrest",
     ),
     onboarding_script_path="onboarding.yaml",
     metadata={

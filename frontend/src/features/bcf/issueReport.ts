@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Printable HTML builder for a BCF issue / coordination report.
@@ -138,7 +138,7 @@ export function buildIssueReportHtml(params: IssueReportParams): string {
   <p class="meta">${escapeHtml(params.scopeLabel)} &middot; ${escapeHtml(params.generatedOn)}</p>
   ${summaryTable(params.stats, l)}
   ${issuesTable(params.rows, l)}
-  <p class="brand">OpenConstructionERP</p>
+  <p class="brand">PrimeCrest</p>
 </body>
 </html>`;
 }

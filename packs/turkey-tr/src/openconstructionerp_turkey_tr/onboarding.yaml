@@ -9,8 +9,8 @@
 
 version: 2
 locale: tr
-title: "Welcome to OpenConstructionERP - Türkiye"
-title_tr: "OpenConstructionERP'ye hoş geldiniz - Türkiye"
+title: "Welcome to PrimeCrest - Türkiye"
+title_tr: "PrimeCrest'ye hoş geldiniz - Türkiye"
 subtitle: "Four steps to line the workspace up with Turkish practice: poz numbers, the unit-price book, the 25 percent, KDV. Dört adımda çalışma alanınız Türkiye uygulamasına göre ayarlanır."
 
 steps:

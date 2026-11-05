@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """WIP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ report module manifest."""
 
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
         "claims and invoices; closes month-end snapshots, shows gross profit fade or gain against the "
         "previous close and the backlog, and exports to Excel and PDF."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     depends=["oe_projects"],
     optional_depends=["oe_contracts", "oe_changeorders", "oe_cvr", "oe_finance"],

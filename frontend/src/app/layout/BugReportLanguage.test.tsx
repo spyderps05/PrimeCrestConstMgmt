@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * What the bug menu hands to GitHub is written in English, whatever language

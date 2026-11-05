@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Pay​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ rules: split approved hours into pay types by a country or agreement profile.
 

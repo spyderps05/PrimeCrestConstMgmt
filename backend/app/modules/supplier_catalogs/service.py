@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Supplier Catalogs service - vendor management, catalog, PR/PO/GR/Invoice,
 warehouse stock control, 3-way match.
@@ -23,6 +23,7 @@ from fastapi import HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.events import event_bus
+from app.core.partner_pack.pakistan_defaults import currency_for_new_row
 from app.core.i18n import get_locale
 from app.core.validation.messages import translate
 from app.modules.supplier_catalogs import events as ev
@@ -445,7 +446,7 @@ class SupplierCatalogsService(PriceListOps):
             tax_id=data.tax_id,
             contact_id=data.contact_id,
             status="active",
-            currency=data.currency,
+            currency=currency_for_new_row(data.currency),
             payment_terms_days=data.payment_terms_days,
             country_code=data.country_code,
             region=data.region,
@@ -823,7 +824,7 @@ class SupplierCatalogsService(PriceListOps):
             name=data.name,
             valid_from=data.valid_from,
             valid_to=data.valid_to,
-            currency=data.currency,
+            currency=currency_for_new_row(data.currency),
             status="active" if activate else "draft",
             uploaded_by=user_id,
         )
@@ -1021,7 +1022,7 @@ class SupplierCatalogsService(PriceListOps):
             needed_by=data.needed_by,
             status="draft",
             total_estimate=total_estimate,
-            currency=data.currency,
+            currency=currency_for_new_row(data.currency),
             notes=data.notes,
             approval_chain_json=list(data.approval_chain),
         )
@@ -1344,7 +1345,7 @@ class SupplierCatalogsService(PriceListOps):
             status="draft",
             order_date=data.order_date or _now_iso()[:10],
             expected_delivery=data.expected_delivery,
-            currency=data.currency,
+            currency=currency_for_new_row(data.currency),
             subtotal=subtotal,
             tax=tax,
             total=subtotal + tax,
@@ -1705,7 +1706,7 @@ class SupplierCatalogsService(PriceListOps):
             po_id=data.po_id,
             invoice_date=data.invoice_date,
             due_date=data.due_date,
-            currency=data.currency,
+            currency=currency_for_new_row(data.currency),
             subtotal=data.subtotal,
             tax=data.tax,
             total=data.subtotal + data.tax,
@@ -2483,7 +2484,7 @@ class SupplierCatalogsService(PriceListOps):
             price_tolerance_abs=data.price_tolerance_abs,
             # Already validated and upper-cased by the schema, which refuses a
             # nonzero floor with no code at all.
-            currency=data.currency,
+            currency=currency_for_new_row(data.currency),
             qty_tolerance_pct=data.qty_tolerance_pct,
             period_tolerance_days=data.period_tolerance_days,
             require_gr=data.require_gr,

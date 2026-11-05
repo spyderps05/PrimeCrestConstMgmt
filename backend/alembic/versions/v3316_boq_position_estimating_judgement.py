@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """boq: what the estimator judged, beside how sure they were
 

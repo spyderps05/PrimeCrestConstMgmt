@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Measurement book module manifest."""
 
@@ -12,7 +12,7 @@ manifest = ModuleManifest(
         "Dated site measurements per BOQ position with dimensions, measured by and check-measured by, "
         "cumulative measured and checked quantities, and a running bill that feeds progress claims"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     depends=["oe_projects", "oe_boq", "oe_progress"],
     auto_install=True,

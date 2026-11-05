@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Supplier deliveries through the portal (BF-01).
 
 A supplier with a portal account and ``submit`` access to a purchase order

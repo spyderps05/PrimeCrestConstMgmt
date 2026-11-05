@@ -98,7 +98,7 @@ EXISTING_MN: dict[str, str] = {
     "support.button_label": "Дэмжих",
     "support.button_tooltip": "Төслийг дэмжих — одоор үнэлэх эсвэл түгээх",
     "support.button_aria": "Биднийг дэмжих",
-    "support.modal_title": "OpenConstructionERP-ийг өсөхөд тусална уу",
+    "support.modal_title": "PrimeCrest-ийг өсөхөд тусална уу",
     "support.modal_subtitle": (
         "Бид бүх кодыг нээлттэй бичиж, бүх боломжуудыг үнэгүй гаргадаг. "
         "Танаас гарах хоёр жижиг үйлдэл хөгжлийг үргэлжлүүлэхэд тусална — "
@@ -122,7 +122,7 @@ EXISTING_MN: dict[str, str] = {
     "support.action_case_study_title": "Кейс судалгаа, видео эсвэл нийтлэлтэй юу?",
     "support.action_case_study_tag": "Бид түгээнэ",
     "support.action_case_study_body": (
-        "OpenConstructionERP-ийг хэрхэн ашиглаж буйгаа бидэнд харуулаарай — "
+        "PrimeCrest-ийг хэрхэн ашиглаж буйгаа бидэнд харуулаарай — "
         "видео, кейс судалгаа, LinkedIn нийтлэл. Бид түүнийг "
         "DataDrivenConstruction-ийн мэдээллийн товхимол болон сошиал сувгуудаар "
         "нийтлэх бөгөөд эдгээрт хэдэн арван мянган барилгын мэргэжилтэн, "
@@ -452,7 +452,7 @@ EXACT: dict[str, str] = {
     "Send reset link": "Сэргээх холбоос илгээх",
     "Passwords do not match": "Нууц үгүүд таарахгүй байна",
     # --- Dashboard ---
-    "Welcome to OpenConstructionERP": "OpenConstructionERP-д тавтай морил",
+    "Welcome to PrimeCrest": "PrimeCrest-д тавтай морил",
     "Recent Projects": "Сүүлийн үеийн төслүүд",
     "Recent Activity": "Сүүлийн үеийн үйл ажиллагаа",
     "Quick Actions": "Хурдан үйлдэл",

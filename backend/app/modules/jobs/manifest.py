@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Background Jobs status module manifest.
 
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
     version="1.0.0",
     display_name="Background Jobs",
     description=("Status, listing and cancellation surface for the platform-wide Celery job runner (RFC 34 §4 W0.1)."),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=[],
     auto_install=True,

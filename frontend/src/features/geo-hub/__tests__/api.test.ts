@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 /**
  * api.ts unit tests — verify the URL templates we build hit the right
  * backend endpoints. apiGet / apiPost / apiPatch / apiDelete are mocked.

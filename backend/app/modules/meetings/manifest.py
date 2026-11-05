@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Meetings module manifest."""
 
@@ -9,7 +9,7 @@ manifest = ModuleManifest(
     version="0.1.0",
     display_name="Meetings",
     description="Meeting minutes management - agendas, attendees, action items, and status tracking",
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

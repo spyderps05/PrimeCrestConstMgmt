@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Issue #439 - the GAEB Exchange module ships `navItems: []` with a comment

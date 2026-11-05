@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Demo​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ guarantees for the demo projects.
 
@@ -34,6 +34,7 @@ _BANKS: dict[str, tuple[str, str]] = {
     "EUR": ("Northbridge Bank", "Rhine Valley Credit"),
     "GBP": ("Thameside Commercial Bank", "Northbridge Bank"),
     "USD": ("Lakeshore National Bank", "Meridian Trade Bank"),
+    "PKR": ("Ravi Guarantee Bank", "Chenab Commercial Bank"),
 }
 _FALLBACK_VALUE = Decimal("12500000")
 

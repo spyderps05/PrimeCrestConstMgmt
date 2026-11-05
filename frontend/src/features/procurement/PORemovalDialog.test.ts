@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // Which removal verb a purchase order gets, and how a refused removal is read.

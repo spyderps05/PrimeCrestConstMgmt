@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠A subcontract's money reaches finance once, in the right direction.
 

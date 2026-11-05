@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import { useEffect, useState, useCallback, useMemo } from 'react';
 import type { ProviderType } from './useYDoc';

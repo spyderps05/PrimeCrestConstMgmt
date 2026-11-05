@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Project Intelligence module manifest."""
 
@@ -9,7 +9,7 @@ manifest = ModuleManifest(
     version="1.0.0",
     display_name="Project Intelligence",
     description="AI-powered project completion analysis, scoring, and guided recommendations",
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     # Promoted to "core" so the dashboard at /project-intelligence is always
     # available. Core modules ignore persisted-disable state at boot and cannot
     # be turned off via the /v1/modules/{name}/disable endpoint.

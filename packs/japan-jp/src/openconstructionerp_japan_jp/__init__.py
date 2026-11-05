@@ -1,4 +1,4 @@
-"""OpenConstructionERP - Japan Construction partner pack (Sekisan + JASS).
+"""PrimeCrest - Japan Construction partner pack (Sekisan + JASS).
 
 This package exports a module-level ``MANIFEST`` instance of
 :class:`PartnerPackManifest` referenced from ``pyproject.toml``::

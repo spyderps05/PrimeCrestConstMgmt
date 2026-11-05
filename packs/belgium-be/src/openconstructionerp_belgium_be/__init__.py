@@ -1,4 +1,4 @@
-"""OpenConstructionERP - Belgium country pack (bilingual NL/FR, BB/SfB, meetstaat)."""
+"""PrimeCrest - Belgium country pack (bilingual NL/FR, BB/SfB, meetstaat)."""
 
 from __future__ import annotations
 

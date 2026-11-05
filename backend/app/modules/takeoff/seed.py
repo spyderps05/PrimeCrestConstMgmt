@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Demo seed data for the takeoff module.
 
 Loaded on demand via ``await seed_takeoff_demo(session, project_ids)``.

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Tests for the prompt-template module.
 
 Pure-function tests — no DB session, no fixtures. Pins the contract:

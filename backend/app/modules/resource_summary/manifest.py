@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Resource Summary module manifest."""
 
 from app.core.module_loader import ModuleManifest
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
         "implies they must procure. Reads the existing per-position splits; adds "
         "no new estimating data."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     # Reads BoQ positions (their stored resource split) read-only.
     depends=["oe_boq"],

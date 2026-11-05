@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Punch List event subscribers (task #156).
 
 The punchlist module owns the operational defect workflow (status FSM:

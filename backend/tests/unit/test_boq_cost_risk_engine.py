@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Unit tests for the pure Monte Carlo cost-risk engine.
 
 These exercise :mod:`app.modules.boq.cost_risk_engine` directly with plain

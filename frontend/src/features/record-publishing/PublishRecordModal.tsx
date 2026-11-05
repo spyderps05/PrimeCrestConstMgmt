@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // PublishRecordModal — one-tap "publish a record and distribute it".
@@ -355,7 +355,7 @@ export function PublishRecordModal({
                   inputMode="email"
                   autoComplete="off"
                   placeholder={t('record_publishing.email_placeholder', {
-                    defaultValue: 'name@company.com',
+                    defaultValue: 'name@company.pk',
                   })}
                   value={row.email}
                   onChange={(e) => patchRow(idx, { email: e.target.value })}

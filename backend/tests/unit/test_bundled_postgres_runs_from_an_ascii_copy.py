@@ -76,7 +76,7 @@ def test_a_non_ascii_install_runs_postgres_from_a_copy_in_local_app_data(install
 
     assert bin_dir is not None
     assert str(bin_dir).isascii()
-    assert bin_dir.is_relative_to(tmp_path / "Local" / "OpenConstructionERP" / "pginstall")
+    assert bin_dir.is_relative_to(tmp_path / "Local" / "PrimeCrest" / "pginstall")
     for rel, data in _FILES.items():
         assert (bin_dir.parent / rel).read_bytes() == data
     # Every binding the library reads, plus the one this module reads per call.
@@ -111,7 +111,7 @@ def test_the_private_copy_is_reused_and_replaced_when_the_install_changes(instal
 def test_staging_left_by_a_dead_start_is_removed_and_a_live_ones_is_not(
     install: Path, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
-    home = tmp_path / "Local" / "OpenConstructionERP" / "pginstall"
+    home = tmp_path / "Local" / "PrimeCrest" / "pginstall"
     dead = home / ".0123456789abcdef.111.tmp"
     live = home / ".0123456789abcdef.222.tmp"
     for staging in (dead, live):
@@ -194,7 +194,7 @@ def test_a_failed_copy_keeps_the_original_and_leaves_no_half_tree(
 
     assert embedded_pg.relocate_bundled_binaries() is None
     assert install / "bin" == pg_utils.POSTGRES_BIN_PATH
-    home = tmp_path / "Local" / "OpenConstructionERP" / "pginstall"
+    home = tmp_path / "Local" / "PrimeCrest" / "pginstall"
     assert not home.exists() or not any(home.iterdir())
 
 

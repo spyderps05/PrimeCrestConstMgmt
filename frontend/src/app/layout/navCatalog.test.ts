@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 //
 // routeIcons.ts says in its own header that it MIRRORS the nav definitions and
 // that the two must be kept in sync by hand. That sentence has been there since

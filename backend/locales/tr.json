@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Bu ad yeni bir katalog için kullanılamaz. Başka bir ad seçin.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Açık kaynak inşaat maliyet tahmini"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Güncelle"
   },
   "dashboard": {
-    "welcome": "OpenConstructionERP'ye hoş geldiniz",
+    "welcome": "PrimeCrest'ye hoş geldiniz",
     "subtitle": "Açık kaynak inşaat maliyet tahmini platformu",
     "recent_projects": "Son projeler",
     "system_status": "Sistem durumu",
@@ -1450,7 +1450,7 @@
         "no_data_heading": "Veri mevcut değil",
         "no_data_body": "Bu rapor boş bir veri anlık görüntüsüyle oluşturuldu. Seçilen proje için kaynak modüllerin (finans, takvim, iş güvenliği vb.) veri döndürüp döndürmediğini kontrol edin.",
         "no_data_body_short": "Bu rapor boş bir veri anlık görüntüsüyle oluşturuldu. Seçilen proje için kaynak modüllerin veri döndürüp döndürmediğini kontrol edin.",
-        "footer_generated_by": "OpenConstructionERP tarafından {timestamp} tarihinde oluşturuldu.",
+        "footer_generated_by": "PrimeCrest tarafından {timestamp} tarihinde oluşturuldu.",
         "worksheet_name": "Rapor",
         "pdf_subject": "Proje Raporu",
         "overall_progress": "Genel İlerleme",
@@ -1710,9 +1710,9 @@
     "notification_email": {
       "greeting": "Merhaba {name},",
       "greeting_generic": "Merhaba,",
-      "cta": "OpenConstructionERP üzerinde aç",
+      "cta": "PrimeCrest üzerinde aç",
       "footer": "Bu e-postayı bildirim ayarlarınız nedeniyle alıyorsunuz. Ayarlarınızı profilinizden değiştirebilirsiniz.",
-      "digest_subject": "OpenConstructionERP: Bildirim özeti ({count})",
+      "digest_subject": "PrimeCrest: Bildirim özeti ({count})",
       "digest_heading": "Son bildirimler:"
     },
     "tender_xlsx": {

@@ -4,8 +4,8 @@
  "videos": [
   {
    "youtubeId": "IM9hK6kCZCs",
-   "title": "01/12 Bauprojekt anlegen: Rollen, Varianten & Budget | OpenConstructionERP Landshut",
-   "summary": "Ein Bauprojekt wird belastbar, wenn Ziele, Rollen und Budget von Anfang an zusammenpassen. In diesem Tutorial legen wir das Landshuter Mehrfamilienhaus mit sechs Wohnungen in OpenConstructionERP an und bauen eine gemeinsame Arbeitsgrundlage auf.",
+   "title": "01/12 Bauprojekt anlegen: Rollen, Varianten & Budget | PrimeCrest Landshut",
+   "summary": "Ein Bauprojekt wird belastbar, wenn Ziele, Rollen und Budget von Anfang an zusammenpassen. In diesem Tutorial legen wir das Landshuter Mehrfamilienhaus mit sechs Wohnungen in PrimeCrest an und bauen eine gemeinsame Arbeitsgrundlage auf.",
    "chapters": [
     {
      "t": 0,
@@ -117,8 +117,8 @@
   },
   {
    "youtubeId": "LP-CZOhu6OA",
-   "title": "02/12 Planmanagement: RFI, Revisionen & Freigaben | OpenConstructionERP Landshut",
-   "summary": "Eine unklare Deckenöffnung kann auf der Baustelle schnell zu Rückfragen und Verzögerungen führen. Dieses Tutorial zeigt, wie Sie die technische Anfrage, ihre Quellen, die Antwort der Fachplanung und den freigegebenen Planstand in OpenConstructionERP zusammenhalten.",
+   "title": "02/12 Planmanagement: RFI, Revisionen & Freigaben | PrimeCrest Landshut",
+   "summary": "Eine unklare Deckenöffnung kann auf der Baustelle schnell zu Rückfragen und Verzögerungen führen. Dieses Tutorial zeigt, wie Sie die technische Anfrage, ihre Quellen, die Antwort der Fachplanung und den freigegebenen Planstand in PrimeCrest zusammenhalten.",
    "chapters": [
     {
      "t": 0,
@@ -226,7 +226,7 @@
   },
   {
    "youtubeId": "YEk8F3W28po",
-   "title": "03/12 Mengen ermitteln: PDF, DWG und prüfbare Flächen | OpenConstructionERP Landshut",
+   "title": "03/12 Mengen ermitteln: PDF, DWG und prüfbare Flächen | PrimeCrest Landshut",
    "summary": "Mengen aus Plänen sind nur dann brauchbar, wenn Maßstab, Abzüge und Quelle nachvollziehbar bleiben. Wir ermitteln Flächen, Sockellängen und Fenster aus PDF und DWG und prüfen die Ergebnisse direkt am Plan.",
    "chapters": [
     {
@@ -323,8 +323,8 @@
   },
   {
    "youtubeId": "KI6e3s7XScY",
-   "title": "04/12 BIM-Modelle prüfen: IFC, RVT und CSV | OpenConstructionERP Landshut",
-   "summary": "IFC und RVT müssen im Alltag nicht zu getrennten Arbeitsabläufen werden. In diesem Tutorial laden wir vorbereitete Modelle in OpenConstructionERP, prüfen die Geometrie, wählen Bauteile aus und öffnen den CSV-Export als Tabelle.",
+   "title": "04/12 BIM-Modelle prüfen: IFC, RVT und CSV | PrimeCrest Landshut",
+   "summary": "IFC und RVT müssen im Alltag nicht zu getrennten Arbeitsabläufen werden. In diesem Tutorial laden wir vorbereitete Modelle in PrimeCrest, prüfen die Geometrie, wählen Bauteile aus und öffnen den CSV-Export als Tabelle.",
    "chapters": [
     {
      "t": 0,
@@ -400,7 +400,7 @@
   },
   {
    "youtubeId": "tZEdPehNE6Q",
-   "title": "05/12 Leistungsverzeichnis aufbauen: Leistungen, Einheiten und Mengen | OpenConstructionERP Landshut",
+   "title": "05/12 Leistungsverzeichnis aufbauen: Leistungen, Einheiten und Mengen | PrimeCrest Landshut",
    "summary": "Ein gutes Leistungsverzeichnis beschreibt den vereinbarten Umfang so klar, dass Mengen und Preise später geprüft werden können. Wir bauen aus einer geprüften Mengenbasis ein eigenes LV mit Abschnitten, Leistungen und Einheiten auf.",
    "chapters": [
     {
@@ -473,7 +473,7 @@
   },
   {
    "youtubeId": "qFGKRIXHM8w",
-   "title": "06/12 Einheitspreise kalkulieren: Parkett und Gipskarton | OpenConstructionERP Landshut",
+   "title": "06/12 Einheitspreise kalkulieren: Parkett und Gipskarton | PrimeCrest Landshut",
    "summary": "Ein Einheitspreis wird verständlich, wenn man ihn bis zu seinen Arbeits- und Materialressourcen zurückverfolgen kann. Wir verwenden Parkettarbeiten und eine Gipskarton-Trennwand als realistische Beispiele und übernehmen die beiden Arbeitsrezepte in das eigene LV.",
    "chapters": [
     {
@@ -554,7 +554,7 @@
   },
   {
    "youtubeId": "T3FBggAeFJ4",
-   "title": "07/12 GAEB X83 und X84 sicher prüfen | OpenConstructionERP Landshut",
+   "title": "07/12 GAEB X83 und X84 sicher prüfen | PrimeCrest Landshut",
    "summary": "GAEB-Dateien verbinden Auftraggeber, Planer und Bieter, wenn Ausgangsstand und Austauschstufe sauber zusammenpassen. Wir exportieren eine Anfrage als X83, prüfen den Import und geben den bepreisten Stand als X84 aus.",
    "chapters": [
     {
@@ -631,7 +631,7 @@
   },
   {
    "youtubeId": "75sjLEjXiBc",
-   "title": "08/12 Angebote vergleichen und Vergabe vorbereiten | OpenConstructionERP Landshut",
+   "title": "08/12 Angebote vergleichen und Vergabe vorbereiten | PrimeCrest Landshut",
    "summary": "Der niedrigste Gesamtpreis beantwortet noch nicht die Frage, ob ein Angebot vollständig und ausführbar ist. In diesem Tutorial vergleichen wir Angebote auf demselben Mengenstand, prüfen fehlende Positionen und dokumentieren eine begründete Vorauswahl.",
    "chapters": [
     {
@@ -696,7 +696,7 @@
   },
   {
    "youtubeId": "bGUpude30wc",
-   "title": "09/12 Bauablauf planen: Termine und Ressourcen koordinieren | OpenConstructionERP Landshut",
+   "title": "09/12 Bauablauf planen: Termine und Ressourcen koordinieren | PrimeCrest Landshut",
    "summary": "Wenn sich eine Lieferung verschiebt, muss sichtbar bleiben, welche Montage und welches Team davon betroffen sind. Wir verknüpfen Liefertermin und Ausführung, passen den Ablauf an und prüfen die Ressourcenzuordnung.",
    "chapters": [
     {
@@ -765,7 +765,7 @@
   },
   {
    "youtubeId": "G0a5pEiXaS4",
-   "title": "10/12 Material bestellen und Teillieferung prüfen | OpenConstructionERP Landshut",
+   "title": "10/12 Material bestellen und Teillieferung prüfen | PrimeCrest Landshut",
    "summary": "Bestellt, geliefert und eingelagert sind drei verschiedene Zustände. Dieses Tutorial verfolgt den Materialbedarf vom Parkettboden über die Bestellung und Teillieferung bis zum belegten Baustellenbestand.",
    "chapters": [
     {
@@ -858,7 +858,7 @@
   },
   {
    "youtubeId": "uBhNqXw2dm0",
-   "title": "11/12 Kostenquellen und Ressourcen anpassen: Parkett | OpenConstructionERP Landshut",
+   "title": "11/12 Kostenquellen und Ressourcen anpassen: Parkett | PrimeCrest Landshut",
    "summary": "Ein Kostenkatalog ist ein Rezeptbuch für Bauarbeiten: Er liefert eine nachvollziehbare Ausgangsbasis, die Sie für Ihr eigenes Projekt anpassen können. Wir prüfen ein Parkettrezept, übernehmen sechs Ressourcen ins LV und ändern die Preisansätze mit klarer Begründung.",
    "chapters": [
     {
@@ -951,7 +951,7 @@
   },
   {
    "youtubeId": "OJ1FMzwY3FM",
-   "title": "12/12 LV und Kostenbasis nachvollziehbar prüfen | OpenConstructionERP Landshut",
+   "title": "12/12 LV und Kostenbasis nachvollziehbar prüfen | PrimeCrest Landshut",
    "summary": "Ein vollständiges LV wird erst dann zur belastbaren Kostenbasis, wenn Mengen, Einheitspreise, Ressourcen und Quellen zusammenpassen. Wir prüfen den Kostenstand, ordnen ihn in DIN 276 ein und erzeugen daraus ein nachvollziehbares Projektbudget.",
    "chapters": [
     {
@@ -1068,8 +1068,8 @@
   },
   {
    "youtubeId": "L1DUikMF04Y",
-   "title": "01/04 · Budget de chantier : justifier chaque coût | OpenConstructionERP",
-   "summary": "240 000 USD de budget : pouvez-vous expliquer chaque poste ? Ce tutoriel montre comment relier les quantités, les prix et leurs sources dans OpenConstructionERP.",
+   "title": "01/04 · Budget de chantier : justifier chaque coût | PrimeCrest",
+   "summary": "240 000 USD de budget : pouvez-vous expliquer chaque poste ? Ce tutoriel montre comment relier les quantités, les prix et leurs sources dans PrimeCrest.",
    "chapters": [
     {
      "t": 0,
@@ -1097,8 +1097,8 @@
   },
   {
    "youtubeId": "ZXbWsG_Syuo",
-   "title": "02/04 · Achats et stock : suivre les quantités | OpenConstructionERP",
-   "summary": "1 000 sacs de ciment commandés, 600 encore en stock : comment expliquer l’écart ? Suivez une commande, une réception et une consommation dans OpenConstructionERP.",
+   "title": "02/04 · Achats et stock : suivre les quantités | PrimeCrest",
+   "summary": "1 000 sacs de ciment commandés, 600 encore en stock : comment expliquer l’écart ? Suivez une commande, une réception et une consommation dans PrimeCrest.",
    "chapters": [
     {
      "t": 0,
@@ -1126,8 +1126,8 @@
   },
   {
    "youtubeId": "5utorRM1fhY",
-   "title": "03/04 · Chantier : suivre les heures et le matériel | OpenConstructionERP",
-   "summary": "64 heures-personnes : quel travail a été réalisé ? Ce tutoriel relie le pointage de l’équipe, un volume mesuré séparément et l’utilisation du matériel dans OpenConstructionERP.",
+   "title": "03/04 · Chantier : suivre les heures et le matériel | PrimeCrest",
+   "summary": "64 heures-personnes : quel travail a été réalisé ? Ce tutoriel relie le pointage de l’équipe, un volume mesuré séparément et l’utilisation du matériel dans PrimeCrest.",
    "chapters": [
     {
      "t": 0,
@@ -1155,8 +1155,8 @@
   },
   {
    "youtubeId": "ViuB-ONl5Lk",
-   "title": "04/04 · Facture et paiement : comprendre le solde | OpenConstructionERP",
-   "summary": "30 000 USD facturés, 18 000 USD reçus : pourquoi reste-t-il 12 000 USD à recevoir ? Suivez les étapes du contrat au règlement dans OpenConstructionERP.",
+   "title": "04/04 · Facture et paiement : comprendre le solde | PrimeCrest",
+   "summary": "30 000 USD facturés, 18 000 USD reçus : pourquoi reste-t-il 12 000 USD à recevoir ? Suivez les étapes du contrat au règlement dans PrimeCrest.",
    "chapters": [
     {
      "t": 0,
@@ -1184,8 +1184,8 @@
   },
   {
    "youtubeId": "WjDK-uk9b1w",
-   "title": "🇺🇸 EN • USA • 01/10 | How to Install OpenConstructionERP | Windows Setup & First Project",
-   "summary": "This walkthrough shows how to install OpenConstructionERP on Windows and create your first construction project. It covers the desktop installer, an alternative Python/pip installation, regional settings and access for your team.",
+   "title": "🇺🇸 EN • USA • 01/10 | How to Install PrimeCrest | Windows Setup & First Project",
+   "summary": "This walkthrough shows how to install PrimeCrest on Windows and create your first construction project. It covers the desktop installer, an alternative Python/pip installation, regional settings and access for your team.",
    "chapters": [
     {
      "t": 0,
@@ -1193,7 +1193,7 @@
     },
     {
      "t": 24,
-     "title": "What OpenConstructionERP does"
+     "title": "What PrimeCrest does"
     },
     {
      "t": 51,
@@ -1254,7 +1254,7 @@
   {
    "youtubeId": "7eT4lg1ggQY",
    "title": "⚜️ FR • MONTRÉAL • 02/05 | Estimer un projet de construction",
-   "summary": "Préparez une estimation de construction dans OpenConstructionERP pour un immeuble locatif à Montréal. L’exemple part du bordereau et des soumissions, puis ajoute les majorations pour établir le prix du contrat avant taxes.",
+   "summary": "Préparez une estimation de construction dans PrimeCrest pour un immeuble locatif à Montréal. L’exemple part du bordereau et des soumissions, puis ajoute les majorations pour établir le prix du contrat avant taxes.",
    "chapters": [
     {
      "t": 0,
@@ -1282,8 +1282,8 @@
   },
   {
    "youtubeId": "CMuMMej0zwM",
-   "title": "⚜️ FR • QUÉBEC • 01/05 | Démarrer avec OpenConstructionERP en français",
-   "summary": "Configurez OpenConstructionERP en français pour un projet au Québec. Nous créons le projet en dollars canadiens et rapprochons le vocabulaire de l’interface — devis quantitatif, réserves et planning — de celui du chantier québécois.",
+   "title": "⚜️ FR • QUÉBEC • 01/05 | Démarrer avec PrimeCrest en français",
+   "summary": "Configurez PrimeCrest en français pour un projet au Québec. Nous créons le projet en dollars canadiens et rapprochons le vocabulaire de l’interface — devis quantitatif, réserves et planning — de celui du chantier québécois.",
    "chapters": [
     {
      "t": 0,
@@ -1312,7 +1312,7 @@
   {
    "youtubeId": "gmg2h1JcuGI",
    "title": "⚜️ FR • QUÉBEC • 03/05 | Soumissions et BSDQ",
-   "summary": "Comparez trois soumissions de sous-traitants dans OpenConstructionERP à partir d’un cas québécois lié au BSDQ. L’exemple montre pourquoi il faut vérifier la conformité et la garantie demandée avant d’attribuer le contrat.",
+   "summary": "Comparez trois soumissions de sous-traitants dans PrimeCrest à partir d’un cas québécois lié au BSDQ. L’exemple montre pourquoi il faut vérifier la conformité et la garantie demandée avant d’attribuer le contrat.",
    "chapters": [
     {
      "t": 0,
@@ -1345,7 +1345,7 @@
   {
    "youtubeId": "4LTXS0QEkzY",
    "title": "⚜️ FR • QUÉBEC • 04/05 | Facturation, retenue et hypothèque légale",
-   "summary": "Préparez une demande de paiement de construction dans OpenConstructionERP pour le cas québécois. L’exemple part de 184 300 $ de travaux et applique la retenue contractuelle de 10 %, puis aborde les documents et délais liés à l’hypothèque légale.",
+   "summary": "Préparez une demande de paiement de construction dans PrimeCrest pour le cas québécois. L’exemple part de 184 300 $ de travaux et applique la retenue contractuelle de 10 %, puis aborde les documents et délais liés à l’hypothèque légale.",
    "chapters": [
     {
      "t": 0,
@@ -1378,7 +1378,7 @@
   {
    "youtubeId": "IWjtAujWPAA",
    "title": "⚜️ FR • QUÉBEC • 05/05 | Réception des travaux et déficiences",
-   "summary": "Suivez les déficiences de chantier dans OpenConstructionERP, de leur enregistrement à la vérification des corrections. Le cas québécois distingue la fin des travaux et la réception, et présente les documents à conserver lors de la clôture.",
+   "summary": "Suivez les déficiences de chantier dans PrimeCrest, de leur enregistrement à la vérification des corrections. Le cas québécois distingue la fin des travaux et la réception, et présente les documents à conserver lors de la clôture.",
    "chapters": [
     {
      "t": 0,
@@ -1407,7 +1407,7 @@
   {
    "youtubeId": "tj7McUl37X0",
    "title": "🇨🇦 EN • CANADA • 05/06 | Manage Construction Change Orders",
-   "summary": "Record and price a construction change order in OpenConstructionERP after unexpected rock changes the townhome project. The CCDC 2 example connects the changed scope, estimate, approval and effect on the contract and budget.",
+   "summary": "Record and price a construction change order in PrimeCrest after unexpected rock changes the townhome project. The CCDC 2 example connects the changed scope, estimate, approval and effect on the contract and budget.",
    "chapters": [
     {
      "t": 0,
@@ -1432,7 +1432,7 @@
   {
    "youtubeId": "fKGh2e6pJqc",
    "title": "🇨🇦 EN • CANADA • 06/06 | Schedule to Substantial Performance",
-   "summary": "Follow an Ontario townhome project from construction scheduling to substantial performance in OpenConstructionERP. The example connects the calendar, daily diary and deficiency list with the closeout and holdback records.",
+   "summary": "Follow an Ontario townhome project from construction scheduling to substantial performance in PrimeCrest. The example connects the calendar, daily diary and deficiency list with the closeout and holdback records.",
    "chapters": [
     {
      "t": 0,
@@ -1457,7 +1457,7 @@
   {
    "youtubeId": "b-qv_emcDwc",
    "title": "🇨🇦 EN • ONTARIO • 03/06 | CCDC 2 Monthly Progress Draw",
-   "summary": "Prepare a monthly progress draw for the CCDC 2 example in OpenConstructionERP. We set up the contract, record a $184,300 gross claim and show the $165,870 net amount after the example’s 10% holdback.",
+   "summary": "Prepare a monthly progress draw for the CCDC 2 example in PrimeCrest. We set up the contract, record a $184,300 gross claim and show the $165,870 net amount after the example’s 10% holdback.",
    "chapters": [
     {
      "t": 0,
@@ -1482,7 +1482,7 @@
   {
    "youtubeId": "aQlkuS7ShCM",
    "title": "🇨🇦 EN • ONTARIO • 04/06 | The Construction Payment Clock",
-   "summary": "Track the construction payment timeline for an Ontario project in OpenConstructionERP. The lesson follows a proper invoice, notices and subcontractor payment dates, showing what the Payment Clock records and which dates need checking.",
+   "summary": "Track the construction payment timeline for an Ontario project in PrimeCrest. The lesson follows a proper invoice, notices and subcontractor payment dates, showing what the Payment Clock records and which dates need checking.",
    "chapters": [
     {
      "t": 0,
@@ -1507,7 +1507,7 @@
   {
    "youtubeId": "LejLQ4skfvM",
    "title": "🇨🇦 EN • TORONTO • 01/06 | Price a Construction Job",
-   "summary": "Build a construction bid for six stacked townhomes in Toronto using OpenConstructionERP. The example brings together unit rates, markups, bond costs and the contract price in Canadian dollars before HST.",
+   "summary": "Build a construction bid for six stacked townhomes in Toronto using PrimeCrest. The example brings together unit rates, markups, bond costs and the contract price in Canadian dollars before HST.",
    "chapters": [
     {
      "t": 0,
@@ -1532,7 +1532,7 @@
   {
    "youtubeId": "7u7Ur3ZFe94",
    "title": "🇨🇦 EN • TORONTO • 02/06 | Tender Work to Subcontractors",
-   "summary": "Compare three drywall subcontractor bids for a Canadian townhome project in OpenConstructionERP. The lesson checks scope and a low quotation before award, and discusses the tendering commitments used in the example.",
+   "summary": "Compare three drywall subcontractor bids for a Canadian townhome project in PrimeCrest. The lesson checks scope and a low quotation before award, and discusses the tendering commitments used in the example.",
    "chapters": [
     {
      "t": 0,
@@ -1557,7 +1557,7 @@
   {
    "youtubeId": "zGgfX19b3gc",
    "title": "🇺🇸 EN • DENVER • 03/10 | Build a Construction Estimate Step by Step (EP02 2/3)",
-   "summary": "Build a construction estimate in OpenConstructionERP for a Denver duplex: ten positions across five trade sections. We add database items, quantities and a subcontractor quote, then check units, labor rates and direct cost.",
+   "summary": "Build a construction estimate in PrimeCrest for a Denver duplex: ten positions across five trade sections. We add database items, quantities and a subcontractor quote, then check units, labor rates and direct cost.",
    "chapters": [
     {
      "t": 0,
@@ -1582,7 +1582,7 @@
   {
    "youtubeId": "kEN-F92hNZc",
    "title": "🇺🇸 EN • USA • 02/10 | Construction Cost Database: Check a Unit Rate (EP02 1/3)",
-   "summary": "Find and check a construction unit rate in OpenConstructionERP’s cost database. We break it down into labor, materials and equipment, then adjust the rate to suit the example project before using it in an estimate.",
+   "summary": "Find and check a construction unit rate in PrimeCrest’s cost database. We break it down into labor, materials and equipment, then adjust the rate to suit the example project before using it in an estimate.",
    "chapters": [
     {
      "t": 0,
@@ -1607,7 +1607,7 @@
   {
    "youtubeId": "FRI5_7CsZT0",
    "title": "🇺🇸 EN • USA • 04/10 | Construction Pricing: Overhead, Profit & Contingency (EP02 3/3)",
-   "summary": "Turn a construction estimate into a bid price in OpenConstructionERP. The example adds overhead, profit and contingency, checks the estimate, saves a version and exports the result for review.",
+   "summary": "Turn a construction estimate into a bid price in PrimeCrest. The example adds overhead, profit and contingency, checks the estimate, saves a version and exports the result for review.",
    "chapters": [
     {
      "t": 0,
@@ -1632,7 +1632,7 @@
   {
    "youtubeId": "_uKAddpFo9Y",
    "title": "🇬🇧 EN • UK • 01/06 | How to Price a Construction Tender (NRM 2)",
-   "summary": "We price a UK construction tender in OpenConstructionERP, starting with the bill of quantities and working through to the tender sum. The example follows an NRM 2 structure and includes measured work, subcontract quotes, preliminaries, risk, overheads and profit.",
+   "summary": "We price a UK construction tender in PrimeCrest, starting with the bill of quantities and working through to the tender sum. The example follows an NRM 2 structure and includes measured work, subcontract quotes, preliminaries, risk, overheads and profit.",
    "chapters": [
     {
      "t": 0,
@@ -1657,7 +1657,7 @@
   {
    "youtubeId": "WA5-cVKcD-E",
    "title": "🇬🇧 EN • UK • 02/06 | How to Compare Subcontractor Bids",
-   "summary": "We compare subcontractor bids for the same work package in OpenConstructionERP. Before looking at the totals, we check exclusions, missing scope and the assumptions behind each quotation.",
+   "summary": "We compare subcontractor bids for the same work package in PrimeCrest. Before looking at the totals, we check exclusions, missing scope and the assumptions behind each quotation.",
    "chapters": [
     {
      "t": 0,
@@ -1682,7 +1682,7 @@
   {
    "youtubeId": "bmlDq86OSrg",
    "title": "🇬🇧 EN • UK • 03/06 | JCT Interim Payments and Retention",
-   "summary": "This example follows an interim payment on a JCT-style building contract in OpenConstructionERP. We enter the contract terms, value the work completed and calculate retention before reviewing the amount due.",
+   "summary": "This example follows an interim payment on a JCT-style building contract in PrimeCrest. We enter the contract terms, value the work completed and calculate retention before reviewing the amount due.",
    "chapters": [
     {
      "t": 0,
@@ -1707,7 +1707,7 @@
   {
    "youtubeId": "1tstow0n_Ew",
    "title": "🇬🇧 EN • UK • 04/06 | Payment Notice vs Pay Less Notice",
-   "summary": "We follow a construction payment timeline in OpenConstructionERP, from the due date to the final date for payment. The example looks at payment notices, pay less notices and the record of when each notice was served.",
+   "summary": "We follow a construction payment timeline in PrimeCrest, from the due date to the final date for payment. The example looks at payment notices, pay less notices and the record of when each notice was served.",
    "chapters": [
     {
      "t": 0,
@@ -1732,7 +1732,7 @@
   {
    "youtubeId": "SWwlmU4y-L4",
    "title": "🇬🇧 EN • UK • 05/06 | CIS Deductions and VAT Reverse Charge",
-   "summary": "We work through a subcontract payment in OpenConstructionERP with CIS deductions and the domestic VAT reverse charge. The example separates labour and materials, follows the invoice and shows how the payment is recorded.",
+   "summary": "We work through a subcontract payment in PrimeCrest with CIS deductions and the domestic VAT reverse charge. The example separates labour and materials, follows the invoice and shows how the payment is recorded.",
    "chapters": [
     {
      "t": 0,
@@ -1757,7 +1757,7 @@
   {
    "youtubeId": "KV-PbKMGISk",
    "title": "🇬🇧 EN • UK • 06/06 | How to Value a JCT Variation",
-   "summary": "We record an architect's instruction and work through the valuation of a variation in OpenConstructionERP. The example connects the changed scope, quantities, rates and supporting records with the review and agreement of the order.",
+   "summary": "We record an architect's instruction and work through the valuation of a variation in PrimeCrest. The example connects the changed scope, quantities, rates and supporting records with the review and agreement of the order.",
    "chapters": [
     {
      "t": 0,
@@ -1782,7 +1782,7 @@
   {
    "youtubeId": "JzMC6xKNJlg",
    "title": "🇭🇷 HR • HRVATSKA • 01/05 | Ugovoreni troškovnik: uvoz iz Excela",
-   "summary": "Uvezite ugovoreni troškovnik iz Excela u OpenConstructionERP i provjerite količine, cijene i ukupni iznos. U primjeru otvaramo projekt za Hrvatsku, uređujemo grupe radova i spremamo ugovorenu verziju kao osnovu za praćenje projekta.",
+   "summary": "Uvezite ugovoreni troškovnik iz Excela u PrimeCrest i provjerite količine, cijene i ukupni iznos. U primjeru otvaramo projekt za Hrvatsku, uređujemo grupe radova i spremamo ugovorenu verziju kao osnovu za praćenje projekta.",
    "chapters": [
     {
      "t": 0,
@@ -1811,7 +1811,7 @@
   {
    "youtubeId": "Cu21eWYzXfU",
    "title": "🇭🇷 HR • HRVATSKA • 02/05 | Ulazni računi povezani s troškovnikom",
-   "summary": "Unesite ulazni račun dobavljača u OpenConstructionERP i povežite njegove stavke s ugovorenim troškovnikom. Provjeravamo iznose i PDV, prilažemo dokument te pratimo kako evidentirani trošak utječe na projekt.",
+   "summary": "Unesite ulazni račun dobavljača u PrimeCrest i povežite njegove stavke s ugovorenim troškovnikom. Provjeravamo iznose i PDV, prilažemo dokument te pratimo kako evidentirani trošak utječe na projekt.",
    "chapters": [
     {
      "t": 0,
@@ -1836,7 +1836,7 @@
   {
    "youtubeId": "PZ7jEsXjr-E",
    "title": "🇭🇷 HR • HRVATSKA • 03/05 | Podizvođači: ugovor, situacija i plaćanje",
-   "summary": "Pratite podizvođača u OpenConstructionERP od ugovora i troškovnika do situacije i plaćanja. U primjeru provjeravamo odobrene radove, zadržani iznos i dokumentaciju potrebnu za evidentiranje isplate.",
+   "summary": "Pratite podizvođača u PrimeCrest od ugovora i troškovnika do situacije i plaćanja. U primjeru provjeravamo odobrene radove, zadržani iznos i dokumentaciju potrebnu za evidentiranje isplate.",
    "chapters": [
     {
      "t": 0,
@@ -1861,7 +1861,7 @@
   {
    "youtubeId": "UeL7oAzvX6E",
    "title": "🇭🇷 HR • HRVATSKA • 04/05 | Privremena situacija iz izvedenih radova",
-   "summary": "Izradite privremenu situaciju iz izvedenih radova u OpenConstructionERP. Povezujemo plan, troškovnik i potvrđene količine, zatim provjeravamo prethodno, tekuće i kumulativno stanje prije slanja naručitelju.",
+   "summary": "Izradite privremenu situaciju iz izvedenih radova u PrimeCrest. Povezujemo plan, troškovnik i potvrđene količine, zatim provjeravamo prethodno, tekuće i kumulativno stanje prije slanja naručitelju.",
    "chapters": [
     {
      "t": 0,
@@ -1890,7 +1890,7 @@
   {
    "youtubeId": "WKWLfaofG94",
    "title": "🇭🇷 HR • HRVATSKA • 05/05 | Financijsko stanje projekta i višak radova",
-   "summary": "Provjerite financijsko stanje građevinskog projekta u OpenConstructionERP usporedbom ugovorene vrijednosti, troškova i naplate. U primjeru evidentiramo višak radova, pratimo njegovo odobrenje i pripremamo završni obračun.",
+   "summary": "Provjerite financijsko stanje građevinskog projekta u PrimeCrest usporedbom ugovorene vrijednosti, troškova i naplate. U primjeru evidentiramo višak radova, pratimo njegovo odobrenje i pripremamo završni obračun.",
    "chapters": [
     {
      "t": 0,
@@ -1918,8 +1918,8 @@
   },
   {
    "youtubeId": "9qsR7e77by0",
-   "title": "🇩🇪 DE • 01/08 | Kostenrahmen nach DIN 276 erstellen | OpenConstructionERP Tutorial",
-   "summary": "In diesem Video legen wir ein Bauprojekt in OpenConstructionERP an und erstellen den ersten Kostenrahmen nach DIN 276. Dazu richten wir die Plattform ein, erfassen das Budget und prüfen, ob Größenordnung und Projektumfang zusammenpassen.",
+   "title": "🇩🇪 DE • 01/08 | Kostenrahmen nach DIN 276 erstellen | PrimeCrest Tutorial",
+   "summary": "In diesem Video legen wir ein Bauprojekt in PrimeCrest an und erstellen den ersten Kostenrahmen nach DIN 276. Dazu richten wir die Plattform ein, erfassen das Budget und prüfen, ob Größenordnung und Projektumfang zusammenpassen.",
    "chapters": [
     {
      "t": 0,
@@ -1944,7 +1944,7 @@
   {
    "youtubeId": "dbq7iB3qhF0",
    "title": "🇩🇪 DE • 02/08 | Kostenschätzung nach DIN 276 erstellen | Kostenrahmen sicher vergleichen",
-   "summary": "Wir erstellen eine Kostenschätzung nach DIN 276 in OpenConstructionERP und vergleichen sie mit dem bisherigen Kostenrahmen. Dabei schauen wir auf die Abweichungen und bereiten die Zahlen für den nächsten Planungsbeschluss auf.",
+   "summary": "Wir erstellen eine Kostenschätzung nach DIN 276 in PrimeCrest und vergleichen sie mit dem bisherigen Kostenrahmen. Dabei schauen wir auf die Abweichungen und bereiten die Zahlen für den nächsten Planungsbeschluss auf.",
    "chapters": [
     {
      "t": 0,
@@ -1994,7 +1994,7 @@
   {
    "youtubeId": "buytHXRaav4",
    "title": "🇩🇪 DE • 04/08 | Kostenvoranschlag und GAEB | Leistungsverzeichnis bepreisen",
-   "summary": "Wir bepreisen ein Leistungsverzeichnis für den Rohbau und erstellen daraus den Kostenvoranschlag in OpenConstructionERP. Anschließend bereiten wir die GAEB-Datei für die Weitergabe an die Bieter vor.",
+   "summary": "Wir bepreisen ein Leistungsverzeichnis für den Rohbau und erstellen daraus den Kostenvoranschlag in PrimeCrest. Anschließend bereiten wir die GAEB-Datei für die Weitergabe an die Bieter vor.",
    "chapters": [
     {
      "t": 0,
@@ -2019,7 +2019,7 @@
   {
    "youtubeId": "U3YiFn9sEUs",
    "title": "🇩🇪 DE • 05/08 | Vergabe im Bauwesen | Angebote vergleichen und Auftrag vergeben",
-   "summary": "Die Rohbauangebote liegen vor. Wir vergleichen sie im Preisspiegel, prüfen auffällige Preise und halten offene Fragen fest, bevor der Auftrag vergeben wird. Das Beispiel zeigt die einzelnen Schritte in OpenConstructionERP.",
+   "summary": "Die Rohbauangebote liegen vor. Wir vergleichen sie im Preisspiegel, prüfen auffällige Preise und halten offene Fragen fest, bevor der Auftrag vergeben wird. Das Beispiel zeigt die einzelnen Schritte in PrimeCrest.",
    "chapters": [
     {
      "t": 0,
@@ -2044,7 +2044,7 @@
   {
    "youtubeId": "XSotB6IPhR0",
    "title": "🇩🇪 DE • 06/08 | Baubeginn organisieren | Bauzeitenplan und Bautagebuch anlegen",
-   "summary": "Nach der Vergabe beginnt die Vorbereitung der Baustelle. In OpenConstructionERP legen wir einen Bauzeitenplan an, dokumentieren den Baubeginn und führen die ersten Einträge im Bautagebuch. Dabei geht es auch darum, welche Nachweise später noch gebraucht werden.",
+   "summary": "Nach der Vergabe beginnt die Vorbereitung der Baustelle. In PrimeCrest legen wir einen Bauzeitenplan an, dokumentieren den Baubeginn und führen die ersten Einträge im Bautagebuch. Dabei geht es auch darum, welche Nachweise später noch gebraucht werden.",
    "chapters": [
     {
      "t": 0,
@@ -2069,7 +2069,7 @@
   {
    "youtubeId": "bDLHOMF6ZoE",
    "title": "🇩🇪 DE • 07/08 | Nachträge und Abschlagsrechnungen prüfen | Baukosten sicher steuern",
-   "summary": "Wir prüfen einen Nachtrag und zwei Abschlagsrechnungen in OpenConstructionERP. Dabei gleichen wir Leistungen und Beträge mit dem Vertrag ab und schauen uns an, wie der Sicherheitseinbehalt in der Prüfung berücksichtigt wird.",
+   "summary": "Wir prüfen einen Nachtrag und zwei Abschlagsrechnungen in PrimeCrest. Dabei gleichen wir Leistungen und Beträge mit dem Vertrag ab und schauen uns an, wie der Sicherheitseinbehalt in der Prüfung berücksichtigt wird.",
    "chapters": [
     {
      "t": 0,
@@ -2094,7 +2094,7 @@
   {
    "youtubeId": "yLdicouAJw0",
    "title": "🇩🇪 DE • 08/08 | Bauabnahme und Schlussrechnung | Mängel, Kosten und Abschluss im Griff",
-   "summary": "Zum Projektabschluss stehen Abnahme, offene Mängel und Schlussrechnung an. Wir gehen diese Schritte in OpenConstructionERP durch und führen die Kostenplanung mit der Kostenfeststellung nach DIN 276 zu Ende.",
+   "summary": "Zum Projektabschluss stehen Abnahme, offene Mängel und Schlussrechnung an. Wir gehen diese Schritte in PrimeCrest durch und führen die Kostenplanung mit der Kostenfeststellung nach DIN 276 zu Ende.",
    "chapters": [
     {
      "t": 0,
@@ -2118,8 +2118,8 @@
   },
   {
    "youtubeId": "Auk8aTmzvJI",
-   "title": "🇧🇬 BG • 01/09 | Акт 19: от изпълнените СМР до сумата за плащане | OpenConstructionERP",
-   "summary": "Как отчитаме изпълнените строително-монтажни работи и стигаме до сумата за плащане по Акт 19? В този урок с OpenConstructionERP записваме напредъка, съставяме акта и проверяваме сумите преди подаване.",
+   "title": "🇧🇬 BG • 01/09 | Акт 19: от изпълнените СМР до сумата за плащане | PrimeCrest",
+   "summary": "Как отчитаме изпълнените строително-монтажни работи и стигаме до сумата за плащане по Акт 19? В този урок с PrimeCrest записваме напредъка, съставяме акта и проверяваме сумите преди подаване.",
    "chapters": [
     {
      "t": 0,
@@ -2144,7 +2144,7 @@
   {
    "youtubeId": "vJDdp-n1tqE",
    "title": "🇧🇬 BG • 02/09 | КСС и оферта: импорт от Excel, проверка на цените и ДДС",
-   "summary": "Количествената сметка е в Excel, а инвеститорът очаква оферта. В този урок импортираме КСС в OpenConstructionERP, проверяваме сигналите за цените и добавяме ДДС, за да получим ясна крайна сума.",
+   "summary": "Количествената сметка е в Excel, а инвеститорът очаква оферта. В този урок импортираме КСС в PrimeCrest, проверяваме сигналите за цените и добавяме ДДС, за да получим ясна крайна сума.",
    "chapters": [
     {
      "t": 0,
@@ -2194,7 +2194,7 @@
   {
    "youtubeId": "0j-lgJBwemU",
    "title": "🇧🇬 BG • 04/09 | Договор и линеен график: срок, аванс и етапи на строителството",
-   "summary": "Подписаният договор трябва да се превърне в работещ график. Свързваме срока, аванса и основните строителни етапи в OpenConstructionERP и проследяваме как началната дата определя планирания край.",
+   "summary": "Подписаният договор трябва да се превърне в работещ график. Свързваме срока, аванса и основните строителни етапи в PrimeCrest и проследяваме как началната дата определя планирания край.",
    "chapters": [
     {
      "t": 0,
@@ -2268,8 +2268,8 @@
   },
   {
    "youtubeId": "6p-Fd4z8lJI",
-   "title": "🇪🇸 ES • 01/08 | Certificación de obra: del avance mensual al cobro | OpenConstructionERP",
-   "summary": "Preparamos una certificación mensual de obra en OpenConstructionERP a partir del avance registrado. El ejemplo de un centro cívico permite seguir la medición a origen, descontar lo certificado anteriormente y revisar lo que corresponde certificar este mes.",
+   "title": "🇪🇸 ES • 01/08 | Certificación de obra: del avance mensual al cobro | PrimeCrest",
+   "summary": "Preparamos una certificación mensual de obra en PrimeCrest a partir del avance registrado. El ejemplo de un centro cívico permite seguir la medición a origen, descontar lo certificado anteriormente y revisar lo que corresponde certificar este mes.",
    "chapters": [
     {
      "t": 0,
@@ -2294,7 +2294,7 @@
   {
    "youtubeId": "7vpNLucFvRw",
    "title": "🇪🇸 ES • 02/08 | Importar BC3 y preparar una oferta de obra: PEM, gastos y baja",
-   "summary": "Importamos un presupuesto BC3 en OpenConstructionERP y lo utilizamos para preparar una oferta. Revisamos el PEM, incorporamos los gastos generales y el beneficio industrial y aplicamos la baja, conservando el presupuesto original.",
+   "summary": "Importamos un presupuesto BC3 en PrimeCrest y lo utilizamos para preparar una oferta. Revisamos el PEM, incorporamos los gastos generales y el beneficio industrial y aplicamos la baja, conservando el presupuesto original.",
    "chapters": [
     {
      "t": 0,
@@ -2319,7 +2319,7 @@
   {
    "youtubeId": "-MgaCjU3OUs",
    "title": "🇪🇸 ES • 03/08 | Comparativo de ofertas de obra: precio, alcance y adjudicación",
-   "summary": "Comparamos tres ofertas de subcontratación para un mismo paquete de obra. En OpenConstructionERP registramos las propuestas, detectamos una partida que falta y ajustamos el alcance para poder comparar los importes antes de adjudicar.",
+   "summary": "Comparamos tres ofertas de subcontratación para un mismo paquete de obra. En PrimeCrest registramos las propuestas, detectamos una partida que falta y ajustamos el alcance para poder comparar los importes antes de adjudicar.",
    "chapters": [
     {
      "t": 0,
@@ -2344,7 +2344,7 @@
   {
    "youtubeId": "_FpWJUShp_8",
    "title": "🇪🇸 ES • 04/08 | Precio contradictorio: valorar y aprobar un cambio de obra",
-   "summary": "En el ejemplo aparece una unidad de obra que no estaba prevista. Preparamos su precio contradictorio, lo vinculamos a una orden de cambio y revisamos el efecto sobre el importe del contrato en OpenConstructionERP.",
+   "summary": "En el ejemplo aparece una unidad de obra que no estaba prevista. Preparamos su precio contradictorio, lo vinculamos a una orden de cambio y revisamos el efecto sobre el importe del contrato en PrimeCrest.",
    "chapters": [
     {
      "t": 0,
@@ -2369,7 +2369,7 @@
   {
    "youtubeId": "qos-7di7F3k",
    "title": "🇪🇸 ES • 05/08 | Control de costes de obra: cierre de mes y margen real",
-   "summary": "Revisamos el cierre mensual de una obra en OpenConstructionERP: costes reales, producción e indirectos. Después actualizamos la previsión hasta el final del proyecto para comparar el margen del mes con el margen esperado al terminar.",
+   "summary": "Revisamos el cierre mensual de una obra en PrimeCrest: costes reales, producción e indirectos. Después actualizamos la previsión hasta el final del proyecto para comparar el margen del mes con el margen esperado al terminar.",
    "chapters": [
     {
      "t": 0,
@@ -2394,7 +2394,7 @@
   {
    "youtubeId": "0RGgbCbCID4",
    "title": "🇪🇸 ES • 06/08 | Recepción y liquidación de obra: repasos, certificación y garantía",
-   "summary": "Repasamos el cierre de una obra, desde la recepción y los trabajos pendientes hasta la certificación final y la liquidación. El ejemplo muestra qué documentación revisamos en OpenConstructionERP y cómo queda reflejada la garantía.",
+   "summary": "Repasamos el cierre de una obra, desde la recepción y los trabajos pendientes hasta la certificación final y la liquidación. El ejemplo muestra qué documentación revisamos en PrimeCrest y cómo queda reflejada la garantía.",
    "chapters": [
     {
      "t": 0,
@@ -2419,7 +2419,7 @@
   {
    "youtubeId": "zaBq-81hY2M",
    "title": "🇪🇸 ES • 07/08 | Obra privada: certificación, retención del 5 % y factura",
-   "summary": "Seguimos una certificación de obra privada con una retención del 5 % en OpenConstructionERP. Revisamos el importe certificado, la factura y la cantidad retenida que queda pendiente de recuperar.",
+   "summary": "Seguimos una certificación de obra privada con una retención del 5 % en PrimeCrest. Revisamos el importe certificado, la factura y la cantidad retenida que queda pendiente de recuperar.",
    "chapters": [
     {
      "t": 0,
@@ -2444,7 +2444,7 @@
   {
    "youtubeId": "Zv92rqNlims",
    "title": "🇪🇸 ES • 08/08 | Diario de obra e inspecciones: órdenes y no conformidades",
-   "summary": "Registramos una incidencia de obra y seguimos su resolución en OpenConstructionERP. El recorrido conecta el diario, las órdenes, las inspecciones y las no conformidades para comprobar qué se hizo y si la incidencia quedó cerrada.",
+   "summary": "Registramos una incidencia de obra y seguimos su resolución en PrimeCrest. El recorrido conecta el diario, las órdenes, las inspecciones y las no conformidades para comprobar qué se hizo y si la incidencia quedó cerrada.",
    "chapters": [
     {
      "t": 0,
@@ -2519,7 +2519,7 @@
   {
    "youtubeId": "evHdLJ2kHjo",
    "title": "🇧🇬 BG • 09/09 | Строителен дневник и проверки: забележки, срокове и проследяване",
-   "summary": "Строителен дневник, проверки и проследяване на забележки в OpenConstructionERP. Записваме какво е станало на обекта, кой отговаря за отстраняването и в какъв срок трябва да приключи работата.",
+   "summary": "Строителен дневник, проверки и проследяване на забележки в PrimeCrest. Записваме какво е станало на обекта, кой отговаря за отстраняването и в какъв срок трябва да приключи работата.",
    "chapters": [
     {
      "t": 0,
@@ -2544,7 +2544,7 @@
   {
    "youtubeId": "T6S5qe1Zej0",
    "title": "🇨🇳 CN • 01/08 | 工程量清单投标价怎么算：四大块与增值税陷阱 | Builder's Playbook",
-   "summary": "按 GB/T 50500-2024 新标准，投标价只剩分部分项、措施项目、其他项目、增值税四大块。本课在 OpenConstructionERP 里搭好清单，找出已含税的专业工程暂估价被重复计税、多算76,500元的原因，再对照最高投标限价，留好答疑的书面回复，最后校验并锁定估价单。",
+   "summary": "按 GB/T 50500-2024 新标准，投标价只剩分部分项、措施项目、其他项目、增值税四大块。本课在 PrimeCrest 里搭好清单，找出已含税的专业工程暂估价被重复计税、多算76,500元的原因，再对照最高投标限价，留好答疑的书面回复，最后校验并锁定估价单。",
    "chapters": [
     {
      "t": 0,
@@ -2619,7 +2619,7 @@
   {
    "youtubeId": "RMkE083ld4g",
    "title": "🇨🇳 CN • 04/08 | 进度款怎么算：干了361万，为什么只到账252.7万 | Builder's Playbook",
-   "summary": "以开工第六个月为例，按累计口径算进度款：已完成价款乘以80%，减去累计扣回的预付款和前五期已付。本课在 OpenConstructionERP 里新建第六期、跑提交检查，并讲清付款时钟、人工费单列和开票与纳税义务的先后。",
+   "summary": "以开工第六个月为例，按累计口径算进度款：已完成价款乘以80%，减去累计扣回的预付款和前五期已付。本课在 PrimeCrest 里新建第六期、跑提交检查，并讲清付款时钟、人工费单列和开票与纳税义务的先后。",
    "chapters": [
     {
      "t": 0,
@@ -2669,7 +2669,7 @@
   {
    "youtubeId": "CgDCn1FnyFA",
    "title": "🇨🇳 CN • 06/08 | 材料调差与费用索赔：钢筋涨价和停工7天怎么算 | Builder's Playbook",
-   "summary": "按案例合同把两笔钱分开算：材料价差结合基准价格和约定的风险幅度计算；本案例对停工7天仅提出费用索赔。本课在 OpenConstructionERP 里提交调差和费用索赔，并演示按案例合同约定办理采购核对和28天索赔意向通知。实际项目是否涉及工期索赔，需结合停工原因、进度影响和适用合同判断。",
+   "summary": "按案例合同把两笔钱分开算：材料价差结合基准价格和约定的风险幅度计算；本案例对停工7天仅提出费用索赔。本课在 PrimeCrest 里提交调差和费用索赔，并演示按案例合同约定办理采购核对和28天索赔意向通知。实际项目是否涉及工期索赔，需结合停工原因、进度影响和适用合同判断。",
    "chapters": [
     {
      "t": 0,
@@ -2744,7 +2744,7 @@
   {
    "youtubeId": "mFqMUQyn5XE",
    "title": "🇮🇹 IT • 01/08 | Come leggere il computo metrico prima di fare l'offerta | Builder's Playbook",
-   "summary": "Un computo da 2.625.000 euro, di cui 75.000 di oneri della sicurezza non ribassabili. In questa lezione apri il computo metrico estimativo di una palazzina in OpenConstructionERP, controlli una voce (descrizione, unità di misura, quantità, prezzo unitario), leggi i subtotali dei capitoli e controlli quali importi dell'esempio sono soggetti a ribasso e quali sono esclusi.",
+   "summary": "Un computo da 2.625.000 euro, di cui 75.000 di oneri della sicurezza non ribassabili. In questa lezione apri il computo metrico estimativo di una palazzina in PrimeCrest, controlli una voce (descrizione, unità di misura, quantità, prezzo unitario), leggi i subtotali dei capitoli e controlli quali importi dell'esempio sono soggetti a ribasso e quali sono esclusi.",
    "chapters": [
     {
      "t": 0,
@@ -2844,7 +2844,7 @@
   {
    "youtubeId": "1xuPD4FZmjM",
    "title": "🇮🇹 IT • 06/08 | Stato di avanzamento lavori: dal certificato alla fattura",
-   "summary": "Segui il secondo stato di avanzamento lavori del caso didattico: da 1.009.800 euro di importo progressivo a un certificato di pagamento di 459.990 euro. In OpenConstructionERP porti le misure di cantiere nelle righe del SAL, controlli la ritenuta di garanzia e gli importi già certificati, registri il certificato e prepari la fattura. La lezione distingue anche le diverse ritenute richiamate nell'esempio.",
+   "summary": "Segui il secondo stato di avanzamento lavori del caso didattico: da 1.009.800 euro di importo progressivo a un certificato di pagamento di 459.990 euro. In PrimeCrest porti le misure di cantiere nelle righe del SAL, controlli la ritenuta di garanzia e gli importi già certificati, registri il certificato e prepari la fattura. La lezione distingue anche le diverse ritenute richiamate nell'esempio.",
    "chapters": [
     {
      "t": 0,
@@ -2869,7 +2869,7 @@
   {
    "youtubeId": "nNtFb3V5sjI",
    "title": "🇮🇹 IT • 07/08 | Consuntivo di cantiere: dove è finito il margine",
-   "summary": "Confronta, capitolo per capitolo, il valore dei lavori maturati, i costi sostenuti e il margine rispetto al preventivo interno. Segui il caso didattico in OpenConstructionERP per ricostruire uno scostamento di 46.000 euro tra strutture e scavi. La lezione affronta anche la revisione dei prezzi e un esempio di calcolo degli interessi di mora per un pagamento arrivato con 30 giorni di ritardo.",
+   "summary": "Confronta, capitolo per capitolo, il valore dei lavori maturati, i costi sostenuti e il margine rispetto al preventivo interno. Segui il caso didattico in PrimeCrest per ricostruire uno scostamento di 46.000 euro tra strutture e scavi. La lezione affronta anche la revisione dei prezzi e un esempio di calcolo degli interessi di mora per un pagamento arrivato con 30 giorni di ritardo.",
    "chapters": [
     {
      "t": 0,
@@ -2894,7 +2894,7 @@
   {
    "youtubeId": "CGd6du3bN2o",
    "title": "🇮🇹 IT • 08/08 | Fine lavori: collaudo e svincolo della ritenuta",
-   "summary": "Collaudo dei lavori e svincolo della ritenuta di garanzia in OpenConstructionERP: segui la chiusura del cantiere, dalla verifica dei difetti alla preparazione della fattura. Nel caso didattico, il conto finale è di 2.595.800 euro e la ritenuta ancora trattenuta è di 129.790 euro.",
+   "summary": "Collaudo dei lavori e svincolo della ritenuta di garanzia in PrimeCrest: segui la chiusura del cantiere, dalla verifica dei difetti alla preparazione della fattura. Nel caso didattico, il conto finale è di 2.595.800 euro e la ritenuta ancora trattenuta è di 129.790 euro.",
    "chapters": [
     {
      "t": 0,
@@ -2919,7 +2919,7 @@
   {
    "youtubeId": "6tic-wT9gkY",
    "title": "🇺🇸 US • 05/10 | Bid Leveling: Three Quotes, One Job",
-   "summary": "Compare three framing bids in OpenConstructionERP using the same scope of work. This bid-leveling example follows a trade package from the estimate through quotations and adjustments to the subcontractor award.",
+   "summary": "Compare three framing bids in PrimeCrest using the same scope of work. This bid-leveling example follows a trade package from the estimate through quotations and adjustments to the subcontractor award.",
    "chapters": [
     {
      "t": 0,
@@ -2944,7 +2944,7 @@
   {
    "youtubeId": "-QkgVm0qljc",
    "title": "🇺🇸 US • 06/10 | Budget vs Actual: Track Every Dollar",
-   "summary": "Compare your construction budget with recorded commitments and payments in OpenConstructionERP. This lesson shows how to identify cost differences and build an estimate at completion for the example project.",
+   "summary": "Compare your construction budget with recorded commitments and payments in PrimeCrest. This lesson shows how to identify cost differences and build an estimate at completion for the example project.",
    "chapters": [
     {
      "t": 0,
@@ -2969,7 +2969,7 @@
   {
    "youtubeId": "HXskOZ9gT8I",
    "title": "🇺🇸 US • 07/10 | Build the Schedule: What Cannot Slip",
-   "summary": "Build a construction schedule from an estimate in OpenConstructionERP. Using the duplex example, we connect tasks, set dependencies and lag, and check the critical path to see which delays would affect the finish date.",
+   "summary": "Build a construction schedule from an estimate in PrimeCrest. Using the duplex example, we connect tasks, set dependencies and lag, and check the critical path to see which delays would affect the finish date.",
    "chapters": [
     {
      "t": 0,
@@ -2994,7 +2994,7 @@
   {
    "youtubeId": "HIGkbWlYolU",
    "title": "🇺🇸 US • 08/10 | Manage Your Subs: Pay, Hold Back",
-   "summary": "Follow the framing subcontract on the example duplex through its agreement, a change order, payment and retainage in OpenConstructionERP. Retainage terms and release requirements depend on the applicable contract and law.",
+   "summary": "Follow the framing subcontract on the example duplex through its agreement, a change order, payment and retainage in PrimeCrest. Retainage terms and release requirements depend on the applicable contract and law.",
    "chapters": [
     {
      "t": 0,
@@ -3019,7 +3019,7 @@
   {
    "youtubeId": "dYzCNLLfKBI",
    "title": "🇺🇸 US • 09/10 | On Site: Log, Inspect, Fix",
-   "summary": "Follow a site issue from the construction daily log through inspection, an NCR and a punch-list item in OpenConstructionERP. The duplex example shows how the team records the problem, assigns the corrective work and verifies the fix.",
+   "summary": "Follow a site issue from the construction daily log through inspection, an NCR and a punch-list item in PrimeCrest. The duplex example shows how the team records the problem, assigns the corrective work and verifies the fix.",
    "chapters": [
     {
      "t": 0,
@@ -3044,7 +3044,7 @@
   {
    "youtubeId": "lXj3jik1hfE",
    "title": "🇺🇸 US • 10/10 | The Big Picture: KPIs to Portfolio",
-   "summary": "Use construction KPIs and project dashboards in OpenConstructionERP to see which jobs need attention. This lesson moves from one project’s cost, schedule and quality records to a comparison of the whole portfolio.",
+   "summary": "Use construction KPIs and project dashboards in PrimeCrest to see which jobs need attention. This lesson moves from one project’s cost, schedule and quality records to a comparison of the whole portfolio.",
    "chapters": [
     {
      "t": 0,
@@ -3069,7 +3069,7 @@
   {
    "youtubeId": "hAtxO0Oy_W0",
    "title": "🇬🇧 EN • 01/05 | How to Read a Construction Estimate Line by Line",
-   "summary": "Learn how to read a construction estimate, check quantities and unit rates, and spot missing scope before you trust the total. We work through a duplex example in OpenConstructionERP, from individual line items to overhead, profit and contingency.",
+   "summary": "Learn how to read a construction estimate, check quantities and unit rates, and spot missing scope before you trust the total. We work through a duplex example in PrimeCrest, from individual line items to overhead, profit and contingency.",
    "chapters": [
     {
      "t": 0,
@@ -3147,7 +3147,7 @@
   {
    "youtubeId": "J6-iVD_Iw0Q",
    "title": "🇬🇧 EN • 03/05 | How to Do a Quantity Takeoff from PDF Drawings (Free Software)",
-   "summary": "Turn a PDF floor plan into measured quantities and a priced estimate in OpenConstructionERP. We calibrate the drawing, check a second dimension, measure room areas and count windows and doors.",
+   "summary": "Turn a PDF floor plan into measured quantities and a priced estimate in PrimeCrest. We calibrate the drawing, check a second dimension, measure room areas and count windows and doors.",
    "chapters": [
     {
      "t": 0,
@@ -3172,7 +3172,7 @@
   {
    "youtubeId": "-WFhnoP0sM8",
    "title": "🇬🇧 EN • 04/05 | BIM to Cost Estimate: Revit IFC Quantities in Free Software",
-   "summary": "Take an IFC model exported from Revit and turn its quantities into a cost estimate in OpenConstructionERP. We use a duplex model to inspect elements, extract quantities, apply unit rates and review what changes when the model is revised.",
+   "summary": "Take an IFC model exported from Revit and turn its quantities into a cost estimate in PrimeCrest. We use a duplex model to inspect elements, extract quantities, apply unit rates and review what changes when the model is revised.",
    "chapters": [
     {
      "t": 0,
@@ -3197,7 +3197,7 @@
   {
    "youtubeId": "y_Ctlq5LzQ0",
    "title": "🇬🇧 EN • 05/05 | Excel vs Estimating Software: Same Job, Side by Side",
-   "summary": "We estimate the same garage job in Excel and OpenConstructionERP, using the same quantities, unit rates and 15% markup. Five deliberately planted spreadsheet errors let us test what each workflow catches and what still needs a human check.",
+   "summary": "We estimate the same garage job in Excel and PrimeCrest, using the same quantities, unit rates and 15% markup. Five deliberately planted spreadsheet errors let us test what each workflow catches and what still needs a human check.",
    "chapters": [
     {
      "t": 0,
@@ -3259,7 +3259,7 @@
  "playlists": [
   {
    "id": "PLEhAODe5YAXM",
-   "title": "OpenConstructionERP en français — gérer un chantier",
+   "title": "PrimeCrest en français — gérer un chantier",
    "videos": [
     "L1DUikMF04Y",
     "ZXbWsG_Syuo",
@@ -3297,7 +3297,7 @@
   },
   {
    "id": "PLKN9p-CuMMkE",
-   "title": "OpenConstructionERP auf Deutsch – vom Projektstart bis zur Übergabe",
+   "title": "PrimeCrest auf Deutsch – vom Projektstart bis zur Übergabe",
    "videos": [
     "IM9hK6kCZCs",
     "LP-CZOhu6OA",
@@ -3315,7 +3315,7 @@
   },
   {
    "id": "PLOCZ6EOWyC_A",
-   "title": "Builder's Playbook 中国：工程造价与施工管理 | OpenConstructionERP",
+   "title": "Builder's Playbook 中国：工程造价与施工管理 | PrimeCrest",
    "videos": [
     "T6S5qe1Zej0",
     "6LGci99_yrU",
@@ -3377,7 +3377,7 @@
   },
   {
    "id": "PLWgzwe9nHkSc",
-   "title": "Builder's Playbook USA: Construction Management with OpenConstructionERP",
+   "title": "Builder's Playbook USA: Construction Management with PrimeCrest",
    "videos": [
     "WjDK-uk9b1w",
     "kEN-F92hNZc",

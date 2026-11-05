@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Change Intelligence module manifest."""
 
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
         "long (cycle-time telemetry), with no tables of its own and no "
         "migration - it queries the existing change records"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="controls",
     depends=[
         "oe_users",

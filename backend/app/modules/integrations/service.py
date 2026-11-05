@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Webhook dispatch service.
 
@@ -151,7 +151,7 @@ class WebhookService:
         """Send a test payload to the webhook and return the delivery record."""
         test_payload = {
             "event": "webhook.test",
-            "message": "This is a test delivery from OpenConstructionERP.",
+            "message": "This is a test delivery from PrimeCrest.",
             "webhook_id": str(webhook.id),
             "timestamp": datetime.now(UTC).isoformat(),
         }

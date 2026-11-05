@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Pure preliminaries engine - all pricing logic, zero I/O.
 
 This module imports nothing from :mod:`app.database`, SQLAlchemy, FastAPI or any

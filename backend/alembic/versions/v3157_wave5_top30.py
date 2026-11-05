@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """TOP-30 Wave 5: ITP hold points, EVM forecast alerts, clash profiles,
 compliance rule packs, agent automation, takt scheduling.

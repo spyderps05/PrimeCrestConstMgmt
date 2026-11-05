@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Approving a daywork timesheet must post the hours, whatever daywork does.
 
 Approving a field timesheet mirrors each daywork line onto a daywork sheet in

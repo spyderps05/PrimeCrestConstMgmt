@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Saved Views module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "registered entity, share it with a team or a project, and reuse it as "
         "a list, count, tile, or export."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     # oe_teams owns team membership; a team share resolves through it and the
     # saved-view table carries a foreign key into its team table.

@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // <PriceListsPanel /> shows the list (gross) price, the discount and the net price side by

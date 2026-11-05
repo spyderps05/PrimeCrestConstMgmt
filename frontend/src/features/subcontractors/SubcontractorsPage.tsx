@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import { useState, useMemo, useEffect, Fragment, type ReactNode } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
@@ -2202,7 +2202,7 @@ function SubcontractorFormModal({
             value={form.legal_name}
             onChange={(e) => set('legal_name', e.target.value)}
             className={inputCls}
-            placeholder="Acme Construction Ltd."
+            placeholder="Crescent Builders (Pvt) Ltd"
           />
         </WideModalField>
         <WideModalField

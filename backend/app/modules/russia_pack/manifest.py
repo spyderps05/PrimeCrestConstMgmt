@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Module manifest for oe_russia_pack."""
 
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
     description=(
         "Russian construction standards: GESN/FER/TER cost databases, NDS rates, and Russian contract templates."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="regional",
     depends=[],
     auto_install=False,

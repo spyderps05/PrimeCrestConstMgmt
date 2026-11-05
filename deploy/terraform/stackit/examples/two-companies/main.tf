@@ -1,4 +1,4 @@
-# OpenConstructionERP on STACKIT - one isolated instance per company
+# PrimeCrest on STACKIT - one isolated instance per company
 #
 # Usage:
 #   cd deploy/terraform/stackit/examples/two-companies

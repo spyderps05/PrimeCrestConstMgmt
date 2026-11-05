@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Tests for the desktop "open in your browser" bridge.
@@ -300,9 +300,9 @@ describe('revealing a file in the OS file manager', () => {
  */
 describe('outbound links from the header menus', () => {
   const MAIL =
-    'mailto:info@datadrivenconstruction.io?subject=OpenConstructionERP%20Issue&body=I%20clicked%20Install';
+    'mailto:info@datadrivenconstruction.io?subject=PrimeCrest%20Issue&body=I%20clicked%20Install';
   const FORM = 'https://openconstructionerp.com/contact.html?report=true&app_version=18.5.0';
-  const ISSUE = 'https://github.com/datadrivenconstruction/OpenConstructionERP/issues/new?title=x&body=y';
+  const ISSUE = 'https://github.com/datadrivenconstruction/PrimeCrest/issues/new?title=x&body=y';
 
   it('hands every external link and mail link to the OS opener on desktop', async () => {
     const invoke = vi.fn().mockResolvedValue(undefined);
@@ -338,8 +338,8 @@ describe('outbound links from the header menus', () => {
 
     const links: Array<[string, string]> = [
       ['https://openconstructionerp.com/docs', '_blank'],
-      ['https://github.com/datadrivenconstruction/OpenConstructionERP', '_blank'],
-      ['mailto:info@datadrivenconstruction.io?subject=OpenConstructionERP%20Issue%20Report', ''],
+      ['https://github.com/datadrivenconstruction/PrimeCrest', '_blank'],
+      ['mailto:info@datadrivenconstruction.io?subject=PrimeCrest%20Issue%20Report', ''],
       ['/how-it-works', ''],
     ];
     const anchors = links.map(([href, target]) => {
@@ -363,8 +363,8 @@ describe('outbound links from the header menus', () => {
     expect(prevented).toEqual([true, true, true, false]);
     expect(invoke.mock.calls.map((call) => (call[1] as { url: string }).url)).toEqual([
       'https://openconstructionerp.com/docs',
-      'https://github.com/datadrivenconstruction/OpenConstructionERP',
-      'mailto:info@datadrivenconstruction.io?subject=OpenConstructionERP%20Issue%20Report',
+      'https://github.com/datadrivenconstruction/PrimeCrest',
+      'mailto:info@datadrivenconstruction.io?subject=PrimeCrest%20Issue%20Report',
     ]);
     anchors.forEach((label) => label.parentElement?.remove());
   });

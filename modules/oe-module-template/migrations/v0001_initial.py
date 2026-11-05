@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """‌⁠‍{{display_name}} initial schema — create ``oe_{{module_short}}_item``.
 
 Idempotent and inspector-guarded so re-runs on a partially-migrated

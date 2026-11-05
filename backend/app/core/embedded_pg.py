@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Optional embedded PostgreSQL runtime - a real PG16 in-process, no Docker.
 
@@ -1427,7 +1427,7 @@ PGDATA_POINTER_NAME = "pgdata.location"
 def _relocated_pgdata(default: Path) -> Path | None:
     r"""Where a cluster goes when its natural home is not an ASCII path, if anywhere.
 
-    ``%ProgramData%\OpenConstructionERP\clusters\<key>\pgdata``, where the key is
+    ``%ProgramData%\PrimeCrest\clusters\<key>\pgdata``, where the key is
     a hash of the data directory, so it is the same answer on every call and for
     every caller without anything having to exist first. The 8.3 short name of
     the data directory was considered and not used: it exists only after the
@@ -1441,7 +1441,7 @@ def _relocated_pgdata(default: Path) -> Path | None:
         return None
     key_source = os.path.normcase(os.path.abspath(str(default.parent)))
     key = hashlib.sha256(key_source.encode("utf-8")).hexdigest()[:16]
-    return Path(base) / "OpenConstructionERP" / "clusters" / key / "pgdata"
+    return Path(base) / "PrimeCrest" / "clusters" / key / "pgdata"
 
 
 def _cluster_has_run(pgdata: Path) -> bool:
@@ -1681,11 +1681,11 @@ def bundled_binaries_must_be_ascii() -> bool:
 
 
 def _private_binaries_home() -> Path | None:
-    r"""``%LOCALAPPDATA%\OpenConstructionERP\pginstall``, or ``None`` when that is not ASCII."""
+    r"""``%LOCALAPPDATA%\PrimeCrest\pginstall``, or ``None`` when that is not ASCII."""
     local = os.environ.get("LOCALAPPDATA")
     if not local or not local.isascii():
         return None
-    return Path(local) / "OpenConstructionERP" / "pginstall"
+    return Path(local) / "PrimeCrest" / "pginstall"
 
 
 def _shared_binaries_base() -> Path | None:
@@ -1788,7 +1788,7 @@ def _copy_to_shared_base(install: Path, base: Path) -> Path | None:
     import tempfile
 
     user = hashlib.sha256(os.path.normcase(os.path.expanduser("~")).encode("utf-8")).hexdigest()[:8]
-    prefix = f"OpenConstructionERP-pg-{user}-"
+    prefix = f"PrimeCrest-pg-{user}-"
     fresh = Path(tempfile.mkdtemp(prefix=prefix, dir=base))
     if not _restrict_to_current_user(fresh):
         shutil.rmtree(fresh, ignore_errors=True)
@@ -1911,7 +1911,7 @@ def windows_path_limit_problem(pgdata: Path | str) -> PathTooLong | None:
         "The folder the local database lives in sits too deep in the filesystem for Windows to "
         "let PostgreSQL open the files inside it.",
         "Start the application with a shorter data directory, for example "
-        "openconstructionerp serve --data-dir C:\\OpenConstructionERP\\data, or set the "
+        "openconstructionerp serve --data-dir C:\\PrimeCrest\\data, or set the "
         "OE_DATA_DIR environment variable to that path.",
     )
 
@@ -1922,7 +1922,7 @@ def windows_path_limit_problem(pgdata: Path | str) -> PathTooLong | None:
             _PGINSTALL_LONGEST_RELATIVE,
             "The PostgreSQL that ships with this application sits too deep in the filesystem "
             "for Windows to let it open its own files.",
-            "Install OpenConstructionERP somewhere shorter, for example C:\\OpenConstructionERP, and this goes away.",
+            "Install PrimeCrest somewhere shorter, for example C:\\PrimeCrest, and this goes away.",
         )
         if install_problem is not None:
             if data_problem is None:
@@ -2156,8 +2156,8 @@ def _clear_incomplete_cluster(pgdata: Path) -> None:
 
 #: Delimits the settings this module owns inside ``postgresql.conf``, so the
 #: block can be rewritten in place instead of appended to on every boot.
-_SETTINGS_BEGIN = "# BEGIN OpenConstructionERP settings (managed, do not edit)"
-_SETTINGS_END = "# END OpenConstructionERP settings"
+_SETTINGS_BEGIN = "# BEGIN PrimeCrest settings (managed, do not edit)"
+_SETTINGS_END = "# END PrimeCrest settings"
 
 #: Lock slots are a shared pool sized ``max_locks_per_transaction`` times
 #: ``max_connections``, not a per-transaction allowance. The platform's schema

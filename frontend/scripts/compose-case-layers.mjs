@@ -569,7 +569,7 @@ function emitChips(chips, indent) {
 
 function emitPlaybook(family, spine, layer, pb) {
   const L = [];
-  L.push('// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP');
+  L.push('// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest');
   L.push('// Copyright (c) 2026 Artem Boiko / DataDrivenConstruction');
   L.push('//');
   L.push(`// Case: "${pb.titleDefault}"${pb.region ? ` (${pb.region})` : ''}.`);

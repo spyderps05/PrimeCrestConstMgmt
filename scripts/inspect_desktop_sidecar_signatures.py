@@ -95,7 +95,7 @@ Usage:
     python scripts/inspect_desktop_sidecar_signatures.py desktop/dist/openconstructionerp-server
 
 The path may be the raw PyInstaller output or the same binary sitting inside a bundle, for
-example OpenConstructionERP.app/Contents/MacOS/openconstructionerp-server. Nothing here
+example PrimeCrest.app/Contents/MacOS/openconstructionerp-server. Nothing here
 treats a bundle specially: the member census reads the archive appended to the file, and
 codesign reports the file's own signature, both of which are the same questions wherever
 the file lives.

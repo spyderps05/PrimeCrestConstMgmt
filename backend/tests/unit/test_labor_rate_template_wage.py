@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Unit tests for the base-wage constraint on labor rate template payloads.
 
 A template whose base wage is zero builds up to an all-in rate of ``0.00``.

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Project Controls - executive cross-module controls dashboard (feature 09).
 
 Read-only across the platform. Assembles the cost + schedule + quality +

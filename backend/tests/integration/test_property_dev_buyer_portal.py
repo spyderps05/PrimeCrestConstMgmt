@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Buyer-portal own-snag / own-warranty visibility integration suite (task #156).
 
 The buyer-facing portal must let a buyer see ONLY their own snags +

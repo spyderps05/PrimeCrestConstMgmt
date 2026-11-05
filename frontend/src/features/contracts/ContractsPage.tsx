@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import { useState, useMemo, useEffect, Fragment } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
@@ -2361,12 +2361,33 @@ export function ContractDetailDrawer({
                   )
                 }
               />
-              <Field
-                label={t('contracts.retention_pct', {
-                  defaultValue: 'Retention %',
-                })}
-                value={fmtPercent(toNum(contract.retention_percent), 2)}
-              />
+              {String(contract.terms?.contract_form) === 'pec_sbd_2023_12' ? (
+                <>
+                  <Field
+                    label={t('contracts.pk.performance_security', {
+                      defaultValue: 'Performance security',
+                    })}
+                    value={t('contracts.pk.performance_security_value', {
+                      defaultValue: '10% of the accepted contract amount',
+                    })}
+                  />
+                  <Field
+                    label={t('contracts.pk.retention_money_limit', {
+                      defaultValue: 'Retention-money limit',
+                    })}
+                    value={t('contracts.pk.retention_money_limit_value', {
+                      defaultValue: '5% of the contract price',
+                    })}
+                  />
+                </>
+              ) : (
+                <Field
+                  label={t('contracts.retention_pct', {
+                    defaultValue: 'Retention %',
+                  })}
+                  value={fmtPercent(toNum(contract.retention_percent), 2)}
+                />
+              )}
               <Field
                 label={t('contracts.release_event', {
                   defaultValue: 'Retention release',

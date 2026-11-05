@@ -1,7 +1,7 @@
 [project]
 name = "oe-sdk"
 version = "0.1.0"
-description = "Module SDK for OpenConstructionERP. One clean import surface for building construction modules on the platform core."
+description = "Module SDK for PrimeCrest. One clean import surface for building construction modules on the platform core."
 license = "AGPL-3.0-or-later"
 requires-python = ">=3.12"
 authors = [
@@ -49,9 +49,9 @@ oe-sdk = "oe_sdk.cli:main"
 
 [project.urls]
 Homepage = "https://datadrivenconstruction.io/erp"
-Documentation = "https://github.com/datadrivenconstruction/OpenConstructionERP/blob/main/docs/platform/how-it-works-for-builders.md"
-Repository = "https://github.com/datadrivenconstruction/OpenConstructionERP"
-Issues = "https://github.com/datadrivenconstruction/OpenConstructionERP/issues"
+Documentation = "https://github.com/datadrivenconstruction/PrimeCrest/blob/main/docs/platform/how-it-works-for-builders.md"
+Repository = "https://github.com/datadrivenconstruction/PrimeCrest"
+Issues = "https://github.com/datadrivenconstruction/PrimeCrest/issues"
 
 [build-system]
 requires = ["hatchling"]

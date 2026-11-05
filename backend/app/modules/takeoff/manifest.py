@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Takeoff module manifest."""
 
@@ -9,7 +9,7 @@ manifest = ModuleManifest(
     version="0.1.0",
     display_name="Quantity Takeoff",
     description="Manual and AI-assisted quantity takeoff from drawings and models",
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="extension",
     depends=["oe_projects", "oe_cad"],
     auto_install=False,

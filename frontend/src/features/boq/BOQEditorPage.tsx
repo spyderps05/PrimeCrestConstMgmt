@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import React, { useState, useCallback, useMemo, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -4870,11 +4870,19 @@ export function BOQEditorPage() {
     }
     rows.push({ ...base, _footerType: 'net_total', id: '_net_total', description: t('boq.net_total', { defaultValue: 'NET TOTAL' }), total: netTotal });
     if (vatRate > 0) {
-      rows.push({ ...base, _footerType: 'vat', id: '_vat', description: `${t('boq.vat', { defaultValue: 'VAT' })} ${fmt.format(vatRate * 100)}%`, total: vatAmount });
+      const taxName = markups.find(
+        (m) => m.category === 'tax' && m.is_active !== false && m.markup_type === 'percentage',
+      )?.name?.trim();
+      // A rupee bill's tax line is sales tax on services. Calling that row VAT
+      // is the European label, and the markup already carries its own name.
+      const vatDescription = currencyCode === 'PKR' && taxName
+        ? taxName
+        : `${t('boq.vat', { defaultValue: 'VAT' })} ${fmt.format(vatRate * 100)}%`;
+      rows.push({ ...base, _footerType: 'vat', id: '_vat', description: vatDescription, total: vatAmount });
       rows.push({ ...base, _footerType: 'gross_total', id: '_gross_total', description: t('boq.gross_total', { defaultValue: 'GROSS TOTAL' }), total: grossTotal });
     }
     return rows;
-  }, [hasPositions, boq?.positions, directCost, markupTotals, netTotal, vatRate, vatAmount, grossTotal, t, fmt, currencyCode, fxRates]);
+  }, [hasPositions, boq?.positions, directCost, markupTotals, netTotal, vatRate, vatAmount, grossTotal, t, fmt, currencyCode, fxRates, markups]);
 
   /** Handle cost suggestion selected from AG Grid autocomplete editor */
   const handleGridSelectSuggestion = useCallback(

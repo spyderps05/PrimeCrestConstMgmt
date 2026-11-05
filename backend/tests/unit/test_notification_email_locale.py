@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠A notification e-mail is written in its recipient's language.
 
@@ -154,7 +154,7 @@ def _frame(name: str | None, locale: str | None) -> str:
 def test_the_frame_of_the_email_is_in_the_recipients_language() -> None:
     html_tr = _frame("Ayşe Yılmaz", "tr")
     assert "Merhaba Ayşe Yılmaz," in html_tr
-    assert "OpenConstructionERP üzerinde aç" in html_tr
+    assert "PrimeCrest üzerinde aç" in html_tr
     assert "bildirim ayarlarınız" in html_tr
     assert 'href="https://erp.example.com/rfi"' in html_tr
     for english in ("Hello", "Open in", "You receive"):
@@ -180,14 +180,14 @@ def test_a_digest_is_written_in_the_recipients_language() -> None:
         ],
     }
     subject, body = render_email_parts("notifications.digest", payload, *_TURKISH)
-    assert subject == "OpenConstructionERP: Bildirim özeti (2)"
+    assert subject == "PrimeCrest: Bildirim özeti (2)"
     assert "Son bildirimler:" in body
     assert "[Kule Projesi] Gecikmiş: Bilgi Talebi (RFI) RFI-007" in body
     assert "[Kule Projesi] İlave İş onaylandı: VR-012" in body
     assert "Recent notifications" not in body and "{" not in body
 
     subject_en, body_en = render_email_parts("notifications.digest", payload, *_ENGLISH)
-    assert subject_en == "OpenConstructionERP: Notification digest (2)"
+    assert subject_en == "PrimeCrest: Notification digest (2)"
     assert "Recent notifications:" in body_en
 
 

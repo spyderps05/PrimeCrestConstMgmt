@@ -1,6 +1,6 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
-// OpenConstructionERP — DataDrivenConstruction (DDC)
+// PrimeCrest — DataDrivenConstruction (DDC)
 // Tests that the shared IntakePanel is the conversational front door.
 //
 // WP6 mounts this panel as the free-text entry of /ai-estimator. Before any

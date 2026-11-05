@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Module manifest for oe_dach_pack."""
 
@@ -16,7 +16,7 @@ manifest = ModuleManifest(
         "DACH construction standards: GAEB XML exchange formats, VOB/B contract terms, "
         "DIN 276 cost groups, HOAI fee schedules, MwSt, and Abschlagsrechnung templates."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="regional",
     depends=[],
     auto_install=False,

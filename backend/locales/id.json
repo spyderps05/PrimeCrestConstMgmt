@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Nama ini tidak dapat digunakan untuk katalog baru. Pilih nama lain.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Estimasi biaya konstruksi sumber terbuka"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Perbarui"
   },
   "dashboard": {
-    "welcome": "Selamat datang di OpenConstructionERP",
+    "welcome": "Selamat datang di PrimeCrest",
     "subtitle": "Ruang kerja estimasi konstruksi Anda",
     "recent_projects": "Proyek terbaru",
     "system_status": "Status sistem",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Tidak ada data",
         "no_data_body": "Laporan ini dibuat dengan snapshot data yang kosong. Periksa apakah modul sumber (keuangan, jadwal, keselamatan, dan lainnya) mengembalikan data untuk proyek yang dipilih.",
         "no_data_body_short": "Laporan ini dibuat dengan snapshot data yang kosong. Periksa apakah modul sumber mengembalikan data untuk proyek yang dipilih.",
-        "footer_generated_by": "Dibuat oleh OpenConstructionERP pada {timestamp}.",
+        "footer_generated_by": "Dibuat oleh PrimeCrest pada {timestamp}.",
         "worksheet_name": "Laporan",
         "pdf_subject": "Laporan Proyek",
         "overall_progress": "Kemajuan Keseluruhan",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Yth. {name},",
       "greeting_generic": "Yth. Bapak/Ibu,",
-      "cta": "Buka di OpenConstructionERP",
+      "cta": "Buka di PrimeCrest",
       "footer": "Anda menerima email ini sesuai pengaturan notifikasi Anda. Pengaturan dapat diubah di profil Anda.",
-      "digest_subject": "OpenConstructionERP: Ringkasan notifikasi ({count})",
+      "digest_subject": "PrimeCrest: Ringkasan notifikasi ({count})",
       "digest_heading": "Notifikasi terbaru:"
     },
     "tender_xlsx": {

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Offline sync on diary, diary entry, punch item and inspection​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠.
 

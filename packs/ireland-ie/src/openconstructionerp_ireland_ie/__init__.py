@@ -1,4 +1,4 @@
-"""OpenConstructionERP - Ireland country pack (ARM/NRM, SCSI, RIAI)."""
+"""PrimeCrest - Ireland country pack (ARM/NRM, SCSI, RIAI)."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Resource-depth curve IDOR suite: the assignment-keyed curve routes.
 
 An assignment's spreading curve hangs off the assignment, and the assignment

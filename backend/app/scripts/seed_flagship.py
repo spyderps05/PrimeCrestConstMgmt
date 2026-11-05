@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Install the flagship "Residential House" reference project.
 
 Unlike the SQLite-only showcase snapshot, this installer is ORM-based and

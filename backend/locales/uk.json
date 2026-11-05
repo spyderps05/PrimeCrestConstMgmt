@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Цю назву не можна використати для нового каталогу. Виберіть іншу назву.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Кошторисна справа з відкритим кодом"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Оновити"
   },
   "dashboard": {
-    "welcome": "Ласкаво просимо до OpenConstructionERP",
+    "welcome": "Ласкаво просимо до PrimeCrest",
     "subtitle": "Ваш робочий простір кошторисної справи",
     "recent_projects": "Останні проєкти",
     "system_status": "Стан системи",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Даних немає",
         "no_data_body": "Звіт сформовано з порожнім знімком даних. Перевірте, чи повернули вихідні модулі (фінанси, графік, охорона праці тощо) дані для обраного проєкту.",
         "no_data_body_short": "Звіт сформовано з порожнім знімком даних. Перевірте, чи повернули вихідні модулі дані для обраного проєкту.",
-        "footer_generated_by": "Сформовано в OpenConstructionERP о {timestamp}.",
+        "footer_generated_by": "Сформовано в PrimeCrest о {timestamp}.",
         "worksheet_name": "Звіт",
         "pdf_subject": "Звіт за проєктом",
         "overall_progress": "Загальний прогрес",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Вітаємо, {name},",
       "greeting_generic": "Вітаємо,",
-      "cta": "Відкрити в OpenConstructionERP",
+      "cta": "Відкрити в PrimeCrest",
       "footer": "Ви отримуєте цей лист згідно з налаштуваннями сповіщень. Змінити їх можна у вашому профілі.",
-      "digest_subject": "OpenConstructionERP: підсумок сповіщень ({count})",
+      "digest_subject": "PrimeCrest: підсумок сповіщень ({count})",
       "digest_heading": "Останні сповіщення:"
     },
     "tender_xlsx": {

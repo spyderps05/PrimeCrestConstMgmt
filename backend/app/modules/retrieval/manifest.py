@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Retrieval module manifest."""
 
@@ -14,7 +14,7 @@ manifest = ModuleManifest(
         "the provenance you need to reconstruct what happened, and pin the searches worth "
         "coming back to"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects", "oe_documents", "oe_correspondence", "oe_changeorders"],
     auto_install=True,

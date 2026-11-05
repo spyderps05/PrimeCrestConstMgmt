@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // The app's screen catalogue: every route the sidebar exposes, its label key,
@@ -233,6 +233,7 @@ export const navGroups: NavGroup[] = [
       { labelKey: 'nav.videos', defaultLabel: 'Video guides', to: '/videos', icon: MonitorPlay },
       { labelKey: 'nav.cases', to: '/cases', icon: Route },
       { labelKey: 'nav.packs', defaultLabel: 'Packs', to: '/packs', icon: PackageOpen },
+      { labelKey: 'nav.pakistan_library', defaultLabel: 'Pakistan library', to: '/pakistan', icon: BookOpen },
     ],
   },
   // ── 1. OVERVIEW (always visible) ───────────────────────────────────

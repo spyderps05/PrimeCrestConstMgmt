@@ -5,12 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "openconstructionerp-eleven-areas-framework"
 version = "0.1.0"
-description = "Owner's Project Control pack for OpenConstructionERP: two phases, one gate, eleven management areas, one frame document per area."
+description = "Owner's Project Control pack for PrimeCrest: two phases, one gate, eleven management areas, one frame document per area."
 readme = "README.md"
 requires-python = ">=3.12"
 license = { text = "AGPL-3.0-or-later" }
 authors = [
-    { name = "OpenConstructionERP", email = "info@datadrivenconstruction.io" },
+    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
 ]
 keywords = [
     "openconstructionerp",

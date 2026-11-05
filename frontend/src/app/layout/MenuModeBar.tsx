@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /** Work-mode switcher, adaptive suggestion card and rail flyout for the sidebar. */
 import { useState, type ReactNode } from 'react';

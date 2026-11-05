@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Integration test — read path against the enriched Qdrant collection.
 
 This test is **gated on a live Qdrant** with the ``cwicr_en_v3_enriched``

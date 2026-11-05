@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The version the banner names and the notes it shows must be one release.
 
@@ -80,7 +80,7 @@ def _github_release(tag: str) -> _Response:
         200,
         {
             "tag_name": tag,
-            "html_url": f"https://github.com/datadrivenconstruction/OpenConstructionERP/releases/tag/{tag}",
+            "html_url": f"https://github.com/datadrivenconstruction/PrimeCrest/releases/tag/{tag}",
             "body": f"## {tag.lstrip('v')}\n\nWhat this particular release changed.",
             "published_at": "2026-08-01T09:00:00Z",
         },

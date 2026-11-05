@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /** A list reordered by drag and drop, by the up/down buttons, or by Alt+Arrow keys. */
 import { useRef, useState, type ReactNode } from 'react';

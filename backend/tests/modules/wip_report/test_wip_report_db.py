@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """WIP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ report against a real database, read from contracts, change orders, CVR and invoices.
 

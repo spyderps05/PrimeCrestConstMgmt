@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // Tests for <DataSecurityPanel /> - the in-product trust posture panel (#4).
@@ -66,7 +66,7 @@ function posture(overrides: Partial<DataSecurityPosture> = {}): DataSecurityPost
     ai: { enabled: false, providers: [], offline_capable: true, external_calls: false },
     registration_mode: 'admin-approve',
     analytics_bundled: false,
-    source: { license: 'AGPL-3.0', repository: 'https://github.com/datadrivenconstruction/OpenConstructionERP' },
+    source: { license: 'Proprietary · © 2026 Spyder Solutions', repository: '' },
     ...overrides,
   };
 }
@@ -104,12 +104,9 @@ describe('DataSecurityPanel', () => {
     expect(screen.getByText(/ships no third-party tracking/i)).toBeInTheDocument();
     // AI off -> no external calls.
     expect(screen.getByText(/no external AI calls/i)).toBeInTheDocument();
-    // License + source.
-    expect(screen.getByText('AGPL-3.0')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Open on GitHub/i })).toHaveAttribute(
-      'href',
-      'https://github.com/datadrivenconstruction/OpenConstructionERP',
-    );
+    expect(screen.getByText('Proprietary · © 2026 Spyder Solutions')).toBeInTheDocument();
+    expect(screen.getByText('Proprietary · Spyder Solutions')).toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: /Open on GitHub/i })).toBeNull();
   });
 
   it('names the configured providers when AI is on', async () => {

@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 //
 // <GaebInvoicePanel> asks the server nothing until it is opened, shows the
 // figures and the VAT source exactly as the server computed them, and keeps

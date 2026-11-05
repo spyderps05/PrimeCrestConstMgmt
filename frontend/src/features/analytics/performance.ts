@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // Cross-project performance benchmark: API, types and the pure helpers the
@@ -731,7 +731,7 @@ export async function downloadMatrixXlsx(matrix: MatrixCell[][], filename: strin
   const mod = await import('exceljs');
   const Ctor = (mod.Workbook ?? mod.default.Workbook) as typeof import('exceljs').Workbook;
   const wb = new Ctor();
-  wb.creator = 'OpenConstructionERP';
+  wb.creator = 'PrimeCrest';
   wb.created = new Date();
   const ws = wb.addWorksheet(sheetName.slice(0, 31) || 'Sheet1');
   for (const line of matrix) {

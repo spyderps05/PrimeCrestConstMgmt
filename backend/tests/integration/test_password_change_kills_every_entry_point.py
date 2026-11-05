@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠A password change must end the session at every door, not just the front one.
 
 ``password_changed_at`` is the one session kill switch this product has. A

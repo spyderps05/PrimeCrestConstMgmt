@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Point-cloud demo seed - a scan register with clouds that really open.
 
 Opens the Point Cloud page on a register of capture campaigns a site would

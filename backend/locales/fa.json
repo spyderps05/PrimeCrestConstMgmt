@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "این نام را نمی‌توان برای کاتالوگ جدید استفاده کرد. نام دیگری انتخاب کنید.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "برآورد متن‌باز هزینه ساخت‌وساز"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "به‌روزرسانی"
   },
   "dashboard": {
-    "welcome": "به OpenConstructionERP خوش آمدید",
+    "welcome": "به PrimeCrest خوش آمدید",
     "subtitle": "فضای کاری برآورد ساخت‌وساز شما",
     "recent_projects": "پروژه‌های اخیر",
     "system_status": "وضعیت سیستم",
@@ -1479,7 +1479,7 @@
         "no_data_heading": "داده‌ای موجود نیست",
         "no_data_body": "این گزارش با یک تصویر خالی از داده تولید شده است. بررسی کنید که ماژول‌های منبع (مالی، زمان‌بندی، ایمنی و غیره) برای پروژه انتخاب‌شده داده بازگردانده باشند.",
         "no_data_body_short": "این گزارش با یک تصویر خالی از داده تولید شده است. بررسی کنید که ماژول‌های منبع برای پروژه انتخاب‌شده داده بازگردانده باشند.",
-        "footer_generated_by": "تولیدشده توسط OpenConstructionERP در {timestamp}.",
+        "footer_generated_by": "تولیدشده توسط PrimeCrest در {timestamp}.",
         "worksheet_name": "گزارش",
         "pdf_subject": "گزارش پروژه",
         "overall_progress": "پیشرفت کلی",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "{name} گرامی، سلام",
       "greeting_generic": "با سلام،",
-      "cta": "باز کردن در OpenConstructionERP",
+      "cta": "باز کردن در PrimeCrest",
       "footer": "این ایمیل بر اساس تنظیمات اعلان‌های شما ارسال شده است. می‌توانید آن‌ها را در پروفایل خود تغییر دهید.",
-      "digest_subject": "OpenConstructionERP: خلاصه اعلان‌ها ({count})",
+      "digest_subject": "PrimeCrest: خلاصه اعلان‌ها ({count})",
       "digest_heading": "اعلان‌های اخیر:"
     },
     "tender_xlsx": {

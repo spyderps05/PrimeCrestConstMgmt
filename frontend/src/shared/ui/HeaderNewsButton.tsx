@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * HeaderNewsButton - a "What's new" entry point in the top app header.
@@ -186,7 +186,7 @@ export function HeaderNewsButton({ className }: { className?: string }) {
                 <p className="text-sm text-content-secondary">
                   {t('header.news.body', {
                     defaultValue:
-                      'Read the latest OpenConstructionERP release news on our site.',
+                      'Read the latest PrimeCrest release news on our site.',
                   })}
                 </p>
                 <p className="text-xs leading-relaxed text-content-tertiary">

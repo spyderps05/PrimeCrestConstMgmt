@@ -1,4 +1,4 @@
-# OpenConstructionERP
+# PrimeCrest
 
 Open-source construction cost estimation: BOQ, cost matching, CAD/BIM takeoff.
 
@@ -18,7 +18,7 @@ pip install openconstructionerp
 
 Python 3.12+ required. No Docker, no separate PostgreSQL, no Redis. An embedded PostgreSQL database is bundled and starts on its own.
 
-Problem while installing or starting? See **[Installation help](https://openconstructionerp.com/install-help)** (also in the repo in [English](https://github.com/datadrivenconstruction/OpenConstructionERP/blob/main/docs/INSTALL_TROUBLESHOOTING.md), [Deutsch](https://github.com/datadrivenconstruction/OpenConstructionERP/blob/main/docs/INSTALL_TROUBLESHOOTING.de.md) and [Русский](https://github.com/datadrivenconstruction/OpenConstructionERP/blob/main/docs/INSTALL_TROUBLESHOOTING.ru.md)).
+Problem while installing or starting? See **[Installation help](https://openconstructionerp.com/install-help)** (also in the repo in [English](https://github.com/datadrivenconstruction/PrimeCrest/blob/main/docs/INSTALL_TROUBLESHOOTING.md), [Deutsch](https://github.com/datadrivenconstruction/PrimeCrest/blob/main/docs/INSTALL_TROUBLESHOOTING.de.md) and [Русский](https://github.com/datadrivenconstruction/PrimeCrest/blob/main/docs/INSTALL_TROUBLESHOOTING.ru.md)).
 
 ## First run
 
@@ -150,8 +150,8 @@ The lint rule set is `E, F, W, I, N, UP, B, A, C4, PT, RET, SIM`. The exact conf
 ## Links
 
 - Docs: https://openconstructionerp.com
-- Issues: https://github.com/DataDrivenConstruction/OpenConstructionERP/issues
-- Source: https://github.com/DataDrivenConstruction/OpenConstructionERP
+- Issues: https://github.com/DataDrivenConstruction/PrimeCrest/issues
+- Source: https://github.com/DataDrivenConstruction/PrimeCrest
 
 ## License
 

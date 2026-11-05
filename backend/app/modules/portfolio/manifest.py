@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Portfolio module manifest.
 
@@ -21,7 +21,7 @@ manifest = ModuleManifest(
         "Programme and portfolio tree: hierarchical nodes, project membership, "
         "cross-schedule links and portfolio-level CPM over a subtree"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     depends=["oe_users", "oe_projects", "oe_schedule_advanced"],
     auto_install=True,

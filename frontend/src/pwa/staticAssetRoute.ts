@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 /**
  * Which requests the service worker may answer from its long-lived
  * CacheFirst lane, and under which cache name.

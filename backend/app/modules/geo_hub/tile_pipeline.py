@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Canonical-JSON -> glTF -> 3D Tiles 1.1 pipeline.
 
 Pure-Python tile builder. No C++ deps, no Node side-service. The

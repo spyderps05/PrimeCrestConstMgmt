@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import { useState, useCallback, useEffect } from 'react';
 import type { ReactNode } from 'react';
@@ -28,6 +28,7 @@ import {
 import { useSwipeGesture, useEdgeSwipe } from '@/shared/hooks/useSwipeGesture';
 import { useIsRTL } from '@/shared/hooks/useIsRTL';
 import { useOfflineSync } from '@/shared/hooks/useOnlineStatus';
+import { PRODUCT_SHORT_NAME } from '@/shared/lib/productIdentity';
 import { useOfflineSyncLoop } from '@/shared/lib/offline/useOfflineSync';
 import { usePartnerPackLocale } from '@/shared/hooks/usePartnerPackLocale';
 import { useBrandingStore } from '@/stores/useBrandingStore';
@@ -61,7 +62,7 @@ export function AppLayout({ title, children }: AppLayoutProps) {
 
   // When the user has white-labelled the workspace with their own company
   // name, the browser tab follows the same brand as the sidebar so the whole
-  // experience reads as "their" tool. Falls back to OpenConstructionERP.
+  // experience reads as "their" tool. Falls back to PrimeCrest.
   const brandName = useBrandingStore((s) => (s.companyName.trim() ? s.companyName.trim() : null));
 
   // Count today towards "distinct days the app was opened". This has to run
@@ -81,7 +82,7 @@ export function AppLayout({ title, children }: AppLayoutProps) {
     // page heading uses, so the tab also follows the active language.
     const key = resolvePageTitleKey(title);
     const translated = title ? (key ? t(key, { defaultValue: title }) : title) : null;
-    const suffix = brandName ?? 'OpenConstructionERP';
+    const suffix = brandName ?? PRODUCT_SHORT_NAME;
     document.title = translated ? `${translated} | ${suffix}` : suffix;
     // i18n.language in deps so the tab re-translates on a language switch.
   }, [title, t, i18n.language, brandName]);

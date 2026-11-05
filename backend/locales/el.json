@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Αυτό το όνομα δεν μπορεί να χρησιμοποιηθεί για νέο κατάλογο. Επιλέξτε άλλο όνομα.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Εκτίμηση κόστους κατασκευής ανοιχτού κώδικα"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Ενημέρωση"
   },
   "dashboard": {
-    "welcome": "Καλώς ήρθατε στο OpenConstructionERP",
+    "welcome": "Καλώς ήρθατε στο PrimeCrest",
     "subtitle": "Ο χώρος εργασίας εκτίμησης κατασκευής σας",
     "recent_projects": "Πρόσφατα Έργα",
     "system_status": "Κατάσταση Συστήματος",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Δεν υπάρχουν διαθέσιμα δεδομένα",
         "no_data_body": "Η αναφορά δημιουργήθηκε με κενό στιγμιότυπο δεδομένων. Ελέγξτε ότι οι πηγαίες ενότητες (οικονομικά, χρονοδιάγραμμα, ασφάλεια κ.λπ.) επέστρεψαν δεδομένα για το επιλεγμένο έργο.",
         "no_data_body_short": "Η αναφορά δημιουργήθηκε με κενό στιγμιότυπο δεδομένων. Ελέγξτε ότι οι πηγαίες ενότητες επέστρεψαν δεδομένα για το επιλεγμένο έργο.",
-        "footer_generated_by": "Δημιουργήθηκε από το OpenConstructionERP στις {timestamp}.",
+        "footer_generated_by": "Δημιουργήθηκε από το PrimeCrest στις {timestamp}.",
         "worksheet_name": "Αναφορά",
         "pdf_subject": "Αναφορά έργου",
         "overall_progress": "Συνολική πρόοδος",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Γεια σας, {name},",
       "greeting_generic": "Καλησπέρα σας,",
-      "cta": "Άνοιγμα στο OpenConstructionERP",
+      "cta": "Άνοιγμα στο PrimeCrest",
       "footer": "Λαμβάνετε αυτό το μήνυμα λόγω των ρυθμίσεων ειδοποιήσεών σας. Μπορείτε να τις αλλάξετε στο προφίλ σας.",
-      "digest_subject": "OpenConstructionERP: Σύνοψη ειδοποιήσεων ({count})",
+      "digest_subject": "PrimeCrest: Σύνοψη ειδοποιήσεων ({count})",
       "digest_heading": "Πρόσφατες ειδοποιήσεις:"
     },
     "tender_xlsx": {

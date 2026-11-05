@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Seed data for the BI Dashboards module.
 
 * All registered system KPIs as :class:`KPIDefinition` rows

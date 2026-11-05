@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in OpenConstructionERP,
+If you discover a security vulnerability in PrimeCrest,
 please report it responsibly.
 
 **DO NOT** open a public GitHub issue for security vulnerabilities.
@@ -11,7 +11,7 @@ Public disclosure before a fix is available puts users at risk.
 ### How to Report
 
 1. **GitHub Security Advisories** (preferred):
-   [Create a new advisory](https://github.com/datadrivenconstruction/OpenConstructionERP/security/advisories/new)
+   [Create a new advisory](https://github.com/datadrivenconstruction/PrimeCrest/security/advisories/new)
 
 2. **Email:** `info@datadrivenconstruction.io`
 
@@ -47,7 +47,7 @@ through GitHub, which is a CVE Numbering Authority. We request the
 identifier ourselves so the record carries the verified facts: the
 component, the fixed release and the severity we assessed with the
 reporter. All published advisories are listed at
-<https://github.com/datadrivenconstruction/OpenConstructionERP/security/advisories>.
+<https://github.com/datadrivenconstruction/PrimeCrest/security/advisories>.
 
 Please keep a report private until we publish the advisory, and leave the
 CVE request to us, so that one accurate record exists rather than
@@ -104,7 +104,7 @@ DataDrivenConstruction.
 
 ## Self-Hosting Security Checklist
 
-If you deploy OpenConstructionERP on your own infrastructure:
+If you deploy PrimeCrest on your own infrastructure:
 
 - [ ] Change `JWT_SECRET` from the default value
 - [ ] Use HTTPS (TLS 1.2+) in production - never expose HTTP
@@ -144,7 +144,7 @@ to your installer, then run:
 cosign verify-blob \
   --certificate SHA256SUMS.pem \
   --signature SHA256SUMS.sig \
-  --certificate-identity-regexp 'https://github.com/datadrivenconstruction/OpenConstructionERP/.*' \
+  --certificate-identity-regexp 'https://github.com/datadrivenconstruction/PrimeCrest/.*' \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com \
   SHA256SUMS
 sha256sum -c SHA256SUMS --ignore-missing

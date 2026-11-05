@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * ThirdPartyLicenses — the LGPL components inside the build, and their texts.
@@ -51,7 +51,7 @@ export interface LicenseTextDetail extends LicenseTextSummary {
   text: string;
 }
 
-const NOTICE_URL = 'https://github.com/datadrivenconstruction/OpenConstructionERP/blob/main/NOTICE';
+const NOTICE_URL = 'https://github.com/spyderps05/PrimeCrestConstMgmt/blob/main/NOTICE';
 
 /**
  * The bundled LGPL components and their licence texts.

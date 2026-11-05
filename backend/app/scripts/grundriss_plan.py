@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Single source of truth for the demo German floor plan (Grundriss Erdgeschoss).
 
 This module owns the GEOMETRY of the vector reference plan that ships as

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Module manifest for oe_certified_payroll."""
 
@@ -18,7 +18,7 @@ manifest = ModuleManifest(
         "the signed statement of compliance the awarding body reads. Extends the payroll module rather than "
         "duplicating it - the hours and the deductions stay where they already are."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="compliance",
     depends=["oe_payroll", "oe_projects", "oe_resources"],
     # Off unless a user turns it on, matching the regional packs. Most of this

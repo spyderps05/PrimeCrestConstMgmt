@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Dashboard rollup module manifest.
 
@@ -21,7 +21,7 @@ manifest = ModuleManifest(
         "approvals/alerts inbox and the acknowledge/dismiss actions that let "
         "a user work through it."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_projects"],
     auto_install=True,

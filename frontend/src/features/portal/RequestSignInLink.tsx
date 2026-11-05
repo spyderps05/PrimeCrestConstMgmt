@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // A portal user whose link expired asks for a new one here instead of
@@ -55,7 +55,7 @@ export function RequestSignInLink() {
           autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder={t('portal.signin_link_placeholder', { defaultValue: 'you@example.com' })}
+          placeholder={t('portal.signin_link_placeholder', { defaultValue: 'you@company.pk' })}
           className="min-w-0 flex-1 rounded-md border border-border-light bg-surface-primary px-3 py-2 text-sm text-content-primary focus:border-oe-blue focus:outline-none"
         />
         <button

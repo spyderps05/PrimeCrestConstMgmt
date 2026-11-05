@@ -1,6 +1,6 @@
-# Contributing to OpenConstructionERP
+# Contributing to PrimeCrest
 
-Thank you for your interest. OpenConstructionERP is an open-source platform for
+Thank you for your interest. PrimeCrest is an open-source platform for
 construction cost estimation, and the work that comes in from outside genuinely shapes
 what gets built. Read the next section before you write any code, because the route in
 is not the one most projects use.
@@ -36,8 +36,8 @@ how to brief an AI coding assistant on it.
 
 ```bash
 # 1. Clone
-git clone https://github.com/datadrivenconstruction/OpenConstructionERP.git
-cd OpenConstructionERP
+git clone https://github.com/datadrivenconstruction/PrimeCrest.git
+cd PrimeCrest
 
 # 2. Start dev environment
 docker compose up -d   # PostgreSQL + Redis
@@ -167,13 +167,13 @@ file-by-file walkthrough.
 
 ## Reporting Issues
 
-- Use [GitHub Issues](https://github.com/datadrivenconstruction/OpenConstructionERP/issues)
+- Use [GitHub Issues](https://github.com/datadrivenconstruction/PrimeCrest/issues)
 - Include: version, steps to reproduce, expected vs actual behavior
 - For security issues, see [SECURITY.md](SECURITY.md)
 
 ## Licensing
 
-OpenConstructionERP is dual licensed, AGPL-3.0 for the community edition and a
+PrimeCrest is dual licensed, AGPL-3.0 for the community edition and a
 commercial license for enterprise use. Because code is written by the core team rather
 than merged from outside, there is no contributor license agreement to sign and no bot
 that will ask you for one.
@@ -185,7 +185,7 @@ first.
 
 ## Questions?
 
-- Open a [Discussion](https://github.com/datadrivenconstruction/OpenConstructionERP/discussions)
+- Open a [Discussion](https://github.com/datadrivenconstruction/PrimeCrest/discussions)
 - Join our community chat (coming soon)
 
 Thank you for helping make construction cost estimation open and accessible!

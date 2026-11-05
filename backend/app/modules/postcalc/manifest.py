@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Post-calculation module manifest."""
 
 from app.core.module_loader import ModuleManifest
@@ -18,7 +18,7 @@ manifest = ModuleManifest(
         "field timesheets, progress readings and the site material ledger; a "
         "stateless analysis layer that adds no table."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     # The estimate side (BoQ positions and their stored resource split) is
     # required. The per-norm rollup reads its measured side through the cost

@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Это имя нельзя использовать для нового каталога. Выберите другое имя.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Open-source сметное дело"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Обновить"
   },
   "dashboard": {
-    "welcome": "Добро пожаловать в OpenConstructionERP",
+    "welcome": "Добро пожаловать в PrimeCrest",
     "subtitle": "Ваше рабочее пространство сметного дела",
     "recent_projects": "Последние проекты",
     "system_status": "Состояние системы",
@@ -1424,7 +1424,7 @@
         "no_data_heading": "Нет данных",
         "no_data_body": "Отчет сформирован на пустом снимке данных. Проверьте, вернули ли исходные модули (финансы, календарный план, охрана труда и т. д.) данные по выбранному проекту.",
         "no_data_body_short": "Отчет сформирован на пустом снимке данных. Проверьте, вернули ли исходные модули данные по выбранному проекту.",
-        "footer_generated_by": "Сформировано в OpenConstructionERP {timestamp}.",
+        "footer_generated_by": "Сформировано в PrimeCrest {timestamp}.",
         "worksheet_name": "Отчет",
         "pdf_subject": "Отчет по проекту",
         "overall_progress": "Общий прогресс",
@@ -1710,9 +1710,9 @@
     "notification_email": {
       "greeting": "Здравствуйте, {name}!",
       "greeting_generic": "Здравствуйте!",
-      "cta": "Открыть в OpenConstructionERP",
+      "cta": "Открыть в PrimeCrest",
       "footer": "Вы получили это письмо согласно настройкам уведомлений. Изменить их можно в профиле.",
-      "digest_subject": "OpenConstructionERP: Сводка уведомлений ({count})",
+      "digest_subject": "PrimeCrest: Сводка уведомлений ({count})",
       "digest_heading": "Последние уведомления:"
     },
     "tender_xlsx": {

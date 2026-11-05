@@ -1,4 +1,4 @@
-# OpenConstructionERP - DataDrivenConstruction (DDC)
+# PrimeCrest - DataDrivenConstruction (DDC)
 # CWICR Cost Database Engine · CAD2DATA Pipeline
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 # AGPL-3.0 License · DDC-CWICR-OE-2026
@@ -837,7 +837,7 @@ def _start_embedding_pool_warmup():
 def _init_vector_db() -> None:
     """Initialize vector database on startup (non-blocking, never fatal).
 
-    Vector search is an important feature of OpenConstructionERP -
+    Vector search is an important feature of PrimeCrest -
     it powers semantic cost-item matching, BOQ auto-classification,
     and assembly suggestions. We support two backends:
 
@@ -1496,10 +1496,10 @@ def _pack_demo_ids(active: Any) -> list[str]:
 
 def _boot_demo_ids(active: Any) -> list[str]:
     """Every demo the boot below may install, read from the lists it installs from."""
-    from app.core.demo_projects import SHOWCASE_DEMO_IDS
+    from app.core.demo_projects import PRODUCT_DEMO_IDS
     from app.scripts.seed_flagship import FLAGSHIP_DEMO_ID
 
-    ids = _pack_demo_ids(active) if active is not None else list(SHOWCASE_DEMO_IDS)
+    ids = _pack_demo_ids(active) if active is not None else list(PRODUCT_DEMO_IDS)
     return [*ids, FLAGSHIP_DEMO_ID, _HEILBRONN_DEMO_ID]
 
 
@@ -1564,22 +1564,31 @@ async def _seed_demo_account(*, defer_projects: bool = False) -> Callable[[], Aw
         {
             "email": "demo@openconstructionerp.com",
             "env_var": "DEMO_USER_PASSWORD",
-            "full_name": "Elena Marchetti",
+            "full_name": "Imran Shah",
             "role": "admin",
         },
         {
             "email": "estimator@openconstructionerp.com",
             "env_var": "DEMO_ESTIMATOR_PASSWORD",
-            "full_name": "Anna Musterfrau",
+            "full_name": "Usman Ali",
             "role": "editor",
         },
         {
             "email": "manager@openconstructionerp.com",
             "env_var": "DEMO_MANAGER_PASSWORD",
-            "full_name": "Michael Carter",
+            "full_name": "Hassan Raza",
             "role": "manager",
         },
     ]
+    # Names previously shipped with western demo identities. Existing
+    # installs keep the same emails/passwords; only the display name updates.
+    _legacy_demo_names = {
+        "Elena Marchetti",
+        "Anna Musterfrau",
+        "Michael Carter",
+        "Ayesha Khan",
+        "Fatima Malik",
+    }
 
     # Track generated credentials so we can persist + print them once.
     generated_creds: dict[str, str] = {}
@@ -1594,6 +1603,13 @@ async def _seed_demo_account(*, defer_projects: bool = False) -> Callable[[], Aw
                 if exists is not None:
                     if acct["email"] == "demo@openconstructionerp.com":
                         demo = exists
+                    if exists.full_name in _legacy_demo_names:
+                        exists.full_name = acct["full_name"]
+                        logger.info(
+                            "Demo user renamed: %s -> %s",
+                            acct["email"],
+                            acct["full_name"],
+                        )
                     # If operator set the env-var explicitly and the stored
                     # hash no longer matches that password, sync the hash so
                     # the documented credential always works after a restart.
@@ -1809,13 +1825,14 @@ async def _seed_demo_account(*, defer_projects: bool = False) -> Callable[[], Aw
                                 "OE_TEST_FAST_STARTUP" if _fast_startup else "OE_SKIP_SHOWCASE",
                             )
                         else:
-                            from app.core.demo_projects import SHOWCASE_DEMO_IDS, install_demo_projects_at_boot
+                            from app.core.demo_projects import PRODUCT_DEMO_IDS, install_demo_projects_at_boot
 
                             # This branch runs whenever the showcase owner has no
                             # projects, which is also the state a purge of demo data
                             # leaves behind. The helper skips every demo the user
                             # removed, so a purge is not undone by the next restart.
-                            await install_demo_projects_at_boot(list(SHOWCASE_DEMO_IDS))
+                            # Default workspace is the Pakistan pair (English, PKR).
+                            await install_demo_projects_at_boot(list(PRODUCT_DEMO_IDS))
 
                 # Flagship "Residential House" reference project - an ORM installer
                 # running on PostgreSQL so the full CAD-to-BOQ showcase (real
@@ -1857,14 +1874,27 @@ async def _seed_demo_account(*, defer_projects: bool = False) -> Callable[[], Aw
                     # every subsequent boot until the next app upgrade instead of
                     # self-healing on the next start.
                     _backfill_ok = True
-                    try:
-                        from app.core.demo_projects import install_flagship_at_boot
+                    # The reference house and the Heilbronn retail job are German
+                    # showcase content. This product seeds the Pakistan projects
+                    # instead. Set OE_INTERNATIONAL_DEMOS=1 to install those two.
+                    _international_demos = os.environ.get("OE_INTERNATIONAL_DEMOS", "").lower() in (
+                        "1",
+                        "true",
+                        "yes",
+                    )
+                    if not _international_demos:
+                        logger.info(
+                            "German flagship and Heilbronn seeds skipped; Pakistan demos are the workspace default"
+                        )
+                    else:
+                        try:
+                            from app.core.demo_projects import install_flagship_at_boot
 
-                        fl_result = await install_flagship_at_boot(demo_user_id)
-                        logger.info("Flagship seed: %s", fl_result)
-                    except Exception:
-                        _backfill_ok = False
-                        logger.warning("Flagship seed skipped (non-fatal)", exc_info=True)
+                            fl_result = await install_flagship_at_boot(demo_user_id)
+                            logger.info("Flagship seed: %s", fl_result)
+                        except Exception:
+                            _backfill_ok = False
+                            logger.warning("Flagship seed skipped (non-fatal)", exc_info=True)
 
                     # Retail Market Heilbronn - the ninth showcase project. Backfilled
                     # flagship-style on EVERY boot (not just project_count == 0) so
@@ -1872,8 +1902,8 @@ async def _seed_demo_account(*, defer_projects: bool = False) -> Callable[[], Aw
                     # dedupes on metadata_["demo_id"], so once the project exists the
                     # re-run is a cheap no-op. Operators who opted out of the showcase
                     # keep their workspace clean.
-                    if os.environ.get("OE_SKIP_SHOWCASE", "").lower() in ("1", "true", "yes"):
-                        logger.debug("Retail Market Heilbronn backfill skipped (OE_SKIP_SHOWCASE)")
+                    if not _international_demos or os.environ.get("OE_SKIP_SHOWCASE", "").lower() in ("1", "true", "yes"):
+                        logger.debug("Retail Market Heilbronn backfill skipped")
                     else:
                         try:
                             from app.core.demo_projects import install_demo_project as _install_demo
@@ -1997,15 +2027,13 @@ def create_app() -> FastAPI:
     app = FastAPI(
         title=settings.app_name,
         version=settings.app_version,
-        description="Open-source modular platform for construction cost estimation",
+        description="PrimeCrest Construction Management by Spyder Solutions",
         contact={
-            "name": "DataDrivenConstruction · OpenConstructionERP",
-            "url": "https://openconstructionerp.com",
-            "email": "info@datadrivenconstruction.io",
+            "name": "Spyder Solutions",
+            "email": "info@spydersolutions.local",
         },
         license_info={
-            "name": "AGPL-3.0-or-later · DDC-CWICR-OE-2026",
-            "url": "https://www.gnu.org/licenses/agpl-3.0.html",
+            "name": "© 2026 Spyder Solutions. All rights reserved.",
         },
         # Both reference pages are registered by hand further down instead of
         # by FastAPI, so they can load their CSS and JS from this install
@@ -2272,7 +2300,7 @@ def create_app() -> FastAPI:
                 b ^ 0x55 for b in b"\x11\x11\x16\x78\x16\x02\x1c\x16\x07\x78\x1a\x10\x78\x67\x65\x67\x63"
             ).decode("ascii")
             schema.setdefault("info", {})
-            schema["info"]["x-ddc-origin"] = "OpenConstructionERP · DataDrivenConstruction · " + _oa_tok
+            schema["info"]["x-ddc-origin"] = "PrimeCrest · DataDrivenConstruction · " + _oa_tok
             schema["info"]["x-ddc-author"] = "DataDrivenConstruction <info@datadrivenconstruction.io>"
             app.openapi_schema = schema
             app._openapi_routes_version = version
@@ -3305,27 +3333,18 @@ def create_app() -> FastAPI:
 
     @app.get("/api/source", tags=["System"])
     async def source_code() -> dict:
-        """AGPL-3.0 Source Code Disclosure.
-
-        As required by AGPL-3.0, this endpoint provides access to the
-        complete corresponding source code of this application.
-        DataDrivenConstruction · OpenConstructionERP · DDC-CWICR-OE-2026
-        """
+        """Product ownership notice for PrimeCrest Construction Management."""
         return {
-            "license": "AGPL-3.0",
-            "source_code": "https://github.com/datadrivenconstruction/OpenConstructionERP",
-            "copyright": "Copyright (c) 2026 Artem Boiko / DataDrivenConstruction",
+            "license": "Proprietary",
+            "copyright": "© 2026 Spyder Solutions. All rights reserved.",
             "notice": (
-                "This software is licensed under AGPL-3.0. "
-                "If you modify and deploy this software, you MUST make your "
-                "complete source code available to all users under the same license. "
-                "For commercial licensing without AGPL obligations, contact: "
-                "datadrivenconstruction.io/contact-support/"
+                "PrimeCrest Construction Management Software is proprietary software "
+                "owned by Spyder Solutions and registered in Pakistan. "
+                "No one may copy, modify, or redistribute it without written "
+                "permission from Spyder Solutions."
             ),
-            "projects": {
-                "CWICR": "https://github.com/datadrivenconstruction/OpenConstructionEstimate-DDC-CWICR",
-                "cad2data": "https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto",
-            },
+            "product": "PrimeCrest Construction Management",
+            "owner": "Spyder Solutions",
         }
 
     @app.get("/api/system/status", tags=["System"])
@@ -3530,8 +3549,8 @@ def create_app() -> FastAPI:
             ai_providers=provider_names,
             registration_mode=settings.registration_mode,
             analytics_bundled=False,
-            license_name="AGPL-3.0",
-            repository="https://github.com/datadrivenconstruction/OpenConstructionERP",
+            license_name="Proprietary · © 2026 Spyder Solutions",
+            repository="",
         )
 
     def _semver_tuple(v: str) -> tuple[int, ...]:
@@ -3604,7 +3623,7 @@ def create_app() -> FastAPI:
         from app.core.update_check_policy import VERSION_CHECK_TTL_S, update_check_disabled
 
         current = settings.app_version
-        repo = "datadrivenconstruction/OpenConstructionERP"
+        repo = "datadrivenconstruction/PrimeCrest"
         cache_key = "_version_check_cache"
 
         # Turned off by the user from the desktop launcher's notice or by an
@@ -3798,7 +3817,7 @@ def create_app() -> FastAPI:
 
         We shell out to the **same** interpreter that's serving the API so
         the upgrade lands in the right venv (Issue #96 - Windows launcher
-        uses ``%LOCALAPPDATA%/OpenConstructionERP/venv``, not the user's
+        uses ``%LOCALAPPDATA%/PrimeCrest/venv``, not the user's
         global Python).
 
         **Important - the running process keeps the OLD wheel in memory.**
@@ -4358,7 +4377,7 @@ def create_app() -> FastAPI:
             raise
 
     async def _startup_impl() -> None:
-        _section("OpenConstructionERP")
+        _section("PrimeCrest")
         logger.info(
             "Starting %s v%s (env=%s)",
             settings.app_name,
@@ -5336,7 +5355,7 @@ def create_app() -> FastAPI:
         _cli_data_dir = os.environ.get("OE_CLI_DATA_DIR")
         if _cli_host and _cli_port:
             _url = f"http://{_cli_host}:{_cli_port}"
-            logger.info("OpenConstructionERP is ready at %s", _url)
+            logger.info("PrimeCrest is ready at %s", _url)
             # Demo passwords are now per-installation (BUG-D01 fix). The
             # actual values were either supplied via DEMO_*_PASSWORD env
             # vars or generated in ``_seed_demo_account`` and persisted to

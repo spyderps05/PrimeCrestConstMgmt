@@ -1,5 +1,5 @@
 // @ts-nocheck
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // A base published under CC BY (the Toscana prezzario) has to keep its credit

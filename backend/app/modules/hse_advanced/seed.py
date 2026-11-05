@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Deterministic demo seed for the HSE Advanced module.
 
 Generates realistic volumes per PRD scope:

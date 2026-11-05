@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Admin module manifest.
 
@@ -14,7 +14,7 @@ manifest = ModuleManifest(
     version="0.1.0",
     display_name="Admin",
     description="Operator endpoints for QA pipelines (qa-reset, fixtures). Triple-gated by env+token+hostname.",
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

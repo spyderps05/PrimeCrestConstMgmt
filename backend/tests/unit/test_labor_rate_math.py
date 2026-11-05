@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Unit tests for the pure labor / crew rate build-up math.
 
 These exercise :mod:`app.modules.labor_rates.rate_math` directly with plain

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The startup banner must not tell the user the server is up before it is.
 
@@ -8,7 +8,7 @@ process that has not bound its socket yet. On a first run that gap is not
 notional: the boot this was measured on answered ``GET /`` after 50.55s and
 ``/api/health`` after about 490s, most of the latter being the demo seed.
 
-The banner used to head that with a green tick over "OpenConstructionERP is
+The banner used to head that with a green tick over "PrimeCrest is
 running", directly above the address to open. Beside an address, a tick is an
 instruction, and a stranger who followed it got a browser error from an install
 that was working perfectly.

@@ -1,6 +1,6 @@
 # Hessen BIM Pack (Germany)
 
-Regional pack pre-configuring OpenConstructionERP for German BIM consultancies
+Regional pack pre-configuring PrimeCrest for German BIM consultancies
 and engineering offices, with a regional focus on Hessen. Loads the German
 standards stack: DIN 276 cost groups, GAEB exchange, VOB contract conditions,
 ISO 19650 information management and the HOAI fee phases.
@@ -54,7 +54,7 @@ publishers' own text and tables are not reproduced here.
 
 ## Install
 
-This pack ships inside OpenConstructionERP. Activate it from Modules then
+This pack ships inside PrimeCrest. Activate it from Modules then
 Partner Packs: click Rescan, find "BIM-Cluster Hessen", then Activate pack.
 
 To run a workspace that boots straight into it:
@@ -65,4 +65,4 @@ OE_PACK=bimhessen-de openconstructionerp serve
 
 ## License
 
-AGPL-3.0-or-later, same as the OpenConstructionERP core. No partner or third-party branding is bundled.
+AGPL-3.0-or-later, same as the PrimeCrest core. No partner or third-party branding is bundled.

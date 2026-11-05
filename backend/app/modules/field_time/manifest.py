@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Field Time module manifest."""
 
 from app.core.module_loader import ModuleManifest
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "which BOQ cost code - the authoritative source of actual labour and plant "
         "hours for payroll and the cost / EVM model."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     # Real foreign keys into projects (owner), resources (labour), equipment
     # (plant) and variations (daywork order). Declaring them as hard

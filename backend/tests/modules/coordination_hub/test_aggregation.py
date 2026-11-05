@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Unit tests for :class:`CoordinationHubService` aggregator logic.
 
 These tests bypass HTTP entirely and drive the service against a fresh

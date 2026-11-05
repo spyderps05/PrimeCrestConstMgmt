@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -498,7 +498,7 @@ function AddContactModal({
             value={form.company_name}
             onChange={(e) => set('company_name', e.target.value)}
             placeholder={t('contacts.company_placeholder', {
-              defaultValue: 'e.g. Acme Construction Ltd.',
+              defaultValue: 'e.g. Crescent Builders (Pvt) Ltd',
             })}
             className={clsx(
               inputCls,
@@ -572,7 +572,7 @@ function AddContactModal({
             value={form.first_name}
             onChange={(e) => set('first_name', e.target.value)}
             className={inputCls}
-            placeholder={t('contacts.first_name_placeholder', { defaultValue: 'John' })}
+            placeholder={t('contacts.first_name_placeholder', { defaultValue: 'Bilal' })}
           />
         </WideModalField>
 
@@ -581,7 +581,7 @@ function AddContactModal({
             value={form.last_name}
             onChange={(e) => set('last_name', e.target.value)}
             className={inputCls}
-            placeholder={t('contacts.last_name_placeholder', { defaultValue: 'Doe' })}
+            placeholder={t('contacts.last_name_placeholder', { defaultValue: 'Ahmed' })}
           />
         </WideModalField>
       </WideModalSection>
@@ -597,7 +597,7 @@ function AddContactModal({
             value={form.email}
             onChange={(e) => set('email', e.target.value)}
             className={inputCls}
-            placeholder="name@company.com"
+            placeholder="name@company.pk"
           />
         </WideModalField>
 

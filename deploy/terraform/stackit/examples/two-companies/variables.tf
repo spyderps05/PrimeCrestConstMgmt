@@ -43,7 +43,7 @@ variable "postgres_flavor_id" {
 }
 
 variable "image_tag" {
-  description = "OpenConstructionERP version to run, for example \"20.5.1\"."
+  description = "PrimeCrest version to run, for example \"20.5.1\"."
   type        = string
 }
 

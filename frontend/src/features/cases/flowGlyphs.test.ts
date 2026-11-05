@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 //
 // The glyph beside a "Goes in" / "Comes out" row has one job: say what the
 // artefact is, the same way in every language. These tests hold the two ways

@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // What a stakeholder and a commitment point at in the other registers of the

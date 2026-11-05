@@ -1,4 +1,4 @@
-# OpenConstructionERP Release Pipeline
+# PrimeCrest Release Pipeline
 #
 # Triggered on version tag push (e.g., v0.1.0).
 # Builds Docker image, pushes to GHCR, creates GitHub Release.
@@ -49,7 +49,7 @@ jobs:
 
       # GHCR rejects any tag whose repository path contains uppercase letters
       # ("repository name must be lowercase"), but ${{ github.repository }}
-      # preserves the original casing (datadrivenconstruction/OpenConstructionERP).
+      # preserves the original casing (datadrivenconstruction/PrimeCrest).
       # Lowercase it once here and feed the result to every image tag below.
       - name: Compute lowercase image name
         id: image
@@ -78,7 +78,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           labels: |
-            org.opencontainers.image.title=OpenConstructionERP
+            org.opencontainers.image.title=PrimeCrest
             org.opencontainers.image.version=${{ steps.version.outputs.version }}
             org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
             org.opencontainers.image.licenses=AGPL-3.0-or-later
@@ -137,7 +137,7 @@ jobs:
         uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2
         with:
           tag_name: ${{ github.ref_name }}
-          name: "OpenConstructionERP ${{ github.ref_name }}"
+          name: "PrimeCrest ${{ github.ref_name }}"
           body_path: /tmp/release-notes.md
           draft: false
           prerelease: ${{ contains(github.ref_name, '-rc') || contains(github.ref_name, '-beta') || contains(github.ref_name, '-alpha') }}

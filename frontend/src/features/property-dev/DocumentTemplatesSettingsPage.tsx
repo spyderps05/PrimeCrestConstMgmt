@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Document Templates — Property Development settings page.
@@ -286,7 +286,7 @@ export function DocumentTemplatesSettingsPage() {
         })}
         subtitle={t('property_dev.doc_templates.intro', {
           defaultValue:
-            'Document templates power the PDF documents OpenConstructionERP generates for buyer journeys, reservation receipts, SPA contracts, handover protocols, warranty certificates. Pick a built-in template, preview it for your country or regulator, or upload your own .docx / .html / .pdf template.',
+            'Document templates power the PDF documents PrimeCrest generates for buyer journeys, reservation receipts, SPA contracts, handover protocols, warranty certificates. Pick a built-in template, preview it for your country or regulator, or upload your own .docx / .html / .pdf template.',
         })}
         actions={
           <Button

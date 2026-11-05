@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Project service - business logic for project management.
 
@@ -726,13 +726,26 @@ class ProjectService:
         except Exception:  # noqa: BLE001 - creation must never break on pack lookup
             _rule_sets = list(data.validation_rule_sets or [])
 
+        _currency = data.currency
+        _region = data.region
+        _classification = data.classification_standard
+        _locale = data.locale
+        try:
+            from app.core.partner_pack.pakistan_defaults import apply_project_defaults
+
+            _currency, _region, _classification, _locale = apply_project_defaults(
+                _currency, _region, _classification, _locale
+            )
+        except Exception:  # noqa: BLE001 - a pack lookup must not block project create
+            pass
+
         project = Project(
             name=data.name,
             description=data.description,
-            region=data.region,
-            classification_standard=data.classification_standard,
-            currency=data.currency,
-            locale=data.locale,
+            region=_region,
+            classification_standard=_classification,
+            currency=_currency,
+            locale=_locale,
             validation_rule_sets=_rule_sets,
             compliance_rule_packs=requested_packs,
             owner_id=owner_id,

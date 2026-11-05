@@ -521,7 +521,7 @@ test('comprehensive E2E — all flows on one session', async ({ page }) => {
   record(
     '4a-devguide',
     ppCardVisible && installCmdOk,
-    `cardVisible=${ppCardVisible} installCmdOpenConstructionERP=${installCmdOk} anchorScrolled=${anchorScrolled}`,
+    `cardVisible=${ppCardVisible} installCmdPrimeCrest=${installCmdOk} anchorScrolled=${anchorScrolled}`,
   );
   if (!ppCardVisible)
     findings.push({

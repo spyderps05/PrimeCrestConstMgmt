@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Tej nazwy nie można użyć dla nowego katalogu. Wybierz inną nazwę.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Kosztorysowanie budowlane open-source"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Aktualizuj"
   },
   "dashboard": {
-    "welcome": "Witaj w OpenConstructionERP",
+    "welcome": "Witaj w PrimeCrest",
     "subtitle": "Platforma kosztorysowania budowlanego open-source",
     "recent_projects": "Ostatnie projekty",
     "system_status": "Stan systemu",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Brak danych",
         "no_data_body": "Raport wygenerowano z pustego zestawu danych. Sprawdź, czy moduły źródłowe (finanse, harmonogram, bezpieczeństwo itd.) zwróciły dane dla wybranego projektu.",
         "no_data_body_short": "Raport wygenerowano z pustego zestawu danych. Sprawdź, czy moduły źródłowe zwróciły dane dla wybranego projektu.",
-        "footer_generated_by": "Wygenerowano przez OpenConstructionERP: {timestamp}.",
+        "footer_generated_by": "Wygenerowano przez PrimeCrest: {timestamp}.",
         "worksheet_name": "Raport",
         "pdf_subject": "Raport projektu",
         "overall_progress": "Ogólny postęp",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Dzień dobry {name},",
       "greeting_generic": "Dzień dobry,",
-      "cta": "Otwórz w OpenConstructionERP",
+      "cta": "Otwórz w PrimeCrest",
       "footer": "Otrzymujesz tę wiadomość zgodnie z ustawieniami powiadomień. Możesz je zmienić w swoim profilu.",
-      "digest_subject": "OpenConstructionERP: Podsumowanie powiadomień ({count})",
+      "digest_subject": "PrimeCrest: Podsumowanie powiadomień ({count})",
       "digest_heading": "Ostatnie powiadomienia:"
     },
     "tender_xlsx": {

@@ -1,4 +1,4 @@
-"""OpenConstructionERP - Turkey MEP contractor pack.
+"""PrimeCrest - Turkey MEP contractor pack.
 
 The Türkiye country configuration with the menu and module set of a
 mechanical, electrical and plumbing contractor. This package exports a

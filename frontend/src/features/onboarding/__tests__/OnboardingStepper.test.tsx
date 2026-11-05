@@ -1,5 +1,5 @@
 // @ts-nocheck
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // Moving between the wizard's steps: the stepper at the top opens every step
@@ -175,7 +175,7 @@ const step = (i) => screen.getByTestId(`onboarding-step-${i}`);
 const locked = (i) => step(i).getAttribute('aria-disabled') === 'true';
 
 async function startPackInstall() {
-  await heading('Welcome to OpenConstructionERP');
+  await heading('Welcome to PrimeCrest');
   fireEvent.click(screen.getByRole('button', { name: /Get Started/ }));
   await heading('How would you like to start?');
   fireEvent.click(screen.getByRole('button', { name: /Ready-made Pack/ }));
@@ -187,7 +187,7 @@ async function startPackInstall() {
 describe('the stepper in the wizard', () => {
   it('is a labelled list of buttons that marks the current step and closes the ones ahead', async () => {
     renderWizard();
-    await heading('Welcome to OpenConstructionERP');
+    await heading('Welcome to PrimeCrest');
     expect(screen.getByRole('navigation', { name: 'Setup steps' })).toBeTruthy();
     expect(step(0).getAttribute('aria-current')).toBe('step');
     expect(step(1).getAttribute('aria-current')).toBeNull();
@@ -195,7 +195,7 @@ describe('the stepper in the wizard', () => {
     expect(step(3).getAttribute('title')).toBe('Finish the earlier steps first');
     // A closed step does nothing.
     fireEvent.click(step(3));
-    expect(screen.getByRole('heading', { name: 'Welcome to OpenConstructionERP' })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Welcome to PrimeCrest' })).toBeTruthy();
 
     fireEvent.click(screen.getByRole('button', { name: /Get Started/ }));
     await heading('How would you like to start?');
@@ -203,7 +203,7 @@ describe('the stepper in the wizard', () => {
     expect(locked(0)).toBe(false);
     // Back to the welcome screen by its dot, and forward again by the same.
     fireEvent.click(step(0));
-    await heading('Welcome to OpenConstructionERP');
+    await heading('Welcome to PrimeCrest');
     expect(locked(1)).toBe(false);
     fireEvent.click(step(1));
     await heading('How would you like to start?');

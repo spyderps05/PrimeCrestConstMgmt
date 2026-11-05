@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Module manifest for oe_latam_pack."""
 
@@ -16,7 +16,7 @@ manifest = ModuleManifest(
         "Latin America construction standards: SINAPI (Brazil), NTDIF (Mexico), "
         "multi-currency support (BRL/MXN/ARS), and regional contract forms."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="regional",
     depends=[],
     auto_install=False,

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Field-worker Daily Diary MVP (task #113, Epic F).
 
 A field-first diary distinct from the legacy ``daily_diary`` module:

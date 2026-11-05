@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Pydantic schemas for the Resource Summary API.
 
 Money and quantities are ``Decimal`` and serialise to fixed-precision strings

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Tests for the Point Cloud ScanDataset repository + service register path.
 
 Every test uses a transaction-isolated PostgreSQL session (rolled back on

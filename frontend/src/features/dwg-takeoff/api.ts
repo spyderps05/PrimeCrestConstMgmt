@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * API helpers for DWG Takeoff module.
@@ -688,7 +688,7 @@ export interface DwgOfflineReadiness {
   /** True only when the browser and the backend run on the same machine
    *  (loopback request + non-production server). Drives whether the UI may
    *  show the strong "your files never leave your computer" claim or the
-   *  honest "processed on your OpenConstructionERP server" copy. Optional so
+   *  honest "processed on your PrimeCrest server" copy. Optional so
    *  older backends that don't yet send it are treated as NOT local-only. */
   local_only?: boolean;
 }

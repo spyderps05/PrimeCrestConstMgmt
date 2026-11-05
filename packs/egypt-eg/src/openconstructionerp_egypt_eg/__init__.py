@@ -1,4 +1,4 @@
-"""OpenConstructionERP - Egypt country pack (MasterFormat + EGP + Law 182/2018 + ETA).
+"""PrimeCrest - Egypt country pack (MasterFormat + EGP + Law 182/2018 + ETA).
 
 Exports a module-level ``MANIFEST`` referenced from ``pyproject.toml``::
 

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Construction-aware spelling correction for the Cost Explorer text search.
 
 An estimator in a hurry mistypes the word they know: ``concreet`` for concrete,

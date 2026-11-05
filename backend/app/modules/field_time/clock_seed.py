@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Demo data for the geofenced time clock​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠.
 
 For up to three demo projects that have a crew: one site geofence (two

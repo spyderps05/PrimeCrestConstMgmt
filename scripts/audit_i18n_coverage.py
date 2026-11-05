@@ -1,5 +1,5 @@
 """‌⁠‍
-i18n coverage audit for OpenConstructionERP.
+i18n coverage audit for PrimeCrest.
 
 Reads frontend/src/app/locales/*.ts and reports:
   - missing keys (present in en.ts but answered by neither the locale nor,
@@ -104,7 +104,7 @@ ACRONYMS = {
     "CRUD",
 }
 BRANDS = {
-    "OpenConstructionERP",
+    "PrimeCrest",
     "DDC",
     "GitHub",
     "Slack",

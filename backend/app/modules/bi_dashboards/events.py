@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """BI Dashboards cross-module subscribers (Wave M4 deep-pass).
 
 BI Dashboards is a *read-only* module - it consumes events from every

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 # AGPL-3.0 License
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Find, and on request remove, demo rows the boot seeding wrote into real projects.

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Plant register module manifest."""
 
@@ -12,7 +12,7 @@ manifest = ModuleManifest(
         "Main components and long-lead items: lead time with the date of enquiry, latest order date, "
         "capacity reservation, procurement route, delivery limits and the spares concept"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     # oe_project_governance owns the catalogue store, the plant area owner and
     # the gate readiness this register feeds; oe_approval_routes approves the

@@ -1,4 +1,4 @@
-"""OpenConstructionERP — US Construction partner pack.
+"""PrimeCrest — US Construction partner pack.
 
 Pre-configured for US general contractors:
 

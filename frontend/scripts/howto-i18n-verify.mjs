@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 //
 // Independently verify the per-locale How-it-works translation files against
 // the English key set. Catches truncated / short / corrupt files before they

@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 // Small real-browser check of Vite dev optimization and production worker output.
 // Run from frontend: node scripts/check-maplibre-worker.mjs

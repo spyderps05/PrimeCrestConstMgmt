@@ -1,7 +1,7 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
- * Community acknowledgments - the people who shaped OpenConstructionERP by
+ * Community acknowledgments - the people who shaped PrimeCrest by
  * reporting issues, asking questions and funding the work.
  *
  * Keep this file in sync with /docs/legal/ACKNOWLEDGMENTS.md. When a new

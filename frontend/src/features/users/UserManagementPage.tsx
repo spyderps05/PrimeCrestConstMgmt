@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * User Management Page — admin panel for managing users, roles, module access.
@@ -295,7 +295,7 @@ function InviteModal({
             value={form.full_name}
             onChange={(e) => setForm({ ...form, full_name: e.target.value })}
             placeholder={t('users.invite.namePlaceholder', {
-              defaultValue: 'e.g. Anna Schmidt',
+              defaultValue: 'e.g. Sara Ahmed',
             })}
             autoFocus
           />
@@ -314,7 +314,7 @@ function InviteModal({
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
             placeholder={t('users.invite.emailPlaceholder', {
-              defaultValue: 'name@company.com',
+              defaultValue: 'name@company.pk',
             })}
           />
         </div>

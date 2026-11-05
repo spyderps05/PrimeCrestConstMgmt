@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Drawing revision compare module manifest."""
 
@@ -12,7 +12,7 @@ manifest = ModuleManifest(
         "Compare two revisions of a drawing (PDF sheets or DWG/DXF), list every changed region, "
         "triage it, raise an RFI or markup and flag takeoff and BOQ quantities for re-measure"
     ),
-    author="OpenConstructionERP",
+    author="PrimeCrest",
     category="extension",
     depends=["oe_projects", "oe_users"],
     # Every revision source and follow-up target is read fail-soft.

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """NCR module manifest."""
 
@@ -9,7 +9,7 @@ manifest = ModuleManifest(
     version="0.1.0",
     display_name="Non-Conformance Reports",
     description="NCR management - material, workmanship, design non-conformances with root cause analysis and corrective actions",
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

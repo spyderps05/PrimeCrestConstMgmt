@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Work-type classifier gate module manifest."""
 
@@ -16,7 +16,7 @@ manifest = ModuleManifest(
         "required. The decision tree is jurisdiction-neutral data that regional "
         "packs override; a confirmed route gates the project before it proceeds."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

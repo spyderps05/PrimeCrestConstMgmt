@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Site-inventory module manifest."""
 
@@ -16,7 +16,7 @@ manifest = ModuleManifest(
         "Closes the loop between procurement goods receipts and what is actually "
         "held and consumed on site."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     # Hard deps supply the tables this module foreign-keys into: projects (scope),
     # BoQ (consumption + budget), procurement (goods receipts + requisition lines).

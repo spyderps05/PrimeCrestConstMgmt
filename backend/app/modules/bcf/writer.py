@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """BCF 3.0 zip writer - high-level builder API.
 
 This module provides :class:`BCFWriter`, an instance-style builder that

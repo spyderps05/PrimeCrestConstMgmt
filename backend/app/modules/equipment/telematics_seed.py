@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Telematics demo​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠: four machines on a demo project with two weeks of machine data.
 

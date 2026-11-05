@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Printable minutes of a model-review session - the record a coordinator
@@ -198,7 +198,7 @@ export function buildReviewMinutesHtml(params: ReviewMinutesParams): string {
   ${metaTable(params, l)}
   ${decisionsTable(params, l)}
   ${agendaTable(params, l)}
-  <p class="brand">OpenConstructionERP</p>
+  <p class="brand">PrimeCrest</p>
 </body>
 </html>`;
 }

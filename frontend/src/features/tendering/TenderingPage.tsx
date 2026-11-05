@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import { useState, useMemo, useCallback, useEffect, Fragment, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -738,7 +738,7 @@ function AddBidDialog({
             type="text"
             value={companyName}
             onChange={(e) => setCompanyName(e.target.value)}
-            placeholder={t('tendering.company_placeholder', 'e.g. Schmidt Bau GmbH')}
+            placeholder={t('tendering.company_placeholder', 'e.g. Habib Construction (Pvt) Ltd')}
             className={fieldCls}
           />
         </WideModalField>
@@ -747,7 +747,7 @@ function AddBidDialog({
             type="email"
             value={contactEmail}
             onChange={(e) => setContactEmail(e.target.value)}
-            placeholder="contact@example.com"
+            placeholder="contact@company.pk"
             className={fieldCls}
           />
         </WideModalField>
@@ -1264,7 +1264,7 @@ function DistributionPanel({ packageId }: { packageId: string }) {
               type="text"
               value={manualCompany}
               onChange={(e) => setManualCompany(e.target.value)}
-              placeholder={t('tendering.company_placeholder', 'e.g. Schmidt Bau GmbH')}
+              placeholder={t('tendering.company_placeholder', 'e.g. Habib Construction (Pvt) Ltd')}
               className={fieldCls}
             />
           </div>
@@ -1276,7 +1276,7 @@ function DistributionPanel({ packageId }: { packageId: string }) {
               type="email"
               value={manualEmail}
               onChange={(e) => setManualEmail(e.target.value)}
-              placeholder="contact@example.com"
+              placeholder="contact@company.pk"
               className={fieldCls}
             />
           </div>

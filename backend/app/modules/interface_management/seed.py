@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Interface-register demo seed - a populated coordination register per project.
 
 Opens the Interfaces page on a register a coordinator would recognise: a

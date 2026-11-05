@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """International, database-free helpers for DWG/DXF quantity takeoff.
 
 Everything in this file is a pure function: no session, no I/O, no module

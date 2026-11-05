@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction‌‍‌‍‌‍‌‍ · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction‌‍‌‍‌‍‌‍ · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /** Small presentational pieces shared by the guarantees pages. */
 import type { ReactNode } from 'react';

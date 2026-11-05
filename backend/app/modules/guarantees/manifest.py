@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Guarantees​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ register module manifest."""
 
@@ -17,7 +17,7 @@ manifest = ModuleManifest(
         "performance bond, alerts 60, 30 and 14 days before expiry and shows company exposure by bank, "
         "by type and against bank credit lines."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     depends=["oe_projects"],
     optional_depends=["oe_contracts", "oe_documents", "oe_notifications", "oe_subcontractors", "oe_tendering"],

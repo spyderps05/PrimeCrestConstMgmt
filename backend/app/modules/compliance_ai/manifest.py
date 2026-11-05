@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Compliance-AI module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "builder powered by Claude. Rules compile into core ValidationRule "
         "subclasses so evaluation uses the single validation pipeline."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects", "oe_dashboards"],
     optional_depends=["oe_ai"],

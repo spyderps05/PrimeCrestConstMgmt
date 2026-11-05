@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Client & Partner Portal manifest."""
 
 from app.core.module_loader import ModuleManifest
@@ -12,7 +12,7 @@ manifest = ModuleManifest(
         "suppliers/building users) with magic-link auth, RLS, notifications, "
         "audit log"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠A market DDC ships must not read as unpublished in the v3 registry.
 
 ``_HF_PUBLISHED`` in :mod:`app.modules.costs.cwicr_v3_catalogue` is the hand

@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -255,7 +255,7 @@ const CONNECTORS: ConnectorDef[] = [
     setupSteps: [
       { text: 'Open your Teams channel' },
       { text: 'Click "..." → "Connectors" → "Incoming Webhook"' },
-      { text: 'Name it "OpenConstructionERP" and click "Create"' },
+      { text: 'Name it "PrimeCrest" and click "Create"' },
       { text: 'Copy the webhook URL' },
       { text: 'Paste it below' },
     ],
@@ -376,7 +376,7 @@ const CONNECTORS: ConnectorDef[] = [
       {
         key: 'smtp_username',
         label: 'Username',
-        placeholder: 'you@example.com',
+        placeholder: 'you@company.pk',
       },
       {
         key: 'smtp_password',

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Resumable Uploads module manifest."""
 
@@ -14,7 +14,7 @@ manifest = ModuleManifest(
         "restarting. On completion chunks are assembled and handed to the "
         "existing document store and conversion pipeline."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_projects", "oe_users", "oe_documents"],
     auto_install=True,

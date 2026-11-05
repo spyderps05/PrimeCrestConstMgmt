@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * AboutPage — Application info, author, license, consulting services.
@@ -10,8 +10,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import {
   Mail, Shield, BookOpen, Users, Award,
   Briefcase, Globe, ExternalLink,
-  Linkedin, Youtube, Star, Coffee, Rocket, ArrowRight, Handshake,
-  Github, MessageCircle, Heart, HandCoins, ChevronDown, Sparkles,
+  Linkedin, Rocket, ArrowRight,
+  MessageCircle, ChevronDown,
   MessageSquareQuote,
 } from 'lucide-react';
 import clsx from 'clsx';
@@ -22,106 +22,34 @@ import { APP_VERSION } from '@/shared/lib/version';
 import { CheckForUpdatesButton, UpdateInlineNotice } from '@/shared/ui/UpdateChecker';
 import { Changelog, getRecentReleases } from './Changelog';
 import { ThirdPartyLicenses } from './ThirdPartyLicenses';
-import { CONTRIBUTORS, SPONSORS, acknowledgedUrl, type Acknowledged } from './acknowledgments';
+import {
+  PRODUCT_DEVELOPER,
+  PRODUCT_DEVELOPER_LINE,
+  PRODUCT_LEGAL_NOTICE,
+  PRODUCT_NAME,
+  PRODUCT_TAGLINE,
+} from '@/shared/lib/productIdentity';
 
-const REPO_URL = 'https://github.com/datadrivenconstruction/OpenConstructionERP';
 // Clean product URL - "?source=search" is G2's search-result tracking.
 const G2_REVIEWS_URL = 'https://www.g2.com/products/openconstructionerp/reviews';
-const PAYPAL_DONATE_URL = 'https://www.paypal.com/donate/?hosted_button_id=DWBCLNLY2VWAA';
-const GITHUB_SPONSORS_URL = 'https://github.com/sponsors/datadrivenconstruction';
 
-// Warm palette for avatar monograms - a deterministic pick keeps each person's
-// fallback color stable across renders while staying varied across the wall.
-const MONOGRAM_COLORS = [
-  'bg-rose-500',
-  'bg-amber-500',
-  'bg-emerald-500',
-  'bg-sky-500',
-  'bg-violet-500',
-  'bg-orange-500',
-  'bg-teal-500',
-  'bg-fuchsia-500',
-];
-
-function monogramColor(seed: string): string {
-  let hash = 0;
-  for (let i = 0; i < seed.length; i += 1) {
-    hash = (hash * 31 + seed.charCodeAt(i)) >>> 0;
-  }
-  return MONOGRAM_COLORS[hash % MONOGRAM_COLORS.length] ?? 'bg-slate-500';
-}
-
-function monogramInitials(name: string): string {
-  const parts = name.trim().split(/\s+/).filter(Boolean);
-  if (parts.length >= 2) return ((parts[0]?.[0] ?? '') + (parts[1]?.[0] ?? '')).toUpperCase();
-  return name.trim().slice(0, 2).toUpperCase();
-}
-
-/**
- * One acknowledgment tile: the person's GitHub avatar above their name, linking
- * to their profile. When the avatar image cannot load (no account image, network
- * block) it falls back to a colored initials monogram so every tile still reads
- * cleanly. Sponsors render slightly larger via the `prominent` flag.
- */
-function AckAvatar({ entry, prominent = false }: { entry: Acknowledged; prominent?: boolean }) {
-  const [imgFailed, setImgFailed] = useState(false);
-  const url = acknowledgedUrl(entry);
-  // Avatars are saved into public/contributors/<handle>.png (fetched from
-  // GitHub) so they serve same-origin and are not blocked by the image CSP,
-  // and the wall still shows faces offline. The initials monogram below
-  // remains the fallback for any handle without a saved image.
-  const avatarSrc = entry.handle ? `/contributors/${entry.handle}.png` : undefined;
-  const showImg = Boolean(avatarSrc) && !imgFailed;
-
-  const body = (
-    <>
-      <span
-        className={clsx(
-          'relative flex items-center justify-center overflow-hidden rounded-full shadow-sm transition-transform group-hover:scale-105',
-          prominent ? 'h-24 w-24 ring-2 ring-emerald-400/60' : 'h-11 w-11 ring-1 ring-border-light',
-        )}
-      >
-        {showImg ? (
-          <img
-            src={avatarSrc}
-            alt={entry.name}
-            loading="lazy"
-            onError={() => setImgFailed(true)}
-            className="h-full w-full object-cover"
-          />
-        ) : (
-          <span
-            className={clsx(
-              'flex h-full w-full items-center justify-center font-bold text-white',
-              prominent ? 'text-xl' : 'text-2xs',
-              monogramColor(entry.name),
-            )}
-          >
-            {monogramInitials(entry.name)}
-          </span>
-        )}
-      </span>
-      <span className="mt-1 w-full truncate text-center text-2xs text-content-secondary group-hover:text-content-primary transition-colors">
-        {entry.name}
-      </span>
-    </>
-  );
-
-  const cls = clsx(
-    'group flex flex-col items-center rounded-lg p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oe-blue focus-visible:ring-offset-2',
-    prominent ? 'w-28' : 'w-[3.75rem]',
-  );
-
-  return url ? (
-    <a href={url} target="_blank" rel="noopener noreferrer" title={entry.name} className={cls}>
-      {body}
-    </a>
-  ) : (
-    <span className={cls} title={entry.name}>
-      {body}
-    </span>
-  );
-}
+const DEMO_TEAM = [
+  {
+    name: 'Imran Shah',
+    role: 'Administrator',
+    portrait: '/assets/demo-people/imran-shah.jpg',
+  },
+  {
+    name: 'Hassan Raza',
+    role: 'Manager',
+    portrait: '/assets/demo-people/hassan-raza.jpg',
+  },
+  {
+    name: 'Usman Ali',
+    role: 'Estimator',
+    portrait: '/assets/demo-people/usman-ali.jpg',
+  },
+] as const;
 
 export function AboutPage() {
   const { t } = useTranslation();
@@ -152,12 +80,11 @@ export function AboutPage() {
     return () => window.cancelAnimationFrame(frame);
   }, [hash, key]);
 
-  // A deep link to the contributor wall (/about#community, used by the "Support
-  // us" dialog) scrolls the "Built with our community" card into view.
+  // A deep link to the demo team row (/about#community).
   useEffect(() => {
     if (hash !== '#community') return;
     const frame = window.requestAnimationFrame(() => {
-      const community = document.querySelector('[data-community-anchor]');
+      const community = document.querySelector('[data-demo-team-anchor]');
       if (community) community.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
     return () => window.cancelAnimationFrame(frame);
@@ -190,7 +117,7 @@ export function AboutPage() {
       >
         {t('about.intro_body', {
           defaultValue:
-            'Shows your installed version, recent release notes, the AGPL-3.0 licence and the open-source story behind the platform, plus links to the wider DataDrivenConstruction ecosystem and the cost-estimation book. Use it to confirm what build you are on before reporting an issue or planning an upgrade.',
+            'Shows your installed version, recent release notes, the proprietary licence notice, and product information for PrimeCrest Construction Management by Spyder Solutions. Use it to confirm what build you are on before reporting an issue or planning an upgrade.',
         })}
       </DismissibleInfo>
 
@@ -201,34 +128,37 @@ export function AboutPage() {
 
         {/* ── Left column — project identity (left-aligned on wide) ── */}
         <div className="text-center lg:text-left">
-          <a
-            href="https://openconstructionerp.com?utm_source=app&utm_medium=about"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-oe-blue hover:text-oe-blue-text transition-colors mb-4"
-          >
+          <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-oe-blue mb-4">
             <Globe size={13} />
-            openconstructionerp.com
-            <ExternalLink size={11} />
-          </a>
+            {PRODUCT_DEVELOPER}
+          </div>
           <div className="flex items-center justify-center lg:justify-start gap-2 mb-4">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
             </span>
-            <span className="text-xs font-semibold uppercase tracking-widest text-emerald-600">Open Source</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-emerald-600">Proprietary</span>
           </div>
-          <h2 className="text-3xl font-bold text-content-primary tracking-tight">OpenConstructionERP</h2>
+          <h2
+            className="text-3xl font-bold text-content-primary tracking-tight"
+            style={{ fontFamily: 'var(--oe-font-display)' }}
+          >
+            {PRODUCT_NAME}
+          </h2>
+          <p className="mt-1 text-sm font-medium text-oe-blue">{PRODUCT_DEVELOPER_LINE}</p>
           <p className="mt-2 text-base text-content-secondary">
-            {t('about.tagline', { defaultValue: 'The #1 open-source platform for construction cost estimation, project management and resource control' })}
+            {t('about.tagline', { defaultValue: PRODUCT_TAGLINE })}
           </p>
           <div className="mt-3 flex items-center justify-center lg:justify-start gap-3 text-sm text-content-tertiary">
             <span className="font-mono">v{APP_VERSION}</span>
             <span>&middot;</span>
             <span>2026</span>
             <span>&middot;</span>
-            <Badge variant="blue" size="sm">AGPL-3.0</Badge>
+            <Badge variant="blue" size="sm">All rights reserved</Badge>
           </div>
+          <p className="mt-4 max-w-xl text-xs leading-relaxed text-content-tertiary" data-testid="about-legal-notice">
+            {t('about.legal_notice', { defaultValue: PRODUCT_LEGAL_NOTICE })}
+          </p>
         </div>
 
         {/* ── Right column — update notification + recent releases ──
@@ -314,7 +244,7 @@ export function AboutPage() {
             ))}
           </div>
           <p className="mt-auto pt-4 text-sm text-content-secondary leading-relaxed">
-            {t('about.platform_desc', { defaultValue: 'OpenConstructionERP covers the full construction estimation workflow - BOQ editing, 4D scheduling, 5D cost modeling, AI-powered estimation, CAD/BIM quantity takeoff (RVT, IFC, DWG), tendering, and reporting. Supports regional classification standards and custom schemas.' })}
+            {t('about.platform_desc', { defaultValue: 'PrimeCrest Construction Management covers the full construction estimation workflow - BOQ editing, 4D scheduling, 5D cost modeling, AI-powered estimation, CAD/BIM quantity takeoff (RVT, IFC, DWG), tendering, and reporting. Supports regional classification standards and custom schemas.' })}
           </p>
         </div>
       </Card>
@@ -479,7 +409,7 @@ export function AboutPage() {
             </h2>
           </div>
           <p className="mb-5 text-sm text-content-secondary">
-            {t('about.story_subtitle', { defaultValue: 'Why OpenConstructionERP exists, and where it\'s going.' })}
+            {t('about.story_subtitle', { defaultValue: 'Why PrimeCrest Construction Management exists, and where it\'s going.' })}
           </p>
           {/* Bio — line length now governed by the col width itself. */}
           <div>
@@ -518,7 +448,7 @@ export function AboutPage() {
                 <p>
                   <Trans
                     i18nKey="about.founder_bio_p3"
-                    defaults='Two other problems kept us busy. One was helping non-developers get into proprietary file formats that were never meant to be opened. The other was finding a cleaner way to describe construction work through a resource model. Both produced free tools: the <cad>DDC CAD/BIM converters</cad> (Revit®, IFC, DWG → structured data) <gh>on GitHub</gh>, and <cwicr>CWICR</cwicr>, a multilingual database of construction works and resources - over 55,000 items in 11 languages, published as <cwicr>OpenConstructionEstimate-DDC-CWICR</cwicr>.'
+                    defaults='Two other problems kept us busy. One was helping teams work with file formats that were never meant to be opened. The other was finding a clearer way to describe construction work through a resource model. PrimeCrest Construction Management, the product on this page, is proprietary software of Spyder Solutions. It is not free and it is not built in the open.'
                     components={{
                       cad: (
                         <a
@@ -550,7 +480,7 @@ export function AboutPage() {
                 <blockquote className="my-4 rounded-r-lg border-l-4 border-oe-blue bg-oe-blue/[0.04] py-3 px-4 text-[15px] italic text-content-primary leading-relaxed">
                   {t('about.founder_bio_p4', {
                     defaultValue:
-                      "All of it was groundwork for something we'd wanted to build for a long time: an open, modular ERP for construction. The latest generation of tooling finally made it practical to pull the methodology, data models, and earlier implementations together into one platform. It's now public and open source.",
+                      "All of it was groundwork for something we'd wanted to build for a long time: a modular construction management platform. The latest generation of tooling finally made it practical to pull the methodology, data models, and earlier implementations together into one product owned by Spyder Solutions.",
                   })}
                 </blockquote>
                 <p className="border-l-2 border-oe-blue/40 pl-3 italic text-content-primary">
@@ -564,23 +494,20 @@ export function AboutPage() {
               <div className="mt-5 flex items-center gap-3 border-t border-border-light pt-4">
                 <img
                   src="/brand/ddc-logo.webp"
-                  alt={t('about.team_name', { defaultValue: 'DataDrivenConstruction' })}
+                  alt={t('about.team_name', { defaultValue: PRODUCT_DEVELOPER })}
                   className="h-12 w-12 shrink-0 rounded-xl object-cover bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-800 dark:to-slate-900 ring-1 ring-border-light shadow-sm p-1.5"
                   loading="lazy"
                 />
                 <div className="min-w-0 flex-1">
                   <h3 className="flex items-center gap-1.5 text-base font-bold text-content-primary leading-tight">
-                    {t('about.team_name', { defaultValue: 'DataDrivenConstruction' })}
-                    <a
-                      href="https://www.linkedin.com/company/datadrivenconstruction/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded text-oe-blue transition-colors hover:bg-oe-blue/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oe-blue focus-visible:ring-offset-1"
-                      title={t('about.team_linkedin', { defaultValue: 'DataDrivenConstruction on LinkedIn' })}
-                      aria-label={t('about.team_linkedin', { defaultValue: 'DataDrivenConstruction on LinkedIn' })}
+                    {t('about.team_name', { defaultValue: PRODUCT_DEVELOPER })}
+                    <span
+                      className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded text-oe-blue"
+                      title={t('about.team_linkedin', { defaultValue: 'Spyder Solutions' })}
+                      aria-label={t('about.team_linkedin', { defaultValue: 'Spyder Solutions' })}
                     >
                       <Linkedin size={15} />
-                    </a>
+                    </span>
                   </h3>
                   <p className="text-xs text-oe-blue font-medium mt-0.5">
                     {t('about.team_role', { defaultValue: 'Automation, data and open standards for construction' })}
@@ -595,115 +522,39 @@ export function AboutPage() {
           </div>
           {/* /Left column */}
 
-          {/* ── Right column — DDC ecosystem (2 of 5 cols on wide screens) ──
-              Three subsections, matching the "Built on DataDrivenConstruction"
-              band on openconstructionerp.com:
-                1. Flagship products (datadrivenconstruction.io)
-                2. Open source on GitHub
-                3. Find us across the network (social) */}
+          {/* ── Right column — developer + legal ── */}
           <aside className="lg:col-span-2 lg:border-l lg:border-border-light lg:pl-8 flex flex-col h-full">
             <div className="mb-5 flex items-center gap-2">
               <Globe size={16} className="text-oe-blue" />
               <h3 className="text-sm font-semibold text-content-primary">
-                {t('about.ddc_ecosystem_title', { defaultValue: 'DDC Ecosystem' })}
+                {t('about.developer_title', { defaultValue: PRODUCT_DEVELOPER })}
               </h3>
             </div>
-            <p className="text-xs text-content-tertiary mb-6">
-              {t('about.ddc_ecosystem_subtitle', { defaultValue: 'Projects mentioned above - every one is open-source or has a free tier.' })}
+            <p className="text-xs text-content-tertiary mb-4">
+              {t('about.developer_subtitle', {
+                defaultValue: 'PrimeCrest Construction Management is developed and maintained by Spyder Solutions.',
+              })}
             </p>
-
-            {/* ── Subsection 1: Flagship products ── */}
-            <p className="mb-2 text-2xs font-semibold uppercase tracking-wider text-content-tertiary">
-              {t('about.ddc_flagship_label', { defaultValue: 'Flagship products · datadrivenconstruction.io' })}
-            </p>
-            <ul className="mb-6 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {[
-                { href: 'https://datadrivenconstruction.io', label: 'DataDrivenConstruction', desc: t('about.ddc_link_lab', { defaultValue: 'Lab homepage - research & consulting' }) },
-                { href: 'https://datadrivenconstruction.io/books/', label: 'DDC Guidebook', desc: t('about.ddc_link_book', { defaultValue: 'Reference reading, free, 16 languages' }) },
-                { href: 'https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto', label: 'CAD-BIM Converter', desc: t('about.ddc_link_cad', { defaultValue: 'Pipeline: Revit® · IFC · DWG · DGN → data' }) },
-                { href: 'https://datadrivenconstruction.io/excel-plugin/', label: 'DDC Excel Plugin', desc: t('about.ddc_link_excel', { defaultValue: 'Spreadsheet bridge - pull live data into Excel' }) },
-              ].map(item => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-start gap-3 rounded-lg border border-border-light bg-surface-secondary/40 px-3.5 py-3.5 hover:border-oe-blue/40 hover:bg-oe-blue/[0.04] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oe-blue focus-visible:ring-offset-1"
-                  >
-                    <div className="min-w-0 flex-1">
-                      <p className="text-xs font-semibold text-content-primary leading-tight group-hover:text-oe-blue transition-colors">
-                        {item.label}
-                      </p>
-                      <p className="text-[11px] text-content-tertiary mt-0.5 leading-snug">
-                        {item.desc}
-                      </p>
-                    </div>
-                    <ArrowRight size={14} className="mt-1 shrink-0 text-content-quaternary group-hover:text-oe-blue group-hover:translate-x-0.5 transition-all" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            {/* ── Subsection 2: Open source on GitHub ── */}
-            <p className="mb-2 text-2xs font-semibold uppercase tracking-wider text-content-tertiary">
-              {t('about.ddc_oss_label', { defaultValue: 'Open source on GitHub · @datadrivenconstruction' })}
-            </p>
-            <ul className="mb-6 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {[
-                { href: 'https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto', label: 'DDC Pipeline', desc: t('about.ddc_gh_cad2data', { defaultValue: 'Revit® · IFC · DWG · DGN → structured quantities' }) },
-                { href: 'https://github.com/datadrivenconstruction/OpenConstructionEstimate-DDC-CWICR', label: 'OpenConstructionEstimate', desc: t('about.ddc_gh_cwicr', { defaultValue: '55,000+ cost items · 27 languages · 48 regions' }) },
-                { href: 'https://github.com/datadrivenconstruction', label: 'DDC Skills for AI Agents', desc: t('about.ddc_gh_skills', { defaultValue: 'Tool definitions & prompts for LLM agents' }) },
-              ].map(item => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-start gap-3 rounded-lg border border-border-light bg-surface-secondary/40 px-3.5 py-3.5 hover:border-oe-blue/40 hover:bg-oe-blue/[0.04] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oe-blue focus-visible:ring-offset-1"
-                  >
-                    <Github size={14} className="mt-0.5 shrink-0 text-content-tertiary group-hover:text-content-primary transition-colors" />
-                    <div className="min-w-0 flex-1">
-                      <p className="text-xs font-semibold text-content-primary leading-tight group-hover:text-oe-blue transition-colors">
-                        {item.label}
-                      </p>
-                      <p className="text-[11px] text-content-tertiary mt-0.5 leading-snug">
-                        {item.desc}
-                      </p>
-                    </div>
-                    <ArrowRight size={14} className="mt-1 shrink-0 text-content-quaternary group-hover:text-oe-blue group-hover:translate-x-0.5 transition-all" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            {/* ── Subsection 3: Across the network — sticks to bottom via
-                mt-auto so the right column visually fills the same height
-                as the left bio + attribution. ── */}
-            <div className="mt-auto">
-              <p className="mb-2 text-2xs font-semibold uppercase tracking-wider text-content-tertiary">
-                {t('about.ddc_network_label', { defaultValue: 'Find us across the network' })}
+            <div className="mb-6 rounded-lg border border-border-light bg-surface-secondary/40 px-3.5 py-3.5">
+              <p className="text-2xs font-semibold uppercase tracking-wider text-content-tertiary mb-2">
+                {t('about.legal_heading', { defaultValue: 'Legal' })}
               </p>
-              <div className="flex flex-wrap items-center gap-2">
-                {[
-                  { href: 'https://github.com/datadrivenconstruction', icon: Github, label: 'GitHub' },
-                  { href: 'https://datadrivenconstruction.io', icon: Globe, label: 'Website' },
-                  { href: 'https://www.linkedin.com/company/78381569', icon: Linkedin, label: 'LinkedIn' },
-                  { href: 'https://www.youtube.com/@datadrivenconstruction', icon: Youtube, label: 'YouTube' },
-                  { href: 'https://t.me/datadrivenconstruction', icon: MessageCircle, label: 'Telegram' },
-                ].map(({ href, icon: Icon, label }) => (
-                  <a
-                    key={href}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={label}
-                    aria-label={label}
-                    className="group flex h-11 w-11 items-center justify-center rounded-lg border border-border-light bg-surface-secondary/40 hover:border-oe-blue/40 hover:bg-oe-blue/[0.06] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oe-blue focus-visible:ring-offset-1"
-                  >
-                    <Icon size={17} className="text-content-tertiary group-hover:text-oe-blue transition-colors" />
-                  </a>
-                ))}
-              </div>
+              <p className="text-[11px] leading-relaxed text-content-secondary">
+                {t('about.legal_notice', { defaultValue: PRODUCT_LEGAL_NOTICE })}
+              </p>
+            </div>
+            <div className="mb-6 rounded-lg border border-border-light bg-surface-secondary/40 px-3.5 py-3.5">
+              <p className="text-xs font-semibold text-content-primary leading-tight">
+                {PRODUCT_NAME}
+              </p>
+              <p className="text-[11px] text-content-tertiary mt-1 leading-snug">
+                {t('about.repo_desc', { defaultValue: '© 2026 Spyder Solutions. All rights reserved.' })}
+              </p>
+              <p className="text-[11px] text-content-tertiary mt-2 leading-snug">
+                {t('about.third_party_hint', {
+                  defaultValue: 'Third-party component licences are listed below on this page.',
+                })}
+              </p>
             </div>
           </aside>
           {/* /Right column */}
@@ -722,7 +573,7 @@ export function AboutPage() {
             </h2>
           </div>
           <p className="text-sm text-content-secondary leading-relaxed mb-5 max-w-3xl">
-            {t('about.services_desc_v2', { defaultValue: 'Need a custom build, a workshop, or an outside expert on data + cost workflows? Data Driven Construction delivers three engagement shapes - pick what fits and we scope from there.' })}
+            {t('about.services_desc_v2', { defaultValue: 'Need a custom build, a workshop, or an outside expert on data + cost workflows? Spyder Solutions delivers three engagement shapes - pick what fits and we scope from there.' })}
           </p>
 
           {/* Three numbered service cards — Build · Workshops · Consulting */}
@@ -736,7 +587,7 @@ export function AboutPage() {
                 desc: t('about.svc_build_desc', { defaultValue: 'Discovery → workshop → modules picked → built → deployed on your hardware. Source delivered.' }),
                 bullets: [
                   t('about.svc_build_b1', { defaultValue: '4–12 weeks engagement' }),
-                  t('about.svc_build_b2', { defaultValue: 'AGPL or commercial license' }),
+                  t('about.svc_build_b2', { defaultValue: 'Proprietary commercial licence' }),
                   t('about.svc_build_b3', { defaultValue: '30 days post-launch support' }),
                 ],
               },
@@ -841,187 +692,6 @@ export function AboutPage() {
 
       {/* Documentation block — moved down next to License (2-col reference band). */}
 
-      {/* Support the Project — compact 2-col layout so the section doesn't
-          stretch endlessly on wide screens. Hero+actions on the left, the
-          "Your support enables" backlog list on the right. */}
-      <Card
-        padding="none"
-        className="animate-card-in overflow-hidden"
-        style={{ animationDelay: '250ms' }}
-      >
-        <div className="relative">
-          {/* Richer gradient — same vibe, now contained inside a tighter card. */}
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-500/[0.10] via-orange-500/[0.06] to-rose-500/[0.10]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(251,191,36,0.12),transparent_50%),radial-gradient(circle_at_90%_100%,rgba(244,63,94,0.12),transparent_55%)]" />
-
-          <div className="relative p-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-            {/* ── Left column — hero + 3 stacked action cards ── */}
-            <div>
-              <div className="flex items-center gap-2.5 mb-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/70 dark:bg-white/5 shadow-sm ring-1 ring-black/[0.04] dark:ring-white/[0.06]">
-                  <Handshake size={18} className="text-oe-blue" />
-                </div>
-                <h2 className="text-xl font-bold tracking-tight text-content-primary">
-                  {t('about.support_title', { defaultValue: 'Support OpenConstructionERP' })}
-                </h2>
-              </div>
-              <p className="text-sm text-content-secondary leading-relaxed mb-2">
-                {t('about.support_desc_short', { defaultValue: 'Free, open-source, built by construction professionals. Every star, sponsor, or paid engagement keeps the project alive.' })}
-              </p>
-              {/* Perk badge - additive, inline-default only; does not touch
-                  support_desc_short above (reconciled with en.ts separately). */}
-              <p className="mb-5 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-1 text-2xs font-medium text-emerald-700 dark:text-emerald-300">
-                <Sparkles size={12} className="shrink-0" />
-                {t('about.support_perk_badge', {
-                  defaultValue: 'Donors unlock the Inside track: early word on what shipped and a say in what is next',
-                })}
-              </p>
-
-              {/* 4 action cards, stacked vertically to keep the section dense */}
-              <div className="space-y-2">
-                <a
-                  href="https://github.com/datadrivenconstruction/OpenConstructionERP"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-3 rounded-lg border border-border-light bg-surface-primary/80 backdrop-blur-sm px-3.5 py-3 hover:border-amber-400/60 hover:bg-amber-50/60 dark:hover:bg-amber-900/15 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oe-blue focus-visible:ring-offset-1"
-                >
-                  <Star size={22} className="shrink-0 text-amber-500 group-hover:scale-110 group-hover:-rotate-6 transition-transform" fill="currentColor" />
-                  <div className="min-w-0 flex-1">
-                    <p className="text-sm font-bold text-content-primary leading-tight">
-                      {t('about.support_star', { defaultValue: 'Star on GitHub' })}
-                    </p>
-                    <p className="text-2xs text-content-tertiary leading-snug mt-0.5">
-                      {t('about.support_star_desc', { defaultValue: 'Show your support - it takes 2 seconds and helps others discover the project' })}
-                    </p>
-                  </div>
-                  <ArrowRight size={14} className="shrink-0 text-content-quaternary group-hover:text-amber-500 group-hover:translate-x-0.5 transition-all" />
-                </a>
-
-                <a
-                  href={GITHUB_SPONSORS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-3 rounded-lg border border-border-light bg-surface-primary/80 backdrop-blur-sm px-3.5 py-3 hover:border-rose-400/60 hover:bg-rose-50/60 dark:hover:bg-rose-900/15 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oe-blue focus-visible:ring-offset-1"
-                >
-                  <Coffee size={22} className="shrink-0 text-rose-500 group-hover:scale-110 transition-transform" />
-                  <div className="min-w-0 flex-1">
-                    <p className="text-sm font-bold text-content-primary leading-tight">
-                      {t('about.support_sponsor', { defaultValue: 'Become a Sponsor' })}
-                    </p>
-                    <p className="text-2xs text-content-tertiary leading-snug mt-0.5">
-                      {t('about.support_sponsor_desc', { defaultValue: 'Fund new features, regional databases, and keep the project free for everyone' })}
-                    </p>
-                  </div>
-                  <ArrowRight size={14} className="shrink-0 text-content-quaternary group-hover:text-rose-500 group-hover:translate-x-0.5 transition-all" />
-                </a>
-
-                <a
-                  href={PAYPAL_DONATE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-3 rounded-lg border border-border-light bg-surface-primary/80 backdrop-blur-sm px-3.5 py-3 hover:border-emerald-400/60 hover:bg-emerald-50/60 dark:hover:bg-emerald-900/15 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oe-blue focus-visible:ring-offset-1"
-                >
-                  <HandCoins size={22} className="shrink-0 text-emerald-500 group-hover:scale-110 transition-transform" />
-                  <div className="min-w-0 flex-1">
-                    <p className="text-sm font-bold text-content-primary leading-tight">
-                      {t('about.support_paypal', { defaultValue: 'Donate via PayPal' })}
-                    </p>
-                    <p className="text-2xs text-content-tertiary leading-snug mt-0.5">
-                      {t('about.support_paypal_desc', { defaultValue: 'A one-time donation of any size keeps the platform free and moving forward' })}
-                    </p>
-                  </div>
-                  <ArrowRight size={14} className="shrink-0 text-content-quaternary group-hover:text-emerald-500 group-hover:translate-x-0.5 transition-all" />
-                </a>
-
-                <a
-                  href="https://datadrivenconstruction.io/contact-support/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-3 rounded-lg border border-border-light bg-surface-primary/80 backdrop-blur-sm px-3.5 py-3 hover:border-oe-blue/50 hover:bg-oe-blue/[0.06] dark:hover:bg-blue-900/15 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oe-blue focus-visible:ring-offset-1"
-                >
-                  <Rocket size={22} className="shrink-0 text-oe-blue group-hover:scale-110 group-hover:-translate-y-0.5 transition-transform" />
-                  <div className="min-w-0 flex-1">
-                    <p className="text-sm font-bold text-content-primary leading-tight">
-                      {t('about.support_consulting', { defaultValue: 'Order Consulting' })}
-                    </p>
-                    <p className="text-2xs text-content-tertiary leading-snug mt-0.5">
-                      {t('about.support_consulting_desc', { defaultValue: 'Need custom features, deployment, or training? We deliver professional solutions worldwide' })}
-                    </p>
-                  </div>
-                  <ArrowRight size={14} className="shrink-0 text-content-quaternary group-hover:text-oe-blue group-hover:translate-x-0.5 transition-all" />
-                </a>
-
-                <button
-                  type="button"
-                  onClick={() => navigate('/inside')}
-                  className="group flex w-full items-center gap-3 rounded-lg border border-border-light bg-surface-primary/80 backdrop-blur-sm px-3.5 py-3 hover:border-emerald-400/60 hover:bg-emerald-50/60 dark:hover:bg-emerald-900/15 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oe-blue focus-visible:ring-offset-1"
-                >
-                  <Sparkles size={22} className="shrink-0 text-emerald-500 group-hover:scale-110 transition-transform" />
-                  <div className="min-w-0 flex-1 text-left">
-                    <p className="text-sm font-bold text-content-primary leading-tight">
-                      {t('about.support_inside_track', { defaultValue: 'Backers inside track' })}
-                    </p>
-                    <p className="text-2xs text-content-tertiary leading-snug mt-0.5">
-                      {t('about.support_inside_track_desc', {
-                        defaultValue: 'Already have a supporter code? Open the early-look news panel',
-                      })}
-                    </p>
-                  </div>
-                  <ArrowRight size={14} className="shrink-0 text-content-quaternary group-hover:text-emerald-500 group-hover:translate-x-0.5 transition-all" />
-                </button>
-              </div>
-            </div>
-            {/* /Left column */}
-
-            {/* ── Right column — KPI tiles + what your support enables ──
-                Two stat tiles on top mirror the visual weight of the left
-                column's hero block, so the two halves match height on wide
-                screens without leaving a gap below the bullets. ── */}
-            <div className="lg:border-l lg:border-border-light/60 dark:lg:border-white/[0.08] lg:pl-6 flex flex-col">
-              <p className="text-xs font-semibold uppercase tracking-wider text-content-tertiary mb-3 flex items-center gap-1.5">
-                <Rocket size={12} className="text-oe-blue" />
-                {t('about.support_impact_label', { defaultValue: 'Impact so far' })}
-              </p>
-              <div className="grid grid-cols-2 gap-2.5 mb-4">
-                {[
-                  { value: String(SUPPORTED_LANGUAGES.length), label: t('about.support_kpi_langs', { defaultValue: 'Languages translated' }) },
-                  { value: '47', label: t('about.support_kpi_regions', { defaultValue: 'Countries covered' }) },
-                  { value: '180+', label: t('about.support_kpi_modules', { defaultValue: 'Backend modules' }) },
-                  { value: '55K+', label: t('about.support_kpi_cwicr', { defaultValue: 'CWICR positions' }) },
-                ].map((kpi, i) => (
-                  <div key={i} className="rounded-lg bg-surface-primary/60 backdrop-blur-sm border border-border-light px-3 py-2.5">
-                    <div className="text-lg font-bold text-content-primary leading-tight">{kpi.value}</div>
-                    <div className="text-2xs text-content-tertiary mt-0.5 leading-snug">{kpi.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              <p className="text-xs font-semibold uppercase tracking-wider text-content-tertiary mb-3 flex items-center gap-1.5">
-                <ArrowRight size={12} className="text-oe-blue" />
-                {t('about.support_enables', { defaultValue: 'Your support enables:' })}
-              </p>
-              <ul className="space-y-1.5">
-                {[
-                  t('about.support_e1', { defaultValue: 'New regional cost databases (CWICR)' }),
-                  t('about.support_e2', { defaultValue: 'AI estimation improvements' }),
-                  t('about.support_e3', { defaultValue: 'More CAD/BIM format support' }),
-                  t('about.support_e4', { defaultValue: 'Better PDF takeoff tools' }),
-                  t('about.support_e5', { defaultValue: 'Mobile app development' }),
-                  t('about.support_e6', { defaultValue: 'Free workshops and documentation' }),
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-xs text-content-secondary">
-                    <ArrowRight size={11} className="mt-1 shrink-0 text-oe-blue" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {/* /Right column */}
-          </div>
-        </div>
-      </Card>
-
       {/* Free Guidebook — 5-col internal split: book cover gets 2/5 of the
           width so the cover image can render larger; the 10-part TOC keeps
           3/5 and its tiles read tighter and more uniform. */}
@@ -1038,7 +708,7 @@ export function AboutPage() {
               <Badge variant="blue" size="sm">Free</Badge>
             </div>
             <p className="text-xs text-content-tertiary mb-4">
-              {t('about.book_subtitle', { defaultValue: 'By the DataDrivenConstruction team · 16 languages · 600+ pages · 10 parts, 173 chapters' })}
+              {t('about.book_subtitle', { defaultValue: 'Developed by Spyder Solutions' })}
             </p>
             <a
               href="https://datadrivenconstruction.io/books/"
@@ -1149,12 +819,12 @@ export function AboutPage() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {[
-                { id: 'quickstart', href: 'https://github.com/datadrivenconstruction/OpenConstructionERP/tree/main/docs', label: t('about.docs_pop_quickstart', { defaultValue: 'Quick start - Docker compose' }) },
-                { id: 'bim', href: 'https://github.com/datadrivenconstruction/OpenConstructionERP/blob/main/docs/BIM-STORAGE-ARCHITECTURE.md', label: t('about.docs_pop_bim', { defaultValue: 'Import BIM (RVT/IFC) → BOQ' }) },
-                { id: 'gaeb', href: 'https://github.com/datadrivenconstruction/OpenConstructionERP/tree/main/docs', label: t('about.docs_pop_gaeb', { defaultValue: 'GAEB X83/X84 import & export' }) },
-                { id: 'takeoff', href: 'https://github.com/datadrivenconstruction/OpenConstructionERP/tree/main/docs', label: t('about.docs_pop_takeoff', { defaultValue: 'PDF takeoff with annotations' }) },
-                { id: 'sdk', href: 'https://github.com/datadrivenconstruction/OpenConstructionERP/tree/main/docs/module-development', label: t('about.docs_pop_sdk', { defaultValue: 'Module SDK · write a plugin' }) },
-                { id: 'deploy', href: 'https://github.com/datadrivenconstruction/OpenConstructionERP/blob/main/docs/INSTALL_LINUX.md', label: t('about.docs_pop_deploy', { defaultValue: 'VPS deployment guide' }) },
+                { id: 'quickstart', href: 'https://datadrivenconstruction.io', label: t('about.docs_pop_quickstart', { defaultValue: 'Quick start - Docker compose' }) },
+                { id: 'bim', href: 'https://datadrivenconstruction.io', label: t('about.docs_pop_bim', { defaultValue: 'Import BIM (RVT/IFC) → BOQ' }) },
+                { id: 'gaeb', href: 'https://datadrivenconstruction.io', label: t('about.docs_pop_gaeb', { defaultValue: 'GAEB X83/X84 import & export' }) },
+                { id: 'takeoff', href: 'https://datadrivenconstruction.io', label: t('about.docs_pop_takeoff', { defaultValue: 'PDF takeoff with annotations' }) },
+                { id: 'sdk', href: 'https://datadrivenconstruction.io/module-development', label: t('about.docs_pop_sdk', { defaultValue: 'Module SDK · write a plugin' }) },
+                { id: 'deploy', href: 'https://datadrivenconstruction.io', label: t('about.docs_pop_deploy', { defaultValue: 'VPS deployment guide' }) },
               ].map(topic => (
                 <a
                   key={topic.id}
@@ -1172,7 +842,7 @@ export function AboutPage() {
             </div>
 
             <div className="mt-auto pt-4">
-              <a href="https://github.com/datadrivenconstruction/OpenConstructionERP/tree/main/docs" target="_blank" rel="noopener noreferrer">
+              <a href="https://datadrivenconstruction.io" target="_blank" rel="noopener noreferrer">
                 <Button variant="primary" size="md" icon={<BookOpen size={15} />}>
                   {t('about.docs_open', { defaultValue: 'Open Docs' })}
                 </Button>
@@ -1182,7 +852,7 @@ export function AboutPage() {
         </Card>
 
         {/* License — restructured into "You can / You must" so users see the
-            AGPL trade-off at a glance instead of reading prose. CTA at bottom
+            licence terms at a glance instead of reading prose. CTA at bottom
             matches the Documentation card's "Open Docs" button position. */}
         <Card className="animate-card-in h-full flex flex-col" style={{ animationDelay: '260ms' }}>
           <div className="p-6 flex flex-col flex-1">
@@ -1192,18 +862,18 @@ export function AboutPage() {
               </div>
               <div className="flex-1 min-w-0">
                 <h2 className="text-lg font-semibold text-content-primary">
-                  {t('about.license_title', { defaultValue: 'License & Open Source' })}
+                  {t('about.license_title', { defaultValue: 'Licence & Ownership' })}
                 </h2>
                 <p className="text-xs text-content-tertiary">
-                  {t('about.license_subtitle', { defaultValue: 'AGPL-3.0 - free for any use, including commercial' })}
+                  {t('about.license_subtitle', { defaultValue: '© 2026 Spyder Solutions. All rights reserved.' })}
                 </p>
               </div>
             </div>
             <p className="text-sm text-content-secondary leading-relaxed mb-4">
-              {t('about.license_desc_short', { defaultValue: 'GNU Affero General Public License v3.0 - copyleft. The full text ships with the source and is also available at gnu.org/licenses/agpl-3.0.' })}
+              {t('about.license_desc_short', { defaultValue: 'PrimeCrest Construction Management Software is proprietary. No one may copy, modify, or redistribute it without written permission from Spyder Solutions.' })}
             </p>
 
-            {/* ── You can / You must — concrete bullet pairs so the AGPL
+            {/* ── You can / You must — concrete bullet pairs so the
                 obligations are visible before download, not after lawyers. ── */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 mb-4">
               <div>
@@ -1212,10 +882,10 @@ export function AboutPage() {
                 </p>
                 <ul className="space-y-1 text-xs text-content-secondary leading-snug">
                   {[
-                    t('about.license_youcan_1', { defaultValue: 'Use for any purpose, including commercial' }),
+                    t('about.license_youcan_1', { defaultValue: 'Use under your Spyder Solutions licence' }),
                     t('about.license_youcan_2', { defaultValue: 'Self-host on your own hardware' }),
-                    t('about.license_youcan_3', { defaultValue: 'Modify, fork, and redistribute' }),
-                    t('about.license_youcan_4', { defaultValue: 'Build proprietary modules on top' }),
+                    t('about.license_youcan_3', { defaultValue: 'Configure modules for your organisation' }),
+                    t('about.license_youcan_4', { defaultValue: 'Request custom modules from Spyder Solutions' }),
                   ].map((b, i) => (
                     <li key={i} className="flex items-start gap-1.5">
                       <span className="mt-1 inline-block h-1 w-1 rounded-full bg-emerald-500 shrink-0" />
@@ -1230,10 +900,10 @@ export function AboutPage() {
                 </p>
                 <ul className="space-y-1 text-xs text-content-secondary leading-snug">
                   {[
-                    t('about.license_youmust_1', { defaultValue: 'Share modifications under AGPL-3.0' }),
-                    t('about.license_youmust_2', { defaultValue: 'Provide source to network users' }),
-                    t('about.license_youmust_3', { defaultValue: 'Keep copyright + license notices' }),
-                    t('about.license_youmust_4', { defaultValue: 'Document what you changed' }),
+                    t('about.license_youmust_1', { defaultValue: 'Keep the software confidential' }),
+                    t('about.license_youmust_2', { defaultValue: 'Do not copy or redistribute the product' }),
+                    t('about.license_youmust_3', { defaultValue: 'Keep copyright notices intact' }),
+                    t('about.license_youmust_4', { defaultValue: 'Obtain written permission for any redistribution' }),
                   ].map((b, i) => (
                     <li key={i} className="flex items-start gap-1.5">
                       <span className="mt-1 inline-block h-1 w-1 rounded-full bg-amber-500 shrink-0" />
@@ -1245,14 +915,14 @@ export function AboutPage() {
             </div>
 
             <div className="flex flex-wrap gap-1.5 mb-4">
-              <Badge variant="success" size="sm">{t('about.license_badge_free', { defaultValue: 'Free to use' })}</Badge>
-              <Badge variant="success" size="sm">{t('about.license_badge_oss', { defaultValue: 'Open source' })}</Badge>
+              <Badge variant="success" size="sm">{t('about.license_badge_free', { defaultValue: 'Proprietary' })}</Badge>
+              <Badge variant="success" size="sm">{t('about.license_badge_oss', { defaultValue: 'All rights reserved' })}</Badge>
               <Badge variant="success" size="sm">{t('about.license_badge_selfhost', { defaultValue: 'Self-hosted' })}</Badge>
               <Badge variant="success" size="sm">{t('about.license_badge_nolockin', { defaultValue: 'No vendor lock-in' })}</Badge>
-              <Badge variant="blue" size="sm">AGPL-3.0</Badge>
+              <Badge variant="blue" size="sm">© Spyder Solutions</Badge>
             </div>
 
-            {/* Third-party components. AGPL-3.0 above is our own licence and
+            {/* Third-party components. The proprietary notice above is the product licence and
                 not the whole story: the build also redistributes LGPL-2.1 and
                 LGPL-3.0 components, and their texts ship inside the artefact
                 where nothing could read them until /api/v1/licenses/. */}
@@ -1260,7 +930,7 @@ export function AboutPage() {
 
             <div className="mt-auto pt-3 border-t border-border-light">
               <p className="text-xs text-content-secondary mb-2">
-                {t('about.license_commercial_short', { defaultValue: 'Need a commercial licence (without AGPL obligations) or an enterprise SLA?' })}
+                {t('about.license_commercial_short', { defaultValue: 'Need an enterprise licence or SLA?' })}
               </p>
               <a href="https://datadrivenconstruction.io/contact-support/" target="_blank" rel="noopener noreferrer">
                 <Button variant="secondary" size="md" icon={<Shield size={15} />}>
@@ -1273,139 +943,42 @@ export function AboutPage() {
 
       </div>
 
-      {/* Thanks to our community - a warm wall of GitHub avatars for the
-          people who report issues, ask questions and fund the work. Placed
-          right before the Changelog so the page moves from gratitude into the
-          release history. Sponsors and donors lead the wall when present;
-          otherwise a single inviting line asks for the first backer. Kept in
-          sync with /docs/legal/ACKNOWLEDGMENTS.md via acknowledgments.ts. */}
+      {/* Demo team — fictional Pakistani names and portraits used in the product demo. */}
       <Card className="animate-card-in" style={{ animationDelay: '280ms' }}>
-        <div className="p-6" data-community-anchor style={{ scrollMarginTop: '80px' }}>
+        <div className="p-6" data-demo-team-anchor style={{ scrollMarginTop: '80px' }}>
           <div className="flex items-center gap-2.5 mb-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-rose-500/10 ring-1 ring-rose-500/20">
-              <Heart size={18} className="text-rose-500" fill="currentColor" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-oe-blue/10 ring-1 ring-oe-blue/20">
+              <Users size={18} className="text-oe-blue" />
             </div>
             <h2 className="text-lg font-semibold text-content-primary">
-              {t('about.thanks_title', { defaultValue: 'Built with our community' })}
+              {t('about.demo_team_title', { defaultValue: 'Demo team' })}
             </h2>
           </div>
           <p className="text-sm text-content-secondary leading-relaxed mb-6 max-w-3xl">
-            {t('about.thanks_subtitle', {
+            {t('about.demo_team_subtitle', {
               defaultValue:
-                'OpenConstructionERP keeps growing thanks to its community. Every question, bug report and feature idea shapes what we build next, and every star, share and contribution keeps the platform free and open for everyone. Thank you to the people below.',
+                'Showcase accounts used for product demos. Names and portraits are fictional.',
             })}
           </p>
-
-          {/* Sponsors and donors lead the wall when we have any; otherwise a
-              single inviting line stands in for an empty group. */}
-          {SPONSORS.length > 0 ? (
-            <div className="mb-6">
-              <p className="mb-3 text-2xs font-semibold uppercase tracking-wider text-content-tertiary">
-                {t('about.thanks_sponsors_label', { defaultValue: 'Sponsors and donors' })}
-              </p>
-              {/* Text-only nickname chips - no avatars or remote images, so the
-                  wall stays self-contained and reads cleanly offline. When a
-                  sponsor supplies a handle or url the chip links to it. */}
-              <div className="flex flex-wrap items-center gap-2.5">
-                {SPONSORS.map(s => {
-                  const url = acknowledgedUrl(s);
-                  const chipCls =
-                    'inline-flex items-center gap-2 rounded-lg border border-emerald-300/60 bg-emerald-50/60 dark:border-emerald-500/30 dark:bg-emerald-900/15 px-4 py-2 text-sm font-semibold text-content-primary';
-                  const label = (
-                    <>
-                      <HandCoins size={18} className="shrink-0 text-emerald-600 dark:text-emerald-400" />
-                      <span>{s.name}</span>
-                    </>
-                  );
-                  return url ? (
-                    <a
-                      key={s.handle ?? s.name}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title={s.name}
-                      className={clsx(chipCls, 'transition-colors hover:border-emerald-400/70 hover:text-content-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oe-blue focus-visible:ring-offset-1')}
-                    >
-                      {label}
-                    </a>
-                  ) : (
-                    <span key={s.handle ?? s.name} title={s.name} className={chipCls}>
-                      {label}
-                    </span>
-                  );
-                })}
+          <div className="flex flex-wrap gap-4">
+            {DEMO_TEAM.map((person) => (
+              <div
+                key={person.name}
+                className="flex items-center gap-3 rounded-xl border border-border-light bg-surface-secondary/40 px-3.5 py-3 min-w-[220px]"
+              >
+                <img
+                  src={person.portrait}
+                  alt={person.name}
+                  className="h-12 w-12 rounded-full object-cover ring-1 ring-border-light"
+                  loading="lazy"
+                />
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold text-content-primary leading-tight">{person.name}</p>
+                  <p className="text-xs text-content-tertiary mt-0.5">{person.role}</p>
+                </div>
               </div>
-            </div>
-          ) : (
-            <div className="mb-6 flex flex-wrap items-center gap-x-3 gap-y-2 rounded-lg border border-emerald-300/50 bg-emerald-50/50 dark:border-emerald-500/25 dark:bg-emerald-900/10 px-3.5 py-2.5">
-              <span className="text-xs text-content-secondary">
-                {t('about.thanks_be_first', { defaultValue: 'No sponsors yet - be the first to back the project.' })}
-              </span>
-              <a
-                href={GITHUB_SPONSORS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:underline"
-              >
-                <Github size={12} />
-                {t('about.thanks_be_first_github', { defaultValue: 'Sponsor on GitHub' })}
-              </a>
-              <span aria-hidden className="text-content-quaternary">&middot;</span>
-              <a
-                href={PAYPAL_DONATE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:underline"
-              >
-                <HandCoins size={12} />
-                {t('about.thanks_be_first_paypal', { defaultValue: 'Donate via PayPal' })}
-              </a>
-            </div>
-          )}
-
-          {/* Contributors and reporters - everyone tracked in ACKNOWLEDGMENTS.md. */}
-          <p className="mb-3 text-2xs font-semibold uppercase tracking-wider text-content-tertiary">
-            {t('about.thanks_contributors_label', { defaultValue: 'Contributors and reporters' })}
-          </p>
-          <div className="flex flex-wrap gap-3">
-            {CONTRIBUTORS.map(c => (
-              <AckAvatar key={c.handle ?? c.name} entry={c} />
             ))}
           </div>
-
-          {/* Closing CTA - invites the reader onto the wall. */}
-          <p className="mt-6 pt-4 border-t border-border-light text-xs text-content-secondary">
-            <Trans
-              i18nKey="about.thanks_cta"
-              defaults="Want to see your name here? <star>Star the project</star>, <sponsor>become a sponsor</sponsor> or <donate>donate</donate>."
-              components={{
-                star: (
-                  <a
-                    href={REPO_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-oe-blue hover:underline"
-                  />
-                ),
-                sponsor: (
-                  <a
-                    href={GITHUB_SPONSORS_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-oe-blue hover:underline"
-                  />
-                ),
-                donate: (
-                  <a
-                    href={PAYPAL_DONATE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-oe-blue hover:underline"
-                  />
-                ),
-              }}
-            />
-          </p>
         </div>
       </Card>
 
@@ -1445,10 +1018,10 @@ export function AboutPage() {
         </h2>
         <div className="space-y-2 text-sm text-content-secondary leading-relaxed">
           <p>
-            {t('about.dev_model_p1', { defaultValue: 'OpenConstructionERP has been under continuous development for more than six years and has benefited from contributions, feedback, testing, and domain expertise from many different people.' })}
+            {t('about.dev_model_p1', { defaultValue: 'PrimeCrest Construction Management is developed by Spyder Solutions, with ongoing product work, feedback, testing, and domain expertise from construction professionals.' })}
           </p>
           <p>
-            {t('about.dev_model_p2', { defaultValue: 'To maintain a consistent architecture and reduce security, dependency, and integration risks, the project follows a centralized integration model. Most production code is ultimately reviewed, consolidated, tested, and published through a single maintainer account. As a result, the GitHub contributor history does not necessarily reflect the actual number of people who have contributed to the project.' })}
+            {t('about.dev_model_p2', { defaultValue: 'To maintain a consistent architecture and reduce security, dependency, and integration risks, Spyder Solutions follows a centralized integration model. Production code is reviewed, consolidated, and tested before release.' })}
           </p>
           <p>
             {t('about.dev_model_p3', { defaultValue: 'Rather than allowing the codebase to evolve into a collection of loosely connected components, changes are integrated into one coherent development line and undergo review and testing before being merged into the main project. A single publishing account represents a controlled integration and release process designed to preserve stability, security, and architectural consistency.' })}
@@ -1459,13 +1032,13 @@ export function AboutPage() {
       {/* Credits */}
       <div className="text-center py-4 text-xs text-content-quaternary">
         <p className="flex items-center justify-center gap-1">
-          {t('about.built_by', { defaultValue: 'Built by the DataDrivenConstruction team' })}
+          {t('about.built_by', { defaultValue: `Developed by ${PRODUCT_DEVELOPER}` })}
           {' · '}
           <a href="https://datadrivenconstruction.io" target="_blank" rel="noopener noreferrer" className="hover:text-oe-blue transition-colors">
             datadrivenconstruction.io
           </a>
         </p>
-        <p className="mt-1">&copy; 2026 Data Driven Construction. All rights reserved.</p>
+        <p className="mt-1">&copy; 2026 Spyder Solutions. All rights reserved.</p>
       </div>
     </div>
   );

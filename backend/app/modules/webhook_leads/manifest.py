@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Webhook Leads module manifest."""
 
@@ -14,7 +14,7 @@ manifest = ModuleManifest(
         "Per-source API key / HMAC / JWT auth, IP allowlisting, rate "
         "limiting, payload mapping, and full audit logging."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     depends=["oe_crm"],
     auto_install=True,

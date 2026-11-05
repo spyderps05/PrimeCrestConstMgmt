@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "ไม่สามารถใช้ชื่อนี้สำหรับแคตตาล็อกใหม่ได้ กรุณาเลือกชื่ออื่น",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "การประมาณราคาก่อสร้างแบบโอเพนซอร์ส"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "อัปเดต"
   },
   "dashboard": {
-    "welcome": "ยินดีต้อนรับสู่ OpenConstructionERP",
+    "welcome": "ยินดีต้อนรับสู่ PrimeCrest",
     "subtitle": "พื้นที่ทำงานประมาณราคาก่อสร้างของคุณ",
     "recent_projects": "โครงการล่าสุด",
     "system_status": "สถานะระบบ",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "ไม่มีข้อมูล",
         "no_data_body": "รายงานนี้สร้างจากชุดข้อมูลที่ว่างเปล่า โปรดตรวจสอบว่าโมดูลต้นทาง (การเงิน กำหนดการ ความปลอดภัย ฯลฯ) ส่งข้อมูลสำหรับโครงการที่เลือกแล้ว",
         "no_data_body_short": "รายงานนี้สร้างจากชุดข้อมูลที่ว่างเปล่า โปรดตรวจสอบว่าโมดูลต้นทางส่งข้อมูลสำหรับโครงการที่เลือกแล้ว",
-        "footer_generated_by": "สร้างโดย OpenConstructionERP เมื่อ {timestamp}",
+        "footer_generated_by": "สร้างโดย PrimeCrest เมื่อ {timestamp}",
         "worksheet_name": "รายงาน",
         "pdf_subject": "รายงานโครงการ",
         "overall_progress": "ความคืบหน้าโดยรวม",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "เรียน คุณ{name}",
       "greeting_generic": "เรียน ผู้ใช้งาน",
-      "cta": "เปิดใน OpenConstructionERP",
+      "cta": "เปิดใน PrimeCrest",
       "footer": "คุณได้รับอีเมลนี้ตามการตั้งค่าการแจ้งเตือนของคุณ สามารถเปลี่ยนแปลงได้ในโปรไฟล์",
-      "digest_subject": "OpenConstructionERP: สรุปการแจ้งเตือน ({count})",
+      "digest_subject": "PrimeCrest: สรุปการแจ้งเตือน ({count})",
       "digest_heading": "การแจ้งเตือนล่าสุด:"
     },
     "tender_xlsx": {

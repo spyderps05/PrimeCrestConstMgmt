@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """AI Estimation module manifest."""
 
@@ -9,7 +9,7 @@ manifest = ModuleManifest(
     version="0.1.0",
     display_name="AI Estimation",
     description="AI-powered construction cost estimation from text descriptions and photos",
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_boq", "oe_projects"],
     auto_install=True,

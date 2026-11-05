@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Tendering​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ routes for clarifications, the tender timeline, addenda validation and the bidder side.
 

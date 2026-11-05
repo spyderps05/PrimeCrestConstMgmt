@@ -1,4 +1,4 @@
-"""OpenConstructionERP - Nigeria country pack (BESMM, NBS, NGN)."""
+"""PrimeCrest - Nigeria country pack (BESMM, NBS, NGN)."""
 
 from __future__ import annotations
 

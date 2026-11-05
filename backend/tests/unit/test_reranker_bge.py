@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Unit tests for the local BGE cross-encoder reranker.
 
 The actual ``FlagReranker`` model (BAAI/bge-reranker-v2-m3) is too

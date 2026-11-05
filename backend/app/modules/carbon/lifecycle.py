@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Pure​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ life-cycle stage maths and EPD parsers (EN 15978 / EN 15804 / ISO 21930).
 

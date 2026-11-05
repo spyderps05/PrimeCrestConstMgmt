@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Shared construction-vocabulary layer for catalog and cost search.
 
 Estimators type the word they know; a price book or catalog stores the word its

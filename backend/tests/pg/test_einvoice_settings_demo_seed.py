@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The E-Rechnung settings screen is filled on the install whose invoice passes.
 
 The German showcase preflight found the two halves disagreeing: the seeded

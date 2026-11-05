@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The coordination demo seeds must fill their registers, once, with usable rows.
 
 BCF, Point Cloud and the interface register all shipped routed, permissioned and

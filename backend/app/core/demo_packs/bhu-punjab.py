@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 from __future__ import annotations
 
@@ -473,7 +473,10 @@ TEMPLATE = DemoTemplate(
             "ACI 318 as adopted for reinforced concrete",
         ],
         "estimating_method": "Item rate bill with contractor's overhead, profit and sales tax on services",
-        "contract": "Public works under the standard bidding documents with monthly interim payment certificates",
+        "contract": "Public works under the older PEC civil-works form, with monthly interim payment certificates",
+        "contract_form": "pec_civil_works",
+        "contract_price_pkr": 50695500,
+        "procurement_rules": "Punjab Procurement Rules 2014",
         "tax_note": (
             "All rates are without sales tax. The provincial sales tax on services is applied as a line of its own "
             "at the standard Punjab rate; a government civil work may attract a lower provisional rate."

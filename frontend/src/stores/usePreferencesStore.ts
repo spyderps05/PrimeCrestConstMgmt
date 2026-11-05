@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * User preferences store.
@@ -36,7 +36,7 @@ const STORAGE_KEY = 'oe_preferences';
  * same blob as the preferences so one localStorage entry still holds the whole
  * cache. See `LEGACY_NUMBER_LOCALE` for the migration this version guards.
  */
-const SCHEMA_VERSION = 2;
+const SCHEMA_VERSION = 3;
 
 export type MeasurementSystem = 'metric' | 'imperial';
 /**
@@ -106,12 +106,12 @@ export type { DigitSystem, SecondaryCalendar };
 const RETIRED_KEYS = ['vatRate', 'defaultRegion', 'defaultStandard'] as const;
 
 const DEFAULTS: Preferences = {
-  currency: 'EUR',
+  currency: 'PKR',
   measurementSystem: 'metric',
   dateFormat: 'auto',
   numberLocale: 'auto',
   digitSystem: 'auto',
-  defaultCurrency: 'EUR',
+  defaultCurrency: 'PKR',
   secondaryCalendar: 'none',
   secondaryCalendarChosen: false,
 };
@@ -141,8 +141,16 @@ function readPreferences(): Preferences {
     const { _v: version, ...stored } = JSON.parse(raw) as Partial<Preferences> & { _v?: number };
     const prefs: Preferences = { ...DEFAULTS, ...stored };
     for (const key of RETIRED_KEYS) delete (prefs as unknown as Record<string, unknown>)[key];
-    if ((version ?? 1) < SCHEMA_VERSION && prefs.numberLocale === LEGACY_NUMBER_LOCALE) {
+    if ((version ?? 1) < 2 && prefs.numberLocale === LEGACY_NUMBER_LOCALE) {
       prefs.numberLocale = 'auto';
+    }
+    // Upstream shipped every account on euros. A blob that still has both
+    // currency fields on that pair, and has not been through this version,
+    // is the untouched default — move it to rupees. A later explicit euro
+    // choice is stored at the current schema version and is left alone.
+    if ((version ?? 1) < SCHEMA_VERSION && prefs.currency === 'EUR' && prefs.defaultCurrency === 'EUR') {
+      prefs.currency = 'PKR';
+      prefs.defaultCurrency = 'PKR';
     }
     return prefs;
   } catch {

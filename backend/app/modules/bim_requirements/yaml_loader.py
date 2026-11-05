@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Rules-as-Code YAML loader for BIM requirement packs.
 
@@ -22,7 +22,7 @@ Why we built this
 ~~~~~~~~~~~~~~~~~
 A common commercial moat in BIM rule-checking tools is the opacity of
 their proprietary rule files.
-OpenConstructionERP ships its rule packs as plain YAML in the repo so
+PrimeCrest ships its rule packs as plain YAML in the repo so
 they can be code-reviewed, diffed, branched, and shared the same way any
 other source artifact is. That is a feature commercial tools cannot copy
 without giving up their proprietary editor.

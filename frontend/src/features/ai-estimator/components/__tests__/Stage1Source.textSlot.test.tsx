@@ -1,6 +1,6 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
-// OpenConstructionERP — DataDrivenConstruction (DDC)
+// PrimeCrest — DataDrivenConstruction (DDC)
 // Tests for the free-text route-unification seam on Stage1Intake.
 //
 // WP6 mounts the shared conversational IntakePanel as the free-text front door

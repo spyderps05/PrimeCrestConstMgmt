@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠IDOR audit tests for the Coordination Hub module.
 
 Verifies that cross-tenant requests to coordination dashboard, thresholds,

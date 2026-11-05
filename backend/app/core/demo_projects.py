@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Demo project templates that can be installed from the marketplace.
 
@@ -2313,6 +2313,16 @@ DEFAULT_DEMO_IDS: tuple[str, ...] = (
 # auto-registered from demo_packs/) so install_demo_project materializes the
 # full module set per project. The retail showcase is additionally backfilled
 # flagship-style on every boot (main.py) so existing installs pick it up.
+# Spyder Solutions default workspace: the Pakistan projects, written in plain
+# English, priced in rupees, sited in Punjab and Sindh. The international
+# showcase above stays in the catalog for an explicit install.
+PRODUCT_DEMO_IDS: tuple[str, ...] = (
+    "bhu-punjab",
+    "lahore-house",
+    "faisalabad-road",
+    "school-karachi",
+)
+
 SHOWCASE_DEMO_IDS: tuple[str, ...] = (
     "residential-berlin",  # Germany - DIN 276, EUR
     "warehouse-dubai",  # UAE - industrial, AED
@@ -2630,6 +2640,8 @@ _PACK_DEMO_TYPE: dict[str, str] = {
     "commercial-sacramento": "Commercial",
     "hospital-lyon": "Healthcare",
     "bhu-punjab": "Healthcare",
+    "lahore-house": "Residential",
+    "faisalabad-road": "Infrastructure",
     "school-karachi": "Education",
     "tower-abudhabi": "Mixed-use",
     "condo-toronto": "Residential",
@@ -5452,6 +5464,51 @@ def _period_label(base: datetime, offset_months: int) -> str:
     return f"{base.year + total // 12}-{total % 12 + 1:02d}"
 
 
+def _pakistan_head_contract(template: DemoTemplate, terms: dict) -> tuple[dict, str | None, dict | None]:
+    """Payment figures for a Pakistan head contract, kept as two forms.
+
+    The older civil-works form is the country row: 10 percent of each
+    certificate, a cap of 5 percent of the contract price, paid within 28
+    days. The December 2023 form is not that row. It records performance
+    security of 10 percent of the accepted contract amount and a
+    retention-money limit of 5 percent of the contract price, and it does
+    not copy the 28-day period. ``claim_retention`` on the template is left
+    alone.
+    """
+    form_id = str((template.project_metadata or {}).get("contract_form") or "").strip()
+    if (template.region or "").upper() != "PK" or not form_id:
+        return terms, None, None
+    merged = dict(terms)
+    merged["contract_form"] = form_id
+    if form_id == "pec_civil_works":
+        from app.modules.contracts.country_defaults import (
+            PAYMENT_TERM_FIELDS,
+            PAYMENT_TERMS_KEY,
+            apply_contract_defaults,
+            resolve_contract_defaults,
+        )
+
+        works = (template.project_metadata or {}).get("works")
+        defaults = resolve_contract_defaults(
+            "PK",
+            works=works if works in ("public", "private") else None,
+        )
+        values, stamp = apply_contract_defaults({}, defaults, country_code="PK")
+        payment = {field: values[field] for field in PAYMENT_TERM_FIELDS if values.get(field) is not None}
+        if payment:
+            merged[PAYMENT_TERMS_KEY] = payment
+        retention = values.get("retention_percent")
+        return merged, (str(retention) if retention is not None else None), stamp
+    if form_id == "pec_sbd_2023_12":
+        from app.modules.contracts.country_defaults import PAYMENT_TERMS_KEY
+
+        merged["performance_security_percent"] = "10"
+        merged["retention_money_limit_percent"] = "5"
+        merged[PAYMENT_TERMS_KEY] = {"retention_cap_percent": "5"}
+        return merged, None, None
+    return merged, None, None
+
+
 def _contract_standard_terms(template: DemoTemplate) -> dict:
     """Head-contract ``terms`` carrying the form of contract the pack declares.
 
@@ -6553,9 +6610,17 @@ def _generate_module_data(
             # The form of contract this pack declares, so the notice engine
             # can resolve a standard for the project. See
             # _contract_standard_terms for why it is stored verbatim.
+            # Pakistan jobs then lay the matching PEC form on top. The older
+            # civil-works row and the December 2023 row stay different.
             "terms": _contract_standard_terms(template),
         }
     )
+    _pk_terms, _pk_retention, _pk_stamp = _pakistan_head_contract(template, contracts[0]["terms"])
+    contracts[0]["terms"] = _pk_terms
+    if _pk_retention is not None:
+        contracts[0]["retention_percent"] = _pk_retention
+    if _pk_stamp is not None:
+        contracts[0]["country_defaults"] = _pk_stamp
     # Three trade subcontracts, or fewer on a project with fewer firms. The
     # firms themselves are no longer read here: which company each subcontract
     # is with is settled at seed time against the contacts that exist.
@@ -11699,6 +11764,10 @@ async def _seed_module_data(
                         metadata_={"demo_id": demo_id},
                     )
                 )
+            ct_meta: dict = {"project_id": str(project_id), "demo_id": demo_id}
+            if isinstance(ct.get("country_defaults"), dict):
+                ct_meta["country_defaults"] = ct["country_defaults"]
+            ct_retention = ct.get("retention_percent")
             session.add(
                 Contract(
                     id=contract_pk,
@@ -11715,7 +11784,12 @@ async def _seed_module_data(
                     end_date=ct.get("end_date"),
                     created_by=owner_str,
                     terms=ct.get("terms") or {},
-                    metadata_={"project_id": str(project_id), "demo_id": demo_id},
+                    metadata_=ct_meta,
+                    **(
+                        {"retention_percent": Decimal(str(ct_retention))}
+                        if ct_retention is not None
+                        else {}
+                    ),
                 )
             )
         results["contracts"] = len(contract_list)

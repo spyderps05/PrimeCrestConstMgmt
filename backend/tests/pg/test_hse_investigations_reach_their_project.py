@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠An HSE investigation is only real if its project can reach it.
 
 The seeder minted a fresh ``uuid4()`` for every investigation's ``incident_ref``

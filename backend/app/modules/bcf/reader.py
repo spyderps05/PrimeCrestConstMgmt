@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """BCF 3.0 zip reader - mirror of :mod:`app.modules.bcf.writer`.
 
 Why a second parser?

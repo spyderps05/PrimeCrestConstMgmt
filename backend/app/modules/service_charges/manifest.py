@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Service charges module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "permille, equal or custom shares, approved yearly budgets, demands raised as finance receivables, "
         "year-end reconciliation against actual costs from finance payables and service work orders"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     depends=["oe_projects", "oe_finance"],
     optional_depends=["oe_legal_entities", "oe_service", "oe_contacts"],

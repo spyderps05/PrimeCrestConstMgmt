@@ -1,5 +1,5 @@
 // @ts-nocheck
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // The card has one job beyond looking right: never let an optional extra look

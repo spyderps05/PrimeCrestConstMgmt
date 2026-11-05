@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Това име не може да се използва за нов каталог. Изберете друго име.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Остойностяване на строителството с отворен код"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Обновяване"
   },
   "dashboard": {
-    "welcome": "Добре дошли в OpenConstructionERP",
+    "welcome": "Добре дошли в PrimeCrest",
     "subtitle": "Вашето работно място за остойностяване",
     "recent_projects": "Последни проекти",
     "system_status": "Състояние на системата",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Няма налични данни",
         "no_data_body": "Този отчет е генериран с празен набор от данни. Проверете дали изходните модули (финанси, график, безопасност и др.) са върнали данни за избрания проект.",
         "no_data_body_short": "Този отчет е генериран с празен набор от данни. Проверете дали изходните модули са върнали данни за избрания проект.",
-        "footer_generated_by": "Генерирано от OpenConstructionERP на {timestamp}.",
+        "footer_generated_by": "Генерирано от PrimeCrest на {timestamp}.",
         "worksheet_name": "Отчет",
         "pdf_subject": "Проектен отчет",
         "overall_progress": "Общ напредък",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Здравейте, {name},",
       "greeting_generic": "Здравейте,",
-      "cta": "Отваряне в OpenConstructionERP",
+      "cta": "Отваряне в PrimeCrest",
       "footer": "Получавате това съобщение заради настройките ви за известия. Можете да ги промените в профила си.",
-      "digest_subject": "OpenConstructionERP: Обобщение на известията ({count})",
+      "digest_subject": "PrimeCrest: Обобщение на известията ({count})",
       "digest_heading": "Последни известия:"
     },
     "tender_xlsx": {

@@ -1,5 +1,5 @@
 // @ts-nocheck
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // Database Setup used to load a national market card (the Turkish base priced

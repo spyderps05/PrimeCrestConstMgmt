@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Tests for publishing a labour-rate template as a reusable labor cost item.
 
 A pure check locks the published rate to :func:`rate_math.all_in_rate` for a

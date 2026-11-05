@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Allowances & contingency register module manifest."""
 
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
         "firms up. Rolls the remaining allowances into the estimate total per "
         "currency and shows how much has been spent against each."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_projects", "oe_users"],
     auto_install=True,

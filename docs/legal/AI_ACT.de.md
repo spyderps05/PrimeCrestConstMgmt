@@ -1,4 +1,4 @@
-# KI in OpenConstructionERP: was die Software tut und was der Betreiber tut
+# KI in PrimeCrest: was die Software tut und was der Betreiber tut
 
 Auch verfügbar auf [English](AI_ACT.md) und [Русский](AI_ACT.ru.md).
 Bei Abweichungen gilt die englische Fassung.

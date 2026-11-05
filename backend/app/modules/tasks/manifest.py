@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Tasks module manifest."""
 
@@ -12,7 +12,7 @@ manifest = ModuleManifest(
         "Project task management - tasks, topics, decisions,"
         " and personal items with checklists and assignment workflows"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

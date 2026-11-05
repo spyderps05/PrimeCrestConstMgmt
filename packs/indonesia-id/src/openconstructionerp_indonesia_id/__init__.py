@@ -1,4 +1,4 @@
-"""OpenConstructionERP - Indonesia country pack (AHSP/SNI, RAB, IDR)."""
+"""PrimeCrest - Indonesia country pack (AHSP/SNI, RAB, IDR)."""
 
 from __future__ import annotations
 

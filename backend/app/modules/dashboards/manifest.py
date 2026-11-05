@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Dashboards module manifest - analytical dashboards + snapshots."""
 
@@ -12,7 +12,7 @@ manifest = ModuleManifest(
         "Analytical dashboard layer: Parquet snapshots, DuckDB-backed "
         "insight cards, cascade filters, 3D viewer sync, historical diffs."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

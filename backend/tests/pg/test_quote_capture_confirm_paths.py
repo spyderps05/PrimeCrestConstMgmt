@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """PG​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠: a reviewed quote becomes a bid, a price list or a draft PO, with its audit trail.
 

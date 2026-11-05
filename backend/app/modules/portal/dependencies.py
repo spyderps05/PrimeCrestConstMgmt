@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Module-local FastAPI dependencies for the Customer & Partner Portal.
 
 We deliberately do NOT touch the global :mod:`app.dependencies` - portal

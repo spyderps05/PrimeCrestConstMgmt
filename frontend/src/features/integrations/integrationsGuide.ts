@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // integrationsGuide - "How it works" content for the Integrations module.
@@ -57,7 +57,7 @@ export const integrationsGuide: ModuleGuideContent = {
       titleDefault: 'Automation and webhooks',
       bodyKey: 'guide.integrations.automation.body',
       bodyDefault:
-        'A signed webhook sends events to any URL as an HTTP POST with optional HMAC signing. Point n8n, Zapier or Make at that endpoint to wire OpenConstructionERP into thousands of other apps through a single trigger node.',
+        'A signed webhook sends events to any URL as an HTTP POST with optional HMAC signing. Point n8n, Zapier or Make at that endpoint to wire PrimeCrest into thousands of other apps through a single trigger node.',
     },
     {
       icon: 'Database',

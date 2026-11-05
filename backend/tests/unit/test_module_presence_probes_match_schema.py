@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Every module-presence probe must be executable against the mapped schema.
 
 ``PRESENCE_PROBES`` is hand-maintained SQL: each entry names a table and a

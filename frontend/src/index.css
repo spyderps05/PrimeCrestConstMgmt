@@ -21,11 +21,11 @@
   /* internal compile-time constants — do not modify */
   --__rev-c: "4443432d4357494352";
   --__lc-rev: 0x4f452d3236;
-  /* Brand */
-  --oe-blue: #0071e3;
-  --oe-blue-hover: #0077ed;
-  --oe-blue-active: #006edb;
-  --oe-blue-dark: #005bb5;
+  /* Brand — PrimeCrest crest copper (token name --oe-blue kept for class compat) */
+  --oe-blue: #c4622d;
+  --oe-blue-hover: #d4733a;
+  --oe-blue-active: #a85224;
+  --oe-blue-dark: #8f431c;
   /* Theme-aware blue intended for use as TEXT on tinted/lifted surfaces.
      Pairs with --oe-blue-subtle and the semantic-info pills.
      WCAG-AA contrast fix 2026-05-27 (sequel to v5.3.0): the v5.3.0 wave
@@ -37,13 +37,10 @@
        Light  #005bb5 → 7.4:1 on #fff, 7.0:1 on #f0f7ff
        Dark   #93c5fd → 7.9:1 on #1e2130, 8.4:1 on #1a1d2b, 7.8:1 on
                         flattened bg-oe-blue-subtle (rgba 0.15 over bg) */
-  --oe-blue-text: #005bb5;
-  /* WCAG-AA contrast fix 2026-05-27: was #e8f2fe (4.15:1 against
-     text-oe-blue #0071e3 — fails AA for normal text). Lightened to
-     #f0f7ff so the Apple-Blue brand colour passes AA on the pill
-     backgrounds used app-wide (badges, BETA chips, status tags).
-     before: #e8f2fe → 4.15:1   after: #f0f7ff → 4.70:1 (axe contrast-AA) */
-  --oe-blue-subtle: #f0f7ff;
+  /* Copper text on warm tinted surfaces (AA on paper and copper-subtle). */
+  --oe-blue-text: #8f431c;
+  /* Warm copper wash for badges / chips. */
+  --oe-blue-subtle: #faf0e8;
   /* Channel triplets for Tailwind alpha modifiers (bg-oe-blue/10,
      border-oe-blue/30, hover:bg-surface-secondary/50, ...). Tailwind
      cannot inject alpha into an opaque var(), so before these existed
@@ -51,7 +48,7 @@
      the build - the class rendered nothing (found 2026-06-06, reported
      as "info blocks have no background"). MUST stay in sync with the
      hex values above/below. */
-  --oe-blue-ch: 0 113 227;
+  --oe-blue-ch: 196 98 45;
   /* Text on a solid accent fill. White in light mode; dark mode accents are
      light tints, so the ink flips to the page colour to keep AA. */
   --oe-on-accent: #ffffff;
@@ -74,30 +71,29 @@
   /* Channel triplet for alpha modifiers - see the blue comment above. */
   --oe-purple-ch: 147 51 234;
 
-  /* Surfaces */
+  /* Surfaces — warm paper palette */
   --oe-bg: #ffffff;
-  --oe-bg-secondary: #f5f5f7;
-  --oe-bg-tertiary: #fbfbfd;
+  --oe-bg-secondary: #f6f3ee;
+  --oe-bg-tertiary: #faf8f4;
   --oe-bg-elevated: #ffffff;
-  /* Content wash of the module pages: a step darker than --oe-bg-secondary so the elevated cards read as cards (1.16:1 against #fff, text tokens stay AA on it, tertiary 4.61, quaternary 4.52). */
-  --oe-bg-page: #eeeef2;
+  /* Content wash of the module pages: warm paper so elevated cards read as cards. */
+  --oe-bg-page: #f0ebe3;
   --oe-bg-ch: 255 255 255;
-  --oe-bg-secondary-ch: 245 245 247;
-  --oe-bg-tertiary-ch: 251 251 253;
+  --oe-bg-secondary-ch: 246 243 238;
+  --oe-bg-tertiary-ch: 250 248 244;
   --oe-bg-elevated-ch: 255 255 255;
-  --oe-bg-page-ch: 238 238 242;
+  --oe-bg-page-ch: 240 235 227;
 
-  /* Borders */
-  --oe-border: #d2d2d7;
-  --oe-border-light: #e8e8ed;
+  /* Borders — stone */
+  --oe-border: #e4ddd4;
+  --oe-border-light: #efeae3;
   --oe-border-focus: var(--oe-blue);
   /* What a border gets when its class names no colour that exists: a bare
      `border`, an alpha-modified token such as `border-border-light/60` (the
      border tokens are plain var() strings, so Tailwind emits nothing for the
      modifier) or a name the palette never defined such as
-     `border-border-medium`. Tailwind's preflight paints all of those with
-     gray-200, which is this exact value, so light mode is unchanged. */
-  --oe-border-default: #e5e7eb;
+     `border-border-medium`. */
+  --oe-border-default: #e4ddd4;
 
   /* Text — WCAG AA compliant against every light surface we render on.
      Picked 2026-05-25 to clear axe-core color-contrast wherever the
@@ -109,7 +105,7 @@
                             4.71:1 on #e8f2fe, 4.87:1 on #fef2f2 — all pass
        quaternary #696c78 → 5.23:1 on #fff, 4.80:1 on #f5f5f7,
                             4.62:1 on #e8f2fe, 4.78:1 on #fef2f2 — all pass */
-  --oe-text-primary: #1d1d1f;
+  --oe-text-primary: #1c1915;
   /* WCAG-AA contrast fix 2026-05-27: was #6e6e73 (Apple-system gray-2)
      which landed at 4.27:1 against `bg-oe-blue-subtle` (#f0f7ff) and
      4.39:1 against `bg-info-bg` (#eff9fe) — both fail AA for normal
@@ -123,9 +119,9 @@
        after:  #5b5e66  6.30:1 on white, 5.75:1 on #f0f7ff (pass),
                          5.78:1 on #eff9fe, 5.86:1 on #ecfdf3,
                          5.91:1 on #fff8ec, 5.83:1 on #fef2f2 */
-  --oe-text-secondary: #5b5e66;
-  --oe-text-tertiary: #666b78;
-  --oe-text-quaternary: #696c78;
+  --oe-text-secondary: #5e584f;
+  --oe-text-tertiary: #6b645a;
+  --oe-text-quaternary: #736c62;
   --oe-text-inverse: #ffffff;
 
   /* Semantic — WCAG-AA contrast fix 2026-05-27.
@@ -209,9 +205,10 @@
   --oe-space-12: 48px;
   --oe-space-16: 64px;
 
-  /* Typography */
-  --oe-font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text',
+  /* Typography — Source Sans 3 UI, Fraunces for wordmarks / titles */
+  --oe-font-sans: 'Source Sans 3 Variable', 'Source Sans 3', -apple-system, BlinkMacSystemFont,
     'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --oe-font-display: 'Fraunces', 'Instrument Serif', Georgia, 'Times New Roman', serif;
   --oe-font-mono: 'SF Mono', SFMono-Regular, ui-monospace, 'Cascadia Code', Menlo, Monaco,
     Consolas, monospace;
 
@@ -240,22 +237,16 @@
 /* ── Dark Mode ─────────────────────────────────────────────────────────── */
 
 .dark {
-  /* Brand — slightly brighter for dark backgrounds.
-     `--oe-blue-dark` is the solid button hover/active background.
-     White button text needs a saturated blue here, not a tint;
-     theme-aware text uses `--oe-blue-text` instead. */
-  --oe-blue: #3b82f6;
-  --oe-blue-hover: #60a5fa;
-  --oe-blue-active: #2563eb;
-  --oe-blue-dark: #1e40af;
-  --oe-blue-subtle: rgba(59, 130, 246, 0.15);
-  /* See light-mode comment. Dark-mode swaps to Tailwind blue-300 so
-     `text-oe-blue-text` reads cleanly on lifted dark surfaces without
-     touching `bg-oe-blue-dark` (used as hover/active button bg). */
-  --oe-blue-text: #93c5fd;
+  /* Brand — copper lightened for dark surfaces. */
+  --oe-blue: #e08a55;
+  --oe-blue-hover: #eba06f;
+  --oe-blue-active: #c4622d;
+  --oe-blue-dark: #a85224;
+  --oe-blue-subtle: rgba(224, 138, 85, 0.15);
+  --oe-blue-text: #f0b888;
   /* Channel triplet - see the light-mode comment. Keep in sync. */
-  --oe-blue-ch: 59 130 246;
-  --oe-on-accent: #0f1117;
+  --oe-blue-ch: 224 138 85;
+  --oe-on-accent: #0e161d;
 
   /* Purple — see the light-mode comment for why this family exists. Same
      shape as the blue pair: the tint becomes a translucent wash so it lifts
@@ -268,22 +259,22 @@
   /* Channel triplet - see the light-mode comment. Keep in sync. */
   --oe-purple-ch: 168 85 247;
 
-  /* Surfaces — deep blue-gray palette */
-  --oe-bg: #0f1117;
-  --oe-bg-secondary: #161822;
-  --oe-bg-tertiary: #1a1d2b;
-  --oe-bg-elevated: #1e2130;
-  /* Dark: the page background itself, 1.18:1 against elevated. */
+  /* Surfaces — ink navy palette */
+  --oe-bg: #0e161d;
+  --oe-bg-secondary: #152029;
+  --oe-bg-tertiary: #1a2631;
+  --oe-bg-elevated: #1f2d3a;
+  /* Dark: the page background itself. */
   --oe-bg-page: var(--oe-bg);
-  --oe-bg-ch: 15 17 23;
-  --oe-bg-secondary-ch: 22 24 34;
-  --oe-bg-tertiary-ch: 26 29 43;
-  --oe-bg-elevated-ch: 30 33 48;
-  --oe-bg-page-ch: 15 17 23;
+  --oe-bg-ch: 14 22 29;
+  --oe-bg-secondary-ch: 21 32 41;
+  --oe-bg-tertiary-ch: 26 38 49;
+  --oe-bg-elevated-ch: 31 45 58;
+  --oe-bg-page-ch: 14 22 29;
 
   /* Borders — subtle, low-contrast */
-  --oe-border: #2a2d3e;
-  --oe-border-light: #232638;
+  --oe-border: #2c3c4a;
+  --oe-border-light: #243442;
   --oe-border-focus: var(--oe-blue);
   /* Over 300 class uses across the app fall through to the default border
      colour (see the light-mode comment). Left at gray-200 they drew a near

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Compliance DSL module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "Python. Persists rule definitions and registers them with the "
         "global validation rule registry at startup."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users"],
     auto_install=True,

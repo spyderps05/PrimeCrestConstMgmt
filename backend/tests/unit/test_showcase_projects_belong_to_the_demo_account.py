@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The showcase projects belong to the demo account, never to a deactivated one.
 
 The seeders took the owner with ``WHERE role = 'admin' LIMIT 1``. On a live

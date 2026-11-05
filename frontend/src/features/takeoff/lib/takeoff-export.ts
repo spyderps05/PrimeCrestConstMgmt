@@ -1,4 +1,4 @@
-// OpenConstructionERP — DataDrivenConstruction (DDC)​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// PrimeCrest — DataDrivenConstruction (DDC)​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // CAD2DATA Pipeline · PDF Takeoff Module · Export helpers
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 // DDC-CWICR-OE-2026
@@ -777,7 +777,7 @@ export async function buildTakeoffWorkbook(
   const ExcelJsMod = await import('exceljs');
   const ExcelJsCtor = (ExcelJsMod.Workbook ?? ExcelJsMod.default.Workbook) as typeof ExcelJS.Workbook;
   const wb = new ExcelJsCtor();
-  wb.creator = 'OpenConstructionERP';
+  wb.creator = 'PrimeCrest';
   wb.created = ctx.exportDate ?? new Date();
   // Stored quantities are metric-canonical (D-TKC-016); convert values +
   // units to the user's system at the export boundary. Metric is a

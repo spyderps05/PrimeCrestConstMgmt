@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Condition module manifest."""
 
@@ -14,7 +14,7 @@ manifest = ModuleManifest(
         "from them: actions, intervals, unit costs, year buckets, inflation from the price "
         "index, present value, written back to the asset register for whole-life cost"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_projects"],
     optional_depends=["oe_inspections", "oe_bim_hub", "oe_price_index", "oe_carbon"],

@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Buyer self-service portal — public landing page (``/buyer-portal/:token``).
@@ -30,7 +30,7 @@
  *        d. Payment schedule (timeline on mobile, table on tablet+).
  *        e. Documents library (grouped) + KYC upload requests.
  *        f. "Contact your agent" form.
- *   3. <footer> — contact email + AGPL-3.0 link.
+ *   3. <footer> — contact email + Spyder Solutions copyright.
  *   4. Mobile-only fixed bottom CTA bar (visible <sm).
  *
  * States: loading / invalid-token / error / ready. We never leak a
@@ -1914,14 +1914,7 @@ function ShellWrapper({
               info@datadrivenconstruction.io
             </a>
           </span>
-          <a
-            href="https://www.gnu.org/licenses/agpl-3.0.html"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:underline"
-          >
-            AGPL-3.0
-          </a>
+          <span>© 2026 Spyder Solutions</span>
         </div>
       </footer>
     </div>

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Startup heal: collapse duplicate from-source takeoff documents (issue #369).
 
 ``POST /documents/from-source`` find-or-creates a takeoff document by

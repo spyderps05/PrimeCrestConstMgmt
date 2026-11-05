@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Bu nomdan yangi katalog uchun foydalanib boʻlmaydi. Boshqa nom tanlang.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Ochiq kodli qurilish smetasi"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Yangilash"
   },
   "dashboard": {
-    "welcome": "OpenConstructionERP tizimiga xush kelibsiz",
+    "welcome": "PrimeCrest tizimiga xush kelibsiz",
     "subtitle": "Qurilish smetasi boʻyicha ish maydoningiz",
     "recent_projects": "Soʻnggi loyihalar",
     "system_status": "Tizim holati",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Ma'lumot mavjud emas",
         "no_data_body": "Ushbu hisobot bo'sh ma'lumotlar nusxasi bilan yaratilgan. Tanlangan loyiha uchun manba modullar (moliya, jadval, xavfsizlik va boshqalar) ma'lumot qaytarganini tekshiring.",
         "no_data_body_short": "Ushbu hisobot bo'sh ma'lumotlar nusxasi bilan yaratilgan. Tanlangan loyiha uchun manba modullar ma'lumot qaytarganini tekshiring.",
-        "footer_generated_by": "OpenConstructionERP tomonidan {timestamp} da yaratildi.",
+        "footer_generated_by": "PrimeCrest tomonidan {timestamp} da yaratildi.",
         "worksheet_name": "Hisobot",
         "pdf_subject": "Loyiha hisoboti",
         "overall_progress": "Umumiy progress",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Hurmatli {name},",
       "greeting_generic": "Assalomu alaykum,",
-      "cta": "OpenConstructionERP da ochish",
+      "cta": "PrimeCrest da ochish",
       "footer": "Bu xatni bildirishnoma sozlamalaringiz asosida olyapsiz. Ularni profilingizda oʻzgartirishingiz mumkin.",
-      "digest_subject": "OpenConstructionERP: Bildirishnomalar xulosasi ({count})",
+      "digest_subject": "PrimeCrest: Bildirishnomalar xulosasi ({count})",
       "digest_heading": "Soʻnggi bildirishnomalar:"
     },
     "tender_xlsx": {

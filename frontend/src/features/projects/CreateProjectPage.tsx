@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import {
   useState, useEffect, useRef,
@@ -103,6 +103,7 @@ const REGION_GROUPS: OptionGroup[] = [
       { value: 'China', label: 'China', iso: 'CN' },
       { value: 'Japan', label: 'Japan', iso: 'JP' },
       { value: 'Korea', label: 'South Korea', iso: 'KR' },
+      { value: 'Pakistan', label: 'Pakistan', iso: 'PK' },
       { value: 'India', label: 'India', iso: 'IN' },
       { value: 'SoutheastAsia', label: 'Southeast Asia' },
       { value: 'MiddleEast', label: 'Middle East (General)' },
@@ -157,6 +158,7 @@ const REGION_TO_PACK: Record<string, string> = {
   Australia: 'asia_pacific',
   NewZealand: 'asia_pacific',
   India: 'india',
+  Pakistan: 'asia_pacific',
 };
 
 // ── Classification Standards ──────────────────────────────────────────────
@@ -448,7 +450,7 @@ export function projectCoreForm(
     return {
       name: '',
       description: '',
-      region: '',
+      region: 'Pakistan',
       classification_standard: '',
       currency: defaultCurrency,
       locale: 'en',
@@ -674,7 +676,8 @@ export function CreateProjectModal({
       setFocusMode(true);
       setAddressStreet('');
       setAddressCity('');
-      setAddressCountry('');
+      setAddressCountry(editProjectId ? '' : 'Pakistan');
+      setCountryCode(editProjectId ? null : 'PK');
       setAddressPostal('');
       setProjectCode('');
       setProjectType('');
@@ -1379,7 +1382,7 @@ export function CreateProjectModal({
                     aria-required="true"
                     value={form.name}
                     onChange={(e) => set('name', e.target.value)}
-                    placeholder={t('projects.project_name_placeholder', { defaultValue: 'e.g. Office Tower Downtown' })}
+                    placeholder={t('projects.project_name_placeholder', { defaultValue: 'e.g. Gulberg Office Tower' })}
                     autoFocus
                   />
                 </div>
@@ -1833,7 +1836,7 @@ export function CreateProjectModal({
                 label={t('projects.project_name')}
                 value={form.name}
                 onChange={(e) => set('name', e.target.value)}
-                placeholder={t('projects.project_name_placeholder', { defaultValue: 'e.g. Office Tower Downtown' })}
+                placeholder={t('projects.project_name_placeholder', { defaultValue: 'e.g. Gulberg Office Tower' })}
                 required aria-required="true"
                 autoFocus
               />

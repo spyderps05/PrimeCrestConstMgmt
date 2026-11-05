@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Cost Explorer reverse-index freshness.
 
 Keeps ``oe_cost_item_resource`` in step with the costs table by subscribing to

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """File Transmittals (W7) module manifest."""
 
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
         "reportlab is available, structured plain text otherwise) and "
         "single-use acknowledgement tokens for recipients."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_projects", "oe_users"],
     auto_install=True,

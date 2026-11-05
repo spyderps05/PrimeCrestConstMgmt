@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "אי אפשר להשתמש בשם זה לקטלוג חדש. בחרו שם אחר.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "אומדן עלויות בנייה בקוד פתוח"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "עדכון"
   },
   "dashboard": {
-    "welcome": "ברוכים הבאים ל-OpenConstructionERP",
+    "welcome": "ברוכים הבאים ל-PrimeCrest",
     "subtitle": "סביבת העבודה שלכם לאומדן בנייה",
     "recent_projects": "פרויקטים אחרונים",
     "system_status": "סטטוס מערכת",
@@ -1479,7 +1479,7 @@
         "no_data_heading": "אין נתונים זמינים",
         "no_data_body": "דוח זה נוצר עם תמונת נתונים ריקה. יש לוודא שמודולי המקור (כספים, לוח זמנים, בטיחות וכו') החזירו נתונים עבור הפרויקט שנבחר.",
         "no_data_body_short": "דוח זה נוצר עם תמונת נתונים ריקה. יש לוודא שמודולי המקור החזירו נתונים עבור הפרויקט שנבחר.",
-        "footer_generated_by": "נוצר על ידי OpenConstructionERP בתאריך {timestamp}.",
+        "footer_generated_by": "נוצר על ידי PrimeCrest בתאריך {timestamp}.",
         "worksheet_name": "דוח",
         "pdf_subject": "דוח פרויקט",
         "overall_progress": "התקדמות כללית",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "שלום {name},",
       "greeting_generic": "שלום רב,",
-      "cta": "פתיחה ב-OpenConstructionERP",
+      "cta": "פתיחה ב-PrimeCrest",
       "footer": "הודעה זו נשלחה אליכם בהתאם להגדרות ההתראות שלכם. ניתן לשנות אותן בפרופיל האישי.",
-      "digest_subject": "OpenConstructionERP: סיכום התראות ({count})",
+      "digest_subject": "PrimeCrest: סיכום התראות ({count})",
       "digest_heading": "התראות אחרונות:"
     },
     "tender_xlsx": {

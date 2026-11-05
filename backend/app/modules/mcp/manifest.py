@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """MCP server module manifest."""
 
@@ -12,7 +12,7 @@ manifest = ModuleManifest(
         "Model Context Protocol endpoint: an external AI client reads a person's projects under that "
         "person's permissions and proposes changes the person confirms in the app"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="integration",
     # Read tools reach BOQ, schedule, costs, validation, RFIs, submittals, punch
     # items and documents only while those modules are enabled; the proposal

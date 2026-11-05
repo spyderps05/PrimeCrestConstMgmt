@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction / OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction / PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠An install instruction must be worded for the install that will read it.
 
 Most remedies in this tree are written for a pip install, which is where most

@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "یہ نام نئے کیٹلاگ کے لیے استعمال نہیں ہو سکتا۔ کوئی اور نام منتخب کریں۔",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "اوپن سورس تعمیراتی لاگت تخمینہ"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "اپ ڈیٹ کریں"
   },
   "dashboard": {
-    "welcome": "OpenConstructionERP میں خوش آمدید",
+    "welcome": "PrimeCrest میں خوش آمدید",
     "subtitle": "آپ کا تعمیراتی تخمینہ ورک اسپیس",
     "recent_projects": "حالیہ پروجیکٹس",
     "system_status": "سسٹم اسٹیٹس",
@@ -1479,7 +1479,7 @@
         "no_data_heading": "کوئی ڈیٹا دستیاب نہیں",
         "no_data_body": "یہ رپورٹ خالی ڈیٹا اسنیپ شاٹ کے ساتھ تیار کی گئی۔ تصدیق کریں کہ منتخب منصوبے کے لیے ذرائع ماڈیولز (مالیات، شیڈول، حفاظت وغیرہ) نے ڈیٹا فراہم کیا ہے۔",
         "no_data_body_short": "یہ رپورٹ خالی ڈیٹا اسنیپ شاٹ کے ساتھ تیار کی گئی۔ تصدیق کریں کہ منتخب منصوبے کے لیے ذرائع ماڈیولز نے ڈیٹا فراہم کیا ہے۔",
-        "footer_generated_by": "OpenConstructionERP کے ذریعے {timestamp} پر تیار کردہ۔",
+        "footer_generated_by": "PrimeCrest کے ذریعے {timestamp} پر تیار کردہ۔",
         "worksheet_name": "رپورٹ",
         "pdf_subject": "منصوبے کی رپورٹ",
         "overall_progress": "مجموعی پیش رفت",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "محترم {name}،",
       "greeting_generic": "محترم جناب/محترمہ،",
-      "cta": "OpenConstructionERP میں کھولیں",
+      "cta": "PrimeCrest میں کھولیں",
       "footer": "آپ کو یہ ای میل آپ کی اطلاعات کی ترتیبات کی بنا پر موصول ہوئی ہے۔ آپ انہیں اپنی پروفائل میں تبدیل کر سکتے ہیں۔",
-      "digest_subject": "OpenConstructionERP: اطلاعات کا خلاصہ ({count})",
+      "digest_subject": "PrimeCrest: اطلاعات کا خلاصہ ({count})",
       "digest_heading": "حالیہ اطلاعات:"
     },
     "tender_xlsx": {

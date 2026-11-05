@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Daily​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ guarantees job: expiry alerts at 60/30/14 days, auto-extension, lapsing.
 

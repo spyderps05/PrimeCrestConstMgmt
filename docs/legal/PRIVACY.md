@@ -3,7 +3,7 @@
 **Effective date:** 2026-04-18
 **Last updated:** 2026-04-18
 
-This Privacy Policy describes how OpenConstructionERP ("the Software", "we")
+This Privacy Policy describes how PrimeCrest ("the Software", "we")
 handles personal data when you self-host the Software or use an instance
 operated by DataDrivenConstruction ("DDC", the "Operator"). It is written
 to satisfy the baseline transparency obligations of the EU General Data

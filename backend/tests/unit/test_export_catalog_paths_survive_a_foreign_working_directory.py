@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The catalog export must name the same two files from any working directory.
 
@@ -38,7 +38,7 @@ def two_foreign_directories(tmp_path: Path) -> tuple[Path, Path]:
     started from its program directory, and a service started by an init system
     whose working directory is its state directory.
     """
-    started_from = tmp_path / "program files" / "OpenConstructionERP"
+    started_from = tmp_path / "program files" / "PrimeCrest"
     service_cwd = tmp_path / "var" / "lib" / "openestimate"
     started_from.mkdir(parents=True)
     service_cwd.mkdir(parents=True)

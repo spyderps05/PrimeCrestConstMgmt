@@ -1,4 +1,4 @@
-// OpenConstructionERP Desktop, choosing which application server this window
+// PrimeCrest Desktop, choosing which application server this window
 // talks to.
 //
 // The launcher has always answered that question the same way: probe loopback,
@@ -6,7 +6,7 @@
 // on a machine where nobody has said otherwise, and this file changes nothing
 // about it. What it adds is the "otherwise": a place for an answer that names a
 // server somewhere else, so an office that already runs one central
-// OpenConstructionERP does not have to run a second copy on every desk.
+// PrimeCrest does not have to run a second copy on every desk.
 //
 // The default is untouched on purpose. A first run asks no question and shows
 // no chooser; a user who never goes looking for this will never learn it
@@ -79,7 +79,7 @@ pub enum ServerChoice {
 /// Carried so that every log line and every failure message can name the thing
 /// a person would have to change. "Could not reach the server" is a support
 /// ticket; "could not reach the server your administrator configured in
-/// C:\ProgramData\OpenConstructionERP\config.json" is a fix.
+/// C:\ProgramData\PrimeCrest\config.json" is a fix.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum ChoiceSource {
     /// A choice this user made in the application.
@@ -418,13 +418,13 @@ pub fn admin_config_path() -> Option<PathBuf> {
             .unwrap_or_else(|| "C:\\ProgramData".to_string());
         Some(
             PathBuf::from(base)
-                .join("OpenConstructionERP")
+                .join("PrimeCrest")
                 .join(ADMIN_FILE),
         )
     }
     #[cfg(target_os = "macos")]
     {
-        Some(PathBuf::from("/Library/Application Support/OpenConstructionERP").join(ADMIN_FILE))
+        Some(PathBuf::from("/Library/Application Support/PrimeCrest").join(ADMIN_FILE))
     }
     #[cfg(all(unix, not(target_os = "macos")))]
     {

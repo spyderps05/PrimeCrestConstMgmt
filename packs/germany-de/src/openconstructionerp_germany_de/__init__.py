@@ -1,4 +1,4 @@
-"""OpenConstructionERP — Germany Construction partner pack (DIN 276 + VOB + GAEB + HOAI)."""
+"""PrimeCrest — Germany Construction partner pack (DIN 276 + VOB + GAEB + HOAI)."""
 
 from __future__ import annotations
 from .manifest import MANIFEST

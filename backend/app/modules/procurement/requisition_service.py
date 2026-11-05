@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Material requisition workflow behind the ``/requisitions`` endpoints.
 
@@ -1458,7 +1458,7 @@ class RequisitionWorkflowService(MaterialRequisitionService):
                 detail={
                     "code": "requisition_orders_in_ocerp",
                     "message": (
-                        f"Requisition {req.req_number or req.id} is ordered in OpenConstructionERP. Convert it into "
+                        f"Requisition {req.req_number or req.id} is ordered in PrimeCrest. Convert it into "
                         "a purchase order here instead of recording an external order."
                     ),
                 },

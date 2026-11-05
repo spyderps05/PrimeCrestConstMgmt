@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Compliance documents tracker - insurance / permits / bonds / certifications.
 
 Lightweight project-scoped module for tracking documents that expire

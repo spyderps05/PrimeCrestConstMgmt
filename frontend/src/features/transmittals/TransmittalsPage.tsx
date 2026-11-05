@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -339,7 +339,7 @@ function CreateTransmittalModal({
             value={form.recipients}
             onChange={(e) => set('recipients', e.target.value)}
             placeholder={t('transmittals.recipients_placeholder', {
-              defaultValue: 'e.g. Jane Doe (ACME Steel), site@subcontractor.com',
+              defaultValue: 'e.g. Hassan Raza (Crescent Steel), site@subcontractor.com',
             })}
             className={inputCls}
           />

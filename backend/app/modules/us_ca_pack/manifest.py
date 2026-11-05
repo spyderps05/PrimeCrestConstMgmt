@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Module manifest for oe_us_ca_pack."""
 
@@ -17,7 +17,7 @@ manifest = ModuleManifest(
         "between materials the contractor consumes and fixtures it sells, the state prevailing wage regime "
         "and its thresholds, the public and private retention caps, and the statutory payment and lien clocks."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="regional",
     depends=["oe_us_pack"],
     auto_install=False,

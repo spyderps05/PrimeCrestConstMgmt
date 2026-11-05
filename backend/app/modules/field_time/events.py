@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Field Time event definitions and publishers.
 
 An approved field timesheet is the authoritative record of actual labour and

@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 //
 // Extract every How-it-works i18n key + its inline English default into a flat
 // JSON map, so the per-locale translators have an exact, complete key list.

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Payroll module permission definitions.
 
 Payroll touches money owed to people - it is manager-scoped throughout.

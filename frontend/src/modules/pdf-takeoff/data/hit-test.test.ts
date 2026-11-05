@@ -1,4 +1,4 @@
-// OpenConstructionERP — DataDrivenConstruction (DDC)
+// PrimeCrest — DataDrivenConstruction (DDC)
 // CAD2DATA Pipeline · PDF Takeoff in-canvas editing — unit tests (#194)
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 // DDC-CWICR-OE-2026

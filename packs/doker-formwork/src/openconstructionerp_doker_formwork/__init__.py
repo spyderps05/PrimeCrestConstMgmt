@@ -1,4 +1,4 @@
-"""Formwork pack for OpenConstructionERP.
+"""Formwork pack for PrimeCrest.
 
 Exposes ``MANIFEST`` for the ``openconstructionerp.partner_packs`` entry-point.
 """

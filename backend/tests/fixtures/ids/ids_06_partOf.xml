@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://standards.buildingsmart.org/IDS https://standards.buildingsmart.org/IDS/1.0/ids.xsd">
   <ids:info>
     <ids:title>Windows hosted by walls</ids:title>
-    <ids:copyright>OpenConstructionERP test fixtures</ids:copyright>
+    <ids:copyright>PrimeCrest test fixtures</ids:copyright>
     <ids:version>1.0.0</ids:version>
     <ids:description>All IfcWindow instances must be voided into IfcWall via IfcRelVoidsElement / IfcRelFillsElement.</ids:description>
     <ids:author>fixtures@openconstructionerp.io</ids:author>

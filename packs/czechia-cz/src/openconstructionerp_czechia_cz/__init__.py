@@ -1,4 +1,4 @@
-"""OpenConstructionERP - Czech Republic country pack (CSN, TSKP, CZK)."""
+"""PrimeCrest - Czech Republic country pack (CSN, TSKP, CZK)."""
 
 from __future__ import annotations
 

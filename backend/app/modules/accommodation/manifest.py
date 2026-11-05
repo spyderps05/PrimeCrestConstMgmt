@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Accommodation module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "Rooms, bookings, charges. Optional one-click bootstrap from a PropDev "
         "block and HR-driven room suggestion."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     depends=["oe_projects", "oe_contacts"],
     auto_install=True,

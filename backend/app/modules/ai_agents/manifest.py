@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """AI Agents module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "on top of the AI module. Tool registry, per-run history, mock-friendly "
         "LLM bridge. Slice 1: sample BOQ-drafter agent."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_ai", "oe_projects"],
     auto_install=True,

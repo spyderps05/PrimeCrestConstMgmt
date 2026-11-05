@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Event reconciliation module manifest."""
 
@@ -17,7 +17,7 @@ manifest = ModuleManifest(
         "and this module assembles the reconciled timeline for one event and "
         "persists a reviewer's confirm / reject decisions on each suggested link."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="controls",
     depends=["oe_users", "oe_projects"],
     optional_depends=[

@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // Menu look: values, presets, and the WCAG AA table for every icon colour mode,
@@ -61,8 +61,8 @@ function mix(color: RGB, alpha: number, surface: RGB): RGB {
 const AA = 4.5;
 // Sidebar surface, row hover (surface-secondary) and the active row tint
 // (accent blue at 14% light / 25% dark, see SidebarItem).
-const LIGHT = { surfaces: ['#ffffff', '#f5f5f7'], accent: '#0071e3', activeAlpha: 0.14 };
-const DARK = { surfaces: ['#0f1117', '#161822'], accent: '#3b82f6', activeAlpha: 0.25 };
+const LIGHT = { surfaces: ['#ffffff', '#f6f3ee'], accent: '#c4622d', activeAlpha: 0.14 };
+const DARK = { surfaces: ['#0e161d', '#152029'], accent: '#e08a55', activeAlpha: 0.25 };
 // The icon tile washes the icon colour at 12% (index.css, container tile/circle).
 const TILE_ALPHA = 0.12;
 

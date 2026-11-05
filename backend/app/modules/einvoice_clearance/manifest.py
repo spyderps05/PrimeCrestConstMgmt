@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """E-invoice clearance module manifest."""
 
@@ -19,7 +19,7 @@ manifest = ModuleManifest(
         "behind it. The document itself is built by the EN 16931 engine; the "
         "platforms are adapters behind an interface."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_finance", "oe_projects"],
     auto_install=True,

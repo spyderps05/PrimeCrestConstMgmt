@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Field Time module.
 
 The foreman's end-of-day, cost-coded, signed field timesheet for labour and

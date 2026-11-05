@@ -1,11 +1,11 @@
 # Changelog
 
-All notable changes to OpenConstructionERP are documented here.
+All notable changes to PrimeCrest are documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-> **Tip:** This file is long. Use your browser's **Find** (Ctrl+F) to jump to a version number, or see the [Releases page](https://github.com/datadrivenconstruction/OpenConstructionERP/releases) for a per-release view with download links.
+> **Tip:** This file is long. Use your browser's **Find** (Ctrl+F) to jump to a version number, or see the [Releases page](https://github.com/datadrivenconstruction/PrimeCrest/releases) for a per-release view with download links.
 
 ## [18.9.0] - 2026-10-28
 
@@ -318,7 +318,7 @@ Everyday use
 - Generate from BoQ gives a position several crews side by side when one crew of 20 could not finish it in the window, up to ten crews. Before, a bill with a few very large trades, thousands of tonnes of rebar or tens of thousands of square metres of glazing, came out as a schedule of a decade or more; the Bangalore demo now plans about three years instead of seventeen. Labour hours do not change, only durations do, and the preview and the finished schedule both say how many positions got parallel crews. Without an end date this applies to a position longer than a quarter of the default window; with an end date only to one that alone runs past it, so a plan you date is still shortened toward your date as before. Workers per position you set yourself are never changed.
 - Recording a payment and linking an invoice to a purchase order keep every amount exactly as entered. The withheld amount, the cash paid and the amount still open on the order are no longer rounded through floating point, and a withholding the browser cannot read disables Record payment instead of quietly posting zero.
 - Every link in a notification now opens a page that exists. The button in a notification email opens the app instead of leading nowhere, and the email's greeting, button and footer are written in the reader's language.
-- Every email the platform sends carries the OpenConstructionERP name at the top, in the sender and in the closing line.
+- Every email the platform sends carries the PrimeCrest name at the top, in the sender and in the closing line.
 - When `openconstructionerp` cannot start, because the port is busy, the embedded database will not come up or a check fails, it now points to the installation help page at https://openconstructionerp.com/install-help. The old troubleshooting link led to a section that no longer exists. The desktop app's error dialogs, shown when its backend cannot start, times out or exits, link to the same page next to the support email.
 - The desktop app no longer signs you out and resets your language on every start when another program holds port 8732. It falls back to the port it used last time, then to 8733 to 8741, and only then to a random one, so a busy default costs one move instead of one per start. The first time the window opens on another port it says so in plain words.
 - Your interface language is now kept with your account. A language you pick while signed in is saved to it, and after you sign in on a new browser or a new desktop port that has no language of its own, your language comes back instead of the browser's.
@@ -409,8 +409,8 @@ This release makes the platform lighter to run and easier to understand. A Backg
 - A record you have just created, such as a project, a bill or a position, is saved before the app confirms it, so opening it or adding to it right away no longer answers "not found", and a save that fails is no longer reported as a success. FastAPI 0.121.1 is now the minimum version.
 - Adding a top-level section to a bill after deleting one no longer fails with "already exists". A new section takes the next free number instead of one already in use.
 - The desktop app no longer reports its health as degraded on every start after the first.
-- The desktop app now starts on Windows accounts whose user name contains non-ASCII characters, such as Cyrillic, Chinese or accented letters. When the data folder path is not ASCII, the database cluster lives under %ProgramData%\OpenConstructionERP\clusters\ with access for the owner only. The installer and uninstaller follow that location too, so they stop the database before replacing files.
-- The Windows installer refuses an install folder whose path has non-ASCII characters, such as Cyrillic or accented letters, with a clear message instead of installing an app whose database cannot start. A silent install stops with exit code 3 and writes the reason to %TEMP%\OpenConstructionERP-install-error.log. The default folder under Program Files and non-ASCII user names are not affected.
+- The desktop app now starts on Windows accounts whose user name contains non-ASCII characters, such as Cyrillic, Chinese or accented letters. When the data folder path is not ASCII, the database cluster lives under %ProgramData%\PrimeCrest\clusters\ with access for the owner only. The installer and uninstaller follow that location too, so they stop the database before replacing files.
+- The Windows installer refuses an install folder whose path has non-ASCII characters, such as Cyrillic or accented letters, with a clear message instead of installing an app whose database cannot start. A silent install stops with exit code 3 and writes the reason to %TEMP%\PrimeCrest-install-error.log. The default folder under Program Files and non-ASCII user names are not affected.
 - The Windows installer and uninstaller no longer close every program on the machine named openconstructionerp.exe, such as a backend served from a pip install; they close only what runs from the install folder. An upgrade from 18.4.0 or earlier still runs the previous uninstaller first, which does close them, so stop such a backend before you upgrade.
 - Approving a payroll batch no longer counts labour twice in the cost model.
 - Percentage markups on a bill with deductions are taken on the net amount.
@@ -2853,7 +2853,7 @@ Every one of these new screens ships translated across all supported languages, 
 
 ## [11.18.0] - 2026-07-18
 
-OpenConstructionERP now exports a bill of quantities back to FIEBDC-3 (BC3), the standard construction budget format used across Spain and Latin America. Open a BOQ, choose Export and pick FIEBDC-3. The file carries the full chapter and item hierarchy with codes, units, quantities, unit rates and long texts, and it re-imports through our own BC3 reader without losing anything, so a budget can travel out to the Spanish desktop estimating tools and come back cleanly. It is written in Windows-1252 by default for the widest tool compatibility and switches to UTF-8 only when a character needs it, with the charset named in the file header. This sits alongside the existing GAEB XML, Excel, CSV and PDF exports, and there is no database change.
+PrimeCrest now exports a bill of quantities back to FIEBDC-3 (BC3), the standard construction budget format used across Spain and Latin America. Open a BOQ, choose Export and pick FIEBDC-3. The file carries the full chapter and item hierarchy with codes, units, quantities, unit rates and long texts, and it re-imports through our own BC3 reader without losing anything, so a budget can travel out to the Spanish desktop estimating tools and come back cleanly. It is written in Windows-1252 by default for the widest tool compatibility and switches to UTF-8 only when a character needs it, with the charset named in the file header. This sits alongside the existing GAEB XML, Excel, CSV and PDF exports, and there is no database change.
 
 The in-app error log that backs the bug-report tool now scrubs a wider set of secrets before anything reaches local storage or a downloaded report. It already stripped emails, API keys and bearer tokens. It now also removes a bare session token in the platform's own format and a fuller set of token, secret, cookie and session fields, so an authentication token cannot end up in a report that gets shared.
 
@@ -3576,7 +3576,7 @@ A security and data-integrity hardening release from a deep internal audit.
 
 ### Fixed
 
-- A BIM model that is ready but carries no 3D geometry - for example when no native converter produced one - now shows a clear "No 3D geometry" notice instead of a blank canvas. Reported in [#59](https://github.com/datadrivenconstruction/OpenConstructionERP/issues/59).
+- A BIM model that is ready but carries no 3D geometry - for example when no native converter produced one - now shows a clear "No 3D geometry" notice instead of a blank canvas. Reported in [#59](https://github.com/datadrivenconstruction/PrimeCrest/issues/59).
 - The 3D viewer releases its WebGL context when you navigate away, so opening several models in one session no longer exhausts the browser's available contexts and falsely reports "3D view unavailable".
 - Core list pages now show a recoverable error message instead of a blank screen when a request fails.
 - A deep-quality pass across the bill-of-quantities, clash, procurement, RFI and schedule modules fixed more than 150 correctness, performance and usability issues - including locale-aware parsing of European-formatted amounts (for example 1.234,56) in GAEB import, atomic goods-receipt handling in procurement, and faster critical-path scheduling.
@@ -3620,7 +3620,7 @@ A security and data-integrity hardening release from a deep internal audit.
 
 ### Fixed
 
-- Local AI providers that do not need an API key, such as Ollama, no longer ask for one. The API key field is hidden for these providers, a short hint points to the server address instead, and both Test connection and Save work without a key. Reported in [#244](https://github.com/datadrivenconstruction/OpenConstructionERP/issues/244).
+- Local AI providers that do not need an API key, such as Ollama, no longer ask for one. The API key field is hidden for these providers, a short hint points to the server address instead, and both Test connection and Save work without a key. Reported in [#244](https://github.com/datadrivenconstruction/PrimeCrest/issues/244).
 - The 3D model viewer now degrades gracefully instead of failing when the browser cannot create a full-quality WebGL context. On marginal GPUs, virtual machines or remote-desktop sessions it retries with a simpler context, dropping antialiasing and the logarithmic depth buffer, before showing the "3D view unavailable" notice, so the model renders in more environments.
 
 ## [8.4.0] - 2026-06-17
@@ -3631,7 +3631,7 @@ A security and data-integrity hardening release from a deep internal audit.
 
 ### Fixed
 
-- PDF takeoff measurements are now scoped to the project and the specific document they were drawn on, rather than keyed by the document's file name. Two files that share a name, in the same project or across projects, no longer surface each other's measurements. Reported in [#238](https://github.com/datadrivenconstruction/OpenConstructionERP/issues/238).
+- PDF takeoff measurements are now scoped to the project and the specific document they were drawn on, rather than keyed by the document's file name. Two files that share a name, in the same project or across projects, no longer surface each other's measurements. Reported in [#238](https://github.com/datadrivenconstruction/PrimeCrest/issues/238).
 - The resources under a bill-of-quantities position now expand on the first click of the chevron instead of needing a second click, the way every other expander in the grid already did.
 
 ## [8.3.3] - 2026-06-15
@@ -3708,7 +3708,7 @@ A security and data-integrity hardening release from a deep internal audit.
 
 ### Fixed
 
-- The currency dialog now warns when a project exchange rate looks entered upside down, or sits far from a typical market rate, and shows the rate the right way round, so a slip no longer quietly skews rolled-up totals. Reported in [#111](https://github.com/datadrivenconstruction/OpenConstructionERP/issues/111).
+- The currency dialog now warns when a project exchange rate looks entered upside down, or sits far from a typical market rate, and shows the rate the right way round, so a slip no longer quietly skews rolled-up totals. Reported in [#111](https://github.com/datadrivenconstruction/PrimeCrest/issues/111).
 - BIM models imported from a spreadsheet or a bulk element file now run the same validation pass as the CAD import path, so every imported model gets a validation report instead of only the ones brought in through a converter.
 - A comment that carries a viewpoint now checks the viewpoint's entity type against the same allowlist the standalone viewpoint path uses, so an unsupported value can no longer slip in through a comment and leave an orphaned reference.
 - Quantity takeoff now reports how many PDF pages came back with no text layer, usually scanned drawings, instead of silently treating them as empty, so it is clear which pages need OCR.
@@ -3730,7 +3730,7 @@ A security and data-integrity hardening release from a deep internal audit.
 
 - DIN 276 cost groups are now validated across the full code hierarchy (main group, group and sub-group), and the dotted element codes the CAD classifier produces, for example 330.10, are accepted, instead of only the first digit being checked.
 - The takeoff CSV export now subtracts openings and voids the same way the Excel export and the on-screen totals already do, so the same takeoff no longer reports a larger area to CSV than to Excel.
-- The quickstart Docker Compose file now parses once the required POSTGRES_PASSWORD and JWT_SECRET are provided, so its fail-fast checks run as intended. Reported in [#227](https://github.com/datadrivenconstruction/OpenConstructionERP/pull/227).
+- The quickstart Docker Compose file now parses once the required POSTGRES_PASSWORD and JWT_SECRET are provided, so its fail-fast checks run as intended. Reported in [#227](https://github.com/datadrivenconstruction/PrimeCrest/pull/227).
 - A fresh-database setup error. Running `openconstructionerp init-db` (or `seed`) on a brand-new database could stop with a foreign-key error, because the command built its list of tables from a hand-maintained list that had drifted out of date and missed the file-versions tables. It now discovers every module's tables automatically, the same way the server already does on first start, so a fresh schema is always created in full. The normal `openconstructionerp` start was not affected.
 
 ### Security
@@ -3766,7 +3766,7 @@ A security and data-integrity hardening release from a deep internal audit.
 
 ### Fixed
 
-- ERP Chat showed Markdown tables as raw pipe text. Assistant answers that contain a table, for example a list of projects with budgets, now render as a real table with per-column alignment, in both the floating chat and the full-page chat. Reported in [#224](https://github.com/datadrivenconstruction/OpenConstructionERP/issues/224).
+- ERP Chat showed Markdown tables as raw pipe text. Assistant answers that contain a table, for example a list of projects with budgets, now render as a real table with per-column alignment, in both the floating chat and the full-page chat. Reported in [#224](https://github.com/datadrivenconstruction/PrimeCrest/issues/224).
 - The quick create and guided project setup windows showed English labels and hints when the interface language was set to something else. Every string in both windows is now translated across all 27 languages.
 
 ## [7.9.0] - 2026-06-13
@@ -4319,7 +4319,7 @@ A security and data-integrity hardening release from a deep internal audit.
   retained.
 - **Packaging** - removed stale "openestimate" branding from the
   PyPI-facing metadata (keywords) so the project page reads as
-  OpenConstructionERP throughout.
+  PrimeCrest throughout.
 
 ## [5.9.1] - 2026-05-30
 
@@ -4450,7 +4450,7 @@ enable, default modules, and a custom onboarding script. Single-tenant
 `OE_PARTNER_PACK` or the first registered entry.
 
 Co-branding contract: every UI surface shows
-`Powered by OpenConstructionERP · In partnership with <Partner>`.
+`Powered by PrimeCrest · In partnership with <Partner>`.
 The badge mounts on the dashboard (top) and in the top nav bar
 (absolute-centered, only at xl+ width). Users can dismiss per
 browser session - the badge reappears on next browser launch
@@ -4718,7 +4718,7 @@ sweep with 22 screenshots committed under `docs/qa/`.
   can verify the stack is fully open without reading the source.
 - **`/geo` + `/projects` - one-click 2D/3D toggle** wired into both
   the Geo Hub viewer and every project card's map preview.
-- **News pages: "More from the OpenConstructionERP blog" widget** -
+- **News pages: "More from the PrimeCrest blog" widget** -
   inline closing strip on every article + sticky right-rail at
   `min-width:1500px`, vanilla JS, no dependencies, no tracking. 15
   article pages covered.
@@ -5065,7 +5065,7 @@ HTTP stack - `requests` would introduce a parallel dependency).
 revival across three modules (CRM orphan tests, QMS audit-log infrastructure,
 EAC tenant-scoped hardening), QuickEstimatePage accessibility debt cleared,
 QA browser-screenshot harness parameterized for locale / theme / viewport,
-and the OpenConstructionERP concept paper published as a news article.
+and the PrimeCrest concept paper published as a news article.
 
 ### Added
 - `qms`: new `QMSAuditLog` SQLAlchemy model (alembic `v3140_qms_audit_log`)
@@ -5082,7 +5082,7 @@ and the OpenConstructionERP concept paper published as a news article.
 - 5 CRM R7 orphan test files restored (~59 tests, 1,155 lines) - covers
   GDPR forget, lead dedupe, money decimal, PII redaction, win role gate.
   These were parked by the v4.7.2 triage and never re-committed. (dd24aa1c)
-- Marketing site: OpenConstructionERP concept paper published as standalone
+- Marketing site: PrimeCrest concept paper published as standalone
   news article at `/news/open-erp-own-your-stack.html` with banner,
   back-to-news nav, 7 inline images, 3 fonts, and downloadable PDF. Featured
   card on `/news.html`. (cee9e5f9)
@@ -5521,9 +5521,9 @@ Cumulative test count this release: 21 backend unit + 37 coordination_hub + 47 c
 
 - **Scheduling - CPM Slice 1.** First-class Critical Path Method engine on top of the existing schedule + schedule_advanced modules. Pure-Python forward + backward pass (no scipy / networkx) at `backend/app/modules/schedule_advanced/cpm.py` computes ES / EF / LS / LF, total float, free float, and critical-path marking on a `TaskNetwork`; cycles are detected via DFS and surface the offending node path through `CycleError`; disconnected sub-networks are scheduled per island. Companion `leveling.py` ships a serial-greedy `level_by_resource_max` heuristic (priority = LS asc → total_float asc → id asc) that shifts activities forward (never backward) to honour per-resource ceilings. New `WeeklyCommitment` table (alembic v40_cpm_weekly) backs the lightweight Last-Planner commit flow with auto-computed PPC = actual / planned clamped to [0, 1]. Four additive endpoints under `/api/v1/schedule-advanced/{schedule_id}/…`: `compute-cpm` (persists ES / EF / LS / LF / float / critical onto each Activity row and returns project_duration + critical path), `level-resources`, `commitments`, `ppc?week=`. New `frontend/src/features/schedule/CPMView.tsx` renders an ES / EF / LS / LF / float column grid with a red "CRITICAL" badge on critical rows plus toolbar buttons to recompute CPM or open a resource-leveling modal. EN / DE / RU translations under `schedule.cpm.*`. 8 new tests in `backend/tests/modules/schedule_advanced/test_cpm.py` (textbook 6-activity AOA critical path A → C → F = 11d, forward pass, backward pass, total float, cycle detection, disconnected sub-network, leveling ceiling enforcement, PPC math) - all green; existing 61 schedule_advanced unit tests stay passing. FS-only in Slice 1; SS / FF / SF dependency types and parallel-SGS leveling are wired as TODO comments for Slice 2.
 - **AI Agents framework - Slice 1.** New `backend/app/modules/ai_agents/` module adds a generic ReAct-style agent loop on top of the existing single-call `ai` LLM client. Ships a `Tool` protocol + `ToolRegistry`, a declarative `Agent` dataclass, and an `AgentRunner` that loops "LLM -> tool_call -> observation -> repeat" until a final answer or `max_iterations` (defaults to 8, then `status=failed reason=iter_limit`). LLM is abstracted behind an `LLMBridge` protocol - production `CallAILLM` wraps `ai.ai_client.call_ai` with a deterministic `<tool_call>{json}</tool_call>` text-protocol parser (no provider-specific tool-use APIs); tests use `ScriptedLLM` for offline replay. Per-run history persists to two new strictly-additive tables (`oe_ai_agents_run` + `oe_ai_agents_step`, alembic `v40_ai_agents`) so the UI can render every thought / tool_call / observation / answer as a vertical timeline. Endpoints: `GET /api/v1/ai-agents/agents/`, `GET /tools/`, `POST /runs/`, `GET /runs/`, `GET /runs/{id}`. Sample `boq_drafter` agent declares three tools: `search_costs(q, region)` (proxies `costs.matcher.match_cwicr_items` with a deterministic mock fallback), `suggest_assembly(description)` (mock stub, TODO to wire to `assemblies.repository`), and `create_position(...)` which returns a structured PROPOSAL payload - never writes the BOQ (the architecture guide "AI-augmented, human-confirmed"). 9 pytest tests cover scripted-LLM happy path, iter-limit cap, registry dispatch, unknown-tool error step, BOQ-drafter end-to-end, DB persistence, text-protocol parser, and `on_step` callback. New `frontend/src/features/ai-agents/AgentsPage.tsx` renders the agent catalogue + run launcher + live polling timeline; EN/DE/RU `agents.*` keys.
-- **Mobile PWA - Slice 1.** OpenConstructionERP is now installable as a Progressive Web App on Android / iOS / desktop Chromium browsers.
+- **Mobile PWA - Slice 1.** PrimeCrest is now installable as a Progressive Web App on Android / iOS / desktop Chromium browsers.
   - `vite-plugin-pwa` wired into `frontend/vite.config.ts` with workbox `generateSW`: precaches the app shell (`index.html` + JS/CSS/HTML/SVG/WOFF2 bundles), `NavigationRoute` falls back to `/index.html` so offline deep-links still resolve, and three runtime cache lanes - `oce-static-assets` (CacheFirst for fonts/images/hashed asset chunks), `oce-i18n-locales` (StaleWhileRevalidate for `assets/i18n-<code>-*.js`), and `oce-api` (NetworkFirst with 8 s timeout, GET-only, cached only as offline fallback for idempotent reads).
-  - Web App Manifest declares name "OpenConstructionERP", short_name "OCERP", `theme_color` sky-600 (`#0284c7`), `background_color` `#f7fbff`, `display: standalone`, scope `/`, start_url `/`, plus 192/256/384/512 SVG icons + a 512 maskable variant under `frontend/public/pwa/` (modern browsers accept SVG icons in a manifest directly; an optional `frontend/scripts/build-pwa-icons.mjs` helper rasterizes to PNG when `sharp` is installed).
+  - Web App Manifest declares name "PrimeCrest", short_name "OCERP", `theme_color` sky-600 (`#0284c7`), `background_color` `#f7fbff`, `display: standalone`, scope `/`, start_url `/`, plus 192/256/384/512 SVG icons + a 512 maskable variant under `frontend/public/pwa/` (modern browsers accept SVG icons in a manifest directly; an optional `frontend/scripts/build-pwa-icons.mjs` helper rasterizes to PNG when `sharp` is installed).
   - New `<PWAInstallPrompt />` (`frontend/src/shared/ui/PWAInstallPrompt.tsx`) mounted once in `App.tsx`: discrete bottom-right toast that captures `beforeinstallprompt`, persists 30-day dismissal in localStorage, and replaces itself with a one-time "Add to Home Screen via Share menu" hint on iOS Safari (UA-sniffed; iOS Chrome/Edge correctly excluded). Hides automatically when already in `display-mode: standalone`.
   - New `<OfflineFallback />` (`frontend/src/shared/ui/OfflineFallback.tsx`) - minimal full-page "You're offline" surface with a best-effort "last synced N minutes ago" line backed by an `oce.pwa.lastSyncAt` localStorage key, ready to be wired into workbox's NavigationRoute fallback or rendered inline by feature pages.
   - Touch-friendly tweaks on Daily Diary, Punch List, and Photo Gallery: bottom-anchored FAB visible only on viewports `≤sm` (≥44×44 tap target via `min-h-[44px] min-w-[44px]`) that fires each page's primary action (new diary / new punch item / upload photo), so site crews on phones reach the verb without scrolling past header + filter chrome.
@@ -5652,7 +5652,7 @@ Identical to 3.12.1: no migration steps required. Existing 3.12.x installs upgra
   - Community card - Telegram featured on its own row (cyan-tinted + "Live" badge + 2-line copy), LinkedIn + X each on their own full-width row with longer descriptions, so the card stretches to match Platform Capabilities.
   - Documentation card - enriched with "Popular topics" 2×3 deep-link grid (Quick start · BIM import · GAEB · Takeoff · Module SDK · VPS deployment).
   - License card - restructured into "You can / You must" 2-col bullets + badges + "Commercial licensing" CTA at bottom (parallel button position to Documentation's "Open Docs").
-  - Support OpenConstructionERP right column - 4 impact-stat KPI tiles on top mirror the visual weight of the left hero, then the existing "Your support enables" bullet list below.
+  - Support PrimeCrest right column - 4 impact-stat KPI tiles on top mirror the visual weight of the left hero, then the existing "Your support enables" bullet list below.
   - Free Guidebook - book cover 1/3 → 2/5 column (max-w 200px → 320px) with 10-part TOC column narrowed to 3/5.
 
 ### Fixed
@@ -5681,7 +5681,7 @@ Identical to 3.12.1: no migration steps required. Existing 3.12.x installs upgra
 
 ### Changed
 
-- **/about page redesign** - full-width 1600px container; 6-tile Platform Capabilities stat grid (`55K+ / 24 / 48 / 6 / 100+ / 12`) split into 2 separate Cards next to a dedicated Community Card with matched heights; "About the project" Card switched to 3:2 grid with bio + blockquote on the left and the marketing-site DDC Ecosystem block on the right (Flagship products / Open-source on GitHub / Find us across the network); Consulting & Services rebuilt as the marketing site's 3 numbered offerings (Build 01 / Workshops 02 / Consulting 03) with trusted-by chip list (Drees & Sommer · Lindner Group · OTWB · ShapeMaker · TUM · Bauindustrie Bayern · …); Support OpenConstructionERP compacted into 2-col (3 stacked action cards left + "Your support enables" backlog right); Free Guidebook reshaped into small cover + 10-part real chapter list of the Data-Driven Construction book; Documentation + License grouped into matched-height 2-col band; header itself 2-col with identity left + UpdateNotification right; deduped LinkedIn/YouTube/Website/GitHub social row.
+- **/about page redesign** - full-width 1600px container; 6-tile Platform Capabilities stat grid (`55K+ / 24 / 48 / 6 / 100+ / 12`) split into 2 separate Cards next to a dedicated Community Card with matched heights; "About the project" Card switched to 3:2 grid with bio + blockquote on the left and the marketing-site DDC Ecosystem block on the right (Flagship products / Open-source on GitHub / Find us across the network); Consulting & Services rebuilt as the marketing site's 3 numbered offerings (Build 01 / Workshops 02 / Consulting 03) with trusted-by chip list (Drees & Sommer · Lindner Group · OTWB · ShapeMaker · TUM · Bauindustrie Bayern · …); Support PrimeCrest compacted into 2-col (3 stacked action cards left + "Your support enables" backlog right); Free Guidebook reshaped into small cover + 10-part real chapter list of the Data-Driven Construction book; Documentation + License grouped into matched-height 2-col band; header itself 2-col with identity left + UpdateNotification right; deduped LinkedIn/YouTube/Website/GitHub social row.
 - **Project dashboard /Quick Actions** - buttons bumped `sm` → `md` (28 → 32 px) with `space-y-2.5`; card stretches via `h-full flex flex-col` to match Recent Activity height; Documents stats block redesigned with prominent number tiles in a bordered area pushed to the bottom via `mt-auto`.
 - **Stale-count sweep** - 12 files refreshed to 24 languages / 48 regional databases (was scattered 9/11/20/21/30) across `AUTHORS.md`, `backend/pyproject.toml` (description), `backend/README.md`, `backend/app/config.py`, `backend/app/core/i18n.py` (EN/RU/AR onboarding strings), `backend/app/core/marketplace.py`, `backend/app/main.py`, `backend/app/modules/erp_chat/{prompts,tools}.py`, `backend/app/modules/match_elements/service.py`, `data/catalog/README.md`, `docs/expand_docs2.py`.
 
@@ -6012,7 +6012,7 @@ tier 5269 passing, frontend type-check clean, zero regressions.
 ### Added
 
 - **6 new CWICR v3 catalogues** (registry grows 42 → 48): `MN_ULAANBAATAR` (Mongolian, MNT, 916 MB), `BG_SOFIA`, `HR_ZAGREB`, `NZ_AUCKLAND` (NRM), `TH_BANGKOK`, `VI_HANOI`. All flipped to `available=True` via the `_HF_PUBLISHED` mapping after DDC published the snapshots on the `cwicr-vector-db-bgem3-v3` HF dataset on 2026-05-14.
-- **Sidebar white-label branding** - new edit button above the platform name opens a chooser to upload a logo OR type a company name. When set, the user's brand shows large in the sidebar header; `by OpenConstructionERP` sits below as a small AGPL-3.0 attribution. Persisted in localStorage, no backend round-trip.
+- **Sidebar white-label branding** - new edit button above the platform name opens a chooser to upload a logo OR type a company name. When set, the user's brand shows large in the sidebar header; `by PrimeCrest` sits below as a small AGPL-3.0 attribution. Persisted in localStorage, no backend round-trip.
 
 ### Changed
 
@@ -6165,7 +6165,7 @@ docker compose up
 
 PyPI: https://pypi.org/project/openconstructionerp/3.0.0/
 Demo: https://openconstructionerp.com
-Source: https://github.com/datadrivenconstruction/OpenConstructionERP
+Source: https://github.com/datadrivenconstruction/PrimeCrest
 
 ## [2.9.42] - 2026-05-12
 
@@ -6618,7 +6618,7 @@ Source: https://github.com/datadrivenconstruction/OpenConstructionERP
   - `fr / es / pt / zh / hi / ja` each filled 80 missing keys (had 57/137).
   - `tr / it / nl / pl / cs / ko / sv / no / da / fi / bg / hr / id / ro / th / vi` each gained the full 137-key block (had 0).
   - **Total: ~2 737 strings across 22 locales.** All 26 supported locales now have full `files.*` coverage.
-- Tone follows the authoritative German + Russian blocks; brand and format names (BIM, IFC, DWG, PDF, GAEB, OpenConstructionERP, `.ocep`) preserved verbatim.
+- Tone follows the authoritative German + Russian blocks; brand and format names (BIM, IFC, DWG, PDF, GAEB, PrimeCrest, `.ocep`) preserved verbatim.
 
 ## [2.9.15] - 2026-05-06
 
@@ -7416,7 +7416,7 @@ Phase 3 + Phase 4 of vector match + concurrent-match perf hardening, shipped tog
 - **Abstract resource variants polished to ship-quality.** Default = mean rate when applying a CWICR cost item with multiple price variants (closest-to-mean entry chosen when no exact match). Inline variant picker (`▾ N options`) on every BOQ unit_rate cell; opens the same `VariantPicker` used at apply time. Position metadata stamps a `variant_snapshot = {code, rate, currency, captured_at}` so subsequent CWICR re-imports don't silently rewrite the position's rate. Visual markers: 4px left-edge bar (blue for explicit pick, amber for default = mean) plus an Abstract pill in the description cell. Excel export gains a "Variant" column. 6 backend tests + 8 frontend tests; all green.
 
 ### Fixed
-- **VPS source-dir shadowed wheel for ALL modules, not just `_frontend_dist`.** The systemd `WorkingDirectory=/root/OpenConstructionERP/backend` puts the source `app/` tree ahead of the installed wheel on `sys.path`, so every Python module updated in a new wheel was silently shadowed by the old source. Caught when the v2.6.22 demo-login route returned 404 despite the wheel containing it. Deploy procedure now rsyncs the entire wheel `app/` over `backend/app/` after every `pip install`.
+- **VPS source-dir shadowed wheel for ALL modules, not just `_frontend_dist`.** The systemd `WorkingDirectory=/root/PrimeCrest/backend` puts the source `app/` tree ahead of the installed wheel on `sys.path`, so every Python module updated in a new wheel was silently shadowed by the old source. Caught when the v2.6.22 demo-login route returned 404 despite the wheel containing it. Deploy procedure now rsyncs the entire wheel `app/` over `backend/app/` after every `pip install`.
 - **BOQ cell edits jumped back to old value before re-updating** (lag bug at `/boq/{id}`). The `updateMutation` in `BOQEditorPage.tsx` performed an optimistic `setQueryData` write but didn't `cancelQueries` on the in-flight refetch issued by sibling mutations (add/reorder/catalog/etc.) - so the GET landed AFTER the optimistic write, clobbered the cache with stale server data, and the new value reappeared only when the PATCH eventually returned. Added `await queryClient.cancelQueries({ queryKey: ['boq', boqId] })` in `onMutate`, snapshot+rollback in `onError`, invalidation moved from `onSuccess` to `onSettled` (fires once per mutation). Cell edits now feel instant.
 
 ## [2.6.22] - 2026-04-28
@@ -7510,7 +7510,7 @@ Phase 3 + Phase 4 of vector match + concurrent-match perf hardening, shipped tog
 ## [2.6.15] - 2026-04-27
 
 ### Added
-- Provenance markers across exporters and runtime artifacts so a forked deploy can be traced back. COBie/IDS/Excel/PDF/SARIF exports stamp `OpenConstructionERP · DDC-CWICR-OE-2026` in document metadata; SVG favicon carries an RDF authorship block; JWT tokens include `iss: openconstructionerp`; outbound catalog HTTP requests advertise the project User-Agent.
+- Provenance markers across exporters and runtime artifacts so a forked deploy can be traced back. COBie/IDS/Excel/PDF/SARIF exports stamp `PrimeCrest · DDC-CWICR-OE-2026` in document metadata; SVG favicon carries an RDF authorship block; JWT tokens include `iss: openconstructionerp`; outbound catalog HTTP requests advertise the project User-Agent.
 
 ## [2.6.14] - 2026-04-27
 
@@ -7544,7 +7544,7 @@ Phase 3 + Phase 4 of vector match + concurrent-match perf hardening, shipped tog
 
 
 ### Fixed - Issue #96 (CLI / installer)
-- **`openconstructionerp upgrade`** new command that pip-installs into the *same* Python env it's running in (uses `sys.executable -m pip`). The Windows installer creates a private venv at `%LOCALAPPDATA%\OpenConstructionERP\venv`; running `pip install --upgrade openconstructionerp` from any other shell upgraded the user's global Python instead, leaving the launcher's venv pinned to the old wheel - so the startup banner kept reporting the old version even though pip claimed success. The new command always lands in the right env. `version` now also prints `Site-packages: …` so users can see which interpreter the launcher is actually using.
+- **`openconstructionerp upgrade`** new command that pip-installs into the *same* Python env it's running in (uses `sys.executable -m pip`). The Windows installer creates a private venv at `%LOCALAPPDATA%\PrimeCrest\venv`; running `pip install --upgrade openconstructionerp` from any other shell upgraded the user's global Python instead, leaving the launcher's venv pinned to the old wheel - so the startup banner kept reporting the old version even though pip claimed success. The new command always lands in the right env. `version` now also prints `Site-packages: …` so users can see which interpreter the launcher is actually using.
 
 ### Fixed - BOQ editor
 - **VAT row no longer hardcoded.** Removed the German-19% fallback in `boqHelpers.ts`. The Net→VAT→Gross footer is now driven from the `tax`-category row in Markups & Overheads (single source of truth, matches the backend PDF/Excel exporters). When no tax markup exists, the VAT and Gross Total rows are hidden; adding any tax markup re-introduces them with the correct rate.
@@ -8517,7 +8517,7 @@ sidebar's normal items.
 ``README.md`` was rewritten to a 53-line minimal version in d3d2319
 that dropped the Table of Contents menu, the comparison table, the
 feature gallery, and the workflow diagram.  This release restores
-the rich 450-line version (badges, ToC table, why-OpenConstructionERP
+the rich 450-line version (badges, ToC table, why-PrimeCrest
 table, vendor comparison, complete-estimation-workflow diagram, 12
 feature blocks with screenshots, regional standards table, tech
 stack, architecture diagram) - bumped to v1.4.6 in the version

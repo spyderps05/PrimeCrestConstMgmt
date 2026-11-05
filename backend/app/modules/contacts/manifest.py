@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Contacts Directory module manifest."""
 
@@ -9,7 +9,7 @@ manifest = ModuleManifest(
     version="0.1.0",
     display_name="Contacts Directory",
     description="Unified contacts directory for clients, subcontractors, suppliers, consultants",
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users"],
     auto_install=True,

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Clash → BOQ Cost Impact module.
 
 Bridges the clash detection module (BIM coordination) with the BOQ module

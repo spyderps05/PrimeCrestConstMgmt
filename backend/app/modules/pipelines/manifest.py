@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Pipeline Builder module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "runner, validation engine and per-module services as draggable, "
         "gate-able pipeline nodes"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects", "oe_validation"],
     auto_install=False,

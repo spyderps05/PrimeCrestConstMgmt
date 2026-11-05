@@ -51,7 +51,7 @@ variable "sandbox_days" {
 }
 
 variable "image_tag" {
-  description = "Version of the OpenConstructionERP image, for example \"20.5.1\". Must be an explicit version, \"latest\" is rejected so upgrades are deliberate."
+  description = "Version of the PrimeCrest image, for example \"20.5.1\". Must be an explicit version, \"latest\" is rejected so upgrades are deliberate."
   type        = string
 
   validation {

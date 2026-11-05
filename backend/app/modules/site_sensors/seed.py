@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Site sensors demo​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠: a slab pour with three maturity sensors, noise and dust on the fence.
 

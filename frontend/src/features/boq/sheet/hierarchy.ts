@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Outline​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ levels for the sheet: group rows by the bill's hierarchy, collapse

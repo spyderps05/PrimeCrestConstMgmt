@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Claims evidence-pack module manifest."""
 
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
         "parties can independently reproduce and verify it. Assembled on "
         "demand with no tables of its own and no migration"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="controls",
     depends=[
         "oe_users",

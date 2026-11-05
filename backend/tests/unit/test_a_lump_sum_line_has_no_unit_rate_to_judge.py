@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠A lump-sum line has no unit rate to judge.
 
 ``boq_quality.unrealistic_rate`` compared every unit rate against a ceiling

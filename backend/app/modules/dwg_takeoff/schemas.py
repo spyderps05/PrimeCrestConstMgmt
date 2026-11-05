@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠DWG Takeoff Pydantic schemas - request/response models.
 
@@ -308,7 +308,7 @@ class DwgOfflineReadinessResponse(BaseModel):
     # the browser and the server genuinely run on the same machine, so the
     # "your files never leave your computer" claim is literally true. On a
     # hosted demo this is False and the UI must show the honest "processed
-    # on your OpenConstructionERP server" copy instead. Defaults to False so
+    # on your PrimeCrest server" copy instead. Defaults to False so
     # the strong claim is never shown unless explicitly earned.
     local_only: bool = False
 

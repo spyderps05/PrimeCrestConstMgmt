@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // Recording -> protocol. A site engineer drops an audio or video recording of a
@@ -403,7 +403,7 @@ export function RecordingProtocolCard({ projectId }: { projectId: string }) {
           <input
             value={state.participants}
             onChange={(e) => setField('participants', e.target.value)}
-            placeholder={t('phonelog.rec.participants_ph', { defaultValue: 'You, Acme site office' })}
+            placeholder={t('phonelog.rec.participants_ph', { defaultValue: 'You, DHA Phase 5 site office' })}
             className={INPUT_CLASS}
           />
         </label>

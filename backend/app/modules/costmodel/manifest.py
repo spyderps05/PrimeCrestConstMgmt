@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """5D Cost Model module manifest."""
 
@@ -11,7 +11,7 @@ manifest = ModuleManifest(
     description=(
         "5D cost management - S-curves, cash flow projections, earned value analysis (EVM), and budget tracking"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_projects", "oe_boq"],
     auto_install=True,

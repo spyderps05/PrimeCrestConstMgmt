@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Clash / interference detection module.
 
 Geometric AABB (axis-aligned bounding box) coordination over the

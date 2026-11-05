@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The Owner's Project Control pack states its manifest twice and its files by path.
 
 ``manifest.py`` is what the source tree and every text-reading pack check see.

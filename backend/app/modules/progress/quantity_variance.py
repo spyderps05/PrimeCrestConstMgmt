@@ -1,4 +1,4 @@
-# OpenConstructionERP - DataDrivenConstruction (DDC)
+# PrimeCrest - DataDrivenConstruction (DDC)
 # DDC-CWICR-OE-2026
 """Pure quantity-variance engine for site progress.
 

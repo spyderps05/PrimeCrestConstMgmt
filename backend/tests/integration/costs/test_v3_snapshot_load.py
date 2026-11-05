@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Integration test — DDC v3 snapshot upload against a live Qdrant server.
 
 Skipped automatically unless ``CWICR_QDRANT_URL`` is set, so the suite

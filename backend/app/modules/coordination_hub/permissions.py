@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Coordination Hub module permission definitions.
 
 The hub is a read-only aggregator; everything it surfaces is already

@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Ez a név nem használható az új katalógushoz. Válasszon másik nevet.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Nyílt forráskódú építési költségbecslés"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Frissítés"
   },
   "dashboard": {
-    "welcome": "Üdvözöljük az OpenConstructionERP-ben",
+    "welcome": "Üdvözöljük az PrimeCrest-ben",
     "subtitle": "Az Ön építési költségbecslési munkaterülete",
     "recent_projects": "Legutóbbi projektek",
     "system_status": "Rendszerállapot",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Nincs elérhető adat",
         "no_data_body": "Ez a jelentés üres adatpillanatképpel készült. Ellenőrizze, hogy a forrásmodulok (pénzügy, ütemterv, munkavédelem stb.) adatot szolgáltattak-e a kiválasztott projekthez.",
         "no_data_body_short": "Ez a jelentés üres adatpillanatképpel készült. Ellenőrizze, hogy a forrásmodulok adatot szolgáltattak-e a kiválasztott projekthez.",
-        "footer_generated_by": "Készítette: OpenConstructionERP, {timestamp}.",
+        "footer_generated_by": "Készítette: PrimeCrest, {timestamp}.",
         "worksheet_name": "Jelentés",
         "pdf_subject": "Projektjelentés",
         "overall_progress": "Összesített előrehaladás",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Tisztelt {name}!",
       "greeting_generic": "Tisztelt Felhasználó!",
-      "cta": "Megnyitás az OpenConstructionERP-ben",
+      "cta": "Megnyitás az PrimeCrest-ben",
       "footer": "Ezt az e-mailt az értesítési beállításai alapján kapta. A beállításokat a profiljában módosíthatja.",
-      "digest_subject": "OpenConstructionERP: értesítési összesítő ({count})",
+      "digest_subject": "PrimeCrest: értesítési összesítő ({count})",
       "digest_heading": "Legutóbbi értesítések:"
     },
     "tender_xlsx": {

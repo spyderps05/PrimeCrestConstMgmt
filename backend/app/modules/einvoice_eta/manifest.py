@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Egyptian Tax Authority e-invoicing adapter manifest."""
 
@@ -18,7 +18,7 @@ manifest = ModuleManifest(
         "tables and registers an adapter, a document builder and validation "
         "rules into that module's registries."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="integration",
     depends=["oe_einvoice_clearance"],
     auto_install=True,

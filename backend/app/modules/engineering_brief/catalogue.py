@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Catalogue kind ``engineering_brief_model``: requirement categories, concept topics, programme kinds,
 milestone kinds and the backward-planned milestone template.

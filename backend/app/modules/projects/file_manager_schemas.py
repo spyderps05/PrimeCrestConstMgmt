@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Pydantic schemas for the project file manager (Issue #109).
 
@@ -191,13 +191,13 @@ class BundleManifest(BaseModel):
     record_counts: dict[str, int]
     attachment_count: int = 0
     attachment_total_bytes: int = 0
-    engine_name: str = "OpenConstructionERP"
+    engine_name: str = "PrimeCrest"
     engine_version: str = "2.9.4"
     # Origin provenance stamped on every exported .ocep bundle. Default
     # bytes XOR-decode (key 0x55) to the project authorship marker. Purely
     # informational manifest metadata: the importer reads tables/attachments
     # by name and never branches on this field, so it changes no behaviour.
-    provenance: str = "OpenConstructionERP · DataDrivenConstruction · " + bytes(
+    provenance: str = "PrimeCrest · DataDrivenConstruction · " + bytes(
         b ^ 0x55 for b in b"\x11\x11\x16\x78\x16\x02\x1c\x16\x07\x78\x1a\x10\x78\x67\x65\x67\x63"
     ).decode("ascii")
 

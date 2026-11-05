@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """BCF (BIM Collaboration Format) module manifest."""
 
@@ -12,7 +12,7 @@ manifest = ModuleManifest(
         "Server-backed BCF 2.1 / 3.0 issue tracking: persistent topics, "
         "comments and viewpoints with full .bcfzip import/export roundtrip."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_projects", "oe_users"],
     auto_install=True,

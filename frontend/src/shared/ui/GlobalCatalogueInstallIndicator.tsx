@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 /**
  * GlobalCatalogueInstallIndicator — floating dock for CWICR catalogue
  * installs. Mirrors `GlobalUploadIndicator` so the user gets a familiar

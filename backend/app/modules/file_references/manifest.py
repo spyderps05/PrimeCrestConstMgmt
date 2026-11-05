@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """File References module manifest.
 
@@ -20,7 +20,7 @@ manifest = ModuleManifest(
         "ISO 19650 filename validation + generic cross-entity references "
         "linking files to RFIs, issues, tasks, and submittals."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_projects", "oe_users"],
     auto_install=True,

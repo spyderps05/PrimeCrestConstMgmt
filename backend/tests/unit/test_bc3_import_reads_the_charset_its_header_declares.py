@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠A BC3 file is decoded in the character set its ``~V`` record declares.
 
@@ -34,7 +34,7 @@ def _bc3(charset_field: str, *, layout: str = "spec") -> str:
         version = f"~V|SOFT S.A.|FIEBDC-3/2020\\01102026|PROGRAMA 4.1|Obra Peña|{charset_field}|Comentario|2|\n"
     else:
         # The layout our exporter writes, one field later.
-        version = f"~V|obra.bc3|FIEBDC-3/2020|OpenConstructionERP|2026-10-01|Obra Peña|{charset_field}|2||EUR|\n"
+        version = f"~V|obra.bc3|FIEBDC-3/2020|PrimeCrest|2026-10-01|Obra Peña|{charset_field}|2||EUR|\n"
     return (
         version + "~C|01#||Movimiento de tierras|0|||1|\n"
         f"~C|01.01|m3|{_TEXT}|18.50|||0|\n"

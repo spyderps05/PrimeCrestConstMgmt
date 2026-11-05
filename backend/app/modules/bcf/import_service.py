@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """BCF 3.0 → :class:`ClashIssue` import service.
 
 This module is the **inverse** of :class:`app.modules.bcf.service.BCFExportService`:

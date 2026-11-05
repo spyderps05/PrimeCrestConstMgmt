@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """FIEBDC-3 / BC3 BOQ exporter (Spain + Hispanophone LATAM).
 
@@ -52,7 +52,7 @@ from datetime import date
 from decimal import Decimal, InvalidOperation
 from typing import Any
 
-_PROGRAM = "OpenConstructionERP"
+_PROGRAM = "PrimeCrest"
 
 # FIEBDC-3 concept type codes.
 _TYPE_OBRA = "3"  # aggregator / budget root

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Post-calculation (Nachkalkulation) module.
 
 Reconciles a project's estimate against its site actuals - approved field

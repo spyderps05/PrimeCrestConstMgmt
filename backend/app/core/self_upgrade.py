@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Running an upgrade of this install, and knowing when it cannot be run at all.
 
@@ -53,7 +53,7 @@ from typing import Any
 
 logger = logging.getLogger(__name__)
 
-RELEASES_URL = "https://github.com/datadrivenconstruction/OpenConstructionERP/releases/latest"
+RELEASES_URL = "https://github.com/datadrivenconstruction/PrimeCrest/releases/latest"
 
 #: Shown verbatim to the user when a frozen build is asked to upgrade itself.
 FROZEN_REFUSAL = (

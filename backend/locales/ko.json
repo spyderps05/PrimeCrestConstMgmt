@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "이 이름은 새 카탈로그에 사용할 수 없습니다. 다른 이름을 선택하세요.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "오픈소스 건설 원가 산정"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "업데이트"
   },
   "dashboard": {
-    "welcome": "OpenConstructionERP에 오신 것을 환영합니다",
+    "welcome": "PrimeCrest에 오신 것을 환영합니다",
     "subtitle": "오픈소스 건설 원가 산정 플랫폼",
     "recent_projects": "최근 프로젝트",
     "system_status": "시스템 상태",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "데이터가 없습니다",
         "no_data_body": "이 보고서는 빈 데이터 스냅샷으로 생성되었습니다. 선택한 프로젝트에 대해 원본 모듈(재무, 공정, 안전 등)이 데이터를 반환했는지 확인하십시오.",
         "no_data_body_short": "이 보고서는 빈 데이터 스냅샷으로 생성되었습니다. 선택한 프로젝트에 대해 원본 모듈이 데이터를 반환했는지 확인하십시오.",
-        "footer_generated_by": "OpenConstructionERP에서 {timestamp}에 생성됨.",
+        "footer_generated_by": "PrimeCrest에서 {timestamp}에 생성됨.",
         "worksheet_name": "보고서",
         "pdf_subject": "프로젝트 보고서",
         "overall_progress": "전체 공정률",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "{name} 님, 안녕하세요.",
       "greeting_generic": "안녕하세요.",
-      "cta": "OpenConstructionERP에서 열기",
+      "cta": "PrimeCrest에서 열기",
       "footer": "알림 설정에 따라 이 메일이 발송되었습니다. 설정은 프로필에서 변경할 수 있습니다.",
-      "digest_subject": "OpenConstructionERP: 알림 요약 ({count}건)",
+      "digest_subject": "PrimeCrest: 알림 요약 ({count}건)",
       "digest_heading": "최근 알림:"
     },
     "tender_xlsx": {

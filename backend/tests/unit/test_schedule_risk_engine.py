@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Unit tests for the pure Monte Carlo schedule-risk engine.
 
 These exercise :mod:`app.modules.schedule_advanced.schedule_risk_engine`

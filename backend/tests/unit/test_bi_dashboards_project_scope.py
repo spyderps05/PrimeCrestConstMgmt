@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The BI list endpoints answer for the project in the address bar.
 
 ``/projects/{id}/bi-dashboards`` used to render the company-wide page: the

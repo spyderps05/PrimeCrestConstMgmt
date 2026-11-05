@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Rules-only​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ quote parser: header, line items and flagged conditions.
 

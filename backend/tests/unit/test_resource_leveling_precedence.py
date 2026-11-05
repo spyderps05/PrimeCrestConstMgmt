@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Precedence feasibility of the resource-leveling priority queue.
 
 The leveler orders activities by the shipped key (LS asc -> total_float asc ->

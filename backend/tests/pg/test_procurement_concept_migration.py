@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction Â· OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction Â· PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Revision v72 builds exactly the schema the procurement concept models build, and undoes it.
 

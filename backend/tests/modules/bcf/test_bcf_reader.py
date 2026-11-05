@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Unit tests for :class:`app.modules.bcf.reader.BCFReader`.
 
 The reader is pure-Python / stdlib (defusedxml + zipfile + xml.etree)

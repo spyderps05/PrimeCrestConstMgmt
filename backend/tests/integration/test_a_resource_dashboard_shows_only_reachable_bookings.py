@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠A resource's dashboard shows only the bookings of projects the caller can reach.
 
 Resources are a shared pool, so any reader may open any resource. Its

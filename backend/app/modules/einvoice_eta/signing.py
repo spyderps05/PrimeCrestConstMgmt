@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Signing an ETA document: CAdES-BES over SHA-256 with an eSeal certificate.
 
@@ -314,7 +314,7 @@ def _throwaway_key() -> tuple[Any, bytes]:
     name = x509.Name(
         [
             x509.NameAttribute(NameOID.COUNTRY_NAME, "EG"),
-            x509.NameAttribute(NameOID.ORGANIZATION_NAME, "OpenConstructionERP test signer"),
+            x509.NameAttribute(NameOID.ORGANIZATION_NAME, "PrimeCrest test signer"),
             x509.NameAttribute(NameOID.COMMON_NAME, "Not an eSeal"),
         ]
     )

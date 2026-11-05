@@ -1,4 +1,4 @@
-"""OpenConstructionERP — Denmark Construction partner pack (V&S + AB 18 + SfB/CCS)."""
+"""PrimeCrest — Denmark Construction partner pack (V&S + AB 18 + SfB/CCS)."""
 
 from __future__ import annotations
 from .manifest import MANIFEST

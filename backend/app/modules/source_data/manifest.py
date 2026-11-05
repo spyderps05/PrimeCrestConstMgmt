@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Source-data register module manifest."""
 
@@ -17,7 +17,7 @@ manifest = ModuleManifest(
         "neutral: the register tracks what a document is and when it is valid; "
         "regional packs supply the country-specific vocabularies."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

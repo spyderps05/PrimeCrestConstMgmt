@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """OpenStreetMap Nominatim geocoder + 30-day SQL cache.
 
 Powers the new auto-anchor flow: when a project sets an address we
@@ -185,7 +185,7 @@ def _user_agent(version: str | None = None) -> str:
     ver = (version or _app_version()) or "0.0.0"
     extra_contact = (os.environ.get("OE_GEOCODER_USER_AGENT_CONTACT") or "").strip()
     contact = extra_contact or _DEFAULT_CONTACT_EMAIL
-    return f"OpenConstructionERP/{ver} ({contact})"
+    return f"PrimeCrest/{ver} ({contact})"
 
 
 def _app_version() -> str | None:

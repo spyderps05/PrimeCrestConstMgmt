@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * UI appearance styles: accent colour, font, density and corner radius.
@@ -59,7 +59,7 @@ export const AXIS_VALUES: { [K in AppearanceAxis]: readonly Appearance[K][] } = 
 
 export const PLATFORM_APPEARANCE: Appearance = {
   accent: 'blue',
-  font: 'system',
+  font: 'source-sans-3',
   density: 'comfortable',
   radius: 'standard',
   text: 'default',
@@ -72,7 +72,7 @@ export const WORKSPACE_APPEARANCE_KEY = 'oe_workspace_appearance_v1';
 
 /** Swatch colours for previews: the light-mode accent base from index.css. */
 export const ACCENT_SWATCH: Record<Accent, string> = {
-  blue: '#0071e3',
+  blue: '#c4622d',
   teal: '#0f766e',
   violet: '#7c3aed',
   emerald: '#047857',
@@ -102,7 +102,7 @@ export interface AppearancePreset {
 }
 
 export const APPEARANCE_PRESETS: readonly AppearancePreset[] = [
-  { id: 'classic', value: PLATFORM_APPEARANCE },
+  { id: 'classic', value: { ...PLATFORM_APPEARANCE } },
   { id: 'studio', value: { accent: 'violet', font: 'inter', density: 'comfortable', radius: 'round', text: 'default' } },
   { id: 'engineering', value: { accent: 'teal', font: 'ibm-plex-sans', density: 'compact', radius: 'sharp', text: 'default' } },
   { id: 'warm', value: { accent: 'amber', font: 'source-sans-3', density: 'comfortable', radius: 'round', text: 'default' } },

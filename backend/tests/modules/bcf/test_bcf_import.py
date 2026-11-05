@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Integration tests for :class:`BCFImportService` + ``POST /import/clashes``.
 
 The fixtures mirror :file:`test_bcf_export.py` exactly so the test runs

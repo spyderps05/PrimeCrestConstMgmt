@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Dette navnet kan ikke brukes for en ny katalog. Velg et annet navn.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Byggekalkyle med åpen kildekode"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Oppdater"
   },
   "dashboard": {
-    "welcome": "Velkommen til OpenConstructionERP",
+    "welcome": "Velkommen til PrimeCrest",
     "subtitle": "Byggekalkyle med åpen kildekode",
     "recent_projects": "Nylige prosjekter",
     "system_status": "Systemstatus",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Ingen data tilgjengelig",
         "no_data_body": "Denne rapporten ble generert med et tomt datautdrag. Kontroller at kildemodulene (økonomi, fremdrift, HMS osv.) returnerte data for valgt prosjekt.",
         "no_data_body_short": "Denne rapporten ble generert med et tomt datautdrag. Kontroller at kildemodulene returnerte data for valgt prosjekt.",
-        "footer_generated_by": "Generert av OpenConstructionERP {timestamp}.",
+        "footer_generated_by": "Generert av PrimeCrest {timestamp}.",
         "worksheet_name": "Rapport",
         "pdf_subject": "Prosjektrapport",
         "overall_progress": "Samlet fremdrift",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Hei {name},",
       "greeting_generic": "Hei,",
-      "cta": "Åpne i OpenConstructionERP",
+      "cta": "Åpne i PrimeCrest",
       "footer": "Du får denne e-posten på grunn av varslingsinnstillingene dine. Du kan endre dem i profilen din.",
-      "digest_subject": "OpenConstructionERP: Oppsummering av varsler ({count})",
+      "digest_subject": "PrimeCrest: Oppsummering av varsler ({count})",
       "digest_heading": "Siste varsler:"
     },
     "tender_xlsx": {

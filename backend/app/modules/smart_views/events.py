@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Smart Views event subscribers - cross-module visibility refresh.
 
 This module is auto-imported by ``module_loader`` when ``oe_smart_views``

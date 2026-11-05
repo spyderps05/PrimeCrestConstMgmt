@@ -1,6 +1,6 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
-// OpenConstructionERP — DataDrivenConstruction (DDC)
+// PrimeCrest — DataDrivenConstruction (DDC)
 // Tests for the conversational-intake pure helpers (no React, no network).
 import { describe, expect, it } from 'vitest';
 import {

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠A report a person opens should read like a document - issue #441.
 
 ``run_report`` flattens each KPI's breakdown into ``breakdown__<key>``

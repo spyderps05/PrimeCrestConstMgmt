@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠A money threshold was a fixed number in no currency.
 
 ``boq_quality.unrealistic_rate`` compared every unit rate against 100,000 and

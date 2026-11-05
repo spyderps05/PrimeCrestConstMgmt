@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Pure, database-free iCalendar (RFC 5545) builder for meetings.
 
@@ -55,7 +55,7 @@ __all__ = [
 ]
 
 # Product identifier written into every VCALENDAR (RFC 5545 section 3.7.3).
-PRODID = "-//DataDrivenConstruction//OpenConstructionERP Meetings//EN"
+PRODID = "-//DataDrivenConstruction//PrimeCrest Meetings//EN"
 # Right-hand side of the stable per-meeting UID.
 UID_DOMAIN = "openconstructionerp"
 # Reserved ``.invalid`` TLD (RFC 2606) used when an attendee has no real email:

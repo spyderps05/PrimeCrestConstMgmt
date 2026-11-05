@@ -1,8 +1,8 @@
-# OpenConstructionERP auf Microsoft Azure
+# PrimeCrest auf Microsoft Azure
 
 [English](azure.md) | Deutsch | [Русский](azure.ru.md)
 
-So betreiben Sie OpenConstructionERP auf Azure, mit Daten in der Region Ihrer Wahl, und was für die Anmeldung mit Microsoft Entra ID heute funktioniert. Es gibt keinen Azure-spezifischen Code: Die Plattform läuft als ein Docker-Container gegen PostgreSQL, alles Folgende ist Konfiguration.
+So betreiben Sie PrimeCrest auf Azure, mit Daten in der Region Ihrer Wahl, und was für die Anmeldung mit Microsoft Entra ID heute funktioniert. Es gibt keinen Azure-spezifischen Code: Die Plattform läuft als ein Docker-Container gegen PostgreSQL, alles Folgende ist Konfiguration.
 
 **Was geprüft wurde.** Alle unten genannten Einstellungen wurden gegen den Quellcode der Versionen 18.8.2 und 18.8.3 geprüft (`backend/app/config.py`, `backend/app/modules/users/`, `deploy/docker/`). Die Schritte im Azure-Portal und in der CLI stammen aus der Azure-Dokumentation und wurden **nicht** auf einem echten Abonnement ausgeführt. Betrachten Sie die erste Installation als Test und lesen Sie "Anmeldung mit Entra ID", bevor Sie Single Sign-on zusagen.
 
@@ -153,7 +153,7 @@ Einstellungen: `OIDC_ENABLED`, `OIDC_ISSUER_URL`, `OIDC_CLIENT_ID`, `OIDC_CLIENT
 
 ### Direkte Einrichtung (18.8.3 und neuer)
 
-1. **App-Registrierung** (Microsoft Entra Admin Center, App-Registrierungen, Neue Registrierung): Name `OpenConstructionERP`, Kontotyp "nur dieses Organisationsverzeichnis", Umleitungs-URI vom Typ **Web**: `https://erp.example.com/auth/oidc/callback`. Notieren Sie **Anwendungs-ID (Client)** und **Verzeichnis-ID (Mandant)**.
+1. **App-Registrierung** (Microsoft Entra Admin Center, App-Registrierungen, Neue Registrierung): Name `PrimeCrest`, Kontotyp "nur dieses Organisationsverzeichnis", Umleitungs-URI vom Typ **Web**: `https://erp.example.com/auth/oidc/callback`. Notieren Sie **Anwendungs-ID (Client)** und **Verzeichnis-ID (Mandant)**.
 2. Zertifikate und Geheimnisse, Neuer geheimer Clientschlüssel. Kopieren Sie den **Wert** sofort (er wird nur einmal angezeigt) und notieren Sie das Ablaufdatum; mit Ablauf des Geheimnisses endet die Anmeldung.
 3. API-Berechtigungen: `openid`, `email`, `profile` (delegiert, Microsoft Graph). Unter Tokenkonfiguration den optionalen Claim `email` hinzufügen. Für Rollen entweder einen Gruppen-Claim ("Sicherheitsgruppen", das ID-Token enthält dann die Objekt-IDs der Gruppen) hinzufügen oder App-Rollen definieren und zuweisen (der Claim `roles` enthält deren Werte).
 4. Unternehmensanwendungen, Ihre App, Eigenschaften: "Zuweisung erforderlich" auf Ja setzen und die Personen oder Gruppen zuweisen, die sich anmelden dürfen. Ohne das kann sich jeder Benutzer Ihres Mandanten anmelden.

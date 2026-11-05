@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Basis-of-estimate module manifest."""
 
 from app.core.module_loader import ModuleManifest
@@ -14,7 +14,7 @@ manifest = ModuleManifest(
         "flagged by the coverage check, drafts editable inclusions, exclusions "
         "and assumptions, and exports them with the proposal."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     # Reads BOQ positions and verifies project access; also reads the sibling
     # estimating modules (allowances / contingency, preliminaries and the cost

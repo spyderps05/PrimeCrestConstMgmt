@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://standards.buildingsmart.org/IDS https://standards.buildingsmart.org/IDS/1.0/ids.xsd">
   <ids:info>
     <ids:title>Optional acoustic rating on slabs</ids:title>
-    <ids:copyright>OpenConstructionERP test fixtures</ids:copyright>
+    <ids:copyright>PrimeCrest test fixtures</ids:copyright>
     <ids:version>1.0.0</ids:version>
     <ids:description>AcousticRating on Pset_SlabCommon is OPTIONAL — present or absent both pass.</ids:description>
     <ids:author>fixtures@openconstructionerp.io</ids:author>

@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -23,7 +23,7 @@ const CATEGORIES: { key: FeedbackCategory; icon: typeof Bug; labelKey: string; d
 ];
 
 const GITHUB_ISSUES_URL =
-  'https://github.com/datadrivenconstruction/OpenConstructionERP/issues/new';
+  'https://github.com/datadrivenconstruction/PrimeCrest/issues/new';
 
 export function FeedbackDialog({ open, onClose }: FeedbackDialogProps) {
   const { t } = useTranslation();

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Cutting optimisation module manifest."""
 
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
         "the measured waste factor and stock quantity to the bill of quantities "
         "and the requisition for the estimator to confirm."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     depends=["oe_users", "oe_projects"],
     display_name_i18n={

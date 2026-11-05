@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import { useSolutionPackages } from '@/features/solution_packages/api';
 import { isRouteHiddenByPackages } from '@/features/solution_packages/logic';
@@ -1383,7 +1383,7 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
         {/* Brand block — white-labellable. When the user has set a
             custom logo or company name (via the pencil-on-hover edit
             affordance), this renders their brand large with a small
-            "powered by OpenConstructionERP" attribution beneath. */}
+            "powered by PrimeCrest" attribution beneath. */}
         <CustomBranding iconified={iconified} />
         {!iconified && onClose && (
           <button
@@ -2090,34 +2090,10 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
           // Icon-only footer: GitHub + Telegram stacked. The expand
           // toggle lives on the floating edge-pill, not down here, so
           // users see only one toggle entry-point — no duplicate UI.
-          (!footerPrefs.github || !footerPrefs.community) && (
+          (false) && (
           <div className="pt-2 pb-1 flex flex-col items-center gap-1">
-            {!footerPrefs.github && (
-              <a
-                href="https://github.com/datadrivenconstruction/OpenConstructionERP"
-                target="_blank"
-                rel="noopener noreferrer"
-                title={`${t('sidebar.github_repo', { defaultValue: 'GitHub repository' })} (v${APP_VERSION})`}
-                aria-label={t('sidebar.github_repo', { defaultValue: 'GitHub repository' })}
-                className="flex h-8 w-8 items-center justify-center rounded-md border border-border-light bg-surface-primary hover:bg-surface-elevated transition-all"
-              >
-                <Github size={13} strokeWidth={1.75} className="text-content-secondary" />
-              </a>
-            )}
-            {!footerPrefs.community && (
-              <a
-                href="https://t.me/datadrivenconstruction"
-                target="_blank"
-                rel="noopener noreferrer"
-                title={t('sidebar.community_title', { defaultValue: 'Community' })}
-                aria-label={t('sidebar.telegram_community', { defaultValue: 'Telegram community' })}
-                className="flex h-8 w-8 items-center justify-center rounded-md border border-border-light bg-surface-primary hover:bg-surface-elevated transition-all"
-              >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="h-[13px] w-[13px] text-content-secondary" aria-hidden>
-                  <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71l-4.14-3.06-1.99 1.93c-.23.23-.42.42-.83.42z" />
-                </svg>
-              </a>
-            )}
+
+
           </div>
           )
         ) : (
@@ -2131,11 +2107,11 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
           // siblings of the admin grid in the layout coordinate space:
           // same outer `px-2`, same `gap-1` between the two cards.
           <div className="pb-2 pt-1 flex flex-col gap-1.5">
-            {(!footerPrefs.github || !footerPrefs.community) && (
+            {(false) && (
               <div className="grid grid-cols-2 gap-1">
-                {!footerPrefs.github && (
+                {false /* github removed */ && (
                   <a
-                    href="https://github.com/datadrivenconstruction/OpenConstructionERP"
+                    href="https://github.com/datadrivenconstruction/PrimeCrest"
                     target="_blank"
                     rel="noopener noreferrer"
                     title={t('sidebar.github_repo', { defaultValue: 'GitHub repository' })}
@@ -2152,7 +2128,7 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
                     </span>
                   </a>
                 )}
-                {!footerPrefs.community && (
+                {false /* community removed */ && (
                   <a
                     href="https://t.me/datadrivenconstruction"
                     target="_blank"
@@ -2184,7 +2160,7 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
                 rel="noopener noreferrer"
                 className="text-2xs text-content-tertiary hover:text-content-secondary transition-colors"
               >
-                AGPL-3.0
+                © Spyder Solutions
               </a>
             </div>
           </div>

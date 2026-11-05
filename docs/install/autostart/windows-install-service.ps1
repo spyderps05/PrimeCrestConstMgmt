@@ -1,11 +1,11 @@
-# Install OpenConstructionERP as a Windows service (autostart on boot).
+# Install PrimeCrest as a Windows service (autostart on boot).
 # Uses Windows Task Scheduler - no extra tools required (NSSM optional).
 #
 # Run this script ONCE as Administrator:
 #   powershell -ExecutionPolicy Bypass -File windows-install-service.ps1
 #
 # To remove later:
-#   schtasks /Delete /TN "OpenConstructionERP" /F
+#   schtasks /Delete /TN "PrimeCrest" /F
 
 $ErrorActionPreference = 'Stop'
 
@@ -26,7 +26,7 @@ if (-not (Test-Path $openconstructionerpPath)) {
     exit 1
 }
 
-$taskName = "OpenConstructionERP"
+$taskName = "PrimeCrest"
 $action = New-ScheduledTaskAction `
     -Execute $openconstructionerpPath `
     -Argument "serve --host $bindHost --port $port" `
@@ -56,7 +56,7 @@ Register-ScheduledTask `
     -Trigger $trigger `
     -Settings $settings `
     -Principal $principal `
-    -Description "OpenConstructionERP backend on http://${bindHost}:${port}"
+    -Description "PrimeCrest backend on http://${bindHost}:${port}"
 
 Start-ScheduledTask -TaskName $taskName
 

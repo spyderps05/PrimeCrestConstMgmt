@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Không thể dùng tên này cho danh mục mới. Hãy chọn tên khác.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Dự toán chi phí xây dựng mã nguồn mở"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Cập nhật"
   },
   "dashboard": {
-    "welcome": "Chào mừng đến với OpenConstructionERP",
+    "welcome": "Chào mừng đến với PrimeCrest",
     "subtitle": "Không gian làm việc dự toán xây dựng của bạn",
     "recent_projects": "Dự án gần đây",
     "system_status": "Trạng thái hệ thống",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Không có dữ liệu",
         "no_data_body": "Báo cáo này được tạo từ ảnh chụp dữ liệu rỗng. Hãy kiểm tra xem các module nguồn (tài chính, tiến độ, an toàn, v.v.) có trả về dữ liệu cho dự án đã chọn hay không.",
         "no_data_body_short": "Báo cáo này được tạo từ ảnh chụp dữ liệu rỗng. Hãy kiểm tra xem các module nguồn có trả về dữ liệu cho dự án đã chọn hay không.",
-        "footer_generated_by": "Được tạo bởi OpenConstructionERP lúc {timestamp}.",
+        "footer_generated_by": "Được tạo bởi PrimeCrest lúc {timestamp}.",
         "worksheet_name": "Báo cáo",
         "pdf_subject": "Báo cáo dự án",
         "overall_progress": "Tiến độ tổng thể",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Kính gửi {name},",
       "greeting_generic": "Kính gửi Quý khách,",
-      "cta": "Mở trong OpenConstructionERP",
+      "cta": "Mở trong PrimeCrest",
       "footer": "Bạn nhận được email này theo cài đặt thông báo của mình. Bạn có thể thay đổi cài đặt trong hồ sơ cá nhân.",
-      "digest_subject": "OpenConstructionERP: Tổng hợp thông báo ({count})",
+      "digest_subject": "PrimeCrest: Tổng hợp thông báo ({count})",
       "digest_heading": "Thông báo gần đây:"
     },
     "tender_xlsx": {

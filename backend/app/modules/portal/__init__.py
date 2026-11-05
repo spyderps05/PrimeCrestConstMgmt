@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Customer & Partner Portal module.
 
 External-facing portal users (clients, investors, consultants, subcontractors,

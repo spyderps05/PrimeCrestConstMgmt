@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction / OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction / PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Leading vs lagging safety indicators rollup (pure, DB-free).
 

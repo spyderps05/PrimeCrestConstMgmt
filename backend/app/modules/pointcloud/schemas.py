@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Point Cloud / Reality Capture Pydantic schemas - request / response models.
 
 Decimal quantities (RMS, coverage, confidence, hole area, lat/lon) are stored

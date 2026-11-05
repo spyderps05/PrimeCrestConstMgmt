@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Elemental cost plan module manifest."""
 
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
         "cost per m2 of GIFA and share of total on every line, unallocated positions listed "
         "rather than dropped, and an Excel export with the same structure. Read-only."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     # Reads the bill, its markups and the project's floor area. Owns no tables,
     # so no migration is authored here.

@@ -1,4 +1,4 @@
-"""OpenConstructionERP - Hungary country pack (item orders, material and fee split, VAT).
+"""PrimeCrest - Hungary country pack (item orders, material and fee split, VAT).
 
 This package exports a module-level ``MANIFEST`` instance of
 :class:`PartnerPackManifest` referenced from ``pyproject.toml``::

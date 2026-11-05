@@ -1,7 +1,7 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Geo Hub - Cesium 3D Tiles + cross-module geospatial integration.
 
-Adds geospatial capabilities to OpenConstructionERP:
+Adds geospatial capabilities to PrimeCrest:
 
 * WGS84 anchors for projects + developments + BIM federations
 * Pure-Python canonical-JSON -> glTF (``EXT_structural_metadata``) ->

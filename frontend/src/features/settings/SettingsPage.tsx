@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import { PackagesSettings } from '@/features/solution_packages/PackagesSettings';
 import { ConverterReleaseNotice } from '@/shared/ui/ConverterReleaseNotice';
@@ -1790,7 +1790,7 @@ export function SettingsPage() {
               to="/about"
               className="inline-flex items-center gap-1 text-xs text-content-tertiary hover:text-oe-blue transition-colors"
             >
-              {t('settings.about_link', { defaultValue: 'About OpenConstructionERP' })}
+              {t('settings.about_link', { defaultValue: 'About PrimeCrest' })}
               <ChevronRight size={11} />
             </Link>
           </div>
@@ -1971,7 +1971,7 @@ export function SettingsPage() {
                         {t('settings.sign_out_title', { defaultValue: 'Sign out of all sessions' })}
                       </p>
                       <p className="text-xs text-content-secondary mt-0.5">
-                        {t('settings.sign_out_desc', { defaultValue: 'You will need to enter your credentials to access OpenConstructionERP again.' })}
+                        {t('settings.sign_out_desc', { defaultValue: 'You will need to enter your credentials to access PrimeCrest again.' })}
                       </p>
                     </div>
                     <Button
@@ -2351,7 +2351,7 @@ export function SettingsPage() {
               to="/about"
               className="inline-flex items-center gap-1 text-sm text-content-tertiary hover:text-oe-blue transition-colors"
             >
-              {t('settings.about_link', { defaultValue: 'About OpenConstructionERP' })}
+              {t('settings.about_link', { defaultValue: 'About PrimeCrest' })}
               <ChevronRight size={12} />
             </Link>
           </div>

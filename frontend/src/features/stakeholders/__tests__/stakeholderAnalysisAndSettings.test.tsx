@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // The analysis grid, the choice of framework, and the two documents the

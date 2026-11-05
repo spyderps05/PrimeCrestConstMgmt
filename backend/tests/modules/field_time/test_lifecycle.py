@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Field-time timesheet lifecycle + payroll integration (CI-only, PostgreSQL).
 
 Exercises the full ``draft -> submitted -> approved`` lifecycle, the validation

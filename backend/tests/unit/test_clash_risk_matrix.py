@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠DB-free unit tests for the pure interference risk matrix.
 
 Exercises :mod:`app.modules.clash.risk_matrix` with plain values only - no

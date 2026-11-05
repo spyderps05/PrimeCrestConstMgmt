@@ -1,39 +1,29 @@
 <div align="center">
 
-# OpenConstructionERP
+# PrimeCrest Construction Management
 
-### A leading open-source workspace for construction project management
+### Developed by Spyder Solutions
 
-<img src="docs/screenshots/hero-overview.png" alt="OpenConstructionERP - open-source construction ERP for BOQ, BIM takeoff, DWG/PDF quantification and 5D cost modeling" width="900" />
+<img src="docs/screenshots/hero-overview.png" alt="PrimeCrest Construction Management — BOQ, BIM takeoff, DWG/PDF quantification and 5D cost modeling" width="900" />
 
-Professional BOQ, CAD and BIM takeoff, 4D scheduling, 5D cost model, and tendering - all in one self-hosted platform.
+Professional BOQ, CAD and BIM takeoff, 4D scheduling, 5D cost model, and tendering — in one self-hosted construction management workspace.
 
-**Like WordPress for construction companies** - pick modules from the marketplace, drop in your own, or replace ours with custom-built ones. Same plug-and-play model, but for BOQ, scheduling, cost control, BIM, and tendering.
+Pick modules from the marketplace, drop in your own, or replace ours with custom-built ones. The same plug-and-play model for BOQ, scheduling, cost control, BIM, and tendering.
 
-[▶ Watch the 12-min walkthrough](https://www.youtube.com/watch?v=X06cIaroAeI) · [Demo](https://openconstructionerp.com) · [Documentation](https://openconstructionerp.com/docs) · [Build on it](DEVELOPING.md) · [Community chat (Telegram)](https://t.me/datadrivenconstruction) · [Report Bug](https://github.com/datadrivenconstruction/OpenConstructionERP/issues)
+[Build on it](DEVELOPING.md)
 
-<!-- Each badge row is one source line on purpose. A newline between two badges
-     renders as a line break here, which stacks them into a single column. -->
-[![License](https://img.shields.io/badge/license-AGPL--3.0-blue)](LICENSE) [![Version](https://img.shields.io/github/v/release/datadrivenconstruction/OpenConstructionERP?label=version&color=green)](https://github.com/datadrivenconstruction/OpenConstructionERP/releases/latest) [![Release downloads](https://img.shields.io/github/downloads/datadrivenconstruction/OpenConstructionERP/total?label=downloads&color=brightgreen)](https://github.com/datadrivenconstruction/OpenConstructionERP/releases) [![PyPI](https://img.shields.io/pypi/v/openconstructionerp?color=informational&label=pypi)](https://pypi.org/project/openconstructionerp/) [![Downloads (pepy · per month)](https://static.pepy.tech/personalized-badge/openconstructionerp?period=month&units=international_system&left_color=grey&right_color=blue&left_text=downloads%20(pepy%20%C2%B7%20per%20month))](https://pepy.tech/project/openconstructionerp) [![Stars](https://img.shields.io/github/stars/datadrivenconstruction/OpenConstructionERP?style=flat&logo=github)](https://github.com/datadrivenconstruction/OpenConstructionERP/stargazers) [![Last commit](https://img.shields.io/github/last-commit/datadrivenconstruction/OpenConstructionERP?color=informational)](https://github.com/datadrivenconstruction/OpenConstructionERP/commits/main)
-![Languages](https://img.shields.io/badge/languages-44-orange) ![Cost Items](https://img.shields.io/badge/cost_items-120%2C000%2B-red) [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/datadrivenconstruction/OpenConstructionERP/badge)](https://securityscorecards.dev/viewer/?uri=github.com/datadrivenconstruction/OpenConstructionERP) [![CodeQL](https://github.com/datadrivenconstruction/OpenConstructionERP/actions/workflows/codeql.yml/badge.svg)](https://github.com/datadrivenconstruction/OpenConstructionERP/actions/workflows/codeql.yml) [![Signed releases](https://img.shields.io/badge/releases-Sigstore_signed-8250df)](SECURITY.md)
+[![License](https://img.shields.io/badge/license-Proprietary-red)](LICENSE)
+![Languages](https://img.shields.io/badge/languages-44-orange)
+![Cost Items](https://img.shields.io/badge/cost_items-120%2C000%2B-red)
+![Modules](https://img.shields.io/badge/modules-190%2B-informational)
 
-<video src="https://github.com/user-attachments/assets/20b9b585-93ac-4829-a3dc-0ede9ca9e2fc" controls width="800" playsinline>
-  <a href="https://github.com/datadrivenconstruction/OpenConstructionERP/releases/download/v2.0.0/oce_full_demo.mp4">▶ 1-minute teaser</a>
-</video>
-
-<sub><picture><source media="(prefers-color-scheme: dark)" srcset="docs/readme-icons/device-camera-video-dark.svg"><img src="docs/readme-icons/device-camera-video-light.svg" width="14" align="center" alt=""></picture> <b>1-minute teaser above</b> · for the full 12-minute walkthrough → <a href="https://www.youtube.com/watch?v=X06cIaroAeI"><b>watch on YouTube</b></a> · onboarding → BOQ → BIM → DWG → PDF → AI → dashboard</sub>
-
-<img src="docs/screenshots/banner.png" alt="OpenConstructionERP: a honeycomb of the eight company types and fifteen professional roles the platform is built around, over a second honeycomb of its 190+ backend modules and the two shared libraries drawn beside them, each cell coloured by the category its own manifest declares and shaded by how many of the others it is wired to" width="800" />
+<img src="docs/screenshots/banner.png" alt="PrimeCrest Construction Management module landscape" width="800" />
 
 <br/><br/>
 
-### Download the free desktop app
+### Desktop app
 
-<sub>No Python, no Docker, nothing to set up. Pick your system and run it.</sub>
-
-<a href="https://github.com/datadrivenconstruction/OpenConstructionERP/releases/latest"><img src="https://img.shields.io/badge/Windows-Download%20.exe-0078D6?style=for-the-badge&logo=windows11&logoColor=white" alt="Download OpenConstructionERP for Windows" height="46"></a> &nbsp;&nbsp; <a href="https://github.com/datadrivenconstruction/OpenConstructionERP/releases/latest"><img src="https://img.shields.io/badge/macOS-Apple%20Silicon%20.dmg-111111?style=for-the-badge&logo=apple&logoColor=white" alt="Download OpenConstructionERP for macOS on Apple Silicon" height="46"></a> &nbsp;&nbsp; <a href="https://github.com/datadrivenconstruction/OpenConstructionERP/releases/latest"><img src="https://img.shields.io/badge/Linux-.deb%20%2F%20.AppImage-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Download OpenConstructionERP for Linux" height="46"></a>
-
-<sub>Not sure which file? <a href="https://openconstructionerp.com/download"><b>openconstructionerp.com/download</b></a> picks the right one for you automatically. Prefer the terminal? <code>pip install openconstructionerp</code> or Docker, see <a href="#quick-start">Quick Start</a> below.</sub>
+<sub>No Python, no Docker, nothing to set up. Build from this repository or run the local stack — see Quick Start below.</sub>
 
 <br/>
 
@@ -47,6 +37,8 @@ Professional BOQ, CAD and BIM takeoff, 4D scheduling, 5D cost model, and tenderi
 <td align="center" width="16.66%"><b>293</b><br/><sub>guided&nbsp;cases</sub></td>
 </tr>
 </table>
+
+<p><sub>© 2026 Spyder Solutions. All rights reserved. PrimeCrest Construction Management Software is proprietary. See <a href="LICENSE">LICENSE</a>.</sub></p>
 
 </div>
 
@@ -66,7 +58,7 @@ Professional BOQ, CAD and BIM takeoff, 4D scheduling, 5D cost model, and tenderi
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/readme-icons/rocket-dark.svg"><img src="docs/readme-icons/rocket-light.svg" width="14" align="center" alt=""></picture> **Get Started**
 - [Video guides](#video-guides)
-- [Why OpenConstructionERP?](#why-openconstructionerp)
+- [Why PrimeCrest?](#why-primecrest)
 - [A Look Inside](#a-look-inside)
 - [Quick Start](#quick-start)
 - [Demo Accounts](#demo-accounts)
@@ -189,8 +181,8 @@ Each series follows one construction project in one country, in that country's l
 | 🇬🇧 | [Builder's Playbook UK](https://www.youtube.com/playlist?list=PLTRtkYLR23qM) | English | 6 | NRM 2 tender, subcontractor bids, JCT interim payments, pay less notice, CIS and VAT reverse charge, variations |
 | 🇨🇦 | [Builder's Playbook Canada](https://www.youtube.com/playlist?list=PLPZV4i5ViBm8) | English | 6 | Pricing, tendering, CCDC 2 progress draw, prompt payment, change orders, substantial performance |
 | ⚜️ | [Builder's Playbook Québec](https://www.youtube.com/playlist?list=PLey59QidNON0) | Français, English | 5 | Getting started, estimating, BSDQ bids, billing and legal hypothec, handover |
-| 🇫🇷 | [OpenConstructionERP en français, gérer un chantier](https://www.youtube.com/playlist?list=PLEhAODe5YAXM) | Français | 4 | Budget, purchasing and stock, site hours and equipment, invoice and payment |
-| 🇩🇪 | [OpenConstructionERP auf Deutsch, Projekt Landshut](https://www.youtube.com/playlist?list=PLKN9p-CuMMkE) | Deutsch | 12 | Projektstart, Planmanagement, Mengen, BIM, LV, Einheitspreise, GAEB, Vergabe, Bauablauf, Material, Kostenbasis |
+| 🇫🇷 | [PrimeCrest en français, gérer un chantier](https://www.youtube.com/playlist?list=PLEhAODe5YAXM) | Français | 4 | Budget, purchasing and stock, site hours and equipment, invoice and payment |
+| 🇩🇪 | [PrimeCrest auf Deutsch, Projekt Landshut](https://www.youtube.com/playlist?list=PLKN9p-CuMMkE) | Deutsch | 12 | Projektstart, Planmanagement, Mengen, BIM, LV, Einheitspreise, GAEB, Vergabe, Bauablauf, Material, Kostenbasis |
 | 🇩🇪 | [Kosten nach DIN 276](https://www.youtube.com/playlist?list=PLEvGjPeBbuxQ) | Deutsch | 8 | Kostenrahmen, Kostenschätzung, Kostenberechnung, LV und GAEB, Vergabe, Baustart, Nachträge, Abnahme und Schlussrechnung |
 | 🇪🇸 | [Builder's Playbook España](https://www.youtube.com/playlist?list=PLHgtnDPr3Rjg) | Español | 8 | Certificaciones, oferta desde BC3, comparativo, precios contradictorios, cierre mensual, recepción, retención, partes de obra |
 | 🇮🇹 | [Builder's Playbook Italia](https://www.youtube.com/playlist?list=PLObqqyP8chDs) | Italiano | 7 | Computo metrico, ribasso, subappalto, giornale di cantiere, SAL, conto finale, collaudo |
@@ -205,9 +197,9 @@ Also on the channel: [The uberization of construction (ETH Zürich)](https://www
 
 ---
 
-## Why OpenConstructionERP?
+## Why PrimeCrest?
 
-Construction cost estimation software is expensive, closed-source, and locked to specific regions. OpenConstructionERP changes that.
+Construction cost estimation software is expensive, closed-source, and locked to specific regions. PrimeCrest changes that.
 
 | What you get | How it works |
 |-------------|-------------|
@@ -240,7 +232,7 @@ The entire UI ships in **44 languages**, including full right-to-left support fo
 <thead>
 <tr>
 <th align="left">Capability</th>
-<th align="center">OpenConstructionERP</th>
+<th align="center">PrimeCrest</th>
 <th align="center">Enterprise<br/>BIM</th>
 <th align="center">CAD<br/>Takeoff</th>
 <th align="center">Legacy<br/>Estimating</th>
@@ -269,7 +261,7 @@ The entire UI ships in **44 languages**, including full right-to-left support fo
 </tbody>
 </table>
 
-<sub>Comparison reflects typical category capabilities based on publicly available information. Pricing is approximate (per-seat, list price) and varies by vendor and region. OpenConstructionERP is an independent open-source project and is not affiliated with any commercial vendor in the categories above.</sub>
+<sub>Comparison reflects typical category capabilities based on publicly available information. Pricing is approximate (per-seat, list price) and varies by vendor and region. PrimeCrest is an independent open-source project and is not affiliated with any commercial vendor in the categories above.</sub>
 
 ---
 
@@ -415,10 +407,10 @@ The platform also includes 3D globe visualization (Cesium), property development
 
 ### Easiest: download the desktop app (no Python, no setup)
 
-Download the installer for your operating system, run it, and OpenConstructionERP opens as a native desktop app. No Python, no pip, no Docker, and no database to set up. Everything runs locally on your machine.
+Download the installer for your operating system, run it, and PrimeCrest opens as a native desktop app. No Python, no pip, no Docker, and no database to set up. Everything runs locally on your machine.
 
 - **[Download for your platform](https://openconstructionerp.com/download)** picks the right file for your OS automatically.
-- Or grab one straight from the **[latest release](https://github.com/datadrivenconstruction/OpenConstructionERP/releases/latest)**: Windows `.exe` installer, macOS `.dmg` (Apple Silicon), or Linux `.deb` / `.AppImage`.
+- Or grab one straight from the **[latest release](https://github.com/datadrivenconstruction/PrimeCrest/releases/latest)**: Windows `.exe` installer, macOS `.dmg` (Apple Silicon), or Linux `.deb` / `.AppImage`.
 
 **Your operating system will warn you before it runs the installer, and that is expected.** There is no code signing certificate for this project yet, so the desktop builds are unsigned. On Windows, SmartScreen says "Windows protected your PC"; choose More info, then Run anyway. If Windows 11 Smart App Control blocks the app instead, there is no Run anyway button, and [Windows blocks the app](docs/desktop/WINDOWS_BLOCKED.md) explains the options. On macOS, Gatekeeper says the developer cannot be verified; open the app from the Finder context menu and choose Open, or clear it with `xattr -dr com.apple.quarantine` on the installed app. Linux packages are unaffected. If you would rather verify the download than trust the warning, every release carries `SHA256SUMS` together with a Sigstore signature and certificate, so you can check the bytes you received against what the build produced.
 
@@ -459,21 +451,21 @@ python -m openconstructionerp
 
 ```bash
 # Linux / macOS
-curl -fsSL https://raw.githubusercontent.com/datadrivenconstruction/OpenConstructionERP/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/datadrivenconstruction/PrimeCrest/main/scripts/install.sh | bash
 
 # Windows (PowerShell)
-irm https://raw.githubusercontent.com/datadrivenconstruction/OpenConstructionERP/main/scripts/install.ps1 | iex
+irm https://raw.githubusercontent.com/datadrivenconstruction/PrimeCrest/main/scripts/install.ps1 | iex
 ```
 
-If you would rather not think about PATH at all, use this. It picks Docker if installed, otherwise uv, otherwise a dedicated Python virtual environment, installs OpenConstructionERP there, puts the `openconstructionerp` command on your PATH automatically, and finishes with a short panel showing the URL, the demo login and how to start. It also offers to launch right away. Open a new terminal afterwards and `openconstructionerp` just works. Runs at **http://localhost:8080**.
+If you would rather not think about PATH at all, use this. It picks Docker if installed, otherwise uv, otherwise a dedicated Python virtual environment, installs PrimeCrest there, puts the `openconstructionerp` command on your PATH automatically, and finishes with a short panel showing the URL, the demo login and how to start. It also offers to launch right away. Open a new terminal afterwards and `openconstructionerp` just works. Runs at **http://localhost:8080**.
 
 ### Alternative 2: Docker
 
 From the published image, no clone needed:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/datadrivenconstruction/OpenConstructionERP/main/docker-compose.quickstart.yml       -o docker-compose.yml
-curl -fsSL https://raw.githubusercontent.com/datadrivenconstruction/OpenConstructionERP/main/docker-compose.quickstart.image.yml -o docker-compose.override.yml
+curl -fsSL https://raw.githubusercontent.com/datadrivenconstruction/PrimeCrest/main/docker-compose.quickstart.yml       -o docker-compose.yml
+curl -fsSL https://raw.githubusercontent.com/datadrivenconstruction/PrimeCrest/main/docker-compose.quickstart.image.yml -o docker-compose.override.yml
 echo "POSTGRES_PASSWORD=$(openssl rand -base64 24)" >  .env
 echo "JWT_SECRET=$(openssl rand -hex 32)"           >> .env
 docker compose pull app && docker compose up -d
@@ -482,8 +474,8 @@ docker compose pull app && docker compose up -d
 Or build from source (also the better choice on Apple Silicon):
 
 ```bash
-git clone https://github.com/datadrivenconstruction/OpenConstructionERP.git
-cd OpenConstructionERP
+git clone https://github.com/datadrivenconstruction/PrimeCrest.git
+cd PrimeCrest
 echo "POSTGRES_PASSWORD=$(openssl rand -base64 24)" >  .env
 echo "JWT_SECRET=$(openssl rand -hex 32)"           >> .env
 make quickstart
@@ -494,8 +486,8 @@ Open **http://localhost:8080**. On Windows PowerShell, see [docs/getting-started
 ### Alternative 3: Local development (clone + npm + uvicorn)
 
 ```bash
-git clone https://github.com/datadrivenconstruction/OpenConstructionERP.git
-cd OpenConstructionERP
+git clone https://github.com/datadrivenconstruction/PrimeCrest.git
+cd PrimeCrest
 
 # Install dependencies
 pip install -e ./backend[server]
@@ -553,9 +545,9 @@ Three demo accounts are created on first start. On a local install, sign in to a
 
 ### How the platform turns raw CAD/BIM into structured ERP data
 
-<img src="docs/screenshots/architecture-pipeline.jpg" alt="OpenConstructionERP - Digitalization of Processes: Pipelines for Automatic Data Creation" width="100%" />
+<img src="docs/screenshots/architecture-pipeline.jpg" alt="PrimeCrest - Digitalization of Processes: Pipelines for Automatic Data Creation" width="100%" />
 
-OpenConstructionERP is built around **seven cooperating pipelines** that turn closed CAD/BIM files (RVT, IFC, DWG) into structured, queryable ERP data - without locking you into a proprietary stack. Every module in the platform plugs into one or more of these stages:
+PrimeCrest is built around **seven cooperating pipelines** that turn closed CAD/BIM files (RVT, IFC, DWG) into structured, queryable ERP data - without locking you into a proprietary stack. Every module in the platform plugs into one or more of these stages:
 
 1. **Mining** - collect existing project data (CAD/BIM models, CDE drops, COBie deliverables) into a semi-structured pool. Handled by `cad`, `documents`, `bim_hub`, `file_search` modules + the **DDC Converters 2.0** (RVT/IFC/DWG → canonical JSON).
 2. **QTO Check & Quantity Take-off rules** - apply rule sets per discipline / family / type to extract quantities deterministically. Handled by `takeoff`, `requirements`, `validation`, and the rule editor in `match-elements`.
@@ -624,11 +616,11 @@ The right-hand side of the diagram is the **automatic data retrieval** layer tha
 
 [![Downloads (pepy · per month)](https://static.pepy.tech/personalized-badge/openconstructionerp?period=month&units=international_system&left_color=grey&right_color=blue&left_text=downloads%20(pepy%20%C2%B7%20per%20month))](https://pepy.tech/project/openconstructionerp)
 
-<a href="https://github.com/datadrivenconstruction/OpenConstructionERP/releases">
+<a href="https://github.com/datadrivenconstruction/PrimeCrest/releases">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/readme-charts/download-history-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="docs/readme-charts/download-history-light.svg">
-    <img alt="OpenConstructionERP release downloads: 11,544 GitHub release asset downloads as of 30 September 2026, accumulated by release date" src="docs/readme-charts/download-history-light.svg" width="720">
+    <img alt="PrimeCrest release downloads: 11,544 GitHub release asset downloads as of 30 September 2026, accumulated by release date" src="docs/readme-charts/download-history-light.svg" width="720">
   </picture>
 </a>
 
@@ -636,11 +628,11 @@ The right-hand side of the diagram is the **automatic data retrieval** layer tha
 
 <sub>Every current stargazer on the day they starred, one step per day, with nothing smoothed or filled in between.</sub>
 
-<a href="https://github.com/datadrivenconstruction/OpenConstructionERP/stargazers">
+<a href="https://github.com/datadrivenconstruction/PrimeCrest/stargazers">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/readme-charts/star-history-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="docs/readme-charts/star-history-light.svg">
-    <img alt="OpenConstructionERP star history: 878 stars as of 30 September 2026, from 2 April 2026" src="docs/readme-charts/star-history-light.svg" width="720">
+    <img alt="PrimeCrest star history: 878 stars as of 30 September 2026, from 2 April 2026" src="docs/readme-charts/star-history-light.svg" width="720">
   </picture>
 </a>
 
@@ -648,22 +640,22 @@ The right-hand side of the diagram is the **automatic data retrieval** layer tha
 
 ## Support the Project
 
-OpenConstructionERP is built by [DataDrivenConstruction](https://datadrivenconstruction.io) and shaped by feedback from users worldwide. If you find it useful:
+PrimeCrest is built by [DataDrivenConstruction](https://datadrivenconstruction.io) and shaped by feedback from users worldwide. If you find it useful:
 
-- ⭐ **[Star this repo](https://github.com/datadrivenconstruction/OpenConstructionERP)** - helps others discover the project
+- ⭐ **[Star this repo](https://github.com/datadrivenconstruction/PrimeCrest)** - helps others discover the project
 - <picture><source media="(prefers-color-scheme: dark)" srcset="docs/readme-icons/comment-discussion-dark.svg"><img src="docs/readme-icons/comment-discussion-light.svg" width="14" align="center" alt=""></picture> **[Community chat (Telegram)](https://t.me/datadrivenconstruction)** - ask questions, share ideas, help others
-- <picture><source media="(prefers-color-scheme: dark)" srcset="docs/readme-icons/bug-dark.svg"><img src="docs/readme-icons/bug-light.svg" width="14" align="center" alt=""></picture> **[Report issues](https://github.com/datadrivenconstruction/OpenConstructionERP/issues)** - help us improve
+- <picture><source media="(prefers-color-scheme: dark)" srcset="docs/readme-icons/bug-dark.svg"><img src="docs/readme-icons/bug-light.svg" width="14" align="center" alt=""></picture> **[Report issues](https://github.com/datadrivenconstruction/PrimeCrest/issues)** - help us improve
 - <picture><source media="(prefers-color-scheme: dark)" srcset="docs/readme-icons/briefcase-dark.svg"><img src="docs/readme-icons/briefcase-light.svg" width="14" align="center" alt=""></picture> **[Professional consulting](https://datadrivenconstruction.io/contact-support/)** - custom deployment, training, enterprise support
 
 ## Contributors
 
-OpenConstructionERP is shaped by the people who report bugs, request features, and ask the sharp questions that push the platform forward. We credit every one of them. For supply-chain security, we do not merge external pull requests - see **[CONTRIBUTING.md](CONTRIBUTING.md)** for how contributions work here.
+PrimeCrest is shaped by the people who report bugs, request features, and ask the sharp questions that push the platform forward. We credit every one of them. For supply-chain security, we do not merge external pull requests - see **[CONTRIBUTING.md](CONTRIBUTING.md)** for how contributions work here.
 
-See **[CONTRIBUTORS.md](CONTRIBUTORS.md)** for the full list. Want to join it? [Open an issue](https://github.com/datadrivenconstruction/OpenConstructionERP/issues) or say hello in the [community chat](https://t.me/datadrivenconstruction).
+See **[CONTRIBUTORS.md](CONTRIBUTORS.md)** for the full list. Want to join it? [Open an issue](https://github.com/datadrivenconstruction/PrimeCrest/issues) or say hello in the [community chat](https://t.me/datadrivenconstruction).
 
 ## Security
 
-Report vulnerabilities privately via [GitHub Security Advisories](https://github.com/datadrivenconstruction/OpenConstructionERP/security/advisories/new) or [info@datadrivenconstruction.io](mailto:info@datadrivenconstruction.io). See [SECURITY.md](SECURITY.md) for the full coordinated-disclosure policy and supported versions.
+Report vulnerabilities privately via [GitHub Security Advisories](https://github.com/datadrivenconstruction/PrimeCrest/security/advisories/new) or [info@datadrivenconstruction.io](mailto:info@datadrivenconstruction.io). See [SECURITY.md](SECURITY.md) for the full coordinated-disclosure policy and supported versions.
 
 ## AI disclaimer
 
@@ -677,7 +669,7 @@ tender-submission use. See [NOTICE](NOTICE) and [TERMS.md](docs/legal/TERMS.md) 
 All product names, logos, and trademarks referenced in this repository
 are property of their respective owners. Any comparative references to
 commercial categories or products are made for fair comparative purposes
-based on publicly available information. OpenConstructionERP is an
+based on publicly available information. PrimeCrest is an
 independent project and is not affiliated with, endorsed by, or sponsored
 by any third-party trademark owners. Full attributions in [NOTICE](NOTICE).
 
@@ -695,7 +687,7 @@ and deploy it as a service, AGPL §13 requires you to make the
 corresponding source code available under the same license.
 
 For **commercial licensing**, which lifts the AGPL obligations on
-OpenConstructionERP itself so you can deploy it closed-source, see
+PrimeCrest itself so you can deploy it closed-source, see
 [COMMERCIAL-LICENSE.md](docs/legal/COMMERCIAL-LICENSE.md) or contact
 [info@datadrivenconstruction.io](mailto:info@datadrivenconstruction.io).
 

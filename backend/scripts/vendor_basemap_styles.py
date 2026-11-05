@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Vendor the OpenFreeMap MapLibre styles with same-origin URLs baked in.
 
 WHY VENDOR RATHER THAN REWRITE AT RUNTIME. A MapLibre style JSON carries

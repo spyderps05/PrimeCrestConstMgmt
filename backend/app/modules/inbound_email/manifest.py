@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Inbound email module manifest."""
 
@@ -16,7 +16,7 @@ manifest = ModuleManifest(
         "schedule activities for the forensic-delay workflow. File import only, "
         "not a live mailbox; nothing is persisted, so no migration"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="controls",
     depends=["oe_users"],
     auto_install=True,

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Subcontractor Management module manifest."""
 
@@ -11,7 +11,7 @@ manifest = ModuleManifest(
     description=(
         "Subcontractor lifecycle: prequalification, certificates, agreements, payment applications, retention, rating"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     # oe_contracts: a subcontract agreement can sit under the GC's prime
     # contract, and its pay applications roll up into that contract's claims.

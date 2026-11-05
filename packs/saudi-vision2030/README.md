@@ -1,6 +1,6 @@
-# OpenConstructionERP — Saudi Vision 2030 Pack
+# PrimeCrest — Saudi Vision 2030 Pack
 
-Partner pack pre-configuring [OpenConstructionERP](https://github.com/DataDrivenConstruction/openconstructionerp)
+Partner pack pre-configuring [PrimeCrest](https://github.com/DataDrivenConstruction/openconstructionerp)
 for Saudi Arabian mega-project contractors — NEOM, Red Sea Global,
 Diriyah Gate, Qiddiya, PIF giga-projects, Saudi Aramco EPC, RCJY,
 MoMRAH municipal works.

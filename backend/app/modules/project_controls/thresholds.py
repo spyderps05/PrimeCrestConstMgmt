@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Status-banding thresholds for the controls spine.
 
 Region-neutral defaults. A threshold entry carries an ``amber`` and ``red``

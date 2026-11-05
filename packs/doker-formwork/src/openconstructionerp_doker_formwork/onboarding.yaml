@@ -8,7 +8,7 @@ locale: de
 
 steps:
   - id: welcome
-    title: "Willkommen bei OpenConstructionERP"
+    title: "Willkommen bei PrimeCrest"
     body: >-
       Diese Installation ist für Schalungs- und Betonbau-Unternehmen
       vorkonfiguriert. In den nächsten Schritten richten wir Ihre

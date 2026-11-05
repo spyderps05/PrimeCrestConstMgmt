@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Signed-manifest verifier for converter binaries (Audit A1).
 
@@ -287,7 +287,7 @@ class ComponentEntry:
                 f"{platform_key!r}. Available platforms: {available}. "
                 f"Please file an issue at "
                 f"https://github.com/datadrivenconstruction/"
-                f"OpenConstructionERP/issues if you need this platform."
+                f"PrimeCrest/issues if you need this platform."
             )
         return entry
 
@@ -375,7 +375,7 @@ def _fetch_bytes(url: str, max_bytes: int) -> bytes:
     """
     req = urllib.request.Request(
         url,
-        headers={"User-Agent": "OpenConstructionERP-manifest-verifier"},
+        headers={"User-Agent": "PrimeCrest-manifest-verifier"},
     )
     try:
         with urllib.request.urlopen(req, timeout=_FETCH_TIMEOUT_S) as resp:

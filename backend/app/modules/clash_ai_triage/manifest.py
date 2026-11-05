@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Clash AI Triage module manifest."""
 
 from app.core.module_loader import ModuleManifest
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "response for audit, exposes a category + suggested action + "
         "confidence, and supports replay against a new prompt version."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_clash", "oe_projects", "oe_ai"],
     auto_install=True,

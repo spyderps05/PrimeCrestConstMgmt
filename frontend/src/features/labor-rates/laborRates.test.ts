@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 //
 // Tests for the pure labor-rate editor helpers in ./api. These are the
 // frontend's own responsibilities (shaping the compute request, seeding rows,

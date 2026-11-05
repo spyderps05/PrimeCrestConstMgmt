@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Verify and unpack a DDC converter package (a ``.zip`` or ``.tar.gz`` of a release).
 
@@ -42,7 +42,7 @@ class ConverterPackageMissingError(RuntimeError):
         self.asset, self.tag, self.repo = asset, tag, repo
         super().__init__(
             f"This version expects {asset} from {tag}, which the converter release no longer offers. "
-            "Update OpenConstructionERP."
+            "Update PrimeCrest."
         )
 
 

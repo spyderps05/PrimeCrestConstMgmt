@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Module manifest for oe_uk_pack."""
 
@@ -16,7 +16,7 @@ manifest = ModuleManifest(
         "UK construction standards: JCT/NEC4 contract forms, NRM2 measurement rules, "
         "CIS tax deductions, Interim Valuations, VAT rates, and GBP."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="regional",
     depends=[],
     auto_install=False,

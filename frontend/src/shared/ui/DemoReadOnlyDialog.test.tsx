@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * The demonstration refusal, driven end to end.
@@ -24,7 +24,7 @@ import { useDemoReadOnlyStore } from '@/stores/useDemoReadOnlyStore';
 
 /** The English sentence the contract carries for callers that are not this app. */
 const SERVER_MESSAGE =
-  'This is the public demonstration and it does not keep changes. Install OpenConstructionERP to work with your own data.';
+  'This is the public demonstration and it does not keep changes. Install PrimeCrest to work with your own data.';
 
 const DEMO_REFUSAL_BODY = { detail: { error: 'demo_read_only', message: SERVER_MESSAGE } };
 

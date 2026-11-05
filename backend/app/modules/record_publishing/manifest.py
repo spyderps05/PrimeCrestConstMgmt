@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Record Publishing module manifest."""
 
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
         "action. A thin orchestrator over the record renderers, the storage "
         "backend and the file-transmittals engine, so it adds no tables."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_projects", "oe_users"],
     auto_install=True,

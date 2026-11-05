@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Real weather ingestion for the daily-diary module.
 
@@ -108,7 +108,7 @@ def _do_get(url: str) -> dict[str, Any] | None:
     try:
         req = urllib.request.Request(
             url,
-            headers={"User-Agent": "OpenConstructionERP/daily-diary"},
+            headers={"User-Agent": "PrimeCrest/daily-diary"},
         )
         with urllib.request.urlopen(req, timeout=_HTTP_TIMEOUT_SECONDS) as resp:
             charset = resp.headers.get_content_charset() or "utf-8"

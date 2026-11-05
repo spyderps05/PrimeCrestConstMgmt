@@ -1,6 +1,6 @@
 # Connecting an AI client over MCP
 
-OpenConstructionERP serves a Model Context Protocol (MCP) endpoint so that an external AI client, such as a desktop assistant or an IDE, can work with your projects. The client acts as you: it sees exactly the projects and records your role and project membership let you see, and it never changes anything on its own. Every change it suggests becomes a proposal that waits for you to apply it in the app.
+PrimeCrest serves a Model Context Protocol (MCP) endpoint so that an external AI client, such as a desktop assistant or an IDE, can work with your projects. The client acts as you: it sees exactly the projects and records your role and project membership let you see, and it never changes anything on its own. Every change it suggests becomes a proposal that waits for you to apply it in the app.
 
 ## What the client can do
 

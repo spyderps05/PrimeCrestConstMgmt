@@ -1,6 +1,6 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
-"""​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Pluggable email service for OpenConstructionERP.
+"""​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Pluggable email service for PrimeCrest.
 
 Public API (import from ``app.core.email``):
 

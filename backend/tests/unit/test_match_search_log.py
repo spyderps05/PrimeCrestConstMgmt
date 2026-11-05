@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Unit tests for the v3-P10 :class:`MatchSearchLog` analytics row.
 
 Pure schema-level coverage — column types, FK on-delete behaviour,

@@ -1,5 +1,5 @@
 // @ts-nocheck
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // A readiness indicator must read the store that the feature it stands for

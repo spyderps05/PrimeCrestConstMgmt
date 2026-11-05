@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Lightweight point-cloud header sniff.
 
 This is the cheap "preview" half of the reality-capture pipeline (plan section

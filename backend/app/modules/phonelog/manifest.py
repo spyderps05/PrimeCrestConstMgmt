@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Phone-log module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "parties, direction, duration, a short summary, and the instruction-bearing sentences "
         "pulled out of the transcript - so a spoken instruction is on the project record"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

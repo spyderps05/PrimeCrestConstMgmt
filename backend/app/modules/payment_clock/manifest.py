@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Payment clock module manifest."""
 
@@ -19,7 +19,7 @@ manifest = ModuleManifest(
         "notices actually served, and reports the consequence when a deadline "
         "passes unanswered."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     # Regional rather than core: which regime applies is a question about where
     # the work is, and a deployment that never works in a security-of-payment
     # jurisdiction should be able to switch this off.

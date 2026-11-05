@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Unit tests for the DDC v3 snapshot loader — pure helpers + dry-run path.
 
 The live HTTP upload path is gated on a real Qdrant server (CWICR_QDRANT_URL)

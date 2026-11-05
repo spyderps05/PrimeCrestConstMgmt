@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Module manifest for oe_asia_pac_pack."""
 
@@ -17,7 +17,7 @@ manifest = ModuleManifest(
         "Japanese sekkisan standards, Singapore BCA references, "
         "and multi-currency support (AUD/NZD/JPY/SGD)."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="regional",
     depends=[],
     auto_install=False,

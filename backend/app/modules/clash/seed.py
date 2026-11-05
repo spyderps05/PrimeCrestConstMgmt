@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Demo seed data for the clash (BIM clash detection) module.
 
 Loaded on demand via ``await seed_clash(session, project_ids)``. The

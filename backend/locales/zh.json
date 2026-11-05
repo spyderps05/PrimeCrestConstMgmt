@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "该名称不能用于新目录，请换一个名称。",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "开源建筑工程造价"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "更新"
   },
   "dashboard": {
-    "welcome": "欢迎使用 OpenConstructionERP",
+    "welcome": "欢迎使用 PrimeCrest",
     "subtitle": "开源建筑工程造价平台",
     "recent_projects": "最近项目",
     "system_status": "系统状态",
@@ -1458,7 +1458,7 @@
         "no_data_heading": "暂无数据",
         "no_data_body": "本报告基于空的数据快照生成。请核实所选项目的源模块（财务、进度计划、安全等）是否返回了数据。",
         "no_data_body_short": "本报告基于空的数据快照生成。请核实源模块是否返回了所选项目的数据。",
-        "footer_generated_by": "由 OpenConstructionERP 生成于 {timestamp}。",
+        "footer_generated_by": "由 PrimeCrest 生成于 {timestamp}。",
         "worksheet_name": "报告",
         "pdf_subject": "项目报告",
         "overall_progress": "总体进度",
@@ -1715,9 +1715,9 @@
     "notification_email": {
       "greeting": "{name}，您好：",
       "greeting_generic": "您好：",
-      "cta": "在 OpenConstructionERP 中打开",
+      "cta": "在 PrimeCrest 中打开",
       "footer": "您收到这封邮件，是因为您设置了通知提醒。您可以在个人资料中修改通知设置。",
-      "digest_subject": "OpenConstructionERP: 通知汇总（{count}）",
+      "digest_subject": "PrimeCrest: 通知汇总（{count}）",
       "digest_heading": "近期通知："
     },
     "tender_xlsx": {

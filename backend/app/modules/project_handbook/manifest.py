@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Project handbook module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "live links to the records of the other modules, a PDF of the whole handbook, and the data room: "
         "the governance folder tree materialised into the project's document folders"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     # oe_project_governance owns the catalogue store, the phase model whose folders the data room
     # materialises and the four-eyes setting; oe_documents owns the folders and the documents in them.

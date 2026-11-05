@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Hindi magagamit ang pangalang ito para sa bagong katalogo. Pumili ng ibang pangalan.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Open-source na pagtantya ng gastos sa konstruksyon"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "I-update"
   },
   "dashboard": {
-    "welcome": "Maligayang pagdating sa OpenConstructionERP",
+    "welcome": "Maligayang pagdating sa PrimeCrest",
     "subtitle": "Ang iyong workspace para sa pagtantya ng konstruksyon",
     "recent_projects": "Kamakailang Proyekto",
     "system_status": "Status ng Sistema",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Walang available na datos",
         "no_data_body": "Nilikha ang ulat na ito gamit ang walang lamang snapshot ng datos. Suriin kung nagbalik ng datos ang mga pinagmulang module (pananalapi, iskedyul, kaligtasan, atbp.) para sa napiling proyekto.",
         "no_data_body_short": "Nilikha ang ulat na ito gamit ang walang lamang snapshot ng datos. Suriin kung nagbalik ng datos ang mga pinagmulang module para sa napiling proyekto.",
-        "footer_generated_by": "Nilikha ng OpenConstructionERP noong {timestamp}.",
+        "footer_generated_by": "Nilikha ng PrimeCrest noong {timestamp}.",
         "worksheet_name": "Ulat",
         "pdf_subject": "Ulat ng Proyekto",
         "overall_progress": "Kabuuang Progreso",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Magandang araw po, {name},",
       "greeting_generic": "Magandang araw po,",
-      "cta": "Buksan sa OpenConstructionERP",
+      "cta": "Buksan sa PrimeCrest",
       "footer": "Natanggap ninyo ang email na ito dahil sa inyong mga setting ng notification. Maaari po ninyo itong baguhin sa inyong profile.",
-      "digest_subject": "OpenConstructionERP: Buod ng mga notification ({count})",
+      "digest_subject": "PrimeCrest: Buod ng mga notification ({count})",
       "digest_heading": "Mga kamakailang notification:"
     },
     "tender_xlsx": {

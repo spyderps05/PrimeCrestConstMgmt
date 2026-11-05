@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Point Cloud / Reality Capture module manifest.
 
 Standalone, opt-in module (``auto_install=False``). It ingests laser-scan,
@@ -22,7 +22,7 @@ manifest = ModuleManifest(
         "core that stores metadata only and dispatches heavy conversion to the "
         "out-of-core converter service."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=[
         "oe_projects",

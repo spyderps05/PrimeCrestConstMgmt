@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Module manifest for oe_middle_east_pack."""
 
@@ -17,7 +17,7 @@ manifest = ModuleManifest(
         "Islamic calendar references, Ramadan adjustments, GCC VAT rates, "
         "bilingual PDF support (Arabic + English)."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="regional",
     depends=[],
     auto_install=False,

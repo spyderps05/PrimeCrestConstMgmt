@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Connectors module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "at a watched folder and a sync brings each new file in as a first-class, searchable "
         "project document, deduplicated so the same file is never imported twice"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects", "oe_documents"],
     auto_install=True,

@@ -1,6 +1,6 @@
-# OpenConstructionERP — New Zealand Partner Pack (`nzs`)
+# PrimeCrest — New Zealand Partner Pack (`nzs`)
 
-Pre-configures OpenConstructionERP for **New Zealand** contractors.
+Pre-configures PrimeCrest for **New Zealand** contractors.
 
 ## What's inside
 

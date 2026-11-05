@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "এই নাম নতুন ক্যাটালগের জন্য ব্যবহার করা যাবে না। অন্য নাম বেছে নিন।",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "ওপেন-সোর্স নির্মাণ ব্যয় এস্টিমেশন"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "আপডেট করুন"
   },
   "dashboard": {
-    "welcome": "OpenConstructionERP-এ স্বাগতম",
+    "welcome": "PrimeCrest-এ স্বাগতম",
     "subtitle": "আপনার নির্মাণ এস্টিমেশন ওয়ার্কস্পেস",
     "recent_projects": "সাম্প্রতিক প্রকল্প",
     "system_status": "সিস্টেম স্ট্যাটাস",
@@ -891,9 +891,9 @@
     "notification_email": {
       "greeting": "প্রিয় {name},",
       "greeting_generic": "প্রিয় গ্রাহক,",
-      "cta": "OpenConstructionERP-তে খুলুন",
+      "cta": "PrimeCrest-তে খুলুন",
       "footer": "আপনার নোটিফিকেশন সেটিংসের কারণে আপনি এই ইমেইলটি পাচ্ছেন। প্রোফাইলে গিয়ে সেটিংস বদলাতে পারেন।",
-      "digest_subject": "OpenConstructionERP: নোটিফিকেশন সারসংক্ষেপ ({count})",
+      "digest_subject": "PrimeCrest: নোটিফিকেশন সারসংক্ষেপ ({count})",
       "digest_heading": "সাম্প্রতিক নোটিফিকেশন:"
     },
     "tender_xlsx": {
@@ -1404,7 +1404,7 @@
         "no_data_heading": "কোনো তথ্য পাওয়া যায়নি",
         "no_data_body": "এই প্রতিবেদনটি একটি খালি তথ্য স্ন্যাপশট থেকে তৈরি হয়েছে। নির্বাচিত প্রকল্পের জন্য উৎস মডিউলগুলো (অর্থ, সময়সূচি, নিরাপত্তা ইত্যাদি) তথ্য ফেরত দিয়েছে কিনা যাচাই করুন।",
         "no_data_body_short": "এই প্রতিবেদনটি একটি খালি তথ্য স্ন্যাপশট থেকে তৈরি হয়েছে। নির্বাচিত প্রকল্পের জন্য উৎস মডিউলগুলো তথ্য ফেরত দিয়েছে কিনা যাচাই করুন।",
-        "footer_generated_by": "OpenConstructionERP দ্বারা {timestamp}-এ তৈরি।",
+        "footer_generated_by": "PrimeCrest দ্বারা {timestamp}-এ তৈরি।",
         "worksheet_name": "প্রতিবেদন",
         "pdf_subject": "প্রকল্প প্রতিবেদন",
         "overall_progress": "সামগ্রিক অগ্রগতি",

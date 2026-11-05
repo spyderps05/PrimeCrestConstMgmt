@@ -1,6 +1,8 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import clsx from 'clsx';
+
+import { PRODUCT_SHORT_NAME } from '@/shared/lib/productIdentity';
 
 interface LogoProps {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -18,42 +20,12 @@ const sizeMap = {
 };
 
 /**
- * Brand logo — 3 ascending bars + building on gradient background.
- * Per BRAND.md: gradient #0066ff → #5856d6, white elements.
+ * PrimeCrest mark — PC monogram on an ink shield with copper accent.
  *
- * `animate` triggers a staggered entrance:
- *   1. Background scales in
- *   2. Bars grow up one by one
- *   3. Building slides in from right
- *   4. Windows fade in
+ * `animate` triggers a staggered entrance on the shield and letters.
  */
 export function Logo({ size = 'md', animate = false, className }: LogoProps) {
-  const isSmall = size === 'xs' || size === 'sm';
-  const gradientId = `oe-lg-${size}-${animate ? 'a' : 's'}`;
-
-  const barStyle = (delay: number, _height: number) =>
-    animate
-      ? {
-          transformOrigin: 'bottom',
-          animation: `oeBarGrow 500ms cubic-bezier(0.34,1.56,0.64,1) both`,
-          animationDelay: `${delay}ms`,
-        }
-      : undefined;
-
-  const buildingStyle = animate
-    ? {
-        animation: `oeBuildingSlide 600ms cubic-bezier(0.22,1,0.36,1) both`,
-        animationDelay: '300ms',
-      }
-    : undefined;
-
-  const windowStyle = (delay: number) =>
-    animate
-      ? {
-          animation: `oeWindowFade 400ms ease both`,
-          animationDelay: `${delay}ms`,
-        }
-      : undefined;
+  const gradientId = `pc-lg-${size}-${animate ? 'a' : 's'}`;
 
   const bgStyle = animate
     ? {
@@ -61,44 +33,57 @@ export function Logo({ size = 'md', animate = false, className }: LogoProps) {
       }
     : undefined;
 
+  const letterStyle = (delay: number) =>
+    animate
+      ? {
+          animation: `oeWindowFade 400ms ease both`,
+          animationDelay: `${delay}ms`,
+        }
+      : undefined;
+
   return (
     <div
       className={clsx(sizeMap[size], 'relative shrink-0', className)}
       style={animate ? { animation: 'oeLogoFloat 3s ease-in-out 1.2s infinite, oeLogoGlow 3s ease-in-out 1.2s infinite' } : undefined}
     >
-      <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" aria-hidden>
         <defs>
           <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#0066ff" />
-            <stop offset="100%" stopColor="#5856d6" />
+            <stop offset="0%" stopColor="#12202B" />
+            <stop offset="100%" stopColor="#1A3344" />
           </linearGradient>
         </defs>
 
-        {/* Background */}
-        <rect x="32" y="32" width="448" height="448" rx="96" fill={`url(#${gradientId})`} style={bgStyle} />
-
-        {/* Bar 1 (short) */}
-        <rect x="102" y="296" width="42" height="114" rx="6" fill="#fff" opacity=".85" style={barStyle(120, 114)} />
-        {/* Bar 2 (medium) */}
-        <rect x="162" y="233" width="42" height="177" rx="6" fill="#fff" opacity=".95" style={barStyle(200, 177)} />
-        {/* Bar 3 (tall) */}
-        <rect x="222" y="176" width="42" height="234" rx="6" fill="#fff" opacity=".85" style={barStyle(280, 234)} />
-
-        {/* Building body */}
-        <rect x="282" y="150" width="128" height="260" rx="8" fill="#fff" opacity=".9" style={buildingStyle} />
-
-        {/* Windows + door — only shown at medium+ sizes */}
-        {!isSmall && (
-          <g style={buildingStyle}>
-            <rect x="304" y="182" width="26" height="28" rx="4" fill={`url(#${gradientId})`} opacity=".5" style={windowStyle(550)} />
-            <rect x="362" y="182" width="26" height="28" rx="4" fill={`url(#${gradientId})`} opacity=".5" style={windowStyle(600)} />
-            <rect x="304" y="226" width="26" height="28" rx="4" fill={`url(#${gradientId})`} opacity=".5" style={windowStyle(650)} />
-            <rect x="362" y="226" width="26" height="28" rx="4" fill={`url(#${gradientId})`} opacity=".5" style={windowStyle(700)} />
-            <rect x="304" y="272" width="26" height="28" rx="4" fill={`url(#${gradientId})`} opacity=".45" style={windowStyle(750)} />
-            <rect x="362" y="272" width="26" height="28" rx="4" fill={`url(#${gradientId})`} opacity=".45" style={windowStyle(800)} />
-            <rect x="329" y="328" width="34" height="82" rx="4" fill={`url(#${gradientId})`} opacity=".55" style={windowStyle(850)} />
-          </g>
-        )}
+        {/* Shield */}
+        <path
+          d="M256 40 L440 110 V250 C440 360 360 440 256 472 C152 440 72 360 72 250 V110 Z"
+          fill={`url(#${gradientId})`}
+          style={bgStyle}
+        />
+        {/* Copper rim */}
+        <path
+          d="M256 56 L424 120 V248 C424 348 352 420 256 450 C160 420 88 348 88 248 V120 Z"
+          fill="none"
+          stroke="#C4622D"
+          strokeWidth="14"
+          opacity=".9"
+        />
+        {/* PC monogram */}
+        <text
+          x="256"
+          y="292"
+          textAnchor="middle"
+          fill="#F6F3EE"
+          fontFamily="Georgia, 'Times New Roman', serif"
+          fontSize="168"
+          fontWeight="700"
+          letterSpacing="-6"
+          style={letterStyle(200)}
+        >
+          PC
+        </text>
+        {/* Copper accent bar under letters */}
+        <rect x="168" y="328" width="176" height="12" rx="6" fill="#C4622D" style={letterStyle(350)} />
       </svg>
     </div>
   );
@@ -128,11 +113,8 @@ const gapSizeMap = {
 };
 
 /**
- * Logo + brand name. Per BRAND.md:
- * - Font: Plus Jakarta Sans 800
- * - Name: "OpenConstructionERP" (PascalCase, one word)
- * - Letter-spacing: -0.02em
- * - Icon is compact, name is prominent
+ * Logo + PrimeCrest wordmark.
+ * Display type uses Fraunces / Instrument Serif via --oe-font-display.
  */
 export function LogoWithText({ size = 'md', animate, showVersion = true, className }: LogoWithTextProps) {
   return (
@@ -141,12 +123,18 @@ export function LogoWithText({ size = 'md', animate, showVersion = true, classNa
       <span
         className={clsx(
           textSizeMap[size],
-          'font-medium text-content-primary whitespace-nowrap tracking-tight',
+          'font-semibold text-content-primary whitespace-nowrap tracking-tight',
         )}
-        style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif", letterSpacing: '-0.02em' }}
+        style={{ fontFamily: 'var(--oe-font-display)', letterSpacing: '-0.02em' }}
       >
-        Open<span className="text-oe-blue">Construction</span>
-        {showVersion && <span className="text-content-quaternary">ERP</span>}
+        <span className="text-content-primary">Prime</span>
+        <span className="text-oe-blue">Crest</span>
+        {showVersion && (
+          <span className="ml-1 text-[0.65em] font-normal text-content-quaternary align-middle">
+            CM
+          </span>
+        )}
+        <span className="sr-only">{PRODUCT_SHORT_NAME}</span>
       </span>
     </div>
   );

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Suggest the next WBS code under a section and place a new activity inside it.
 
 A scheduler who adds an activity to a section expects it to carry on that

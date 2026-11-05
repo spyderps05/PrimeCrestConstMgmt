@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠MCP business logic: the protocol methods for a token caller, and the settings surface for a signed-in person."""
 
@@ -57,7 +57,7 @@ from app.modules.mcp.tools import (
 logger = logging.getLogger(__name__)
 
 SERVER_NAME = "openconstructionerp"
-SERVER_TITLE = "OpenConstructionERP"
+SERVER_TITLE = "PrimeCrest"
 MAX_TEXT_CHARS = 60_000
 SERVER_INSTRUCTIONS = (
     "Construction estimating and project data of the signed-in person. Start with list_projects, then pass a "

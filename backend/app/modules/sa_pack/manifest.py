@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Module manifest for oe_sa_pack."""
 
@@ -18,7 +18,7 @@ manifest = ModuleManifest(
         "preferential procurement scoring, National Treasury infrastructure "
         "delivery gates, ZAR and 15 percent VAT."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="regional",
     depends=[],
     auto_install=False,

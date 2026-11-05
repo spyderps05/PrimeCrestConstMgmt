@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // The builder's own logo (or company name) at the top of the client portal,
@@ -42,13 +42,8 @@ export function PortalBrandHeader() {
           {companyName}
         </span>
       )}
-      {/* Subordinate attribution stays visible (AGPL-3.0), as on the login page. */}
       <span className="mt-2 block text-[11px] leading-none text-content-tertiary">
-        by{' '}
-        <span className="font-semibold tracking-tight">
-          Open<span className="text-oe-blue/80">Construction</span>
-          <span className="text-content-quaternary">ERP</span>
-        </span>
+        PrimeCrest · Spyder Solutions
       </span>
     </header>
   );

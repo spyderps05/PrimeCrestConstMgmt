@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * New​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ rows from a pasted block: map the block onto the sheet columns it was

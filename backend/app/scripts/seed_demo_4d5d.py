@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Seed 4D Schedule, 5D Budget, and Tendering data for demo projects.
 
@@ -33,7 +33,7 @@ def _id() -> uuid.UUID:
 
 async def main() -> None:
     print("=" * 70)
-    print("  OpenConstructionERP  -  4D / 5D / Tendering Demo Seeder")
+    print("  PrimeCrest  -  4D / 5D / Tendering Demo Seeder")
     print("=" * 70)
 
     async with engine.begin() as conn:

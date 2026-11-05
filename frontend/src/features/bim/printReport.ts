@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Printable HTML builder for the BIM filter report (B5).
@@ -117,7 +117,7 @@ export function buildReportHtml(params: BuildReportHtmlParams): string {
   <h1>${escapeHtml(params.title)}</h1>
   <p class="meta">${escapeHtml(params.scopeLabel)} &middot; ${escapeHtml(params.generatedOn)}</p>
   ${body}
-  <p class="brand">OpenConstructionERP</p>
+  <p class="brand">PrimeCrest</p>
 </body>
 </html>`;
 }

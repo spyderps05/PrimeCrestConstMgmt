@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Fallback quantity extraction for BIM element ingest.
 
 The two XLSX ingest paths (direct upload and the DDC-converter output) fill an

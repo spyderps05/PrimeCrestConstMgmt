@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Cell​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ text to stored values: what a sheet cell shows, what it edits as, and

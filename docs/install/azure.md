@@ -1,8 +1,8 @@
-# OpenConstructionERP on Microsoft Azure
+# PrimeCrest on Microsoft Azure
 
 English | [Deutsch](azure.de.md) | [Русский](azure.ru.md)
 
-How to run OpenConstructionERP on Azure with the data kept in the region you choose, and what works today for sign-in with Microsoft Entra ID. No Azure-specific code is involved: the platform runs as one Docker container against PostgreSQL, and everything below is configuration.
+How to run PrimeCrest on Azure with the data kept in the region you choose, and what works today for sign-in with Microsoft Entra ID. No Azure-specific code is involved: the platform runs as one Docker container against PostgreSQL, and everything below is configuration.
 
 **What has been checked.** Every setting name below was checked against the source of versions 18.8.2 and 18.8.3 (`backend/app/config.py`, `backend/app/modules/users/`, `deploy/docker/`). The Azure portal and CLI steps were written from the Azure documentation and have **not** been run on a live subscription. Treat the first deployment as the test, and read "Sign-in with Entra ID" before promising single sign-on to anyone.
 
@@ -153,7 +153,7 @@ Settings: `OIDC_ENABLED`, `OIDC_ISSUER_URL`, `OIDC_CLIENT_ID`, `OIDC_CLIENT_SECR
 
 ### Direct setup (18.8.3 and later)
 
-1. **App registration** (Microsoft Entra admin center, App registrations, New registration): name `OpenConstructionERP`, account type "this organizational directory only", redirect URI of type **Web**: `https://erp.example.com/auth/oidc/callback`. Note the **Application (client) ID** and the **Directory (tenant) ID**.
+1. **App registration** (Microsoft Entra admin center, App registrations, New registration): name `PrimeCrest`, account type "this organizational directory only", redirect URI of type **Web**: `https://erp.example.com/auth/oidc/callback`. Note the **Application (client) ID** and the **Directory (tenant) ID**.
 2. Certificates and secrets, New client secret. Copy the **value** at once (it is shown only once) and note the expiry date; sign-in stops when the secret expires.
 3. API permissions: `openid`, `email`, `profile` (delegated, Microsoft Graph). Under Token configuration add the optional claim `email`. For roles, either add a groups claim ("Security groups", the ID token then carries group object IDs) or define app roles and assign them (the `roles` claim carries their values).
 4. Enterprise applications, your app, Properties: set "Assignment required" to Yes and assign the people or groups who may sign in. Without it every user of your tenant can sign in.

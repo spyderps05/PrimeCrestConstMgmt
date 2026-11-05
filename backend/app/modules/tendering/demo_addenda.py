@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Demo​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ addenda and Q&A on one seeded tender package.
 

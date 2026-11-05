@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Startup fixup: put a heal-numbered ``oe_progress_entry.seq`` back in observation order.
 
 ``seq`` decides "latest wins" for every progress reading (see

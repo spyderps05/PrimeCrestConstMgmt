@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Keep every copy of the backend role vocabulary in the UI equal to the backend.
 

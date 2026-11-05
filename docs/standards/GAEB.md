@@ -1,6 +1,6 @@
-# GAEB DA XML in OpenConstructionERP
+# GAEB DA XML in PrimeCrest
 
-OpenConstructionERP reads and writes GAEB DA XML 3.3 natively. This page
+PrimeCrest reads and writes GAEB DA XML 3.3 natively. This page
 records what our implementation is built from, so that anyone who needs to
 know can find out without asking us.
 

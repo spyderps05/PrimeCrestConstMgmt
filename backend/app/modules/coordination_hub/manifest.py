@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Coordination Hub module manifest."""
 
 from app.core.module_loader import ModuleManifest
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "rollup with BOQ-impact totals. No new tables - pure aggregator over "
         "the sibling BIM modules."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_projects", "oe_users"],
     auto_install=True,

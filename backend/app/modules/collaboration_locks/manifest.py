@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Collaboration locks module manifest.
 
@@ -19,7 +19,7 @@ manifest = ModuleManifest(
         "Pessimistic soft locks with live presence broadcast. "
         "Prevents two estimators from overwriting each other on the same BOQ row."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users"],
     auto_install=True,

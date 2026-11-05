@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Customer & Partner Portal permission definitions.
 
 These are INTERNAL-admin permissions that gate the ``/api/v1/portal/admin/*``

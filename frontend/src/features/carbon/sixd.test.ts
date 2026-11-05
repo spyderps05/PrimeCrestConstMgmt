@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 // Unit tests for the pure 6D auto-enrich helpers. No DOM / i18next needed.
 import { describe, it, expect } from 'vitest';

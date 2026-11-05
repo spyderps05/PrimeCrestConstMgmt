@@ -1,6 +1,6 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
-// OpenConstructionERP — chat XSS regression suite.
+// PrimeCrest — chat XSS regression suite.
 //
 // Security audit 2026-05-24 finding #1: the chat surfaces
 // (FloatingChatPanel + full-page MessageBubble) render assistant

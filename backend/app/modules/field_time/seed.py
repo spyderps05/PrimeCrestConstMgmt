@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Field Time demo seed - a populated timesheet register per demo project.
 
 Books several weeks of foreman timesheets for every project that has the

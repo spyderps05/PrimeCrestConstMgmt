@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Snag -> Punchlist auto-bridge integration test (task #156).
 
 Verifies the event-bus bridge that subscribes ``punchlist`` to

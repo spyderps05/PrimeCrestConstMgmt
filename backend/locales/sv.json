@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Det här namnet kan inte användas för en ny katalog. Välj ett annat namn.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Byggkalkylering med öppen källkod"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Uppdatera"
   },
   "dashboard": {
-    "welcome": "Välkommen till OpenConstructionERP",
+    "welcome": "Välkommen till PrimeCrest",
     "subtitle": "Byggkalkylering med öppen källkod",
     "recent_projects": "Senaste projekt",
     "system_status": "Systemstatus",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Inga data tillgängliga",
         "no_data_body": "Denna rapport genererades med en tom datasnapshot. Kontrollera att källmodulerna (ekonomi, tidplan, säkerhet m.fl.) returnerade data för det valda projektet.",
         "no_data_body_short": "Denna rapport genererades med en tom datasnapshot. Kontrollera att källmodulerna returnerade data för det valda projektet.",
-        "footer_generated_by": "Genererad av OpenConstructionERP {timestamp}.",
+        "footer_generated_by": "Genererad av PrimeCrest {timestamp}.",
         "worksheet_name": "Rapport",
         "pdf_subject": "Projektrapport",
         "overall_progress": "Total framdrift",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Hej {name},",
       "greeting_generic": "Hej,",
-      "cta": "Öppna i OpenConstructionERP",
+      "cta": "Öppna i PrimeCrest",
       "footer": "Du får det här mejlet på grund av dina aviseringsinställningar. Du kan ändra dem i din profil.",
-      "digest_subject": "OpenConstructionERP: Sammanställning av aviseringar ({count})",
+      "digest_subject": "PrimeCrest: Sammanställning av aviseringar ({count})",
       "digest_heading": "Senaste aviseringar:"
     },
     "tender_xlsx": {

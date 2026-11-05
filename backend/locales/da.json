@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Dette navn kan ikke bruges til en ny katalog. Vælg et andet navn.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Byggekalkulation med åben kildekode"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Opdater"
   },
   "dashboard": {
-    "welcome": "Velkommen til OpenConstructionERP",
+    "welcome": "Velkommen til PrimeCrest",
     "subtitle": "Byggekalkulation med åben kildekode",
     "recent_projects": "Seneste projekter",
     "system_status": "Systemstatus",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Ingen data tilgængelige",
         "no_data_body": "Denne rapport blev genereret med et tomt datagrundlag. Kontrollér, at kildemodulerne (økonomi, tidsplan, sikkerhed osv.) returnerede data for det valgte projekt.",
         "no_data_body_short": "Denne rapport blev genereret med et tomt datagrundlag. Kontrollér, at kildemodulerne returnerede data for det valgte projekt.",
-        "footer_generated_by": "Genereret af OpenConstructionERP kl. {timestamp}.",
+        "footer_generated_by": "Genereret af PrimeCrest kl. {timestamp}.",
         "worksheet_name": "Rapport",
         "pdf_subject": "Projektrapport",
         "overall_progress": "Samlet fremdrift",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Hej {name},",
       "greeting_generic": "Hej,",
-      "cta": "Åbn i OpenConstructionERP",
+      "cta": "Åbn i PrimeCrest",
       "footer": "Du modtager denne e-mail på grund af dine indstillinger for notifikationer. Du kan ændre dem i din profil.",
-      "digest_subject": "OpenConstructionERP: Samling af notifikationer ({count})",
+      "digest_subject": "PrimeCrest: Samling af notifikationer ({count})",
       "digest_heading": "Seneste notifikationer:"
     },
     "tender_xlsx": {

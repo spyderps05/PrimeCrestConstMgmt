@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """The notification email: an absolute link and the reader's language.
 
@@ -33,97 +33,97 @@ _TABLES: dict[str, dict[str, str]] = {
     "en": {
         "greeting": "Hello {name},",
         "greeting_generic": "Hello,",
-        "cta": "Open in OpenConstructionERP",
+        "cta": "Open in PrimeCrest",
         "footer": "You receive this email because of your notification settings. You can change them in your profile.",
-        "digest_subject": "OpenConstructionERP: Notification digest ({count})",
+        "digest_subject": "PrimeCrest: Notification digest ({count})",
         "digest_heading": "Recent notifications:",
     },
     "de": {
         "greeting": "Guten Tag {name},",
         "greeting_generic": "Guten Tag,",
-        "cta": "In OpenConstructionERP öffnen",
+        "cta": "In PrimeCrest öffnen",
         "footer": (
             "Sie erhalten diese E-Mail aufgrund Ihrer Benachrichtigungseinstellungen. "
             "Sie können sie in Ihrem Profil ändern."
         ),
-        "digest_subject": "OpenConstructionERP: Benachrichtigungsübersicht ({count})",
+        "digest_subject": "PrimeCrest: Benachrichtigungsübersicht ({count})",
         "digest_heading": "Neueste Benachrichtigungen:",
     },
     "fr": {
         "greeting": "Bonjour {name},",
         "greeting_generic": "Bonjour,",
-        "cta": "Ouvrir dans OpenConstructionERP",
+        "cta": "Ouvrir dans PrimeCrest",
         "footer": (
             "Vous recevez cet e-mail en raison de vos paramètres de notification. "
             "Vous pouvez les modifier dans votre profil."
         ),
-        "digest_subject": "OpenConstructionERP: Récapitulatif des notifications ({count})",
+        "digest_subject": "PrimeCrest: Récapitulatif des notifications ({count})",
         "digest_heading": "Notifications récentes :",
     },
     "es": {
         "greeting": "Hola, {name}:",
         "greeting_generic": "Hola:",
-        "cta": "Abrir en OpenConstructionERP",
+        "cta": "Abrir en PrimeCrest",
         "footer": "Recibe este correo por su configuración de notificaciones. Puede cambiarla en su perfil.",
-        "digest_subject": "OpenConstructionERP: Resumen de notificaciones ({count})",
+        "digest_subject": "PrimeCrest: Resumen de notificaciones ({count})",
         "digest_heading": "Notificaciones recientes:",
     },
     "it": {
         "greeting": "Buongiorno {name},",
         "greeting_generic": "Buongiorno,",
-        "cta": "Apri in OpenConstructionERP",
+        "cta": "Apri in PrimeCrest",
         "footer": "Ricevi questa email in base alle tue impostazioni di notifica. Puoi modificarle nel tuo profilo.",
-        "digest_subject": "OpenConstructionERP: Riepilogo notifiche ({count})",
+        "digest_subject": "PrimeCrest: Riepilogo notifiche ({count})",
         "digest_heading": "Notifiche recenti:",
     },
     "nl": {
         "greeting": "Beste {name},",
         "greeting_generic": "Geachte heer, mevrouw,",
-        "cta": "Openen in OpenConstructionERP",
+        "cta": "Openen in PrimeCrest",
         "footer": "U ontvangt deze e-mail vanwege uw meldingsinstellingen. U kunt ze wijzigen in uw profiel.",
-        "digest_subject": "OpenConstructionERP: Overzicht van meldingen ({count})",
+        "digest_subject": "PrimeCrest: Overzicht van meldingen ({count})",
         "digest_heading": "Recente meldingen:",
     },
     "pl": {
         "greeting": "Dzień dobry {name},",
         "greeting_generic": "Dzień dobry,",
-        "cta": "Otwórz w OpenConstructionERP",
+        "cta": "Otwórz w PrimeCrest",
         "footer": "Otrzymujesz tę wiadomość zgodnie z ustawieniami powiadomień. Możesz je zmienić w swoim profilu.",
-        "digest_subject": "OpenConstructionERP: Podsumowanie powiadomień ({count})",
+        "digest_subject": "PrimeCrest: Podsumowanie powiadomień ({count})",
         "digest_heading": "Ostatnie powiadomienia:",
     },
     "pt": {
         "greeting": "Olá, {name},",
         "greeting_generic": "Olá,",
-        "cta": "Abrir no OpenConstructionERP",
+        "cta": "Abrir no PrimeCrest",
         "footer": "Recebe este e-mail devido às suas definições de notificação. Pode alterá-las no seu perfil.",
-        "digest_subject": "OpenConstructionERP: Resumo de notificações ({count})",
+        "digest_subject": "PrimeCrest: Resumo de notificações ({count})",
         "digest_heading": "Notificações recentes:",
     },
     "cs": {
         "greeting": "Dobrý den, {name},",
         "greeting_generic": "Dobrý den,",
-        "cta": "Otevřít v OpenConstructionERP",
+        "cta": "Otevřít v PrimeCrest",
         "footer": "Tento e-mail dostáváte kvůli svému nastavení oznámení. Můžete ho změnit ve svém profilu.",
-        "digest_subject": "OpenConstructionERP: Přehled oznámení ({count})",
+        "digest_subject": "PrimeCrest: Přehled oznámení ({count})",
         "digest_heading": "Nedávná oznámení:",
     },
     "ru": {
         "greeting": "Здравствуйте, {name}!",
         "greeting_generic": "Здравствуйте!",
-        "cta": "Открыть в OpenConstructionERP",
+        "cta": "Открыть в PrimeCrest",
         "footer": "Вы получили это письмо согласно настройкам уведомлений. Изменить их можно в профиле.",
-        "digest_subject": "OpenConstructionERP: Сводка уведомлений ({count})",
+        "digest_subject": "PrimeCrest: Сводка уведомлений ({count})",
         "digest_heading": "Последние уведомления:",
     },
     "tr": {
         "greeting": "Merhaba {name},",
         "greeting_generic": "Merhaba,",
-        "cta": "OpenConstructionERP üzerinde aç",
+        "cta": "PrimeCrest üzerinde aç",
         "footer": (
             "Bu e-postayı bildirim ayarlarınız nedeniyle alıyorsunuz. Ayarlarınızı profilinizden değiştirebilirsiniz."
         ),
-        "digest_subject": "OpenConstructionERP: Bildirim özeti ({count})",
+        "digest_subject": "PrimeCrest: Bildirim özeti ({count})",
         "digest_heading": "Son bildirimler:",
     },
 }

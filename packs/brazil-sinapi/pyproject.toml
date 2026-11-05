@@ -10,7 +10,7 @@ readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
 requires-python = ">=3.11"
 authors = [
-    { name = "OpenConstructionERP", email = "info@datadrivenconstruction.io" },
+    { name = "PrimeCrest", email = "info@datadrivenconstruction.io" },
 ]
 keywords = ["openconstructionerp", "ocerp", "partner-pack", "brazil", "brasil", "sinapi", "nbr", "abnt", "lei-14133", "rps", "nfse", "iss", "cub", "bdi"]
 classifiers = [

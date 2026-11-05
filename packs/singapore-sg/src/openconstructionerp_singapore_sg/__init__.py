@@ -1,4 +1,4 @@
-"""OpenConstructionERP - Singapore country pack (SMM7, BCA, CONQUAS)."""
+"""PrimeCrest - Singapore country pack (SMM7, BCA, CONQUAS)."""
 
 from __future__ import annotations
 

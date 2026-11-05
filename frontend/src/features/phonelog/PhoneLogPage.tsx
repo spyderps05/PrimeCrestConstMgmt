@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // Phone Log - capture a phone call, voice note, or verbal instruction so it is
@@ -366,7 +366,7 @@ export function PhoneLogPage() {
             <input
               value={form.raw_parties}
               onChange={(e) => set('raw_parties', e.target.value)}
-              placeholder={t('phonelog.parties_ph', { defaultValue: 'You -> Acme site office' })}
+              placeholder={t('phonelog.parties_ph', { defaultValue: 'You -> DHA Phase 5 site office' })}
               className="rounded-md border border-border-light bg-surface-primary px-2 py-1 text-sm text-content-primary"
             />
           </label>

@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Company & documents - the logos, the letterhead and how printed documents look.
@@ -458,7 +458,7 @@ export function CompanyDocumentsSettings() {
                     readOnly={!canEdit}
                     onChange={(e) => setField('legal_name', e.target.value)}
                     placeholder={t('settings.company.legal_name_placeholder', {
-                      defaultValue: 'Acme Construction Ltd',
+                      defaultValue: 'Crescent Builders (Pvt) Ltd',
                     })}
                     hint={t('settings.company.legal_name_hint', {
                       defaultValue:

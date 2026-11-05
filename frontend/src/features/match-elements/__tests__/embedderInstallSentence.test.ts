@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 //
 // The embedder card's install sentence used to come from the backend as
 // English prose and was rendered verbatim, so on the one path where it

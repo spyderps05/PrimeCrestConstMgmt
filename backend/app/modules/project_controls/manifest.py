@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Project Controls module manifest.
 
 A thin, read-only consumer module (connective-tissue feature 09). It joins
@@ -22,7 +22,7 @@ manifest = ModuleManifest(
         "with one-click drill-down to the owning module. Pure read-only "
         "consumer over the shared KPI registry."
     ),
-    author="OpenConstructionERP",
+    author="PrimeCrest",
     category="extension",
     depends=["oe_projects", "oe_users", "oe_bi_dashboards"],
     auto_install=True,

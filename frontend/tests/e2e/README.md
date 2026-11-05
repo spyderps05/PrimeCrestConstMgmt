@@ -1,6 +1,6 @@
 # Playwright E2E Infrastructure
 
-Total-coverage UI testing for OpenConstructionERP. Designed for **hundreds
+Total-coverage UI testing for PrimeCrest. Designed for **hundreds
 of parallel tests with screenshots on every step** — the QA-test-plan
 agent authors specs that plug into this harness.
 

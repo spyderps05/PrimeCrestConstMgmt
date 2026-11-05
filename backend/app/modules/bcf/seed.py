@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """BCF demo seed - a populated coordination issue register per demo project.
 
 Opens the BCF page on the register a BIM coordinator keeps between model

@@ -1,8 +1,8 @@
-# OpenConstructionERP auf STACKIT, eine isolierte Instanz pro Unternehmen
+# PrimeCrest auf STACKIT, eine isolierte Instanz pro Unternehmen
 
 [English](README.md) | Deutsch | [Русский](README.ru.md)
 
-Terraform-Module, die OpenConstructionERP in der deutschen Cloud [STACKIT](https://www.stackit.de)
+Terraform-Module, die PrimeCrest in der deutschen Cloud [STACKIT](https://www.stackit.de)
 betreiben, mit einer **eigenen Instanz für jedes Unternehmen**: eigener Datenbankserver, eigener
 Bucket, eigene Zugangsdaten und eigener Namespace. Die Daten bleiben in deutschen Rechenzentren
 (Region `eu01`).

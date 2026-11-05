@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """OGC API - Features routes, mounted under ``/api/v1/geo-hub/ogc``.
 
 Connecting QGIS
@@ -212,9 +212,9 @@ async def ogc_landing_page(
             ),
         )
     body = {
-        "title": "OpenConstructionERP Geo Hub",
+        "title": "PrimeCrest Geo Hub",
         "description": (
-            "Project locations, vector overlays and saved viewpoints from OpenConstructionERP, "
+            "Project locations, vector overlays and saved viewpoints from PrimeCrest, "
             "served as OGC API - Features. Everything is scoped to the projects your account "
             "can read; nothing here is public."
         ),

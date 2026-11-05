@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Plan Room module manifest."""
 
@@ -12,7 +12,7 @@ manifest = ModuleManifest(
         "Read-only overlay compositor for a document page - defect pins, "
         "markups, measurements and photos - plus positioned photo / note pins"
     ),
-    author="OpenConstructionERP",
+    author="PrimeCrest",
     category="business",
     # Hard needs: project access + document resolution.
     depends=["oe_projects", "oe_users", "oe_documents"],

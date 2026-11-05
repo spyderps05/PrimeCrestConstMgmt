@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Inbound capture module manifest."""
 
@@ -17,7 +17,7 @@ manifest = ModuleManifest(
         "delivery never doubles up, and provider webhooks are authenticated "
         "through a per-provider signature-verification seam."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="integration",
     depends=["oe_correspondence", "oe_projects"],
     auto_install=True,

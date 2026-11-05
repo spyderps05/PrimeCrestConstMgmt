@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Currency / FX module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "per-project currency policy with pinning, and revaluation that separates scope movement "
         "from rate movement"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_costs"],
     auto_install=True,

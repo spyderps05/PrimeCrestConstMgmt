@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Brazilian-styled invoice PDF (Tier-1 - pre-NF-e bridge).
 
@@ -543,7 +543,7 @@ def render_br_invoice_pdf(
     story.append(
         _safe_para(
             "Este documento é um Recibo Provisório de Serviços (RPS) gerado pelo "
-            "OpenConstructionERP. Não substitui Nota Fiscal Eletrônica (NF-e / NFS-e). "
+            "PrimeCrest. Não substitui Nota Fiscal Eletrônica (NF-e / NFS-e). "
             "A emissão fiscal definitiva deve ser realizada pelo sistema da prefeitura "
             "competente ou via integração SEFAZ.",
             styles["disclaimer"],

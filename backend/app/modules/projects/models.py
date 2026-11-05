@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Project ORM models.
 
@@ -78,7 +78,7 @@ class Project(Base):
     # ProjectCreate schema default. API creates always pass an explicit
     # value; the empty default only applies to bare ORM constructions.
     currency: Mapped[str] = mapped_column(String(10), nullable=False, default="")
-    locale: Mapped[str] = mapped_column(String(10), nullable=False, default="de")
+    locale: Mapped[str] = mapped_column(String(10), nullable=False, default="en")
     validation_rule_sets: Mapped[list] = mapped_column(  # type: ignore[assignment]
         JSON,
         nullable=False,

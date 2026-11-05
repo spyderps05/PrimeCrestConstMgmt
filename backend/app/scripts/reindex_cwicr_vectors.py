@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction / OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction / PrimeCrest
 """Runnable ingest that (re)indexes a CWICR national or regional base into
 its per-language vector collection.
 

@@ -1,6 +1,6 @@
-# Install OpenConstructionERP
+# Install PrimeCrest
 
-OpenConstructionERP by DataDrivenConstruction is an open-source platform for construction cost estimation, bills of quantities, and data validation, with CAD and BIM quantity takeoff and multi-currency support. The desktop app puts the whole thing on your computer. You download one installer and run it. There is no Python, no pip, no Docker, and no database to set up. Everything it needs is already inside.
+PrimeCrest by DataDrivenConstruction is an open-source platform for construction cost estimation, bills of quantities, and data validation, with CAD and BIM quantity takeoff and multi-currency support. The desktop app puts the whole thing on your computer. You download one installer and run it. There is no Python, no pip, no Docker, and no database to set up. Everything it needs is already inside.
 
 This guide walks you through installing it and signing in for the first time. If a warning or an error shows up along the way, [Installation help](../INSTALL_TROUBLESHOOTING.md) says what it means and what to do (also [online](https://openconstructionerp.com/install-help), in [Deutsch](../INSTALL_TROUBLESHOOTING.de.md) and [Русский](../INSTALL_TROUBLESHOOTING.ru.md)).
 
@@ -12,35 +12,35 @@ The installers live on the project's GitHub Releases page. Open the latest relea
 
 ### Windows
 
-Each release attaches one Windows installer, an `.exe`. It installs for all users of the machine, into `C:\Program Files\OpenConstructionERP`, so Windows asks for administrator permission before it continues. Releases up to 15.1.0 also carried an `.msi`. It installed the same application to the same place but kept its own record of having done so, which is why two installers for one program was a trap rather than a choice, and from 15.2.0 it is gone. If the copy you have came from the `.msi`, uninstall that entry before you run the `.exe`, otherwise the machine lists the app twice. Your data is not in the installed folder and an uninstall does not touch it.
+Each release attaches one Windows installer, an `.exe`. It installs for all users of the machine, into `C:\Program Files\PrimeCrest`, so Windows asks for administrator permission before it continues. Releases up to 15.1.0 also carried an `.msi`. It installed the same application to the same place but kept its own record of having done so, which is why two installers for one program was a trap rather than a choice, and from 15.2.0 it is gone. If the copy you have came from the `.msi`, uninstall that entry before you run the `.exe`, otherwise the machine lists the app twice. Your data is not in the installed folder and an uninstall does not touch it.
 
 The app needs Microsoft's WebView2 runtime, which draws its window. The installer carries a full offline copy of it and installs it when your machine does not already have it, so neither the installation nor the app needs an internet connection. If Windows refuses to install WebView2, the installer stops with an error about it; [Installation help](../INSTALL_TROUBLESHOOTING.md) says what to do.
 
-When it finishes you will find OpenConstructionERP in the Start Menu and as a shortcut, both named "OpenConstructionERP". Click either one to launch it.
+When it finishes you will find PrimeCrest in the Start Menu and as a shortcut, both named "PrimeCrest". Click either one to launch it.
 
 The Windows installer is not code signed yet, so Windows warns that it comes from an unknown publisher. If it shows "Windows protected your PC", or if Smart App Control blocks the app, even after it ran once, follow [Windows blocks the app](WINDOWS_BLOCKED.md).
 
 ### macOS
 
-Download the `.dmg`, open it, and drag OpenConstructionERP into your Applications folder. You need a Mac with Apple Silicon, since the `.dmg` will not start on an Intel Mac.
+Download the `.dmg`, open it, and drag PrimeCrest into your Applications folder. You need a Mac with Apple Silicon, since the `.dmg` will not start on an Intel Mac.
 
 This build is ad-hoc signed but not yet notarized by Apple, so the first time you open it macOS may say it "is damaged and can't be opened" or otherwise block it. The app is not damaged. macOS quarantines anything downloaded from the web, and an app that Apple has not notarized trips that check. To clear it, open Terminal and run this once, then open the app normally:
 
 ```
-xattr -dr com.apple.quarantine /Applications/OpenConstructionERP.app
+xattr -dr com.apple.quarantine /Applications/PrimeCrest.app
 ```
 
 On older macOS you can instead right-click the app and choose Open. On macOS Sequoia you may also need to approve it once under System Settings, in Privacy and Security, where macOS shows a button to open the app anyway. You only need to do this once.
 
 ### Linux
 
-On Debian or Ubuntu, download the `.deb` and install it with your package manager. It depends on `libwebkit2gtk-4.1-0`, which your system will pull in if it is not already present. After that, launch OpenConstructionERP from your applications menu.
+On Debian or Ubuntu, download the `.deb` and install it with your package manager. It depends on `libwebkit2gtk-4.1-0`, which your system will pull in if it is not already present. After that, launch PrimeCrest from your applications menu.
 
 If you prefer something portable, download the `.AppImage` instead, make it executable, and run it. From a terminal that is:
 
 ```
-chmod +x OpenConstructionERP*.AppImage
-./OpenConstructionERP*.AppImage
+chmod +x PrimeCrest*.AppImage
+./PrimeCrest*.AppImage
 ```
 
 ## First launch
@@ -60,7 +60,7 @@ Sign in with those and you are in. You can create your own account and projects 
 
 Everything you do stays on your own machine. The app runs its own database locally and does not send your projects anywhere. It works offline, and your data is yours.
 
-All of it lives in a single folder in your home directory, named `.openestimate`. On Windows that is `C:\Users\<your name>\.openestimate`, and on macOS and Linux it is `~/.openestimate`. That folder holds the local PostgreSQL database, every file you have uploaded, and your settings. It sits outside the program folder on purpose, so that installing, upgrading and removing the app never touch your work. To make a backup, close the app and copy that folder somewhere safe. One exception on Windows: if your user folder name contains non-Latin characters (for example Chinese or Cyrillic), the database itself is kept in `C:\ProgramData\OpenConstructionERP\clusters\<id>\pgdata` instead, because PostgreSQL cannot work from such a path, and the file `pgdata.location` inside `.openestimate` names the exact folder, so back up that folder too.
+All of it lives in a single folder in your home directory, named `.openestimate`. On Windows that is `C:\Users\<your name>\.openestimate`, and on macOS and Linux it is `~/.openestimate`. That folder holds the local PostgreSQL database, every file you have uploaded, and your settings. It sits outside the program folder on purpose, so that installing, upgrading and removing the app never touch your work. To make a backup, close the app and copy that folder somewhere safe. One exception on Windows: if your user folder name contains non-Latin characters (for example Chinese or Cyrillic), the database itself is kept in `C:\ProgramData\PrimeCrest\clusters\<id>\pgdata` instead, because PostgreSQL cannot work from such a path, and the file `pgdata.location` inside `.openestimate` names the exact folder, so back up that folder too.
 
 ## Removing the demo projects
 
@@ -76,7 +76,7 @@ Installing an older version over a newer one is only possible if you let the ins
 
 ## Uninstalling
 
-Remove OpenConstructionERP the way you remove any other program, from Windows Settings under installed apps, by dragging it out of Applications on macOS, or with your package manager on Linux. Close the app first so that nothing of it is still running.
+Remove PrimeCrest the way you remove any other program, from Windows Settings under installed apps, by dragging it out of Applications on macOS, or with your package manager on Linux. Close the app first so that nothing of it is still running.
 
 Uninstalling removes the program and leaves your data where it is. The `.openestimate` folder survives with the database and every uploaded file in it, which is what you want when you are reinstalling or moving to a newer version, and it is also why reinstalling is not a way to start over. If you installed with the `.exe`, its uninstaller offers a checkbox called "Delete the application data", and despite the name it does not touch `.openestimate` either. All it targets is the small folder the app keeps for its built-in browser view, which holds the sign-in session and the window state and nothing of your projects.
 

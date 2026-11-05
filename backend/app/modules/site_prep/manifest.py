@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Site-prep module manifest."""
 
@@ -20,7 +20,7 @@ manifest = ModuleManifest(
         "lists so a site manager can see at a glance whether the site is ready to "
         "start."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     # Hard dep supplies the project scope every table foreign-keys into.
     depends=["oe_projects"],

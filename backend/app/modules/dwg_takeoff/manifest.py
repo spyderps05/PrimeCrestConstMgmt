@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """DWG Takeoff module manifest."""
 
@@ -9,7 +9,7 @@ manifest = ModuleManifest(
     version="1.0.0",
     display_name="DWG Takeoff",
     description="2D DWG/DXF drawing viewer with measurements, annotations, and BOQ linking",
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="extension",
     depends=["oe_projects"],
     auto_install=True,

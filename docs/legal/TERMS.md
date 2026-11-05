@@ -3,7 +3,7 @@
 **Effective date:** 2026-04-18
 **Last updated:** 2026-04-18
 
-These Terms of Use ("Terms") govern use of the OpenConstructionERP
+These Terms of Use ("Terms") govern use of the PrimeCrest
 software ("the Software") and, where applicable, the hosted instance
 operated by DataDrivenConstruction ("DDC") at
 `https://openconstructionerp.com` ("the Service"). By downloading,

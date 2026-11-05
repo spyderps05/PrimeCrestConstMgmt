@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Commissioning (Cx) module manifest."""
 
@@ -12,7 +12,7 @@ manifest = ModuleManifest(
         "Systems commissioning - prefunctional and functional checklists, "
         "issue log, system-readiness scoring and a gated commission action"
     ),
-    author="OpenConstructionERP",
+    author="PrimeCrest",
     category="business",
     depends=["oe_projects", "oe_users"],
     auto_install=True,

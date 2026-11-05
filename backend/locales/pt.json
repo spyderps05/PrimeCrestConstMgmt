@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Este nome não pode ser usado para um novo catálogo. Escolha outro nome.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Orçamento de construção de código aberto"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Atualizar"
   },
   "dashboard": {
-    "welcome": "Bem-vindo ao OpenConstructionERP",
+    "welcome": "Bem-vindo ao PrimeCrest",
     "subtitle": "Plataforma de orçamentação de construção open-source",
     "recent_projects": "Projetos recentes",
     "system_status": "Estado do sistema",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Sem dados disponíveis",
         "no_data_body": "Este relatório foi gerado com um instantâneo de dados vazio. Verifique se os módulos de origem (finanças, cronograma, segurança, etc.) devolveram dados para o projeto selecionado.",
         "no_data_body_short": "Este relatório foi gerado com um instantâneo de dados vazio. Verifique se os módulos de origem devolveram dados para o projeto selecionado.",
-        "footer_generated_by": "Gerado pelo OpenConstructionERP em {timestamp}.",
+        "footer_generated_by": "Gerado pelo PrimeCrest em {timestamp}.",
         "worksheet_name": "Relatório",
         "pdf_subject": "Relatório de projeto",
         "overall_progress": "Progresso global",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Olá, {name},",
       "greeting_generic": "Olá,",
-      "cta": "Abrir no OpenConstructionERP",
+      "cta": "Abrir no PrimeCrest",
       "footer": "Recebe este e-mail devido às suas definições de notificação. Pode alterá-las no seu perfil.",
-      "digest_subject": "OpenConstructionERP: Resumo de notificações ({count})",
+      "digest_subject": "PrimeCrest: Resumo de notificações ({count})",
       "digest_heading": "Notificações recentes:"
     },
     "tender_xlsx": {

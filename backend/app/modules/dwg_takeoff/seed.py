@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """DWG Takeoff demo seed - measurements taken off the drawing that exists.
 
 The drawing itself is already seeded (``app.scripts.seed_dwg_drawing`` authors a

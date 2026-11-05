@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Integrations API routes.
 
@@ -217,7 +217,7 @@ async def _dispatch_integration_test(itype: str, cfg: dict) -> TestNotificationR
     are re-validated against the SSRF deny-list right before dispatch. Never
     raises - returns a TestNotificationResponse with the outcome.
     """
-    title = "OpenConstructionERP Test"
+    title = "PrimeCrest Test"
     message = "This is a test notification. If you see this, the integration is working correctly."
     action_url = None
     cfg = cfg or {}
@@ -380,7 +380,7 @@ async def test_integration_config(
     if config is None or str(config.user_id) != str(user_id):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Config not found")
 
-    title = "OpenConstructionERP Test"
+    title = "PrimeCrest Test"
     message = "This is a test notification. If you see this, the integration is working correctly."
     action_url = None
     itype = config.integration_type
@@ -725,7 +725,7 @@ async def calendar_feed(
     lines: list[str] = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
-        f"PRODID:-//OpenConstructionERP//v{version}//EN",
+        f"PRODID:-//PrimeCrest//v{version}//EN",
         "CALSCALE:GREGORIAN",
         "METHOD:PUBLISH",
         "X-WR-CALNAME:Project Calendar",

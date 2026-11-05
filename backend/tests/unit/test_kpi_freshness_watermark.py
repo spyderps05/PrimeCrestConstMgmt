@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """KPI/EVM freshness watermark (Wave 2, item #3).
 
 The BI dashboards module keeps an in-process watermark per project. When an

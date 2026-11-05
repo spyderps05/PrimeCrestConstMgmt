@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 // Unit tests for the pure resource-index helpers: quarter handling, the
 // region/quarter pickers, the missing-index pre-check, string-only money

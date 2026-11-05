@@ -1,6 +1,6 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
-// OpenConstructionERP — DataDrivenConstruction (DDC)
+// PrimeCrest — DataDrivenConstruction (DDC)
 // Tests for the Quick-Estimate history hook + its storage helpers.
 import { act, renderHook } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Architecture Map module manifest."""
 
@@ -9,7 +9,7 @@ manifest = ModuleManifest(
     version="1.0.0",
     display_name="Architecture Map",
     description="Interactive visual map of system architecture",
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="developer_tools",
     depends=[],
     auto_install=True,

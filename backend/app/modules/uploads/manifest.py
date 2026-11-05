@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Direct Uploads module manifest.
 
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
     version="1.0.0",
     display_name="Direct Uploads",
     description="HMAC-signed direct PUT endpoint for LocalStorageBackend presigned URLs.",
-    author="OpenConstructionERP Core",
+    author="PrimeCrest Core",
     category="core",
     auto_install=True,
     enabled=True,

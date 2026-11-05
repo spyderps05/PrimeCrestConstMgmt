@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Asset Operations module manifest.
 
@@ -24,7 +24,7 @@ manifest = ModuleManifest(
         "alerts. Reads the BIM-sourced asset register; persists nothing of "
         "its own (state rides the existing asset_info JSON)."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects", "oe_bim_hub"],
     optional_depends=["oe_notifications"],

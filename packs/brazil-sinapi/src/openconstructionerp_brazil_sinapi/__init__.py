@@ -1,4 +1,4 @@
-"""OpenConstructionERP — Brazil Construction partner pack (SINAPI + NBR 12721 + RPS + ISS).
+"""PrimeCrest — Brazil Construction partner pack (SINAPI + NBR 12721 + RPS + ISS).
 
 This package exports a module-level ``MANIFEST`` instance of
 :class:`PartnerPackManifest` referenced from ``pyproject.toml``::

@@ -84,7 +84,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-REPO = "datadrivenconstruction/OpenConstructionERP"
+REPO = "datadrivenconstruction/PrimeCrest"
 
 # A short page reads exactly like a healthy inventory: every row present is
 # correct, and the missing rows are invisible. Auth expiry and rate limiting

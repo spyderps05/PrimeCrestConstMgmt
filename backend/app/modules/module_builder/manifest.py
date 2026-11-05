@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Module builder manifest."""
 
@@ -9,7 +9,7 @@ manifest = ModuleManifest(
     version="1.0.0",
     display_name="Module Builder",
     description="Describe a module in a few steps and have the platform build and install it.",
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=[],
     auto_install=True,

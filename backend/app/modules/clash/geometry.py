@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Real per-element geometry for the clash-detection engine.
 
 This module is the geometry layer the clash engine builds on. It loads

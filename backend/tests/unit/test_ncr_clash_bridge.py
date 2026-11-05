@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Bridge tests for the NCR clash auto-creation (Lane A).
 
 The NCR module subscribes to ``clash.high_severity.detected`` and raises a

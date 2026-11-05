@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Deadlines module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "sweep that notifies owners, escalates to managers past a grace window, and rolls "
         "repeat overdue items into the notification digest"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects", "oe_notifications"],
     auto_install=True,

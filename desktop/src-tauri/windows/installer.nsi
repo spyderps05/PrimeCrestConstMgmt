@@ -290,7 +290,7 @@ Function PageReinstall
     !endif
     ${NSD_OnClick} $R3 PageReinstallUpdateSelection
 
-    ; OpenConstructionERP fork of the stock Tauri template, edit one of four.
+    ; PrimeCrest fork of the stock Tauri template, edit one of four.
     ; The other three are in PageLeaveReinstall below and carry their own notes.
     ; scripts/check_nsis_template_drift.py proves the set is exactly these four
     ; by fetching the template at the CLI version pinned in
@@ -308,7 +308,7 @@ Function PageReinstall
     ; process-stop step called nsExec with no /TIMEOUT, and nsExec without a
     ; timeout waits for its child forever. When that child is a PowerShell that
     ; never returns, the uninstaller never returns, the installer waits on the
-    ; uninstaller, and the upgrade stops dead on "Closing OpenConstructionERP..."
+    ; uninstaller, and the upgrade stops dead on "Closing PrimeCrest..."
     ; with nothing to do but the task manager. Those calls are bounded from
     ; v15.9.0 onwards, but a fix to them only reaches a machine one update after
     ; it is installed. That is also why this cannot live in windows/hooks.nsh:
@@ -381,7 +381,7 @@ FunctionEnd
 Function PageLeaveReinstall
   ${NSD_GetState} $R2 $R1
 
-  ; OpenConstructionERP fork, edit two of four. Upstream sent every WiX
+  ; PrimeCrest fork, edit two of four. Upstream sent every WiX
   ; migration to reinst_uninstall without reading $R1, so the page offered a
   ; choice and then ignored it: a user who picked "Do not uninstall" watched the
   ; MSI uninstaller start anyway, and if it then failed the upgrade stopped on a
@@ -446,7 +446,7 @@ Function PageLeaveReinstall
       ${IfThen} $UpdateMode = 1 ${|} StrCpy $R1 "$R1 /UPDATE" ${|} ; append /UPDATE
       ${IfThen} $PassiveMode = 1 ${|} StrCpy $R1 "$R1 /P" ${|} ; append /P
       StrCpy $R1 "$R1 _?=$4" ; append uninstall directory
-      ; OpenConstructionERP fork, edit four of four. ExecWait blocks forever
+      ; PrimeCrest fork, edit four of four. ExecWait blocks forever
       ; when the old uninstaller hangs, and every release from v11.7.1 to v15.8.0
       ; shipped an uninstaller whose process-stop hooks called nsExec without
       ; /TIMEOUT. On a machine where PowerShell never returns (antivirus, PowerToys,
@@ -471,7 +471,7 @@ Function PageLeaveReinstall
 
     BringToFront
 
-    ; OpenConstructionERP fork, edit three of four (was three of three before
+    ; PrimeCrest fork, edit three of four (was three of three before
     ; the timeout guard above). Three things change here, all of them about when
     ; an upgrade is allowed to stop and what the person in front of it is told
     ; when it does.
@@ -525,7 +525,7 @@ Function PageLeaveReinstall
         Abort
       ${EndIf}
 
-      ; OpenConstructionERP fork. When the old uninstaller fails for any reason
+      ; PrimeCrest fork. When the old uninstaller fails for any reason
       ; other than user cancellation (codes 1 / 1602 above), continue with the
       ; install instead of aborting. The install writes over every file in
       ; $INSTDIR, NSIS_HOOK_PREINSTALL stops running processes, and the new
@@ -816,7 +816,7 @@ Section Install
     !insertmacro NSIS_HOOK_PREINSTALL
   !endif
 
-  ; OpenConstructionERP fork: no CheckIfAppIsRunning here or in the Uninstall
+  ; PrimeCrest fork: no CheckIfAppIsRunning here or in the Uninstall
   ; section. Upstream calls it with the main binary name, and in perMachine mode
   ; that is nsis_tauri_utils::FindProcess plus KillProcess: every process on the
   ; machine with that image name, compared case-insensitively, in every session,

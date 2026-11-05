@@ -47,7 +47,7 @@ keyed by the project country, each with its source.
 
 ## Install
 
-This pack ships inside OpenConstructionERP. Activate it from Modules then
+This pack ships inside PrimeCrest. Activate it from Modules then
 Partner Packs: click Rescan, find "Egypt Construction Pack", then Activate pack.
 
 Nothing in this pack is legal or tax advice.

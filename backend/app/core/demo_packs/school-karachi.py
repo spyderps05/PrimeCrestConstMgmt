@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 from __future__ import annotations
 
@@ -436,8 +436,8 @@ TEMPLATE = DemoTemplate(
         "Construction of a government primary school in Karachi: twelve classrooms in a two storey RCC "
         "frame with brick infill, head teacher's office, staff room, library, science room, toilets, hand "
         "wash stations, an assembly platform and a play area. About 1,600 m2 covered area on a 4 kanal "
-        "site (80 marla). Let to a contractor under the standard bidding documents with monthly interim "
-        "payment certificates."
+        "site (80 marla). The engineer's estimate is above Rs 100 million, so the December 2023 "
+        "Pakistan Standard Bidding Documents are the form offered. Sindh Public Procurement Rules, 2010 apply."
     ),
     region="PK",
     classification_standard="masterformat",
@@ -483,20 +483,32 @@ TEMPLATE = DemoTemplate(
         "client": "School Education Department (fictitious)",
         "gfa_m2": 1600,
         "site_area_marla": 80,
+        "site_area_kanal": 4,
+        "kanal_marlas": 20,
         "storeys": 2,
         "construction_standards": [
             "Building Code of Pakistan, Seismic Provisions 2007",
             "ACI 318 as adopted for reinforced concrete",
         ],
         "estimating_method": "Item rate bill with contractor's overhead, profit and sales tax on services",
-        "contract": "Public works under the standard bidding documents with monthly interim payment certificates",
+        "contract": (
+            "Public works above Rs 100 million. The December 2023 Pakistan Standard Bidding Documents "
+            "are the form offered."
+        ),
+        "contract_form": "pec_sbd_2023_12",
+        "contract_price_pkr": 164779340,
+        "procurement_rules": "Sindh Public Procurement Rules, 2010",
+        "performance_security_percent": "10",
+        "retention_money_limit_percent": "5",
         "tax_note": (
             "All rates are without sales tax. The provincial sales tax on services is applied as a line of its own "
             "at the standard Sindh rate; a government civil work may attract a lower provisional rate."
         ),
         "payment_note": (
-            "Each interim payment certificate holds 10 percent retention up to 5 percent of the Contract Price. "
-            "The mobilization advance of the standard form is flagged for expert review and not modelled."
+            "December 2023 form: performance security 10 percent of the accepted contract amount, "
+            "retention-money limit 5 percent of the contract price. "
+            "The older form's 10 percent deduction on each certificate is a different figure and is not replaced by these two. "
+            "This walkthrough still withholds 10 percent on each progress claim."
         ),
     },
 )

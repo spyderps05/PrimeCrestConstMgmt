@@ -77,7 +77,7 @@ MANIFEST = PartnerPackManifest(
         accent_color=None,
         favicon_path=None,
         logo_path=None,
-        powered_by_text="Powered by OpenConstructionERP",
+        powered_by_text="Powered by PrimeCrest",
     ),
     demo_template_ids=["residential-regensburg", "school-ludwigsburg"],
     onboarding_script_path=None,

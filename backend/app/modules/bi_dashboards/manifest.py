@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """BI Dashboards & Reporting module manifest.
 
 Read-only module that consumes data from every other module and produces:
@@ -25,7 +25,7 @@ manifest = ModuleManifest(
         "alerts, scheduled digests. Module 20 of the 18-module extension "
         "wave - pure consumer of cross-module data."
     ),
-    author="OpenConstructionERP",
+    author="PrimeCrest",
     category="extension",
     depends=["oe_projects", "oe_users"],
     auto_install=True,

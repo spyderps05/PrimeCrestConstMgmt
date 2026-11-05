@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """BIM Requirements Import/Export module manifest."""
 
@@ -12,7 +12,7 @@ manifest = ModuleManifest(
         "Universal import/export for BIM requirement formats: "
         "IDS XML, COBie, Excel/CSV, Revit Shared Parameters, BIMQ JSON"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

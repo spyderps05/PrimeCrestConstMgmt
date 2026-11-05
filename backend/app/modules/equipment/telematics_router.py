@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Equipment telematics routes​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ (mounted under /api/v1/equipment/telematics/).
 

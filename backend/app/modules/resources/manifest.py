@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Resources module manifest."""
 
@@ -12,7 +12,7 @@ manifest = ModuleManifest(
         "Resources (people/crews/equipment/subs) with skills, certifications, "
         "availability, assignments, conflict detection, skill-based matching"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

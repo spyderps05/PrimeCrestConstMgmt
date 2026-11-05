@@ -2,11 +2,11 @@
 
 Auch verfügbar auf [English](INSTALL_TROUBLESHOOTING.md) und [Русский](INSTALL_TROUBLESHOOTING.ru.md).
 
-Diese Seite hilft, wenn OpenConstructionERP bei der Installation oder beim Start eine Warnung oder einen Fehler zeigt. Suchen Sie die Meldung, die Sie sehen, lesen Sie, was sie bedeutet, und folgen Sie der dritten Zeile. Die meisten Fälle sind in einer Minute behoben, und keiner davon gefährdet Ihre Projekte.
+Diese Seite hilft, wenn PrimeCrest bei der Installation oder beim Start eine Warnung oder einen Fehler zeigt. Suchen Sie die Meldung, die Sie sehen, lesen Sie, was sie bedeutet, und folgen Sie der dritten Zeile. Die meisten Fälle sind in einer Minute behoben, und keiner davon gefährdet Ihre Projekte.
 
 Die Meldungen der App selbst erscheinen auf Englisch. Wir zitieren sie deshalb im Original. Meldungen von Windows und macOS erscheinen in der Sprache Ihres Systems.
 
-Für eine normale Installation ohne Probleme siehe [Install OpenConstructionERP](desktop/INSTALL.md).
+Für eine normale Installation ohne Probleme siehe [Install PrimeCrest](desktop/INSTALL.md).
 
 ## Zuerst: die Protokolldateien
 
@@ -17,7 +17,7 @@ Wenn etwas schiefgeht, schreibt die App auf, was passiert ist. Wenn Sie uns schr
 | `desktop-launcher.log` | Windows: `C:\Users\<Ihr Name>\.openestimate\`<br>macOS und Linux: `~/.openestimate/` | Alles, was die Desktop-App beim Start getan hat. Sie bleibt in Ihrem Benutzerordner, auch wenn `OE_DATA_DIR` die Daten verlegt |
 | `backend-crash.log` | im Ordner `logs` Ihres Datenordners, also im selben `.openestimate`, sofern Sie `OE_DATA_DIR` nicht gesetzt haben | Details zu einem unerwarteten Stopp. Sie zieht mit `OE_DATA_DIR` um |
 | Ordner `log` der Datenbank | `pgdata\log` in Ihrem Datenordner, standardmäßig also `.openestimate\pgdata\log`. Liegt in `.openestimate` eine Datei `pgdata.location`, der Ordner `log` in dem dort genannten Ordner | Warum die eingebaute Datenbank nicht gestartet ist |
-| `OpenConstructionERP-install-error.log` | Windows: `%TEMP%` (in die Adressleiste des Explorers eingeben) | Warum das Installationsprogramm abgebrochen hat |
+| `PrimeCrest-install-error.log` | Windows: `%TEMP%` (in die Adressleiste des Explorers eingeben) | Warum das Installationsprogramm abgebrochen hat |
 
 Auf macOS und Linux ist `.openestimate` ein versteckter Ordner. Im Finder blenden Sie versteckte Ordner mit Cmd+Umschalt+. ein.
 
@@ -27,7 +27,7 @@ Wenn Sie mit pip installiert haben, führen Sie im Terminal `openconstructionerp
 
 **Sie sehen:** ein blaues Fenster "Der Computer wurde durch Windows geschützt".
 **Das heißt:** Das Installationsprogramm ist noch nicht codesigniert, Windows kennt den Herausgeber also nicht. Das ist eine Warnung, kein Virenfund.
-**Was tun:** Klicken Sie auf **Weitere Informationen**, prüfen Sie, dass der Dateiname mit `OpenConstructionERP` beginnt, und klicken Sie auf **Trotzdem ausführen**. Details und eine Prüfung des Downloads stehen unter [Windows blockiert die App](desktop/WINDOWS_BLOCKED.de.md).
+**Was tun:** Klicken Sie auf **Weitere Informationen**, prüfen Sie, dass der Dateiname mit `PrimeCrest` beginnt, und klicken Sie auf **Trotzdem ausführen**. Details und eine Prüfung des Downloads stehen unter [Windows blockiert die App](desktop/WINDOWS_BLOCKED.de.md).
 
 **Sie sehen:** Die intelligente App-Steuerung (Smart App Control) meldet, dass sie die App blockiert hat, oder die App lief einmal und wird seitdem bei jedem Start blockiert.
 **Das heißt:** Die intelligente App-Steuerung von Windows 11 lehnt unsignierte Programme ab und bietet keine Schaltfläche zum Fortfahren.
@@ -35,7 +35,7 @@ Wenn Sie mit pip installiert haben, führen Sie im Terminal `openconstructionerp
 
 **Sie sehen:** "Please choose an installation folder whose path uses only Latin letters, digits and spaces. The built-in database cannot start from a folder with other characters in its path".
 **Das heißt:** Der gewählte Ordnerpfad enthält Zeichen wie Umlaute, kyrillische oder chinesische Buchstaben. Die eingebaute Datenbank kann aus einem solchen Ordner nicht starten.
-**Was tun:** Behalten Sie den vorgeschlagenen Ordner `C:\Program Files\OpenConstructionERP` oder wählen Sie einen wie `C:\OpenConstructionERP`. Bei einer stillen Installation (`/S`) zeigt das Programm dieselbe Meldung, endet mit Code 3 und schreibt den Grund nach `%TEMP%\OpenConstructionERP-install-error.log`.
+**Was tun:** Behalten Sie den vorgeschlagenen Ordner `C:\Program Files\PrimeCrest` oder wählen Sie einen wie `C:\PrimeCrest`. Bei einer stillen Installation (`/S`) zeigt das Programm dieselbe Meldung, endet mit Code 3 und schreibt den Grund nach `%TEMP%\PrimeCrest-install-error.log`.
 
 **Sie sehen:** Die Installation bricht mit einem Fehler zu WebView2 ab.
 **Das heißt:** Windows konnte Microsoft WebView2 nicht installieren, die Komponente, die das App-Fenster zeichnet. Das Installationsprogramm bringt sie mit, eine Internetverbindung ist also nicht nötig; der Fehler kommt von Windows selbst, etwa durch eine Richtlinie, ein ausstehendes Update oder ein beschädigtes früheres WebView2.
@@ -43,7 +43,7 @@ Wenn Sie mit pip installiert haben, führen Sie im Terminal `openconstructionerp
 
 **Sie sehen:** Ihr Virenschutz löscht eine Datei oder verschiebt sie während der Installation in die Quarantäne.
 **Das heißt:** Das Programm ist neu und unsigniert, manche Virenschutzprogramme behandeln es deshalb misstrauisch.
-**Was tun:** Prüfen Sie den Download wie unter [Windows blockiert die App](desktop/WINDOWS_BLOCKED.de.md) beschrieben. Ergibt die Prüfung `True`, stellen Sie die Datei aus der Quarantäne wieder her und erlauben Sie den Ordner `C:\Program Files\OpenConstructionERP`. Wenn Sie unsicher sind, schreiben Sie uns, bevor Sie etwas erlauben.
+**Was tun:** Prüfen Sie den Download wie unter [Windows blockiert die App](desktop/WINDOWS_BLOCKED.de.md) beschrieben. Ergibt die Prüfung `True`, stellen Sie die Datei aus der Quarantäne wieder her und erlauben Sie den Ordner `C:\Program Files\PrimeCrest`. Wenn Sie unsicher sind, schreiben Sie uns, bevor Sie etwas erlauben.
 
 ## Windows: Aktualisieren auf eine neue Version
 
@@ -51,7 +51,7 @@ Wenn Sie mit pip installiert haben, führen Sie im Terminal `openconstructionerp
 **Das heißt:** Dieser Satz stammt aus dem Baukasten des Installationsprogramms, wir können ihn nicht ändern.
 **Was tun:** Lassen Sie die bereits ausgewählte Option (überschreiben) stehen. Das Installationsprogramm schließt die laufende App selbst und behält alle Ihre Projekte. Der erste Start nach einem Update kann länger dauern, während sich die Datenbank aktualisiert.
 
-**Sie sehen:** Sie betreiben OpenConstructionERP auf demselben Rechner auch mit pip oder aus einem Terminal.
+**Sie sehen:** Sie betreiben PrimeCrest auf demselben Rechner auch mit pip oder aus einem Terminal.
 **Das heißt:** Beide nutzen denselben Ordner `.openestimate` und dieselbe Datenbank. Das Installationsprogramm hält diese Datenbank an, um die Programmdateien zu ersetzen, und damit fällt die Terminal-Version aus. Beim Update von 18.4.0 schließt das alte Deinstallationsprogramm außerdem jedes Programm namens `openconstructionerp.exe`, also auch eine mit pip gestartete Terminal-Version.
 **Was tun:** Beenden Sie die Terminal-Version (Strg+C in ihrem Fenster) vor der Installation und starten Sie sie danach wieder.
 
@@ -65,7 +65,7 @@ Wenn Sie mit pip installiert haben, führen Sie im Terminal `openconstructionerp
 **Das heißt:** Die App legt ihre lokale Datenbank an. Das dauert einmalig ein bis zwei Minuten, auf einer langsamen Festplatte länger.
 **Was tun:** Warten Sie und schließen Sie das Fenster nicht. Spätere Starts sind schnell.
 
-**Sie sehen:** ein Fenster "OpenConstructionERP failed to start", das eine Protokolldatei nennt.
+**Sie sehen:** ein Fenster "PrimeCrest failed to start", das eine Protokolldatei nennt.
 **Das heißt:** Die App konnte ihr Fenster gar nicht öffnen.
 **Was tun:** Starten Sie noch einmal. Kommt das Fenster wieder, senden Sie uns die genannte Protokolldatei.
 
@@ -87,10 +87,10 @@ Wenn Sie mit pip installiert haben, führen Sie im Terminal `openconstructionerp
 
 **Sie sehen:** eine Meldung, dass der Ordner der lokalen Datenbank "sits too deep in the filesystem", mit zwei Zeichenzahlen.
 **Das heißt:** Windows begrenzt die Länge eines vollständigen Dateipfads, und der Pfad Ihres Datenordners ist für die Datenbankdateien darin zu lang. Neu installieren hilft nicht, das Einschalten langer Pfade in Windows auch nicht.
-**Was tun:** Verwenden Sie einen kürzeren Datenordner. Setzen Sie die Benutzer-Umgebungsvariable `OE_DATA_DIR` auf einen kurzen Pfad wie `C:\OpenConstructionERP\data` (Start, "Umgebungsvariablen" eingeben, "Umgebungsvariablen für dieses Konto bearbeiten", Neu) und starten Sie die App erneut. Im Terminal: `openconstructionerp serve --data-dir C:\OpenConstructionERP\data`.
+**Was tun:** Verwenden Sie einen kürzeren Datenordner. Setzen Sie die Benutzer-Umgebungsvariable `OE_DATA_DIR` auf einen kurzen Pfad wie `C:\PrimeCrest\data` (Start, "Umgebungsvariablen" eingeben, "Umgebungsvariablen für dieses Konto bearbeiten", Neu) und starten Sie die App erneut. Im Terminal: `openconstructionerp serve --data-dir C:\PrimeCrest\data`.
 
 **Sie sehen:** Ihr Windows-Benutzername enthält nicht-lateinische Buchstaben (zum Beispiel kyrillische oder chinesische), und Sie suchen Ihre Datenbank.
-**Das heißt:** Aus einem solchen Pfad kann die Datenbank nicht arbeiten, deshalb liegt sie in `C:\ProgramData\OpenConstructionERP\clusters\<id>\pgdata`. Die Datei `pgdata.location` in Ihrem `.openestimate` nennt den genauen Ordner.
+**Das heißt:** Aus einem solchen Pfad kann die Datenbank nicht arbeiten, deshalb liegt sie in `C:\ProgramData\PrimeCrest\clusters\<id>\pgdata`. Die Datei `pgdata.location` in Ihrem `.openestimate` nennt den genauen Ordner.
 **Was tun:** Nichts zu reparieren. Für eine Sicherung kopieren Sie `.openestimate` und den in `pgdata.location` genannten Ordner.
 
 **Sie sehen:** "The application backend stopped, restarting", und das Fenster lädt neu.
@@ -115,12 +115,12 @@ Wenn Sie mit pip installiert haben, führen Sie im Terminal `openconstructionerp
 **Das heißt:** Die Mac-Version ist nur für Apple Silicon (M1 und neuer). Für Intel-Macs gibt es keine.
 **Was tun:** Auf einem Intel-Mac nutzen Sie pip oder Docker wie im README beschrieben.
 
-**Sie sehen:** "OpenConstructionERP ist beschädigt und kann nicht geöffnet werden" oder "kann nicht geöffnet werden, da der Entwickler nicht verifiziert werden kann".
+**Sie sehen:** "PrimeCrest ist beschädigt und kann nicht geöffnet werden" oder "kann nicht geöffnet werden, da der Entwickler nicht verifiziert werden kann".
 **Das heißt:** Die App ist von Apple noch nicht notarisiert, und macOS blockiert heruntergeladene Apps, die es nicht prüfen kann. Die App ist nicht beschädigt.
 **Was tun:** Öffnen Sie das Terminal und führen Sie einmal aus:
 
 ```
-xattr -dr com.apple.quarantine /Applications/OpenConstructionERP.app
+xattr -dr com.apple.quarantine /Applications/PrimeCrest.app
 ```
 
 Oder klicken Sie die App in "Programme" mit der rechten Maustaste an und wählen Sie **Öffnen**. Unter neuerem macOS gehen Sie zu **Systemeinstellungen**, **Datenschutz & Sicherheit**, scrollen nach unten und klicken auf **Dennoch öffnen**. Das ist nur einmal nötig.
@@ -129,15 +129,15 @@ Oder klicken Sie die App in "Programme" mit der rechten Maustaste an und wählen
 
 **Sie sehen:** Die `.deb` verlangt `libwebkit2gtk-4.1-0` oder lässt sich nicht installieren.
 **Das heißt:** Die App braucht die Bibliothek WebKitGTK 4.1, um ihr Fenster zu zeichnen.
-**Was tun:** Installieren Sie mit `sudo apt install ./OpenConstructionERP_*_amd64.deb`, das zieht die Bibliothek mit. Bietet Ihre Distribution kein `libwebkit2gtk-4.1-0` (Ubuntu älter als 22.04, Debian älter als 12), nutzen Sie pip.
+**Was tun:** Installieren Sie mit `sudo apt install ./PrimeCrest_*_amd64.deb`, das zieht die Bibliothek mit. Bietet Ihre Distribution kein `libwebkit2gtk-4.1-0` (Ubuntu älter als 22.04, Debian älter als 12), nutzen Sie pip.
 
 **Sie sehen:** Die `.rpm` lässt sich nicht installieren oder meldet fehlende Abhängigkeiten.
 **Das heißt:** `rpm -i` installiert die Bibliotheken nicht, die die App braucht.
-**Was tun:** Installieren Sie mit `sudo dnf install ./OpenConstructionERP-*.x86_64.rpm`, das zieht sie mit.
+**Was tun:** Installieren Sie mit `sudo dnf install ./PrimeCrest-*.x86_64.rpm`, das zieht sie mit.
 
 **Sie sehen:** Das AppImage tut beim Doppelklick nichts.
 **Das heißt:** Die Datei ist noch nicht als Programm markiert.
-**Was tun:** Führen Sie `chmod +x OpenConstructionERP*.AppImage` aus und starten Sie erneut.
+**Was tun:** Führen Sie `chmod +x PrimeCrest*.AppImage` aus und starten Sie erneut.
 
 **Sie sehen:** einen AppImage-Fehler, der FUSE oder `libfuse.so.2` erwähnt.
 **Das heißt:** Neuere Distributionen installieren die FUSE-2-Bibliothek, die AppImages nutzen, nicht mehr.
@@ -150,7 +150,7 @@ Oder klicken Sie die App in "Programme" mit der rechten Maustaste an und wählen
 ## pip (jedes System)
 
 **Sie sehen:** pip findet keine passende Version oder meldet, Python sei zu alt.
-**Das heißt:** OpenConstructionERP braucht Python 3.12 oder neuer.
+**Das heißt:** PrimeCrest braucht Python 3.12 oder neuer.
 **Was tun:** Installieren Sie Python 3.12 oder neuer und führen Sie `python3.12 -m pip install --upgrade openconstructionerp` aus (unter Windows `py -3.12 -m pip ...`).
 
 **Sie sehen:** `error: externally-managed-environment` (Ubuntu ab 23.04, Debian ab 12).
@@ -193,7 +193,7 @@ Die Deinstallation entfernt das Programm und behält Ihre Projekte. Sie liegen i
 
 ## Immer noch Probleme?
 
-Schreiben Sie an info@datadrivenconstruction.io oder eröffnen Sie ein Issue unter [github.com/datadrivenconstruction/OpenConstructionERP/issues](https://github.com/datadrivenconstruction/OpenConstructionERP/issues). Bitte nennen Sie:
+Schreiben Sie an info@datadrivenconstruction.io oder eröffnen Sie ein Issue unter [github.com/datadrivenconstruction/PrimeCrest/issues](https://github.com/datadrivenconstruction/PrimeCrest/issues). Bitte nennen Sie:
 
 - die installierte Version und den Weg (Windows-Installationsprogramm, `.dmg`, `.deb`, `.rpm`, AppImage, pip oder Docker),
 - Ihr System (Windows: Start, `winver` eingeben; macOS: Apple-Menü, Über diesen Mac),

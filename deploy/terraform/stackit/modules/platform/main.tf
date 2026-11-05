@@ -1,4 +1,4 @@
-# OpenConstructionERP - STACKIT platform layer (shared by all companies)
+# PrimeCrest - STACKIT platform layer (shared by all companies)
 #
 # Creates:
 #   - 1x SKE cluster (managed Kubernetes, ACL on the API, maintenance window)

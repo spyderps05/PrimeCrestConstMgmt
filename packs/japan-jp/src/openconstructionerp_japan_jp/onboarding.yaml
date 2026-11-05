@@ -7,8 +7,8 @@ version: 1
 pack: japan-jp
 locale: ja
 estimated_minutes: 5
-title: "Welcome to OpenConstructionERP - Japan Edition"
-title_ja: "OpenConstructionERP\u3078\u3088\u3046\u3053\u305d - \u65e5\u672c\u7248"
+title: "Welcome to PrimeCrest - Japan Edition"
+title_ja: "PrimeCrest\u3078\u3088\u3046\u3053\u305d - \u65e5\u672c\u7248"
 subtitle: "Three steps to align your workspace with Japanese construction practice (Sekisan Kijun, JASS, Building Standards Act)."
 
 steps:

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Pure aggregation of an estimate's resource demand into a procurement statement.
 
 Every priced position stores a resource split under

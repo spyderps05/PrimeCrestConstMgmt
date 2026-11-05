@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Experimental login page — v3.
@@ -182,8 +182,8 @@ export function LoginPageNext() {
   // random one per install, so any literal printed here would be wrong on every
   // install. The tiles sign in through /auth/demo-login/ instead.
   const demoAccounts = [
-    { email: 'demo@openconstructionerp.com', name: 'Admin', role: t('auth.demo_role_admin', 'Administrator'), color: 'bg-blue-500', letter: 'A' },
-    { email: 'manager@openconstructionerp.com', name: 'Michael Carter', role: t('auth.demo_role_manager', 'Manager'), color: 'bg-amber-500', letter: 'M' },
+    { email: 'demo@openconstructionerp.com', name: 'Imran Shah', role: t('auth.demo_role_admin', 'Administrator'), color: 'bg-blue-500', letter: 'I', portrait: '/assets/demo-people/imran-shah.jpg' },
+    { email: 'manager@openconstructionerp.com', name: 'Hassan Raza', role: t('auth.demo_role_manager', 'Manager'), color: 'bg-amber-500', letter: 'H', portrait: '/assets/demo-people/hassan-raza.jpg' },
   ];
 
   const handleDemoLogin = async (demoEmail: string) => {
@@ -578,7 +578,7 @@ export function LoginPageNext() {
             >
               Artem Boiko
             </a>{' '}
-            · OpenConstructionERP
+            · PrimeCrest
             · <a href="mailto:info@datadrivenconstruction.io" className="hover:text-content-secondary transition-colors">info@datadrivenconstruction.io</a>
           </div>
         </div>
@@ -632,7 +632,7 @@ export function LoginPageNext() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@company.com"
+                  placeholder="you@company.pk"
                   autoComplete="email"
                   required aria-required="true"
                   autoFocus
@@ -736,14 +736,14 @@ export function LoginPageNext() {
                         disabled={demoLoading !== null}
                         className="oe-glass-lite group flex w-full items-center gap-3 rounded-xl px-3.5 py-2.5 text-left transition-all hover:translate-y-[-1px] hover:border-oe-blue/30 disabled:opacity-50"
                       >
-                        <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${acct.color} text-white text-sm font-bold shadow-sm`}>
+                        <div className={`relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full ${acct.color} text-white text-sm font-bold shadow-sm`}>
                           {demoLoading === acct.email ? (
                             <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
                               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                             </svg>
                           ) : (
-                            acct.letter
+                            <img src={acct.portrait} alt="" className="h-full w-full object-cover" />
                           )}
                         </div>
                         <div className="flex-1 min-w-0">

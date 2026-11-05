@@ -8,7 +8,7 @@ MANIFEST = PartnerPackManifest(
     slug="pakistan-pk",
     partner_name="Pakistan Construction Pack",
     partner_url=None,
-    pack_version="0.1.0",
+    pack_version="0.2.0",
     pack_type="country",
     description=(
         "Pre-configured for contractors working in Pakistan, private and public: the bill with the sales tax "
@@ -30,9 +30,35 @@ MANIFEST = PartnerPackManifest(
         "pec_ppra",
     ],
     validation_rule_sets=["pakistan", "masterformat"],
-    default_modules=[],
+    default_modules=[
+        "oe_projects",
+        "oe_boq",
+        "oe_costs",
+        "oe_assemblies",
+        "oe_takeoff",
+        "oe_tendering",
+        "oe_contracts",
+        "oe_measurement_book",
+        "oe_variations",
+        "oe_tax_withholding",
+        "oe_preliminaries",
+        "oe_schedule",
+        "oe_daily_diary",
+        "oe_subcontractors",
+        "oe_procurement",
+        "oe_rfq_bidding",
+        "oe_punchlist",
+        "oe_qms",
+        "oe_safety",
+        "oe_cvr",
+        "oe_project_controls",
+        "oe_reporting",
+        "oe_documents",
+        "oe_contacts",
+        "oe_users",
+    ],
     hidden_modules=[],
-    demo_template_ids=["bhu-punjab", "school-karachi"],
+    demo_template_ids=["bhu-punjab", "lahore-house", "faisalabad-road", "school-karachi"],
     branding=PartnerBranding(
         primary_color="#01411C",  # Pakistan green (flag)
         accent_color="#FFFFFF",
@@ -60,6 +86,9 @@ MANIFEST = PartnerPackManifest(
             "flagged unconfirmed or provisional in the data tables. Pending review by a Pakistani quantity "
             "surveyor and a Pakistani tax adviser: do not rely on it for a tender or a tax filing before that review."
         ),
-        "support_email": "info@datadrivenconstruction.io",
+        "support_email": "info@spydersolutions.local",
+        "support_name": "Spyder Solutions",
+        "code_library_path": "codes.json",
+        "rate_book_path": "rates.json",
     },
 )

@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "यह नाम नए कैटलॉग के लिए उपयोग नहीं किया जा सकता। कोई दूसरा नाम चुनें।",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "ओपन-सोर्स निर्माण लागत अनुमान"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "अपडेट करें"
   },
   "dashboard": {
-    "welcome": "OpenConstructionERP में आपका स्वागत है",
+    "welcome": "PrimeCrest में आपका स्वागत है",
     "subtitle": "आपका निर्माण अनुमान कार्यक्षेत्र",
     "recent_projects": "हाल की परियोजनाएं",
     "system_status": "सिस्टम स्थिति",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "कोई डेटा उपलब्ध नहीं",
         "no_data_body": "यह रिपोर्ट खाली डेटा स्नैपशॉट से बनाई गई थी। जाँच करें कि चयनित परियोजना के लिए स्रोत मॉड्यूल (वित्त, अनुसूची, सुरक्षा आदि) ने डेटा लौटाया है।",
         "no_data_body_short": "यह रिपोर्ट खाली डेटा स्नैपशॉट से बनाई गई थी। जाँच करें कि चयनित परियोजना के लिए स्रोत मॉड्यूल ने डेटा लौटाया है।",
-        "footer_generated_by": "OpenConstructionERP द्वारा {timestamp} पर निर्मित।",
+        "footer_generated_by": "PrimeCrest द्वारा {timestamp} पर निर्मित।",
         "worksheet_name": "रिपोर्ट",
         "pdf_subject": "परियोजना रिपोर्ट",
         "overall_progress": "समग्र प्रगति",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "नमस्कार {name},",
       "greeting_generic": "नमस्कार,",
-      "cta": "OpenConstructionERP में खोलें",
+      "cta": "PrimeCrest में खोलें",
       "footer": "आपको यह ईमेल आपकी अधिसूचना सेटिंग के कारण मिला है। आप इन्हें अपनी प्रोफ़ाइल में बदल सकते हैं।",
-      "digest_subject": "OpenConstructionERP: अधिसूचना सारांश ({count})",
+      "digest_subject": "PrimeCrest: अधिसूचना सारांश ({count})",
       "digest_heading": "हाल की अधिसूचनाएँ:"
     },
     "tender_xlsx": {

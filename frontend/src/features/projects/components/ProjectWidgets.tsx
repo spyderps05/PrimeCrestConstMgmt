@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * ProjectWidgets — the new wave-1 widgets for /projects/:id.
@@ -347,7 +347,7 @@ interface ChangeOrderSummary {
   currency?: string;
 }
 
-function fmtMoney(value: number | string | null | undefined, currency = 'EUR'): string {
+function fmtMoney(value: number | string | null | undefined, currency = 'PKR'): string {
   if (value == null) return `${currency} 0`;
   const n = typeof value === 'string' ? Number(value) : value;
   if (!Number.isFinite(n)) return `${currency} 0`;

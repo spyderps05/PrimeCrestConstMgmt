@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Leasing module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "rent schedule raised as finance invoices, rent roll, arrears read from finance payments, "
         "renewals, notices and terminations with an event trail, export with pluggable profiles"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     depends=["oe_projects", "oe_contacts", "oe_finance"],
     optional_depends=["oe_legal_entities", "oe_property_dev", "oe_assets", "oe_documents"],

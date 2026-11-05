@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Domain model for post-calculation (Nachkalkulation) productivity analysis.
 
 Post-calculation closes the loop of an estimate. The estimate side says how many

@@ -1,6 +1,6 @@
-# OpenConstructionERP Canada Regional Pack
+# PrimeCrest Canada Regional Pack
 
-Regional pack pre-configuring [OpenConstructionERP](https://github.com/DataDrivenConstruction/openconstructionerp)
+Regional pack pre-configuring [PrimeCrest](https://github.com/DataDrivenConstruction/openconstructionerp)
 for Canadian construction companies.
 
 > **Pré-configuré pour les entreprises canadiennes de construction —

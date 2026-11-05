@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Geo Hub API routes.
 
 Mounted by the module loader at ``/api/v1/geo-hub/``. All routes are
@@ -158,7 +158,7 @@ _MAX_SOURCE_ZOOM = 14
 _NATURAL_EARTH_MAX_ZOOM = 6
 
 _TILE_HEADERS = {
-    "User-Agent": "OpenConstructionERP/1.0 (+https://openconstructionerp.com)",
+    "User-Agent": "PrimeCrest/1.0 (+https://openconstructionerp.com)",
     "Accept": "*/*",
 }
 

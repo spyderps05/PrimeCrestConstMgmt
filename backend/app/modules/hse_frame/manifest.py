@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """HSE frame module manifest."""
 
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
         "the health and safety plan and the security concept. National duties are catalogue data; "
         "incidents, permits to work, audits and inspections stay in their own modules and are linked."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     # Records stay in their owning modules (permits, safety, hse_advanced, construction_control) and
     # are only linked and read when those modules are installed; none of them is required.

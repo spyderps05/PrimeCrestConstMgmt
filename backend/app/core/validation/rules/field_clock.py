@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Time clock validation rules (part of the ``field_time`` rule set)​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠.
 
 They read the ``clock_events`` block that the field time service puts on a

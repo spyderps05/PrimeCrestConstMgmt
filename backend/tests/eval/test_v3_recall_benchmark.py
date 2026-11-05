@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠v3-P11 recall benchmark — measure recall@1 vs the LanceDB baseline.
 
 The original v3 plan called for a recall@1 lift of ≥+5 points after

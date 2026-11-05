@@ -26,8 +26,8 @@ import zipfile
 from pathlib import Path
 
 # Relative to the onedir folder. The CI source prefix
-# (D:\a\OpenConstructionERP\OpenConstructionERP\desktop\src-tauri\binaries\server\)
-# is about 80 characters and "C:\Program Files\OpenConstructionERP\server\"
+# (D:\a\PrimeCrest\PrimeCrest\desktop\src-tauri\binaries\server\)
+# is about 80 characters and "C:\Program Files\PrimeCrest\server\"
 # about 45, so 170 leaves both under 260 with room for a longer install folder.
 MAX_RELATIVE = 170
 

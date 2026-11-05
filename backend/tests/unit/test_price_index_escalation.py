@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Service tests for the price-index "escalate stored rates" preview.
 
 These stand up a real (throwaway PostgreSQL) session, seed one cost-index

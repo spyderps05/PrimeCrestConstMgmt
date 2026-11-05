@@ -1,0 +1,132 @@
+{
+  "title": "Pakistan code library",
+  "review": "This list is not legal advice. Confirm every instrument with a Pakistani quantity surveyor and a Pakistani tax adviser before a live tender or a tax filing.",
+  "instruments": [
+    {
+      "id": "bcp-2021",
+      "title": "Building Code of Pakistan 2021",
+      "publisher": "Pakistan Engineering Council",
+      "note": "Revises the 2007 seismic provisions.",
+      "source_url": "https://www.pec.org.pk/wp-content/uploads/2025/01/BCP-2021.pdf"
+    },
+    {
+      "id": "bcp-seismic-2007",
+      "title": "Building Code of Pakistan, Seismic Provisions 2007",
+      "publisher": "Pakistan Engineering Council",
+      "note": "The seismic provisions that BCP-2021 revised. Kept so an older drawing set can still be named.",
+      "source_url": "https://www.pec.org.pk/"
+    },
+    {
+      "id": "fire-2016",
+      "title": "Fire Safety Provisions 2016",
+      "publisher": "Pakistan Engineering Council",
+      "note": "Listed with the building code on the PEC publications. Read the PDF the Council hosts before relying on a clause.",
+      "source_url": "https://www.pec.org.pk/"
+    },
+    {
+      "id": "energy",
+      "title": "Energy Provisions",
+      "publisher": "Pakistan Engineering Council",
+      "note": "The energy provisions issued with the building code.",
+      "source_url": "https://www.pec.org.pk/"
+    },
+    {
+      "id": "green-2023",
+      "title": "Green Building Code 2023",
+      "publisher": "Pakistan Engineering Council",
+      "source_url": "https://www.pec.org.pk/"
+    },
+    {
+      "id": "rainwater-2023",
+      "title": "Rainwater Harvesting 2023",
+      "publisher": "Pakistan Engineering Council",
+      "source_url": "https://www.pec.org.pk/"
+    },
+    {
+      "id": "low-cost-2021",
+      "title": "Low-cost housing standard 2021",
+      "publisher": "Pakistan Engineering Council",
+      "source_url": "https://www.pec.org.pk/"
+    },
+    {
+      "id": "osh-2025",
+      "title": "Occupational Safety and Health Code of Practice for Construction 2025",
+      "publisher": "Pakistan Engineering Council",
+      "source_url": "https://www.pec.org.pk/"
+    },
+    {
+      "id": "punjab-ppra-2014",
+      "title": "Punjab Procurement Rules 2014",
+      "publisher": "Punjab Procurement Regulatory Authority",
+      "note": "The rule book for Punjab public works, as amended. A federal agency stays on the Public Procurement Rules 2004.",
+      "source_url": "https://ppra.punjab.gov.pk/downloads"
+    },
+    {
+      "id": "ppra-2004",
+      "title": "Public Procurement Rules 2004",
+      "publisher": "Public Procurement Regulatory Authority",
+      "note": "Federal works.",
+      "source_url": "https://www.ppra.org.pk/"
+    },
+    {
+      "id": "pec-civil-works",
+      "title": "PEC standard form of bidding documents for civil works",
+      "publisher": "Pakistan Engineering Council",
+      "note": "Older civil-works form. Ten percent of each interim certificate, capped at five percent of the contract price, 28 days to pay. Performance security is commonly 10 percent. Liquidated damages are capped at 10 percent. This form stays for the smaller C&W jobs.",
+      "source_url": "https://www.pec.org.pk/wp-content/uploads/2022/04/1-Std-Form-of-Bidding-Docs-Civil-Work.pdf"
+    },
+    {
+      "id": "pec-sbd-2023-12",
+      "title": "Pakistan Standard Bidding Documents, December 2023",
+      "publisher": "Pakistan Engineering Council",
+      "note": "Works estimated above Rs 100 million, built on the FIDIC 2017 Red Book. Performance security is 10 percent of the accepted contract amount. The retention-money limit is 5 percent of the contract price. This is not a replacement for the 10 percent certificate deduction of the older form.",
+      "source_url": "https://www.pec.org.pk/wp-content/uploads/2024/03/Pakistan-Standard-Bidding-Documents-Construction-Works-for-Building-and-Engineering-Works-Designed-by-the-Employer-December-20231.pdf"
+    },
+    {
+      "id": "pec-clause-70",
+      "title": "PEC Clause 70 price adjustment",
+      "publisher": "Pakistan Engineering Council",
+      "note": "The pack describes the clause. It does not ship an index series. Do not invent index values.",
+      "source_url": "https://www.pec.org.pk/wp-content/uploads/2022/04/1-Std-Form-of-Bidding-Docs-Civil-Work.pdf"
+    },
+    {
+      "id": "lda-2019",
+      "title": "LDA Building and Zoning Regulations 2019",
+      "publisher": "Lahore Development Authority",
+      "note": "A kanal is 20 marlas. Setbacks depend on plot size. The pack stores the plot size and the marla factor. It does not copy a coverage percentage or invent a setback distance.",
+      "source_url": "https://lda.gop.pk/downloads/file/09-02-2026-amended-building-regulations-2019-with-amendment.pdf"
+    },
+    {
+      "id": "pra-2012",
+      "title": "Punjab Sales Tax on Services Act 2012",
+      "publisher": "Punjab Revenue Authority",
+      "note": "A 2026-27 guide states 16 percent on construction services (PCT 9814.2000 and 9824.0000), a reduced option for government civil works, and a fixed builder rate of Rs 50 per square foot of building and Rs 100 per square yard of land development. The pack records the standard rate and that the government-works option exists. It does not invent a third rate. Federal GST at 18 percent is the goods line, not this services tax.",
+      "rates": {
+        "construction_services_percent": 16,
+        "pct": ["9814.2000", "9824.0000"],
+        "government_civil_works": "reduced option recorded, rate not stored",
+        "builder_building_pkr_per_sqft": 50,
+        "builder_land_development_pkr_per_sq_yard": 100,
+        "federal_gst_on_goods_percent": 18
+      },
+      "source_url": "https://pra.punjab.gov.pk/"
+    },
+    {
+      "id": "fbr-153-2026-06-30",
+      "title": "FBR withholding rate card, updated to 30 June 2026",
+      "publisher": "Federal Board of Revenue",
+      "note": "Section 153(1)(c) contracts, Finance Act 2026, tax year 2027: a company pays 7.5 percent if it is on the Active Taxpayer List and 15 percent if it is not; any other person pays 8 percent and 16 percent. Goods under section 153(1)(a) and services under section 153(1)(b) are separate rows on the same card. They are not blended into the works-contract rate. The Income Tax Ordinance wins if the card and the statute differ. Status is checked on the Active Taxpayer List by NTN or CNIC.",
+      "rates": {
+        "section_153_1_c_company_atl_percent": 7.5,
+        "section_153_1_c_company_non_atl_percent": 15,
+        "section_153_1_c_other_atl_percent": 8,
+        "section_153_1_c_other_non_atl_percent": 16,
+        "section_153_1_a": "goods, separate row, rate read from the card",
+        "section_153_1_b": "services, separate row, rate read from the card"
+      },
+      "source_url": "https://fbr.gov.pk/withholding-taxes-rate-card/174298/174301",
+      "card_pdf": "https://download1.fbr.gov.pk/Docs/202681113864992WithholdingTaxRatesCard2027.pdf",
+      "atl_url": "https://e.fbr.gov.pk/atl/"
+    }
+  ]
+}

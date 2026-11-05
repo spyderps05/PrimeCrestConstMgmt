@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * The "new converters, tell us if something looks wrong" notice.
@@ -9,7 +9,7 @@
 /** Last moment the notice is shown, in local time (31 Oct 2026, 23:59:59). */
 export const CONVERTER_NOTICE_UNTIL = new Date(2026, 9, 31, 23, 59, 59);
 
-export const CONVERTER_ISSUES_URL = 'https://github.com/datadrivenconstruction/OpenConstructionERP/issues/new';
+export const CONVERTER_ISSUES_URL = 'https://github.com/datadrivenconstruction/PrimeCrest/issues/new';
 export const CONVERTER_CONTACT_EMAIL = 'info@datadrivenconstruction.io';
 
 export function isConverterNoticeActive(now: Date = new Date()): boolean {

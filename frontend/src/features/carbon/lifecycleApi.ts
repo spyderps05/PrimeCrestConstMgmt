@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
  * API helpers for life-cycle carbon (A4, A5, hotspots, budget, checks) and

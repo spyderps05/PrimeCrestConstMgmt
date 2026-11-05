@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Economics module manifest."""
 
@@ -14,7 +14,7 @@ manifest = ModuleManifest(
         "project's own standard compared with the estimate and the commitments, and a financing plan with "
         "sources, tranches and a coverage check, approved together at the governance gate"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     # oe_project_governance owns the gate that approves the plan and the frame document that carries it;
     # oe_boq and oe_costmodel are where the estimate and the commitments are read from; oe_funding holds the

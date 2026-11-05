@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """The cash-flow forecast reads the project's own records and finds the funding peak.
 

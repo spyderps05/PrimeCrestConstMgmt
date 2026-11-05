@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Point Cloud / Reality Capture module.
 
 Ingest laser-scan, photogrammetry and LiDAR exports (E57/LAS/LAZ/COPC/PLY/PCD/

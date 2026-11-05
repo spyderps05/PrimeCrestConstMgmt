@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Award letter and rejection notice PDF generation for tendering.
 
@@ -272,11 +272,11 @@ def _document(buffer: io.BytesIO, title: str, *, letterhead_on_first_page: bool 
     if meta["author"] == DEFAULT_BRAND:
         # An unbranded workspace keeps the properties these letters always had.
         meta = {
-            "author": "OpenConstructionERP",
+            "author": "PrimeCrest",
             "subject": "Tender decision · DDC-CWICR-OE",
-            "creator": "OpenConstructionERP · DataDrivenConstruction",
-            "producer": "OpenConstructionERP / reportlab · datadrivenconstruction.io",
-            "keywords": "DDC-CWICR-OE-2026,OpenConstructionERP,Tendering,DataDrivenConstruction",
+            "creator": "PrimeCrest · DataDrivenConstruction",
+            "producer": "PrimeCrest / reportlab · datadrivenconstruction.io",
+            "keywords": "DDC-CWICR-OE-2026,PrimeCrest,Tendering,DataDrivenConstruction",
         }
     doc = BaseDocTemplate(
         buffer,

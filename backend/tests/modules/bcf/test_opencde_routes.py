@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Integration tests for the OpenCDE BCF-API 3.0 surface.
 
 Covers the 14 endpoints of the minimum compliance profile mounted at

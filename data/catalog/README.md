@@ -66,10 +66,10 @@ Extracted from the CWICR Construction Cost Database (55,719 work items, 900K+ re
 | Testing Equipment | 27 |
 | Compressors | 23 |
 
-## Import into OpenConstructionERP
+## Import into PrimeCrest
 
 ```bash
-# From the OpenConstructionERP backend directory:
+# From the PrimeCrest backend directory:
 python -m app.scripts.seed_catalog
 ```
 
@@ -133,7 +133,7 @@ project or its use of the material.
 ### Licence of these files
 
 The extraction and transformation code, the canonical schema and the
-compilation as published here are AGPL-3.0, the same as OpenConstructionERP.
+compilation as published here are AGPL-3.0, the same as PrimeCrest.
 That covers this project's own contribution only. It does not override the
 terms of the source publications listed above, and it does not apply to any
 base whose basis is still marked pending.

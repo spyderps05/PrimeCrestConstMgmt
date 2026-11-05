@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Backup export/restore service.
 
@@ -533,7 +533,7 @@ async def build_backup(
                 "app": APP_ID,
                 "app_version": get_settings().app_version,
                 "format_version": BACKUP_FORMAT_VERSION,
-                "provenance": ("OpenConstructionERP · DataDrivenConstruction · " + _bk_xtok),
+                "provenance": ("PrimeCrest · DataDrivenConstruction · " + _bk_xtok),
                 "created_at": now.isoformat(),
                 "created_by": str(user_id),
                 "modules": sorted(record_counts.keys()),

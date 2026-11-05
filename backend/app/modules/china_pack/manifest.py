@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Module manifest for oe_china_pack."""
 
@@ -18,7 +18,7 @@ manifest = ModuleManifest(
         "the GB 50854-50862 measurement family, national and provincial quotas, "
         "VAT (13/9/6/3%), CNY, and Chinese model contract forms."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="regional",
     depends=[],
     auto_install=False,

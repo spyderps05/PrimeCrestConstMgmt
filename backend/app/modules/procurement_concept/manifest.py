@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Procurement concept module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "threshold check per package, prequalification to a short list, market sounding, "
         "award schedule from need dates and lead times, framework agreements with call-offs"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     # oe_project_governance owns the catalogue store, the frame document and
     # gate readiness; bid_management and rfq_bidding are the execution vehicles

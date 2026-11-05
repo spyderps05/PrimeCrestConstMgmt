@@ -1,4 +1,4 @@
-# OpenConstructionERP - one isolated company on STACKIT
+# PrimeCrest - one isolated company on STACKIT
 #
 # Creates, per company:
 #   - 1x PostgreSQL Flex instance with its own user and database

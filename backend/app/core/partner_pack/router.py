@@ -1,9 +1,10 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠HTTP surface for the active partner pack."""
 
 from __future__ import annotations
 
+import json
 import logging
 from collections.abc import AsyncIterator
 from importlib import resources
@@ -433,6 +434,44 @@ def partner_locale(code: str) -> Response:
     if data is None:
         raise HTTPException(status_code=404, detail="Locale file missing in pack")
     return Response(content=data, media_type="application/json")
+
+
+@router.get(
+    "/pakistan/library",
+    summary="Pakistan code library and Punjab rate book",
+    dependencies=[Depends(get_current_user_payload)],
+)
+def pakistan_library() -> dict[str, Any]:
+    """The instruments and the rate-book shape shipped with the Pakistan pack.
+
+    Available whether or not another pack is selected, because the files live
+    in the installed pakistan-pk package. Item rates are not in the file: the
+    government PDFs stay on the Finance Department site.
+    """
+    pack = get_pack_by_slug("pakistan-pk")
+    if pack is None:
+        raise HTTPException(status_code=404, detail="Pakistan pack is not installed")
+    meta = pack.metadata or {}
+    codes_path = str(meta.get("code_library_path") or "codes.json")
+    rates_path = str(meta.get("rate_book_path") or "rates.json")
+    codes_raw = read_pack_file(pack.slug, codes_path)
+    rates_raw = read_pack_file(pack.slug, rates_path)
+    if codes_raw is None or rates_raw is None:
+        raise HTTPException(status_code=404, detail="Pakistan library files are missing")
+    return {
+        "codes": json.loads(codes_raw),
+        "rates": json.loads(rates_raw),
+        "contract_forms": _pakistan_contract_forms(),
+    }
+
+
+def _pakistan_contract_forms() -> dict[str, Any]:
+    from app.modules.contracts.country_defaults import PAKISTAN_CONTRACT_FORMS, PAKISTAN_LARGE_WORKS_THRESHOLD_PKR
+
+    return {
+        "threshold_pkr": PAKISTAN_LARGE_WORKS_THRESHOLD_PKR,
+        "forms": PAKISTAN_CONTRACT_FORMS,
+    }
 
 
 @router.get("/by-slug/{slug}", summary="Inspect a non-active pack (admin / pre-install preview)")

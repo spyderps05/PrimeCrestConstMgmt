@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Module manifest for oe_mexico_pack."""
 
@@ -21,7 +21,7 @@ manifest = ModuleManifest(
         "invoicing fields, social-housing bodies (INFONAVIT, FOVISSSTE, CONAVI), "
         "IMSS and NOM-031-STPS site safety, 32 states and MXN."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="regional",
     depends=[],
     auto_install=False,

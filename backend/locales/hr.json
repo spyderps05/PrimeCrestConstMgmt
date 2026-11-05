@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Ovaj naziv ne može se koristiti za novi katalog. Odaberite drugi naziv.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Open-source procjena građevinskih troškova"
   },
   "assemblies": {
@@ -296,7 +296,7 @@
     "system_status": "Status sustava",
     "total_value": "Ukupna vrijednost",
     "validation_rules": "Pravila provjere",
-    "welcome": "Dobrodošli u OpenConstructionERP"
+    "welcome": "Dobrodošli u PrimeCrest"
   },
   "finance": {
     "actual": "Stvarno",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Nema dostupnih podataka",
         "no_data_body": "Ovo izvješće generirano je s praznim skupom podataka. Provjerite jesu li izvorni moduli (financije, raspored, sigurnost itd.) vratili podatke za odabrani projekt.",
         "no_data_body_short": "Ovo izvješće generirano je s praznim skupom podataka. Provjerite jesu li izvorni moduli vratili podatke za odabrani projekt.",
-        "footer_generated_by": "Generirao OpenConstructionERP, {timestamp}.",
+        "footer_generated_by": "Generirao PrimeCrest, {timestamp}.",
         "worksheet_name": "Izvješće",
         "pdf_subject": "Izvješće o projektu",
         "overall_progress": "Ukupni napredak",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Poštovani, {name},",
       "greeting_generic": "Poštovani,",
-      "cta": "Otvori u OpenConstructionERP",
+      "cta": "Otvori u PrimeCrest",
       "footer": "Ovu poruku primate zbog svojih postavki obavijesti. Možete ih promijeniti u svom profilu.",
-      "digest_subject": "OpenConstructionERP: Sažetak obavijesti ({count})",
+      "digest_subject": "PrimeCrest: Sažetak obavijesti ({count})",
       "digest_heading": "Nedavne obavijesti:"
     },
     "tender_xlsx": {

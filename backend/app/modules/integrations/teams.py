@@ -1,9 +1,9 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Microsoft Teams incoming webhook connector.
 
 Setup: User creates an Incoming Webhook in their Teams channel,
-copies the webhook URL, pastes it in OpenConstructionERP settings.
+copies the webhook URL, pastes it in PrimeCrest settings.
 Legal: Uses official MS Teams webhook API. No OAuth, no app review.
 """
 

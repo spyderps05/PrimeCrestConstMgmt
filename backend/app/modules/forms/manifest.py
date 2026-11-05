@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Forms & Checklists module manifest."""
 
@@ -16,7 +16,7 @@ manifest = ModuleManifest(
         "complete it, and export the result to PDF. Templates are versioned by "
         "snapshot so editing one never corrupts the forms already submitted against it."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     # Submissions hang off a project (oe_projects); attribution + permissions
     # come from the users module. Both are hard dependencies so the load order

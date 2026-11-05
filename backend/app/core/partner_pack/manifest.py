@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠PartnerPackManifest - the Pydantic schema each partner pack exports."""
 
@@ -60,7 +60,7 @@ class PartnerBranding(BaseModel):
         default=None,
         description=(
             "Co-branding line shown next to the partner logo. "
-            "Defaults to 'Powered by OpenConstructionERP · In partnership with {partner_name}'."
+            "Defaults to 'Powered by PrimeCrest · In partnership with {partner_name}'."
         ),
     )
 
@@ -480,8 +480,8 @@ class PartnerPackManifest(BaseModel):
         if self.branding.powered_by_text:
             return self.branding.powered_by_text
         if self.type == "partner":
-            return f"Powered by OpenConstructionERP · In partnership with {self.partner_name}"
-        return "Powered by OpenConstructionERP"
+            return f"Powered by PrimeCrest · In partnership with {self.partner_name}"
+        return "Powered by PrimeCrest"
 
     def _carries(self, relpath: str | None) -> bool:
         """Whether the pack actually ships the file it names at ``relpath``.

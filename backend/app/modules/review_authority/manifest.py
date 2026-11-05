@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """External-review-authority (expertise cycle) module manifest."""
 
@@ -19,7 +19,7 @@ manifest = ModuleManifest(
         "Jurisdiction-neutral: it models the cycle and its evidence, never a "
         "country's rulebook; regional packs supply the authority vocabularies."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 //
 // <CostBenchmarksPage />​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠: renders a compare result, highlights the outlier
 // rows (below / above the band) and shows the low-confidence badge.

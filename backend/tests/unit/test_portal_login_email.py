@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The portal emails its own invitations and sign-in links.
 
@@ -209,5 +209,5 @@ def test_other_mail_keeps_its_footer():
     # Only mail someone subscribed to says so; every mail closes with the brand.
     assert "notification preferences" in template_task_assigned("T", "Ann", "P")[1]
     assert "notification preferences" not in wrap("Hi", "<p>x</p>")
-    assert "OpenConstructionERP</p></body>" in wrap("Hi", "<p>x</p>", footer="")
+    assert "PrimeCrest</p></body>" in wrap("Hi", "<p>x</p>", footer="")
     assert "Sent on behalf of A &amp; B" in wrap("Hi", "<p>x</p>", footer="Sent on behalf of A &amp; B")

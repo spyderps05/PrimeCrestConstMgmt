@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠BCF business logic.
 
@@ -700,7 +700,7 @@ class BCFExportService:
         project_id: uuid.UUID,
         filter_dict: dict | None = None,
         *,
-        author: str = "OpenConstructionERP",
+        author: str = "PrimeCrest",
         project_name: str | None = None,
     ) -> bytes:
         """Export clashes for ``project_id`` as a BCF 3.0 ``.bcfzip``.

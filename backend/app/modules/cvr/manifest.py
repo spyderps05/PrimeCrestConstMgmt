@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """CVR (Cost-Value Reconciliation) & Cashflow module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "cost head, forecast final cost, value and margin, and forecast project "
         "cashflow as a cumulative S-curve, with interim payment applications."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

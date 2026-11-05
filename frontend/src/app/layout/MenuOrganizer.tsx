@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /** "Arrange menu" dialog: order, own groups, work modes and the collapsed sidebar style. */
 import { useEffect, useMemo, useState } from 'react';

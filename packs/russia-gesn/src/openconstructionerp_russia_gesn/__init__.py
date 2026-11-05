@@ -1,4 +1,4 @@
-"""OpenConstructionERP - Russia country pack (GESN/FER norm base, resource-index method).
+"""PrimeCrest - Russia country pack (GESN/FER norm base, resource-index method).
 
 This package exports a module-level ``MANIFEST`` instance of
 :class:`PartnerPackManifest` referenced from ``pyproject.toml``::

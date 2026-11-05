@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """WIP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ report API schemas. Money and percentages travel as decimal strings, never floats."""
 

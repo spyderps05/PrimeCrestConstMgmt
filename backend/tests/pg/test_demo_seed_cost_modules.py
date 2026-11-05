@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The cost-side demo seeds must fill their screens, and fill them only once.
 
 Allowances, the basis of estimate and the value dashboard all shipped with no

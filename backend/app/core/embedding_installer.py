@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Encoder-weight installer - a non-critical background download.
 
@@ -398,7 +398,7 @@ def _resolve_file_list(repo_id: str) -> list[str]:
         url,
         headers={
             "Accept": "application/json",
-            "User-Agent": "OpenConstructionERP-model-installer",
+            "User-Agent": "PrimeCrest-model-installer",
         },
     )
     try:
@@ -495,7 +495,7 @@ def _download_one(url: str, dest: Path, *, on_bytes: Any = None) -> None:
     dest.parent.mkdir(parents=True, exist_ok=True)
 
     have = part.stat().st_size if part.is_file() else 0
-    headers = {"User-Agent": "OpenConstructionERP-model-installer"}
+    headers = {"User-Agent": "PrimeCrest-model-installer"}
     if have:
         headers["Range"] = f"bytes={have}-"
 

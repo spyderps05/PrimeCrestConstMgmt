@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { adoptServerNumberFormat, secondaryCalendarToWire, usePreferencesStore } from './usePreferencesStore';
@@ -16,7 +16,7 @@ describe('usePreferencesStore', () => {
 
   it('should have correct default values', () => {
     const state = usePreferencesStore.getState();
-    expect(state.currency).toBe('EUR');
+    expect(state.currency).toBe('PKR');
     expect(state.measurementSystem).toBe('metric');
     // 'auto' = follow the UI language. See the date-format block below.
     expect(state.dateFormat).toBe('auto');
@@ -79,7 +79,7 @@ describe('usePreferencesStore', () => {
   it('should reset to defaults', () => {
     usePreferencesStore.getState().setPreference('currency', 'CHF');
     usePreferencesStore.getState().resetPreferences();
-    expect(usePreferencesStore.getState().currency).toBe('EUR');
+    expect(usePreferencesStore.getState().currency).toBe('PKR');
   });
 
   it('should format numbers correctly', () => {
@@ -123,7 +123,7 @@ describe('usePreferencesStore', () => {
       await usePreferencesStore.getState().hydrateFromServer();
       const s = usePreferencesStore.getState();
       expect(s.measurementSystem).toBe('metric');
-      expect(s.currency).toBe('EUR');
+      expect(s.currency).toBe('PKR');
     });
 
     it('swallows a server error and leaves the offline cache untouched', async () => {

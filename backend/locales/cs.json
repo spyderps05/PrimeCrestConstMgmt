@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Tento název nelze použít pro nový katalog. Vyberte jiný název.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Open-source rozpočtování staveb"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Aktualizovat"
   },
   "dashboard": {
-    "welcome": "Vítejte v OpenConstructionERP",
+    "welcome": "Vítejte v PrimeCrest",
     "subtitle": "Open-source platforma pro rozpočtování staveb",
     "recent_projects": "Nedávné projekty",
     "system_status": "Stav systému",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Žádná data",
         "no_data_body": "Tato zpráva byla vygenerována s prázdným datovým snímkem. Ověřte, zda zdrojové moduly (finance, harmonogram, bezpečnost apod.) vrátily data pro vybraný projekt.",
         "no_data_body_short": "Tato zpráva byla vygenerována s prázdným datovým snímkem. Ověřte, zda zdrojové moduly vrátily data pro vybraný projekt.",
-        "footer_generated_by": "Vygenerováno systémem OpenConstructionERP: {timestamp}.",
+        "footer_generated_by": "Vygenerováno systémem PrimeCrest: {timestamp}.",
         "worksheet_name": "Zpráva",
         "pdf_subject": "Projektová zpráva",
         "overall_progress": "Celkový postup",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Dobrý den, {name},",
       "greeting_generic": "Dobrý den,",
-      "cta": "Otevřít v OpenConstructionERP",
+      "cta": "Otevřít v PrimeCrest",
       "footer": "Tento e-mail dostáváte kvůli svému nastavení oznámení. Můžete ho změnit ve svém profilu.",
-      "digest_subject": "OpenConstructionERP: Přehled oznámení ({count})",
+      "digest_subject": "PrimeCrest: Přehled oznámení ({count})",
       "digest_heading": "Nedávná oznámení:"
     },
     "tender_xlsx": {

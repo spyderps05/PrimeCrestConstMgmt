@@ -39,7 +39,7 @@ import urllib.request
 from datetime import UTC, date, datetime
 from pathlib import Path
 
-REPO = "datadrivenconstruction/OpenConstructionERP"
+REPO = "datadrivenconstruction/PrimeCrest"
 API = f"https://api.github.com/repos/{REPO}"
 OUT_DIR = Path(__file__).resolve().parent.parent / "docs" / "readme-charts"
 

@@ -1,9 +1,9 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Project Intelligence module.
 
 AI-powered project completion analysis, scoring, gap detection,
-and guided recommendations for OpenConstructionERP.
+and guided recommendations for PrimeCrest.
 """
 
 MODULE_METADATA = {

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Price Index module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "region using stored construction cost index series and regional "
         "factors, without rewriting the source estimate."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_costs"],
     auto_install=True,

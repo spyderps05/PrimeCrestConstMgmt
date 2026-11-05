@@ -46,7 +46,7 @@ MANIFEST = REPO_ROOT / "frontend" / "src" / "features" / "cases" / "countryPortr
 # guessing at it.
 COUNTRY_PORTRAIT_RE = re.compile(r"^prf-[a-z]{2}-[a-z0-9-]+\.webp$")
 
-HEADER = """// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+HEADER = """// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // GENERATED FILE - do not edit by hand.

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Payroll module.
 
 Turns field-reported labour (SiteWorkforceLog + field-diary work hours)

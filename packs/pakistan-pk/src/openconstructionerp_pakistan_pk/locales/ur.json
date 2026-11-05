@@ -18,5 +18,13 @@
   "common.validation": "تصدیق",
   "common.export": "ایکسپورٹ",
   "common.search": "تلاش کریں",
-  "common.error": "خرابی"
+  "common.error": "خرابی",
+
+  "pakistan.library.title": "پاکستان لائبریری",
+  "pakistan.onboarding.province": "سائٹ کا صوبہ",
+  "pakistan.onboarding.marla": "اس فرم کے نقشوں پر مرلہ",
+  "pakistan.onboarding.marla_help": "پنجاب ریونیو میں ایک مرلہ 225 مربع فٹ ہے۔ وفاقی سروے میں 272.25 مربع فٹ ہے۔ منتخب عدد منصوبے پر محفوظ ہوتا ہے۔",
+  "pakistan.codes.review": "یہ فہرست قانونی مشورہ نہیں۔ ٹینڈر یا ٹیکس گوشوارے سے پہلے پاکستانی کوانٹٹی سرویئر اور ٹیکس مشیر سے تصدیق کریں۔",
+  "pakistan.rates.title": "پنجاب مارکیٹ ریٹ سسٹم",
+  "pakistan.rates.review": "سرکاری شرح کی فائلیں اس پیک میں نقل نہیں کی گئیں۔ ہر شرح ضلع، ششماہی اور سرکاری لنک کے ساتھ رہتی ہے۔"
 }

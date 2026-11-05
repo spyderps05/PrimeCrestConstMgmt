@@ -1,13 +1,13 @@
 cff-version: 1.2.0
-message: "If you use OpenConstructionERP in your work, please cite it as below."
-title: "OpenConstructionERP"
+message: "If you use PrimeCrest in your work, please cite it as below."
+title: "PrimeCrest"
 type: software
 authors:
   - name: "DataDrivenConstruction"
     website: "https://datadrivenconstruction.io"
   - given-names: "Artem"
     family-names: "Boiko"
-repository-code: "https://github.com/datadrivenconstruction/OpenConstructionERP"
+repository-code: "https://github.com/datadrivenconstruction/PrimeCrest"
 url: "https://openconstructionerp.com"
 license: "AGPL-3.0"
 version: "17.7.1"

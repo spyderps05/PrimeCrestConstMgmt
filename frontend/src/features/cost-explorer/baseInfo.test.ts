@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 import { describe, expect, it } from 'vitest';
 import { baseCurrencies, describeBases, readableRegion } from './baseInfo';
 import type { BaseCatalog, BaseFamily, BaseVariant } from '@/features/costs/baseCatalog';

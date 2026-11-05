@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Commitment release module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "preconditions, latest decision date and the residual loss on abort, under a "
         "delegation-of-authority schedule"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     # oe_project_governance owns the catalogue store this module's schedules
     # live in and the gate readiness it feeds; oe_approval_routes decides who

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Carbon & Sustainability module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "material matching, targets, sustainability reporting "
         "(GHG Protocol / GRI / ISSB)"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

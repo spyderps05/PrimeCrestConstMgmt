@@ -10,8 +10,8 @@
 
 version: 2
 locale: ru
-title: "OpenConstructionERP - российская редакция"
-title_en: "Welcome to OpenConstructionERP - Russia"
+title: "PrimeCrest - российская редакция"
+title_en: "Welcome to PrimeCrest - Russia"
 subtitle: "Шесть шагов, и рабочее пространство настроено под сметную практику: нормативная база, ресурсная часть, уровень цен, НР и СП, НДС. Six steps to line the workspace up with Russian estimating practice."
 
 steps:

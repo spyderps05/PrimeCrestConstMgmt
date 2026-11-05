@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The two dependency-free validator modules write money the way everything else does.
 
 ``procurement/validators.py`` and ``subcontractors/validators.py`` declare

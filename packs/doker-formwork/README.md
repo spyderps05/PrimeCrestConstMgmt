@@ -1,6 +1,6 @@
-# OpenConstructionERP Formwork Pack
+# PrimeCrest Formwork Pack
 
-Pre-configures OpenConstructionERP for **formwork (Schalung) and concrete
+Pre-configures PrimeCrest for **formwork (Schalung) and concrete
 contractors** in the DACH region.
 
 ## What it does
@@ -75,4 +75,4 @@ export OE_PARTNER_PACK=doker-formwork
 
 ## License
 
-AGPL-3.0-or-later, same as the OpenConstructionERP core.
+AGPL-3.0-or-later, same as the PrimeCrest core.

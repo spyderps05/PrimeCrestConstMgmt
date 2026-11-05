@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Cost database API routes.
 
@@ -3254,7 +3254,7 @@ async def install_v3_catalogue(
             "Installing cost databases is disabled on the public demo. Each "
             "catalogue is 400+ MB and the demo runs on a small shared box. To "
             "load this region or your own cost data, download and run "
-            "OpenConstructionERP on your own machine: pip install openconstructionerp.",
+            "PrimeCrest on your own machine: pip install openconstructionerp.",
         )
 
     from app.modules.costs.qdrant_adapter import describe_server_write_mismatch

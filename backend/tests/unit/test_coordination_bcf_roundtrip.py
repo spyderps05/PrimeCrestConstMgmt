@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠BCF I/O round-trip test for the Coordination / Clash module.
 
 Per the architecture guide §3: BCF is an allowed I/O format (XML over data, no

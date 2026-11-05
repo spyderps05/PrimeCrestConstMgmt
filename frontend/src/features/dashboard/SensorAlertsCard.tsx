@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * SensorAlertsCard​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ - dashboard widget: open site sensor alerts by kind, devices

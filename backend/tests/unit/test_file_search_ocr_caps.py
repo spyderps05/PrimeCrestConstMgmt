@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠OOM guards for the file_search OCR rasteriser.
 
 ``_extract_ocr_text`` renders each PDF page to a pixmap before OCR. ``get_pixmap``

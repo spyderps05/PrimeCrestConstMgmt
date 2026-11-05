@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Assemblies & Calculations module manifest."""
 
@@ -12,7 +12,7 @@ manifest = ModuleManifest(
         "Composite cost items built from cost database entries with factors. "
         "Supports templates, regional factors, and BOQ integration."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     # ``oe_fx`` prices an assembly whose currency differs from the target
     # project's; without it the only rate source is the project's hand-typed

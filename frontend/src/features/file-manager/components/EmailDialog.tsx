@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /** Modal that mints a signed download URL with a chosen TTL. */
 
@@ -100,7 +100,7 @@ export function EmailDialog({ open, row, onClose }: EmailDialogProps) {
   const sampleBody = link
     ? t('files.email.sample_body', {
         defaultValue:
-          'Hi,\n\nHere is the file you asked about - {{name}} ({{size}}).\nDownload link (expires {{expires}}):\n{{url}}\n\n- sent from OpenConstructionERP',
+          'Hi,\n\nHere is the file you asked about - {{name}} ({{size}}).\nDownload link (expires {{expires}}):\n{{url}}\n\n- sent from PrimeCrest',
         name: row.name,
         size: fmtBytes(link.size_bytes),
         expires: new Date(link.expires_at).toLocaleString(getIntlLocale()),

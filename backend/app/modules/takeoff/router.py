@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Takeoff HTTP endpoints.
 
@@ -554,7 +554,7 @@ def _download_one_file(download_url: str, target: Path) -> int:
 
     req = urllib.request.Request(
         download_url,
-        headers={"User-Agent": "OpenConstructionERP-converter-installer"},
+        headers={"User-Agent": "PrimeCrest-converter-installer"},
     )
     bytes_written = 0
     # POSIX gets O_NOFOLLOW. Windows doesn't expose it but `is_symlink`
@@ -712,7 +712,7 @@ def _fetch_release_checksums(repo: str, tag: str, asset: str = CHECKSUMS_ASSET) 
 
     url = release_asset_url(asset, repo=repo, tag=tag)
     _check_download_url_allowed(url)
-    req = urllib.request.Request(url, headers={"User-Agent": "OpenConstructionERP-converter-installer"})
+    req = urllib.request.Request(url, headers={"User-Agent": "PrimeCrest-converter-installer"})
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
             final_url = getattr(resp, "geturl", lambda: url)()

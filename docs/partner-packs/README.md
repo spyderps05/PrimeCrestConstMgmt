@@ -10,7 +10,7 @@
 ## 1. What a partner pack is
 
 A **partner pack** is a small, code-free preset bundle that pre-configures a
-vanilla OpenConstructionERP install for a specific region, industry vertical,
+vanilla PrimeCrest install for a specific region, industry vertical,
 or partner brand. It is the smallest possible unit of customisation: one
 manifest plus a handful of static assets (logo, locale JSON, onboarding
 script, validation rule-pack JSON files).
@@ -510,12 +510,12 @@ them.
 
 ## 8. Branding and AGPL co-brand obligation
 
-OpenConstructionERP is AGPL-3.0. Section 5(d) of AGPL requires that
+PrimeCrest is AGPL-3.0. Section 5(d) of AGPL requires that
 "appropriate legal notices" remain on each "interactive user interface."
 For partner packs, this is satisfied by the **co-brand string**:
 
 ```
-Powered by OpenConstructionERP · In partnership with <partner_name>
+Powered by PrimeCrest · In partnership with <partner_name>
 ```
 
 The string is computed by `PartnerPackManifest.effective_powered_by` and
@@ -526,7 +526,7 @@ displayed:
 - In the "About" modal.
 
 A pack MAY override the wording via `branding.powered_by_text`, but the
-override MUST still credit OpenConstructionERP somewhere in the string.
+override MUST still credit PrimeCrest somewhere in the string.
 Removing the credit is an AGPL violation. The default value is the safe
 choice and is recommended for all packs.
 
@@ -534,8 +534,8 @@ choice and is recommended for all packs.
 
 - The pack's `logo.svg` (or `.png`, `.webp`, `.jpg`) is streamed via
   `/api/v1/partner-pack/logo`. The frontend renders it in the co-brand
-  chip alongside the OpenConstructionERP wordmark.
-- The OpenConstructionERP wordmark MUST remain visible. Partners may not
+  chip alongside the PrimeCrest wordmark.
+- The PrimeCrest wordmark MUST remain visible. Partners may not
   use CSS to hide it.
 
 **Favicon**

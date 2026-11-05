@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """BI Dashboards & Reporting - Module 20 (Wave 4).
 
 Read-only across the platform. Owns KPI definitions, dashboard configs,

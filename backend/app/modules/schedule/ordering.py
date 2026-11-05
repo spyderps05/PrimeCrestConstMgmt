@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """One display order for schedule activities, shared by every list query.
 
 Activities are ordered by ``sort_order`` first and by ``wbs_code`` second.

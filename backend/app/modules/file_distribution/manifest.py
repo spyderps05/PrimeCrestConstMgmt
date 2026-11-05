@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """File Distribution module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "subscriptions so transmittals, share links and review packages "
         "always go to the right humans."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_projects", "oe_users", "oe_documents"],
     # ``file_search`` is intentionally NOT declared here - the search

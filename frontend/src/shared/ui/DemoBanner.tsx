@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * DemoBanner — persistent warning banner shown only on the public hosted
@@ -178,7 +178,7 @@ export function DemoBanner() {
               <p>
                 {t('demo_banner.modal_intro_before_vps')}{' '}
                 <strong className="text-content-primary">
-                  OpenConstructionERP
+                  PrimeCrest
                 </strong>
                 {'. '}{t('demo_banner.modal_intro_runs_on')}{' '}
                 <strong className="text-content-primary">
@@ -237,7 +237,7 @@ export function DemoBanner() {
             {/* Footer */}
             <div className="flex items-center justify-end gap-2 px-6 py-4 border-t border-border-light">
               <a
-                href="https://github.com/datadrivenconstruction/OpenConstructionERP"
+                href="https://github.com/datadrivenconstruction/PrimeCrest"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-content-secondary hover:text-content-primary border border-border-light rounded-lg hover:bg-surface-secondary transition-colors"

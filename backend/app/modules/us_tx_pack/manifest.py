@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Module manifest for oe_us_tx_pack."""
 
@@ -17,7 +17,7 @@ manifest = ModuleManifest(
         "split the sales tax on materials, the locally determined prevailing wage, the public works retainage "
         "caps and their contract-value threshold, and the statutory payment and lien clocks."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="regional",
     depends=["oe_us_pack"],
     auto_install=False,

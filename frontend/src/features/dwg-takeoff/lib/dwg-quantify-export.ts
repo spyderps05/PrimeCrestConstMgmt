@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Client-side Excel export for the DWG auto-quantify table.
@@ -87,7 +87,7 @@ export async function buildQuantifyWorkbook(
   const mod = await import('exceljs');
   const Ctor = (mod.Workbook ?? mod.default.Workbook) as typeof ExcelJS.Workbook;
   const wb = new Ctor();
-  wb.creator = 'OpenConstructionERP';
+  wb.creator = 'PrimeCrest';
   wb.created = ctx.exportDate ?? new Date();
 
   // Display measurement system for this written sheet. Storage is always

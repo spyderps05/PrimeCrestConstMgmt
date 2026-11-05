@@ -126,7 +126,7 @@ class TestWhereTheClusterLives:
         pgdata = embedded_pg.resolve_pgdata(data_dir)
 
         assert str(pgdata).isascii()
-        assert pgdata.is_relative_to(tmp_path / "ProgramData" / "OpenConstructionERP")
+        assert pgdata.is_relative_to(tmp_path / "ProgramData" / "PrimeCrest")
         # Same answer for every caller, before anything exists: the CLI, doctor
         # and boot must all agree on where the cluster is.
         assert embedded_pg.resolve_pgdata(data_dir) == pgdata

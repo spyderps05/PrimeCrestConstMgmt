@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Jurisdiction codes a procurement profile may carry: ISO 3166-1 alpha-2, ISO 3166-2, and ``EU``.
 

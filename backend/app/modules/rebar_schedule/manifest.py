@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Rebar schedule module manifest."""
 
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
         "back as bars, meshes, helices and lattice girders, summarise steel by "
         "bar diameter, and export the file the bending shop receives."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     depends=["oe_users", "oe_projects"],
     display_name_i18n={

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Clash cost-impact module permission definitions.
 
 This module is a cross-module read-projection: it never mutates clash or

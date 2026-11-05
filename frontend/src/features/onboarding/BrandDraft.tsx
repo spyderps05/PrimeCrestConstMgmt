@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // "Your company" block of the wizard's look step: company name and logo as a
@@ -74,7 +74,7 @@ export function BrandDraftSection({ draft, onChange }: { draft: BrandDraft; onCh
               value={draft.name}
               maxLength={MAX_NAME_LEN}
               onChange={(e) => onChange({ ...draft, name: e.target.value.slice(0, MAX_NAME_LEN) })}
-              placeholder={t('branding.name_placeholder', { defaultValue: 'Acme Construction GmbH' })}
+              placeholder={t('branding.name_placeholder', { defaultValue: 'Crescent Builders (Pvt) Ltd' })}
               className="h-9 w-full rounded-lg border border-border bg-surface-primary ps-8 pe-3 text-sm text-content-primary placeholder:text-content-tertiary focus:border-oe-blue focus:outline-none focus:ring-2 focus:ring-oe-blue/20"
             />
           </span>

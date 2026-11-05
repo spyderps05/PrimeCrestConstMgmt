@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Point Cloud data access layer - one repository per entity.
 
 Mirrors the ``geo_hub`` repository style: a tiny shared ``_BaseRepo`` for the

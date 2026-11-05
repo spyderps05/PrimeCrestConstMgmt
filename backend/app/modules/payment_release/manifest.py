@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Payment release module manifest."""
 
@@ -12,7 +12,7 @@ manifest = ModuleManifest(
         "Contract payment terms, payment release computation from the gross invoiced to the amount to pay, "
         "invoice ledger per contract and project, and the retention register with release postings"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_projects", "oe_contracts", "oe_finance", "oe_costmodel"],
     auto_install=True,

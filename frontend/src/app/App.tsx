@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import { landingPath } from '@/shared/lib/workPrefs';
 import { Suspense, lazy, useState, useCallback, useEffect, useLayoutEffect, useContext, createContext } from 'react';
@@ -828,6 +828,9 @@ const IntegrationsPage = lazy(() =>
 );
 const AboutPage = lazy(() =>
   import('@/features/about/AboutPage').then((m) => ({ default: m.AboutPage }))
+);
+const PakistanLibraryPage = lazy(() =>
+  import('@/features/pakistan/PakistanLibraryPage').then((m) => ({ default: m.PakistanLibraryPage }))
 );
 const HowItWorksPage = lazy(() => import('@/features/help/HowItWorksPage'));
 // Cases (playbooks) - cross-module, end-to-end guided scenarios. Lazy so the
@@ -1662,6 +1665,7 @@ export default function App() {
         <Route path="/saved-views" element={<P title="Saved Views"><SavedViewsPage /></P>} />
         <Route path="/projects/:projectId/saved-views" element={<P title="Saved Views"><SavedViewsPage /></P>} />
         <Route path="/about" element={<P title="About"><AboutPage /></P>} />
+        <Route path="/pakistan" element={<P title="Pakistan library"><PakistanLibraryPage /></P>} />
         <Route path="/how-it-works" element={<P title="How it works"><HowItWorksPage /></P>} />
         {/* Cases (playbooks) - list at /cases, the stepper at /cases/:playbookId
             (one component serves both so it stays a single lazy chunk).
@@ -1911,7 +1915,7 @@ export default function App() {
       {/* DDC-CWICR-OE */}
       <span aria-hidden="true" style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden' }}>
         {'\u200B\u200C\u200D\u200B\u200C\u200D\u200B'}
-        DataDrivenConstruction·CWICR·OpenConstructionERP·2026
+        DataDrivenConstruction·CWICR·PrimeCrest·2026
       </span>
     </Suspense>
   );

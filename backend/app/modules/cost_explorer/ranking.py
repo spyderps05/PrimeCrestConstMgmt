@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Pure ranking engine for the Cost Explorer "find work by resources" mode.
 
 Given a requested set of resource codes (optionally weighted) and, for each

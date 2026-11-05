@@ -1,4 +1,4 @@
-# OpenConstructionERP Desktop, build and release.
+# PrimeCrest Desktop, build and release.
 #
 # Triggered on version tag push (e.g., v6.7.0).
 # Builds desktop installers for Windows, macOS, and Linux.
@@ -379,7 +379,7 @@ jobs:
             exit 1
           fi
           case "$out" in
-            *"OpenConstructionERP v"*)
+            *"PrimeCrest v"*)
               echo "OK: the sidecar starts and reports its version." ;;
             *)
               echo "::error title=The desktop sidecar started but said nothing recognisable::Exit was 0 but the output does not carry a version line, so the interpreter may have started without the app package."
@@ -395,7 +395,7 @@ jobs:
           # sidecar would be green everywhere.
           #
           # Safe to gate on, measured rather than assumed: the frozen sidecar
-          # printed "OpenConstructionERP v15.0.0" on all three platforms in the
+          # printed "PrimeCrest v15.0.0" on all three platforms in the
           # v15.0.0 run (32222276138), so the version resolves inside a bundle
           # where importlib.metadata does not answer.
           #
@@ -404,7 +404,7 @@ jobs:
           ref="${RELEASE_REF:-}"
           case "$ref" in
             v[0-9]*)
-              want="OpenConstructionERP v${ref#v}"
+              want="PrimeCrest v${ref#v}"
               case "$out" in
                 *"$want"*)
                   echo "OK: the sidecar reports ${ref#v}, which is the version being released." ;;
@@ -1381,7 +1381,7 @@ jobs:
           $base = "https://github.com/$repo/releases/download/$tag"
           $tmpZip = Join-Path $env:RUNNER_TEMP 'ddc_ifc.zip'
           $tmpSums = Join-Path $env:RUNNER_TEMP 'ddc_sha256sums.txt'
-          $headers = @{ 'User-Agent' = 'OpenConstructionERP-desktop-build' }
+          $headers = @{ 'User-Agent' = 'PrimeCrest-desktop-build' }
 
           function Get-WithRetry([string]$url, [string]$out) {
             for ($i = 1; $i -le 5; $i++) {
@@ -1497,7 +1497,7 @@ jobs:
           exit 1
 
       # tauri-action 1.x also names the macOS archive with the version,
-      # OpenConstructionERP_<version>_aarch64.app.tar.gz where 0.x left the
+      # PrimeCrest_<version>_aarch64.app.tar.gz where 0.x left the
       # version out. Every reader of that file, here, in the app's update
       # notice and on the download page, matches the suffix, so nothing cares.
       # Fail before tauri-action can upload an unnotarized installer.

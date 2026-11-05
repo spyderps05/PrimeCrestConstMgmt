@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Server-side point-cloud decode and decimation.
 
 The viewer follows the lightweight path: instead of streaming a full COPC

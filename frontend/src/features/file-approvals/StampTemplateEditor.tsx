@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // Modal form to create a custom stamp template.
@@ -100,7 +100,7 @@ export function StampTemplateEditor({
   const previewSvg = svg
     .replaceAll('{COLOR}', color)
     .replaceAll('{{text}}', text || 'STAMP')
-    .replaceAll('{{approver}}', 'Sample User')
+    .replaceAll('{{approver}}', 'Bilal Ahmed')
     .replaceAll('{{date}}', new Date().toISOString().slice(0, 10));
 
   return (

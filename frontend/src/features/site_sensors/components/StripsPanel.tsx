@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Formwork strikes​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠: planned strikes per concrete sensor, the Strike action and a

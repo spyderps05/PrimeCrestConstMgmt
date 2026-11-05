@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import { useState, useRef, useEffect, useCallback, useId } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -33,7 +33,6 @@ import { APP_VERSION, APP_BUILD_FINGERPRINT } from '@/shared/lib/version';
 import { useToastStore } from '@/stores/useToastStore';
 import { useI18nReady } from '@/shared/lib/useI18nReady';
 import { isTauri, openAppInBrowser, openLink } from '@/shared/lib/desktop';
-import { SupportUsButton } from './SupportUsButton';
 import { SubscribeButton } from './SubscribeButton';
 import { ProjectJourneyButton } from './ProjectJourney';
 import { PresenceAvatarStack } from '@/features/global_presence';
@@ -190,6 +189,7 @@ export const TITLE_I18N_MAP: Record<string, string> = {
   'Governance': 'sidebar.admin_grid.governance',
   'Modules': 'nav.modules',
   'Packs': 'nav.packs',
+  'Pakistan library': 'nav.pakistan_library',
   'Demo projects': 'demo_switcher.label',
   // A module installed from the catalogue renders under a route that titles
   // every one of them "Module". The word was translated everywhere already, as
@@ -583,10 +583,9 @@ export function Header({ title, onMenuClick }: HeaderProps) {
         <div className="hidden sm:block h-4 w-px bg-border-light/70" aria-hidden />
 
         {/* ── Zone 3 (Notifications + Subscribe + Bug + Help) ──────
-            Order: NotificationBell · What's new · SupportUs · Subscribe · BugReport · Help.
-            The "ask the user for something" CTAs (Support / Subscribe) stay
-            adjacent; Bug + Help sit on the right edge so a user filing a
-            report doesn't have to scan past the marketing CTAs. */}
+            Order: NotificationBell · What's new · Subscribe · BugReport · Help.
+            Bug + Help sit on the right edge so a user filing a report
+            doesn't have to scan past the remaining header actions. */}
         {/* Only while the Learn card is hidden from the menu: its way back,
             at every width. */}
         <LearnTopBarButton />
@@ -603,7 +602,6 @@ export function Header({ title, onMenuClick }: HeaderProps) {
             had no room for these three next to the project picker, and the
             right cluster ran off screen. */}
         <div className="hidden 2xl:block"><ModuleBuilderButton /></div>
-        <div className="hidden 2xl:block"><SupportUsButton /></div>
         <div className="hidden 2xl:block"><SubscribeButton /></div>
         <BugReportMenu />
         <HelpMenu />
@@ -791,7 +789,7 @@ export function BugReportMenu() {
     setOpen(false);
     setDescription('');
     const { body, title } = buildBugReportUrl(trimmedDescription);
-    const subject = `OpenConstructionERP Issue - ${title}`;
+    const subject = `PrimeCrest Issue - ${title}`;
     // mailto bodies are also length-limited (~2000 chars in Chrome),
     // so we trim aggressively. The downloaded log JSON is the long form.
     const safeBody = body.length > 1500 ? `${body.slice(0, 1500)}\n\n_[truncated - attach the JSON log if needed]_` : body;
@@ -1161,19 +1159,6 @@ function HelpMenu() {
             <span className="flex-1">{t('nav.docs', { defaultValue: 'Documentation' })}</span>
             <ExternalLink size={11} className="text-content-quaternary shrink-0" />
           </a>
-          <a
-            role="menuitem"
-            href="https://github.com/datadrivenconstruction/OpenConstructionERP"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
-            className="flex w-full items-center gap-2.5 px-3 py-2 text-sm text-content-primary hover:bg-surface-secondary transition-colors"
-          >
-            <Github size={14} className="text-content-tertiary shrink-0" />
-            <span className="flex-1">{t('nav.github', { defaultValue: 'GitHub repository' })}</span>
-            <ExternalLink size={11} className="text-content-quaternary shrink-0" />
-          </a>
-
           {/* Desktop only: open the same app in the user's normal web browser.
               The app window stays open; this just gives people who prefer
               browser tabs the local address in one click. */}
@@ -1224,7 +1209,7 @@ function HelpMenu() {
               gives bug reporting a single, obvious home. */}
           <a
             role="menuitem"
-            href="mailto:info@datadrivenconstruction.io?subject=OpenConstructionERP%20Issue%20Report"
+            href="mailto:info@datadrivenconstruction.io?subject=PrimeCrest%20Issue%20Report"
             onClick={() => setOpen(false)}
             className="flex w-full items-center gap-2.5 px-3 py-2 text-sm text-content-primary hover:bg-surface-secondary transition-colors"
           >
@@ -1318,7 +1303,7 @@ function LanguageSwitcher({
 /* ── User Menu ─────────────────────────────────────────────────────────── */
 
 /** GitHub repo slug for "Report a bug". Empty string = clipboard fallback. */
-const GITHUB_REPO = 'datadrivenconstruction/OpenConstructionERP';
+const GITHUB_REPO = 'datadrivenconstruction/PrimeCrest';
 /** Hard ceiling for the GitHub issue body inside a URL. ~8KB is safe across browsers. */
 const MAX_BODY_BYTES = 7800;
 

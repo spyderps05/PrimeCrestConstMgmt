@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Tätä nimeä ei voi käyttää uudelle luettelolle. Valitse toinen nimi.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Avoimen lähdekoodin rakennuskustannuslaskenta"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Päivitä"
   },
   "dashboard": {
-    "welcome": "Tervetuloa OpenConstructionERP-järjestelmään",
+    "welcome": "Tervetuloa PrimeCrest-järjestelmään",
     "subtitle": "Avoimen lähdekoodin rakennuskustannuslaskenta-alusta",
     "recent_projects": "Viimeisimmät projektit",
     "system_status": "Järjestelmän tila",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Tietoja ei ole saatavilla",
         "no_data_body": "Tämä raportti luotiin tyhjällä tietokuvalla. Tarkista, että lähdemoduulit (talous, aikataulu, työturvallisuus jne.) palauttivat tietoja valitulle projektille.",
         "no_data_body_short": "Tämä raportti luotiin tyhjällä tietokuvalla. Tarkista, että lähdemoduulit palauttivat tietoja valitulle projektille.",
-        "footer_generated_by": "Luonut OpenConstructionERP {timestamp}.",
+        "footer_generated_by": "Luonut PrimeCrest {timestamp}.",
         "worksheet_name": "Raportti",
         "pdf_subject": "Projektiraportti",
         "overall_progress": "Kokonaisedistyminen",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Hei {name},",
       "greeting_generic": "Hei,",
-      "cta": "Avaa OpenConstructionERP",
+      "cta": "Avaa PrimeCrest",
       "footer": "Saat tämän sähköpostiviestin ilmoitusasetustesi perusteella. Voit muuttaa asetuksia profiilissasi.",
-      "digest_subject": "OpenConstructionERP: Ilmoitusyhteenveto ({count})",
+      "digest_subject": "PrimeCrest: Ilmoitusyhteenveto ({count})",
       "digest_heading": "Viimeisimmät ilmoitukset:"
     },
     "tender_xlsx": {

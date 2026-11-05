@@ -1,4 +1,4 @@
-"""Discount grocery retail pack (DACH) for OpenConstructionERP.
+"""Discount grocery retail pack (DACH) for PrimeCrest.
 
 An industry pack for German-speaking discount food-retail new-builds. It
 ships three fully priced example projects (Heilbronn, Heidelberg and

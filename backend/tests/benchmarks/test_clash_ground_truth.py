@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Formal ground-truth correctness gate for the clash-detection engine.
 
 DB-free, GLB-free. Builds :class:`ElementGeom` objects (and bare

@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import { beforeEach, describe, expect, it } from 'vitest';
 import { PLATFORM_APPEARANCE, USER_APPEARANCE_KEY, WORKSPACE_APPEARANCE_KEY } from '@/shared/lib/appearance';

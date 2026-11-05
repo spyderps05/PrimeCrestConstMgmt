@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """PG:​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ an addendum revises the tender BOQ, moves the deadline and flags bids.
 

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Pure tests for the risk-based contingency arithmetic (no database).
 
 The figures on the contingency card come from ``app.modules.risk.contingency``.

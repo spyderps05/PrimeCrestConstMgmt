@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Attach the full visible CAD/BIM file set (RVT + IFC + DWG + PDF) to demos.
 
 The flagship installer (:mod:`app.scripts.seed_flagship`) is the only working
@@ -82,7 +82,7 @@ def _samples_base() -> Path:
     env = os.environ.get("OE_DEMO_CAD_SAMPLES")
     if env:
         return Path(env)
-    return Path.home() / "OpenConstructionERP_sample_data"
+    return Path.home() / "PrimeCrest_sample_data"
 
 
 # Per-project namespace seed - distinct from seed_flagship's namespace so the

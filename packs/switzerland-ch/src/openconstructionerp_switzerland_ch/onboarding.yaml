@@ -7,10 +7,10 @@
 version: 2
 pack: switzerland-ch
 locale: de
-title: "Willkommen bei OpenConstructionERP - Schweiz"
-title_en: "Welcome to OpenConstructionERP - Switzerland Edition"
-title_fr: "Bienvenue sur OpenConstructionERP - Edition Suisse"
-title_it: "Benvenuto su OpenConstructionERP - Edizione Svizzera"
+title: "Willkommen bei PrimeCrest - Schweiz"
+title_en: "Welcome to PrimeCrest - Switzerland Edition"
+title_fr: "Bienvenue sur PrimeCrest - Edition Suisse"
+title_it: "Benvenuto su PrimeCrest - Edizione Svizzera"
 subtitle: "Drei Schritte, um Ihren Arbeitsbereich auf Schweizer Kalkulationspraxis auszurichten (SIA 451, BKP, SIA 118). Three quick steps to align your workspace with Swiss estimating practice."
 
 steps:

@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "この名前は新しいカタログに使用できません。別の名前を選んでください。",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "オープンソース建設コスト見積"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "更新"
   },
   "dashboard": {
-    "welcome": "OpenConstructionERP へようこそ",
+    "welcome": "PrimeCrest へようこそ",
     "subtitle": "オープンソース建設コスト見積プラットフォーム",
     "recent_projects": "最近のプロジェクト",
     "system_status": "システム状態",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "データがありません",
         "no_data_body": "このレポートは空のデータスナップショットから作成されました。選択したプロジェクトについて、元のモジュール（財務、工程、安全など）がデータを返しているかご確認ください。",
         "no_data_body_short": "このレポートは空のデータスナップショットから作成されました。選択したプロジェクトについて、元のモジュールがデータを返しているかご確認ください。",
-        "footer_generated_by": "OpenConstructionERP により {timestamp} に作成されました。",
+        "footer_generated_by": "PrimeCrest により {timestamp} に作成されました。",
         "worksheet_name": "レポート",
         "pdf_subject": "プロジェクトレポート",
         "overall_progress": "全体進捗",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "{name} 様",
       "greeting_generic": "ご担当者様",
-      "cta": "OpenConstructionERP で開く",
+      "cta": "PrimeCrest で開く",
       "footer": "このメールは、通知設定に基づいて送信されています。設定はプロフィールから変更できます。",
-      "digest_subject": "OpenConstructionERP: 通知のまとめ（{count} 件）",
+      "digest_subject": "PrimeCrest: 通知のまとめ（{count} 件）",
       "digest_heading": "最近の通知："
     },
     "tender_xlsx": {

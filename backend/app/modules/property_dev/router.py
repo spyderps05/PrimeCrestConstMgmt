@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Property Development API routes.
 
@@ -4575,7 +4575,7 @@ async def email_propdev_document(
     email_service = get_email_service()
     result = await email_service.send_document(
         recipient,
-        subject=f"{document_name} - OpenConstructionERP",
+        subject=f"{document_name} - PrimeCrest",
         document_name=document_name,
         attachment=EmailAttachment(
             filename=filename,

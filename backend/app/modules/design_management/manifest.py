@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Design management module manifest."""
 
@@ -14,7 +14,7 @@ manifest = ModuleManifest(
         "distribution matrix and releases as transmittals, internal reviews, expert reports and the "
         "permit design package"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     # oe_cde holds every drawing and report (numbers, revisions, states);
     # oe_transmittals records every issue; oe_project_governance owns the

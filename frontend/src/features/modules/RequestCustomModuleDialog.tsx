@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // RequestCustomModuleDialog — full-screen modal launched from the
@@ -195,7 +195,7 @@ export function RequestCustomModuleDialog({ open, onClose }: Props) {
             <p className="mt-3 mx-auto max-w-[640px] text-sm sm:text-base text-content-secondary leading-relaxed">
               {t('modules.request_hero_subtitle', {
                 defaultValue:
-                  'OpenConstructionERP runs on a plug-in architecture - every report, integration, regional catalogue and AI tool is its own module. If the one you need is missing, we will build it. Choose the path that fits your situation.',
+                  'PrimeCrest runs on a plug-in architecture - every report, integration, regional catalogue and AI tool is its own module. If the one you need is missing, we will build it. Choose the path that fits your situation.',
               })}
             </p>
           </div>
@@ -226,12 +226,12 @@ export function RequestCustomModuleDialog({ open, onClose }: Props) {
               <div className="min-w-0 flex-1">
                 <h3 className="text-base sm:text-lg font-semibold text-content-primary">
                   {t('modules.request_card_community_title', {
-                    defaultValue: 'Could help other teams too',
+                    defaultValue: 'Request a product module',
                   })}
                 </h3>
                 <p className="mt-1 text-xs text-content-tertiary uppercase tracking-wider font-semibold">
                   {t('modules.request_card_community_tag', {
-                    defaultValue: 'Open-source · free for everyone',
+                    defaultValue: 'Proprietary · Spyder Solutions',
                   })}
                 </p>
               </div>
@@ -239,22 +239,20 @@ export function RequestCustomModuleDialog({ open, onClose }: Props) {
             <p className="text-sm text-content-secondary leading-relaxed">
               {t('modules.request_card_community_body', {
                 defaultValue:
-                  'We add your idea to the public roadmap. If it has broad demand we ship it in a future release of OpenConstructionERP - included in every user’s install, including yours, at no cost.',
+                  'Tell Spyder Solutions what you need. PrimeCrest Construction Management is proprietary software. It is not free and it is not built in the open. Modules are scoped and delivered under your licence.',
               })}
             </p>
             <ul className="space-y-1.5 text-xs text-content-secondary">
               <li className="flex items-start gap-2">
                 <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-oe-blue shrink-0" />
                 {t('modules.request_card_community_bullet1', {
-                  defaultValue:
-                    'Free - ships in the next public release if accepted.',
+                  defaultValue: 'Delivered under your Spyder Solutions licence.',
                 })}
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-oe-blue shrink-0" />
                 {t('modules.request_card_community_bullet2', {
-                  defaultValue:
-                    'Public GitHub thread - other teams can upvote, refine and contribute.',
+                  defaultValue: 'Spyder Solutions reviews the request and replies directly.',
                 })}
               </li>
               <li className="flex items-start gap-2">
@@ -267,7 +265,7 @@ export function RequestCustomModuleDialog({ open, onClose }: Props) {
             </ul>
             <div className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-oe-blue group-hover:gap-3 transition-all">
               {t('modules.request_card_community_cta', {
-                defaultValue: 'Propose on our roadmap',
+                defaultValue: 'Contact Spyder Solutions',
               })}
               <ArrowRight size={16} />
             </div>

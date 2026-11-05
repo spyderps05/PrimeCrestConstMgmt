@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Pure field-time engine - all validatable timesheet logic, zero I/O.
 
 This module deliberately imports nothing from :mod:`app.database`, SQLAlchemy,

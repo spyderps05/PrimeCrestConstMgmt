@@ -1,4 +1,4 @@
-# Autostart OpenConstructionERP on system boot
+# Autostart PrimeCrest on system boot
 
 Three ready-to-use templates for the three major OSes. Pick yours.
 
@@ -87,18 +87,18 @@ those before running if you used a non-default install location.
 
 Verify:
 ```powershell
-schtasks /Query /TN OpenConstructionERP
+schtasks /Query /TN PrimeCrest
 curl http://localhost:8000/api/health
 ```
 
 To remove:
 ```powershell
-schtasks /Delete /TN OpenConstructionERP /F
+schtasks /Delete /TN PrimeCrest /F
 ```
 
 For LAN access on Windows, also open the firewall:
 ```powershell
-New-NetFirewallRule -DisplayName "OpenConstructionERP 8000" -Direction Inbound -Protocol TCP -LocalPort 8000 -Action Allow
+New-NetFirewallRule -DisplayName "PrimeCrest 8000" -Direction Inbound -Protocol TCP -LocalPort 8000 -Action Allow
 ```
 
 ---

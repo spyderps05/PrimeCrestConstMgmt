@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // The update notice reads GET /api/system/version-check, our own backend,
@@ -41,7 +41,7 @@ function versionCheck(over: Record<string, unknown> = {}) {
     current_version: '15.0.0',
     latest_version: '15.1.0',
     update_available: true,
-    release_url: 'https://github.com/datadrivenconstruction/OpenConstructionERP/releases/tag/v15.1.0',
+    release_url: 'https://github.com/datadrivenconstruction/PrimeCrest/releases/tag/v15.1.0',
     release_notes: '',
     published_at: '2026-08-19T09:00:00Z',
     assets: [],
@@ -211,7 +211,7 @@ describe('the advice matches the build the reader is running', () => {
       answering(
         versionCheck({
           self_upgrade_supported: false,
-          release_url: 'https://github.com/datadrivenconstruction/OpenConstructionERP/releases',
+          release_url: 'https://github.com/datadrivenconstruction/PrimeCrest/releases',
         }),
       ),
     );
@@ -225,7 +225,7 @@ describe('the advice matches the build the reader is running', () => {
     const section = advice.closest('section');
     const link = section?.querySelector('a[href]');
     expect(link?.getAttribute('href')).toBe(
-      'https://github.com/datadrivenconstruction/OpenConstructionERP/releases',
+      'https://github.com/datadrivenconstruction/PrimeCrest/releases',
     );
   });
 
@@ -294,7 +294,7 @@ describe('the excerpt reads as prose', () => {
   // and falls through to the excerpt, which is where the raw line would be
   // read back to the user as if it were a sentence.
   const LONG_BULLET =
-    '* fix(gaeb): see https://github.com/datadrivenconstruction/OpenConstructionERP/pull/1 - ' +
+    '* fix(gaeb): see https://github.com/datadrivenconstruction/PrimeCrest/pull/1 - ' +
     'the export summary stops claiming prices a bill does not have. '.repeat(4);
 
   it('quotes the paragraph without the generated commit list', async () => {
@@ -483,12 +483,12 @@ describe('the download offered is the one this machine can run', () => {
    *  be type checked: `versionCheck` takes loose overrides, and an asset list
    *  built inside that call arrives as an array of nothing in particular. */
   const ALL_ASSETS = [
-    { name: 'OpenConstructionERP_15.1.0_aarch64.app.tar.gz', url: 'https://x.test/mac-updater', size: 700 },
-    { name: 'OpenConstructionERP_15.1.0_aarch64.dmg', url: 'https://x.test/mac-dmg', size: 734003200 },
-    { name: 'OpenConstructionERP_15.1.0_x64-setup.exe.sig', url: 'https://x.test/win-sig', size: 500 },
-    { name: 'OpenConstructionERP_15.1.0_x64-setup.exe', url: 'https://x.test/win-exe', size: 629145600 },
+    { name: 'PrimeCrest_15.1.0_aarch64.app.tar.gz', url: 'https://x.test/mac-updater', size: 700 },
+    { name: 'PrimeCrest_15.1.0_aarch64.dmg', url: 'https://x.test/mac-dmg', size: 734003200 },
+    { name: 'PrimeCrest_15.1.0_x64-setup.exe.sig', url: 'https://x.test/win-sig', size: 500 },
+    { name: 'PrimeCrest_15.1.0_x64-setup.exe', url: 'https://x.test/win-exe', size: 629145600 },
     { name: 'open-construction-erp_15.1.0_amd64.deb', url: 'https://x.test/linux-deb', size: 650000000 },
-    { name: 'OpenConstructionERP_15.1.0_amd64.AppImage', url: 'https://x.test/linux-appimage', size: 660000000 },
+    { name: 'PrimeCrest_15.1.0_amd64.AppImage', url: 'https://x.test/linux-appimage', size: 660000000 },
     { name: 'open-construction-erp-15.1.0.x86_64.rpm', url: 'https://x.test/linux-rpm', size: 655000000 },
   ];
 

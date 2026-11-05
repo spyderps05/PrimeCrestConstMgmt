@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Labor rates module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "(statutory charges, insurance, leave, overtime, supervision, small tools), "
         "and composite crew rates blending several trades."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users"],
     auto_install=True,

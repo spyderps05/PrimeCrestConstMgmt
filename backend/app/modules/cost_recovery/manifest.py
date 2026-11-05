@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Cost recovery module manifest."""
 
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
         "and per-currency recovery ledger showing what is chargeable, what has "
         "been recovered and what is still outstanding against whom."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="controls",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

@@ -1,4 +1,4 @@
-"""Custom hatchling build hook for OpenConstructionERP backend.
+"""Custom hatchling build hook for PrimeCrest backend.
 
 Solves a long-standing fresh-install paper-cut: the wheel target uses
 ``[tool.hatch.build.targets.wheel.force-include]`` to bundle the pre-built

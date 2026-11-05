@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Project governance module manifest."""
 
@@ -12,7 +12,7 @@ manifest = ModuleManifest(
         "Phase model with gates: management areas with owners, frame documents that become "
         "binding at a gate, readiness checks, immutable gate decisions with conditions"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     # oe_approval_routes decides who may sign a gate off; oe_cde holds the
     # frame document revisions. Both are read, never written, except the

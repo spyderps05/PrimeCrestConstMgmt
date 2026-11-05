@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠A read-only demo refuses a WebSocket handshake it did not allowlist.
 
 Separate from ``test_demo_read_only.py`` because it asserts a different thing.

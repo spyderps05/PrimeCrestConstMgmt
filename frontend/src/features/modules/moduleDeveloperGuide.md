@@ -1,6 +1,6 @@
 # Build your own module
 
-OpenConstructionERP is built entirely from modules. Every business feature you see (BOQ, BIM Hub, Schedule, CDE, regional packs, AI tooling) is a self-contained module that the platform discovers, loads and mounts on its own. This guide is a practical, ten-minute walkthrough for adding your own.
+PrimeCrest is built entirely from modules. Every business feature you see (BOQ, BIM Hub, Schedule, CDE, regional packs, AI tooling) is a self-contained module that the platform discovers, loads and mounts on its own. This guide is a practical, ten-minute walkthrough for adding your own.
 
 There are two ways to extend the platform. A **partner pack** is a code-free preset bundle (branding, locale, currency, which modules to show) that anyone can build and share. A **module** is real code: new screens, endpoints, tables, validation rules. Start with the part you need.
 
@@ -113,8 +113,8 @@ Have these ready before starting. If you can run the app locally, you already ha
 - **A clone of the repo** to hack on the module
 
 ```bash
-git clone https://github.com/datadrivenconstruction/OpenConstructionERP.git
-cd OpenConstructionERP
+git clone https://github.com/datadrivenconstruction/PrimeCrest.git
+cd PrimeCrest
 # Backend
 cd backend && pip install -e ".[dev]"
 uvicorn app.main:create_app --factory --reload --port 8000
@@ -558,5 +558,5 @@ Always bump `manifest.version` on every release; the installer uses it to decide
 
 ## Further reading
 
-- [MODULES.md on GitHub](https://github.com/datadrivenconstruction/OpenConstructionERP/blob/main/MODULES.md): single source of truth
-- [CONTRIBUTING.md](https://github.com/datadrivenconstruction/OpenConstructionERP/blob/main/CONTRIBUTING.md): style, commits, PR process
+- [MODULES.md on GitHub](https://github.com/datadrivenconstruction/PrimeCrest/blob/main/MODULES.md): single source of truth
+- [CONTRIBUTING.md](https://github.com/datadrivenconstruction/PrimeCrest/blob/main/CONTRIBUTING.md): style, commits, PR process

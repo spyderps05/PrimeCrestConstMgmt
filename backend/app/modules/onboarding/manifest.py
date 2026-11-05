@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Onboarding module manifest."""
 
@@ -14,7 +14,7 @@ manifest = ModuleManifest(
         "so the wizard never makes a new user wait, exposing a progress feed the "
         "UI polls and a banner that keeps working after the user has moved on."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_costs", "oe_projects"],
     auto_install=True,

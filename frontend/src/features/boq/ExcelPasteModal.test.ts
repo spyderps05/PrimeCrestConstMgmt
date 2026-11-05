@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 import { describe, it, expect } from 'vitest';
 import { parseRows } from './ExcelPasteModal';
 

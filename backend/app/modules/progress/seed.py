@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Progress demo seed - a percent-complete reading per position the crew worked on.
 
 The demo install writes project-level progress only (one S-curve reading per

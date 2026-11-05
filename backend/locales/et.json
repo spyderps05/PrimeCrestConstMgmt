@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Seda nime ei saa uue kataloogi jaoks kasutada. Valige teine nimi.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Avatud lähtekoodiga ehituskulude kalkulatsioon"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Uuenda"
   },
   "dashboard": {
-    "welcome": "Tere tulemast OpenConstructionERP-i",
+    "welcome": "Tere tulemast PrimeCrest-i",
     "subtitle": "Sinu ehituskalkulatsiooni töökeskkond",
     "recent_projects": "Hiljutised projektid",
     "system_status": "Süsteemi olek",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Andmed puuduvad",
         "no_data_body": "See aruanne genereeriti tühja andmeseisuga. Kontrollige, kas allikmoodulid (finants, graafik, ohutus jt) tagastasid andmed valitud projekti kohta.",
         "no_data_body_short": "See aruanne genereeriti tühja andmeseisuga. Kontrollige, kas allikmoodulid tagastasid valitud projekti kohta andmed.",
-        "footer_generated_by": "Genereeris OpenConstructionERP ajahetkel {timestamp}.",
+        "footer_generated_by": "Genereeris PrimeCrest ajahetkel {timestamp}.",
         "worksheet_name": "Aruanne",
         "pdf_subject": "Projekti aruanne",
         "overall_progress": "Üldine edenemine",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Tere, {name}!",
       "greeting_generic": "Tere!",
-      "cta": "Ava OpenConstructionERP",
+      "cta": "Ava PrimeCrest",
       "footer": "Saad selle e-kirja oma teavitusseadete põhjal. Seadeid saad muuta oma profiilis.",
-      "digest_subject": "OpenConstructionERP: Teavituste kokkuvõte ({count})",
+      "digest_subject": "PrimeCrest: Teavituste kokkuvõte ({count})",
       "digest_heading": "Viimased teavitused:"
     },
     "tender_xlsx": {

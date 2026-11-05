@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Temporary-works module manifest."""
 
@@ -20,7 +20,7 @@ manifest = ModuleManifest(
         "and the single most important safety signal: any item bearing load with "
         "no valid permit to load in force."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     # Hard dep supplies the project scope every table foreign-keys into.
     depends=["oe_projects"],

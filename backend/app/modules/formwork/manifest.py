@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Formwork module manifest."""
 
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
         "time, a project rollup showing what the reuse assumption is worth, and eleven "
         "validation rules over the whole thing"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="estimation",
     depends=["oe_projects", "oe_boq"],
     auto_install=True,

@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * An install that fails because the converter release no longer offers the
@@ -26,7 +26,7 @@ describe('converterInstallMessage', () => {
     });
     expect(text).toContain('DDC-RVT-Converter-0.6.8-portable.zip');
     expect(text).toContain('v2026.10.0');
-    expect(text).toContain('Update OpenConstructionERP');
+    expect(text).toContain('Update PrimeCrest');
     expect(text).not.toContain('raw backend text');
   });
 

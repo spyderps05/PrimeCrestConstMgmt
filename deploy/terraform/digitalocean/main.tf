@@ -1,4 +1,4 @@
-# OpenConstructionERP - DigitalOcean Terraform Deployment
+# PrimeCrest - DigitalOcean Terraform Deployment
 #
 # Usage:
 #   cd deploy/terraform/digitalocean
@@ -7,7 +7,7 @@
 #
 # Creates:
 #   - 1x Droplet (s-2vcpu-4gb)
-#   - Docker Compose with PostgreSQL + OpenConstructionERP
+#   - Docker Compose with PostgreSQL + PrimeCrest
 #     (published image from ghcr.io, no source build on the droplet)
 #   - Firewall (80, 443, 22, 8080)
 #
@@ -40,7 +40,7 @@ variable "ssh_key_id" {
 }
 
 variable "app_image" {
-  description = "OpenConstructionERP container image to deploy"
+  description = "PrimeCrest container image to deploy"
   type        = string
   default     = "ghcr.io/datadrivenconstruction/openconstructionerp:latest"
 }
@@ -132,7 +132,7 @@ resource "digitalocean_droplet" "openconstructionerp" {
     # Start services
     docker compose up -d
 
-    echo "OpenConstructionERP installed at $PUBLIC_IP:8080"
+    echo "PrimeCrest installed at $PUBLIC_IP:8080"
   CLOUDINIT
 
   tags = ["openconstructionerp"]
@@ -181,10 +181,10 @@ resource "digitalocean_firewall" "openconstructionerp" {
 
 output "ip_address" {
   value       = digitalocean_droplet.openconstructionerp.ipv4_address
-  description = "OpenConstructionERP server IP"
+  description = "PrimeCrest server IP"
 }
 
 output "url" {
   value       = "http://${digitalocean_droplet.openconstructionerp.ipv4_address}:8080"
-  description = "OpenConstructionERP URL"
+  description = "PrimeCrest URL"
 }

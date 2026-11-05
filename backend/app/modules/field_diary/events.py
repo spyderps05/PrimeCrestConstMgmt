@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Field Diary event publishers - feed diary labour into cost / payroll.
 
 When a diary entry is submitted, the work activities it carries (each with

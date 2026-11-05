@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Read what a pack manifest declares from its source, parent pack included.
 
 Several gates read ``packs/<slug>/src/*/manifest.py`` as text instead of

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Post-calculation (Nachkalkulation) compute + live data loader.
 
 The top of this module is a pure, ``Decimal``-exact compute layer: a set of

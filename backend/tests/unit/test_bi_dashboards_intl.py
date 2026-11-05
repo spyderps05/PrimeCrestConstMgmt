@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠DB-free unit tests for the BI Dashboards international helpers.
 
 These pin the pure, no-I/O helpers in ``app.modules.bi_dashboards.intl``:

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Security regression tests for the Clash Detection export + comment paths.
 
 Covers two output-/input-integrity gaps closed in the Wave-2 security pass:

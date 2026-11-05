@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Preliminaries (general conditions) module.
 
 Estimates the project preliminaries / general conditions that sit alongside the

@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // AttendanceSection — meeting-minutes-tool-style check-in widget shown inside the
@@ -259,7 +259,7 @@ export function AttendanceSection({ meetingId }: AttendanceSectionProps) {
               onChange={(e) => setExternalName(e.target.value)}
               autoFocus
               placeholder={t('meetings.external_name_placeholder', {
-                defaultValue: 'Jane Walker',
+                defaultValue: 'Usman Ali',
               })}
               className="h-10 w-full rounded-lg border border-border bg-surface-primary px-3 text-sm focus:outline-none focus:ring-2 focus:ring-oe-blue/30 focus:border-oe-blue"
               onKeyDown={(e) => {

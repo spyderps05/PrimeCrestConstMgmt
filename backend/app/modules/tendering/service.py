@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Tendering service - business logic for tender packages and bids.
 
@@ -19,6 +19,7 @@ from fastapi import HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.events import event_bus, publish_after_commit
+from app.core.partner_pack.pakistan_defaults import currency_for_new_row
 from app.core.json_merge import merge_metadata
 
 _logger_ev = __import__("logging").getLogger(__name__ + ".events")
@@ -656,7 +657,7 @@ class TenderingService:
             company_name=data.company_name,
             contact_email=data.contact_email,
             total_amount=data.total_amount,
-            currency=data.currency,
+            currency=currency_for_new_row(data.currency),
             submitted_at=data.submitted_at,
             status=data.status,
             notes=data.notes,

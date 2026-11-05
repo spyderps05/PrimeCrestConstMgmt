@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import { Sparkles, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -18,7 +18,7 @@ export function BetaBanner({
   moduleKey,
   title,
   description,
-  feedbackUrl = 'https://github.com/datadrivenconstruction/OpenConstructionERP/issues/new',
+  feedbackUrl = 'https://github.com/datadrivenconstruction/PrimeCrest/issues/new',
   className = '',
 }: BetaBannerProps) {
   const { t } = useTranslation();

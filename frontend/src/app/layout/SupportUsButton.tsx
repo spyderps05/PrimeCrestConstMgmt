@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import {
   Star,
-  Github,
   Twitter,
   Linkedin,
   Heart,
@@ -32,28 +31,27 @@ import {
   CROSS_SURFACE_QUIET_MS,
 } from '@/stores/useReviewPromptStore';
 
-const REPO_URL = 'https://github.com/datadrivenconstruction/OpenConstructionERP';
+const PRODUCT_SITE = 'https://datadrivenconstruction.io';
 const PAYPAL_DONATE_URL = 'https://www.paypal.com/donate/?hosted_button_id=DWBCLNLY2VWAA';
-const GITHUB_SPONSORS_URL = 'https://github.com/sponsors/datadrivenconstruction';
 // Clean product URL. The "?source=search" suffix this used to carry is G2's
 // own search-result tracking and does not belong in a link handed to a user.
 const G2_REVIEWS_URL = 'https://www.g2.com/products/openconstructionerp/reviews';
 const CASE_STUDY_EMAIL = 'info@datadrivenconstruction.io';
 const CASE_STUDY_MAILTO = `mailto:${CASE_STUDY_EMAIL}?subject=${encodeURIComponent(
-  'Case study / article - OpenConstructionERP',
+  'Case study / article - PrimeCrest',
 )}&body=${encodeURIComponent(
-  'Hi DDC team,\n\nI have a case study / video / article about how we use OpenConstructionERP that you may want to share.\n\nLink / attachment:\n\nA few lines about the project:\n\n- ',
+  'Hi Spyder Solutions team,\n\nI have a case study / video / article about how we use PrimeCrest that you may want to share.\n\nLink / attachment:\n\nA few lines about the project:\n\n- ',
 )}`;
 
 const SHARE_TEXT =
-  'OpenConstructionERP - free open-source construction cost estimation platform (BOQ, BIM takeoff, AI, 41 languages). Self-hosted. AGPL-3.0.';
+  'PrimeCrest Construction Management by Spyder Solutions — construction project management, cost estimation, and resource control.';
 
 const TWITTER_URL = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
   SHARE_TEXT,
-)}&url=${encodeURIComponent(REPO_URL)}`;
+)}&url=${encodeURIComponent(PRODUCT_SITE)}`;
 
 const LINKEDIN_URL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-  REPO_URL,
+  PRODUCT_SITE,
 )}`;
 
 /* Auto-popup configuration.
@@ -306,7 +304,7 @@ function SupportUsModal({ onClose, copied, setCopied }: ModalProps) {
 
   const copyShareText = async () => {
     try {
-      await copyToClipboard(`${SHARE_TEXT} ${REPO_URL}`);
+      await copyToClipboard(`${SHARE_TEXT} ${PRODUCT_SITE}`);
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
     } catch {
@@ -355,13 +353,13 @@ function SupportUsModal({ onClose, copied, setCopied }: ModalProps) {
               className="text-xl sm:text-2xl font-bold text-content-primary leading-tight"
             >
               {t('support.modal_title', {
-                defaultValue: 'Help OpenConstructionERP grow',
+                defaultValue: 'Help PrimeCrest grow',
               })}
             </h2>
             <p className="mt-3 mx-auto max-w-[560px] text-sm text-content-secondary leading-relaxed">
               {t('support.modal_subtitle', {
                 defaultValue:
-                  'We build OpenConstructionERP in the open and ship every feature for free. If you share a video, case study or article about your work – there is a very high chance industry professionals will notice it: senior estimators, BIM managers, planning leads and cost engineers from the largest construction and engineering firms follow DataDrivenConstruction across LinkedIn, X and our newsletter (tens of thousands of subscribers). One repost from us can put your project in front of the right people overnight.',
+                  'PrimeCrest Construction Management is built by Spyder Solutions for professional construction teams. If you share a video, case study or article about your work – there is a very high chance industry professionals will notice it: senior estimators, BIM managers, planning leads and cost engineers from the largest construction and engineering firms follow DataDrivenConstruction across LinkedIn, X and our newsletter (tens of thousands of subscribers). One repost from us can put your project in front of the right people overnight.',
               })}
             </p>
           </div>
@@ -369,44 +367,8 @@ function SupportUsModal({ onClose, copied, setCopied }: ModalProps) {
 
         {/* Actions */}
         <div className="px-6 sm:px-8 pt-5 space-y-3">
-          {/* 1. Star on GitHub */}
-          <a
-            href={REPO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-firstfocus="true"
-            className={clsx(
-              'group flex items-start gap-3 rounded-xl border-2 p-4',
-              'border-amber-300/50 bg-gradient-to-br from-amber-50/60 to-orange-50/30',
-              'dark:border-amber-500/30 dark:from-amber-950/30 dark:to-orange-950/20',
-              'hover:border-amber-500 hover:shadow-md hover:-translate-y-0.5 transition-all',
-            )}
-          >
-            <div className="shrink-0 h-11 w-11 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-300 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-colors">
-              <Star size={20} strokeWidth={1.75} className="fill-current" />
-            </div>
-            <div className="min-w-0 flex-1">
-              <h3 className="text-sm sm:text-base font-semibold text-content-primary flex items-center gap-2">
-                {t('support.action_star_title', {
-                  defaultValue: 'Star us on GitHub',
-                })}
-                <Github size={14} className="text-content-tertiary" />
-              </h3>
-              <p className="mt-0.5 text-xs text-content-secondary leading-relaxed">
-                {t('support.action_star_body', {
-                  defaultValue:
-                    '30 seconds. Stars are how new construction teams discover the project and how we secure time for the next release.',
-                })}
-              </p>
-            </div>
-            <ExternalLink
-              size={14}
-              className="shrink-0 mt-1 text-content-quaternary group-hover:text-amber-600 transition-colors"
-              aria-hidden
-            />
-          </a>
+          {/* 1. Review on G2 */}
 
-          {/* 2. Review on G2 */}
           <a
             href={G2_REVIEWS_URL}
             target="_blank"
@@ -467,7 +429,7 @@ function SupportUsModal({ onClose, copied, setCopied }: ModalProps) {
                 <p className="mt-0.5 text-xs text-content-secondary leading-relaxed">
                   {t('support.action_share_body', {
                     defaultValue:
-                      'One post on LinkedIn or X / Twitter reaches dozens of estimators, planners and BIM managers. Help us put open-source construction software on the map.',
+                      'One post on LinkedIn or X / Twitter reaches dozens of estimators, planners and BIM managers. Help us put construction software on the map.',
                   })}
                 </p>
               </div>
@@ -531,7 +493,7 @@ function SupportUsModal({ onClose, copied, setCopied }: ModalProps) {
               <p className="mt-1 text-xs text-content-secondary leading-relaxed">
                 {t('support.action_case_study_body', {
                   defaultValue:
-                    'Show us how you use OpenConstructionERP - a video, a case study, a LinkedIn write-up. You can send us the link directly, or just tag @DataDrivenConstruction in your post - we will spot it and re-share through our newsletter and social channels, where tens of thousands of construction professionals and senior industry experts follow our work. Email for links: ',
+                    'Show us how you use PrimeCrest - a video, a case study, a LinkedIn write-up. You can send us the link directly, or just tag @DataDrivenConstruction in your post - we will spot it and re-share through our newsletter and social channels, where tens of thousands of construction professionals and senior industry experts follow our work. Email for links: ',
                 })}
                 <span className="font-semibold text-purple-700 dark:text-purple-300">
                   {CASE_STUDY_EMAIL}
@@ -567,7 +529,7 @@ function SupportUsModal({ onClose, copied, setCopied }: ModalProps) {
                 <p className="mt-0.5 text-xs text-content-secondary leading-relaxed">
                   {t('support.action_donate_body', {
                     defaultValue:
-                      'Donations keep OpenConstructionERP free and open for everyone. They fund new regional cost data, AI estimation and support for more CAD and file formats.',
+                      'Your support helps Spyder Solutions keep improving PrimeCrest. They fund new regional cost data, AI estimation and support for more CAD and file formats.',
                   })}
                 </p>
                 {/* Perk line - additive, inline-default only (do not fold into
@@ -592,15 +554,6 @@ function SupportUsModal({ onClose, copied, setCopied }: ModalProps) {
               >
                 <Heart size={12} />
                 {t('support.donate_paypal', { defaultValue: 'Donate with PayPal' })}
-              </a>
-              <a
-                href={GITHUB_SPONSORS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-md border border-border-light bg-surface-primary px-3 py-1.5 text-xs font-medium text-content-primary hover:bg-emerald-50 hover:border-emerald-400 dark:hover:bg-emerald-950/40 transition-colors"
-              >
-                <Github size={12} />
-                {t('support.donate_github', { defaultValue: 'Sponsor on GitHub' })}
               </a>
               <button
                 type="button"

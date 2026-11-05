@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Event-reconciliation demo seed - reviewed decisions over real correlations.
 
 ``RecordLink`` is the durable record of a human decision about a correlation the

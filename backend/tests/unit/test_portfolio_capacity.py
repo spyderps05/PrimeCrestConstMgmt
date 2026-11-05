@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Portfolio capacity-planning heatmap (Wave 2, item #5).
 
 ``ResourcesService.portfolio_capacity`` aggregates resource assignments across

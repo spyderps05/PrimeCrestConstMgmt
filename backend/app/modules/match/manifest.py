@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Match module manifest - auto-mounted at ``/api/v1/match/``."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "element and returns ranked CWICR cost-position candidates "
         "with classification, unit, region, and lex boosts."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects", "oe_costs"],
     optional_depends=["oe_ai"],

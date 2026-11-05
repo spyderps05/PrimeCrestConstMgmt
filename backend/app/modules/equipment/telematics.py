@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Equipment telematics​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠: ISO 15143-3 (AEMP 2.0) and CSV parsing, daily utilisation math.
 

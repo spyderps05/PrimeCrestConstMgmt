@@ -1,4 +1,4 @@
-"""OpenConstructionERP - France Construction partner pack (DPGF + NF DTU + TVA).
+"""PrimeCrest - France Construction partner pack (DPGF + NF DTU + TVA).
 
 This package exports a module-level ``MANIFEST`` instance of
 :class:`PartnerPackManifest` referenced from ``pyproject.toml``::

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """The payment terms a contract usually starts from, per country. Data, not branches.
 
@@ -737,7 +737,7 @@ COUNTRY_CONTRACT_DEFAULTS: dict[str, dict[str, Any]] = {
         ),
     },
     "PK": {
-        "standard_form": "Standard Bidding Documents for Procurement of Works (Pakistan Engineering Council)",
+        "standard_form": "PEC civil works standard form (smaller works; not the December 2023 form)",
         "retention_percent": _figure(
             "10",
             "standard_form",
@@ -776,6 +776,61 @@ COUNTRY_CONTRACT_DEFAULTS: dict[str, dict[str, Any]] = {
         ),
     },
 }
+
+# Two Pakistan Engineering Council forms, kept apart. The country row above is
+# the older civil-works form: 10 percent of each interim certificate, stopping
+# at 5 percent of the contract price, paid within 28 days. The December 2023
+# documents apply to works estimated above Rs 100 million and are built on the
+# FIDIC 2017 Red Book. They set performance security at 10 percent of the
+# accepted contract amount and the retention-money limit at 5 percent of the
+# contract price. They do not replace the 10 percent certificate deduction of
+# the older form. A job at or under Rs 100 million is offered the older form.
+# A job above that figure is offered the December 2023 form.
+PAKISTAN_LARGE_WORKS_THRESHOLD_PKR = 100_000_000
+
+PAKISTAN_CONTRACT_FORMS: dict[str, dict[str, Any]] = {
+    "pec_civil_works": {
+        "name": "PEC standard form of bidding documents for civil works",
+        "applies_when": "Works estimated at or under Rs 100 million, and the smaller C&W jobs that still use this form.",
+        "retention_percent_of_each_certificate": "10",
+        "retention_cap_percent_of_contract_price": "5",
+        "payment_period_days": 28,
+        "performance_security_percent": "10",
+        "liquidated_damages_cap_percent": "10",
+        "source_url": "https://www.pec.org.pk/wp-content/uploads/2022/04/1-Std-Form-of-Bidding-Docs-Civil-Work.pdf",
+        "review_status": "unconfirmed",
+    },
+    "pec_sbd_2023_12": {
+        "name": "Pakistan Standard Bidding Documents, December 2023 (works designed by the employer)",
+        "applies_when": "Works estimated above Rs 100 million. Built on the FIDIC 2017 Red Book.",
+        "performance_security_percent_of_accepted_contract_amount": "10",
+        "retention_money_limit_percent_of_contract_price": "5",
+        "threshold_pkr": PAKISTAN_LARGE_WORKS_THRESHOLD_PKR,
+        "source_url": (
+            "https://www.pec.org.pk/wp-content/uploads/2024/03/"
+            "Pakistan-Standard-Bidding-Documents-Construction-Works-for-Building-and-Engineering-Works-Designed-by-the-Employer-December-20231.pdf"
+        ),
+        "review_status": "unconfirmed",
+        "note": (
+            "This form does not replace the 10 percent deduction on each certificate of the older civil-works form. "
+            "The 10 percent here is performance security. The 5 percent here is the retention-money limit."
+        ),
+    },
+}
+
+
+def pakistan_contract_form(contract_price_pkr: float | int | None) -> str:
+    """Which PEC form a job is offered, from the estimated price in rupees.
+
+    Missing price, or a price at or under Rs 100 million, offers the older
+    civil-works form. Only a price above Rs 100 million offers the December
+    2023 form.
+    """
+    if contract_price_pkr is None:
+        return "pec_civil_works"
+    if float(contract_price_pkr) > PAKISTAN_LARGE_WORKS_THRESHOLD_PKR:
+        return "pec_sbd_2023_12"
+    return "pec_civil_works"
 
 
 # ── Public or private works ──────────────────────────────────────────────

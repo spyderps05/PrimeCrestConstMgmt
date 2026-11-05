@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Tests for the lightweight point-cloud header sniff.
 
 These exercise the cheap, DB-free preview logic added in the foundation wedge:

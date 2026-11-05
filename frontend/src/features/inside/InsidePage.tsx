@@ -1,15 +1,12 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // InsidePage - the "Inside track" backers-only panel.
 //
-// The perk donations buy is ACCESS TO INFORMATION, never a paywall on the
-// AGPL code itself: a curated, single-page view of what just shipped (pulled
-// straight from the same Changelog the /about page already renders, so this
-// panel updates itself every release with zero extra writing) plus a short,
-// plain-title roadmap list of what is coming next. Locked by default; a
-// supporter access code (handed out after a donation) unlocks it and the
-// unlock is remembered in localStorage on this device.
+// A curated, single-page view of what just shipped (pulled straight from the
+// same Changelog the /about page already renders) plus a short roadmap list.
+// PrimeCrest is proprietary software of Spyder Solutions. This page does not
+// ask for donations, sponsorship, or stars.
 
 import { useState, type FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -19,8 +16,6 @@ import {
   Lock,
   Unlock,
   KeyRound,
-  Heart,
-  Github,
   Rocket,
   ArrowRight,
   ListChecks,
@@ -31,9 +26,6 @@ import { PageHeader } from '@/shared/ui/PageHeader';
 import { Changelog, getRecentReleases } from '@/features/about/Changelog';
 import { useInsideAccess } from './useInsideAccess';
 import { INSIDE_ROADMAP } from './roadmap';
-
-const PAYPAL_DONATE_URL = 'https://www.paypal.com/donate/?hosted_button_id=DWBCLNLY2VWAA';
-const GITHUB_SPONSORS_URL = 'https://github.com/sponsors/datadrivenconstruction';
 
 export function InsidePage() {
   const { t } = useTranslation();
@@ -48,7 +40,7 @@ export function InsidePage() {
         srTitle={t('inside.page_title', { defaultValue: 'Inside track' })}
         subtitle={t('inside.page_subtitle', {
           defaultValue:
-            'A backers-only news panel: what just shipped and what is coming next, in one place.',
+            'What just shipped and what is coming next. PrimeCrest is proprietary software of Spyder Solutions.',
         })}
       />
 
@@ -112,7 +104,7 @@ function LockedTeaser() {
           <p className="text-xs text-content-secondary leading-relaxed mb-4">
             {t('inside.unlock_body', {
               defaultValue:
-                'Donors get a supporter access code after donating. Enter it below to unlock the Inside track panel on this device.',
+                'Spyder Solutions issues access codes for this panel. Enter a code to open it on this device.',
             })}
           </p>
           <form onSubmit={handleSubmit} className="space-y-2">
@@ -141,34 +133,10 @@ function LockedTeaser() {
             </Button>
           </form>
 
-          <div className="mt-5 pt-5 border-t border-border-light">
-            <p className="text-xs font-semibold text-content-primary mb-1">
-              {t('inside.no_code_title', { defaultValue: "Don't have a code yet?" })}
-            </p>
-            <p className="text-xs text-content-secondary leading-relaxed mb-3">
-              {t('inside.no_code_body', {
-                defaultValue:
-                  'A donation of any size gets you a code by return. Donations keep the AGPL core free for everyone - the panel is the thank-you, never a paywall on the software itself.',
-              })}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <a href={PAYPAL_DONATE_URL} target="_blank" rel="noopener noreferrer">
-                <Button variant="secondary" size="sm" icon={<Heart size={13} />}>
-                  {t('inside.donate_paypal', { defaultValue: 'Donate with PayPal' })}
-                </Button>
-              </a>
-              <a href={GITHUB_SPONSORS_URL} target="_blank" rel="noopener noreferrer">
-                <Button variant="secondary" size="sm" icon={<Github size={13} />}>
-                  {t('inside.donate_github', { defaultValue: 'Sponsor on GitHub' })}
-                </Button>
-              </a>
-            </div>
-          </div>
-
-          <p className="mt-auto pt-4 text-2xs text-content-tertiary leading-relaxed">
+          <p className="mt-auto pt-5 text-2xs text-content-tertiary leading-relaxed">
             {t('inside.donate_no_paywall', {
               defaultValue:
-                'The platform and its code stay free and open (AGPL-3.0) whether or not you unlock this panel.',
+                'PrimeCrest Construction Management is proprietary to Spyder Solutions. It is not free and it is not built in the open.',
             })}
           </p>
         </div>
@@ -218,8 +186,7 @@ function UnlockedPanel() {
           <ShieldCheck size={18} className="shrink-0 text-emerald-600 dark:text-emerald-400" />
           <p className="text-xs text-content-secondary leading-relaxed flex-1">
             {t('inside.unlocked_banner', {
-              defaultValue:
-                'Inside track unlocked on this device. Thank you for backing the project.',
+              defaultValue: 'Inside track is open on this device.',
             })}
           </p>
           <Button variant="ghost" size="sm" onClick={lock} icon={<Lock size={13} />}>

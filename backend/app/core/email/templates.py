@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Shared HTML email templates.
 
@@ -21,7 +21,7 @@ _LOGO_URL = "https://openconstructionerp.com/logo-128.png"
 #: The product name every outgoing email carries: the ``From:`` display name,
 #: the line beside the logo and the closing line of the footer. It is a brand,
 #: so it is never translated or shortened, in any language.
-BRAND_NAME = "OpenConstructionERP"
+BRAND_NAME = "PrimeCrest"
 _APP_NAME = BRAND_NAME
 
 # The footer line of mail that a person receives because they subscribed to
@@ -172,7 +172,7 @@ def template_password_reset(
     to copy-paste or forwarded-email attack paths.
     """
     greeting = f"Hi {recipient_name}," if recipient_name else "Hello,"
-    subject = "Reset your OpenConstructionERP password"
+    subject = "Reset your PrimeCrest password"
     body = (
         f"<p>{greeting}</p>"
         f"<p>We received a request to reset the password on your "

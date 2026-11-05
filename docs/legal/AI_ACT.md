@@ -1,4 +1,4 @@
-# AI in OpenConstructionERP: what it does and what the deployer does
+# AI in PrimeCrest: what it does and what the deployer does
 
 Also available in [Deutsch](AI_ACT.de.md) and [Русский](AI_ACT.ru.md).
 

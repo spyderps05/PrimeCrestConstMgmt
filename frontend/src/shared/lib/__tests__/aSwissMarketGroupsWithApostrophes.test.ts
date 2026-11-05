@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 //
 // A Swiss bill is written 1'234'567.89. A German-speaking Swiss reader runs the
 // German UI, which resolves to `de` and writes 1.234.567,89, so without a

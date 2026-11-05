@@ -1,4 +1,4 @@
-"""OpenConstructionERP - Austria Construction partner pack (OENORM B 2061 + B 1801 + A 2063 + USt)."""
+"""PrimeCrest - Austria Construction partner pack (OENORM B 2061 + B 1801 + A 2063 + USt)."""
 
 from __future__ import annotations
 

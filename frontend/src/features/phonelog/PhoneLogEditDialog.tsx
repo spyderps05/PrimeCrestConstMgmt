@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // Edit a logged call. Mirrors the manual capture form and saves through the
@@ -151,7 +151,7 @@ export function PhoneLogEditDialog({
           <input
             value={form.raw_parties}
             onChange={(e) => set('raw_parties', e.target.value)}
-            placeholder={t('phonelog.parties_ph', { defaultValue: 'You -> Acme site office' })}
+            placeholder={t('phonelog.parties_ph', { defaultValue: 'You -> DHA Phase 5 site office' })}
             className={CONTROL}
           />
         </WideModalField>

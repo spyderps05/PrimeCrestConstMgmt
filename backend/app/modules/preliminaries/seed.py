@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Starter checklist of common preliminaries items.
 
 The estimator does not ship priced preliminaries - rates and durations are always

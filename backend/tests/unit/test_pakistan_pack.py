@@ -16,7 +16,11 @@ from app.core.payment_taxes.tables import rows_for, validate_rows
 from app.core.validation import rules as rules_pkg
 from app.core.validation.engine import ValidationContext, rule_registry
 from app.modules.boq.units import normalise_unit
-from app.modules.contracts.country_defaults import COUNTRY_CONTRACT_DEFAULTS
+from app.modules.contracts.country_defaults import (
+    COUNTRY_CONTRACT_DEFAULTS,
+    PAKISTAN_CONTRACT_FORMS,
+    pakistan_contract_form,
+)
 from app.modules.contracts.price_adjustment import PRICE_ADJUSTMENT_REGIMES
 from app.modules.contracts.public_procurement import PUBLIC_WORKS_LIMITS, PUBLIC_WORKS_PRICE_ADJUSTMENT, limit_value
 from app.modules.payment_clock.data import PAYMENT_REGIMES
@@ -119,7 +123,55 @@ def test_pakistan_rule_set() -> None:
     assert classified({}) == [False]
 
 
-@pytest.mark.parametrize(("demo_id", "tax_rate"), [("bhu-punjab", 16.0), ("school-karachi", 15.0)])
+def _direct_cost(template) -> int:
+    total = 0.0
+    for section in template.sections:
+        for item in section[3]:
+            total += float(item[3]) * float(item[4])
+    return int(round(total))
+
+
+def test_demo_jobs_offer_the_form_that_fits_the_price() -> None:
+    bhu = _load(_ROOT / "backend/app/core/demo_packs/bhu-punjab.py").TEMPLATE
+    house = _load(_ROOT / "backend/app/core/demo_packs/lahore-house.py").TEMPLATE
+    road = _load(_ROOT / "backend/app/core/demo_packs/faisalabad-road.py").TEMPLATE
+    assert bhu.project_metadata["contract_form"] == "pec_civil_works"
+    assert house.project_metadata["marla_sqft"] == 225
+    assert house.project_metadata["plot_marla"] == 10
+    assert house.currency == "PKR" and house.locale == "en"
+    assert road.project_metadata["contract_form"] == pakistan_contract_form(road.project_metadata["contract_price_pkr"])
+    assert road.project_metadata["contract_form"] == "pec_sbd_2023_12"
+    assert road.claim_retention == 0.10
+    assert _direct_cost(road) == road.project_metadata["contract_price_pkr"]
+    assert _direct_cost(road) > 100_000_000
+    assert _direct_cost(bhu) == bhu.project_metadata["contract_price_pkr"]
+    assert _direct_cost(house) == house.project_metadata["contract_price_pkr"]
+    school = _load(_ROOT / "backend/app/core/demo_packs/school-karachi.py").TEMPLATE
+    assert school.project_metadata["contract_form"] == "pec_sbd_2023_12"
+    assert school.project_metadata["kanal_marlas"] == 20
+    assert school.claim_retention == 0.10
+    assert _direct_cost(school) == school.project_metadata["contract_price_pkr"]
+    assert _direct_cost(school) > 100_000_000
+
+
+def test_both_pec_forms_stay_separate() -> None:
+    older = PAKISTAN_CONTRACT_FORMS["pec_civil_works"]
+    large = PAKISTAN_CONTRACT_FORMS["pec_sbd_2023_12"]
+    assert older["retention_percent_of_each_certificate"] == "10"
+    assert older["retention_cap_percent_of_contract_price"] == "5"
+    assert older["payment_period_days"] == 28
+    assert large["performance_security_percent_of_accepted_contract_amount"] == "10"
+    assert large["retention_money_limit_percent_of_contract_price"] == "5"
+    assert "certificate" not in large
+    assert pakistan_contract_form(25_000_000) == "pec_civil_works"
+    assert pakistan_contract_form(100_000_000) == "pec_civil_works"
+    assert pakistan_contract_form(100_000_001) == "pec_sbd_2023_12"
+
+
+@pytest.mark.parametrize(
+    ("demo_id", "tax_rate"),
+    [("bhu-punjab", 16.0), ("school-karachi", 15.0), ("lahore-house", 16.0), ("faisalabad-road", 16.0)],
+)
 def test_demo_template_follows_the_pakistan_stack(demo_id: str, tax_rate: float) -> None:
     tpl = _load(_ROOT / "backend/app/core/demo_packs" / f"{demo_id}.py").TEMPLATE
     assert tpl.currency == "PKR"
@@ -143,3 +195,9 @@ def test_pack_manifest() -> None:
     assert MANIFEST.default_currency == "PKR"
     assert MANIFEST.default_methodology == "pakistan"
     assert "pakistan" in MANIFEST.validation_rule_sets
+    assert MANIFEST.hidden_modules == []
+    assert "oe_boq" in MANIFEST.default_modules
+    assert "oe_contracts" in MANIFEST.default_modules
+    assert MANIFEST.metadata["support_name"] == "Spyder Solutions"
+    assert "lahore-house" in MANIFEST.demo_template_ids
+    assert "faisalabad-road" in MANIFEST.demo_template_ids

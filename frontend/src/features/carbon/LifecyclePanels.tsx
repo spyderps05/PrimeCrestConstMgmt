@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Life-cycle tab (budget, checks, hotspots, A4 / A5 lines, EPD import) and the

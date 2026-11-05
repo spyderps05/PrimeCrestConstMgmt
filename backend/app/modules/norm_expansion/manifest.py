@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Production-norm expansion module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "labor-hours, machine-hours and material quantities - from a library of "
         "production-norm coefficients, before any pricing is applied."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=[],
     auto_install=True,

@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Device forms​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ for site sensors: add a device and add readings by hand.

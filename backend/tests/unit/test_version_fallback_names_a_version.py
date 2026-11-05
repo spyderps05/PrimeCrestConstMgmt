@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The version the CLI prints has to be a version, and it has to be this tree's.
 
@@ -17,7 +17,7 @@ The Settings branch reads ``Settings.model_fields["app_version"]``, and
 survive. Nothing raised, so the ``except`` below it never ran and the value
 never became "unknown". The line printed to the user was
 
-    OpenConstructionERP vPydanticUndefined
+    PrimeCrest vPydanticUndefined
 
 on the one code path that only ever runs when somebody is already trying to
 work out what they have installed.
@@ -162,6 +162,6 @@ def test_the_printed_line_uses_the_resolver(
     cmd_version(argparse.Namespace())
     printed = capsys.readouterr().out
 
-    assert f"OpenConstructionERP v{expected}" in printed
+    assert f"PrimeCrest v{expected}" in printed
     assert NOT_THIS_TREE not in printed
     assert "Undefined" not in printed

@@ -1,7 +1,7 @@
 # Pakistan Construction Pack - first-login onboarding wizard.
 version: 2
 locale: en-GB
-title: "Welcome to OpenConstructionERP - Pakistan"
+title: "Welcome to PrimeCrest - Pakistan"
 subtitle: "Three steps to line the workspace up with Pakistani practice: province and tax status, payment terms, rupee."
 
 steps:
@@ -11,7 +11,8 @@ steps:
     fields:
       - { key: company_name, label: "Company name", type: text, required: true }
       - { key: ntn, label: "National Tax Number (NTN)", type: text, required: false, placeholder: "1234567-8" }
-      - { key: province, label: "Province of the site", type: select, required: true, default: "Punjab", options: ["Punjab", "Sindh", "Khyber Pakhtunkhwa", "Balochistan", "Islamabad Capital Territory", "Azad Jammu and Kashmir", "Gilgit-Baltistan"], help: "The services tax on construction is levied by the province, so the rate follows the site." }
+      - { key: province, label: "Province of the site", type: select, required: true, default: "Punjab", options: ["Punjab", "Sindh", "Khyber Pakhtunkhwa", "Balochistan", "Islamabad Capital Territory", "Azad Jammu and Kashmir", "Gilgit-Baltistan"], help: "The services tax on construction is levied by the province, so the rate follows the site. A new job starts in Punjab." }
+      - { key: marla_sqft, label: "Marla used on this firm's drawings", type: select, required: true, default: "225", options: ["225", "272.25"], help: "Punjab revenue practice counts a marla as 225 square feet. The federal survey count is 272.25 square feet. The figure chosen here is stored on the project. A kanal in the Lahore Development Authority regulations is 20 marlas." }
       - { key: active_taxpayer, label: "We are on the Active Taxpayer List of the Federal Board of Revenue", type: checkbox, default: true, help: "A payee off the list has income tax withheld at twice the rate." }
 
   - id: contract_type

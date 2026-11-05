@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 # AGPL-3.0 License
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Which projects are demo projects, and which demos the user removed.

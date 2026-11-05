@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * The "Your company" block of the look step: an admin drafts the company name
@@ -58,8 +58,8 @@ describe('<StepLook> company brand', () => {
   it('previews a typed name and an uploaded logo in the mini menu before Apply', async () => {
     renderStep();
     expect(screen.queryByTestId('look-preview-brand')).toBeNull();
-    fireEvent.change(screen.getByPlaceholderText('Acme Construction GmbH'), { target: { value: 'Acme Bau' } });
-    expect(screen.getByTestId('look-preview-brand').textContent).toBe('Acme Bau');
+    fireEvent.change(screen.getByPlaceholderText('Crescent Builders (Pvt) Ltd'), { target: { value: 'Crescent Builders' } });
+    expect(screen.getByTestId('look-preview-brand').textContent).toBe('Crescent Builders');
 
     upload(png());
     await waitFor(() => expect(screen.getByTestId('look-preview-brand').querySelector('img')).not.toBeNull());
@@ -94,7 +94,7 @@ describe('<StepLook> company brand', () => {
 
   it('Apply saves name and logo for the workspace and turns the menu edit button off', async () => {
     const { onNext } = renderStep();
-    fireEvent.change(screen.getByPlaceholderText('Acme Construction GmbH'), { target: { value: 'Acme Bau' } });
+    fireEvent.change(screen.getByPlaceholderText('Crescent Builders (Pvt) Ltd'), { target: { value: 'Crescent Builders' } });
     upload(png());
     await screen.findByRole('img', { name: 'Current logo' });
     fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
@@ -102,11 +102,11 @@ describe('<StepLook> company brand', () => {
     await waitFor(() => expect(onNext).toHaveBeenCalledTimes(1));
     const b = useBrandingStore.getState();
     expect(b.mode).toBe('logo');
-    expect(b.companyName).toBe('Acme Bau');
+    expect(b.companyName).toBe('Crescent Builders');
     expect(b.options.showLogoEdit).toBe(false);
     expect(apiPut).toHaveBeenCalledWith(
       '/v1/branding/',
-      expect.objectContaining({ mode: 'logo', company_name: 'Acme Bau', show_logo_edit: false }),
+      expect.objectContaining({ mode: 'logo', company_name: 'Crescent Builders', show_logo_edit: false }),
     );
   });
 

@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 import { useState, useRef, useEffect, type FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -20,6 +20,11 @@ import { extractErrorMessageFromBody } from '@/shared/lib/api';
 import { isTauri } from '@/shared/lib/desktop';
 import { HEX_PORTRAIT_ASPECT, HEX_PORTRAIT_CLIP } from '@/shared/lib/honeycomb';
 import { APP_VERSION } from '@/shared/lib/version';
+import {
+  PRODUCT_DEVELOPER,
+  PRODUCT_NAME,
+  PRODUCT_SHORT_NAME,
+} from '@/shared/lib/productIdentity';
 import { loginFailureKindFromResponse } from './loginError';
 import { AuthBackground } from './AuthBackground';
 import {
@@ -81,7 +86,7 @@ export function LoginPage() {
   const setTokens = useAuthStore((s) => s.setTokens);
   // White-label brand (same localStorage store the in-app sidebar editor
   // writes to). When a tenant has set a logo / company name we show it
-  // on the login card instead of the default OpenConstructionERP wordmark.
+  // on the login card instead of the default PrimeCrest wordmark.
   const { mode: brandMode, logoDataUrl: brandLogo, companyName: brandName } =
     useBrandingStore();
   const showLogoEdit = useBrandingStore((s) => s.options.showLogoEdit);
@@ -315,8 +320,22 @@ export function LoginPage() {
   // random one per install, so any literal printed here would be wrong on every
   // install. The tiles sign in through /auth/demo-login/ instead.
   const demoAccounts = [
-    { email: 'demo@openconstructionerp.com', name: 'Admin', role: t('auth.demo_role_admin', 'Administrator'), color: 'bg-blue-500', letter: 'A' },
-    { email: 'manager@openconstructionerp.com', name: 'Michael Carter', role: t('auth.demo_role_manager', 'Manager'), color: 'bg-[#7cd0ff]', letter: 'M' },
+    {
+      email: 'demo@openconstructionerp.com',
+      name: 'Imran Shah',
+      role: t('auth.demo_role_admin', 'Administrator'),
+      color: 'bg-blue-500',
+      letter: 'I',
+      portrait: '/assets/demo-people/imran-shah.jpg',
+    },
+    {
+      email: 'manager@openconstructionerp.com',
+      name: 'Hassan Raza',
+      role: t('auth.demo_role_manager', 'Manager'),
+      color: 'bg-[#7cd0ff]',
+      letter: 'H',
+      portrait: '/assets/demo-people/hassan-raza.jpg',
+    },
   ];
 
   const handleDemoLogin = async (demoEmail: string) => {
@@ -363,7 +382,7 @@ export function LoginPage() {
   /* Benefits list - reserved for future hero section layout
   const benefits = [
     { icon: HardDrive, color: 'text-emerald-500 bg-emerald-500/10', title: t('login.benefit.local', 'Your data stays on your computer'), desc: t('login.benefit.local_desc', 'No cloud. No third-party servers. Full control.') },
-    { icon: ShieldCheck, color: 'text-blue-500 bg-blue-500/10', title: t('login.benefit.open_source', '100% open source'), desc: t('login.benefit.open_source_desc', 'Transparent code. No vendor lock-in.') },
+    { icon: ShieldCheck, color: 'text-blue-500 bg-blue-500/10', title: t('login.benefit.open_source', 'Built for your team'), desc: t('login.benefit.open_source_desc', 'Private workspace. Full control of your data.') },
     { icon: Globe2, color: 'text-violet-500 bg-violet-500/10', title: t('login.benefit.standards', 'International standards'), desc: t('login.benefit.standards_desc', '120,000+ cost items across 9 cost bases worldwide.') },
     { icon: Brain, color: 'text-amber-500 bg-amber-500/10', title: t('login.benefit.ai', 'AI-assisted estimation'), desc: t('login.benefit.ai_desc', 'Smart suggestions. You decide, AI assists.') },
     { icon: Zap, color: 'text-rose-500 bg-rose-500/10', title: t('login.benefit.allinone', 'BOQ + 4D + 5D + Tendering'), desc: t('login.benefit.allinone_desc', 'Full workflow in one tool.') },
@@ -569,19 +588,17 @@ export function LoginPage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60" />
               <span className="relative inline-flex rounded-full h-[6px] w-[6px] bg-emerald-500" />
             </span>
-            <span className="text-[11px] font-medium tracking-[0.04em] text-emerald-700 dark:text-emerald-300">Open Source</span>
+            <span className="text-[11px] font-medium tracking-[0.04em] text-emerald-700 dark:text-emerald-300">Spyder Solutions</span>
           </span>
         </div>
 
         {/* Marketing headline - kept as h2 because the form panel below has the
             authoritative h1 (visually hidden, always present in DOM). */}
         <h2 className="text-[32px] xl:text-[36px] font-semibold text-content-primary leading-[1.08] tracking-[-0.025em] animate-stagger-in" style={{ animationDelay: '60ms' }}>
-          {t('login.hero_h_a', { defaultValue: 'The' })}{' '}
-          <span className="bg-gradient-to-r from-oe-blue to-sky-500 bg-clip-text text-transparent">#1</span>{' '}
-          {t('login.hero_h_b', { defaultValue: 'open-source workspace for' })}
-          <br />
+          {t('login.hero_h_a', { defaultValue: 'Enterprise' })}{' '}
           <span className="bg-gradient-to-r from-oe-blue to-sky-500 bg-clip-text text-transparent">
-            {t('login.hero_h_c', { defaultValue: 'construction project management' })}
+            {t('login.hero_h_b', { defaultValue: 'Workspace' })}{' '}
+            {t('login.hero_h_c', { defaultValue: 'for Project Management' })}
           </span>
         </h2>
 
@@ -726,10 +743,7 @@ export function LoginPage() {
         {/* Footer */}
         <div className="mt-4 space-y-1 animate-stagger-in" style={{ animationDelay: '380ms' }}>
           <div className="flex items-center gap-2 text-[11px] text-content-quaternary/60">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" className="opacity-40"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            <a href="/api/source" target="_blank" rel="noopener noreferrer" className="hover:text-content-tertiary transition-colors">AGPL-3.0</a>
-            <span className="opacity-30">&middot;</span>
-            <a href="https://OpenConstructionERP.com" target="_blank" rel="noopener noreferrer" className="hover:text-content-tertiary transition-colors">OpenConstructionERP.com</a>
+            <span>© 2026 {PRODUCT_DEVELOPER}. All rights reserved.</span>
           </div>
         </div>
       </div>
@@ -754,8 +768,8 @@ export function LoginPage() {
         <div className="w-full max-w-[380px] relative z-10">
           {/* Logo - tenant white-label (logo / company name) when set via
               the in-app sidebar editor; otherwise the default brand. The
-              small "by OpenConstructionERP" attribution stays visible in
-              customised modes (AGPL-3.0 requirement). */}
+              small "by PrimeCrest" attribution stays visible in
+              customised modes. */}
           <div className="relative mb-5 flex flex-col items-center animate-stagger-in" style={{ animationDelay: '0ms' }}>
             {/* Brand + edit-pencil row - grouped together and visually
                 centered in the form column (previously the pencil was
@@ -780,16 +794,14 @@ export function LoginPage() {
                       {brandName}
                     </span>
                   )}
-                  {/* "by OpenConstructionERP" - subordinate attribution that
-                      stays visible (AGPL-3.0). Mirrors CustomBranding.tsx. */}
+                  {/* "by PrimeCrest" - subordinate platform attribution. */}
                   <span
                     className="mt-2 block text-[11px] leading-none text-content-tertiary"
-                    style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif", letterSpacing: '0.02em' }}
+                    style={{ fontFamily: 'var(--oe-font-display)', letterSpacing: '0.02em' }}
                   >
                     by{' '}
                     <span className="font-semibold tracking-tight">
-                      Open<span className="text-oe-blue/80">Construction</span>
-                      <span className="text-content-quaternary">ERP</span>
+                      Prime<span className="text-oe-blue/80">Crest</span>
                     </span>
                   </span>
                 </div>
@@ -797,10 +809,12 @@ export function LoginPage() {
                 <div className="flex items-center gap-2.5">
                   <Logo size="md" animate />
                   <span
-                    className="text-2xl font-medium text-content-primary whitespace-nowrap"
-                    style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif", letterSpacing: '-0.02em' }}
+                    className="text-2xl font-semibold text-content-primary whitespace-nowrap"
+                    style={{ fontFamily: 'var(--oe-font-display)', letterSpacing: '-0.02em' }}
+                    title={PRODUCT_NAME}
                   >
-                    Open<span className="text-oe-blue">Construction</span><span className="text-content-quaternary">ERP</span>
+                    Prime<span className="text-oe-blue">Crest</span>
+                    <span className="sr-only">{PRODUCT_SHORT_NAME}</span>
                   </span>
                 </div>
               )}
@@ -824,7 +838,7 @@ export function LoginPage() {
             </p>
           </div>
 
-          {/* Open-source banner (mobile) */}
+          {/* Product banner (mobile) */}
           <div className="lg:hidden mb-4 animate-stagger-in" style={{ animationDelay: '100ms' }}>
             <div className="rounded-xl bg-gradient-to-r from-oe-blue/10 via-violet-500/10 to-emerald-500/10 border border-oe-blue/20 px-4 py-3 text-center">
               <div className="flex items-center justify-center gap-1.5 mb-1">
@@ -832,10 +846,10 @@ export function LoginPage() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600">Open Source</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600">Spyder Solutions</span>
               </div>
               <p className="text-sm font-bold bg-gradient-to-r from-oe-blue via-violet-600 to-emerald-600 bg-clip-text text-transparent">
-                {t('login.open_source_badge', { defaultValue: 'The #1 Open-Source Construction ERP' })}
+                {t('login.open_source_badge', { defaultValue: 'PrimeCrest Construction Management' })}
               </p>
             </div>
           </div>
@@ -875,7 +889,7 @@ export function LoginPage() {
 
             <form onSubmit={handleSubmit} className="space-y-3" aria-label={t('auth.login', 'Sign in')}>
               <div className="animate-stagger-in" style={{ animationDelay: '280ms' }}>
-                <Input id="login-email" name="email" label={t('auth.email', 'Email')} type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@company.com" autoComplete="email" required aria-required="true" autoFocus icon={<Mail size={15} />} />
+                <Input id="login-email" name="email" label={t('auth.email', 'Email')} type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@company.pk" autoComplete="email" required aria-required="true" autoFocus icon={<Mail size={15} />} />
               </div>
 
               <div className="flex flex-col gap-1 animate-stagger-in" style={{ animationDelay: '340ms' }}>
@@ -995,11 +1009,11 @@ export function LoginPage() {
                       disabled={demoLoading !== null}
                       className="flex w-full items-center gap-3 rounded-xl border border-border-light/50 dark:border-white/10 bg-surface-secondary/50 dark:bg-white/[0.06] px-3.5 py-2.5 text-left transition-all hover:border-oe-blue/40 hover:bg-oe-blue/[0.05] dark:hover:bg-oe-blue/[0.14] hover:shadow-sm disabled:opacity-50 group"
                     >
-                      <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${acct.color} text-white text-sm font-bold shadow-sm`}>
+                      <div className={`relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full ${acct.color} text-white text-sm font-bold shadow-sm`}>
                         {demoLoading === acct.email ? (
                           <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" /></svg>
                         ) : (
-                          acct.letter
+                          <img src={acct.portrait} alt="" className="h-full w-full object-cover" />
                         )}
                       </div>
                       <div className="flex-1 min-w-0">
@@ -1040,65 +1054,8 @@ export function LoginPage() {
           </div>
           )}
 
-          {/* GitHub + Community - two primary entry points for the
-              open-source project (replaces the old single "Learn more"
-              link). Premium two-line cards with a tinted icon badge:
-              graphite for the source repo, oe-blue gradient for the
-              community hub. Mirrors the page's login-glass-pro language. */}
-          <div className="mt-4 grid grid-cols-2 gap-3 animate-stagger-in" style={{ animationDelay: '520ms' }}>
-            <a
-              href="https://github.com/datadrivenconstruction/OpenConstructionERP"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${t('login.github', { defaultValue: 'GitHub' })} - ${t('login.github_sub', { defaultValue: 'Source code' })}`}
-              className="group relative flex items-center gap-3 overflow-hidden rounded-xl border border-border-light/70 dark:border-white/15 bg-white/75 dark:bg-white/[0.07] backdrop-blur-sm px-3.5 py-3 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/90 dark:hover:bg-white/[0.12] dark:hover:border-white/25 hover:border-content-primary/25 hover:shadow-lg"
-            >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-content-primary/[0.06] dark:bg-white/10 text-content-primary transition-colors group-hover:bg-content-primary/10 dark:group-hover:bg-white/15">
-                <Github size={17} strokeWidth={1.9} />
-              </span>
-              <span className="min-w-0 flex-1 leading-tight">
-                <span className="block text-[13px] font-semibold text-content-primary">
-                  {t('login.github', { defaultValue: 'GitHub' })}
-                </span>
-                <span className="block truncate text-[11px] text-content-tertiary dark:text-content-secondary">
-                  {t('login.github_sub', { defaultValue: 'Source code' })}
-                </span>
-              </span>
-              <ArrowUpRight
-                size={15}
-                className="shrink-0 text-content-quaternary dark:text-content-tertiary transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-content-secondary"
-              />
-            </a>
-            <a
-              href="https://t.me/datadrivenconstruction"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${t('login.community', { defaultValue: 'Community' })} - ${t('login.community_sub', { defaultValue: 'Get help & discuss' })}`}
-              className="group relative flex items-center gap-3 overflow-hidden rounded-xl border border-border-light/70 dark:border-white/15 bg-white/75 dark:bg-white/[0.07] backdrop-blur-sm px-3.5 py-3 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/90 dark:hover:bg-white/[0.12] dark:hover:border-white/25 hover:border-content-primary/25 hover:shadow-lg"
-            >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-content-primary/[0.06] dark:bg-white/10 text-content-primary transition-colors group-hover:bg-content-primary/10 dark:group-hover:bg-white/15">
-                <Users size={17} strokeWidth={1.9} />
-              </span>
-              <span className="min-w-0 flex-1 leading-tight">
-                <span className="block text-[13px] font-semibold text-content-primary">
-                  {t('login.community', { defaultValue: 'Community' })}
-                </span>
-                <span className="block truncate text-[11px] text-content-tertiary dark:text-content-secondary">
-                  {t('login.community_sub', { defaultValue: 'Get help & discuss' })}
-                </span>
-              </span>
-              <ArrowUpRight
-                size={15}
-                className="shrink-0 text-content-quaternary dark:text-content-tertiary transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-content-secondary"
-              />
-            </a>
-          </div>
-          <div className="lg:hidden mt-2 text-center text-2xs text-content-quaternary">
-            <div className="flex items-center justify-center gap-3">
-              <a href="https://OpenConstructionERP.com" target="_blank" rel="noopener noreferrer" className="hover:text-content-secondary transition-colors">OpenConstructionERP.com</a>
-              <span>·</span>
-              <a href="https://github.com/datadrivenconstruction/OpenConstructionERP" target="_blank" rel="noopener noreferrer" className="hover:text-content-secondary transition-colors">GitHub</a>
-            </div>
+          <div className="mt-4 text-center text-2xs text-content-quaternary animate-stagger-in" style={{ animationDelay: '520ms' }}>
+            © 2026 {PRODUCT_DEVELOPER}. All rights reserved.
           </div>
           {/* Running build version - always visible so it's obvious which
               version is live on a fresh open. Matches the Sidebar / About
@@ -1129,13 +1086,13 @@ export function LoginPage() {
             <div className="px-6 pt-5 pb-4 border-b border-border-light clear-both">
               <LogoWithText size="sm" className="mb-3" />
               <h3 className="text-base font-bold text-content-primary mb-2">
-                {t('about.title', 'Professional construction cost estimation - free and open source')}
+                {t('about.title', 'Professional construction cost estimation and project management')}
               </h3>
               <p className="text-[13px] text-content-secondary leading-relaxed">
-                {t('about.intro', 'OpenConstructionERP is a modern platform for construction cost management. It covers the full estimation workflow - from creating a bill of quantities to tendering and bid comparison. Designed for professionals worldwide, it supports international standards and works in 24 languages.')}
+                {t('about.intro', 'PrimeCrest Construction Management is a modern platform for construction cost management. It covers the full estimation workflow - from creating a bill of quantities to tendering and bid comparison. Designed for professionals worldwide, it supports international standards and works in 24 languages.')}
               </p>
               <p className="mt-2 text-[13px] text-content-secondary leading-relaxed">
-                {t('about.intro2', 'Unlike traditional commercial solutions, OpenConstructionERP runs entirely on your computer. Your project data never leaves your machine - you have full ownership and control. The source code is open and auditable, so you always know exactly what the software does.')}
+                {t('about.intro2', 'Unlike traditional commercial solutions, PrimeCrest runs entirely on your computer. Your project data never leaves your machine - you have full ownership and control. © 2026 Spyder Solutions. All rights reserved.')}
               </p>
             </div>
 
@@ -1171,15 +1128,15 @@ export function LoginPage() {
               </div>
             </div>
 
-            {/* Why open source */}
+            {/* Why PrimeCrest */}
             <div className="px-6 py-4 border-t border-border-light">
               <h3 className="text-sm font-semibold text-content-primary mb-2">
-                {t('about.why_title', 'Why open source matters')}
+                {t('about.why_title', 'Why PrimeCrest')}
               </h3>
               <div className="space-y-2 text-[13px] text-content-secondary leading-relaxed">
-                <p>{t('about.why_1', 'Construction cost data is one of the most valuable assets a company owns. With proprietary software, your data is often locked inside formats you cannot control. If the vendor raises prices, changes terms, or discontinues the product - you may lose access to years of work.')}</p>
-                <p>{t('about.why_2', 'OpenConstructionERP takes a different approach. Your data is stored in open formats (SQLite, JSON, CSV) on your own hardware. You can export everything at any time. The source code is publicly auditable under AGPL-3.0, so there are no hidden data transfers, no telemetry, and no surprises.')}</p>
-                <p>{t('about.why_3', 'The platform is modular - install only what you need. Community modules extend functionality without bloating the core. And because it runs locally, it works offline and performs fast even with large projects.')}</p>
+                <p>{t('about.why_1', 'Construction cost data is one of the most valuable assets a company owns. PrimeCrest keeps that data under your control on your own hardware.')}</p>
+                <p>{t('about.why_2', 'Your project data stays in open formats (SQLite, JSON, CSV) on your machine. Export anytime. No hidden telemetry.')}</p>
+                <p>{t('about.why_3', 'The platform is modular - install only what you need. It runs locally, works offline, and stays fast on large projects.')}</p>
               </div>
             </div>
 
@@ -1189,7 +1146,7 @@ export function LoginPage() {
                 {t('about.who_title', 'Who is it for')}
               </h3>
               <p className="text-[13px] text-content-secondary leading-relaxed mb-3">
-                {t('about.who_desc', 'OpenConstructionERP is designed for anyone involved in construction cost management - whether you work on residential projects or large-scale infrastructure, in-house or as a consultant.')}
+                {t('about.who_desc', 'PrimeCrest is designed for anyone involved in construction cost management - whether you work on residential projects or large-scale infrastructure, in-house or as a consultant.')}
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {[
@@ -1221,7 +1178,7 @@ export function LoginPage() {
                   { value: '120,441', label: t('about.stat.costs', 'Cost items') },
                   { value: '48', label: t('about.stat.regions', 'Regional databases') },
                   { value: String(SUPPORTED_LANGUAGES.length), label: t('about.stat.languages', 'Languages') },
-                  { value: '100%', label: t('about.stat.free', 'Free & open source') },
+                  { value: '©', label: t('about.stat.free', 'Spyder Solutions') },
                 ].map((stat) => (
                   <div key={stat.label} className="rounded-lg bg-surface-secondary/50 py-2.5">
                     <div className="text-lg font-bold text-oe-blue">{stat.value}</div>
@@ -1237,16 +1194,14 @@ export function LoginPage() {
                 {t('about.ai_title', 'About AI features')}
               </h3>
               <p className="text-[13px] text-content-secondary leading-relaxed">
-                {t('about.ai_desc', 'OpenConstructionERP includes optional AI-powered tools - quick estimation from text descriptions, smart cost suggestions, and BOQ chat assistant. These features require an API key from a provider of your choice (Anthropic, OpenAI, Google). AI is always opt-in: it only activates when you configure it, and you decide what data to send. Without an API key, all other features work fully offline.')}
+                {t('about.ai_desc', 'PrimeCrest includes optional AI-powered tools - quick estimation from text descriptions, smart cost suggestions, and BOQ chat assistant. These features require an API key from a provider of your choice (Anthropic, OpenAI, Google). AI is always opt-in: it only activates when you configure it, and you decide what data to send. Without an API key, all other features work fully offline.')}
               </p>
             </div>
 
             {/* Footer */}
             <div className="px-6 py-4 border-t border-border-light flex items-center justify-between">
               <div className="flex items-center gap-3 text-2xs text-content-quaternary">
-                <a href="/api/source" target="_blank" rel="noopener noreferrer" className="hover:text-content-secondary transition-colors">AGPL-3.0</a>
-                <a href="https://OpenConstructionERP.com" target="_blank" rel="noopener noreferrer" className="hover:text-content-secondary transition-colors">OpenConstructionERP.com</a>
-                <a href="https://github.com/datadrivenconstruction/OpenConstructionERP" target="_blank" rel="noopener noreferrer" className="hover:text-content-secondary transition-colors">GitHub</a>
+                <span>© 2026 {PRODUCT_DEVELOPER}. All rights reserved.</span>
               </div>
               <Button variant="primary" size="sm" onClick={() => setShowInfo(false)}>
                 {t('about.close', 'Got it')}

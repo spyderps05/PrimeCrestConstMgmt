@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // The page as a whole: what it shows before a framework is chosen, when the

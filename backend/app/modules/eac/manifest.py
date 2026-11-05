@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """EAC v2 Engine module manifest.
 
@@ -19,7 +19,7 @@ manifest = ModuleManifest(
         "outputs. Stores rules as JSON definitions and evaluates them "
         "through DuckDB on DDC canonical Parquet (ADR 002 compliant)."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

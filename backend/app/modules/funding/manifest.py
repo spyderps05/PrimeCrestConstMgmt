@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Public funding module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "disbursement -> proof of use, with the deadlines and eligible-cost "
         "rules each programme imposes"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     # oe_projects: an application is always for one project, and the award
     # period is checked against the project's own dates.

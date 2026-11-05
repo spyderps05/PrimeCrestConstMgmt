@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Unified semantic search module manifest."""
 
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "tasks, risks, BIM elements and chat history, then merges the "
         "results via Reciprocal Rank Fusion."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=[],
     auto_install=True,

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Pure progress / percent-complete math for the schedule "Progress rigor" slice.
 
 This module is deliberately **dependency-free**: it imports nothing from the ORM,

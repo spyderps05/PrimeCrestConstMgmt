@@ -1,4 +1,4 @@
-"""OpenConstructionERP UK Construction partner pack (NRM, JCT, UK statute).
+"""PrimeCrest UK Construction partner pack (NRM, JCT, UK statute).
 
 This package exports a module-level ``MANIFEST`` instance of
 :class:`PartnerPackManifest` referenced from ``pyproject.toml``::

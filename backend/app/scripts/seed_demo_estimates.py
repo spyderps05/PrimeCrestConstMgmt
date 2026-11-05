@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Seed 2 professional demo BOQ estimates with realistic construction data.
 
@@ -627,7 +627,7 @@ async def main() -> None:
         # 1. Find or create a demo user
         # ------------------------------------------------------------------
         print("=" * 78)
-        print("  OpenConstructionERP  -  Demo Estimate Seeder")
+        print("  PrimeCrest  -  Demo Estimate Seeder")
         print("=" * 78)
 
         user = await find_showcase_owner(session)

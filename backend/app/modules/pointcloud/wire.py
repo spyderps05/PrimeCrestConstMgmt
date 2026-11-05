@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Binary wire format for streaming decimated points to the browser.
 
 One self-describing little-endian buffer the frontend reads in a single pass

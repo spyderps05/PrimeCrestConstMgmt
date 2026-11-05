@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Clash cost-impact module manifest."""
 
 from app.core.module_loader import ModuleManifest
@@ -13,7 +13,7 @@ manifest = ModuleManifest(
         "open-impact rollup - the unique-to-AGPL-ERP move competitors "
         "cannot match, since they ship coordination without a BOQ side."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_clash", "oe_boq", "oe_projects"],
     auto_install=True,

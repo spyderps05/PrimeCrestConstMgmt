@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Cost​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ benchmarks module manifest."""
 
@@ -16,7 +16,7 @@ manifest = ModuleManifest(
         "P50, P90 band per element with outliers flagged; the open reference band covers types with "
         "no own history. Tenant scoped, with an anonymised export."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="estimation",
     depends=["oe_projects", "oe_boq", "oe_price_index", "oe_fx"],
     optional_depends=[],

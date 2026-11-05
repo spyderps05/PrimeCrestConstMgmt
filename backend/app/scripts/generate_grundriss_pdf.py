@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Generate the vector German demo floor plan (Grundriss Erdgeschoss).
 
 Renders both issues of sheet A-2.01 from the geometry in
@@ -409,7 +409,7 @@ def build_pdf(revision: plan.Revision = plan.REVISION_A, out_path: Path | None =
     out_path = out_path or OUT_PATHS[revision.index]
     c = rl_canvas.Canvas(str(out_path), pagesize=(plan.PAGE_W_PT, plan.PAGE_H_PT), invariant=1)
     c.setTitle(f"Grundriss Erdgeschoss M 1:100 - Index {revision.index}")
-    c.setAuthor("OpenConstructionERP demo assets")
+    c.setAuthor("PrimeCrest demo assets")
     c.setSubject("Vector demo floor plan for the PDF takeoff module")
     # Border frame.
     c.setLineWidth(_THICK)

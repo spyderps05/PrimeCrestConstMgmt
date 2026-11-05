@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """International, Decimal-exact aggregation helpers for BI dashboards.
 
 Every function here is a PURE helper: no database, no I/O, no global

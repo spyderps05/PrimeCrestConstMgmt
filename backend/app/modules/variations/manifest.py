@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Variations module manifest."""
 
@@ -12,7 +12,7 @@ manifest = ModuleManifest(
         "Variations lifecycle: Notice -> VR -> VO -> site measurements -> "
         "daywork -> disruption/EOT claims -> Final Account"
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     # oe_boq: a variation request may own a dedicated bill of quantities
     # (Issue #435), created through BOQService and stamped with the

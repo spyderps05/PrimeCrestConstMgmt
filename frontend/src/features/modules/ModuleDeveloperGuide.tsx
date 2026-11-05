@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * ModuleDeveloperGuide - in-app, readable guide for building your own module.
@@ -122,7 +122,7 @@ export function ModuleDeveloperGuide() {
         srTitle={t('modules.dev_guide_title', { defaultValue: 'Build your own module' })}
         subtitle={t('modules.dev_guide_subtitle', {
           defaultValue:
-            'A practical, 10-minute walkthrough for adding business features to OpenConstructionERP.',
+            'A practical, 10-minute walkthrough for adding business features to PrimeCrest.',
         })}
         actions={
           <Link

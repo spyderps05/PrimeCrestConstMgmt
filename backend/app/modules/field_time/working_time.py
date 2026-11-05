@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Statutory working-time records: the regimes, and the dates they produce.
 
 Some countries oblige an employer to record the start, the end and the duration

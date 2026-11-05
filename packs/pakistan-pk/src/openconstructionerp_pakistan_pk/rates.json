@@ -1,0 +1,74 @@
+{
+  "title": "Punjab Market Rate System",
+  "review": "The government rate files are not copied into this pack. Each item, once imported, keeps the district, the bi-annual period, and the official file address. Confirm a rate with a Pakistani quantity surveyor before a live tender.",
+  "latest_period_on_the_portal": "1 January 2025 to 30 June 2025",
+  "market_rates_url": "https://finance.punjab.gov.pk/market-rates-system",
+  "input_rates_url": "https://finance.punjab.gov.pk/input-rates",
+  "nha_composite_url": "https://nha.gov.pk/documents/topic/25483",
+  "contract_form_on_the_same_page": "Revised contract form for execution of work, updated 16 November 2022, on the Finance Department market-rates page.",
+  "columns": [
+    "district",
+    "period",
+    "chapter",
+    "item_number",
+    "description",
+    "unit",
+    "labour_rate",
+    "composite_rate",
+    "material_rate",
+    "equipment_rate",
+    "specification_number",
+    "source_url"
+  ],
+  "rate_kinds": ["labour", "composite", "material", "equipment"],
+  "carriage_notes": [
+    "Kacha-road allowance",
+    "Hilly-area allowance",
+    "Extra for long articles"
+  ],
+  "bill_split": ["direct cost", "overhead", "profit", "Punjab sales tax on services as its own line"],
+  "chapters": [
+    {"number": 1, "title": "Carriage"},
+    {"number": 2, "title": "Loading, unloading and stacking"},
+    {"number": 3, "title": "Earthwork"},
+    {"number": 4, "title": "Dismantling"},
+    {"number": 5, "title": "Mortar"},
+    {"number": 6, "title": "Concrete"},
+    {"number": 7, "title": "Brickwork"},
+    {"number": 8, "title": "Stone masonry"},
+    {"number": 9, "title": "Roofing"},
+    {"number": 10, "title": "Flooring"},
+    {"number": 11, "title": "Surface rendering"},
+    {"number": 12, "title": "Wood work"},
+    {"number": 13, "title": "Painting and varnishing"},
+    {"number": 14, "title": "Lining of canals"},
+    {"number": 15, "title": "Sheet piling"},
+    {"number": 16, "title": "Protection and diversion"},
+    {"number": 17, "title": "Outlets"},
+    {"number": 18, "title": "Road and road structure"},
+    {"number": 19, "title": "Plumbing, sanitary and gas"},
+    {"number": 20, "title": "Surface drainage"},
+    {"number": 21, "title": "Sewerage"},
+    {"number": 22, "title": "Sinking of wells"},
+    {"number": 23, "title": "Tubewell and water supply"},
+    {"number": 24, "title": "Electric installation"},
+    {"number": 25, "title": "Iron work"},
+    {"number": 26, "title": "Miscellaneous"},
+    {"number": 27, "title": "HVAC"}
+  ],
+  "districts": [
+    {
+      "district": "Lahore",
+      "period": "1 January 2025 to 30 June 2025",
+      "source_url": "https://finance.punjab.gov.pk/input-rates",
+      "items": []
+    },
+    {
+      "district": "Faisalabad",
+      "period": "1 January 2025 to 30 June 2025",
+      "source_url": "https://finance.punjab.gov.pk/input-rates",
+      "items": []
+    }
+  ],
+  "importer": "Load the next official period with the same columns. A row is accepted only when its source address is on finance.punjab.gov.pk or nha.gov.pk. A third-party reprint is refused."
+}

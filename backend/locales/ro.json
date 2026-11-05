@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Acest nume nu poate fi folosit pentru un catalog nou. Alegeți alt nume.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Estimare de costuri în construcții open-source"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Actualizați"
   },
   "dashboard": {
-    "welcome": "Bine ați venit la OpenConstructionERP",
+    "welcome": "Bine ați venit la PrimeCrest",
     "subtitle": "Spațiul dvs. de lucru pentru estimarea în construcții",
     "recent_projects": "Proiecte recente",
     "system_status": "Stare sistem",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Nu există date disponibile",
         "no_data_body": "Acest raport a fost generat cu un instantaneu de date gol. Verificați dacă modulele sursă (finanțe, grafic, siguranță etc.) au returnat date pentru proiectul selectat.",
         "no_data_body_short": "Acest raport a fost generat cu un instantaneu de date gol. Verificați dacă modulele sursă au returnat date pentru proiectul selectat.",
-        "footer_generated_by": "Generat de OpenConstructionERP la {timestamp}.",
+        "footer_generated_by": "Generat de PrimeCrest la {timestamp}.",
         "worksheet_name": "Raport",
         "pdf_subject": "Raport de proiect",
         "overall_progress": "Progres general",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Bună ziua, {name},",
       "greeting_generic": "Bună ziua,",
-      "cta": "Deschide în OpenConstructionERP",
+      "cta": "Deschide în PrimeCrest",
       "footer": "Primiți acest mesaj în urma setărilor dumneavoastră de notificare. Le puteți modifica în profil.",
-      "digest_subject": "OpenConstructionERP: Rezumat notificări ({count})",
+      "digest_subject": "PrimeCrest: Rezumat notificări ({count})",
       "digest_heading": "Notificări recente:"
     },
     "tender_xlsx": {

@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Validation rules — read-only settings catalogue.
@@ -115,7 +115,7 @@ export function ValidationRulesSettingsPage() {
               <p>
                 {t('validation_rules.intro_1', {
                   defaultValue:
-                    'All validation rules built into OpenConstructionERP. Use this catalogue to see what gets checked on every import (BOQs, CAD models, tender data, takeoff results).',
+                    'All validation rules built into PrimeCrest. Use this catalogue to see what gets checked on every import (BOQs, CAD models, tender data, takeoff results).',
                 })}
               </p>
               <p>

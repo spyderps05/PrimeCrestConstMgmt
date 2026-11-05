@@ -1,5 +1,5 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
-"""Seed a fresh OpenConstructionERP install with CWICR v3 catalogues.
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
+"""Seed a fresh PrimeCrest install with CWICR v3 catalogues.
 
 Solves the "fresh-install needs a human to visit /costs and click
 Install for every region" problem from task #39 in the 2-day match

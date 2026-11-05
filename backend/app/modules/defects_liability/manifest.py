@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Defects-liability module manifest."""
 
@@ -23,7 +23,7 @@ manifest = ModuleManifest(
         "entries have a finished DLP with no outstanding defects and are clear "
         "for the final retention money to be released."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="business",
     # Hard dep supplies the project scope every table foreign-keys into.
     depends=["oe_projects"],

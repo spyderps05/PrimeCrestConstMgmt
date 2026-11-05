@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Qdrant vector-DB supervisor - no Docker, no daemon.
 
@@ -11,7 +11,7 @@ plain subprocess whenever a feature that needs it (currently only
 Why no Docker?
 --------------
 
-Every other heavy dependency in OpenConstructionERP degrades gracefully
+Every other heavy dependency in PrimeCrest degrades gracefully
 to a local-only path: PostgreSQL → SQLite, Redis → in-memory cache,
 MinIO → local filesystem. Qdrant used to require a docker-compose
 profile (``--profile ai up -d qdrant``) which made it the only thing
@@ -486,7 +486,7 @@ def _resolve_release_asset() -> tuple[str, str]:
         _PINNED_RELEASE_URL,
         headers={
             "Accept": "application/vnd.github+json",
-            "User-Agent": "OpenConstructionERP-qdrant-installer",
+            "User-Agent": "PrimeCrest-qdrant-installer",
         },
     )
     try:

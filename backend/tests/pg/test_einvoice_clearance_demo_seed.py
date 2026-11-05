@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The clearance screen opens on a real trail, tied to the real invoice.
 
 The module shipped complete and unseeded, so ``/einvoice-clearance`` was empty

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Default​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠ terms for a new guarantee: FIDIC 2017 first, then the country pack.
 

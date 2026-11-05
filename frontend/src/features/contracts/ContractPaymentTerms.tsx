@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Payment terms beside a contract's retention rate, and where each one came from.
@@ -317,8 +317,23 @@ export function ContractPaymentTermsSummary({ contract }: { contract: ContractIt
   const notStated = t('contracts.payment_terms.not_stated', { defaultValue: 'Not stated' });
   const fallback = stamp?.fallback ?? [];
 
+  const formId = String(contract.terms?.contract_form || '');
+  const formNote =
+    formId === 'pec_civil_works'
+      ? t('contracts.pk.older_form_note', {
+          defaultValue:
+            'Older PEC civil-works form: 10 percent of each certificate, capped at 5 percent of the contract price, paid within 28 days.',
+        })
+      : formId === 'pec_sbd_2023_12'
+        ? t('contracts.pk.form_2023_note', {
+            defaultValue:
+              'December 2023 form, for works above Rs 100 million. Performance security is 10 percent of the accepted contract amount. The retention-money limit is 5 percent of the contract price. Those two figures do not replace the older form’s 10 percent deduction on each certificate or its 28-day payment period.',
+          })
+        : '';
+
   return (
     <div data-testid="contract-payment-terms">
+      {formNote ? <p className="mb-3 text-sm text-content-secondary">{formNote}</p> : null}
       <div className="grid grid-cols-2 gap-x-4 gap-y-3">
         {'retention_percent' in applied && (
           <Row

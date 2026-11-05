@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Golden-fixture composition tests for the intake v2 element-group composer.
 
 Twelve fixtures (RU / EN / DE x kitchen / bathroom / full apartment / new

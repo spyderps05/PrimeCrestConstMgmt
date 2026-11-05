@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Service tests for PROJECT-scoped "escalate stored rates" preview.
 
 The catalogue-scoped path (region / category / explicit ids) is covered by

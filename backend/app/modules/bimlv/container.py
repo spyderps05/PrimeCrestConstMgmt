@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """DIN SPEC 91350 BIM-LV container codec (read + write).
 
@@ -57,7 +57,7 @@ from app.modules.boq.units import to_gaeb_unit_code
 
 CONTAINER_VERSION = "1.0"
 SPEC_ID = "DIN SPEC 91350"
-GENERATOR = "OpenConstructionERP"
+GENERATOR = "PrimeCrest"
 
 MANIFEST_NAME = "bimlv-container.xml"
 LV_NAME = "lv/lv.gaeb.xml"

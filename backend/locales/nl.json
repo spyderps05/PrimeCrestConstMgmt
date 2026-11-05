@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Deze naam kan niet worden gebruikt voor een nieuwe catalogus. Kies een andere naam.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Open-source bouwkostencalculatie"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Bijwerken"
   },
   "dashboard": {
-    "welcome": "Welkom bij OpenConstructionERP",
+    "welcome": "Welkom bij PrimeCrest",
     "subtitle": "Open-source bouwkostencalculatie-platform",
     "recent_projects": "Recente projecten",
     "system_status": "Systeemstatus",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Geen gegevens beschikbaar",
         "no_data_body": "Dit rapport is gegenereerd met een lege gegevensmomentopname. Controleer of de brongegevens (financiën, planning, veiligheid, enz.) gegevens hebben geleverd voor het geselecteerde project.",
         "no_data_body_short": "Dit rapport is gegenereerd met een lege gegevensmomentopname. Controleer of de brongegevens gegevens hebben geleverd voor het geselecteerde project.",
-        "footer_generated_by": "Gegenereerd door OpenConstructionERP op {timestamp}.",
+        "footer_generated_by": "Gegenereerd door PrimeCrest op {timestamp}.",
         "worksheet_name": "Rapport",
         "pdf_subject": "Projectrapport",
         "overall_progress": "Totale voortgang",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Beste {name},",
       "greeting_generic": "Geachte heer, mevrouw,",
-      "cta": "Openen in OpenConstructionERP",
+      "cta": "Openen in PrimeCrest",
       "footer": "U ontvangt deze e-mail vanwege uw meldingsinstellingen. U kunt ze wijzigen in uw profiel.",
-      "digest_subject": "OpenConstructionERP: Overzicht van meldingen ({count})",
+      "digest_subject": "PrimeCrest: Overzicht van meldingen ({count})",
       "digest_heading": "Recente meldingen:"
     },
     "tender_xlsx": {

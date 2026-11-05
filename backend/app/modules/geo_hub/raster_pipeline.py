@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Rasterisation helpers for the Geo Hub raster-overlay feature.
 
 Three pure functions take bytes in and return PNG bytes + dimensions

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """Geo Hub module manifest."""
 
 from app.core.module_loader import ModuleManifest
@@ -15,7 +15,7 @@ manifest = ModuleManifest(
         "(projects / bim_hub / property_dev / carbon / schedule / clash / "
         "field_reports / safety / ncr / risk) and a Cesium-based frontend."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects", "oe_bim_hub", "oe_property_dev", "oe_uploads"],
     auto_install=True,

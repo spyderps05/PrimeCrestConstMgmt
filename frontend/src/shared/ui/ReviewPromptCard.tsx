@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * ReviewPromptCard - a compact, corner-anchored ask for a rating or review.
@@ -20,25 +20,25 @@
 
 import { useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Star, Github, Linkedin, MessageSquareQuote, X, ExternalLink } from 'lucide-react';
+import { Star, Linkedin, MessageSquareQuote, X, ExternalLink } from 'lucide-react';
 import clsx from 'clsx';
 
 import { useReviewPromptStore } from '@/stores/useReviewPromptStore';
 
 /* ── review destinations ──────────────────────────────────────────────── */
 
-const REPO_URL = 'https://github.com/datadrivenconstruction/OpenConstructionERP';
+const PRODUCT_SITE = 'https://datadrivenconstruction.io';
 
 const SHARE_TEXT =
-  'OpenConstructionERP - free open-source construction cost estimation platform (BOQ, BIM takeoff, AI). Self-hosted. AGPL-3.0.';
+  'PrimeCrest Construction Management by Spyder Solutions — construction project management, cost estimation, and resource control.';
 
 const LINKEDIN_URL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-  REPO_URL,
+  PRODUCT_SITE,
 )}`;
 
 const X_URL = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
   SHARE_TEXT,
-)}&url=${encodeURIComponent(REPO_URL)}`;
+)}&url=${encodeURIComponent(PRODUCT_SITE)}`;
 
 /**
  * G2 listing. Confirmed to exist by the founder.
@@ -86,7 +86,7 @@ export function ReviewPromptCard() {
   return (
     <div
       role="region"
-      aria-label={t('review_ask.aria_label', { defaultValue: 'Rate OpenConstructionERP' })}
+      aria-label={t('review_ask.aria_label', { defaultValue: 'Rate PrimeCrest' })}
       data-testid="review-prompt-card"
       className={clsx(
         'oe-dock-aware fixed bottom-4 right-4 z-[60] w-[min(22rem,calc(100vw-2rem))]',
@@ -110,7 +110,7 @@ export function ReviewPromptCard() {
         </div>
         <div className="min-w-0 flex-1">
           <p className="text-sm font-semibold text-content-primary">
-            {t('review_ask.title', { defaultValue: 'Enjoying OpenConstructionERP?' })}
+            {t('review_ask.title', { defaultValue: 'Enjoying PrimeCrest?' })}
           </p>
           <p className="mt-1 text-xs leading-relaxed text-content-secondary">
             {t('review_ask.body', {
@@ -122,18 +122,6 @@ export function ReviewPromptCard() {
       </div>
 
       <div className="mt-3 flex flex-wrap gap-1.5">
-        <a
-          href={REPO_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={handleReviewed}
-          className={linkClass}
-        >
-          <Github size={12} />
-          {t('review_ask.github', { defaultValue: 'Star on GitHub' })}
-          <ExternalLink size={10} className="text-content-quaternary" aria-hidden />
-        </a>
-
         {G2_REVIEW_URL !== null && (
           <a
             href={G2_REVIEW_URL}

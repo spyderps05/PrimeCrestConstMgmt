@@ -1,4 +1,4 @@
-"""Owner's Project Control pack for OpenConstructionERP.
+"""Owner's Project Control pack for PrimeCrest.
 
 Exposes ``MANIFEST`` for the ``openconstructionerp.packs`` entry-point.
 """

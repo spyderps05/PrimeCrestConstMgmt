@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Pure unit tests for the resource-depth engine (T3.1).
 
 These tests import ONLY ``app.modules.resources.resource_engine`` (which itself

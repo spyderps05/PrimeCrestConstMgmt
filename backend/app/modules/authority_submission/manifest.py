@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Authority-submission factory module manifest."""
 
@@ -19,7 +19,7 @@ manifest = ModuleManifest(
         "payload is the single source for both the machine XML and the human "
         "review, and a submission must validate cleanly before it can be sent."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_users", "oe_projects"],
     auto_install=True,

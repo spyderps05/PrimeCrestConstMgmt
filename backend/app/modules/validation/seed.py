@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """Validation demo seed - the register carries the engine's own verdict.
 
 A :class:`~app.modules.validation.models.ValidationReport` is the validation

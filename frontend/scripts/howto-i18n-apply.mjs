@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 //
 // Apply translated How-it-works keys into the per-locale source-of-truth files
 // under src/app/locales/<code>.ts. Text-based + idempotent: each key is

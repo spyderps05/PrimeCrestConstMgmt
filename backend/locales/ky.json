@@ -1,7 +1,7 @@
 {
   "costs.catalog_name_unavailable": "Бул атты жаңы каталог үчүн колдонууга болбойт. Башка ат тандаңыз.",
   "app": {
-    "name": "OpenConstructionERP",
+    "name": "PrimeCrest",
     "tagline": "Ачык баштапкы код менен курулуш сметасын эсептөө"
   },
   "nav": {
@@ -296,7 +296,7 @@
     "update": "Жаңыртуу"
   },
   "dashboard": {
-    "welcome": "OpenConstructionERPге кош келиңиз",
+    "welcome": "PrimeCrestге кош келиңиз",
     "subtitle": "Сиздин курулуш сметасын эсептөө мейкиндигиңиз",
     "recent_projects": "Акыркы долбоорлор",
     "system_status": "Тутум абалы",
@@ -1474,7 +1474,7 @@
         "no_data_heading": "Маалымат жок",
         "no_data_body": "Бул отчет бош маалымат көрүнүшүндө түзүлдү. Тандалган долбоор үчүн булак модулдары (каржы, график, коопсуздук ж.б.) маалымат кайтарганын текшериңиз.",
         "no_data_body_short": "Бул отчет бош маалымат көрүнүшүндө түзүлдү. Тандалган долбоор үчүн булак модулдары маалымат кайтарганын текшериңиз.",
-        "footer_generated_by": "OpenConstructionERP тарабынан {timestamp} күнү түзүлгөн.",
+        "footer_generated_by": "PrimeCrest тарабынан {timestamp} күнү түзүлгөн.",
         "worksheet_name": "Отчет",
         "pdf_subject": "Долбоордун отчету",
         "overall_progress": "Жалпы аткарылышы",
@@ -1731,9 +1731,9 @@
     "notification_email": {
       "greeting": "Саламатсызбы, {name}!",
       "greeting_generic": "Саламатсызбы!",
-      "cta": "OpenConstructionERP системасында ачуу",
+      "cta": "PrimeCrest системасында ачуу",
       "footer": "Бул катты билдирмелер жөндөөлөрүңүзгө ылайык аласыз. Аларды профилиңизден өзгөртө аласыз.",
-      "digest_subject": "OpenConstructionERP: Билдирмелердин жыйынтыгы ({count})",
+      "digest_subject": "PrimeCrest: Билдирмелердин жыйынтыгы ({count})",
       "digest_heading": "Акыркы билдирмелер:"
     },
     "tender_xlsx": {

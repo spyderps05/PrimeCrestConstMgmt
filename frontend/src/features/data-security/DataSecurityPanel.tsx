@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // DataSecurityPanel (#4) - the trust posture made visible in-product.
@@ -22,7 +22,6 @@ import {
   Sparkles,
   Lock,
   CheckCircle2,
-  ExternalLink,
   AlertTriangle,
   Globe,
 } from 'lucide-react';
@@ -250,18 +249,11 @@ export function DataSecurityPanel() {
           good
         />
         <Fact
-          icon={<ExternalLink className="h-4 w-4" />}
-          label={t('dataSecurity.source', { defaultValue: 'Source code' })}
-          value={
-            <a
-              href={data.source.repository}
-              target="_blank"
-              rel="noreferrer"
-              className="text-oe-blue hover:underline"
-            >
-              {t('dataSecurity.source_link', { defaultValue: 'Open on GitHub' })}
-            </a>
-          }
+          icon={<Lock className="h-4 w-4" />}
+          label={t('dataSecurity.ownership', { defaultValue: 'Ownership' })}
+          value={t('dataSecurity.ownership_value', {
+            defaultValue: 'Proprietary · Spyder Solutions',
+          })}
         />
       </SectionCard>
     </div>

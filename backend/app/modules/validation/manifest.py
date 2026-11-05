@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Validation Engine module manifest."""
 
@@ -9,7 +9,7 @@ manifest = ModuleManifest(
     version="1.0.0",
     display_name="Validation Engine",
     description=("Data quality validation with configurable rule sets (DIN 276, GAEB, NRM, MasterFormat, BOQ quality)"),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="core",
     depends=["oe_projects", "oe_boq"],
     auto_install=True,

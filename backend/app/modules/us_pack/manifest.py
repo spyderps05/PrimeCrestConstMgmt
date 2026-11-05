@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Module manifest for oe_us_pack."""
 
@@ -20,7 +20,7 @@ manifest = ModuleManifest(
         "US construction standards: progress payment applications with a continuation sheet, "
         "CSI MasterFormat divisions, imperial units, USD, and state sales-tax examples."
     ),
-    author="OpenConstructionERP Core Team",
+    author="PrimeCrest Core Team",
     category="regional",
     depends=[],
     auto_install=False,

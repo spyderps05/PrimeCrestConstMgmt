@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 """A module's vocabulary is one list, and every layer that names it has to agree.
 
 Several registers offer the user a closed set of words: a meeting is one of

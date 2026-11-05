@@ -37,7 +37,7 @@ async function main() {
   await page.screenshot({ path: 'qa-tests/_about-band-docs-license.png', fullPage: false });
   console.log('OK docs-license band');
 
-  const supportHeading = page.getByRole('heading', { name: /Support OpenConstructionERP/i });
+  const supportHeading = page.getByRole('heading', { name: /Support PrimeCrest/i });
   await supportHeading.first().scrollIntoViewIfNeeded();
   await page.waitForTimeout(500);
   await page.evaluate(() => window.scrollBy(0, -120));

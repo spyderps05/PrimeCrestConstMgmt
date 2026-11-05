@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠One DWG root, and the project importer used to spell it a second way.
 
@@ -38,7 +38,7 @@ PROJECT_ID = "22222222-2222-2222-2222-222222222222"
 @pytest.fixture
 def two_foreign_directories(tmp_path: Path) -> tuple[Path, Path]:
     """A desktop install's program directory, and a service's state directory."""
-    started_from = tmp_path / "program files" / "OpenConstructionERP"
+    started_from = tmp_path / "program files" / "PrimeCrest"
     service_cwd = tmp_path / "var" / "lib" / "openestimate"
     started_from.mkdir(parents=True)
     service_cwd.mkdir(parents=True)

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠Pure unit tests for the 6D Phase 2 whole-life engine.
 
 Imports only ``app.modules.carbon.lcc`` - a leaf module with no app / database

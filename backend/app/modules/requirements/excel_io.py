@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Excel + CSV import/export for EAC requirements.
 
@@ -84,7 +84,7 @@ def build_template_xlsx() -> bytes:
         cell.fill = header_fill
         cell.font = header_font
         cell.alignment = header_align
-        cell.comment = Comment(_TEMPLATE_HINT[col], "OpenConstructionERP")
+        cell.comment = Comment(_TEMPLATE_HINT[col], "PrimeCrest")
         ws.column_dimensions[letter].width = max(16, len(col) + 6)
 
         sample_cell = ws[f"{letter}2"]

@@ -1,4 +1,4 @@
-# DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP
+# DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """Discord webhook connector.
 
@@ -55,7 +55,7 @@ async def send_discord_notification(
             for f in fields[:25]  # Discord allows max 25 fields
         ]
 
-    embed["footer"] = {"text": "OpenConstructionERP"}
+    embed["footer"] = {"text": "PrimeCrest"}
 
     payload: dict[str, Any] = {
         "embeds": [embed],

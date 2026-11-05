@@ -1,4 +1,4 @@
-"""OpenConstructionERP — Poland Construction partner pack (DIN 276 + KNR + PZP).
+"""PrimeCrest — Poland Construction partner pack (DIN 276 + KNR + PZP).
 
 This package exports a module-level ``MANIFEST`` instance of
 :class:`PartnerPackManifest` referenced from ``pyproject.toml``::

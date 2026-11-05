@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * InstallConverterPrompt — modal shown when the user tries to upload a
@@ -189,7 +189,7 @@ export function InstallConverterPrompt({
           <p className="text-sm text-content-secondary leading-relaxed">
             {t('bim.install_prompt_body', {
               defaultValue:
-                'To process “{{fileName}}” ({{fileSize}}), OpenConstructionERP needs the {{converterName}} ({{converterSize}} MB one-time download).',
+                'To process “{{fileName}}” ({{fileSize}}), PrimeCrest needs the {{converterName}} ({{converterSize}} MB one-time download).',
               fileName,
               fileSize: sizeFormatted,
               converterName,

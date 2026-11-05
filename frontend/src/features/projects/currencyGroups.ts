@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction · OpenConstructionERP​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
+// DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
  * Shared currency catalogue — single source of truth for the project
@@ -189,6 +189,7 @@ export const COUNTRY_DEFAULTS: Readonly<Record<string, CountryDefault>> = {
   jp: { region: 'Japan', currency: 'JPY' },
   kr: { region: 'Korea', currency: 'KRW' },
   in: { region: 'India', currency: 'INR' },
+  pk: { region: 'Pakistan', currency: 'PKR' },
   ae: { region: 'GulfStates', currency: 'AED' },
   sa: { region: 'GulfStates', currency: 'SAR' },
   au: { region: 'Australia', currency: 'AUD' },

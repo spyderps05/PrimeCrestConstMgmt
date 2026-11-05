@@ -67,7 +67,7 @@ MANIFEST = PartnerPackManifest(
     branding=PartnerBranding(
         primary_color="#0071E3",
         accent_color="#1E293B",
-        powered_by_text="Powered by OpenConstructionERP",
+        powered_by_text="Powered by PrimeCrest",
     ),
     onboarding_script_path="onboarding.yaml",
     metadata={

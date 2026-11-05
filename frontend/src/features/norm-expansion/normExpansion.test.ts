@@ -1,4 +1,4 @@
-// DDC-CWICR-OE: DataDrivenConstruction - OpenConstructionERP
+// DDC-CWICR-OE: DataDrivenConstruction - PrimeCrest
 // Tests for the pure, DB-free helpers behind the norm-expansion feature.
 import { describe, expect, it } from 'vitest';
 import {
