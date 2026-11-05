@@ -115,7 +115,7 @@ def _jurisdiction_from_tax_code(row: dict) -> str | None:
         return f"US-{code.split('_', 1)[0]}"
     if row["country_code"] == "PK":
         # Pakistan names the provincial revenue authority, not the province.
-        return {"PRA_ST": "PK-PB", "SRB_ST": "PK-SD", "KPRA_ST": "PK-KP"}.get(code)
+        return {"PRA_ST": "PK-PB", "SRB_ST": "PK-SD", "KPRA_ST": "PK-KP", "BRA_ST": "PK-BA", "ICT_ST": "PK-IS"}.get(code)
     raise AssertionError(f"no jurisdiction convention for country {row['country_code']!r}")
 
 

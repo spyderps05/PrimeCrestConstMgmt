@@ -172,6 +172,8 @@ _NOT_COMPARABLE: dict[str, str] = {
     "PRA_ST": "Pakistan's provincial services tax, which replaces the federal GST for services; no single national rate",
     "SRB_ST": "Pakistan's provincial services tax, which replaces the federal GST for services; no single national rate",
     "KPRA_ST": "Pakistan's provincial services tax, which replaces the federal GST for services; no single national rate",
+    "BRA_ST": "Pakistan's provincial services tax, which replaces the federal GST for services; no single national rate",
+    "ICT_ST": "Pakistan's Islamabad Capital Territory services tax, which replaces the federal GST for services; no single national rate",
     "VAT_5": "Poland's 5 % tier; VAT_RED (8 %) is the reduced rate compared",
     "TVA_INT": "France's intermediate 10 % tier; neither standard nor reduced",
     "FPA_SRED": "Greece's super-reduced 6 % tier; FPA_RED is the reduced rate compared",

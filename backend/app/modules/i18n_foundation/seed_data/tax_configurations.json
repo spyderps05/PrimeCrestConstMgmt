@@ -1236,6 +1236,38 @@
     "is_default": false
   },
   {
+    "country_code": "PK",
+    "tax_name": "BRA (Balochistan services)",
+    "tax_name_translations": {
+      "en": "Balochistan sales tax on services (BRA), standard rate",
+      "ur": "بلوچستان سیلز ٹیکس برائے خدمات (بی آر اے)، معیاری شرح"
+    },
+    "tax_code": "BRA_ST",
+    "rate_pct": "15.0",
+    "tax_type": "sales_tax",
+    "combination": "replaces_federal",
+    "subdivision_code": "PK-BA",
+    "effective_from": "2025-07-01",
+    "effective_to": null,
+    "is_default": false
+  },
+  {
+    "country_code": "PK",
+    "tax_name": "ICT (Islamabad services)",
+    "tax_name_translations": {
+      "en": "Islamabad Capital Territory sales tax on services (FBR), standard rate",
+      "ur": "اسلام آباد کیپیٹل ٹیریٹری سیلز ٹیکس برائے خدمات (ایف بی آر)، معیاری شرح"
+    },
+    "tax_code": "ICT_ST",
+    "rate_pct": "15.0",
+    "tax_type": "sales_tax",
+    "combination": "replaces_federal",
+    "subdivision_code": "PK-IS",
+    "effective_from": "2025-07-01",
+    "effective_to": null,
+    "is_default": false
+  },
+  {
     "country_code": "RU",
     "tax_name": "VAT Standard (NDS)",
     "tax_name_translations": {

@@ -270,6 +270,13 @@ LINE_FIRST_SHIPPED: Final[dict[RateLine, str]] = {
     ("PK", "PRA_ST"): "2026-10-23",
     ("PK", "SRB_ST"): "2026-10-23",
     ("PK", "KPRA_ST"): "2026-10-23",
+    # Balochistan (Balochistan Sales Tax on Services Act, 2015, BRA) and the
+    # Islamabad Capital Territory (Tax on Services) Ordinance, 2001, collected
+    # by the FBR: the standard rate of each, 15 percent, read 2026-11-05 in
+    # secondary sources and unconfirmed until a Pakistani tax adviser reads the
+    # Acts. They complete the five jurisdictions a Pakistani bill can sit in.
+    ("PK", "BRA_ST"): "2026-11-05",
+    ("PK", "ICT_ST"): "2026-11-05",
 }
 
 #: Rate lines another repair owns. Two repairs writing one line would each see
