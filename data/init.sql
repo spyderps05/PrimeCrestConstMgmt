@@ -1,4 +1,4 @@
--- PostgreSQL init script for OpenEstimate
+-- PostgreSQL init script for PrimeCrest Construction Management
 -- Run on first docker compose up
 
 -- Enable extensions

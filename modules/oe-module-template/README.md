@@ -1,4 +1,4 @@
-# OpenEstimate Module Template
+# PrimeCrest Module Template
 
 Cookiecutter-style skeleton for new modules. Each module is a self-contained
 Python package that the loader picks up from `backend/app/modules/`.

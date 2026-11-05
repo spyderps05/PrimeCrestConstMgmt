@@ -31,7 +31,7 @@ class Item(Base):
     name: Mapped[str] = mapped_column(String(255), nullable=False)
     description: Mapped[str] = mapped_column(Text, nullable=False, default="")
 
-    # Project ownership is the default scoping pattern across OpenEstimate.
+    # Project ownership is the default scoping pattern across PrimeCrest.
     # Drop this column if your module is project-agnostic (rare).
     project_id: Mapped[uuid.UUID] = mapped_column(
         GUID(),

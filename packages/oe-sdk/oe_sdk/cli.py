@@ -56,7 +56,7 @@ def _cmd_info() -> int:
 
         core = "importable"
     except ModuleNotFoundError:
-        core = "NOT importable (install the openconstructionerp backend)"
+        core = "NOT importable (install the PrimeCrest backend)"
     sys.stdout.write(f"platform core (app): {core}\n")
     sys.stdout.write(
         "import surface: ModuleManifest, module_manifest, event_bus, on, publish, "

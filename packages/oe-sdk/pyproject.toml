@@ -5,14 +5,14 @@ description = "Module SDK for PrimeCrest. One clean import surface for building 
 license = "AGPL-3.0-or-later"
 requires-python = ">=3.12"
 authors = [
-    { name = "DataDrivenConstruction", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 maintainers = [
-    { name = "Data Driven Construction", email = "info@datadrivenconstruction.io" },
+    { name = "Spyder Solutions", email = "support@primecrest.pk" },
 ]
 readme = "README.md"
 keywords = [
-    "openconstructionerp",
+    "primecrest",
     "construction",
     "construction-management",
     "sdk",
@@ -36,7 +36,7 @@ classifiers = [
 # in the ``app`` package: app.core.events, app.core.hooks,
 # app.core.validation.engine, app.core.permissions, app.core.module_loader,
 # app.dependencies and app.database. That package is shipped by the
-# ``openconstructionerp`` distribution, so the SDK depends on it. In the monorepo
+# PrimeCrest core distribution (still published as ``openconstructionerp``), so the SDK depends on it. In the monorepo
 # install both editable so nothing is downloaded (see README). The version floor
 # tracks the platform release that introduced this package layout; bump it
 # deliberately when the SDK starts to rely on a newer core surface.
@@ -48,10 +48,10 @@ dependencies = [
 oe-sdk = "oe_sdk.cli:main"
 
 [project.urls]
-Homepage = "https://datadrivenconstruction.io/erp"
-Documentation = "https://github.com/datadrivenconstruction/PrimeCrest/blob/main/docs/platform/how-it-works-for-builders.md"
-Repository = "https://github.com/datadrivenconstruction/PrimeCrest"
-Issues = "https://github.com/datadrivenconstruction/PrimeCrest/issues"
+Homepage = "https://primecrest.pk"
+Documentation = "https://docs.primecrest.pk"
+Repository = "https://github.com/spyderps05/PrimeCrestConstMgmt"
+Issues = "https://github.com/spyderps05/PrimeCrestConstMgmt/issues"
 
 [build-system]
 requires = ["hatchling"]
