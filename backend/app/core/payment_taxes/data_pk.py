@@ -47,10 +47,15 @@ Payment                                TY 2026      TY 2027
 
 Each card says on its face that the Ordinance prevails over it, so every row is
 ``unconfirmed`` until a Pakistani tax adviser has read the Ordinance and the
-First Schedule. The cards give "the gross amount payable" as the base; whether
-the provincial sales tax on the invoice sits inside that amount is not settled
-here, and the rows take the amount with the tax (``net_plus_vat``) as the cards
-read. A tax year is a window: a new Finance Act adds rows from the next
+First Schedule. The cards give "the gross amount payable" as the base, and the
+FBR's own guide to the section reads that amount as including the sales tax on
+the invoice: brochure IR-IT-004, "Collection and Deduction of Tax at Source",
+section 153(1), "On Gross amount of payment on account of ... Execution of a
+contract inclusive of sales tax payable, if any"
+(https://download1.fbr.gov.pk/Docs/20186291463931170Brochure_Collectionanddeductionoftaxatsource.pdf,
+read 2026-11-07). The rows therefore take the amount with the tax
+(``net_plus_vat``), and the Pakistani payment certificate takes its income tax
+line on line G (this certificate plus sales tax) to match. A tax year is a window: a new Finance Act adds rows from the next
 1 July and closes the earlier ones, it does not overwrite them.
 
 **What is not here.** Withholding of sales tax on services by the paying body.

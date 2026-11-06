@@ -8,7 +8,7 @@ open with their deductions instead of every tax line held.
 
 from __future__ import annotations
 
-from decimal import Decimal
+from decimal import ROUND_HALF_UP, Decimal
 
 import pytest
 from sqlalchemy import select
@@ -18,7 +18,7 @@ from app.core.demo_projects import install_demo_project
 from app.modules.contracts import certificate_taxes
 from app.modules.i18n_foundation.seed import seed_i18n_data
 from app.modules.subcontractors.models import PaymentApplication, SubcontractAgreement
-from app.modules.subcontractors.service import register_payment_application_as_tax_source
+from app.modules.subcontractors.service import SubcontractorService, register_payment_application_as_tax_source
 from app.modules.tax_withholding.service import register_certificate_tax_provider
 from app.modules.tax_withholding.source_owners import unregister_source_owner
 from tests._pg import isolated_engine
@@ -65,6 +65,17 @@ async def test_lahore_demo_certificates_carry_wht_and_punjab_sales_tax() -> None
                     assert state.vat_rate_pct == Decimal("16")
                     # No stamp duty on a Pakistani certificate, and nothing waits on it.
                     assert state.choices["stamp_duty"].state == "not_applicable"
+                    # The certificate prints the withheld income tax, not a held
+                    # line: the stored figure was computed on line G (sales tax
+                    # included, as section 153 reads), which is the line's base.
+                    view = await SubcontractorService(session).hakedis_view(app_row.id, locale="en")
+                    lines = {line["key"]: line for line in view["summary"]}
+                    wht = lines["income_tax_153"]
+                    assert wht["status"] == "value", (app_row.application_number, wht)
+                    accrued = Decimal(lines["accrued"]["amount"])
+                    expected = (accrued * Decimal("7.5") / 100).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+                    assert Decimal(wht["amount"]) == expected
+                    assert income.amount == expected
     finally:
         certificate_taxes.unregister_certificate_tax_provider()
         certificate_taxes.unregister_certificate_tax_writer()

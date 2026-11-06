@@ -246,7 +246,13 @@ _PK_DEDUCTIONS: tuple[str, ...] = (
 # found, so this is a house arrangement, not a transcription, and a contract
 # adjusts it like any other layout. The income tax line is section 153(1)(c)
 # of the Income Tax Ordinance, 2001, at the rate of the payee class the person
-# picks (company or not, on the Active Taxpayer List or not); the sales tax
+# picks (company or not, on the Active Taxpayer List or not), taken on line G:
+# the section taxes "the gross amount payable", which the FBR reads as
+# including the sales tax charged on the invoice (FBR brochure IR-IT-004,
+# "Collection and Deduction of Tax at Source", section 153(1): "Execution of a
+# contract inclusive of sales tax payable, if any"). That is the base the
+# payment tax rows compute on (``app.core.payment_taxes.data_pk``,
+# ``net_plus_vat``), so a stored figure matches the line. The sales tax
 # withholding line is the provincial withholding agent rule, which has no
 # shipped fraction and is decided per certificate.
 _PK_STANDARD: tuple[SummaryLineDef, ...] = (
@@ -261,7 +267,7 @@ _PK_STANDARD: tuple[SummaryLineDef, ...] = (
         "income_tax_153",
         "a",
         "tax",
-        ("this_certificate",),
+        ("accrued",),
         sign=-1,
         tax_kind="income_withheld",
         section="deductions",

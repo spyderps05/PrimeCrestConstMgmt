@@ -174,6 +174,10 @@ def test_a_pakistan_project_has_an_interim_payment_certificate() -> None:
     by_tax = {line.tax_kind: line for line in settings.layout if line.op == "tax"}
     assert by_tax["income_withheld"].key == "income_tax_153"
     assert by_tax["income_withheld"].sign == -1
+    # Section 153 taxes the gross amount payable, sales tax included (FBR
+    # brochure IR-IT-004), so the line is on G, the base the rows compute on.
+    assert by_tax["income_withheld"].operands == ("accrued",)
+    assert {row.base for row in rows_for("PK") if row.kind == "income_withholding"} == {"net_plus_vat"}
     assert by_tax["vat_computed"].key == "sales_tax"
     assert by_tax["vat_withheld"].key == "sales_tax_withholding"
     assert "stamp_duty" not in by_tax
