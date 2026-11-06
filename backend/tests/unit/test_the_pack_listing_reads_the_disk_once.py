@@ -3,12 +3,13 @@
 The header asks for this listing on every page. Each ``has_logo`` /
 ``has_favicon`` / ``has_onboarding_script`` flag in it used to call
 ``read_pack_file``, and every one of those calls re-ran
-``importlib.metadata.entry_points`` for both pack groups. Over the 43 packs of
+``importlib.metadata.entry_points`` for the pack groups. Over the 43 packs of
 a source checkout that was 102 scans and about five seconds of CPU per request,
 measured, and three concurrent requests took 146 to 252 seconds on the machine
 where a price edit in the BOQ looked like a frozen app.
 
-The listing now scans the entry-points once and answers each flag once per
+The listing now scans the entry-points once (one ``entry_points()`` call
+filtered to every pack group) and answers each flag once per
 process, and ``reset_cache()`` (called by install, rescan, apply and un-apply)
 drops both. These tests count the scans and the reads through monkeypatch, so
 they fail if either cache is removed and also if the invalidation stops working.
@@ -17,6 +18,7 @@ they fail if either cache is removed and also if the invalidation stops working.
 from __future__ import annotations
 
 import json
+from importlib.metadata import EntryPoints
 from pathlib import Path
 
 import pytest
@@ -63,9 +65,9 @@ def counted(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
     calls = {"entry_points": 0, "read_pack_file": 0}
     real_read = discovery_mod.read_pack_file
 
-    def fake_entry_points(*args: object, **kwargs: object) -> list:
+    def fake_entry_points(*args: object, **kwargs: object) -> EntryPoints:
         calls["entry_points"] += 1
-        return []
+        return EntryPoints(())
 
     def counting_read(slug: str, relpath: str) -> bytes | None:
         calls["read_pack_file"] += 1
@@ -89,7 +91,7 @@ def test_the_second_listing_neither_scans_nor_reads(counted: tuple[Path, dict[st
 
     first = list_installed()
     # One scan per pack group, and one read per declared file.
-    assert calls == {"entry_points": 2, "read_pack_file": 3}
+    assert calls == {"entry_points": 1, "read_pack_file": 3}
     assert _flags(first) == {"has_logo": True, "has_favicon": False, "has_onboarding_script": False}
 
     calls.update(entry_points=0, read_pack_file=0)
@@ -113,7 +115,7 @@ def test_reset_cache_lets_the_listing_see_a_file_added_since(counted: tuple[Path
     reset_cache()
     calls.update(entry_points=0, read_pack_file=0)
     assert _flags(list_installed()) == {"has_logo": True, "has_favicon": True, "has_onboarding_script": False}
-    assert calls == {"entry_points": 2, "read_pack_file": 3}
+    assert calls == {"entry_points": 1, "read_pack_file": 3}
 
 
 def test_the_rescan_route_drops_both_caches(counted: tuple[Path, dict[str, int]]) -> None:
@@ -131,4 +133,4 @@ def test_a_caller_cannot_poison_the_cached_entry_points(counted: tuple[Path, dic
     handed_out = _iter_entry_points()
     handed_out.append(object())  # type: ignore[arg-type]
     assert _iter_entry_points() == []
-    assert calls["entry_points"] == 2
+    assert calls["entry_points"] == 1

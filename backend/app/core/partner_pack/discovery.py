@@ -93,13 +93,19 @@ def _scan_entry_points() -> tuple[EntryPoint, ...]:
     installed or removed, which ``discover_packs`` already treats as needing
     ``reset_cache()`` or a restart, so this has the same lifetime.
     """
+    # ONE metadata walk for all four groups. ``entry_points(group=...)`` walks
+    # every installed distribution per call, so filtering a single unfiltered
+    # result costs one walk where the per-group form cost one per group; the
+    # PrimeCrest aliases doubled the group count and would have doubled it.
+    installed = entry_points()
+    select = getattr(installed, "select", None)
     by_name: dict[str, EntryPoint] = {}
     for group in ENTRY_POINT_GROUPS:
-        try:
-            eps = entry_points(group=group)
-        except TypeError:
-            # Python 3.9 fallback (the codebase requires 3.12 but be defensive).
-            eps = entry_points().get(group, [])  # type: ignore[assignment]
+        if select is not None:
+            eps = select(group=group)
+        else:
+            # A plain iterable (a test double): keep what names this group, or no group at all.
+            eps = [ep for ep in installed if getattr(ep, "group", group) == group]
         for ep in eps:
             by_name[ep.name] = ep
     return tuple(by_name.values())
