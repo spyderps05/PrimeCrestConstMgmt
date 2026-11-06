@@ -15,8 +15,8 @@ against the AICPA Trust Services Criteria (TSC) 2017 (revised
 
 ## 1. Scope
 
-- Software: PrimeCrest (all modules distributed under
-  AGPL-3.0-or-later).
+- Software: PrimeCrest (all modules distributed under the
+  proprietary PrimeCrest licence).
 - Systems: the Spyder Solutions-operated hosted instance at
   <https://primecrest.pk> (if and when operated),
   including the production database, object storage, and

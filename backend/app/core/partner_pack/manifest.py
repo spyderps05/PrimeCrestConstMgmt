@@ -469,7 +469,7 @@ class PartnerPackManifest(BaseModel):
     # ------------------------------------------------------------------
     @property
     def effective_powered_by(self) -> str:
-        """Co-branding string. Default preserves AGPL attribution.
+        """Co-branding string. Default preserves the product attribution.
 
         The "in partnership with" half is only synthesized for a ``partner``
         pack. A country or industry pack we author carries a ``partner_name``

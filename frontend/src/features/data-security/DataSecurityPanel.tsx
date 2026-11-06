@@ -252,7 +252,7 @@ export function DataSecurityPanel() {
           icon={<Lock className="h-4 w-4" />}
           label={t('dataSecurity.ownership', { defaultValue: 'Ownership' })}
           value={t('dataSecurity.ownership_value', {
-            defaultValue: 'AGPL-3.0 · Spyder Solutions',
+            defaultValue: '© 2026 Spyder Solutions. All rights reserved.',
           })}
         />
       </SectionCard>

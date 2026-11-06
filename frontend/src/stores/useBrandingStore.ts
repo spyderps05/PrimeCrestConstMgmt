@@ -7,9 +7,8 @@
  * logo (PNG/JPG/SVG) or company name. When set, the user's brand
  * shows prominently at the top of the sidebar; the
  * "PrimeCrest" wordmark moves below it at one-third the
- * size as a "powered by" attribution — still visible (we ship under
- * AGPL-3.0 with attribution requirements) but no longer the main
- * brand on the page.
+ * size as a "powered by" attribution — still visible but no longer
+ * the main brand on the page.
  *
  * Persistence has two layers:
  *   - localStorage, for an instant first paint and offline / desktop use;

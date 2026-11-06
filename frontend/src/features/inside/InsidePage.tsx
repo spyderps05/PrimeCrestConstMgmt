@@ -5,7 +5,7 @@
 //
 // A curated, single-page view of what just shipped (pulled straight from the
 // same Changelog the /about page already renders) plus a short roadmap list.
-// PrimeCrest is developed by Spyder Solutions (AGPL-3.0). This page does not
+// PrimeCrest is proprietary software of Spyder Solutions. This page does not
 // ask for donations, sponsorship, or stars.
 
 import { useState, type FormEvent } from 'react';
@@ -136,7 +136,7 @@ function LockedTeaser() {
           <p className="mt-auto pt-5 text-2xs text-content-tertiary leading-relaxed">
             {t('inside.donate_no_paywall', {
               defaultValue:
-                'PrimeCrest Construction Management is developed by Spyder Solutions and licensed under AGPL-3.0.',
+                'PrimeCrest Construction Management is developed by Spyder Solutions. © 2026 Spyder Solutions. All rights reserved.',
             })}
           </p>
         </div>

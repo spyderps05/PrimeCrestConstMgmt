@@ -2,8 +2,8 @@
 
 PrimeCrest is an open, modular platform for construction estimating and
 construction management, developed by Spyder Solutions for the Pakistan construction
-market and distributed under AGPL-3.0 (derived from OpenConstructionERP by Artem Boiko /
-DataDrivenConstruction). This page is the entry point to the architecture
+market and distributed under a proprietary commercial licence (derived from
+OpenConstructionERP by Artem Boiko / DataDrivenConstruction). This page is the entry point to the architecture
 docs. It explains how the codebase fits together: the monorepo layout, the module
 system, the validation pipeline, the canonical data format, the data stores, and the
 split between the backend and the frontend. It describes the platform at the version

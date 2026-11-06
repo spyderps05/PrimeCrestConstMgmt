@@ -12,7 +12,7 @@
  * and the public system endpoint:
  *   - GET   /api/health       (version, build, env - for the License & Plan card)
  *
- * PrimeCrest is developed by Spyder Solutions (AGPL-3.0). The License & Plan
+ * PrimeCrest is proprietary software of Spyder Solutions. The License & Plan
  * card states that plainly and points to an enterprise agreement. There is
  * no payment flow and no fake plan tier - none exists server-side.
  *
@@ -46,7 +46,7 @@ import { Card, CardHeader, CardContent, Badge, Button, Skeleton } from '@/shared
 import { apiGet, ApiError } from '@/shared/lib/api';
 import { useAuthStore } from '@/stores/useAuthStore';
 import { fetchUsers, type User, type UserRole } from '@/features/users/api';
-import { SITE_URL, UPSTREAM_LICENSE } from '@/shared/brand';
+import { LICENSE_NAME, SITE_URL } from '@/shared/brand';
 
 // Enterprise agreement request. There is no in-app payment flow.
 const LICENSE_REQUEST_URL = `${SITE_URL}/contact?topic=enterprise`;
@@ -387,13 +387,13 @@ export function SettingsTeamPanel() {
                   {t('settings.license_edition_community', { defaultValue: 'Enterprise' })}
                 </span>
                 <Badge variant="blue" size="sm">
-                  {UPSTREAM_LICENSE}
+                  {LICENSE_NAME}
                 </Badge>
               </div>
               <p className="mt-1 max-w-prose text-xs leading-relaxed text-content-secondary">
                 {t('settings.license_community_desc', {
                   defaultValue:
-                    'PrimeCrest Construction Management is developed by Spyder Solutions. It is based on OpenConstructionERP and licensed under AGPL-3.0.',
+                    '© 2026 Spyder Solutions. All rights reserved.',
                 })}
               </p>
             </div>

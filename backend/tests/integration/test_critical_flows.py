@@ -205,11 +205,16 @@ class TestHealthAndSystem:
         assert len(data["modules"]) > 0
 
     async def test_source_endpoint(self, client: AsyncClient) -> None:
+        # PrimeCrest is proprietary: the route returns the licence notice and
+        # makes no source-code offer.
         resp = await client.get("/api/source")
         assert resp.status_code == 200
         data = resp.json()
-        assert data["license"] == "AGPL-3.0"
-        assert "source_code" in data
+        assert data["license"] == "Proprietary"
+        assert data["notice"] == "© 2026 Spyder Solutions. All rights reserved."
+        assert data["source_available"] is False
+        assert "source_code" not in data
+        assert "AGPL" not in str(data)
 
     async def test_validation_rules_list(self, client: AsyncClient, auth_headers: dict[str, str]) -> None:
         resp = await client.get("/api/system/validation-rules", headers=auth_headers)

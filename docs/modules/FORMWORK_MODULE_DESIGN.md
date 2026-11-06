@@ -814,7 +814,7 @@ PrimeCrest **Formwork module** target differentiation:
 - Re-use cycle is a first-class metric (none of the above expose it cleanly).
 - Open REST API + event bus, integrates with the same project a customer uses
   for BOQ / schedule / HSE / EAC — no silo.
-- AGPL-3.0; open data export
+- Open data export
   (CSV / XLSX / JSON) at every screen.
 
 The module's strategic claim: a contractor renting from any of the large

@@ -463,7 +463,7 @@ test.describe('R5 Cluster C — Rules / Validation / Dashboard / Navigation', ()
 
     // Remove expected externals and duplicates, keep same-origin only.
     // Exclude non-SPA endpoints (anything starting with /api/ is a backend
-    // REST route, not a router path; /api/source is the AGPL source link).
+    // REST route, not a router path).
     const safeLinks = links.filter(
       (l) =>
         l &&

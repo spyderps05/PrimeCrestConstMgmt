@@ -3,8 +3,8 @@
 /**
  * ThirdPartyLicenses — the LGPL components inside the build, and their texts.
  *
- * The About panel used to describe AGPL-3.0 and stop there, which is our own
- * licence and not the whole story: the product also redistributes components
+ * The About panel used to describe only the product's own licence, which is
+ * not the whole story: the product also redistributes components
  * under LGPL-2.1 and LGPL-3.0, and LGPL-3.0 section 4(c) asks that a Combined
  * Work displaying copyright notices during execution include a notice for the
  * Library among them and point the reader at the licence texts.

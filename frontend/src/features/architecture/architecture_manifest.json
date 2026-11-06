@@ -46491,7 +46491,7 @@
         "name": "oe_clash_cost_impact",
         "version": "1.0.0",
         "display_name": "Clash Cost Impact",
-        "description": "Bridges clash detection (BIM coordination) and the BOQ module to surface an estimated rework cost per clash and a project-level open-impact rollup - the unique-to-AGPL-ERP move competitors cannot match, since they ship coordination without a BOQ side.",
+        "description": "Bridges clash detection (BIM coordination) and the BOQ module to surface an estimated rework cost per clash and a project-level open-impact rollup - the PrimeCrest differentiator competitors cannot match, since they ship coordination without a BOQ side.",
         "author": "PrimeCrest Core Team",
         "category": "core",
         "depends": [

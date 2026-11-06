@@ -133,7 +133,8 @@ project or its use of the material.
 ### Licence of these files
 
 The extraction and transformation code, the canonical schema and the
-compilation as published here are AGPL-3.0, the same as PrimeCrest.
+compilation as published here are part of PrimeCrest and covered by its
+licence (© 2026 Spyder Solutions. All rights reserved.).
 That covers this project's own contribution only. It does not override the
 terms of the source publications listed above, and it does not apply to any
 base whose basis is still marked pending.

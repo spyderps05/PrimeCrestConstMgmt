@@ -32,10 +32,13 @@ construction market.
 
 ### Licensing
 
-- PrimeCrest remains under AGPL-3.0. © 2026 Spyder Solutions. PrimeCrest is based on
-  OpenConstructionERP © Artem Boiko / DataDrivenConstruction, licensed under AGPL-3.0.
-  Upstream copyright headers in source files, `LICENSE`, `NOTICE`, `COPYRIGHT` and
-  `docs/legal/` are retained unchanged.
+- PrimeCrest is proprietary software of Spyder Solutions, distributed under a commercial
+  licence (Spyder Solutions holds a commercial licence for the upstream OpenConstructionERP
+  code). Product legal text: © 2026 Spyder Solutions. All rights reserved. `LICENSE`,
+  `NOTICE`, `COPYRIGHT`, the About page, the sidebar footer, `/api/source` and the OpenAPI
+  licence field now state the proprietary licence; the AGPL wording and source-offer links
+  were removed. Upstream copyright headers in source files are retained unchanged.
+- Removed the CI and pre-commit guard that rejected AI co-author commit trailers.
 
 ## Upstream history
 

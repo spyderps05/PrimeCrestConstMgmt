@@ -1,15 +1,16 @@
-PrimeCrest
+PrimeCrest Construction Management
+Copyright (c) 2026 Spyder Solutions. All rights reserved.
+Contact: support@primecrest.pk
+
+PrimeCrest is proprietary software of Spyder Solutions, distributed under a
+commercial licence. See the LICENSE file for the licence terms.
+
+PrimeCrest incorporates code from OpenConstructionERP, used by Spyder
+Solutions under a commercial licence from its author:
 Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
-Contact: info@datadrivenconstruction.io
 
-This product is licensed under the GNU Affero General Public License v3.0
-or later (AGPL-3.0-or-later). See the LICENSE file for the full license text.
-
-A commercial licence is available that lifts the AGPL obligations on
-PrimeCrest itself. It cannot lift them on code we do not own, and
-no dependency is AGPL, so there is no third-party AGPL code it would leave
-uncovered: see "AGPL Cascade" below and section 4a of
-docs/legal/COMMERCIAL-LICENSE.md. Contact info@datadrivenconstruction.io.
+Third-party components remain under their own licences, listed below. No
+dependency is AGPL: see "AGPL Cascade" below.
 
 ------------------------------------------------------------------------
 Third-Party Software
@@ -205,8 +206,8 @@ inventory.
 AGPL Cascade -- None Upstream
 ------------------------------------------------------------------------
 
-PrimeCrest itself is distributed under the GNU Affero General
-Public License v3.0 or later. No package it depends on is AGPL, in the
+PrimeCrest itself is proprietary software distributed under a
+commercial licence. No package it depends on is AGPL, in the
 base install or in any optional group.
 
 Releases up to and including 18.7.0 were different. They depended on
@@ -659,10 +660,8 @@ HarfBuzz, inside uharfbuzz
     PyInstaller, and inside the Docker image. Without this file the
     notice Old MIT requires in all copies would appear in none of them.
 
-    Both licences are compatible with AGPL-3.0 and neither adds a
-    restriction it forbids. Apache-2.0 is one-way compatible with
-    GPL-3.0 and so with AGPL-3.0; the combined work is distributed under
-    AGPL-3.0 while the Apache component retains its notices under
+    Both licences are permissive and allow redistribution inside a
+    proprietary product. The Apache component retains its notices under
     section 4 of its own licence. Old MIT is bare permissive, with no
     patent, advertising or copyleft clause, and imposes only the notice
     requirement satisfied above.
@@ -889,8 +888,8 @@ Licence texts are committed at backend/app/core/licenses/LICENSE_LGPL_3_0,
 backend/app/core/licenses/LICENSE_LGPL_2_1 and
 backend/app/core/licenses/LICENSE_GPL_3_0. The third is there because
 LGPL-3.0 is written as a set of additional permissions on top of GPL-3.0
-and asks for both documents; the AGPL text we ship for our own code is a
-different licence and does not stand in for it.
+and asks for both documents; the proprietary licence that covers our own
+code is a different licence and does not stand in for it.
 
 Telling you the library is there, and giving you its text.
     In the Python package and the container image the licence arrives
@@ -954,8 +953,8 @@ Letting you replace the library with your own build.
 
     In the desktop installers the backend is a single frozen executable
     and you cannot swap a file inside it. What replaces that is the
-    route of rebuilding, and everything needed for it is already public:
-    the application is AGPL-3.0 with its full source, the build
+    route of rebuilding, and everything needed for it is available to
+    licensees: the build
     specification is committed at desktop/pyinstaller.spec, and the
     exact dependency versions are pinned at
     backend/requirements-desktop.lock. Install your own build of the
@@ -1044,8 +1043,8 @@ licensing positions:
     DDC IFC to Excel (the converter and its reader)
         Proprietary software of DataDrivenConstruction, all rights
         reserved, free for private and commercial use under the
-        DataDrivenConstruction EULA named in the release notes. It is not licensed under the AGPL and
-        the AGPL is not offered for it. It travels beside
+        DataDrivenConstruction EULA named in the release notes. It is not covered by
+        the PrimeCrest licence. It travels beside
         PrimeCrest in one installer without becoming part of the
         same work.
 
@@ -1076,12 +1075,12 @@ Disclaimer of Warranty
 THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
-See the AGPL-3.0 license for the full warranty disclaimer.
+See the LICENSE file for the full warranty disclaimer.
 
 ------------------------------------------------------------------------
 Contact
 ------------------------------------------------------------------------
 
 For legal, licensing, or compliance inquiries:
-    info@datadrivenconstruction.io
-    https://datadrivenconstruction.io
+    support@primecrest.pk
+    https://primecrest.pk

@@ -143,7 +143,7 @@ def test_root_context_excludes_dangerous_paths(root_spec: pathspec.PathSpec, pat
         "backend/pyproject.toml",
         "backend/alembic.ini",
         "backend/alembic/env.py",
-        # The verbatim AGPL-3.0 text. pyproject names it in license-files, so a
+        # The product licence text. pyproject names it in license-files, so a
         # context that drops it produces a wheel with no licence file and an
         # image that conveys none either. The repo-root ``/LICENSE`` line stays
         # excluded on purpose and is anchored so it cannot reach down here.

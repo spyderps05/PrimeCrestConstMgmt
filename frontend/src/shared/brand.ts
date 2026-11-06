@@ -30,28 +30,13 @@ export const PIP_INSTALL_CMD = `pip install ${PIP_PACKAGE}`;
 export const PIP_UPGRADE_CMD = `pip install --upgrade ${PIP_PACKAGE}`;
 
 /**
- * Upstream attribution. PrimeCrest is a derivative of OpenConstructionERP,
- * which is licensed under AGPL-3.0; this credit must stay visible wherever
- * the app shows legal / licence information.
+ * Product legal text. PrimeCrest is proprietary software of Spyder Solutions,
+ * distributed under a commercial licence; no open-source licence or source
+ * offer applies to the product as shipped.
  */
-export const UPSTREAM_PROJECT = 'OpenConstructionERP';
-export const UPSTREAM_AUTHOR = 'Artem Boiko / DataDrivenConstruction';
-export const UPSTREAM_LICENSE = 'AGPL-3.0';
-export const UPSTREAM_ATTRIBUTION =
-  `Based on ${UPSTREAM_PROJECT} © ${UPSTREAM_AUTHOR} — ${UPSTREAM_LICENSE}`;
-
-/** Neutral product legal notice (About page, legal surfaces). */
-export const LEGAL_NOTICE =
-  `© 2026 ${COMPANY}. ${PRODUCT_SHORT_NAME} is based on ${UPSTREAM_PROJECT} ` +
-  `© ${UPSTREAM_AUTHOR}, licensed under ${UPSTREAM_LICENSE}.`;
-
+export const LICENSE_NAME = 'Proprietary';
 export const COPYRIGHT = `© 2026 ${COMPANY}.`;
+export const LEGAL_NOTICE = `© 2026 ${COMPANY}. All rights reserved.`;
 
-/**
- * Short legal line for compact surfaces such as the sidebar footer: the
- * company credit plus the licence label, which links to the AGPL-3.0
- * source offer the backend serves (network users must be able to reach it).
- */
-export const LEGAL_FOOTER_OWNER = `© ${COMPANY}`;
-export const LEGAL_LICENSE = UPSTREAM_LICENSE;
-export const LEGAL_SOURCE_URL = '/api/source';
+/** Short legal line for compact surfaces such as the sidebar footer. */
+export const LEGAL_FOOTER = `© ${COMPANY}. All rights reserved.`;

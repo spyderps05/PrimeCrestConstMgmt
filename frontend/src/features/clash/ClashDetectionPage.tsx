@@ -3709,7 +3709,7 @@ export function ClashDetectionPage() {
                             sortDir={sortDir}
                             onSort={toggleSort}
                           />
-                          {/* Cost impact column — unique-to-AGPL-ERP move.
+                          {/* Cost impact column — PrimeCrest differentiator.
                               Owned by the backend ``clash_cost_impact``
                               module: surfaces the estimated rework cost
                               per clash so a coordinator can prioritise

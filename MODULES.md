@@ -509,8 +509,8 @@ Then enable it from the UI: **Settings, Modules & Marketplace, System Modules**.
    validation rules. See `backend/app/core/validation/`.
 4. **Suggestions are confirmed by a person** - any suggested value must show a
    confidence score and require user confirmation before it mutates data.
-5. **AGPL-3.0 compliance** - PrimeCrest is distributed under AGPL-3.0, inherited from
-   the upstream codebase. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+5. **Licensing** - PrimeCrest is proprietary software of Spyder Solutions, distributed
+   under a commercial licence. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ---
 

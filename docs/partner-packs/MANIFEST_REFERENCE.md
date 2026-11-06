@@ -251,9 +251,9 @@ for the list of rule sets the core currently implements.
 | | |
 |---|---|
 | Type | `str \| None` |
-| Default | `None` (resolves to the AGPL co-brand string) |
+| Default | `None` (resolves to the default co-brand string) |
 | Purpose | Override the co-brand line shown next to the partner logo. When `None`, defaults to `"Powered by PrimeCrest · In partnership with {partner_name}"`. |
-| Constraint | Any override MUST still credit PrimeCrest in the string. Removing the credit violates AGPL §5(d). |
+| Constraint | Any override MUST still credit PrimeCrest in the string. Removing the credit breaches the PrimeCrest partner terms. |
 | Example | `"Solution by Acme — built on PrimeCrest"` |
 
 ---

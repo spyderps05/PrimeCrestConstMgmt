@@ -1,13 +1,13 @@
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The AGPL-3.0 text has to be present, verbatim, and reachable by the build.
 
-The project declares ``AGPL-3.0-or-later`` everywhere it can - the SPDX
-expression in ``pyproject.toml``, the trove classifier, ``NOTICE``, the desktop
-installer EULA, and a line in the About page telling users the full text ships
-with the source. Up to and including 15.9.1 none of that was true: the repo-root
-``LICENSE`` was a summary, no copy of the licence text existed anywhere in the
-tree, the built wheel's ``dist-info`` had no licence file, and the container
-image carried none either. A summary sitting where the licence belongs is worse
-than an obvious absence, because it looks like the thing it replaces.
+That was the rule while the project was distributed under AGPL-3.0. Since
+2026-11-06 PrimeCrest ships under a proprietary commercial licence held by
+Spyder Solutions (``license = "LicenseRef-Proprietary"`` in ``pyproject.toml``
+and the "Other/Proprietary License" trove classifier), so what has to be present
+and reachable by the build is that proprietary licence, and no AGPL text may sit
+where it belongs. Up to and including 15.9.1 the built wheel's ``dist-info`` had
+no licence file and the container image carried none either; this module keeps
+the licence the product is actually distributed under travelling with both.
 
 Two copies of the text exist, and they exist for different consumers:
 
@@ -20,7 +20,7 @@ Two copies of the text exist, and they exist for different consumers:
 
 NOTICE is the same arrangement for the same reason, and it was missing for
 longer. The published 16.0.0 wheel holds 3860 entries and NOTICE is not among
-them, so a pip install conveys the AGPL text and no attribution index at all.
+them, so a pip install conveys the licence text and no attribution index at all.
 What makes that particular absence awkward is that six bundled font and font
 engine licences do travel in that wheel, inside ``app/`` where they sit under
 the package directory rather than beside it, and NOTICE is the file that says
@@ -29,8 +29,8 @@ per-release inventory is published. The one file a reader would go to first was
 the one they could not reach.
 
 Duplication is the deliberate trade, and this module is what stops it drifting.
-The AGPL-3.0 text is frozen (the FSF will not revise version 3), so the only way
-the two licence copies can diverge is by accident, which is exactly what an
+The licence text changes only when its owner changes it, so the only way the
+two licence copies can diverge is by accident, which is exactly what an
 assertion is for. NOTICE is the opposite case and needs the assertion more: it
 is edited every time a dependency starts or stops bundling somebody else's
 object code, and an edit that lands in one copy and not the other leaves the
@@ -79,23 +79,25 @@ NOTICE_MARKERS = [
     "Disclaimer of Warranty",
 ]
 
-# Structural landmarks of the real text, not a fingerprint of one download.
-# Section 13 is the clause that makes this the Affero licence rather than the
-# GPL, so a file passing every other check and missing that one would be the
-# wrong licence shipped under the right name.
+# Landmarks of the proprietary licence. Each is a statement the product's legal
+# position rests on, so a file missing one would be the wrong licence shipped
+# under the right name.
 REQUIRED_MARKERS = [
-    "GNU AFFERO GENERAL PUBLIC LICENSE",
-    "Version 3, 19 November 2007",
-    "TERMS AND CONDITIONS",
-    "0. Definitions.",
-    "13. Remote Network Interaction; Use with the GNU General Public License.",
-    "17. Interpretation of Sections 15 and 16.",
-    "END OF TERMS AND CONDITIONS",
-    "How to Apply These Terms to Your New Programs",
+    "PrimeCrest Construction Management",
+    "Copyright \u00a9 2026 Spyder Solutions. All rights reserved.",
+    "proprietary software owned by",
+    "without prior written permission from",
+    'PROVIDED "AS IS"',
+    "Third-party components bundled with this software remain under their own",
 ]
 
-# The eighteen numbered sections, 0 through 17.
-_SECTION_RX = re.compile(r"^\s{2,}(\d{1,2})\. \S", re.MULTILINE)
+# Landmarks of the GNU Affero licence the project used to ship. None of them may
+# appear in the product's own licence file any more.
+FORBIDDEN_MARKERS = [
+    "GNU AFFERO GENERAL PUBLIC LICENSE",
+    "AGPL",
+    "Remote Network Interaction",
+]
 
 
 def _text(path: Path) -> str:
@@ -104,24 +106,28 @@ def _text(path: Path) -> str:
 
 
 @pytest.mark.parametrize("path", [ROOT_LICENCE, WHEEL_LICENCE], ids=["root", "backend"])
-def test_licence_file_is_the_verbatim_agpl_text(path: Path) -> None:
-    """Each copy is the licence itself, not a notice pointing at one."""
+def test_licence_file_is_the_proprietary_licence(path: Path) -> None:
+    """Each copy is the proprietary licence, not the AGPL text it replaced."""
     text = _text(path)
 
     for marker in REQUIRED_MARKERS:
-        assert marker in text, f"{path.relative_to(REPO_ROOT)} is missing AGPL landmark: {marker!r}"
+        assert marker in text, f"{path.relative_to(REPO_ROOT)} is missing licence landmark: {marker!r}"
 
-    sections = {int(m.group(1)) for m in _SECTION_RX.finditer(text)}
-    missing = sorted(set(range(18)) - sections)
-    assert not missing, f"{path.relative_to(REPO_ROOT)} is missing AGPL sections {missing}"
+    for marker in FORBIDDEN_MARKERS:
+        assert marker not in text, (
+            f"{path.relative_to(REPO_ROOT)} still carries {marker!r}. PrimeCrest is proprietary "
+            "software under a commercial licence and the AGPL text must not ship as its licence."
+        )
 
-    # A summary is short. The canonical text is ~34 KB over 661 lines; the floor
-    # is well under that so a future FSF-side whitespace nudge cannot fail this,
-    # while the 2 KB notice this replaced could never clear it.
-    assert len(text) > 30_000, (
-        f"{path.relative_to(REPO_ROOT)} is {len(text)} characters - too short to be the AGPL-3.0 text. "
-        "A summary or a pointer must not occupy the place the licence belongs."
+
+def test_the_wheel_metadata_declares_the_proprietary_licence() -> None:
+    """The METADATA expression and the trove classifier agree with LICENSE."""
+    pyproject = PYPROJECT.read_text(encoding="utf-8")
+    assert re.search(r'^license\s*=\s*"LicenseRef-Proprietary"\s*$', pyproject, re.MULTILINE), (
+        'backend/pyproject.toml must declare license = "LicenseRef-Proprietary".'
     )
+    assert "License :: Other/Proprietary License" in pyproject
+    assert "License :: OSI Approved :: GNU Affero" not in pyproject
 
 
 def test_the_two_licence_copies_are_identical() -> None:
@@ -206,7 +212,7 @@ def test_every_bundled_licence_notice_names_exists(path: Path) -> None:
 def test_the_wheel_build_is_told_to_ship_the_licence_and_the_notice() -> None:
     """Without ``license-files`` the text sits in the tree and never travels.
 
-    ``license = "AGPL-3.0-or-later"`` writes ``License-Expression`` into METADATA
+    ``license = "LicenseRef-Proprietary"`` writes ``License-Expression`` into METADATA
     and ships no bytes. This is the line that puts the text at
     ``*.dist-info/licenses/LICENSE`` inside the wheel, and NOTICE beside it.
 

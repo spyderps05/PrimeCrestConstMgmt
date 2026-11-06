@@ -508,10 +508,10 @@ them.
 
 ---
 
-## 8. Branding and AGPL co-brand obligation
+## 8. Branding and co-brand obligation
 
-PrimeCrest is AGPL-3.0. Section 5(d) of AGPL requires that
-"appropriate legal notices" remain on each "interactive user interface."
+PrimeCrest is proprietary software of Spyder Solutions, and its partner terms
+require the product credit to stay visible on every interactive user interface.
 For partner packs, this is satisfied by the **co-brand string**:
 
 ```
@@ -527,7 +527,7 @@ displayed:
 
 A pack MAY override the wording via `branding.powered_by_text`, but the
 override MUST still credit PrimeCrest somewhere in the string.
-Removing the credit is an AGPL violation. The default value is the safe
+Removing the credit breaches the partner terms. The default value is the safe
 choice and is recommended for all packs.
 
 **Logo handling**

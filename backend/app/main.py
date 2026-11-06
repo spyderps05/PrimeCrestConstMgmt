@@ -2096,8 +2096,8 @@ def create_app() -> FastAPI:
             "url": "https://primecrest.pk",
         },
         license_info={
-            "name": "AGPL-3.0",
-            "url": "https://github.com/spyderps05/PrimeCrestConstMgmt",
+            "name": "Proprietary",
+            "url": "https://primecrest.pk",
         },
         # Both reference pages are registered by hand further down instead of
         # by FastAPI, so they can load their CSS and JS from this install
@@ -3397,17 +3397,21 @@ def create_app() -> FastAPI:
 
     @app.get("/api/source", tags=["System"])
     async def source_code() -> dict:
-        """Licence and source-code notice for PrimeCrest Construction Management."""
+        """Licence notice for PrimeCrest Construction Management.
+
+        PrimeCrest is proprietary software distributed under a commercial
+        licence, so this endpoint carries the licence notice only and makes no
+        source-code offer. The route stays so older clients that still link
+        here get the notice instead of a 404.
+        """
         return {
-            "license": "AGPL-3.0",
-            "copyright": "© 2026 Spyder Solutions.",
-            "notice": (
-                "© 2026 Spyder Solutions. PrimeCrest is based on OpenConstructionERP "
-                "© Artem Boiko / DataDrivenConstruction, licensed under AGPL-3.0."
-            ),
-            "source_code": "https://github.com/spyderps05/PrimeCrestConstMgmt",
+            "license": "Proprietary",
+            "copyright": "© 2026 Spyder Solutions. All rights reserved.",
+            "notice": "© 2026 Spyder Solutions. All rights reserved.",
+            "source_available": False,
             "product": "PrimeCrest Construction Management",
             "owner": "Spyder Solutions",
+            "contact": "support@primecrest.pk",
         }
 
     @app.get("/api/system/status", tags=["System"])
@@ -3612,8 +3616,8 @@ def create_app() -> FastAPI:
             ai_providers=provider_names,
             registration_mode=settings.registration_mode,
             analytics_bundled=False,
-            license_name="AGPL-3.0",
-            repository="https://github.com/spyderps05/PrimeCrestConstMgmt",
+            license_name="Proprietary · © 2026 Spyder Solutions",
+            repository="",
         )
 
     def _semver_tuple(v: str) -> tuple[int, ...]:

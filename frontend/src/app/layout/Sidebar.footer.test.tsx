@@ -60,7 +60,7 @@ import { useModuleStore } from '@/stores/useModuleStore';
 import { useViewModeStore } from '@/stores/useViewModeStore';
 import { useSidebarCollapseStore } from '@/stores/useSidebarCollapseStore';
 import { DEFAULT_FOOTER_PREFS, resetFooterPrefsCache, writeFooterPrefs } from '@/shared/lib/footerPrefs';
-import { LEGAL_LICENSE, LEGAL_SOURCE_URL } from '@/shared/brand';
+import { LEGAL_FOOTER } from '@/shared/brand';
 
 function renderSidebar() {
   const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
@@ -124,12 +124,15 @@ describe('the sidebar footer', () => {
     expect(link('Telegram community')).toBeNull();
   });
 
-  // The licence stays visible and links to the AGPL-3.0 source offer.
-  it('names the licence and links it to the source offer', () => {
+  // PrimeCrest is proprietary: the footer carries the copyright line and no
+  // licence or source-offer link.
+  it('shows the proprietary copyright line without a source-offer link', () => {
     renderSidebar();
-    const licence = screen.getByText(LEGAL_LICENSE);
-    expect(LEGAL_LICENSE).toBe('AGPL-3.0');
-    expect(licence.closest('a')?.getAttribute('href')).toBe(LEGAL_SOURCE_URL);
+    const legal = screen.getByText(LEGAL_FOOTER);
+    expect(LEGAL_FOOTER).toBe('© Spyder Solutions. All rights reserved.');
+    expect(legal.closest('a')).toBeNull();
+    expect(screen.queryByText('AGPL-3.0')).toBeNull();
+    expect(document.querySelector('a[href="/api/source"]')).toBeNull();
   });
 
   it('drops Edit menu the moment it is switched off', () => {
@@ -161,7 +164,7 @@ describe('the sidebar footer', () => {
     expect(container.querySelectorAll('ul.grid-cols-2')).toHaveLength(0);
     expect(container.querySelectorAll('div.grid-cols-2')).toHaveLength(0);
     expect(screen.getByText(/^v\d/)).toBeTruthy();
-    expect(screen.getByText('AGPL-3.0')).toBeTruthy();
+    expect(screen.getByText(/All rights reserved/)).toBeTruthy();
   });
 
   it('keeps the icon-only footer free of upstream links', () => {

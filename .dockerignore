@@ -128,7 +128,7 @@ docs
 !README.md
 !backend/README.md
 !frontend/README.md
-# Anchored, and it matters. ``backend/LICENSE`` is the verbatim AGPL-3.0 text
+# Anchored, and it matters. ``backend/LICENSE`` is the product licence text
 # the wheel build needs (backend/pyproject.toml names it in license-files), and
 # it has to reach the build context or `pip install ./backend` produces a wheel
 # with no licence in it and the image conveys nothing. Real Docker ignore

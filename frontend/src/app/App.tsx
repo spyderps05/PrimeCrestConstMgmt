@@ -1691,7 +1691,7 @@ export default function App() {
         {/* Inside track - backers-only early-look panel (donation perk):
             recent releases (reused from the /about changelog) + a short
             coming-next list. Gated client-side by a supporter access code
-            remembered in localStorage; never gates the AGPL code itself. */}
+            remembered in localStorage; never gates the product itself. */}
         <Route path="/inside" element={<P title="Inside track"><InsidePage /></P>} />
         <Route path="/project-intelligence" element={<P title="Project Intelligence"><ProjectIntelligencePage /></P>} />
         {/* Architecture Map — internal tool, admin-only. Surfaces module

@@ -159,10 +159,10 @@ file-by-file walkthrough.
 
 ## Licensing
 
-PrimeCrest is distributed under AGPL-3.0, inherited from the upstream OpenConstructionERP
-codebase (© Artem Boiko / DataDrivenConstruction). By submitting a contribution you agree
-that it is licensed under AGPL-3.0. Keep the existing copyright header lines in source
-files unchanged.
+PrimeCrest is proprietary software of Spyder Solutions, distributed under a commercial
+licence (© 2026 Spyder Solutions. All rights reserved.). Contributions are accepted only
+from people working for or contracted by Spyder Solutions, and become the property of
+Spyder Solutions. Keep the existing copyright header lines in source files unchanged.
 
 ## Questions?
 

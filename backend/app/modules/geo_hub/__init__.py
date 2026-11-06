@@ -25,8 +25,8 @@ Adds geospatial capabilities to PrimeCrest:
 Design notes (Cesium / 3D Tiles research):
 
 * CesiumJS, ``cesium-native``, ``3d-tiles-tools`` and ``gltf-pipeline``
-  are all Apache-2.0 - one-way compatible with our AGPL-3.0 community
-  ship and our commercial enterprise license.
+  are all Apache-2.0 - compatible with distribution inside our
+  proprietary commercial product.
 * Tile generation runs as a job (``TileGenerationJob`` FSM) and writes
   output under ``tilesets/{tileset_id}/`` in the existing storage
   backend.

@@ -3,8 +3,8 @@
 **PrimeCrest Construction Management** is developed and maintained by
 **Spyder Solutions** ([primecrest.pk](https://primecrest.pk), support@primecrest.pk).
 
-© 2026 Spyder Solutions. PrimeCrest is based on OpenConstructionERP © Artem Boiko /
-DataDrivenConstruction, licensed under AGPL-3.0.
+© 2026 Spyder Solutions. All rights reserved. PrimeCrest is proprietary software
+distributed under a commercial licence.
 
 ## Upstream authorship
 

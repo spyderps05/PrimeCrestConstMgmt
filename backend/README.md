@@ -155,6 +155,6 @@ The lint rule set is `E, F, W, I, N, UP, B, A, C4, PT, RET, SIM`. The exact conf
 
 ## License
 
-© 2026 Spyder Solutions. PrimeCrest is based on OpenConstructionERP © Artem Boiko / DataDrivenConstruction, licensed under AGPL-3.0. See `LICENSE` and `NOTICE`.
+© 2026 Spyder Solutions. All rights reserved. PrimeCrest is proprietary software distributed under a commercial licence. See `LICENSE` and `NOTICE`.
 
 Contact: support@primecrest.pk

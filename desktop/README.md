@@ -87,7 +87,7 @@ desktop/
     icons/                App and installer icons
 ```
 
-Questions: support@primecrest.pk. Licensed under AGPL-3.0.
+Questions: support@primecrest.pk. © 2026 Spyder Solutions. All rights reserved.
 
 ## Desktop regression checks
 

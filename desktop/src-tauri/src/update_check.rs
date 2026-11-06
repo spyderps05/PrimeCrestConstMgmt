@@ -30,7 +30,7 @@
 // malformed tag - ends in exactly one thing: nothing is said, and startup is
 // untouched. Nothing in this file is ever awaited by the startup path.
 //
-// Privacy. This is an outbound request to a third party from an AGPL product
+// Privacy. This is an outbound request to a third party from a self-hosted product
 // that people run on private networks, so: it is one anonymous
 // GET, it sends no identifier, no telemetry and no version of ours (the
 // user-agent below is a bare product token with no version in it, because

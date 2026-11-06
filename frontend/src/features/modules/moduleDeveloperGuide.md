@@ -481,7 +481,7 @@ Then enable it under Modules & Marketplace, System Modules.
 2. **No IfcOpenShell, no native IFC.** CAD/BIM is always converted through DDC cad2data into the canonical JSON format.
 3. **Validation is not optional.** Any module that ingests data must declare validation rules.
 4. **AI-augmented, human-confirmed.** AI suggestions must show a confidence score and require user confirmation before mutating data.
-5. **AGPL-3.0 compliance.** The platform is dual-licensed (AGPL + Commercial). There is no CLA and no external pull requests: modules are distributed as their own packages.
+5. **Licensing.** PrimeCrest is proprietary software of Spyder Solutions. There is no CLA and no external pull requests: modules are distributed as their own packages under terms agreed with Spyder Solutions.
 
 ---
 

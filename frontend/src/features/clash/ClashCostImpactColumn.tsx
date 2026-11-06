@@ -17,7 +17,7 @@
  * factor was applied to - defensible numbers, not a black box.
  *
  * The endpoint is owned by the ``clash_cost_impact`` backend module —
- * this column is the unique-to-AGPL-ERP differentiator (competitors that
+ * this column is the PrimeCrest differentiator (competitors that
  * ship coordination without a BOQ side cannot wire clashes to construction
  * cost). The component fails soft: any 4xx / 5xx renders an em-dash so a
  * partial outage of the cost-impact service never breaks the clash row.

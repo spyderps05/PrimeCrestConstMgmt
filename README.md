@@ -167,15 +167,11 @@ all quantities, rates and costs before any contractual or tender use.
 
 ## Licensing & attribution
 
-PrimeCrest Construction Management is developed by Spyder Solutions. The codebase is
-derived from **[OpenConstructionERP](https://github.com/datadrivenconstruction/openconstructionerp)**
-by **Artem Boiko / DataDrivenConstruction**, and is distributed under the
-**GNU Affero General Public License v3.0** - see [LICENSE](LICENSE), [NOTICE](NOTICE) and
-[COPYRIGHT](COPYRIGHT). Upstream copyright notices in source files are retained.
+PrimeCrest Construction Management is proprietary software developed and owned by
+Spyder Solutions and distributed under a commercial licence - see [LICENSE](LICENSE),
+[NOTICE](NOTICE) and [COPYRIGHT](COPYRIGHT). The codebase incorporates
+**OpenConstructionERP** by **Artem Boiko / DataDrivenConstruction**, used under a commercial
+licence from its author; upstream copyright notices in source files are retained.
+Third-party components remain under their own licences, listed in [NOTICE](NOTICE).
 
-Under AGPL-3.0 you may use, modify and redistribute this software. If you run a modified
-version as a network service, AGPL section 13 requires you to offer the corresponding
-source code to its users under the same licence.
-
-© 2026 Spyder Solutions. PrimeCrest is based on OpenConstructionERP © Artem Boiko /
-DataDrivenConstruction, licensed under AGPL-3.0.
+© 2026 Spyder Solutions. All rights reserved.

@@ -30,4 +30,4 @@
 
 ## Attribution
 
-© 2026 Spyder Solutions. PrimeCrest is based on OpenConstructionERP © Artem Boiko / DataDrivenConstruction, licensed under AGPL-3.0.
+© 2026 Spyder Solutions. All rights reserved.

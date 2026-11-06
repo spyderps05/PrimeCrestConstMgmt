@@ -1,7 +1,7 @@
 // DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 /**
- * AboutPage — Application info, developer, licence and upstream attribution.
+ * AboutPage — Application info, developer and licence.
  */
 
 import { useEffect, useState } from 'react';
@@ -31,13 +31,11 @@ import {
   COPYRIGHT,
   DOCS_URL,
   ISSUES_URL,
-  REPO_URL,
+  LICENSE_NAME,
   SITE_HOST,
   SITE_URL,
   SUPPORT_EMAIL,
   SUPPORT_MAILTO,
-  UPSTREAM_ATTRIBUTION,
-  UPSTREAM_LICENSE,
 } from '@/shared/brand';
 
 const DEMO_TEAM = [
@@ -154,7 +152,7 @@ export function AboutPage() {
             <span>&middot;</span>
             <span>2026</span>
             <span>&middot;</span>
-            <Badge variant="blue" size="sm">{UPSTREAM_LICENSE}</Badge>
+            <Badge variant="blue" size="sm">{LICENSE_NAME}</Badge>
           </div>
           <p className="mt-4 max-w-xl text-xs leading-relaxed text-content-tertiary" data-testid="about-legal-notice">
             {PRODUCT_LEGAL_NOTICE}
@@ -364,9 +362,6 @@ export function AboutPage() {
               <p className="text-[11px] leading-relaxed text-content-secondary">
                 {PRODUCT_LEGAL_NOTICE}
               </p>
-              <p className="mt-2 text-[11px] leading-relaxed text-content-tertiary" data-testid="about-upstream-attribution">
-                {UPSTREAM_ATTRIBUTION}
-              </p>
               <p className="text-[11px] text-content-tertiary mt-2 leading-snug">
                 {t('about.third_party_hint', {
                   defaultValue: 'Third-party component licences are listed below on this page.',
@@ -419,8 +414,7 @@ export function AboutPage() {
           </div>
         </Card>
 
-        {/* Licence — the upstream code is AGPL-3.0, so the terms shown here
-            are the AGPL obligations, plus the required upstream credit. */}
+        {/* Licence — PrimeCrest is proprietary software of Spyder Solutions. */}
         <Card className="animate-card-in h-full flex flex-col" style={{ animationDelay: '260ms' }}>
           <div className="p-6 flex flex-col flex-1">
             <div className="flex items-center gap-3 mb-3">
@@ -434,68 +428,18 @@ export function AboutPage() {
                 <p className="text-xs text-content-tertiary">{COPYRIGHT}</p>
               </div>
             </div>
-            <p className="text-sm text-content-secondary leading-relaxed mb-4">
+            <p className="text-sm text-content-secondary leading-relaxed mb-4" data-testid="about-licence-notice">
               {PRODUCT_LEGAL_NOTICE}
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 mb-4">
-              <div>
-                <p className="mb-1.5 text-2xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-                  {t('about.license_youcan_label', { defaultValue: 'You can' })}
-                </p>
-                <ul className="space-y-1 text-xs text-content-secondary leading-snug">
-                  {[
-                    t('about.agpl_youcan_1', { defaultValue: 'Use it for any purpose' }),
-                    t('about.agpl_youcan_2', { defaultValue: 'Self-host on your own hardware' }),
-                    t('about.agpl_youcan_3', { defaultValue: 'Study and modify the source' }),
-                    t('about.agpl_youcan_4', { defaultValue: 'Share copies under the same licence' }),
-                  ].map((b, i) => (
-                    <li key={i} className="flex items-start gap-1.5">
-                      <span className="mt-1 inline-block h-1 w-1 rounded-full bg-emerald-500 shrink-0" />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="mb-1.5 text-2xs font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                  {t('about.license_youmust_label', { defaultValue: 'You must' })}
-                </p>
-                <ul className="space-y-1 text-xs text-content-secondary leading-snug">
-                  {[
-                    t('about.agpl_youmust_1', { defaultValue: 'Keep copyright and licence notices intact' }),
-                    t('about.agpl_youmust_2', { defaultValue: 'License modified versions under AGPL-3.0' }),
-                    t('about.agpl_youmust_3', { defaultValue: 'Offer the source to users of a network deployment' }),
-                    t('about.agpl_youmust_4', { defaultValue: 'Keep the upstream attribution' }),
-                  ].map((b, i) => (
-                    <li key={i} className="flex items-start gap-1.5">
-                      <span className="mt-1 inline-block h-1 w-1 rounded-full bg-amber-500 shrink-0" />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
             <div className="flex flex-wrap gap-1.5 mb-4">
-              <Badge variant="success" size="sm">{UPSTREAM_LICENSE}</Badge>
+              <Badge variant="success" size="sm">{LICENSE_NAME}</Badge>
               <Badge variant="success" size="sm">{t('about.license_badge_selfhost', { defaultValue: 'Self-hosted' })}</Badge>
-              <Badge variant="success" size="sm">{t('about.license_badge_nolockin', { defaultValue: 'No vendor lock-in' })}</Badge>
               <Badge variant="blue" size="sm">© {PRODUCT_DEVELOPER}</Badge>
             </div>
 
-            <p className="mb-4 text-[11px] leading-relaxed text-content-tertiary">{UPSTREAM_ATTRIBUTION}</p>
-
             {/* Third-party components shipped inside the build. */}
             <ThirdPartyLicenses className="mb-4" />
-
-            <div className="mt-auto pt-3 border-t border-border-light">
-              <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
-                <Button variant="secondary" size="md" icon={<Github size={15} />}>
-                  {t('about.view_source', { defaultValue: 'View source code' })}
-                </Button>
-              </a>
-            </div>
           </div>
         </Card>
 
@@ -578,8 +522,7 @@ export function AboutPage() {
             {SITE_HOST}
           </a>
         </p>
-        <p className="mt-1">{COPYRIGHT}</p>
-        <p className="mt-1">{UPSTREAM_ATTRIBUTION}</p>
+        <p className="mt-1">{PRODUCT_LEGAL_NOTICE}</p>
       </div>
     </div>
   );

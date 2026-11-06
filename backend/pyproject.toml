@@ -18,7 +18,7 @@ license = "LicenseRef-Proprietary"
 #
 # NOTICE is here for the same reason and by the same mechanism. The v16.0.0
 # wheel held 3860 entries and none of them was NOTICE, so a pip install
-# conveyed the AGPL text and no attribution index at all - while six bundled
+# conveyed the licence text and no attribution index at all - while six bundled
 # font and font-engine licences did travel, inside ``app/``, because they sit
 # under the package directory rather than beside it. NOTICE is the file that
 # says what those six are for, which bundled binaries carry code nobody

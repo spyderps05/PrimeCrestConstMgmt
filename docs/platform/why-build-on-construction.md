@@ -65,14 +65,13 @@ your platform, and that is a deliberate choice rather than a gap.
 
 ## The licence model
 
-PrimeCrest is distributed under AGPL-3.0, inherited from the upstream
-OpenConstructionERP codebase (Artem Boiko / DataDrivenConstruction). In practice:
+PrimeCrest is proprietary software of Spyder Solutions, distributed under a
+commercial licence (© 2026 Spyder Solutions. All rights reserved.). In practice:
 
-- The full modular platform is available under the AGPL. You can run it, study it,
-  modify it and build modules on it.
-- Because the licence is AGPL, a modified version offered to others over a
-  network carries the AGPL obligation to share the corresponding source. If you
-  distribute or host a modified platform, plan for that.
+- Licensees run the full modular platform and can build modules on it through the
+  module system described here.
+- Redistributing, reselling or hosting the platform for others needs a written
+  agreement with Spyder Solutions.
 
 Nothing in the module system is gated. The loader, the event bus, the hook
 registry, the validation engine, the scaffolder and the module template are all

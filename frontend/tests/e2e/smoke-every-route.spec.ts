@@ -229,7 +229,7 @@ async function resolveParams(page: Page): Promise<Params> {
     );
     const known = new Set(Object.values(resolved));
     for (const h of nav) {
-      // /api/source is the AGPL source download, not a page.
+      // /api/... routes are backend endpoints, not pages.
       if (h && !h.startsWith('/api/') && !known.has(h)) {
         resolved[`sidebar:${h}`] = h;
         known.add(h);
