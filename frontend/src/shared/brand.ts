@@ -46,3 +46,12 @@ export const LEGAL_NOTICE =
   `© ${UPSTREAM_AUTHOR}, licensed under ${UPSTREAM_LICENSE}.`;
 
 export const COPYRIGHT = `© 2026 ${COMPANY}.`;
+
+/**
+ * Short legal line for compact surfaces such as the sidebar footer: the
+ * company credit plus the licence label, which links to the AGPL-3.0
+ * source offer the backend serves (network users must be able to reach it).
+ */
+export const LEGAL_FOOTER_OWNER = `© ${COMPANY}`;
+export const LEGAL_LICENSE = UPSTREAM_LICENSE;
+export const LEGAL_SOURCE_URL = '/api/source';

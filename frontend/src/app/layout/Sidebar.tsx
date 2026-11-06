@@ -56,6 +56,7 @@ import { useGlobalSearchStore } from '@/stores/useGlobalSearchStore';
 import { getModuleNavItems, navItemModuleId } from '@/modules/_registry';
 import { RUNTIME_MODULE_ICONS, runtimeModuleRoute, useRuntimeUiEntries } from '@/features/modules/runtimeModules';
 import { APP_VERSION } from '@/shared/lib/version';
+import { LEGAL_FOOTER_OWNER, LEGAL_LICENSE, LEGAL_SOURCE_URL, UPSTREAM_ATTRIBUTION } from '@/shared/brand';
 import { useSidebarBadges } from '@/shared/hooks/useSidebarBadges';
 import { useHiddenModules } from '@/shared/hooks/useHiddenModules';
 import { useFooterPrefs } from '@/shared/lib/footerPrefs';
@@ -2109,13 +2110,16 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
             <div className="flex items-center justify-center gap-1.5 min-w-0">
               <span className="text-2xs text-content-tertiary">v{APP_VERSION}</span>
               <span className="text-2xs text-content-quaternary/40">·</span>
+              <span className="text-2xs text-content-tertiary">{LEGAL_FOOTER_OWNER}</span>
+              <span className="text-2xs text-content-quaternary/40">·</span>
               <a
-                href="/api/source"
+                href={LEGAL_SOURCE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                title={UPSTREAM_ATTRIBUTION}
                 className="text-2xs text-content-tertiary hover:text-content-secondary transition-colors"
               >
-                © Spyder Solutions
+                {LEGAL_LICENSE}
               </a>
             </div>
           </div>

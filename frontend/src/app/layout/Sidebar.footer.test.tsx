@@ -2,7 +2,8 @@
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
 // The footer of the sidebar: every button is there by default, a hidden one is
-// gone at once, and with nothing optional left only the version line stays.
+// gone at once, and with nothing optional left only the version and licence
+// line stays.
 
 import type { ReactNode } from 'react';
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
@@ -59,6 +60,7 @@ import { useModuleStore } from '@/stores/useModuleStore';
 import { useViewModeStore } from '@/stores/useViewModeStore';
 import { useSidebarCollapseStore } from '@/stores/useSidebarCollapseStore';
 import { DEFAULT_FOOTER_PREFS, resetFooterPrefsCache, writeFooterPrefs } from '@/shared/lib/footerPrefs';
+import { LEGAL_LICENSE, LEGAL_SOURCE_URL } from '@/shared/brand';
 
 function renderSidebar() {
   const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
@@ -111,17 +113,29 @@ describe('the sidebar footer', () => {
     expect(button('Users')).not.toBeNull();
     expect(button('Edit menu')).not.toBeNull();
     expect(button('About')).not.toBeNull();
-    expect(link('GitHub repository')).not.toBeNull();
-    expect(link('Telegram community')).not.toBeNull();
     expect(screen.getByText(/^v\d/)).toBeTruthy();
   });
 
-  it('drops Edit menu and GitHub the moment they are switched off', () => {
+  // PrimeCrest dropped the upstream GitHub and Telegram footer links on
+  // purpose; they must not come back with the default preferences.
+  it('carries no upstream GitHub or Telegram link', () => {
     renderSidebar();
-    act(() => writeFooterPrefs({ ...DEFAULT_FOOTER_PREFS, editMenu: true, github: true }));
-    expect(button('Edit menu')).toBeNull();
     expect(link('GitHub repository')).toBeNull();
-    expect(link('Telegram community')).not.toBeNull();
+    expect(link('Telegram community')).toBeNull();
+  });
+
+  // The licence stays visible and links to the AGPL-3.0 source offer.
+  it('names the licence and links it to the source offer', () => {
+    renderSidebar();
+    const licence = screen.getByText(LEGAL_LICENSE);
+    expect(LEGAL_LICENSE).toBe('AGPL-3.0');
+    expect(licence.closest('a')?.getAttribute('href')).toBe(LEGAL_SOURCE_URL);
+  });
+
+  it('drops Edit menu the moment it is switched off', () => {
+    renderSidebar();
+    act(() => writeFooterPrefs({ ...DEFAULT_FOOTER_PREFS, editMenu: true }));
+    expect(button('Edit menu')).toBeNull();
     // The other tiles are untouched.
     expect(button('Settings')).not.toBeNull();
     expect(button('About')).not.toBeNull();
@@ -150,11 +164,9 @@ describe('the sidebar footer', () => {
     expect(screen.getByText('AGPL-3.0')).toBeTruthy();
   });
 
-  it('collapses the icon-only footer too', () => {
+  it('keeps the icon-only footer free of upstream links', () => {
     useSidebarCollapseStore.getState().setIconified(true);
     renderSidebar();
-    expect(link('GitHub repository')).not.toBeNull();
-    act(() => writeFooterPrefs({ editMenu: false, github: true, community: true }));
     expect(link('GitHub repository')).toBeNull();
     expect(link('Telegram community')).toBeNull();
   });
