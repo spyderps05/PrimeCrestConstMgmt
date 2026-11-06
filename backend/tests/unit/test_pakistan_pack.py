@@ -37,14 +37,16 @@ def _load(path: Path):
 
 
 def test_pk_rows_are_unconfirmed_cited_and_valid() -> None:
-    assert len(data_pk.ROWS) == 4
+    # Two tax years (2026 and 2027) of section 153(1)(a), (b) and (c) rows.
+    assert len(data_pk.ROWS) == 26
     for row in data_pk.ROWS:
         assert row.review_status == "unconfirmed"
         assert row.legal_reference
         assert row.source_url.startswith("https://")
         assert set(row.labels) == {"en", "ur"}
     assert validate_rows(rows_for("PK")) == []
-    assert {r.rate_pct for r in data_pk.ROWS} == {Decimal("7.5"), Decimal("15"), Decimal("8"), Decimal("16")}
+    works = [r for r in data_pk.ROWS if r.code.startswith("PK_153_1C_")]
+    assert {r.rate_pct for r in works} == {Decimal("7.5"), Decimal("15"), Decimal("8"), Decimal("16")}
 
 
 def test_non_atl_payee_pays_twice_the_rate() -> None:

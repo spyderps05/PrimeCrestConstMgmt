@@ -129,6 +129,9 @@ CURRENCIES: dict[str, dict[str, Any]] = {
     "CNY": {"symbol": "¥", "name": "Chinese Yuan", "decimals": 2},
     "KRW": {"symbol": "₩", "name": "South Korean Won", "decimals": 0},
     "INR": {"symbol": "₹", "name": "Indian Rupee", "decimals": 2},
+    # ISO 4217 minor unit 2 (paisa). Without it every Pakistani payment tax
+    # figure is held as an unknown currency.
+    "PKR": {"symbol": "Rs", "name": "Pakistani Rupee", "decimals": 2},
     "AUD": {"symbol": "A$", "name": "Australian Dollar", "decimals": 2},
     "NZD": {"symbol": "NZ$", "name": "New Zealand Dollar", "decimals": 2},
     "SGD": {"symbol": "S$", "name": "Singapore Dollar", "decimals": 2},
