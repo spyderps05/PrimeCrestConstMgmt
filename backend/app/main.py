@@ -5288,6 +5288,15 @@ def create_app() -> FastAPI:
 
         await _seeds.run("starter", _seed_starter, "Starter seed failed - /costs and /catalog may be empty")
 
+        # Rate books the active country pack ships (cost_base/*.json, e.g. the
+        # Punjab MRS for pakistan-pk). Every boot, not once per version: the
+        # check is one query per book, a book whose file is unchanged is
+        # skipped and a new edition is re-imported. Runs after the starter
+        # seed, which only fills an empty cost table. Fail-soft.
+        from app.modules.costs.pack_cost_base import load_active_pack_cost_base
+
+        await load_active_pack_cost_base()
+
         # Regional indices seed (v3.12.0 - Stream B). Idempotent: the
         # script honours the UNIQUE(region, category, subcategory,
         # effective_date) constraint on ``oe_regional_indices``, so it
