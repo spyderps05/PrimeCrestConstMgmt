@@ -1,0 +1,124 @@
+{
+  "title": "Owner's brief - 10-marla house, Allama Iqbal Town",
+  "summary": "Double-storey family house of about 3,400 sq ft covered area for Mr. Kashif Mehmood: four bedrooms with attached baths, drawing and dining, lounge, kitchen, car porch and roof terrace, built to the LDA-approved map.",
+  "operation_proof_days": 120,
+  "format": {
+    "bgf": "316",
+    "live": "2.0",
+    "gk": "Low-rise residential, under 38 ft",
+    "lbo": "LDA Building and Zoning Regulations 2019",
+    "energy": "Building Code of Pakistan, Energy Provisions 2011"
+  },
+  "requirements": [
+    {
+      "category": "performance",
+      "entity": "Bedrooms",
+      "attribute": "Number of bedrooms with attached bath",
+      "constraint_type": "equals",
+      "constraint_value": "4",
+      "unit": "",
+      "priority": "must",
+      "verification_method": "inspection",
+      "originator": "Mr. Kashif Mehmood",
+      "originator_role": "client",
+      "source_ref": "Owner's brief"
+    },
+    {
+      "category": "standards",
+      "entity": "Structure",
+      "attribute": "Seismic design",
+      "constraint_type": "equals",
+      "constraint_value": "Zone 2B",
+      "unit": "",
+      "priority": "must",
+      "verification_method": "analysis",
+      "originator": "Engr. Bilal Hussain",
+      "originator_role": "designer",
+      "source_ref": "Building Code of Pakistan, Seismic Provisions 2007"
+    },
+    {
+      "category": "site_conditions",
+      "entity": "Underground water tank",
+      "attribute": "Storage capacity",
+      "constraint_type": "min",
+      "constraint_value": "2000",
+      "unit": "gal",
+      "priority": "should",
+      "verification_method": "inspection",
+      "originator": "Mr. Kashif Mehmood",
+      "originator_role": "client",
+      "source_ref": "Owner's brief"
+    },
+    {
+      "category": "energy_efficiency",
+      "entity": "Roof",
+      "attribute": "Insulation",
+      "constraint_type": "exists",
+      "constraint_value": "",
+      "unit": "",
+      "priority": "should",
+      "verification_method": "inspection",
+      "originator": "Shahzad Iqbal Associates",
+      "originator_role": "designer",
+      "source_ref": "Thermopore under roof tiles"
+    }
+  ],
+  "programme": [
+    {
+      "kind_code": "gross_floor_area",
+      "label": "Covered area, ground and first floor",
+      "unit": "m2",
+      "quantity": "316",
+      "basis": "LDA-approved map, about 3,400 sq ft"
+    },
+    {
+      "kind_code": "plot_area",
+      "label": "10-marla plot (225 sq ft per marla)",
+      "unit": "m2",
+      "quantity": "209",
+      "basis": "Allotment letter and LDA map"
+    },
+    {
+      "kind_code": "units",
+      "label": "Bedrooms with attached bath",
+      "unit": "pcs",
+      "quantity": "4",
+      "basis": "Owner's brief"
+    },
+    {
+      "kind_code": "parking_spaces",
+      "label": "Car porch",
+      "unit": "pcs",
+      "quantity": "2",
+      "basis": "LDA-approved map"
+    }
+  ],
+  "topics": {
+    "site_analysis": "Corner-free 10-marla plot on a 30 ft street, setbacks per the LDA table for the plot size.",
+    "supply": "LESCO single-phase connection with a 5 kW solar system and net metering, Sui gas for kitchen and geysers, WASA water with an underground tank and overhead tank.",
+    "building_structure": "RCC frame with 9 inch brick walls in cement sand mortar, RCC slabs with mud phuska, thermopore and tile roofing.",
+    "construction_method": "Grey structure by Ravi Homes on labour and material basis, finishes package bought by the owner.",
+    "commissioning_sequence": "Water and gas tested before the plaster, solar and net metering after the LESCO meter change, LDA completion certificate last."
+  },
+  "studies": [
+    {
+      "kind": "site_analysis",
+      "title": "Soil investigation, two boreholes",
+      "scope": "Two boreholes to 6 m, bearing capacity and water table.",
+      "author": "Engr. Bilal Hussain Consulting",
+      "days": -230,
+      "result": "Silty clay with an allowable bearing capacity of about 1.0 tsf at 5 ft. Water table below 20 ft.",
+      "conclusion": "suitable"
+    },
+    {
+      "kind": "suitability",
+      "title": "Solar and net metering",
+      "scope": "Roof area, shading and the LESCO net metering requirements.",
+      "author": "Shalimar Electric and Sanitary",
+      "days": -60,
+      "result": "The roof takes a 5 kW array without shading from the stair tower. Net metering needs a three-phase meter from LESCO.",
+      "conclusion": "conditional"
+    }
+  ],
+  "issue_note": "Owner's brief agreed with the architect and Ravi Homes."
+}

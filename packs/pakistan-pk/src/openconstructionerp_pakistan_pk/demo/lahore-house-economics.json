@@ -1,0 +1,178 @@
+{
+  "$note": "Economics of the Lahore house: a private owner building his family home with savings and Islamic home finance. Amounts in PKR. Day offsets count from the day the demo is installed. All names are invented.",
+  "discount_pct": "12.0",
+  "horizon": 30,
+  "build_years": 1,
+  "approve": true,
+  "proposal_note": {
+    "en": "Budget, contract price and home finance agreed between the owner, the architect and the bank."
+  },
+  "investment_label": {
+    "en": "Construction cost of the house"
+  },
+  "flows": [
+    {
+      "kind": "revenue",
+      "label": {
+        "en": "Rent no longer paid for the current house"
+      },
+      "amount": "1800000",
+      "from": 1,
+      "to": null,
+      "escalation": "8.0"
+    },
+    {
+      "kind": "operating_cost",
+      "label": {
+        "en": "Upkeep, property tax and insurance"
+      },
+      "amount": "350000",
+      "from": 1,
+      "to": null,
+      "escalation": "8.0"
+    },
+    {
+      "kind": "residual",
+      "label": {
+        "en": "Residual value of the house (land not counted)"
+      },
+      "amount": "15000000",
+      "from": 30,
+      "to": 30,
+      "escalation": "0"
+    }
+  ],
+  "sources": [
+    {
+      "kind": "equity",
+      "name": {
+        "en": "Owner's savings"
+      },
+      "share": "0.55",
+      "due_days": [
+        -210,
+        -120,
+        -30
+      ],
+      "drawn": 3
+    },
+    {
+      "kind": "bank_loan",
+      "name": {
+        "en": "Islamic home finance, diminishing musharakah"
+      },
+      "share": null,
+      "rate": "13.5",
+      "condition": {
+        "en": "Each tranche on the architect's stage certificate"
+      },
+      "due_days": [
+        -60,
+        20,
+        90
+      ],
+      "drawn": 1
+    }
+  ],
+  "securities": [
+    {
+      "kind": "advance_payment",
+      "description": {
+        "en": "Mobilization advance guarantee of Ravi Homes"
+      },
+      "pct_of_frame": "0.10",
+      "issuer": "Ravi Commercial Bank Limited",
+      "beneficiary": "Mr. Kashif Mehmood",
+      "reference": "MAG-LHR-2026-014",
+      "valid_from_days": -215,
+      "valid_until_days": 60,
+      "status": "in_place",
+      "notes": {
+        "en": "Reduces with each running bill as the advance is recovered."
+      }
+    },
+    {
+      "kind": "performance",
+      "description": {
+        "en": "Performance guarantee of Ravi Homes"
+      },
+      "pct_of_frame": "0.05",
+      "issuer": "Ravi Commercial Bank Limited",
+      "beneficiary": "Mr. Kashif Mehmood",
+      "reference": "PG-LHR-2026-015",
+      "valid_from_days": -215,
+      "valid_until_days": 180,
+      "status": "in_place"
+    }
+  ],
+  "insurances": [
+    {
+      "kind": "builders_all_risk",
+      "insurer": "Shalimar General Insurance Company",
+      "policy_number": "CAR-LHR-260411",
+      "deductible": "50000",
+      "period_from_days": -215,
+      "period_to_days": 120,
+      "status": "in_place",
+      "notes": {
+        "en": "Contractor's all risk, sum insured is the contract price."
+      },
+      "pct_of_frame": "1.00"
+    },
+    {
+      "kind": "liability",
+      "insurer": "Shalimar General Insurance Company",
+      "policy_number": "TPL-LHR-260412",
+      "deductible": "25000",
+      "period_from_days": -215,
+      "period_to_days": 120,
+      "status": "in_place",
+      "notes": {
+        "en": "Third party liability for the neighbours and the street."
+      },
+      "sum_insured": "5000000"
+    }
+  ],
+  "tax": {
+    "vat_treatment": "other",
+    "input_tax_deduction": false,
+    "notes": {
+      "en": "The owner is not registered for sales tax. The Punjab sales tax on services that Ravi Homes charges is a cost of the house. Income tax withheld from contractor payments under section 153 is deposited with the FBR and the certificate given to the contractor."
+    },
+    "confirm": true
+  },
+  "process": [
+    {
+      "area": "payables",
+      "description": {
+        "en": "Running bills checked by Shahzad Iqbal Associates and paid by bank transfer within 14 days."
+      },
+      "owner": {
+        "en": "Owner"
+      },
+      "status": "set_up",
+      "set_up_days": -200
+    },
+    {
+      "area": "receivables",
+      "description": {
+        "en": "The bank releases each finance tranche against the architect's stage certificate."
+      },
+      "owner": {
+        "en": "Owner"
+      },
+      "status": "set_up",
+      "set_up_days": -70
+    },
+    {
+      "area": "administration",
+      "description": {
+        "en": "LDA approval file, receipts and withholding tax certificates to be kept in one file for the completion certificate."
+      },
+      "owner": {
+        "en": "Owner"
+      },
+      "status": "open"
+    }
+  ]
+}

@@ -69,4 +69,6 @@ openconstructionerp_pakistan_pk = [
     "rates.json",
     "rule_packs/*.json",
     "locales/*.json",
+    "catalogues/*/*.json",
+    "demo/*.json",
 ]

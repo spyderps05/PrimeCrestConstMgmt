@@ -1,0 +1,160 @@
+{
+  "$note": "Economics of the Sahiwal Basic Health Unit: a district scheme financed from the Punjab Annual Development Programme with a provincial grant for the solar cold chain. Amounts in PKR. Day offsets count from the day the demo is installed. All names are invented.",
+  "discount_pct": "12.0",
+  "horizon": 25,
+  "build_years": 1,
+  "approve": true,
+  "proposal_note": {
+    "en": "Cost and financing as in the approved scheme and the technical sanction of the Buildings Division."
+  },
+  "investment_label": {
+    "en": "Capital cost per the technical sanction"
+  },
+  "flows": [
+    {
+      "kind": "revenue",
+      "label": {
+        "en": "Patient travel to the RHC no longer needed"
+      },
+      "amount": "3000000",
+      "from": 1,
+      "to": null,
+      "escalation": "8.0"
+    },
+    {
+      "kind": "operating_cost",
+      "label": {
+        "en": "Upkeep of the building and the solar system"
+      },
+      "amount": "1200000",
+      "from": 1,
+      "to": null,
+      "escalation": "8.0"
+    },
+    {
+      "kind": "residual",
+      "label": {
+        "en": "Residual value of the BHU building"
+      },
+      "amount": "12000000",
+      "from": 25,
+      "to": 25,
+      "escalation": "0"
+    }
+  ],
+  "sources": [
+    {
+      "kind": "equity",
+      "name": {
+        "en": "Punjab Annual Development Programme, district health"
+      },
+      "share": "0.88",
+      "due_days": [
+        -190,
+        -100,
+        -10,
+        80
+      ],
+      "drawn": 3,
+      "condition": {
+        "en": "Released quarterly to the District Health Authority"
+      }
+    },
+    {
+      "kind": "grant",
+      "name": {
+        "en": "Provincial grant for solar cold chain"
+      },
+      "share": null,
+      "due_days": [
+        60
+      ],
+      "drawn": 0,
+      "application": {
+        "code": "GR-SWL-2026-01",
+        "title": "Solar cold chain, BHU Chak 45",
+        "programme_code": "PB-PHC-SOLAR",
+        "programme_name": "Primary health care solarisation programme",
+        "authority": "Primary and Secondary Healthcare Department, Punjab",
+        "region": "PK-PB",
+        "status": "submitted",
+        "submitted_days": -45,
+        "expected_days": 40
+      }
+    }
+  ],
+  "securities": [
+    {
+      "kind": "bid",
+      "description": {
+        "en": "Bid security of Sahiwal Builders"
+      },
+      "pct_of_frame": "0.02",
+      "issuer": "Sahiwal Commercial Bank Limited",
+      "beneficiary": "District Health Authority, Sahiwal",
+      "reference": "BS-SWL-2026-012",
+      "valid_from_days": -250,
+      "valid_until_days": -190,
+      "status": "released"
+    },
+    {
+      "kind": "performance",
+      "description": {
+        "en": "Performance security of Sahiwal Builders"
+      },
+      "pct_of_frame": "0.05",
+      "issuer": "Sahiwal Commercial Bank Limited",
+      "beneficiary": "District Health Authority, Sahiwal",
+      "reference": "PS-SWL-2026-019",
+      "valid_from_days": -195,
+      "valid_until_days": 365,
+      "status": "in_place"
+    }
+  ],
+  "insurances": [
+    {
+      "kind": "builders_all_risk",
+      "insurer": "Punjab Mutual Insurance Company",
+      "policy_number": "CAR-SWL-2026-0611",
+      "deductible": "50000",
+      "period_from_days": -195,
+      "period_to_days": 380,
+      "status": "in_place",
+      "notes": {
+        "en": "Contractor's all risk, sum insured is the contract price."
+      },
+      "pct_of_frame": "1.00"
+    }
+  ],
+  "tax": {
+    "vat_treatment": "other",
+    "input_tax_deduction": false,
+    "notes": {
+      "en": "The District Health Authority is not registered with the Punjab Revenue Authority. Punjab sales tax on services is part of the contract price; income tax under section 153 is withheld by the district accounts office."
+    },
+    "confirm": true
+  },
+  "process": [
+    {
+      "area": "payables",
+      "description": {
+        "en": "Monthly IPCs checked by Engr. Waqas Ahmed and the sub-divisional officer, paid by the district accounts office."
+      },
+      "owner": {
+        "en": "DHA finance"
+      },
+      "status": "set_up",
+      "set_up_days": -185
+    },
+    {
+      "area": "receivables",
+      "description": {
+        "en": "The solar grant is drawn after the EPI team tests the cold chain."
+      },
+      "owner": {
+        "en": "DHA finance"
+      },
+      "status": "open"
+    }
+  ]
+}

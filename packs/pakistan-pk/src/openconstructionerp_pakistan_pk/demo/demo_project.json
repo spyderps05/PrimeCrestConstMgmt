@@ -1,0 +1,1680 @@
+{
+  "$note": "Demo story of the Pakistan pack as data, one entry per Pakistan demo project. The project row and its bill come from the Python demo template of the same id (app/core/demo_packs/<id>.py); the people, firms and amounts here are the ones those templates use. Each project lists module_files, one story file per module the seeder applies on top of its own default. All names are invented; public bodies are named by their role.",
+  "schema_version": 1,
+  "projects": [
+    {
+      "project": {
+        "demo_template_id": "lahore-house",
+        "$template_note": "10-marla house, Allama Iqbal Town, Lahore (private owner). Project row and bill come from the Python demo template of this id."
+      },
+      "pins": [
+        {
+          "kind": "phase_model",
+          "source": "pack",
+          "id": "pakistan_pk",
+          "version": 1
+        }
+      ],
+      "governance": {
+        "four_eyes": true,
+        "logins": {
+          "owner": "project owner",
+          "cost": "estimator login",
+          "decider": "manager login"
+        },
+        "area_owners": {
+          "integration": "owner",
+          "scope": "owner",
+          "schedule": "owner",
+          "cost_finance": "cost",
+          "quality": "owner",
+          "resources": "owner",
+          "stakeholders": "owner",
+          "risk": "owner",
+          "procurement": "cost",
+          "hse": "owner"
+        },
+        "frame_documents": [
+          {
+            "doc_type": "business_case",
+            "container_code": "GOV-PC1-LHR",
+            "title": {
+              "en": "Owner's budget and financing note"
+            },
+            "file_name": "business-case-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "project_handbook",
+            "container_code": "GOV-PHB-LHR",
+            "title": {
+              "en": "Project handbook"
+            },
+            "file_name": "project-handbook-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "requirements_brief",
+            "container_code": "GOV-ERB-LHR",
+            "title": {
+              "en": "Employer's requirements brief"
+            },
+            "file_name": "requirements-brief-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "project_management_plan",
+            "container_code": "GOV-PMP-LHR",
+            "title": {
+              "en": "Project management plan"
+            },
+            "file_name": "project-management-plan-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "lessons_learned_report",
+            "container_code": "GOV-LLR-LHR",
+            "title": {
+              "en": "Lessons learned (PC-IV annex)"
+            },
+            "file_name": "lessons-learned-report-lhr.pdf",
+            "revisions": 1,
+            "state": "draft"
+          },
+          {
+            "doc_type": "scope_statement",
+            "container_code": "GOV-SOW-LHR",
+            "title": {
+              "en": "Scope of works statement"
+            },
+            "file_name": "scope-statement-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "approval_conditions_register",
+            "container_code": "GOV-NOC-LHR",
+            "title": {
+              "en": "Register of approvals and NOCs"
+            },
+            "file_name": "approval-conditions-register-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "master_schedule",
+            "container_code": "GOV-PRG-LHR",
+            "title": {
+              "en": "Programme of works"
+            },
+            "file_name": "master-schedule-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "cost_plan",
+            "container_code": "GOV-EST-LHR",
+            "title": {
+              "en": "Engineer's estimate"
+            },
+            "file_name": "cost-plan-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "budget_baseline",
+            "container_code": "GOV-BUD-LHR",
+            "title": {
+              "en": "Budget baseline and contract price"
+            },
+            "file_name": "budget-baseline-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "final_account",
+            "container_code": "GOV-FAC-LHR",
+            "title": {
+              "en": "Final account"
+            },
+            "file_name": "final-account-lhr.pdf",
+            "revisions": 1,
+            "state": "draft"
+          },
+          {
+            "doc_type": "quality_management_plan",
+            "container_code": "GOV-QMP-LHR",
+            "title": {
+              "en": "Quality management plan"
+            },
+            "file_name": "quality-management-plan-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "inspection_test_plan",
+            "container_code": "GOV-ITP-LHR",
+            "title": {
+              "en": "Inspection and test plan"
+            },
+            "file_name": "inspection-test-plan-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "handover_documentation",
+            "container_code": "GOV-HOD-LHR",
+            "title": {
+              "en": "Handover documents and as-built drawings"
+            },
+            "file_name": "handover-documentation-lhr.pdf",
+            "revisions": 1,
+            "state": "draft"
+          },
+          {
+            "doc_type": "resource_plan",
+            "container_code": "GOV-RSP-LHR",
+            "title": {
+              "en": "Resource and site plan"
+            },
+            "file_name": "resource-plan-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "responsibility_matrix",
+            "container_code": "GOV-RAM-LHR",
+            "title": {
+              "en": "Responsibility matrix"
+            },
+            "file_name": "responsibility-matrix-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "stakeholder_register",
+            "container_code": "GOV-STK-LHR",
+            "title": {
+              "en": "Stakeholder register"
+            },
+            "file_name": "stakeholder-register-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "communication_plan",
+            "container_code": "GOV-COM-LHR",
+            "title": {
+              "en": "Communication plan"
+            },
+            "file_name": "communication-plan-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "risk_management_plan",
+            "container_code": "GOV-RMP-LHR",
+            "title": {
+              "en": "Risk management plan"
+            },
+            "file_name": "risk-management-plan-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "risk_register",
+            "container_code": "GOV-RRG-LHR",
+            "title": {
+              "en": "Risk register"
+            },
+            "file_name": "risk-register-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "procurement_strategy",
+            "container_code": "GOV-PRC-LHR",
+            "title": {
+              "en": "Contractor selection note"
+            },
+            "file_name": "procurement-strategy-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "tender_documents",
+            "container_code": "GOV-SBD-LHR",
+            "title": {
+              "en": "Contract documents (private building contract)"
+            },
+            "file_name": "tender-documents-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "award_recommendation",
+            "container_code": "GOV-BER-LHR",
+            "title": {
+              "en": "Bid evaluation report and award"
+            },
+            "file_name": "award-recommendation-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "sustainability_strategy",
+            "container_code": "GOV-ENV-LHR",
+            "title": {
+              "en": "Environmental screening (EPA)"
+            },
+            "file_name": "sustainability-strategy-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "hse_plan",
+            "container_code": "GOV-HSE-LHR",
+            "title": {
+              "en": "HSE plan"
+            },
+            "file_name": "hse-plan-lhr.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "health_safety_file",
+            "container_code": "GOV-HSF-LHR",
+            "title": {
+              "en": "Health and safety file"
+            },
+            "file_name": "health-safety-file-lhr.pdf",
+            "revisions": 1,
+            "state": "draft"
+          }
+        ],
+        "gate": {
+          "code": "development_to_execution",
+          "target_in_days": null,
+          "checks": [
+            {
+              "area": "integration",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Owner, architect and contractor meet on site every Saturday; minutes kept by Shahzad Iqbal Associates."
+              }
+            },
+            {
+              "area": "scope",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "LDA-approved map for the 10-marla house and the working drawings are the scope of the contract."
+              }
+            },
+            {
+              "area": "schedule",
+              "status": "ready_with_risks",
+              "rag": "amber",
+              "note": {
+                "en": "Ten-month programme. Monsoon in July and August will slow the roof slab and the plaster."
+              }
+            },
+            {
+              "area": "cost_finance",
+              "status": "ready_with_risks",
+              "rag": "amber",
+              "note": {
+                "en": "Contract price agreed with Ravi Homes. Grade 60 steel and cement prices move monthly; the owner holds a 5 percent contingency."
+              }
+            },
+            {
+              "area": "quality",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Engr. Bilal Hussain checks the steel before every pour; cube tests at a recognised lab for every slab."
+              }
+            },
+            {
+              "area": "resources",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Mistri Aslam's brick gang and the shuttering crew of Ravi Homes are on site."
+              }
+            },
+            {
+              "area": "stakeholders",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Neighbours on both sides informed; the LDA building inspector visits at each stage."
+              }
+            },
+            {
+              "area": "risk",
+              "status": "ready_with_risks",
+              "rag": "amber",
+              "note": {
+                "en": "Risk register open: steel price, rain during the slab pour, and an LDA stage inspection that may slip."
+              }
+            },
+            {
+              "area": "procurement",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Main contract let to Ravi Homes; tiles and sanitary ware bought by the owner through Ichhra Sanitary and Tiles."
+              }
+            },
+            {
+              "area": "hse",
+              "status": "ready_with_risks",
+              "rag": "amber",
+              "note": {
+                "en": "Scaffold netting and the stair guard rail are in place. Helmets are worn only when reminded."
+              }
+            }
+          ],
+          "stop_at": "decided",
+          "decision": {
+            "outcome": "go_with_conditions",
+            "rationale": {
+              "en": "The map is approved by the LDA, the contract with Ravi Homes is signed and the structural drawings are checked. The owner releases the works with two conditions: the steel price is fixed for the roof slab, and the site keeps a written safety routine."
+            },
+            "conditions": [
+              {
+                "area": "cost_finance",
+                "text": {
+                  "en": "Grade 60 steel for both roof slabs bought at one price before the first-floor pour"
+                },
+                "owner": "cost",
+                "due_in_days": 30,
+                "severity": "essential"
+              },
+              {
+                "area": "hse",
+                "text": {
+                  "en": "Weekly toolbox talk on scaffold and edge protection recorded in the site diary"
+                },
+                "owner": "owner",
+                "due_in_days": 14,
+                "severity": "essential"
+              }
+            ]
+          }
+        }
+      },
+      "module_files": {
+        "engineering_brief": "demo/lahore-house-engineering_brief.json",
+        "economics": "demo/lahore-house-economics.json",
+        "site_logistics": "demo/lahore-house-site_logistics.json"
+      }
+    },
+    {
+      "project": {
+        "demo_template_id": "school-karachi",
+        "$template_note": "Government primary school, Gulshan-e-Iqbal Block 7, Karachi. Project row and bill come from the Python demo template of this id."
+      },
+      "pins": [
+        {
+          "kind": "phase_model",
+          "source": "pack",
+          "id": "pakistan_pk",
+          "version": 1
+        }
+      ],
+      "governance": {
+        "four_eyes": true,
+        "logins": {
+          "owner": "project owner",
+          "cost": "estimator login",
+          "decider": "manager login"
+        },
+        "area_owners": {
+          "integration": "owner",
+          "scope": "owner",
+          "schedule": "owner",
+          "cost_finance": "cost",
+          "quality": "owner",
+          "resources": "owner",
+          "stakeholders": "owner",
+          "risk": "owner",
+          "procurement": "cost",
+          "hse": "owner"
+        },
+        "frame_documents": [
+          {
+            "doc_type": "business_case",
+            "container_code": "GOV-PC1-KHI",
+            "title": {
+              "en": "PC-I / feasibility and business case"
+            },
+            "file_name": "business-case-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "project_handbook",
+            "container_code": "GOV-PHB-KHI",
+            "title": {
+              "en": "Project handbook"
+            },
+            "file_name": "project-handbook-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "requirements_brief",
+            "container_code": "GOV-ERB-KHI",
+            "title": {
+              "en": "Employer's requirements brief"
+            },
+            "file_name": "requirements-brief-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "project_management_plan",
+            "container_code": "GOV-PMP-KHI",
+            "title": {
+              "en": "Project management plan"
+            },
+            "file_name": "project-management-plan-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "lessons_learned_report",
+            "container_code": "GOV-LLR-KHI",
+            "title": {
+              "en": "Lessons learned (PC-IV annex)"
+            },
+            "file_name": "lessons-learned-report-khi.pdf",
+            "revisions": 1,
+            "state": "draft"
+          },
+          {
+            "doc_type": "scope_statement",
+            "container_code": "GOV-SOW-KHI",
+            "title": {
+              "en": "Scope of works statement"
+            },
+            "file_name": "scope-statement-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "approval_conditions_register",
+            "container_code": "GOV-NOC-KHI",
+            "title": {
+              "en": "Register of approvals and NOCs"
+            },
+            "file_name": "approval-conditions-register-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "master_schedule",
+            "container_code": "GOV-PRG-KHI",
+            "title": {
+              "en": "Programme of works"
+            },
+            "file_name": "master-schedule-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "cost_plan",
+            "container_code": "GOV-EST-KHI",
+            "title": {
+              "en": "Engineer's estimate"
+            },
+            "file_name": "cost-plan-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "budget_baseline",
+            "container_code": "GOV-BUD-KHI",
+            "title": {
+              "en": "Budget baseline and contract price"
+            },
+            "file_name": "budget-baseline-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "final_account",
+            "container_code": "GOV-FAC-KHI",
+            "title": {
+              "en": "Final account"
+            },
+            "file_name": "final-account-khi.pdf",
+            "revisions": 1,
+            "state": "draft"
+          },
+          {
+            "doc_type": "quality_management_plan",
+            "container_code": "GOV-QMP-KHI",
+            "title": {
+              "en": "Quality management plan"
+            },
+            "file_name": "quality-management-plan-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "inspection_test_plan",
+            "container_code": "GOV-ITP-KHI",
+            "title": {
+              "en": "Inspection and test plan"
+            },
+            "file_name": "inspection-test-plan-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "handover_documentation",
+            "container_code": "GOV-HOD-KHI",
+            "title": {
+              "en": "Handover documents and as-built drawings"
+            },
+            "file_name": "handover-documentation-khi.pdf",
+            "revisions": 1,
+            "state": "draft"
+          },
+          {
+            "doc_type": "resource_plan",
+            "container_code": "GOV-RSP-KHI",
+            "title": {
+              "en": "Resource and site plan"
+            },
+            "file_name": "resource-plan-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "responsibility_matrix",
+            "container_code": "GOV-RAM-KHI",
+            "title": {
+              "en": "Responsibility matrix"
+            },
+            "file_name": "responsibility-matrix-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "stakeholder_register",
+            "container_code": "GOV-STK-KHI",
+            "title": {
+              "en": "Stakeholder register"
+            },
+            "file_name": "stakeholder-register-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "communication_plan",
+            "container_code": "GOV-COM-KHI",
+            "title": {
+              "en": "Communication plan"
+            },
+            "file_name": "communication-plan-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "risk_management_plan",
+            "container_code": "GOV-RMP-KHI",
+            "title": {
+              "en": "Risk management plan"
+            },
+            "file_name": "risk-management-plan-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "risk_register",
+            "container_code": "GOV-RRG-KHI",
+            "title": {
+              "en": "Risk register"
+            },
+            "file_name": "risk-register-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "procurement_strategy",
+            "container_code": "GOV-PRC-KHI",
+            "title": {
+              "en": "Procurement plan (PPRA)"
+            },
+            "file_name": "procurement-strategy-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "tender_documents",
+            "container_code": "GOV-SBD-KHI",
+            "title": {
+              "en": "Bidding documents (PEC SBD)"
+            },
+            "file_name": "tender-documents-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "award_recommendation",
+            "container_code": "GOV-BER-KHI",
+            "title": {
+              "en": "Bid evaluation report and award"
+            },
+            "file_name": "award-recommendation-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "sustainability_strategy",
+            "container_code": "GOV-ENV-KHI",
+            "title": {
+              "en": "Environmental screening (EPA)"
+            },
+            "file_name": "sustainability-strategy-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "hse_plan",
+            "container_code": "GOV-HSE-KHI",
+            "title": {
+              "en": "HSE plan"
+            },
+            "file_name": "hse-plan-khi.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "health_safety_file",
+            "container_code": "GOV-HSF-KHI",
+            "title": {
+              "en": "Health and safety file"
+            },
+            "file_name": "health-safety-file-khi.pdf",
+            "revisions": 1,
+            "state": "draft"
+          }
+        ],
+        "gate": {
+          "code": "development_to_execution",
+          "target_in_days": null,
+          "checks": [
+            {
+              "area": "integration",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "PC-I approved by the departmental development working party; project director appointed by the School Education Department."
+              }
+            },
+            {
+              "area": "scope",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Twelve classrooms, library, science room, toilets and play area as in the approved PC-I and the architect's drawings."
+              }
+            },
+            {
+              "area": "schedule",
+              "status": "ready_with_risks",
+              "rag": "amber",
+              "note": {
+                "en": "Twelve-month programme to open for the next academic year. Little slack after the monsoon."
+              }
+            },
+            {
+              "area": "cost_finance",
+              "status": "ready_with_risks",
+              "rag": "amber",
+              "note": {
+                "en": "ADP allocation for this year covers the first eight months; the release for the rest follows the quarterly budget."
+              }
+            },
+            {
+              "area": "quality",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Memon Structural Engineers act as resident engineer; inspection and test plan agreed with Karachi Builders."
+              }
+            },
+            {
+              "area": "resources",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Contractor's staff list and plant list checked against the bid."
+              }
+            },
+            {
+              "area": "stakeholders",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Head teacher of the existing school and the area education officer briefed on the works."
+              }
+            },
+            {
+              "area": "risk",
+              "status": "ready_with_risks",
+              "rag": "amber",
+              "note": {
+                "en": "KWSC water supply is off three days a week; tanker water is budgeted for curing."
+              }
+            },
+            {
+              "area": "procurement",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Single-stage one-envelope bidding under the Sindh Public Procurement Rules, 2010; award to the lowest evaluated bidder, Karachi Builders."
+              }
+            },
+            {
+              "area": "hse",
+              "status": "ready_with_risks",
+              "rag": "amber",
+              "note": {
+                "en": "HSE plan received. Pupils of the adjacent school pass the site gate twice a day."
+              }
+            }
+          ],
+          "stop_at": "decided",
+          "decision": {
+            "outcome": "go_with_conditions",
+            "rationale": {
+              "en": "PC-I approved, the contract with Karachi Builders signed under the PEC standard bidding documents and the SBCA approval in hand. The works start with conditions on funds and on the safety of pupils passing the site."
+            },
+            "conditions": [
+              {
+                "area": "cost_finance",
+                "text": {
+                  "en": "Second-quarter ADP release confirmed by the Finance Department before IPC-4"
+                },
+                "owner": "cost",
+                "due_in_days": 90,
+                "severity": "essential"
+              },
+              {
+                "area": "hse",
+                "text": {
+                  "en": "Fenced pupil walkway and a flagman at the gate during school arrival and departure"
+                },
+                "owner": "owner",
+                "due_in_days": 7,
+                "severity": "essential"
+              },
+              {
+                "area": "risk",
+                "text": {
+                  "en": "Tanker water contract for curing signed with a KWSC-authorised supplier"
+                },
+                "owner": "owner",
+                "due_in_days": 21,
+                "severity": "essential"
+              }
+            ]
+          }
+        }
+      },
+      "module_files": {
+        "engineering_brief": "demo/school-karachi-engineering_brief.json",
+        "economics": "demo/school-karachi-economics.json",
+        "site_logistics": "demo/school-karachi-site_logistics.json"
+      }
+    },
+    {
+      "project": {
+        "demo_template_id": "bhu-punjab",
+        "$template_note": "Basic Health Unit Chak 45, Sahiwal. Project row and bill come from the Python demo template of this id."
+      },
+      "pins": [
+        {
+          "kind": "phase_model",
+          "source": "pack",
+          "id": "pakistan_pk",
+          "version": 1
+        }
+      ],
+      "governance": {
+        "four_eyes": true,
+        "logins": {
+          "owner": "project owner",
+          "cost": "estimator login",
+          "decider": "manager login"
+        },
+        "area_owners": {
+          "integration": "owner",
+          "scope": "owner",
+          "schedule": "owner",
+          "cost_finance": "cost",
+          "quality": "owner",
+          "resources": "owner",
+          "stakeholders": "owner",
+          "risk": "owner",
+          "procurement": "cost",
+          "hse": "owner"
+        },
+        "frame_documents": [
+          {
+            "doc_type": "business_case",
+            "container_code": "GOV-PC1-SWL",
+            "title": {
+              "en": "PC-I / feasibility and business case"
+            },
+            "file_name": "business-case-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "project_handbook",
+            "container_code": "GOV-PHB-SWL",
+            "title": {
+              "en": "Project handbook"
+            },
+            "file_name": "project-handbook-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "requirements_brief",
+            "container_code": "GOV-ERB-SWL",
+            "title": {
+              "en": "Employer's requirements brief"
+            },
+            "file_name": "requirements-brief-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "project_management_plan",
+            "container_code": "GOV-PMP-SWL",
+            "title": {
+              "en": "Project management plan"
+            },
+            "file_name": "project-management-plan-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "lessons_learned_report",
+            "container_code": "GOV-LLR-SWL",
+            "title": {
+              "en": "Lessons learned (PC-IV annex)"
+            },
+            "file_name": "lessons-learned-report-swl.pdf",
+            "revisions": 1,
+            "state": "draft"
+          },
+          {
+            "doc_type": "scope_statement",
+            "container_code": "GOV-SOW-SWL",
+            "title": {
+              "en": "Scope of works statement"
+            },
+            "file_name": "scope-statement-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "approval_conditions_register",
+            "container_code": "GOV-NOC-SWL",
+            "title": {
+              "en": "Register of approvals and NOCs"
+            },
+            "file_name": "approval-conditions-register-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "master_schedule",
+            "container_code": "GOV-PRG-SWL",
+            "title": {
+              "en": "Programme of works"
+            },
+            "file_name": "master-schedule-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "cost_plan",
+            "container_code": "GOV-EST-SWL",
+            "title": {
+              "en": "Engineer's estimate"
+            },
+            "file_name": "cost-plan-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "budget_baseline",
+            "container_code": "GOV-BUD-SWL",
+            "title": {
+              "en": "Budget baseline and contract price"
+            },
+            "file_name": "budget-baseline-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "final_account",
+            "container_code": "GOV-FAC-SWL",
+            "title": {
+              "en": "Final account"
+            },
+            "file_name": "final-account-swl.pdf",
+            "revisions": 1,
+            "state": "draft"
+          },
+          {
+            "doc_type": "quality_management_plan",
+            "container_code": "GOV-QMP-SWL",
+            "title": {
+              "en": "Quality management plan"
+            },
+            "file_name": "quality-management-plan-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "inspection_test_plan",
+            "container_code": "GOV-ITP-SWL",
+            "title": {
+              "en": "Inspection and test plan"
+            },
+            "file_name": "inspection-test-plan-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "handover_documentation",
+            "container_code": "GOV-HOD-SWL",
+            "title": {
+              "en": "Handover documents and as-built drawings"
+            },
+            "file_name": "handover-documentation-swl.pdf",
+            "revisions": 1,
+            "state": "draft"
+          },
+          {
+            "doc_type": "resource_plan",
+            "container_code": "GOV-RSP-SWL",
+            "title": {
+              "en": "Resource and site plan"
+            },
+            "file_name": "resource-plan-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "responsibility_matrix",
+            "container_code": "GOV-RAM-SWL",
+            "title": {
+              "en": "Responsibility matrix"
+            },
+            "file_name": "responsibility-matrix-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "stakeholder_register",
+            "container_code": "GOV-STK-SWL",
+            "title": {
+              "en": "Stakeholder register"
+            },
+            "file_name": "stakeholder-register-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "communication_plan",
+            "container_code": "GOV-COM-SWL",
+            "title": {
+              "en": "Communication plan"
+            },
+            "file_name": "communication-plan-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "risk_management_plan",
+            "container_code": "GOV-RMP-SWL",
+            "title": {
+              "en": "Risk management plan"
+            },
+            "file_name": "risk-management-plan-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "risk_register",
+            "container_code": "GOV-RRG-SWL",
+            "title": {
+              "en": "Risk register"
+            },
+            "file_name": "risk-register-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "procurement_strategy",
+            "container_code": "GOV-PRC-SWL",
+            "title": {
+              "en": "Procurement plan (PPRA)"
+            },
+            "file_name": "procurement-strategy-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "tender_documents",
+            "container_code": "GOV-SBD-SWL",
+            "title": {
+              "en": "Bidding documents (PEC SBD)"
+            },
+            "file_name": "tender-documents-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "award_recommendation",
+            "container_code": "GOV-BER-SWL",
+            "title": {
+              "en": "Bid evaluation report and award"
+            },
+            "file_name": "award-recommendation-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "sustainability_strategy",
+            "container_code": "GOV-ENV-SWL",
+            "title": {
+              "en": "Environmental screening (EPA)"
+            },
+            "file_name": "sustainability-strategy-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "hse_plan",
+            "container_code": "GOV-HSE-SWL",
+            "title": {
+              "en": "HSE plan"
+            },
+            "file_name": "hse-plan-swl.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "health_safety_file",
+            "container_code": "GOV-HSF-SWL",
+            "title": {
+              "en": "Health and safety file"
+            },
+            "file_name": "health-safety-file-swl.pdf",
+            "revisions": 1,
+            "state": "draft"
+          }
+        ],
+        "gate": {
+          "code": "development_to_execution",
+          "target_in_days": null,
+          "checks": [
+            {
+              "area": "integration",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Scheme approved in the district ADP; the DHA chief executive officer is the employer."
+              }
+            },
+            {
+              "area": "scope",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "OPD, mother and child health room, vaccination room, laboratory, toilets, verandah and doctor's residence as in the standard BHU design."
+              }
+            },
+            {
+              "area": "schedule",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Twelve months; handover planned before the winter vaccination campaign."
+              }
+            },
+            {
+              "area": "cost_finance",
+              "status": "ready_with_risks",
+              "rag": "amber",
+              "note": {
+                "en": "Technical sanction given by the Buildings Division. Funds are released quarterly by the district."
+              }
+            },
+            {
+              "area": "quality",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Engr. Waqas Ahmed supervises; brick and cement samples tested before use."
+              }
+            },
+            {
+              "area": "resources",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Contractor mobilised; labour from the village and the nearby chaks."
+              }
+            },
+            {
+              "area": "stakeholders",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Union council chairman and the lady health supervisor consulted on the layout of the MCH room."
+              }
+            },
+            {
+              "area": "risk",
+              "status": "ready_with_risks",
+              "rag": "amber",
+              "note": {
+                "en": "Access road from Chak 45 is a dirt track; heavy trucks cannot pass after rain."
+              }
+            },
+            {
+              "area": "procurement",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Open competitive bidding under the Punjab Procurement Rules 2014; award to Sahiwal Builders."
+              }
+            },
+            {
+              "area": "hse",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Site fenced; first-aid box and drinking water on site."
+              }
+            }
+          ],
+          "stop_at": "decided",
+          "decision": {
+            "outcome": "go_with_conditions",
+            "rationale": {
+              "en": "The scheme is approved and technically sanctioned, the site is handed over free of encumbrance and the contract is signed. Works start with one condition on the funds and one on access in the wet season."
+            },
+            "conditions": [
+              {
+                "area": "cost_finance",
+                "text": {
+                  "en": "Quarterly fund release for the second quarter received by the DHA"
+                },
+                "owner": "cost",
+                "due_in_days": 80,
+                "severity": "essential"
+              },
+              {
+                "area": "risk",
+                "text": {
+                  "en": "Access track from Chak 45 laid with brick ballast before the monsoon"
+                },
+                "owner": "owner",
+                "due_in_days": 45,
+                "severity": "essential"
+              }
+            ]
+          }
+        }
+      },
+      "module_files": {
+        "engineering_brief": "demo/bhu-punjab-engineering_brief.json",
+        "economics": "demo/bhu-punjab-economics.json",
+        "site_logistics": "demo/bhu-punjab-site_logistics.json"
+      }
+    },
+    {
+      "project": {
+        "demo_template_id": "faisalabad-road",
+        "$template_note": "City road off Jhang Road, Faisalabad. Project row and bill come from the Python demo template of this id."
+      },
+      "pins": [
+        {
+          "kind": "phase_model",
+          "source": "pack",
+          "id": "pakistan_pk",
+          "version": 1
+        }
+      ],
+      "governance": {
+        "four_eyes": true,
+        "logins": {
+          "owner": "project owner",
+          "cost": "estimator login",
+          "decider": "manager login"
+        },
+        "area_owners": {
+          "integration": "owner",
+          "scope": "owner",
+          "schedule": "owner",
+          "cost_finance": "cost",
+          "quality": "owner",
+          "resources": "owner",
+          "stakeholders": "owner",
+          "risk": "owner",
+          "procurement": "cost",
+          "hse": "owner"
+        },
+        "frame_documents": [
+          {
+            "doc_type": "business_case",
+            "container_code": "GOV-PC1-FSD",
+            "title": {
+              "en": "PC-I / feasibility and business case"
+            },
+            "file_name": "business-case-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "project_handbook",
+            "container_code": "GOV-PHB-FSD",
+            "title": {
+              "en": "Project handbook"
+            },
+            "file_name": "project-handbook-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "requirements_brief",
+            "container_code": "GOV-ERB-FSD",
+            "title": {
+              "en": "Employer's requirements brief"
+            },
+            "file_name": "requirements-brief-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "project_management_plan",
+            "container_code": "GOV-PMP-FSD",
+            "title": {
+              "en": "Project management plan"
+            },
+            "file_name": "project-management-plan-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "lessons_learned_report",
+            "container_code": "GOV-LLR-FSD",
+            "title": {
+              "en": "Lessons learned (PC-IV annex)"
+            },
+            "file_name": "lessons-learned-report-fsd.pdf",
+            "revisions": 1,
+            "state": "draft"
+          },
+          {
+            "doc_type": "scope_statement",
+            "container_code": "GOV-SOW-FSD",
+            "title": {
+              "en": "Scope of works statement"
+            },
+            "file_name": "scope-statement-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "approval_conditions_register",
+            "container_code": "GOV-NOC-FSD",
+            "title": {
+              "en": "Register of approvals and NOCs"
+            },
+            "file_name": "approval-conditions-register-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "master_schedule",
+            "container_code": "GOV-PRG-FSD",
+            "title": {
+              "en": "Programme of works"
+            },
+            "file_name": "master-schedule-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "cost_plan",
+            "container_code": "GOV-EST-FSD",
+            "title": {
+              "en": "Engineer's estimate"
+            },
+            "file_name": "cost-plan-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "budget_baseline",
+            "container_code": "GOV-BUD-FSD",
+            "title": {
+              "en": "Budget baseline and contract price"
+            },
+            "file_name": "budget-baseline-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "final_account",
+            "container_code": "GOV-FAC-FSD",
+            "title": {
+              "en": "Final account"
+            },
+            "file_name": "final-account-fsd.pdf",
+            "revisions": 1,
+            "state": "draft"
+          },
+          {
+            "doc_type": "quality_management_plan",
+            "container_code": "GOV-QMP-FSD",
+            "title": {
+              "en": "Quality management plan"
+            },
+            "file_name": "quality-management-plan-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "inspection_test_plan",
+            "container_code": "GOV-ITP-FSD",
+            "title": {
+              "en": "Inspection and test plan"
+            },
+            "file_name": "inspection-test-plan-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "handover_documentation",
+            "container_code": "GOV-HOD-FSD",
+            "title": {
+              "en": "Handover documents and as-built drawings"
+            },
+            "file_name": "handover-documentation-fsd.pdf",
+            "revisions": 1,
+            "state": "draft"
+          },
+          {
+            "doc_type": "resource_plan",
+            "container_code": "GOV-RSP-FSD",
+            "title": {
+              "en": "Resource and site plan"
+            },
+            "file_name": "resource-plan-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "responsibility_matrix",
+            "container_code": "GOV-RAM-FSD",
+            "title": {
+              "en": "Responsibility matrix"
+            },
+            "file_name": "responsibility-matrix-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "stakeholder_register",
+            "container_code": "GOV-STK-FSD",
+            "title": {
+              "en": "Stakeholder register"
+            },
+            "file_name": "stakeholder-register-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "communication_plan",
+            "container_code": "GOV-COM-FSD",
+            "title": {
+              "en": "Communication plan"
+            },
+            "file_name": "communication-plan-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "risk_management_plan",
+            "container_code": "GOV-RMP-FSD",
+            "title": {
+              "en": "Risk management plan"
+            },
+            "file_name": "risk-management-plan-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "risk_register",
+            "container_code": "GOV-RRG-FSD",
+            "title": {
+              "en": "Risk register"
+            },
+            "file_name": "risk-register-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "procurement_strategy",
+            "container_code": "GOV-PRC-FSD",
+            "title": {
+              "en": "Procurement plan (PPRA)"
+            },
+            "file_name": "procurement-strategy-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "tender_documents",
+            "container_code": "GOV-SBD-FSD",
+            "title": {
+              "en": "Bidding documents (PEC SBD)"
+            },
+            "file_name": "tender-documents-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "award_recommendation",
+            "container_code": "GOV-BER-FSD",
+            "title": {
+              "en": "Bid evaluation report and award"
+            },
+            "file_name": "award-recommendation-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "sustainability_strategy",
+            "container_code": "GOV-ENV-FSD",
+            "title": {
+              "en": "Environmental screening (EPA)"
+            },
+            "file_name": "sustainability-strategy-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "hse_plan",
+            "container_code": "GOV-HSE-FSD",
+            "title": {
+              "en": "HSE plan"
+            },
+            "file_name": "hse-plan-fsd.pdf",
+            "revisions": 2,
+            "state": "in_review"
+          },
+          {
+            "doc_type": "health_safety_file",
+            "container_code": "GOV-HSF-FSD",
+            "title": {
+              "en": "Health and safety file"
+            },
+            "file_name": "health-safety-file-fsd.pdf",
+            "revisions": 1,
+            "state": "draft"
+          }
+        ],
+        "gate": {
+          "code": "development_to_execution",
+          "target_in_days": null,
+          "checks": [
+            {
+              "area": "integration",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "PC-I approved by the Provincial Development Working Party; Highways Division Faisalabad is the employer."
+              }
+            },
+            {
+              "area": "scope",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "About 2 km of dual carriageway with median, footpaths, storm drain, culverts and street lighting as in the approved PC-I."
+              }
+            },
+            {
+              "area": "schedule",
+              "status": "ready_with_risks",
+              "rag": "amber",
+              "note": {
+                "en": "Fourteen months. Utility shifting by WASA and SNGPL sits on the critical path."
+              }
+            },
+            {
+              "area": "cost_finance",
+              "status": "ready_with_risks",
+              "rag": "amber",
+              "note": {
+                "en": "Bitumen and diesel price swings are covered by the price adjustment clause; the indices are set at the base date."
+              }
+            },
+            {
+              "area": "quality",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Indus Highway Consultants are the engineer; field laboratory on site for compaction and Marshall tests."
+              }
+            },
+            {
+              "area": "resources",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Asphalt plant on Jhang Road and the crush supply from Sargodha confirmed."
+              }
+            },
+            {
+              "area": "stakeholders",
+              "status": "ready_with_risks",
+              "rag": "amber",
+              "note": {
+                "en": "Shopkeepers along the road worried about access during the works; traders' association met twice."
+              }
+            },
+            {
+              "area": "risk",
+              "status": "ready_with_risks",
+              "rag": "amber",
+              "note": {
+                "en": "Water main and gas line relocation not yet scheduled by the utilities."
+              }
+            },
+            {
+              "area": "procurement",
+              "status": "ready",
+              "rag": "green",
+              "note": {
+                "en": "Single-stage two-envelope bidding under the Punjab Procurement Rules 2014; award to Chenab Roads."
+              }
+            },
+            {
+              "area": "hse",
+              "status": "ready_with_risks",
+              "rag": "amber",
+              "note": {
+                "en": "Traffic management plan approved by the FDA traffic engineering wing; night works need lighting and flagmen."
+              }
+            }
+          ],
+          "stop_at": "decided",
+          "decision": {
+            "outcome": "go_with_conditions",
+            "rationale": {
+              "en": "PC-I approved, the contract with Chenab Roads signed under the PEC standard bidding documents and the traffic diversion approved. The works start with conditions on the utility shifting and on traffic safety."
+            },
+            "conditions": [
+              {
+                "area": "risk",
+                "text": {
+                  "en": "WASA and SNGPL relocation programme agreed in writing for the first kilometre"
+                },
+                "owner": "owner",
+                "due_in_days": 30,
+                "severity": "essential"
+              },
+              {
+                "area": "hse",
+                "text": {
+                  "en": "Traffic diversion signs, cones and night lighting in place before the first road cut"
+                },
+                "owner": "owner",
+                "due_in_days": 7,
+                "severity": "essential"
+              },
+              {
+                "area": "cost_finance",
+                "text": {
+                  "en": "Base-date indices for bitumen, diesel, cement and steel recorded for the price adjustment"
+                },
+                "owner": "cost",
+                "due_in_days": 14,
+                "severity": "essential"
+              }
+            ]
+          }
+        }
+      },
+      "module_files": {
+        "engineering_brief": "demo/faisalabad-road-engineering_brief.json",
+        "economics": "demo/faisalabad-road-economics.json",
+        "site_logistics": "demo/faisalabad-road-site_logistics.json"
+      }
+    }
+  ]
+}

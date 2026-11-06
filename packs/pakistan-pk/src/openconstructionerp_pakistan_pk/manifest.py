@@ -117,5 +117,18 @@ MANIFEST = PartnerPackManifest(
         "rate_books": ["Punjab Market Rate System (MRS)", "Composite Schedule of Rates (CSR), provincial", "NHA composite rates"],
         "code_library_path": "codes.json",
         "rate_book_path": "rates.json",
+        # The phase model the demo projects are told on. Pinned by the demo file only: no
+        # default_for_* flag, so a new project still gets the platform's default model.
+        "catalogues": [
+            {
+                "kind": "phase_model",
+                "id": "pakistan_pk",
+                "version": 1,
+                "path": "catalogues/phase_model/pakistan_pk.json",
+            },
+        ],
+        # Story of the four Pakistan demo projects for the module seeders (governance,
+        # engineering brief, economics, site logistics), read by catalogue_packs.active_pack_demo.
+        "demo": {"path": "demo/demo_project.json"},
     },
 )

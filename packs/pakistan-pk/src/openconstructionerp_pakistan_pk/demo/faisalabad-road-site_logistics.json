@@ -1,0 +1,271 @@
+{
+  "$note": "Site logistics of the Faisalabad city road: about 2 km under traffic, built half-width in 500 m stretches. Hot mix from the plant on Jhang Road, crush from Sargodha. All names are invented.",
+  "gates": [
+    {
+      "name": {
+        "en": "Entry A - Jhang Road junction"
+      },
+      "open": "06:00",
+      "close": "20:00",
+      "capacity": 3,
+      "note": {
+        "en": "Entry to the working stretch for dumpers, tippers and asphalt trucks. Flagmen at both ends of the diversion."
+      }
+    },
+    {
+      "name": {
+        "en": "Entry B - camp and laboratory"
+      },
+      "open": "07:00",
+      "close": "19:00",
+      "capacity": 2,
+      "note": {
+        "en": "Contractor's camp, field laboratory and plant yard."
+      }
+    }
+  ],
+  "zones": [
+    {
+      "name": {
+        "en": "Camp yard - plant and materials"
+      },
+      "capacity": {
+        "en": "4,000 m2 / 2,000 t"
+      },
+      "note": {
+        "en": "Crush stockpiles for sub-base and base, pipes for the storm drain, kerb stones."
+      }
+    },
+    {
+      "name": {
+        "en": "Stretch store - current 500 m"
+      },
+      "capacity": {
+        "en": "600 m2 / 300 t"
+      },
+      "note": {
+        "en": "Kerbs, culvert precast units and pipes for the current stretch only."
+      }
+    }
+  ],
+  "vehicles": [
+    {
+      "en": "Tipper truck 20 t"
+    },
+    {
+      "en": "Asphalt dumper with tarpaulin"
+    }
+  ],
+  "delivery_open": "06:00",
+  "delivery_close": "20:00",
+  "noise_zone_type": "mixed",
+  "rules_text": {
+    "en": "Book every delivery with the site engineer of Chenab Roads. Asphalt trucks covered and at temperature on arrival. No vehicle waits on the open lane. Night work only with the traffic police permit and lighting."
+  },
+  "strategy": [
+    {
+      "flow_code": "aggregate",
+      "description": {
+        "en": "Crushed stone for sub-base and base from Sargodha"
+      },
+      "mode": "stock",
+      "storage_area": "A-LAY",
+      "buffer_days": 7
+    },
+    {
+      "flow_code": "pipes",
+      "description": {
+        "en": "RCC pipes and precast culvert units"
+      },
+      "mode": "kanban",
+      "storage_area": "A-LAY2",
+      "buffer_days": 5
+    },
+    {
+      "flow_code": "asphalt",
+      "description": {
+        "en": "Hot-mix asphalt from the Jhang Road plant, laid from the truck"
+      },
+      "mode": "direct_install",
+      "storage_area": null,
+      "buffer_days": 0
+    }
+  ],
+  "coordination": [
+    {
+      "body": "police",
+      "topic": {
+        "en": "Traffic diversion for stretch 2"
+      },
+      "outcome": {
+        "en": "City Traffic Police Faisalabad approved one-way traffic for 45 days."
+      },
+      "days_ago": 10,
+      "next_action_in": 35
+    },
+    {
+      "body": "utility",
+      "topic": {
+        "en": "WASA water main relocation, km 0+500 to 1+000"
+      },
+      "outcome": {
+        "en": "WASA shifted the main; SNGPL gas line still to be moved."
+      },
+      "days_ago": 20,
+      "next_action_in": 14
+    },
+    {
+      "body": "neighbours",
+      "topic": {
+        "en": "Traders' association, Jhang Road"
+      },
+      "outcome": {
+        "en": "Access ramps to shops kept open during the works."
+      },
+      "days_ago": 50
+    },
+    {
+      "body": "municipality",
+      "topic": {
+        "en": "FDA road cut permission for the storm drain outfall"
+      },
+      "outcome": {
+        "en": "Granted with a restoration deposit."
+      },
+      "days_ago": 35
+    }
+  ],
+  "stage_1_title": {
+    "en": "Earthwork, sub-base and drainage"
+  },
+  "stage_2_title": {
+    "en": "Base course, asphalt and road furniture"
+  },
+  "power_connection_point": {
+    "en": "FESCO transformer at the camp"
+  },
+  "water_connection_point": {
+    "en": "Tubewell at the camp"
+  },
+  "water_consumer": {
+    "en": "Compaction water and dust suppression by bowser"
+  },
+  "sewage_connection_point": {
+    "en": "Septic tank at the camp"
+  },
+  "municipality_contact": {
+    "en": "Faisalabad Development Authority, Traffic Engineering"
+  },
+  "parking_note": {
+    "en": "Staff park at the camp; no parking along the working stretch."
+  },
+  "heavy_title": {
+    "en": "Motor grader and vibratory roller to site"
+  },
+  "heavy_route_notes": {
+    "en": "On low-bed trailers from the Motorway M-4 interchange via Jhang Road, night move only."
+  },
+  "heavy_destination": {
+    "en": "Entry B - camp and laboratory"
+  },
+  "oversize_authority": {
+    "en": "City Traffic Police Faisalabad"
+  },
+  "night_authority": {
+    "en": "Punjab Environmental Protection Agency, Faisalabad"
+  },
+  "spoil_title": {
+    "en": "Unsuitable material from the subgrade to the approved spoil site"
+  },
+  "rebar_title": {
+    "en": "Steel for the box culverts"
+  },
+  "rebar_destination": {
+    "en": "Stretch store - current 500 m"
+  },
+  "dust_description": {
+    "en": "Dust on shops along Jhang Road during the sub-base work."
+  },
+  "dust_response": {
+    "en": "Water bowser every two hours, speed limit 20 km/h in the working stretch."
+  },
+  "complaint_reporter": {
+    "en": "Shopkeeper, Jhang Road"
+  },
+  "noise_description": {
+    "en": "Vibratory roller working after 22:00 near the residential lane."
+  },
+  "power_provider": {
+    "en": "FESCO"
+  },
+  "water_provider": {
+    "en": "Own tubewell at the camp"
+  },
+  "sewage_provider": {
+    "en": "Septic tank at the camp"
+  },
+  "crane_1_consumer": {
+    "en": "Asphalt paver"
+  },
+  "crane_2_consumer": {
+    "en": "Mobile crane for the culvert units"
+  },
+  "welfare_consumer": {
+    "en": "Camp office, field laboratory and labour camp"
+  },
+  "telecom_point": {
+    "en": "PTCL exchange line to the camp"
+  },
+  "telecom_consumer": {
+    "en": "Camp office and laboratory internet"
+  },
+  "heavy_carrier": {
+    "en": "Low-bed transport contractor"
+  },
+  "heavy_origin": {
+    "en": "Plant yard of Chenab Roads, Lahore"
+  },
+  "oversize_conditions": {
+    "en": "Night move approved by the traffic police with an escort."
+  },
+  "spoil_carrier": {
+    "en": "Faisalabad Civil Company"
+  },
+  "spoil_origin": {
+    "en": "Working stretch"
+  },
+  "spoil_destination": {
+    "en": "Spoil site approved by the FDA"
+  },
+  "rebar_carrier": {
+    "en": "Steel dealer transport"
+  },
+  "rebar_origin": {
+    "en": "Steel mill, Lahore"
+  },
+  "customs_title": {
+    "en": "Imported LED street lights and signal controllers"
+  },
+  "customs_place": {
+    "en": "Dry port Faisalabad"
+  },
+  "customs_broker": {
+    "en": "Clearing agent, Faisalabad dry port"
+  },
+  "customs_line_1": {
+    "en": "LED street light fittings 150 W"
+  },
+  "customs_line_2": {
+    "en": "Traffic signal controllers"
+  },
+  "customs_unit": {
+    "en": "pcs"
+  },
+  "fallback_supplier": {
+    "en": "Chenab Roads"
+  },
+  "rejected_cargo": {
+    "en": "Asphalt load below laying temperature"
+  },
+  "customs_before_gate": false
+}

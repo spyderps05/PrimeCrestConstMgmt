@@ -1,0 +1,117 @@
+{
+  "title": "Design brief - city road off Jhang Road, Faisalabad",
+  "summary": "Rehabilitation and widening of about 2 km of city road: 7.3 m dual carriageway with a central median, shoulders, footpaths, piped storm drain with box culverts, LED street lighting and shifting of water and gas lines.",
+  "operation_proof_days": 260,
+  "format": {
+    "bgf": "36000",
+    "live": "HS20-44",
+    "gk": "Urban arterial road",
+    "lbo": "Punjab Highways Department design standards",
+    "energy": "LED street lighting with photocell control"
+  },
+  "requirements": [
+    {
+      "category": "performance",
+      "entity": "Carriageway",
+      "attribute": "Width per direction",
+      "constraint_type": "equals",
+      "constraint_value": "7.3",
+      "unit": "m",
+      "priority": "must",
+      "verification_method": "inspection",
+      "originator": "Highways Division Faisalabad",
+      "originator_role": "client",
+      "source_ref": "Approved PC-I"
+    },
+    {
+      "category": "performance",
+      "entity": "Pavement",
+      "attribute": "Design traffic",
+      "constraint_type": "min",
+      "constraint_value": "10",
+      "unit": "msa",
+      "priority": "must",
+      "verification_method": "analysis",
+      "originator": "Indus Highway Consultants",
+      "originator_role": "designer",
+      "source_ref": "AASHTO 1993 pavement design"
+    },
+    {
+      "category": "standards",
+      "entity": "Asphalt wearing course",
+      "attribute": "Marshall stability",
+      "constraint_type": "min",
+      "constraint_value": "8",
+      "unit": "kN",
+      "priority": "must",
+      "verification_method": "test",
+      "originator": "Indus Highway Consultants",
+      "originator_role": "designer",
+      "source_ref": "NHA General Specifications"
+    },
+    {
+      "category": "site_conditions",
+      "entity": "Storm drain",
+      "attribute": "Design storm return period",
+      "constraint_type": "min",
+      "constraint_value": "5",
+      "unit": "years",
+      "priority": "must",
+      "verification_method": "analysis",
+      "originator": "Indus Highway Consultants",
+      "originator_role": "designer",
+      "source_ref": "WASA Faisalabad drainage criteria"
+    }
+  ],
+  "programme": [
+    {
+      "kind_code": "plot_area",
+      "label": "Right of way, about 2 km at 30 m",
+      "unit": "m2",
+      "quantity": "60000",
+      "basis": "Approved PC-I and alignment plan"
+    },
+    {
+      "kind_code": "units",
+      "label": "Box culverts",
+      "unit": "pcs",
+      "quantity": "3",
+      "basis": "Drainage design"
+    },
+    {
+      "kind_code": "units",
+      "label": "Street light poles",
+      "unit": "pcs",
+      "quantity": "130",
+      "basis": "Lighting layout"
+    }
+  ],
+  "topics": {
+    "site_analysis": "Built-up frontage of shops on both sides; road stays open to traffic in one direction during the works.",
+    "supply": "FESCO supply for street lighting with photocell control; water and gas lines shifted by WASA and SNGPL.",
+    "building_structure": "Flexible pavement: granular sub-base, aggregate base course, asphalt base and wearing course; RCC box culverts.",
+    "construction_method": "Half-width construction in 500 m stretches with traffic diversion approved by the FDA traffic engineering wing.",
+    "commissioning_sequence": "Storm drain flushed and tested before the asphalt; street lights energised by FESCO before taking-over."
+  },
+  "studies": [
+    {
+      "kind": "site_analysis",
+      "title": "Traffic count and axle load survey",
+      "scope": "Seven-day classified count and axle load survey at Jhang Road.",
+      "author": "Indus Highway Consultants",
+      "days": -300,
+      "result": "About 18,000 vehicles a day with a high share of loaded trucks; design traffic 10 million standard axles.",
+      "conclusion": "suitable"
+    },
+    {
+      "kind": "site_analysis",
+      "title": "Subgrade investigation",
+      "scope": "CBR tests along the alignment every 250 m.",
+      "author": "Indus Highway Consultants",
+      "days": -280,
+      "result": "Soaked CBR between 4 and 7 percent. Two stretches need improved subgrade.",
+      "conclusion": "conditional"
+    }
+  ],
+  "issue_note": "Design brief per the approved PC-I, issued for construction."
+}

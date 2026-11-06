@@ -1,0 +1,429 @@
+{
+  "id": "pakistan_pk",
+  "version": 1,
+  "name_key": "governance.catalogue.pakistan_pk.name",
+  "labels": {
+    "en": "Pakistan project cycle: development, execution, completion"
+  },
+  "description_key": "governance.catalogue.pakistan_pk.description",
+  "description_labels": {
+    "en": "Three phases and two gates as an employer in Pakistan runs a works contract: development (PC-I or the owner's brief, design, building plan approval and NOCs, PPRA tender and award), execution under the contract (interim payment certificates, measurement book, variations) and completion (taking-over, defects liability and the PC-IV completion report). The ten management areas and the frame documents are those of the neutral PrimeCrest model."
+  },
+  "source_url": null,
+  "source_title": "PrimeCrest Pakistan pack (Spyder Solutions). Phases after the Planning Commission project cycle (PC-I to PC-IV) and the PEC standard bidding documents; areas and documents from the PrimeCrest neutral model.",
+  "review_status": "unconfirmed",
+  "jurisdiction_countries": [
+    "PK"
+  ],
+  "areas_from": null,
+  "phases": [
+    {
+      "code": "development",
+      "order": 1,
+      "name_key": "governance.catalogue.pakistan_pk.phase.development",
+      "labels": {
+        "en": "Development: PC-I, design, approvals and tender"
+      },
+      "spine_keys": [
+        "strategy",
+        "brief",
+        "concept",
+        "design",
+        "approval",
+        "detail",
+        "tender",
+        "award"
+      ],
+      "enables": [
+        "procurement"
+      ],
+      "source_ref": null,
+      "review_status": "unconfirmed"
+    },
+    {
+      "code": "execution",
+      "order": 2,
+      "name_key": "governance.catalogue.pakistan_pk.phase.execution",
+      "labels": {
+        "en": "Execution: works under the contract"
+      },
+      "spine_keys": [
+        "construction"
+      ],
+      "enables": [
+        "construction_start"
+      ],
+      "source_ref": null,
+      "review_status": "unconfirmed"
+    },
+    {
+      "code": "completion",
+      "order": 3,
+      "name_key": "governance.catalogue.pakistan_pk.phase.completion",
+      "labels": {
+        "en": "Completion: taking-over, defects liability and PC-IV"
+      },
+      "spine_keys": [
+        "handover",
+        "operation"
+      ],
+      "enables": [
+        "handover",
+        "operation"
+      ],
+      "source_ref": null,
+      "review_status": "unconfirmed"
+    }
+  ],
+  "gates": [
+    {
+      "code": "development_to_execution",
+      "from_phase": "development",
+      "to_phase": "execution",
+      "name_key": "governance.catalogue.pakistan_pk.gate.development_to_execution",
+      "labels": {
+        "en": "Gate: notice to commence the works"
+      }
+    },
+    {
+      "code": "execution_to_completion",
+      "from_phase": "execution",
+      "to_phase": "completion",
+      "name_key": "governance.catalogue.pakistan_pk.gate.execution_to_completion",
+      "labels": {
+        "en": "Gate: taking-over certificate"
+      }
+    }
+  ],
+  "areas": [
+    {
+      "code": "integration",
+      "order": 1,
+      "name_key": "governance.catalogue.neutral.area.integration",
+      "parent": null
+    },
+    {
+      "code": "scope",
+      "order": 2,
+      "name_key": "governance.catalogue.neutral.area.scope",
+      "parent": null
+    },
+    {
+      "code": "schedule",
+      "order": 3,
+      "name_key": "governance.catalogue.neutral.area.schedule",
+      "parent": null
+    },
+    {
+      "code": "cost_finance",
+      "order": 4,
+      "name_key": "governance.catalogue.neutral.area.cost_finance",
+      "parent": null
+    },
+    {
+      "code": "quality",
+      "order": 5,
+      "name_key": "governance.catalogue.neutral.area.quality",
+      "parent": null
+    },
+    {
+      "code": "resources",
+      "order": 6,
+      "name_key": "governance.catalogue.neutral.area.resources",
+      "parent": null
+    },
+    {
+      "code": "stakeholders",
+      "order": 7,
+      "name_key": "governance.catalogue.neutral.area.stakeholders",
+      "parent": null
+    },
+    {
+      "code": "risk",
+      "order": 8,
+      "name_key": "governance.catalogue.neutral.area.risk",
+      "parent": null
+    },
+    {
+      "code": "procurement",
+      "order": 9,
+      "name_key": "governance.catalogue.neutral.area.procurement",
+      "parent": null
+    },
+    {
+      "code": "hse",
+      "order": 10,
+      "name_key": "governance.catalogue.neutral.area.hse",
+      "parent": null
+    }
+  ],
+  "folders": [],
+  "document_types": [
+    {
+      "code": "business_case",
+      "area": "cost_finance",
+      "name_key": "governance.catalogue.neutral.doc.business_case",
+      "source_ref": null,
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "project_handbook",
+      "area": "integration",
+      "name_key": "governance.catalogue.neutral.doc.project_handbook",
+      "source_ref": null,
+      "hosts": [
+        "organisation"
+      ],
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "requirements_brief",
+      "area": "scope",
+      "name_key": "governance.catalogue.neutral.doc.requirements_brief",
+      "source_ref": null,
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "project_management_plan",
+      "area": "integration",
+      "name_key": "governance.catalogue.neutral.doc.project_management_plan",
+      "source_ref": null,
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "lessons_learned_report",
+      "area": "integration",
+      "name_key": "governance.catalogue.neutral.doc.lessons_learned_report",
+      "source_ref": null,
+      "required_at_gates": [
+        "execution_to_completion"
+      ]
+    },
+    {
+      "code": "scope_statement",
+      "area": "scope",
+      "name_key": "governance.catalogue.neutral.doc.scope_statement",
+      "source_ref": null,
+      "hosts": [
+        "design",
+        "engineering_brief"
+      ],
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "approval_conditions_register",
+      "area": "scope",
+      "name_key": "governance.catalogue.neutral.doc.approval_conditions_register",
+      "source_ref": null,
+      "hosts": [
+        "permits"
+      ],
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "master_schedule",
+      "area": "schedule",
+      "name_key": "governance.catalogue.neutral.doc.master_schedule",
+      "source_ref": null,
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "cost_plan",
+      "area": "cost_finance",
+      "name_key": "governance.catalogue.neutral.doc.cost_plan",
+      "source_ref": null,
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "budget_baseline",
+      "area": "cost_finance",
+      "name_key": "governance.catalogue.neutral.doc.budget_baseline",
+      "source_ref": null,
+      "hosts": [
+        "commitment_release"
+      ],
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "final_account",
+      "area": "cost_finance",
+      "name_key": "governance.catalogue.neutral.doc.final_account",
+      "source_ref": null,
+      "required_at_gates": [
+        "execution_to_completion"
+      ]
+    },
+    {
+      "code": "quality_management_plan",
+      "area": "quality",
+      "name_key": "governance.catalogue.neutral.doc.quality_management_plan",
+      "source_ref": null,
+      "hosts": [
+        "quality"
+      ],
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "inspection_test_plan",
+      "area": "quality",
+      "name_key": "governance.catalogue.neutral.doc.inspection_test_plan",
+      "source_ref": null,
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "handover_documentation",
+      "area": "quality",
+      "name_key": "governance.catalogue.neutral.doc.handover_documentation",
+      "source_ref": null,
+      "required_at_gates": [
+        "execution_to_completion"
+      ]
+    },
+    {
+      "code": "resource_plan",
+      "area": "resources",
+      "name_key": "governance.catalogue.neutral.doc.resource_plan",
+      "source_ref": null,
+      "hosts": [
+        "plant",
+        "staffing",
+        "site_logistics"
+      ],
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "responsibility_matrix",
+      "area": "resources",
+      "name_key": "governance.catalogue.neutral.doc.responsibility_matrix",
+      "source_ref": null,
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "stakeholder_register",
+      "area": "stakeholders",
+      "name_key": "governance.catalogue.neutral.doc.stakeholder_register",
+      "source_ref": null,
+      "hosts": [
+        "stakeholders"
+      ],
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "communication_plan",
+      "area": "stakeholders",
+      "name_key": "governance.catalogue.neutral.doc.communication_plan",
+      "source_ref": null,
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "risk_management_plan",
+      "area": "risk",
+      "name_key": "governance.catalogue.neutral.doc.risk_management_plan",
+      "source_ref": null,
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "risk_register",
+      "area": "risk",
+      "name_key": "governance.catalogue.neutral.doc.risk_register",
+      "source_ref": null,
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "procurement_strategy",
+      "area": "procurement",
+      "name_key": "governance.catalogue.neutral.doc.procurement_strategy",
+      "source_ref": null,
+      "hosts": [
+        "delivery_model",
+        "procurement"
+      ],
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "tender_documents",
+      "area": "procurement",
+      "name_key": "governance.catalogue.neutral.doc.tender_documents",
+      "source_ref": null,
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "award_recommendation",
+      "area": "procurement",
+      "name_key": "governance.catalogue.neutral.doc.award_recommendation",
+      "source_ref": null,
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "sustainability_strategy",
+      "area": "hse",
+      "name_key": "governance.catalogue.neutral.doc.sustainability_strategy",
+      "source_ref": null,
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "hse_plan",
+      "area": "hse",
+      "name_key": "governance.catalogue.neutral.doc.hse_plan",
+      "source_ref": null,
+      "hosts": [
+        "hse"
+      ],
+      "required_at_gates": [
+        "development_to_execution"
+      ]
+    },
+    {
+      "code": "health_safety_file",
+      "area": "hse",
+      "name_key": "governance.catalogue.neutral.doc.health_safety_file",
+      "source_ref": null,
+      "required_at_gates": [
+        "execution_to_completion"
+      ]
+    }
+  ],
+  "readiness_criteria": []
+}

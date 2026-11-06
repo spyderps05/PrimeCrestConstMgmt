@@ -1,0 +1,251 @@
+{
+  "$note": "Site logistics of the Sahiwal Basic Health Unit: a 1 kanal rural site on Chak 45 Road reached by a dirt track. Small trucks and tractor trolleys; concrete mixed on site. All names are invented.",
+  "gates": [
+    {
+      "name": {
+        "en": "Main gate - Chak 45 Road"
+      },
+      "open": "07:00",
+      "close": "18:00",
+      "capacity": 1,
+      "note": {
+        "en": "Gate for trucks and tractor trolleys. After rain only tractors can reach the site."
+      }
+    },
+    {
+      "name": {
+        "en": "Village side gate"
+      },
+      "open": "07:00",
+      "close": "18:00",
+      "capacity": 1,
+      "note": {
+        "en": "Labour and motorcycles. Kept closed at night by the chowkidar."
+      }
+    }
+  ],
+  "zones": [
+    {
+      "name": {
+        "en": "Store yard - east side"
+      },
+      "capacity": {
+        "en": "150 m2 / 40 t"
+      },
+      "note": {
+        "en": "Bricks, sand and crush; cement in the locked store."
+      }
+    },
+    {
+      "name": {
+        "en": "Steel yard - north side"
+      },
+      "capacity": {
+        "en": "60 m2 / 10 t"
+      },
+      "note": {
+        "en": "Steel on sleepers, covered before rain."
+      }
+    }
+  ],
+  "vehicles": [
+    {
+      "en": "Bedford truck 10 t"
+    },
+    {
+      "en": "Tractor trolley"
+    }
+  ],
+  "delivery_open": "07:00",
+  "delivery_close": "18:00",
+  "noise_zone_type": "mixed",
+  "rules_text": {
+    "en": "Tell Engr. Tariq Javed a day ahead. No heavy truck on the track after rain. Cement only into the locked store, counted by the chowkidar."
+  },
+  "strategy": [
+    {
+      "flow_code": "cement",
+      "description": {
+        "en": "Cement from Sahiwal Cement Depot, 200 bags a trip"
+      },
+      "mode": "stock",
+      "storage_area": "A-LAY",
+      "buffer_days": 4
+    },
+    {
+      "flow_code": "bricks",
+      "description": {
+        "en": "First class bricks from the kiln near Chak 47"
+      },
+      "mode": "kanban",
+      "storage_area": "A-LAY2",
+      "buffer_days": 3
+    }
+  ],
+  "coordination": [
+    {
+      "body": "authority",
+      "topic": {
+        "en": "Buildings Division stage inspection of the roof slab"
+      },
+      "outcome": {
+        "en": "SDO checked the steel; pour allowed."
+      },
+      "days_ago": 25
+    },
+    {
+      "body": "utility",
+      "topic": {
+        "en": "MEPCO connection for the BHU"
+      },
+      "outcome": {
+        "en": "Demand notice paid; connection awaited."
+      },
+      "days_ago": 18,
+      "next_action_in": 20
+    },
+    {
+      "body": "neighbours",
+      "topic": {
+        "en": "Union council chairman on the access track"
+      },
+      "outcome": {
+        "en": "UC to lay brick ballast on the track before the monsoon."
+      },
+      "days_ago": 40,
+      "next_action_in": 15
+    }
+  ],
+  "stage_1_title": {
+    "en": "Structure and masonry"
+  },
+  "stage_2_title": {
+    "en": "Finishes, solar and external works"
+  },
+  "power_connection_point": {
+    "en": "MEPCO pole on Chak 45 Road"
+  },
+  "water_connection_point": {
+    "en": "Bore with motor on site"
+  },
+  "water_consumer": {
+    "en": "Curing and mixing water"
+  },
+  "sewage_connection_point": {
+    "en": "Septic tank and soakage pit on site"
+  },
+  "municipality_contact": {
+    "en": "Buildings Division Sahiwal, sub-divisional officer"
+  },
+  "parking_note": {
+    "en": "Motorcycles inside the village side gate."
+  },
+  "heavy_title": {
+    "en": "Steel and cement for the roof slab"
+  },
+  "heavy_route_notes": {
+    "en": "GT Road to Sahiwal, then Chak 45 Road; the last kilometre only in dry weather."
+  },
+  "heavy_destination": {
+    "en": "Main gate - Chak 45 Road"
+  },
+  "oversize_authority": {
+    "en": "District road authority, Sahiwal"
+  },
+  "night_authority": {
+    "en": "Punjab Environmental Protection Agency, Sahiwal"
+  },
+  "spoil_title": {
+    "en": "Surplus earth used for the plinth filling"
+  },
+  "rebar_title": {
+    "en": "Grade 60 steel for the roof slab"
+  },
+  "rebar_destination": {
+    "en": "Steel yard - north side"
+  },
+  "dust_description": {
+    "en": "Dust on the fodder of the neighbouring farm during earth filling."
+  },
+  "dust_response": {
+    "en": "Earth watered before compaction; filling done in the morning."
+  },
+  "complaint_reporter": {
+    "en": "Farmer next to the site"
+  },
+  "noise_description": {
+    "en": "Mixer running after Isha prayer."
+  },
+  "power_provider": {
+    "en": "MEPCO"
+  },
+  "water_provider": {
+    "en": "Own bore on site"
+  },
+  "sewage_provider": {
+    "en": "Septic tank on site"
+  },
+  "crane_1_consumer": {
+    "en": "Concrete mixer"
+  },
+  "crane_2_consumer": {
+    "en": "Water pump"
+  },
+  "welfare_consumer": {
+    "en": "Chowkidar room and cement store"
+  },
+  "telecom_point": {
+    "en": "Mobile network only"
+  },
+  "telecom_consumer": {
+    "en": "Site engineer's mobile internet"
+  },
+  "heavy_carrier": {
+    "en": "Truck owner from Sahiwal"
+  },
+  "heavy_origin": {
+    "en": "Sahiwal Cement Depot"
+  },
+  "oversize_conditions": {
+    "en": "No permit needed for a 10 t truck."
+  },
+  "spoil_carrier": {
+    "en": "Tractor trolley owner from the village"
+  },
+  "spoil_origin": {
+    "en": "BHU site"
+  },
+  "spoil_destination": {
+    "en": "Plinth filling on the same site"
+  },
+  "rebar_carrier": {
+    "en": "Sahiwal Cement Depot"
+  },
+  "rebar_origin": {
+    "en": "Steel dealer, Sahiwal"
+  },
+  "customs_title": {
+    "en": "Solar-powered vaccine refrigerator"
+  },
+  "customs_place": {
+    "en": "Lahore dry port"
+  },
+  "customs_broker": {
+    "en": "Clearing agent"
+  },
+  "customs_line_1": {
+    "en": "Solar direct-drive vaccine refrigerator"
+  },
+  "customs_line_2": {
+    "en": "Solar panels for the refrigerator"
+  },
+  "customs_unit": {
+    "en": "pcs"
+  },
+  "fallback_supplier": {
+    "en": "Sahiwal Builders"
+  },
+  "rejected_cargo": {
+    "en": "Wet cement bags returned to the depot"
+  }
+}

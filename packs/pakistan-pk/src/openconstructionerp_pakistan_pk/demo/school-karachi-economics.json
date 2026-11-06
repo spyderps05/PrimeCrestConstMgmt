@@ -1,0 +1,205 @@
+{
+  "$note": "Economics of the Karachi school: a Sindh public school financed from the Annual Development Programme with a donor grant for the water and sanitation facilities. Amounts in PKR. Day offsets count from the day the demo is installed. All names are invented.",
+  "discount_pct": "12.0",
+  "horizon": 30,
+  "build_years": 1,
+  "approve": true,
+  "proposal_note": {
+    "en": "Cost and financing as in the approved PC-I and the ADP allocation of the School Education Department."
+  },
+  "investment_label": {
+    "en": "Capital cost per the approved PC-I"
+  },
+  "flows": [
+    {
+      "kind": "revenue",
+      "label": {
+        "en": "Rent no longer paid for the rented school building"
+      },
+      "amount": "2400000",
+      "from": 1,
+      "to": null,
+      "escalation": "8.0"
+    },
+    {
+      "kind": "operating_cost",
+      "label": {
+        "en": "Upkeep, utilities and security guard"
+      },
+      "amount": "3000000",
+      "from": 1,
+      "to": null,
+      "escalation": "8.0"
+    },
+    {
+      "kind": "residual",
+      "label": {
+        "en": "Residual value of the school building"
+      },
+      "amount": "40000000",
+      "from": 30,
+      "to": 30,
+      "escalation": "0"
+    }
+  ],
+  "sources": [
+    {
+      "kind": "equity",
+      "name": {
+        "en": "Sindh Annual Development Programme allocation"
+      },
+      "share": "0.85",
+      "due_days": [
+        -200,
+        -110,
+        -20,
+        70
+      ],
+      "drawn": 3,
+      "condition": {
+        "en": "Released quarterly by the Finance Department"
+      }
+    },
+    {
+      "kind": "grant",
+      "name": {
+        "en": "Donor grant for school water and sanitation"
+      },
+      "share": null,
+      "due_days": [
+        -40,
+        120
+      ],
+      "drawn": 1,
+      "condition": {
+        "en": "Paid against verified toilet and hand wash works"
+      },
+      "application": {
+        "code": "GR-KHI-2026-01",
+        "title": "WASH facilities, GPS Block 7",
+        "programme_code": "SD-SCHOOL-WASH",
+        "programme_name": "School water, sanitation and hygiene programme",
+        "authority": "School Education Department, Sindh, donor programme cell",
+        "region": "PK-SD",
+        "status": "approved",
+        "submitted_days": -250,
+        "decided_days": -190,
+        "reference": "WASH-SD-0417"
+      }
+    }
+  ],
+  "securities": [
+    {
+      "kind": "bid",
+      "description": {
+        "en": "Bid security of Karachi Builders"
+      },
+      "pct_of_frame": "0.02",
+      "issuer": "Indus Commercial Bank Limited",
+      "beneficiary": "School Education Department, Karachi",
+      "reference": "BS-KHI-2026-031",
+      "valid_from_days": -260,
+      "valid_until_days": -200,
+      "status": "released"
+    },
+    {
+      "kind": "performance",
+      "description": {
+        "en": "Performance security of Karachi Builders"
+      },
+      "pct_of_frame": "0.10",
+      "issuer": "Indus Commercial Bank Limited",
+      "beneficiary": "School Education Department, Karachi",
+      "reference": "PS-KHI-2026-044",
+      "valid_from_days": -205,
+      "valid_until_days": 365,
+      "status": "in_place"
+    },
+    {
+      "kind": "advance_payment",
+      "description": {
+        "en": "Mobilization advance guarantee"
+      },
+      "pct_of_frame": "0.10",
+      "issuer": "Indus Commercial Bank Limited",
+      "beneficiary": "School Education Department, Karachi",
+      "reference": "MA-KHI-2026-045",
+      "valid_from_days": -200,
+      "valid_until_days": 120,
+      "status": "in_place",
+      "notes": {
+        "en": "Recovered from the interim payment certificates."
+      }
+    }
+  ],
+  "insurances": [
+    {
+      "kind": "builders_all_risk",
+      "insurer": "Clifton General Insurance Company",
+      "policy_number": "CAR-KHI-2026-1182",
+      "deductible": "100000",
+      "period_from_days": -205,
+      "period_to_days": 400,
+      "status": "in_place",
+      "notes": {
+        "en": "Contractor's all risk in the joint names of the employer and the contractor."
+      },
+      "pct_of_frame": "1.00"
+    },
+    {
+      "kind": "liability",
+      "insurer": "Clifton General Insurance Company",
+      "policy_number": "TPL-KHI-2026-1183",
+      "deductible": "50000",
+      "period_from_days": -205,
+      "period_to_days": 400,
+      "status": "in_place",
+      "notes": {
+        "en": "Third party liability, pupils of the adjacent school included."
+      },
+      "sum_insured": "20000000"
+    }
+  ],
+  "tax": {
+    "vat_treatment": "other",
+    "input_tax_deduction": false,
+    "notes": {
+      "en": "The School Education Department is not registered with the Sindh Revenue Board. Sindh sales tax on services is part of the contract price. Income tax under section 153 is withheld from each IPC by the district accounts office."
+    },
+    "confirm": true
+  },
+  "process": [
+    {
+      "area": "payables",
+      "description": {
+        "en": "IPCs measured by Gulshan Cost Consultants, certified by the resident engineer and paid through the district accounts office."
+      },
+      "owner": {
+        "en": "Project director"
+      },
+      "status": "set_up",
+      "set_up_days": -190
+    },
+    {
+      "area": "receivables",
+      "description": {
+        "en": "Donor grant claimed with photos and the engineer's measurement of the WASH works."
+      },
+      "owner": {
+        "en": "Project director"
+      },
+      "status": "set_up",
+      "set_up_days": -60
+    },
+    {
+      "area": "administration",
+      "description": {
+        "en": "Completion report (PC-IV) format and asset handover to the school still to be agreed."
+      },
+      "owner": {
+        "en": "School Education Department"
+      },
+      "status": "open"
+    }
+  ]
+}

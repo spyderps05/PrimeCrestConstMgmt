@@ -1,0 +1,204 @@
+{
+  "$note": "Economics of the Faisalabad city road: a provincial road scheme financed from the Punjab Annual Development Programme with a federal PSDP share. Benefits are vehicle operating cost and time savings as in the PC-I. Amounts in PKR. Day offsets count from the day the demo is installed. All names are invented.",
+  "discount_pct": "12.0",
+  "horizon": 20,
+  "build_years": 2,
+  "approve": true,
+  "proposal_note": {
+    "en": "Cost, benefits and financing as in the approved PC-I."
+  },
+  "investment_label": {
+    "en": "Capital cost per the approved PC-I"
+  },
+  "flows": [
+    {
+      "kind": "revenue",
+      "label": {
+        "en": "Vehicle operating cost and travel time savings"
+      },
+      "amount": "45000000",
+      "from": 2,
+      "to": null,
+      "escalation": "6.0"
+    },
+    {
+      "kind": "operating_cost",
+      "label": {
+        "en": "Routine and periodic maintenance"
+      },
+      "amount": "6000000",
+      "from": 2,
+      "to": null,
+      "escalation": "8.0"
+    },
+    {
+      "kind": "residual",
+      "label": {
+        "en": "Residual value of pavement and drainage"
+      },
+      "amount": "60000000",
+      "from": 20,
+      "to": 20,
+      "escalation": "0"
+    }
+  ],
+  "sources": [
+    {
+      "kind": "equity",
+      "name": {
+        "en": "Punjab Annual Development Programme, roads sector"
+      },
+      "share": "0.60",
+      "due_days": [
+        -200,
+        -110,
+        -20,
+        70,
+        160
+      ],
+      "drawn": 3,
+      "condition": {
+        "en": "Released quarterly by the Finance Department"
+      }
+    },
+    {
+      "kind": "grant",
+      "name": {
+        "en": "Federal PSDP share for city connectivity"
+      },
+      "share": null,
+      "due_days": [
+        -30,
+        150,
+        330
+      ],
+      "drawn": 1,
+      "application": {
+        "code": "GR-FSD-2026-01",
+        "title": "City road off Jhang Road, federal share",
+        "programme_code": "PSDP-CITY-ROADS",
+        "programme_name": "Federal PSDP, provincial city connectivity",
+        "authority": "Ministry of Planning, Development and Special Initiatives",
+        "region": "PK",
+        "status": "approved",
+        "submitted_days": -330,
+        "decided_days": -240,
+        "reference": "PSDP-2026-1127"
+      }
+    }
+  ],
+  "securities": [
+    {
+      "kind": "bid",
+      "description": {
+        "en": "Bid security of Chenab Roads"
+      },
+      "pct_of_frame": "0.02",
+      "issuer": "Chenab Commercial Bank Limited",
+      "beneficiary": "Highways Division Faisalabad",
+      "reference": "BS-FSD-2026-008",
+      "valid_from_days": -270,
+      "valid_until_days": -205,
+      "status": "released"
+    },
+    {
+      "kind": "performance",
+      "description": {
+        "en": "Performance security of Chenab Roads"
+      },
+      "pct_of_frame": "0.10",
+      "issuer": "Chenab Commercial Bank Limited",
+      "beneficiary": "Highways Division Faisalabad",
+      "reference": "PS-FSD-2026-021",
+      "valid_from_days": -210,
+      "valid_until_days": 450,
+      "status": "in_place"
+    },
+    {
+      "kind": "advance_payment",
+      "description": {
+        "en": "Mobilization advance guarantee"
+      },
+      "pct_of_frame": "0.10",
+      "issuer": "Chenab Commercial Bank Limited",
+      "beneficiary": "Highways Division Faisalabad",
+      "reference": "MA-FSD-2026-022",
+      "valid_from_days": -205,
+      "valid_until_days": 180,
+      "status": "in_place",
+      "notes": {
+        "en": "Recovered in equal parts from the IPCs."
+      }
+    }
+  ],
+  "insurances": [
+    {
+      "kind": "builders_all_risk",
+      "insurer": "Lyallpur General Insurance Company",
+      "policy_number": "CAR-FSD-2026-2290",
+      "deductible": "250000",
+      "period_from_days": -210,
+      "period_to_days": 450,
+      "status": "in_place",
+      "notes": {
+        "en": "Contractor's all risk in the joint names of the employer and the contractor."
+      },
+      "pct_of_frame": "1.00"
+    },
+    {
+      "kind": "liability",
+      "insurer": "Lyallpur General Insurance Company",
+      "policy_number": "TPL-FSD-2026-2291",
+      "deductible": "100000",
+      "period_from_days": -210,
+      "period_to_days": 450,
+      "status": "in_place",
+      "notes": {
+        "en": "Third party liability for road users, shops and utilities."
+      },
+      "sum_insured": "50000000"
+    }
+  ],
+  "tax": {
+    "vat_treatment": "other",
+    "input_tax_deduction": false,
+    "notes": {
+      "en": "The Highways Division is not registered with the Punjab Revenue Authority. Punjab sales tax on services is part of the contract price; the reduced rate for government civil works is not applied until confirmed. Income tax under section 153 is withheld by the divisional accounts office."
+    },
+    "confirm": false
+  },
+  "process": [
+    {
+      "area": "payables",
+      "description": {
+        "en": "IPCs measured by Saleem Cost Consultants from the measurement book signed by the resident engineer, paid by the divisional accounts office."
+      },
+      "owner": {
+        "en": "Executive engineer"
+      },
+      "status": "set_up",
+      "set_up_days": -200
+    },
+    {
+      "area": "receivables",
+      "description": {
+        "en": "Federal PSDP share drawn through the provincial finance department against progress reports."
+      },
+      "owner": {
+        "en": "Executive engineer"
+      },
+      "status": "set_up",
+      "set_up_days": -40
+    },
+    {
+      "area": "administration",
+      "description": {
+        "en": "Price adjustment indices to be read monthly from the Pakistan Bureau of Statistics bulletin."
+      },
+      "owner": {
+        "en": "Saleem Cost Consultants"
+      },
+      "status": "open"
+    }
+  ]
+}

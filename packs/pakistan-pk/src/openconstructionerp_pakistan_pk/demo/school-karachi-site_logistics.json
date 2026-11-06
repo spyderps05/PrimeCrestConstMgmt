@@ -1,0 +1,259 @@
+{
+  "$note": "Site logistics of the Karachi school: a 4 kanal site beside a running school in Gulshan-e-Iqbal. Heavy vehicles avoid school times; ready-mixed concrete comes from Korangi. All names are invented.",
+  "gates": [
+    {
+      "name": {
+        "en": "Gate 1 - service road"
+      },
+      "open": "07:00",
+      "close": "17:00",
+      "capacity": 2,
+      "note": {
+        "en": "Gate for trucks and transit mixers. Flagman on duty. No movements from 07:30 to 08:00 and 13:00 to 13:30 when pupils pass."
+      }
+    },
+    {
+      "name": {
+        "en": "Gate 2 - Block 7 lane"
+      },
+      "open": "08:00",
+      "close": "17:00",
+      "capacity": 1,
+      "note": {
+        "en": "Light vehicles and labour only. Pupils' walkway fenced off on the other side."
+      }
+    }
+  ],
+  "zones": [
+    {
+      "name": {
+        "en": "Laydown A - north of the building"
+      },
+      "capacity": {
+        "en": "300 m2 / 60 t"
+      },
+      "note": {
+        "en": "Steel and shuttering plates, inside the boundary wall."
+      }
+    },
+    {
+      "name": {
+        "en": "Laydown B - play area corner"
+      },
+      "capacity": {
+        "en": "200 m2 / 80 t"
+      },
+      "note": {
+        "en": "Bricks, sand and crush, away from the pupils' walkway."
+      }
+    }
+  ],
+  "vehicles": [
+    {
+      "en": "Transit mixer 6 m3"
+    },
+    {
+      "en": "Shehzore truck"
+    }
+  ],
+  "delivery_open": "08:00",
+  "delivery_close": "17:00",
+  "noise_zone_type": "residential",
+  "rules_text": {
+    "en": "Book every delivery 24 hours ahead with Engr. Usman Shaikh. No vehicle movements while pupils arrive or leave. No waiting on the service road. Tanker water only from KWSC-authorised hydrants."
+  },
+  "strategy": [
+    {
+      "flow_code": "rebar",
+      "description": {
+        "en": "Grade 60 deformed bars with mill test certificates"
+      },
+      "mode": "stock",
+      "storage_area": "A-LAY",
+      "buffer_days": 5
+    },
+    {
+      "flow_code": "bricks",
+      "description": {
+        "en": "Bricks by floor"
+      },
+      "mode": "kanban",
+      "storage_area": "A-LAY2",
+      "buffer_days": 3
+    },
+    {
+      "flow_code": "concrete",
+      "description": {
+        "en": "Ready-mixed concrete from Korangi, poured from the truck"
+      },
+      "mode": "direct_install",
+      "storage_area": null,
+      "buffer_days": 0
+    }
+  ],
+  "coordination": [
+    {
+      "body": "municipality",
+      "topic": {
+        "en": "SBCA stage inspection of the first-floor slab"
+      },
+      "outcome": {
+        "en": "Inspection done; minor comments on the stair railing."
+      },
+      "days_ago": 20
+    },
+    {
+      "body": "utility",
+      "topic": {
+        "en": "K-Electric connection for the school"
+      },
+      "outcome": {
+        "en": "Load sanctioned; meter to be installed after the internal wiring test."
+      },
+      "days_ago": 15,
+      "next_action_in": 30
+    },
+    {
+      "body": "neighbours",
+      "topic": {
+        "en": "Head teacher of the adjacent school"
+      },
+      "outcome": {
+        "en": "Agreed fenced walkway and no deliveries at school times."
+      },
+      "days_ago": 60
+    }
+  ],
+  "stage_1_title": {
+    "en": "Structure and masonry"
+  },
+  "stage_2_title": {
+    "en": "Finishes and external works"
+  },
+  "power_connection_point": {
+    "en": "K-Electric pole-mounted transformer on the service road"
+  },
+  "water_connection_point": {
+    "en": "KWSC line in the service road"
+  },
+  "water_consumer": {
+    "en": "Curing, mixing water and dust suppression"
+  },
+  "sewage_connection_point": {
+    "en": "KWSC manhole in Block 7 lane"
+  },
+  "municipality_contact": {
+    "en": "Sindh Building Control Authority, Gulshan-e-Iqbal"
+  },
+  "parking_note": {
+    "en": "Staff park inside Gate 2; labour arrive by the Qingqi from the Block 7 stop."
+  },
+  "heavy_title": {
+    "en": "Ready-mixed concrete for the roof slab"
+  },
+  "heavy_route_notes": {
+    "en": "From Korangi via the Shahrah-e-Faisal and University Road, Sunday pour to keep clear of school days."
+  },
+  "heavy_destination": {
+    "en": "Gate 1 - service road"
+  },
+  "oversize_authority": {
+    "en": "Karachi Traffic Police"
+  },
+  "night_authority": {
+    "en": "Sindh Environmental Protection Agency"
+  },
+  "spoil_title": {
+    "en": "Surplus earth to the KMC dumping point"
+  },
+  "rebar_title": {
+    "en": "Grade 60 steel for the first-floor slab"
+  },
+  "rebar_destination": {
+    "en": "Laydown A - north of the building"
+  },
+  "dust_description": {
+    "en": "Dust in the classrooms of the adjacent school during the excavation."
+  },
+  "dust_response": {
+    "en": "Water sprinkling three times a day, green net on the boundary wall facing the school."
+  },
+  "complaint_reporter": {
+    "en": "Head teacher of the adjacent school"
+  },
+  "noise_description": {
+    "en": "Concrete vibrator running during the school examination week."
+  },
+  "power_provider": {
+    "en": "K-Electric"
+  },
+  "water_provider": {
+    "en": "Karachi Water and Sewerage Corporation"
+  },
+  "sewage_provider": {
+    "en": "Karachi Water and Sewerage Corporation"
+  },
+  "crane_1_consumer": {
+    "en": "Material hoist"
+  },
+  "crane_2_consumer": {
+    "en": "Concrete pump"
+  },
+  "welfare_consumer": {
+    "en": "Site office and labour shed"
+  },
+  "telecom_point": {
+    "en": "PTCL cabinet at the service road"
+  },
+  "telecom_consumer": {
+    "en": "Site office internet"
+  },
+  "heavy_carrier": {
+    "en": "Korangi Ready Mix"
+  },
+  "heavy_origin": {
+    "en": "Batching plant, Korangi"
+  },
+  "oversize_conditions": {
+    "en": "Sunday pour notified to the traffic police."
+  },
+  "spoil_carrier": {
+    "en": "Dumper contractor"
+  },
+  "spoil_origin": {
+    "en": "School site"
+  },
+  "spoil_destination": {
+    "en": "KMC approved dumping point"
+  },
+  "rebar_carrier": {
+    "en": "Port Qasim Steel Traders"
+  },
+  "rebar_origin": {
+    "en": "Steel yard, Port Qasim"
+  },
+  "customs_title": {
+    "en": "Imported solar panels for the school"
+  },
+  "customs_place": {
+    "en": "Karachi Port, East Wharf"
+  },
+  "customs_broker": {
+    "en": "Clearing agent, Karachi Port"
+  },
+  "customs_line_1": {
+    "en": "Solar panels 550 W"
+  },
+  "customs_line_2": {
+    "en": "Grid-tie inverter 15 kW"
+  },
+  "customs_unit": {
+    "en": "pcs"
+  },
+  "fallback_supplier": {
+    "en": "Karachi Builders"
+  },
+  "rejected_cargo": {
+    "en": "Bricks below first class returned to the kiln"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "title": "Design brief - Basic Health Unit Chak 45",
+  "summary": "Single-storey RCC Basic Health Unit for the District Health Authority, Sahiwal: OPD and dispensary, mother and child health room, vaccination room with cold chain, laboratory, toilets, verandah and a doctor's residence.",
+  "operation_proof_days": 200,
+  "format": {
+    "bgf": "450",
+    "live": "3.0",
+    "gk": "Health facility, single storey",
+    "lbo": "Punjab Primary and Secondary Healthcare standard BHU design",
+    "energy": "Building Code of Pakistan, Energy Provisions 2011"
+  },
+  "requirements": [
+    {
+      "category": "performance",
+      "entity": "Vaccination room",
+      "attribute": "Cold chain power backup",
+      "constraint_type": "min",
+      "constraint_value": "8",
+      "unit": "h",
+      "priority": "must",
+      "verification_method": "test",
+      "originator": "District Health Authority, Sahiwal",
+      "originator_role": "client",
+      "source_ref": "EPI cold chain guidelines"
+    },
+    {
+      "category": "standards",
+      "entity": "Structure",
+      "attribute": "Seismic design",
+      "constraint_type": "equals",
+      "constraint_value": "Zone 2A",
+      "unit": "",
+      "priority": "must",
+      "verification_method": "analysis",
+      "originator": "Engr. Waqas Ahmed and Partners",
+      "originator_role": "designer",
+      "source_ref": "Building Code of Pakistan, Seismic Provisions 2007"
+    },
+    {
+      "category": "operation_maintenance",
+      "entity": "Water",
+      "attribute": "Hand pump or motor with overhead tank",
+      "constraint_type": "exists",
+      "constraint_value": "",
+      "unit": "",
+      "priority": "must",
+      "verification_method": "inspection",
+      "originator": "District Health Authority, Sahiwal",
+      "originator_role": "client",
+      "source_ref": "Standard BHU design"
+    }
+  ],
+  "programme": [
+    {
+      "kind_code": "gross_floor_area",
+      "label": "Covered area including the doctor's residence",
+      "unit": "m2",
+      "quantity": "450",
+      "basis": "Standard BHU design"
+    },
+    {
+      "kind_code": "plot_area",
+      "label": "BHU site, 1 kanal",
+      "unit": "m2",
+      "quantity": "506",
+      "basis": "Revenue record of Chak 45"
+    },
+    {
+      "kind_code": "units",
+      "label": "Treatment and consultation rooms",
+      "unit": "pcs",
+      "quantity": "5",
+      "basis": "Standard BHU design"
+    }
+  ],
+  "topics": {
+    "site_analysis": "Site on Chak 45 Road given by the union council, above the flood line of the minor canal.",
+    "supply": "MEPCO connection with a 10 kW solar system and batteries for the cold chain, bore with motor and overhead tank.",
+    "building_structure": "RCC frame with brick infill, RCC roof slab with insulation and brick tile.",
+    "construction_method": "Item rate contract with Sahiwal Builders, concrete mixed on site under supervision.",
+    "commissioning_sequence": "Solar and cold chain tested by the EPI district team before the vaccination room opens."
+  },
+  "studies": [
+    {
+      "kind": "site_analysis",
+      "title": "Site and flood level, Chak 45",
+      "scope": "Levels against the minor canal and the 2014 flood mark.",
+      "author": "Engr. Waqas Ahmed and Partners",
+      "days": -240,
+      "result": "Plinth set 2 ft above the 2014 flood mark. Earth filling of about 300 m3 is needed.",
+      "conclusion": "conditional"
+    }
+  ],
+  "issue_note": "Design brief per the approved scheme, issued for construction."
+}

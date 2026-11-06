@@ -1,0 +1,259 @@
+{
+  "$note": "Site logistics of the Lahore house: a 10-marla plot on a 30 ft street with neighbours on both sides. Material comes on loader rickshaws and Mazda trucks; no space for a crane. All names are invented.",
+  "gates": [
+    {
+      "name": {
+        "en": "Front gate - Street 12"
+      },
+      "open": "07:00",
+      "close": "18:00",
+      "capacity": 1,
+      "note": {
+        "en": "Only gate. Mazda trucks unload on the street with a helper stopping traffic; nothing stays on the road overnight."
+      }
+    },
+    {
+      "name": {
+        "en": "Side lane - back of the plot"
+      },
+      "open": "07:00",
+      "close": "18:00",
+      "capacity": 1,
+      "note": {
+        "en": "Narrow lane for loader rickshaws with bricks and sand. Neighbours' cars must not be blocked."
+      }
+    }
+  ],
+  "zones": [
+    {
+      "name": {
+        "en": "Car porch area"
+      },
+      "capacity": {
+        "en": "40 m2 / 15 t"
+      },
+      "note": {
+        "en": "Cement bags on pallets under tarpaulin, steel bars on bricks off the ground."
+      }
+    },
+    {
+      "name": {
+        "en": "Back courtyard"
+      },
+      "capacity": {
+        "en": "25 m2 / 20 t"
+      },
+      "note": {
+        "en": "Bricks, sand and crush. Shifted inside by hand trolley."
+      }
+    }
+  ],
+  "vehicles": [
+    {
+      "en": "Mazda truck 5 t"
+    },
+    {
+      "en": "Loader rickshaw"
+    }
+  ],
+  "delivery_open": "07:00",
+  "delivery_close": "18:00",
+  "noise_zone_type": "residential",
+  "rules_text": {
+    "en": "Tell Engr. Ahmed Raza a day before every delivery. Unload on the street only with a helper on traffic. No deliveries during Friday prayers. Wash the street in front of the plot every evening."
+  },
+  "strategy": [
+    {
+      "flow_code": "rebar",
+      "description": {
+        "en": "Grade 60 steel bars, cut and bent on site"
+      },
+      "mode": "stock",
+      "storage_area": "A-LAY",
+      "buffer_days": 3
+    },
+    {
+      "flow_code": "bricks",
+      "description": {
+        "en": "First class bricks from the kiln, 3,000 a trip"
+      },
+      "mode": "kanban",
+      "storage_area": "A-LAY2",
+      "buffer_days": 2
+    },
+    {
+      "flow_code": "tiles",
+      "description": {
+        "en": "Porcelain tiles bought by the owner, delivered floor by floor"
+      },
+      "mode": "direct_install",
+      "storage_area": null,
+      "buffer_days": 0
+    }
+  ],
+  "coordination": [
+    {
+      "body": "municipality",
+      "topic": {
+        "en": "LDA stage inspection after the roof slab"
+      },
+      "outcome": {
+        "en": "Inspector visited; stage approved with a note on the parapet height."
+      },
+      "days_ago": 30
+    },
+    {
+      "body": "utility",
+      "topic": {
+        "en": "LESCO meter change to three-phase for net metering"
+      },
+      "outcome": {
+        "en": "Application filed with the SDO; demand notice awaited."
+      },
+      "days_ago": 12,
+      "next_action_in": 10
+    },
+    {
+      "body": "neighbours",
+      "topic": {
+        "en": "Shared wall with house No. 14"
+      },
+      "outcome": {
+        "en": "Neighbour agreed to the damp proofing of the shared wall from his side."
+      },
+      "days_ago": 45
+    }
+  ],
+  "stage_1_title": {
+    "en": "Grey structure"
+  },
+  "stage_2_title": {
+    "en": "Finishes"
+  },
+  "power_connection_point": {
+    "en": "LESCO pole at the street corner"
+  },
+  "water_connection_point": {
+    "en": "WASA connection in Street 12"
+  },
+  "water_consumer": {
+    "en": "Curing of slabs and plaster, mixing water"
+  },
+  "sewage_connection_point": {
+    "en": "WASA manhole in Street 12"
+  },
+  "municipality_contact": {
+    "en": "Lahore Development Authority, Building Control, Allama Iqbal Town"
+  },
+  "parking_note": {
+    "en": "No site parking. Labour arrives by motorcycle and parks in the side lane."
+  },
+  "heavy_title": {
+    "en": "Ready-mixed concrete for the roof slab"
+  },
+  "heavy_route_notes": {
+    "en": "From the batching plant on Multan Road via College Road; night pour after 22:00 when trucks may enter the city."
+  },
+  "heavy_destination": {
+    "en": "Front gate, Street 12"
+  },
+  "oversize_authority": {
+    "en": "City Traffic Police Lahore"
+  },
+  "night_authority": {
+    "en": "Lahore Development Authority"
+  },
+  "spoil_title": {
+    "en": "Surplus earth from the foundations"
+  },
+  "rebar_title": {
+    "en": "Grade 60 steel for the first-floor roof slab"
+  },
+  "rebar_destination": {
+    "en": "Car porch area"
+  },
+  "dust_description": {
+    "en": "Cement dust and sand on the neighbours' cars during the plaster work."
+  },
+  "dust_response": {
+    "en": "Sand covered with tarpaulin, plaster mixed inside the plot, street washed every evening."
+  },
+  "complaint_reporter": {
+    "en": "Neighbour in house No. 14"
+  },
+  "noise_description": {
+    "en": "Steel cutting before 08:00 on a Sunday."
+  },
+  "power_provider": {
+    "en": "LESCO"
+  },
+  "water_provider": {
+    "en": "WASA Lahore"
+  },
+  "sewage_provider": {
+    "en": "WASA Lahore"
+  },
+  "crane_1_consumer": {
+    "en": "Material hoist"
+  },
+  "crane_2_consumer": {
+    "en": "Concrete mixer"
+  },
+  "welfare_consumer": {
+    "en": "Chowkidar room and cement store"
+  },
+  "telecom_point": {
+    "en": "PTCL box at the street corner"
+  },
+  "telecom_consumer": {
+    "en": "Site engineer's internet device"
+  },
+  "heavy_carrier": {
+    "en": "Ready-mix supplier"
+  },
+  "heavy_origin": {
+    "en": "Batching plant, Multan Road"
+  },
+  "oversize_conditions": {
+    "en": "Entry permit for the night pour requested from the traffic police."
+  },
+  "spoil_carrier": {
+    "en": "Tractor trolley contractor"
+  },
+  "spoil_origin": {
+    "en": "House plot"
+  },
+  "spoil_destination": {
+    "en": "Low-lying plot approved by the LDA for filling"
+  },
+  "rebar_carrier": {
+    "en": "Bund Road Steel and Cement Traders"
+  },
+  "rebar_origin": {
+    "en": "Steel traders' yard, Bund Road"
+  },
+  "customs_title": {
+    "en": "Imported solar inverter and panels"
+  },
+  "customs_place": {
+    "en": "Lahore dry port"
+  },
+  "customs_broker": {
+    "en": "Clearing agent"
+  },
+  "customs_line_1": {
+    "en": "Solar panels 550 W"
+  },
+  "customs_line_2": {
+    "en": "Hybrid inverter 5 kW"
+  },
+  "customs_unit": {
+    "en": "pcs"
+  },
+  "fallback_supplier": {
+    "en": "Ravi Homes"
+  },
+  "rejected_cargo": {
+    "en": "Tiles of the wrong batch returned"
+  }
+}

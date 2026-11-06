@@ -1,0 +1,130 @@
+{
+  "title": "Design brief - Government Primary School, Gulshan-e-Iqbal Block 7",
+  "summary": "Two-storey RCC primary school for the School Education Department: twelve classrooms for about 480 pupils in two shifts, head teacher's office, staff room, library, science room, toilets with hand wash stations, assembly platform and play area.",
+  "operation_proof_days": 180,
+  "format": {
+    "bgf": "1600",
+    "live": "3.0",
+    "gk": "Educational building, two storeys",
+    "lbo": "Karachi Building and Town Planning Regulations 2002",
+    "energy": "Building Code of Pakistan, Energy Provisions 2011"
+  },
+  "requirements": [
+    {
+      "category": "performance",
+      "entity": "Classrooms",
+      "attribute": "Number of classrooms",
+      "constraint_type": "equals",
+      "constraint_value": "12",
+      "unit": "",
+      "priority": "must",
+      "verification_method": "inspection",
+      "originator": "School Education Department",
+      "originator_role": "client",
+      "source_ref": "Approved PC-I"
+    },
+    {
+      "category": "performance",
+      "entity": "Classrooms",
+      "attribute": "Floor area per classroom",
+      "constraint_type": "min",
+      "constraint_value": "50",
+      "unit": "m2",
+      "priority": "must",
+      "verification_method": "inspection",
+      "originator": "School Education Department",
+      "originator_role": "client",
+      "source_ref": "Approved PC-I"
+    },
+    {
+      "category": "standards",
+      "entity": "Structure",
+      "attribute": "Seismic design",
+      "constraint_type": "equals",
+      "constraint_value": "Zone 2B",
+      "unit": "",
+      "priority": "must",
+      "verification_method": "analysis",
+      "originator": "Memon Structural Engineers",
+      "originator_role": "designer",
+      "source_ref": "Building Code of Pakistan, Seismic Provisions 2007"
+    },
+    {
+      "category": "safety_security",
+      "entity": "Boundary wall",
+      "attribute": "Height with barbed wire",
+      "constraint_type": "min",
+      "constraint_value": "8",
+      "unit": "ft",
+      "priority": "must",
+      "verification_method": "inspection",
+      "originator": "School Education Department",
+      "originator_role": "client",
+      "source_ref": "School safety standing orders"
+    },
+    {
+      "category": "operation_maintenance",
+      "entity": "Toilets",
+      "attribute": "Separate blocks for girls and boys",
+      "constraint_type": "exists",
+      "constraint_value": "",
+      "unit": "",
+      "priority": "must",
+      "verification_method": "inspection",
+      "originator": "School Education Department",
+      "originator_role": "client",
+      "source_ref": "Approved PC-I"
+    }
+  ],
+  "programme": [
+    {
+      "kind_code": "gross_floor_area",
+      "label": "Covered area, ground and first floor",
+      "unit": "m2",
+      "quantity": "1600",
+      "basis": "Approved PC-I"
+    },
+    {
+      "kind_code": "plot_area",
+      "label": "School site, 4 kanal",
+      "unit": "m2",
+      "quantity": "2023",
+      "basis": "Site plan from the Education Works Department"
+    },
+    {
+      "kind_code": "units",
+      "label": "Classrooms",
+      "unit": "pcs",
+      "quantity": "12",
+      "basis": "Approved PC-I"
+    }
+  ],
+  "topics": {
+    "site_analysis": "Plot inside Block 7 with access from the service road; the existing school next door stays open.",
+    "supply": "K-Electric connection with a 15 kW solar system for fans and lights, KWSC water with an underground tank and electric pump.",
+    "building_structure": "RCC frame with brick infill, RCC slabs, verandah corridors for cross ventilation.",
+    "construction_method": "Item rate contract with Karachi Builders, ready-mixed concrete from Korangi for slabs.",
+    "commissioning_sequence": "Water, electrical and solar tested before the furniture arrives; handover to the head teacher before the academic year."
+  },
+  "studies": [
+    {
+      "kind": "site_analysis",
+      "title": "Site survey and soil report, Block 7",
+      "scope": "Topographic survey, three boreholes and sulphate content of the soil.",
+      "author": "Memon Structural Engineers",
+      "days": -260,
+      "result": "Firm sandy silt below 1.5 m. Sulphate in the soil calls for sulphate-resisting cement below plinth.",
+      "conclusion": "conditional"
+    },
+    {
+      "kind": "suitability",
+      "title": "Natural ventilation and heat",
+      "scope": "Orientation, verandahs and roof insulation for Karachi summers.",
+      "author": "Clifton Design Associates",
+      "days": -220,
+      "result": "North-facing classrooms with verandahs on the south keep the rooms under 34 C with fans.",
+      "conclusion": "suitable"
+    }
+  ],
+  "issue_note": "Design brief per the approved PC-I, issued for construction."
+}
