@@ -632,7 +632,7 @@ function InstallProgressPanel({
             <HardDrive size={10} /> {t('quantities.module_label', { defaultValue: 'Module' })}
           </span>
           <span className="flex items-center gap-1">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> {t('quantities.open_source', { defaultValue: 'Open Source' })}
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> {t('quantities.open_source', { defaultValue: 'Runs locally' })}
           </span>
           <span className="flex items-center gap-1">
             <span className="h-1.5 w-1.5 rounded-full bg-blue-400" /> {t('quantities.free_label', { defaultValue: 'Free' })}

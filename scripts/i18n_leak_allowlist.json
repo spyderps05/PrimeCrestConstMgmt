@@ -1,4 +1,14 @@
 {
+  "about.stat.free": {
+    "en_value": "Spyder Solutions",
+    "note": "our company name, shown as the About stat that used to claim the product was free and open source; never translated",
+    "reason_category": "product_name"
+  },
+  "login.open_source_badge": {
+    "en_value": "PrimeCrest Construction Management",
+    "note": "our full product name on the login badge that used to claim an open-source ERP; never translated",
+    "reason_category": "product_name"
+  },
   "about.book_title": {
     "en_value": "Data-Driven Construction",
     "note": "book/product title, identical in en/ru/kk (kk locale addition)",

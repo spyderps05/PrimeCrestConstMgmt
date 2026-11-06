@@ -34858,7 +34858,7 @@ const resource = {
     "quantities.result_installed": "installed",
     "quantities.result_ready": "Ready",
     "quantities.result_use_cad": "Use in AI Estimate → CAD/BIM",
-    "quantities.open_source": "Open Source",
+    "quantities.open_source": "Runs locally",
     "quantities.free_label": "Free",
     "quantities.info_ready": "Ready to use",
     "quantities.info_onetime": "One-time install",
