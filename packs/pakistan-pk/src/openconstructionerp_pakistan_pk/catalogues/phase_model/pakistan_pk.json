@@ -166,6 +166,9 @@
       "source_ref": null,
       "required_at_gates": [
         "development_to_execution"
+      ],
+      "hosts": [
+        "economics"
       ]
     },
     {
