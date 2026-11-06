@@ -49,8 +49,8 @@
       "duration": 6,
       "capture": "owner-portfolio",
       "route": "/projects",
-      "tag": "4 projects · Lahore · Karachi · Punjab · Faisalabad",
-      "show": "Projects page: the four Pakistan demo projects with PKR totals",
+      "tag": "4 projects · Rs 51.8 Cr portfolio",
+      "show": "Projects page: the four Pakistan demo projects, total value PKR 518.2M (each project counted once)",
       "focus": [
         0.55,
         0.35
@@ -105,7 +105,7 @@
       "duration": 4,
       "capture": "owner-cost-budget",
       "route": "/cost-control",
-      "tag": "School, Karachi · Rs 16.5 Cr plan",
+      "tag": "School, Karachi · Rs 16.48 Cr plan",
       "show": "Cost control for the Karachi school: budget vs committed vs actual, variance column",
       "focus": [
         0.6,
@@ -163,7 +163,7 @@
       "capture": "pm-schedule-gantt",
       "kind": "video",
       "route": "/schedule",
-      "tag": "Faisalabad city road · 14 months",
+      "tag": "Faisalabad city road · 437-day critical path",
       "show": "4D Schedule Gantt for the Faisalabad road: bars, dependencies, critical path highlighted; scroll the timeline",
       "focus": [
         0.62,
@@ -249,7 +249,7 @@
       "capture": "qs-boq-editor",
       "kind": "video",
       "route": "/boq/lahore-house",
-      "tag": "10-marla house, Lahore · Rs 3.9 Cr with tax",
+      "tag": "10-marla house, Lahore · Rs 3.91 Cr with tax",
       "show": "BOQ editor for the Lahore house: MRS chapter sections, quantities, PKR rates, overhead / profit / Punjab sales tax 16% markups and the grand total",
       "focus": [
         0.62,
@@ -304,27 +304,27 @@
       "type": "feature",
       "persona": "QS / ESTIMATOR",
       "duration": 4,
-      "capture": "qs-validation",
-      "route": "/validation",
-      "tag": "966 checks · 98% quality score",
-      "show": "BOQ validation: quality score, errors, warnings and the rule findings",
+      "capture": "qs-cost-match",
+      "route": "/cost-match",
+      "tag": "RCC roof slab → Punjab MRS 2-2026 · Rs 28,353/m³",
+      "show": "Cost match: Lahore house BOQ lines matched to Punjab MRS 2-2026 (Lahore) items with PKR rates; the first line confirmed",
       "focus": [
-        0.45,
-        0.42
+        0.55,
+        0.55
       ],
-      "zoom": 1.12,
+      "zoom": 1.1,
       "captions": [
         {
           "start": 0.3,
           "end": 3.85,
-          "text": "Every BOQ *checked* before it goes out."
+          "text": "AI matches every line to *Punjab MRS*."
         }
       ],
       "box": [
-        0.157,
-        0.333,
-        0.83,
-        0.073
+        0.165,
+        0.44,
+        0.81,
+        0.31
       ]
     },
     {
@@ -500,6 +500,36 @@
       ]
     },
     {
+      "id": "accounts-wht",
+      "type": "feature",
+      "persona": "ACCOUNTS",
+      "kicker": "FOR",
+      "personaIntro": true,
+      "duration": 6,
+      "capture": "accounts-withholding",
+      "route": "/tax-withholding",
+      "tag": "Ravi Homes · PA-003 · Rs 79,100 withheld",
+      "show": "Withholding Tax: FBR s.153(1)(c) scheme worked out on a PKR 1,054,661 payment to a company on the Active Taxpayer List (7.5%)",
+      "focus": [
+        0.62,
+        0.3
+      ],
+      "zoom": 1.12,
+      "captions": [
+        {
+          "start": 1.0,
+          "end": 5.85,
+          "text": "FBR withholding, *s.153 at 7.5%*."
+        }
+      ],
+      "box": [
+        0.577,
+        0.148,
+        0.407,
+        0.185
+      ]
+    },
+    {
       "id": "accounts-tax",
       "type": "feature",
       "persona": "ACCOUNTS",
@@ -538,10 +568,10 @@
       "capture": "lang-urdu",
       "route": "/dashboard",
       "tag": "اردو / English",
-      "show": "Dashboard with the interface language set to Urdu (RTL layout)",
+      "show": "Dashboard with the interface language set to Urdu (RTL layout), Pakistan cases for the market",
       "focus": [
-        0.6,
-        0.45
+        0.45,
+        0.68
       ],
       "zoom": 1.08,
       "captions": [
@@ -553,9 +583,9 @@
       ],
       "box": [
         0.015,
-        0.775,
+        0.69,
         0.828,
-        0.135
+        0.26
       ]
     },
     {

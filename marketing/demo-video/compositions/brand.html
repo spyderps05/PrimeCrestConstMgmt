@@ -41,7 +41,7 @@
       // the chat-flood exits into a copper slab that wipes away to reveal the mark
       tl.fromTo("#brand-slab", { scaleX: 1 }, { scaleX: 0, transformOrigin: "100% 50%", duration: 0.45, ease: "power4.inOut" }, 0.02);
       // the shield lands, the copper rim draws itself round it, then the monogram and its rule
-      tl.fromTo("#brand-shield", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, svgOrigin: "256 256", duration: 0.45, ease: "back.out(1.6)" }, 0.2);
+      tl.fromTo("#brand-shield", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, 0.2);
       tl.fromTo("#brand-rim", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.55, ease: "power2.out" }, 0.3);
       tl.fromTo("#brand-pc", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 0.45);
       tl.fromTo("#brand-bar", { scaleX: 0 }, { scaleX: 1, svgOrigin: "256 334", duration: 0.35, ease: "expo.out" }, 0.6);
