@@ -10,10 +10,26 @@ import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
-import { cpSync, existsSync, readFileSync, readdirSync, createReadStream, statSync } from 'fs';
-import type { Plugin } from 'vite';
+import { cpSync, existsSync, readFileSync, readdirSync, createReadStream, realpathSync, statSync } from 'fs';
+import { searchForWorkspaceRoot, type Plugin } from 'vite';
 import { STATIC_ASSETS_CACHE, isStaticAssetRequest } from './src/pwa/staticAssetRoute';
 import { LOCALE_KEYS_CHUNK, isLocaleKeysId, localeKeyIndex } from './vite.locale-key-index';
+
+/**
+ * `server.fs.allow`: Vite's default workspace root, plus the real location of
+ * `node_modules` when it is a link to somewhere else (see `server.fs` below).
+ */
+function fsAllow(): string[] {
+  const allow = [searchForWorkspaceRoot(process.cwd())];
+  const modules = path.resolve(__dirname, 'node_modules');
+  try {
+    const real = realpathSync(modules);
+    if (path.resolve(real) !== modules) allow.push(real);
+  } catch {
+    /* no node_modules yet: nothing extra to allow */
+  }
+  return allow;
+}
 
 const cesiumSource = path.resolve(__dirname, 'node_modules/cesium/Build/Cesium');
 const cesiumDirs = ['Workers', 'ThirdParty', 'Assets', 'Widgets'] as const;
@@ -418,6 +434,12 @@ export default defineConfig({
     // README's documented URL actually reaches the dev server.
     port: 5173,
     strictPort: true,
+    // A worktree often links `node_modules` to the main checkout (a junction
+    // or symlink). Vite resolves it to the real path, which sits outside the
+    // workspace root, and then refuses `?worker&url` imports such as
+    // maplibre's worker with "Denied ID". Allowing the resolved path as well
+    // as the default root keeps a normal checkout exactly as before.
+    fs: { allow: fsAllow() },
     proxy: {
       '/api': {
         // Local dev backend default :8000 — matches the README quickstart
