@@ -1303,30 +1303,27 @@ exports[`Visual Regression - DashboardPage > renders loading/skeleton state 1`] 
     >
       <a
         class="group/ddc inline-flex items-center gap-1.5 text-[11px] text-content-tertiary hover:text-content-secondary transition-colors"
-        href="https://datadrivenconstruction.io/?utm_source=erp"
+        href="https://primecrest.pk"
         rel="noopener noreferrer"
         target="_blank"
       >
         <img
-          alt="DataDrivenConstruction"
+          alt="PrimeCrest"
           class="h-3.5 w-auto opacity-60 group-hover/ddc:opacity-100 transition-opacity"
-          src="/brand/ddc-logo.webp"
+          src="/brand/primecrest-mark.svg"
         />
         <span
           class="hidden sm:inline"
         >
-          by DataDrivenConstruction
+          primecrest.pk
         </span>
       </a>
       <span
         aria-hidden="true"
         class="h-3 w-px bg-border-light"
       />
-      <a
-        class="group/oss inline-flex items-center gap-2 text-xs font-medium text-content-secondary hover:text-content-primary transition-colors"
-        href="https://github.com/datadrivenconstruction/PrimeCrest"
-        rel="noopener noreferrer"
-        target="_blank"
+      <span
+        class="inline-flex items-center gap-2 text-xs font-medium text-content-secondary"
       >
         <span
           class="relative flex h-2 w-2 shrink-0"
@@ -1339,31 +1336,9 @@ exports[`Visual Regression - DashboardPage > renders loading/skeleton state 1`] 
           />
         </span>
         <span>
-          Open-source construction ERP
+          Construction project management by Spyder Solutions
         </span>
-        <svg
-          class="lucide lucide-external-link text-content-quaternary group-hover/oss:text-oe-blue transition-colors"
-          fill="none"
-          height="11"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          width="11"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M15 3h6v6"
-          />
-          <path
-            d="M10 14 21 3"
-          />
-          <path
-            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-          />
-        </svg>
-      </a>
+      </span>
       <span
         aria-hidden="true"
         class="h-3 w-px bg-border-light"
@@ -4008,6 +3983,7 @@ exports[`Visual Regression - Logo > Logo - large with animation 1`] = `
     style="animation: oeLogoFloat 3s ease-in-out 1.2s infinite, oeLogoGlow 3s ease-in-out 1.2s infinite;"
   >
     <svg
+      aria-hidden="true"
       class="w-full h-full"
       fill="none"
       viewBox="0 0 512 512"
@@ -4015,7 +3991,7 @@ exports[`Visual Regression - Logo > Logo - large with animation 1`] = `
     >
       <defs>
         <lineargradient
-          id="oe-lg-lg-a"
+          id="pc-lg-lg-a"
           x1="0%"
           x2="100%"
           y1="0%"
@@ -4023,137 +3999,48 @@ exports[`Visual Regression - Logo > Logo - large with animation 1`] = `
         >
           <stop
             offset="0%"
-            stop-color="#0066ff"
+            stop-color="#12202B"
           />
           <stop
             offset="100%"
-            stop-color="#5856d6"
+            stop-color="#1A3344"
           />
         </lineargradient>
       </defs>
-      <rect
-        fill="url(#oe-lg-lg-a)"
-        height="448"
-        rx="96"
+      <path
+        d="M256 40 L440 110 V250 C440 360 360 440 256 472 C152 440 72 360 72 250 V110 Z"
+        fill="url(#pc-lg-lg-a)"
         style="animation: oeBgScale 450ms cubic-bezier(0.34,1.56,0.64,1) both;"
-        width="448"
-        x="32"
-        y="32"
       />
-      <rect
-        fill="#fff"
-        height="114"
-        opacity=".85"
-        rx="6"
-        style="transform-origin: bottom; animation: oeBarGrow 500ms cubic-bezier(0.34,1.56,0.64,1) both; animation-delay: 120ms;"
-        width="42"
-        x="102"
-        y="296"
-      />
-      <rect
-        fill="#fff"
-        height="177"
-        opacity=".95"
-        rx="6"
-        style="transform-origin: bottom; animation: oeBarGrow 500ms cubic-bezier(0.34,1.56,0.64,1) both; animation-delay: 200ms;"
-        width="42"
-        x="162"
-        y="233"
-      />
-      <rect
-        fill="#fff"
-        height="234"
-        opacity=".85"
-        rx="6"
-        style="transform-origin: bottom; animation: oeBarGrow 500ms cubic-bezier(0.34,1.56,0.64,1) both; animation-delay: 280ms;"
-        width="42"
-        x="222"
-        y="176"
-      />
-      <rect
-        fill="#fff"
-        height="260"
+      <path
+        d="M256 56 L424 120 V248 C424 348 352 420 256 450 C160 420 88 348 88 248 V120 Z"
+        fill="none"
         opacity=".9"
-        rx="8"
-        style="animation: oeBuildingSlide 600ms cubic-bezier(0.22,1,0.36,1) both; animation-delay: 300ms;"
-        width="128"
-        x="282"
-        y="150"
+        stroke="#C4622D"
+        stroke-width="14"
       />
-      <g
-        style="animation: oeBuildingSlide 600ms cubic-bezier(0.22,1,0.36,1) both; animation-delay: 300ms;"
+      <text
+        fill="#F6F3EE"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="168"
+        font-weight="700"
+        letter-spacing="-6"
+        style="animation: oeWindowFade 400ms ease both; animation-delay: 200ms;"
+        text-anchor="middle"
+        x="256"
+        y="292"
       >
-        <rect
-          fill="url(#oe-lg-lg-a)"
-          height="28"
-          opacity=".5"
-          rx="4"
-          style="animation: oeWindowFade 400ms ease both; animation-delay: 550ms;"
-          width="26"
-          x="304"
-          y="182"
-        />
-        <rect
-          fill="url(#oe-lg-lg-a)"
-          height="28"
-          opacity=".5"
-          rx="4"
-          style="animation: oeWindowFade 400ms ease both; animation-delay: 600ms;"
-          width="26"
-          x="362"
-          y="182"
-        />
-        <rect
-          fill="url(#oe-lg-lg-a)"
-          height="28"
-          opacity=".5"
-          rx="4"
-          style="animation: oeWindowFade 400ms ease both; animation-delay: 650ms;"
-          width="26"
-          x="304"
-          y="226"
-        />
-        <rect
-          fill="url(#oe-lg-lg-a)"
-          height="28"
-          opacity=".5"
-          rx="4"
-          style="animation: oeWindowFade 400ms ease both; animation-delay: 700ms;"
-          width="26"
-          x="362"
-          y="226"
-        />
-        <rect
-          fill="url(#oe-lg-lg-a)"
-          height="28"
-          opacity=".45"
-          rx="4"
-          style="animation: oeWindowFade 400ms ease both; animation-delay: 750ms;"
-          width="26"
-          x="304"
-          y="272"
-        />
-        <rect
-          fill="url(#oe-lg-lg-a)"
-          height="28"
-          opacity=".45"
-          rx="4"
-          style="animation: oeWindowFade 400ms ease both; animation-delay: 800ms;"
-          width="26"
-          x="362"
-          y="272"
-        />
-        <rect
-          fill="url(#oe-lg-lg-a)"
-          height="82"
-          opacity=".55"
-          rx="4"
-          style="animation: oeWindowFade 400ms ease both; animation-delay: 850ms;"
-          width="34"
-          x="329"
-          y="328"
-        />
-      </g>
+        PC
+      </text>
+      <rect
+        fill="#C4622D"
+        height="12"
+        rx="6"
+        style="animation: oeWindowFade 400ms ease both; animation-delay: 350ms;"
+        width="176"
+        x="168"
+        y="328"
+      />
     </svg>
   </div>
 </div>
@@ -4165,6 +4052,7 @@ exports[`Visual Regression - Logo > Logo - small 1`] = `
     class="h-6 w-6 relative shrink-0"
   >
     <svg
+      aria-hidden="true"
       class="w-full h-full"
       fill="none"
       viewBox="0 0 512 512"
@@ -4172,7 +4060,7 @@ exports[`Visual Regression - Logo > Logo - small 1`] = `
     >
       <defs>
         <lineargradient
-          id="oe-lg-sm-s"
+          id="pc-lg-sm-s"
           x1="0%"
           x2="100%"
           y1="0%"
@@ -4180,57 +4068,44 @@ exports[`Visual Regression - Logo > Logo - small 1`] = `
         >
           <stop
             offset="0%"
-            stop-color="#0066ff"
+            stop-color="#12202B"
           />
           <stop
             offset="100%"
-            stop-color="#5856d6"
+            stop-color="#1A3344"
           />
         </lineargradient>
       </defs>
-      <rect
-        fill="url(#oe-lg-sm-s)"
-        height="448"
-        rx="96"
-        width="448"
-        x="32"
-        y="32"
+      <path
+        d="M256 40 L440 110 V250 C440 360 360 440 256 472 C152 440 72 360 72 250 V110 Z"
+        fill="url(#pc-lg-sm-s)"
       />
-      <rect
-        fill="#fff"
-        height="114"
-        opacity=".85"
-        rx="6"
-        width="42"
-        x="102"
-        y="296"
-      />
-      <rect
-        fill="#fff"
-        height="177"
-        opacity=".95"
-        rx="6"
-        width="42"
-        x="162"
-        y="233"
-      />
-      <rect
-        fill="#fff"
-        height="234"
-        opacity=".85"
-        rx="6"
-        width="42"
-        x="222"
-        y="176"
-      />
-      <rect
-        fill="#fff"
-        height="260"
+      <path
+        d="M256 56 L424 120 V248 C424 348 352 420 256 450 C160 420 88 348 88 248 V120 Z"
+        fill="none"
         opacity=".9"
-        rx="8"
-        width="128"
-        x="282"
-        y="150"
+        stroke="#C4622D"
+        stroke-width="14"
+      />
+      <text
+        fill="#F6F3EE"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="168"
+        font-weight="700"
+        letter-spacing="-6"
+        text-anchor="middle"
+        x="256"
+        y="292"
+      >
+        PC
+      </text>
+      <rect
+        fill="#C4622D"
+        height="12"
+        rx="6"
+        width="176"
+        x="168"
+        y="328"
       />
     </svg>
   </div>
@@ -4246,6 +4121,7 @@ exports[`Visual Regression - Logo > LogoWithText - default 1`] = `
       class="h-7 w-7 relative shrink-0"
     >
       <svg
+        aria-hidden="true"
         class="w-full h-full"
         fill="none"
         viewBox="0 0 512 512"
@@ -4253,7 +4129,7 @@ exports[`Visual Regression - Logo > LogoWithText - default 1`] = `
       >
         <defs>
           <lineargradient
-            id="oe-lg-md-s"
+            id="pc-lg-md-s"
             x1="0%"
             x2="100%"
             y1="0%"
@@ -4261,139 +4137,70 @@ exports[`Visual Regression - Logo > LogoWithText - default 1`] = `
           >
             <stop
               offset="0%"
-              stop-color="#0066ff"
+              stop-color="#12202B"
             />
             <stop
               offset="100%"
-              stop-color="#5856d6"
+              stop-color="#1A3344"
             />
           </lineargradient>
         </defs>
-        <rect
-          fill="url(#oe-lg-md-s)"
-          height="448"
-          rx="96"
-          width="448"
-          x="32"
-          y="32"
+        <path
+          d="M256 40 L440 110 V250 C440 360 360 440 256 472 C152 440 72 360 72 250 V110 Z"
+          fill="url(#pc-lg-md-s)"
         />
-        <rect
-          fill="#fff"
-          height="114"
-          opacity=".85"
-          rx="6"
-          width="42"
-          x="102"
-          y="296"
-        />
-        <rect
-          fill="#fff"
-          height="177"
-          opacity=".95"
-          rx="6"
-          width="42"
-          x="162"
-          y="233"
-        />
-        <rect
-          fill="#fff"
-          height="234"
-          opacity=".85"
-          rx="6"
-          width="42"
-          x="222"
-          y="176"
-        />
-        <rect
-          fill="#fff"
-          height="260"
+        <path
+          d="M256 56 L424 120 V248 C424 348 352 420 256 450 C160 420 88 348 88 248 V120 Z"
+          fill="none"
           opacity=".9"
-          rx="8"
-          width="128"
-          x="282"
-          y="150"
+          stroke="#C4622D"
+          stroke-width="14"
         />
-        <g>
-          <rect
-            fill="url(#oe-lg-md-s)"
-            height="28"
-            opacity=".5"
-            rx="4"
-            width="26"
-            x="304"
-            y="182"
-          />
-          <rect
-            fill="url(#oe-lg-md-s)"
-            height="28"
-            opacity=".5"
-            rx="4"
-            width="26"
-            x="362"
-            y="182"
-          />
-          <rect
-            fill="url(#oe-lg-md-s)"
-            height="28"
-            opacity=".5"
-            rx="4"
-            width="26"
-            x="304"
-            y="226"
-          />
-          <rect
-            fill="url(#oe-lg-md-s)"
-            height="28"
-            opacity=".5"
-            rx="4"
-            width="26"
-            x="362"
-            y="226"
-          />
-          <rect
-            fill="url(#oe-lg-md-s)"
-            height="28"
-            opacity=".45"
-            rx="4"
-            width="26"
-            x="304"
-            y="272"
-          />
-          <rect
-            fill="url(#oe-lg-md-s)"
-            height="28"
-            opacity=".45"
-            rx="4"
-            width="26"
-            x="362"
-            y="272"
-          />
-          <rect
-            fill="url(#oe-lg-md-s)"
-            height="82"
-            opacity=".55"
-            rx="4"
-            width="34"
-            x="329"
-            y="328"
-          />
-        </g>
+        <text
+          fill="#F6F3EE"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="168"
+          font-weight="700"
+          letter-spacing="-6"
+          text-anchor="middle"
+          x="256"
+          y="292"
+        >
+          PC
+        </text>
+        <rect
+          fill="#C4622D"
+          height="12"
+          rx="6"
+          width="176"
+          x="168"
+          y="328"
+        />
       </svg>
     </div>
     <span
-      class="text-[17px] leading-none font-medium text-content-primary whitespace-nowrap tracking-tight"
-      style="font-family: "Plus Jakarta Sans", system-ui, sans-serif; letter-spacing: -0.02em;"
+      class="text-[17px] leading-none font-semibold text-content-primary whitespace-nowrap tracking-tight"
+      style="font-family: var(--oe-font-display); letter-spacing: -0.02em;"
     >
-      Open
+      <span
+        class="text-content-primary"
+      >
+        Prime
+      </span>
       <span
         class="text-oe-blue"
       >
-        Construction
+        Crest
       </span>
       <span
-        class="text-content-quaternary"
+        class="ml-1 text-[0.65em] font-normal text-content-quaternary align-middle"
       >
-        ERP
+        CM
+      </span>
+      <span
+        class="sr-only"
+      >
+        PrimeCrest
       </span>
     </span>
   </div>
@@ -4409,6 +4216,7 @@ exports[`Visual Regression - Logo > LogoWithText - without version 1`] = `
       class="h-7 w-7 relative shrink-0"
     >
       <svg
+        aria-hidden="true"
         class="w-full h-full"
         fill="none"
         viewBox="0 0 512 512"
@@ -4416,7 +4224,7 @@ exports[`Visual Regression - Logo > LogoWithText - without version 1`] = `
       >
         <defs>
           <lineargradient
-            id="oe-lg-md-s"
+            id="pc-lg-md-s"
             x1="0%"
             x2="100%"
             y1="0%"
@@ -4424,134 +4232,65 @@ exports[`Visual Regression - Logo > LogoWithText - without version 1`] = `
           >
             <stop
               offset="0%"
-              stop-color="#0066ff"
+              stop-color="#12202B"
             />
             <stop
               offset="100%"
-              stop-color="#5856d6"
+              stop-color="#1A3344"
             />
           </lineargradient>
         </defs>
-        <rect
-          fill="url(#oe-lg-md-s)"
-          height="448"
-          rx="96"
-          width="448"
-          x="32"
-          y="32"
+        <path
+          d="M256 40 L440 110 V250 C440 360 360 440 256 472 C152 440 72 360 72 250 V110 Z"
+          fill="url(#pc-lg-md-s)"
         />
-        <rect
-          fill="#fff"
-          height="114"
-          opacity=".85"
-          rx="6"
-          width="42"
-          x="102"
-          y="296"
-        />
-        <rect
-          fill="#fff"
-          height="177"
-          opacity=".95"
-          rx="6"
-          width="42"
-          x="162"
-          y="233"
-        />
-        <rect
-          fill="#fff"
-          height="234"
-          opacity=".85"
-          rx="6"
-          width="42"
-          x="222"
-          y="176"
-        />
-        <rect
-          fill="#fff"
-          height="260"
+        <path
+          d="M256 56 L424 120 V248 C424 348 352 420 256 450 C160 420 88 348 88 248 V120 Z"
+          fill="none"
           opacity=".9"
-          rx="8"
-          width="128"
-          x="282"
-          y="150"
+          stroke="#C4622D"
+          stroke-width="14"
         />
-        <g>
-          <rect
-            fill="url(#oe-lg-md-s)"
-            height="28"
-            opacity=".5"
-            rx="4"
-            width="26"
-            x="304"
-            y="182"
-          />
-          <rect
-            fill="url(#oe-lg-md-s)"
-            height="28"
-            opacity=".5"
-            rx="4"
-            width="26"
-            x="362"
-            y="182"
-          />
-          <rect
-            fill="url(#oe-lg-md-s)"
-            height="28"
-            opacity=".5"
-            rx="4"
-            width="26"
-            x="304"
-            y="226"
-          />
-          <rect
-            fill="url(#oe-lg-md-s)"
-            height="28"
-            opacity=".5"
-            rx="4"
-            width="26"
-            x="362"
-            y="226"
-          />
-          <rect
-            fill="url(#oe-lg-md-s)"
-            height="28"
-            opacity=".45"
-            rx="4"
-            width="26"
-            x="304"
-            y="272"
-          />
-          <rect
-            fill="url(#oe-lg-md-s)"
-            height="28"
-            opacity=".45"
-            rx="4"
-            width="26"
-            x="362"
-            y="272"
-          />
-          <rect
-            fill="url(#oe-lg-md-s)"
-            height="82"
-            opacity=".55"
-            rx="4"
-            width="34"
-            x="329"
-            y="328"
-          />
-        </g>
+        <text
+          fill="#F6F3EE"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="168"
+          font-weight="700"
+          letter-spacing="-6"
+          text-anchor="middle"
+          x="256"
+          y="292"
+        >
+          PC
+        </text>
+        <rect
+          fill="#C4622D"
+          height="12"
+          rx="6"
+          width="176"
+          x="168"
+          y="328"
+        />
       </svg>
     </div>
     <span
-      class="text-[17px] leading-none font-medium text-content-primary whitespace-nowrap tracking-tight"
-      style="font-family: "Plus Jakarta Sans", system-ui, sans-serif; letter-spacing: -0.02em;"
+      class="text-[17px] leading-none font-semibold text-content-primary whitespace-nowrap tracking-tight"
+      style="font-family: var(--oe-font-display); letter-spacing: -0.02em;"
     >
-      Open
+      <span
+        class="text-content-primary"
+      >
+        Prime
+      </span>
       <span
         class="text-oe-blue"
       >
-        Construction
+        Crest
+      </span>
+      <span
+        class="sr-only"
+      >
+        PrimeCrest
       </span>
     </span>
   </div>

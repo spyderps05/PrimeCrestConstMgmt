@@ -41,15 +41,15 @@ function manifestJson(): Record<string, unknown> {
 describe('PWA manifest', () => {
   it('has the required identity fields', () => {
     const manifest = manifestJson();
-    expect(manifest.name).toBe('PrimeCrest');
-    expect(manifest.short_name).toBe('OCERP');
+    expect(manifest.name).toBe('PrimeCrest Construction Management');
+    expect(manifest.short_name).toBe('PrimeCrest');
     expect(typeof manifest.description).toBe('string');
   });
 
-  it('sets the OCE theme palette', () => {
+  it('sets the PrimeCrest navy theme palette', () => {
     const manifest = manifestJson();
-    expect(manifest.theme_color).toBe('#0284c7');
-    expect(manifest.background_color).toBe('#f7fbff');
+    expect(manifest.theme_color).toBe('#0B2545');
+    expect(manifest.background_color).toBe('#0B2545');
   });
 
   it('declares display=standalone and the root scope', () => {
@@ -84,11 +84,11 @@ describe('PWA manifest', () => {
 // from vite.config.ts, which the build-output half above would report as a
 // missing file rather than as a removed plugin.
 describe('PWA plugin configuration', () => {
-  it('vite.config.ts still wires VitePWA with the OCERP manifest', () => {
+  it('vite.config.ts still wires VitePWA with the PrimeCrest manifest', () => {
     const config = readFileSync(resolve(__dirname, '..', '..', 'vite.config.ts'), 'utf-8');
     expect(config).toContain('VitePWA');
     expect(config).toContain("'PrimeCrest'");
-    expect(config).toContain("'OCERP'");
-    expect(config).toContain("'#0284c7'");
+    expect(config).toContain("'PrimeCrest Construction Management'");
+    expect(config).toContain("'#0B2545'");
   });
 });
