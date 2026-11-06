@@ -237,7 +237,7 @@ def test_the_pack_names_the_installers_profile() -> None:
 def test_version_is_stated_once_in_each_place_and_agrees() -> None:
     pyproject = (PACKS_DIR / "turkey-tr-mep" / "pyproject.toml").read_text(encoding="utf-8")
     assert f'version = "{_pack().pack_version}"' in pyproject
-    assert f'"openconstructionerp-turkey-tr>={_country().pack_version}"' in pyproject
+    assert f'"primecrest-turkey-tr>={_country().pack_version}"' in pyproject
 
 
 # ── The module lists ──────────────────────────────────────────────────────────
