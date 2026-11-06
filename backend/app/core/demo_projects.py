@@ -12675,16 +12675,38 @@ async def install_demo_project(
     if not respect_retirement:
         await restore_demo_id(session, demo_id)
 
-    # If force_reinstall, remove old demo projects for this demo_id first
+    # If force_reinstall, remove old demo projects for this demo_id first. Through the same purge the
+    # uninstall endpoint uses, not ``session.delete``: an ORM delete of the project row trips the tables
+    # that reach a project without a cascading key (a running approval holds a RESTRICT link to its
+    # project's route, so the route cascade failed with a foreign-key error on oe_approval_routes_instance)
+    # and leaves the demo's tagged fleet units, vendors and contacts behind to collide with the re-seed.
     if existing_demo and force_reinstall:
+        from sqlalchemy import delete as _sa_delete
+
+        from app.modules.projects.service import (
+            purge_demo_tagged_global_rows,
+            purge_project_children_without_cascade,
+        )
+
+        old_ids = []
         for old_proj in existing_demo:
             logger.info(
                 "Force reinstall: deleting old demo project %s (%s)",
                 old_proj.id,
                 old_proj.name,
             )
-            await session.delete(old_proj)
+            old_ids.append(old_proj.id)
+        await purge_project_children_without_cascade(session, old_ids)
+        # The demo's tagged fleet unit, vendor and contacts are shared by every copy of this demo, so they go
+        # only when no other owner's copy of it is left standing.
+        same_demo = [
+            p for p in existing_rows if isinstance(p.metadata_, dict) and p.metadata_.get("demo_id") == demo_id
+        ]
+        if len(same_demo) == len(old_ids):
+            await purge_demo_tagged_global_rows(session, {demo_id})
+        await session.execute(_sa_delete(Project).where(Project.id.in_(old_ids)))
         await session.flush()
+        session.expire_all()
 
     if owner_id is None:
         owner_id = await _get_or_create_owner(session)
