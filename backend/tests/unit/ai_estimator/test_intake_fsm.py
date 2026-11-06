@@ -46,9 +46,16 @@ from app.modules.ai_estimator.repository import (
     AiEstimatorIntakeRepository,
     AiEstimatorRunRepository,
 )
+from tests._ai_env import isolate_ai_keys
 from tests._pg import transactional_session
 
 pytestmark = pytest.mark.asyncio
+
+
+@pytest.fixture(autouse=True)
+def _no_ai_keys_from_this_machine(monkeypatch: pytest.MonkeyPatch, tmp_path) -> None:
+    """The "no key" tests must not see a key exported on the machine running them."""
+    isolate_ai_keys(monkeypatch, tmp_path / "home")
 
 
 # ── Fixtures (function-scoped, transaction-isolated) ─────────────────────────

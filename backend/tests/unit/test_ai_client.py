@@ -23,6 +23,13 @@ from app.modules.ai.ai_client import (
     resolve_provider_and_key,
     resolve_provider_key_model,
 )
+from tests._ai_env import isolate_ai_keys
+
+
+@pytest.fixture(autouse=True)
+def _no_ai_keys_from_this_machine(monkeypatch: pytest.MonkeyPatch, tmp_path) -> None:
+    """The "no key" tests must not see a key exported on the machine running them."""
+    isolate_ai_keys(monkeypatch, tmp_path / "home")
 
 # ── extract_json ─────────────────────────────────────────────────────────────
 
