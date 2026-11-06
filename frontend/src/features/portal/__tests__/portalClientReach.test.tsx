@@ -113,7 +113,7 @@ describe('a client can ask for a fresh sign-in link', () => {
     const button = screen.getByRole('button', { name: /send link/i }) as HTMLButtonElement;
     expect(button.disabled).toBe(true);
 
-    fireEvent.change(screen.getByPlaceholderText('you@example.com'), { target: { value: '  owner@example.com ' } });
+    fireEvent.change(screen.getByPlaceholderText('you@company.pk'), { target: { value: '  owner@example.com ' } });
     fireEvent.click(button);
 
     await waitFor(() => expect(screen.getByRole('status').textContent).toMatch(/if this address has portal access/i));
@@ -123,7 +123,7 @@ describe('a client can ask for a fresh sign-in link', () => {
   it('tells the client to try later when the request is refused', async () => {
     apiMocks.requestPortalMagicLink.mockRejectedValue(new Error('Request failed (429)'));
     render(<RequestSignInLink />);
-    fireEvent.change(screen.getByPlaceholderText('you@example.com'), { target: { value: 'owner@example.com' } });
+    fireEvent.change(screen.getByPlaceholderText('you@company.pk'), { target: { value: 'owner@example.com' } });
     fireEvent.click(screen.getByRole('button', { name: /send link/i }));
     await waitFor(() => expect(screen.getByText(/try again in a few minutes/i)).toBeTruthy());
   });

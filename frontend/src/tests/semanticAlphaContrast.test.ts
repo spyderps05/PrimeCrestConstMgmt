@@ -182,7 +182,8 @@ describe('semantic colour classes paint what they say', () => {
     // The palette. A guard computed from a file it cannot read would pass on
     // an empty palette, so the floors are pinned here as well. If a hue moves,
     // this line is the one that says so out loud rather than silently relaxing.
-    expect(lowestUsableAlpha('error')).toBe(65);
+    // 70 since the PrimeCrest surfaces (warm off-white light, navy dark).
+    expect(lowestUsableAlpha('error')).toBe(70);
     expect(lowestUsableAlpha('success')).toBe(75);
     expect(lowestUsableAlpha('warning')).toBe(75);
     expect(lowestUsableAlpha('info')).toBe(70);
