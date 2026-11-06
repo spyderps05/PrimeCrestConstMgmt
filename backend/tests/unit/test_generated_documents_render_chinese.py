@@ -31,6 +31,7 @@ suite where both directions look alike is measuring the PDF library, not us.
 from __future__ import annotations
 
 import io
+import os
 import subprocess
 import types
 from datetime import UTC, date, datetime
@@ -192,6 +193,24 @@ def source_before_the_wiring(path: str, marker: str) -> str:
             if marker not in candidate:
                 return candidate
     return ""
+
+
+def require_history(source: str, builder: str) -> None:
+    """Skip, or fail where history is promised, when no pre-wiring builder is reachable.
+
+    The pre-wiring builders exist only in the upstream history. A checkout
+    whose history starts after the wiring (this fork's squashed import, a
+    shallow clone) has nothing to compare against, and failing there reports
+    the checkout, not the code. ``OE_REQUIRE_GIT_HISTORY=1`` turns the skip
+    back into the failure for a lane that does fetch the full history, so a
+    skip there still cannot pass for a comparison.
+    """
+    if source:
+        return
+    message = f"no version of the {builder} builder predating the wiring is reachable in this history"
+    if os.environ.get("OE_REQUIRE_GIT_HISTORY", "").strip().lower() in {"1", "true", "yes"}:
+        pytest.fail(message)
+    pytest.skip(message)
 
 
 # ── The bill of quantities ──────────────────────────────────────────────────
@@ -711,7 +730,7 @@ def test_a_latin_invoice_is_byte_for_byte_what_it_was_before_the_wiring() -> Non
     from app.modules.einvoice.pdf_embed import _readable_pdf
 
     source = source_before_the_wiring("backend/app/modules/einvoice/pdf_embed.py", "def put(")
-    assert source, "no version of the invoice builder predating the wiring is reachable in this history"
+    require_history(source, "invoice")
 
     module = types.ModuleType("pdf_embed_before")
     module.__file__ = "pdf_embed_before.py"
@@ -1551,7 +1570,7 @@ def test_a_latin_payment_application_is_laid_out_as_it_was_before_the_wiring(mon
     from app.modules.contracts.aia_pdf import render_aia_application_pdf
 
     source = source_before_the_wiring("backend/app/modules/contracts/aia_pdf.py", "pdf_style_for_text")
-    assert source, "no version of the application builder predating the wiring is reachable in this history"
+    require_history(source, "application")
 
     module = types.ModuleType("aia_pdf_before")
     module.__file__ = "aia_pdf_before.py"
@@ -1817,7 +1836,7 @@ def test_a_latin_methodology_is_laid_out_as_it_was_before_the_wiring() -> None:
     from app.modules.methodology.pdf_export import generate_methodology_pdf
 
     source = source_before_the_wiring("backend/app/modules/methodology/pdf_export.py", "pdf_style_for_text")
-    assert source, "no version of the methodology builder predating the wiring is reachable in this history"
+    require_history(source, "methodology")
 
     module = types.ModuleType("methodology_pdf_before")
     module.__file__ = "methodology_pdf_before.py"
