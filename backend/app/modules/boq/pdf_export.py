@@ -458,7 +458,7 @@ def _build_styles() -> dict[str, ParagraphStyle]:
             fontName=BOLD_FONT,
             fontSize=22,
             alignment=TA_CENTER,
-            textColor=colors.HexColor("#1a1a2e"),
+            textColor=colors.HexColor("#12202B"),
             spaceAfter=6 * mm,
         ),
         "title": ParagraphStyle(
@@ -492,7 +492,7 @@ def _build_styles() -> dict[str, ParagraphStyle]:
             parent=base["Normal"],
             fontName=BOLD_FONT,
             fontSize=10,
-            textColor=colors.HexColor("#1a1a2e"),
+            textColor=colors.HexColor("#12202B"),
             alignment=TA_LEFT,
         ),
         "summary_label": ParagraphStyle(
@@ -508,7 +508,7 @@ def _build_styles() -> dict[str, ParagraphStyle]:
             parent=base["Normal"],
             fontName=BOLD_FONT,
             fontSize=11,
-            textColor=colors.HexColor("#1a1a2e"),
+            textColor=colors.HexColor("#12202B"),
             alignment=TA_RIGHT,
         ),
         "summary_total_label": ParagraphStyle(
@@ -516,7 +516,7 @@ def _build_styles() -> dict[str, ParagraphStyle]:
             parent=base["Normal"],
             fontName=BOLD_FONT,
             fontSize=12,
-            textColor=colors.HexColor("#1a1a2e"),
+            textColor=colors.HexColor("#12202B"),
             alignment=TA_LEFT,
         ),
         "summary_total_value": ParagraphStyle(
@@ -524,7 +524,7 @@ def _build_styles() -> dict[str, ParagraphStyle]:
             parent=base["Normal"],
             fontName=BOLD_FONT,
             fontSize=12,
-            textColor=colors.HexColor("#1a1a2e"),
+            textColor=colors.HexColor("#12202B"),
             alignment=TA_RIGHT,
         ),
         "section_header": ParagraphStyle(
@@ -532,7 +532,7 @@ def _build_styles() -> dict[str, ParagraphStyle]:
             parent=base["Normal"],
             fontName=BOLD_FONT,
             fontSize=9,
-            textColor=colors.HexColor("#1a1a2e"),
+            textColor=colors.HexColor("#12202B"),
         ),
         "cell": ParagraphStyle(
             "Cell",
@@ -564,8 +564,8 @@ def _build_styles() -> dict[str, ParagraphStyle]:
         # TableStyle TEXTCOLOR cannot reach a cell that holds a Paragraph, so
         # the colour of a header has to live on the header's own style. It did
         # not, and the row was drawn in the colour of the text below it: on the
-        # #1a1a2e header fill, "Pos.", "Description" and "Unit" came out
-        # #1a1a2e, the same colour they were standing on.
+        # #12202B header fill, "Pos.", "Description" and "Unit" came out
+        # #12202B, the same colour they were standing on.
         #
         # Sizes are the ones these two rows already rendered at, 9pt on the
         # left and 8pt on the right to match their columns. The table style
@@ -650,7 +650,7 @@ def _build_styles() -> dict[str, ParagraphStyle]:
             parent=base["Normal"],
             fontName=BOLD_FONT,
             fontSize=10,
-            textColor=colors.HexColor("#1a1a2e"),
+            textColor=colors.HexColor("#12202B"),
             alignment=TA_CENTER,
             leading=12,
         ),
@@ -798,7 +798,7 @@ def _build_cover_page(
     line_table.setStyle(
         TableStyle(
             [
-                ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#1a1a2e")),
+                ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#12202B")),
                 ("ALIGN", (0, 0), (-1, -1), "CENTER"),
             ]
         )
@@ -935,7 +935,7 @@ def _build_cover_page(
     ]
     # Add top border on the Gross Total row (last row)
     last_row = len(summary_rows) - 1
-    summary_style_commands.append(("LINEABOVE", (0, last_row), (-1, last_row), 1, colors.HexColor("#1a1a2e")))
+    summary_style_commands.append(("LINEABOVE", (0, last_row), (-1, last_row), 1, colors.HexColor("#12202B")))
     summary_table.setStyle(TableStyle(summary_style_commands))
     elements.append(summary_table)
 
@@ -1307,7 +1307,7 @@ def _build_boq_table(
         # and carries its own face, size and colour, so a TEXTCOLOR, FONTNAME
         # or FONTSIZE command here would read as authoritative and change
         # nothing on the page.
-        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#1a1a2e")),
+        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#12202B")),
         # Global
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("TOPPADDING", (0, 0), (-1, -1), 2 * mm),
@@ -1315,7 +1315,7 @@ def _build_boq_table(
         ("LEFTPADDING", (0, 0), (-1, -1), 2 * mm),
         ("RIGHTPADDING", (0, 0), (-1, -1), 2 * mm),
         # Grid lines
-        ("LINEBELOW", (0, 0), (-1, 0), 1, colors.HexColor("#1a1a2e")),
+        ("LINEBELOW", (0, 0), (-1, 0), 1, colors.HexColor("#12202B")),
         ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#f8f8f8")]),
     ]
 
@@ -1328,10 +1328,10 @@ def _build_boq_table(
             style_commands.append(("LINEABOVE", (0, ri), (-1, ri), 0.5, colors.HexColor("#cccccc")))
             style_commands.append(("BACKGROUND", (0, ri), (-1, ri), colors.HexColor("#f0f0f5")))
         elif row_type == "total_line":
-            style_commands.append(("LINEABOVE", (0, ri), (-1, ri), 1, colors.HexColor("#1a1a2e")))
+            style_commands.append(("LINEABOVE", (0, ri), (-1, ri), 1, colors.HexColor("#12202B")))
             style_commands.append(("BACKGROUND", (0, ri), (-1, ri), colors.white))
         elif row_type == "grand_total":
-            style_commands.append(("LINEABOVE", (0, ri), (-1, ri), 1.5, colors.HexColor("#1a1a2e")))
+            style_commands.append(("LINEABOVE", (0, ri), (-1, ri), 1.5, colors.HexColor("#12202B")))
             style_commands.append(("BACKGROUND", (0, ri), (-1, ri), colors.HexColor("#e8e8ee")))
         elif row_type == "spacer":
             style_commands.append(("BACKGROUND", (0, ri), (-1, ri), colors.white))
@@ -1436,13 +1436,13 @@ def _table_of_contents(
     table.setStyle(
         TableStyle(
             [
-                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#1a1a2e")),
+                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#12202B")),
                 ("VALIGN", (0, 0), (-1, -1), "TOP"),
                 ("TOPPADDING", (0, 0), (-1, -1), 2 * mm),
                 ("BOTTOMPADDING", (0, 0), (-1, -1), 2 * mm),
                 ("LEFTPADDING", (0, 0), (-1, -1), 2 * mm),
                 ("RIGHTPADDING", (0, 0), (-1, -1), 2 * mm),
-                ("LINEBELOW", (0, 0), (-1, 0), 1, colors.HexColor("#1a1a2e")),
+                ("LINEBELOW", (0, 0), (-1, 0), 1, colors.HexColor("#12202B")),
                 ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#f8f8f8")]),
             ]
         )
@@ -1515,13 +1515,13 @@ def _section_summary_table(
         TableStyle(
             [
                 # The fill only, for the same reason as the position table.
-                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#1a1a2e")),
+                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#12202B")),
                 ("VALIGN", (0, 0), (-1, -1), "TOP"),
                 ("TOPPADDING", (0, 0), (-1, -1), 2 * mm),
                 ("BOTTOMPADDING", (0, 0), (-1, -1), 2 * mm),
                 ("LEFTPADDING", (0, 0), (-1, -1), 2 * mm),
                 ("RIGHTPADDING", (0, 0), (-1, -1), 2 * mm),
-                ("LINEBELOW", (0, 0), (-1, 0), 1, colors.HexColor("#1a1a2e")),
+                ("LINEBELOW", (0, 0), (-1, 0), 1, colors.HexColor("#12202B")),
                 ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#f8f8f8")]),
             ]
         )
@@ -1599,7 +1599,7 @@ def _cost_totals_table(
     ]
     # Gross total row styling
     last_row = len(cost_rows) - 1
-    cost_style.append(("LINEABOVE", (0, last_row), (-1, last_row), 1.5, colors.HexColor("#1a1a2e")))
+    cost_style.append(("LINEABOVE", (0, last_row), (-1, last_row), 1.5, colors.HexColor("#12202B")))
     cost_style.append(("BACKGROUND", (0, last_row), (-1, last_row), colors.HexColor("#e8e8ee")))
     cost_table.setStyle(TableStyle(cost_style))
     return cost_table

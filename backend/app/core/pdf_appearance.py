@@ -183,7 +183,7 @@ _HEX_COLOR = re.compile(r"^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$")
 #: ``PAGE_MARGIN_MM = 25``). Changing a default here silently restyles every
 #: document in every deployment, so treat these as fixed points.
 DEFAULT_APPEARANCE: dict[str, Any] = {
-    "accent_color": "#0b2545",  # Crest Navy (assets/brand/BRAND.md), = pdf_branding._HEADER_COLOR
+    "accent_color": "#12202b",  # PrimeCrest Ink (assets/brand/BRAND.md), = pdf_branding._HEADER_COLOR
     "footer_color": "#999999",
     "base_font_size": 10,
     "page_size": "A4",

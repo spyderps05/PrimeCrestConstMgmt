@@ -535,7 +535,7 @@ class DocumentTypeOverrideUpdate(DocumentAppearanceUpdate):
 #: What a usable value looks like, for the fields whose values are refused in
 #: practice. The others are typed by the model or trimmed rather than refused.
 _VALUE_HINTS = {
-    "accent_color": "a hex colour such as #0b2545",
+    "accent_color": "a hex colour such as #12202b",
     "footer_color": "a hex colour such as #999999",
     "logo_align": "one of: " + ", ".join(LOGO_ALIGNMENTS),
     "page_orientation": "one of: " + ", ".join(PAGE_ORIENTATIONS),
