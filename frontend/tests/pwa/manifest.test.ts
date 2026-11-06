@@ -46,10 +46,10 @@ describe('PWA manifest', () => {
     expect(typeof manifest.description).toBe('string');
   });
 
-  it('sets the PrimeCrest navy theme palette', () => {
+  it('sets the PrimeCrest ink and cream theme palette', () => {
     const manifest = manifestJson();
-    expect(manifest.theme_color).toBe('#0B2545');
-    expect(manifest.background_color).toBe('#0B2545');
+    expect(manifest.theme_color).toBe('#12202B');
+    expect(manifest.background_color).toBe('#F6F3EE');
   });
 
   it('declares display=standalone and the root scope', () => {
@@ -89,6 +89,7 @@ describe('PWA plugin configuration', () => {
     expect(config).toContain('VitePWA');
     expect(config).toContain("'PrimeCrest'");
     expect(config).toContain("'PrimeCrest Construction Management'");
-    expect(config).toContain("'#0B2545'");
+    expect(config).toContain("'#12202B'");
+    expect(config).toContain("'#F6F3EE'");
   });
 });

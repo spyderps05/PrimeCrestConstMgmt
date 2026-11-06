@@ -258,8 +258,8 @@ export default defineConfig({
         short_name: 'PrimeCrest',
         description:
           'PrimeCrest Construction Management by Spyder Solutions: cost estimation, BIM takeoff, BOQ, tendering and field operations.',
-        theme_color: '#0B2545',
-        background_color: '#0B2545',
+        theme_color: '#12202B',
+        background_color: '#F6F3EE',
         display: 'standalone',
         orientation: 'any',
         start_url: '/',
