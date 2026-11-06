@@ -106,6 +106,14 @@ make dev-frontend
 Open **http://localhost:5173**. See [DEVELOPING.md](DEVELOPING.md) for the codebase guide and
 [docs/INSTALL_TROUBLESHOOTING.md](docs/INSTALL_TROUBLESHOOTING.md) if something does not start.
 
+### Single command
+
+Once the backend package is installed, the `primecrest` command runs the API and the built web app together:
+
+```bash
+primecrest serve
+```
+
 ### Demo login
 
 Demo accounts and sample projects are created on first start:
