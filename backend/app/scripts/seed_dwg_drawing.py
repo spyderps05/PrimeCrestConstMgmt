@@ -35,7 +35,122 @@ from app.modules.dwg_takeoff.models import DwgDrawing, DwgDrawingVersion
 logger = logging.getLogger(__name__)
 
 
-def _build_demo_dxf(path: str) -> bool:
+# Countries whose demo plans are drawn as a German Grundriss. Every other
+# market gets the English plan: a Pakistani, British or Gulf estimator opening
+# /dwg-takeoff should not meet "Wohnen" and "Schlafen" on their first drawing.
+_GERMAN_PLAN_COUNTRIES = frozenset({"DE", "AT", "CH", "LI"})
+
+
+def plan_language(country_code: str | None, locale: str | None) -> str:
+    """``"de"`` for a German-language market, ``"en"`` for every other one."""
+    if (country_code or "").strip().upper() in _GERMAN_PLAN_COUNTRIES:
+        return "de"
+    if (locale or "").strip().lower().split("-")[0] == "de":
+        return "de"
+    return "en"
+
+
+async def _plan_language_for_project(session: AsyncSession, project_id: uuid.UUID) -> str:
+    """The plan language the project's market reads, English when unknown."""
+    try:
+        from app.modules.projects.models import Project
+
+        project = await session.get(Project, project_id)
+    except Exception:  # noqa: BLE001 - a lookup failure must not block the seed
+        return "en"
+    if project is None:
+        return "en"
+    return plan_language(getattr(project, "country_code", None), getattr(project, "locale", None))
+
+
+def _build_english_plan(msp: Any, doc: Any) -> None:
+    """An English ground-floor plan of a ten marla house, in millimetres.
+
+    The plot is 10.50 m wide and 21.00 m deep with the road at y=0: a car
+    porch and a lawn in the front setback, then the covered area with a
+    drawing room, entrance porch and bedroom across the front, the lounge and
+    kitchen in the middle, and a bedroom, bath, store and staircase at the
+    back. Room labels state the room and its clear size in metres, width by
+    depth, the way a Pakistani or British plan writes them ("Lounge
+    6.00 x 4.50"). Layer names stay on the AIA codes.
+    """
+    doc.layers.add("A-SITE", color=1)
+    doc.layers.add("A-WALL", color=7)
+    doc.layers.add("A-WALL-PART", color=8)
+    doc.layers.add("A-DOOR", color=3)
+    doc.layers.add("A-GLAZ", color=5)
+    doc.layers.add("A-ANNO-TEXT", color=2)
+
+    # Plot boundary and the covered area (both closed).
+    msp.add_lwpolyline(
+        [(0, 0), (10500, 0), (10500, 21000), (0, 21000)],
+        close=True,
+        dxfattribs={"layer": "A-SITE"},
+    )
+    msp.add_lwpolyline(
+        [(0, 5000), (10500, 5000), (10500, 19500), (0, 19500)],
+        close=True,
+        dxfattribs={"layer": "A-WALL"},
+    )
+    # Car porch / lawn division in the front setback.
+    msp.add_line((4000, 0), (4000, 5000), dxfattribs={"layer": "A-SITE"})
+
+    # Interior partitions.
+    for start, end in (
+        ((0, 9500), (10500, 9500)),
+        ((0, 14000), (10500, 14000)),
+        ((4500, 5000), (4500, 9500)),
+        ((6000, 5000), (6000, 9500)),
+        ((6000, 9500), (6000, 14000)),
+        ((4500, 14000), (4500, 19500)),
+        ((6500, 14000), (6500, 19500)),
+        ((4500, 16500), (6500, 16500)),
+    ):
+        msp.add_line(start, end, dxfattribs={"layer": "A-WALL-PART"})
+
+    # Door swings: main entrance, drawing room, lounge, kitchen, bedroom 2.
+    for center, start_angle in (
+        ((4500, 5000), 0),
+        ((4500, 8500), 270),
+        ((3000, 9500), 0),
+        ((6000, 10500), 0),
+        ((3000, 14000), 0),
+    ):
+        msp.add_arc(
+            center=center,
+            radius=900,
+            start_angle=start_angle,
+            end_angle=start_angle + 90,
+            dxfattribs={"layer": "A-DOOR"},
+        )
+
+    # Windows on the front wall (drawing room and bedroom 1).
+    for x0, x1 in ((1200, 3300), (7200, 9300)):
+        msp.add_line((x0, 5000), (x1, 5000), dxfattribs={"layer": "A-GLAZ"})
+        msp.add_line((x0, 5120), (x1, 5120), dxfattribs={"layer": "A-GLAZ"})
+
+    # Room labels: name, then clear width x depth in metres.
+    for text, insert in (
+        ("Car Porch 4.00 x 5.00", (300, 2500)),
+        ("Lawn 6.50 x 5.00", (4400, 2500)),
+        ("Drawing Room 4.50 x 4.50", (300, 7200)),
+        ("Porch 1.50 x 4.50", (4550, 7200)),
+        ("Bedroom 4.50 x 4.50", (6300, 7200)),
+        ("Lounge 6.00 x 4.50", (300, 11700)),
+        ("Kitchen 4.50 x 4.50", (6300, 11700)),
+        ("Bedroom 4.50 x 5.50", (300, 16700)),
+        ("Bath 2.00 x 2.50", (4600, 15200)),
+        ("Store 2.00 x 3.00", (4600, 18000)),
+        ("Staircase 4.00 x 5.50", (6800, 16700)),
+    ):
+        msp.add_text(text, dxfattribs={"layer": "A-ANNO-TEXT", "height": 200, "insert": insert})
+    msp.add_text(
+        "GROUND FLOOR PLAN",
+        dxfattribs={"layer": "A-ANNO-TEXT", "height": 350, "insert": (300, 20000)},
+    )
+
+
+def _build_demo_dxf(path: str, language: str = "de") -> bool:
     """Write a small, valid demo floor-plan DXF to ``path``.
 
     Uses ``ezdxf`` (a base dependency) to author a tidy little plan: an outer
@@ -44,8 +159,10 @@ def _build_demo_dxf(path: str) -> bool:
     and the layer panel shows named layers. Units are set to millimetres
     (``$INSUNITS = 4``) so the drawing reads at a realistic building scale.
 
-    The plan is presented as a German Grundriss, so the labels are written the
-    way a German plan writes them (see the room labels below). Layer names stay
+    ``language="de"`` presents the plan as a German Grundriss, so the labels
+    are written the way a German plan writes them (see the room labels below).
+    Any other language gets the English house plan of
+    :func:`_build_english_plan`. Layer names stay
     on the AIA ``DISCIPLINE-MAJOR-MINOR`` codes, which are a drafting standard
     rather than prose and are what the match extractors classify on.
 
@@ -62,6 +179,12 @@ def _build_demo_dxf(path: str) -> bool:
         doc = ezdxf.new(dxfversion="R2010")
         doc.header["$INSUNITS"] = 4  # millimetres
         msp = doc.modelspace()
+
+        if language != "de":
+            _build_english_plan(msp, doc)
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            doc.saveas(path)
+            return True
 
         # Named layers so the LayerPanel has something meaningful to toggle.
         doc.layers.add("A-WALL", color=7)
@@ -122,8 +245,14 @@ async def seed_ready_dwg_drawing(
     name: str,
     discipline: str | None = None,
     source: str = "demo_asset_seed",
+    language: str | None = None,
 ) -> bool:
     """Seed (idempotently) a ready, viewer-renderable demo DXF drawing.
+
+    ``language`` picks the plan: ``"de"`` for the German Grundriss, anything
+    else for the English house plan. Left ``None`` it is read off the
+    project's market (:func:`plan_language`), so a Pakistani demo gets English
+    room labels and a German one keeps its Grundriss.
 
     Creates a ``DwgDrawing`` (format ``dxf``, status ``ready``) plus a parsed
     ``DwgDrawingVersion`` whose entities are written to the same on-disk store
@@ -169,7 +298,9 @@ async def seed_ready_dwg_drawing(
 
     built = True
     if not os.path.exists(file_path):
-        built = _build_demo_dxf(file_path)
+        if language is None:
+            language = await _plan_language_for_project(session, project_id)
+        built = _build_demo_dxf(file_path, language)
 
     parsed: dict[str, Any] | None = None
     if built and os.path.exists(file_path):

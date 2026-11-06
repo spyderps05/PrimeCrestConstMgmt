@@ -890,6 +890,31 @@ async def _attach_documents(
     return docs_written
 
 
+async def _documents_for_market(
+    session: AsyncSession,
+    pid: uuid.UUID,
+    documents: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """The bundle's documents with the German Grundriss kept to German markets.
+
+    ``commercial_rvt`` is shared by every market, and its plan set used to be
+    the German Grundriss (German room labels) whatever the project: a school
+    in Karachi or a BHU in Punjab shipped German room names in its drawing
+    set. A project outside the German-language markets gets the English plan
+    set in its place, under the same document name.
+    """
+    from app.scripts.seed_dwg_drawing import _plan_language_for_project
+
+    if await _plan_language_for_project(session, pid) == "de":
+        return documents
+    out: list[dict[str, Any]] = []
+    for entry in documents:
+        if entry.get("src") == _GRUNDRISS_PDF["src"]:
+            entry = {**entry, "src": _DRAWINGS_PDF["src"]}
+        out.append(entry)
+    return out
+
+
 def _load_retail_spec() -> dict | None:
     """Read the procedural Retail Market Heilbronn canonical spec, or None."""
     if not RETAIL_SPEC_PATH.exists():
@@ -1109,7 +1134,8 @@ async def _attach_demo_assets_inner(
     n_links = await _link_positions_to_pool(session, pid, pooled_elem_ids, bundle_key)
 
     # ── 4. Real downloadable documents (best-effort, per entry) ──────────
-    docs_written = await _attach_documents(session, pid, owner, bundle.get("documents", []), bundle_key)
+    documents = await _documents_for_market(session, pid, bundle.get("documents", []))
+    docs_written = await _attach_documents(session, pid, owner, documents, bundle_key)
 
     result = {
         "status": "ok",
