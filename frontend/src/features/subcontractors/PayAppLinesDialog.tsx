@@ -17,7 +17,7 @@
 // as the sub sent it, because the lien waiver gate reads that net; paying it
 // would pay the sub for what finance did not approve.
 
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@tanstack/react-query';
 import { CheckCheck, Loader2 } from 'lucide-react';
@@ -93,18 +93,21 @@ export function PayAppLinesDialog({
 
   // Approve mode starts each line at what it already has approved, or at the
   // claim when nothing is set yet, which is how the portal submits a line.
-  const [typed, setTyped] = useState<Record<string, string>>({});
-  useEffect(() => {
-    if (mode !== 'approve' || !linesQ.data) return;
-    setTyped(
+  // The starting figures are derived during render, not copied into state by
+  // an effect: an effect left the inputs empty for the first frame after the
+  // lines arrived. `edits` holds only what the person has typed since.
+  const seeded = useMemo<Record<string, string>>(
+    () =>
       Object.fromEntries(
-        linesQ.data.map((ln) => {
+        (linesQ.data ?? []).map((ln) => {
           const approved = toNum(ln.approved_amount);
           return [ln.id, String(approved > 0 ? ln.approved_amount : ln.claimed_amount)];
         }),
       ),
-    );
-  }, [mode, linesQ.data]);
+    [linesQ.data],
+  );
+  const [edits, setEdits] = useState<Record<string, string>>({});
+  const typed: Record<string, string> = mode === 'approve' ? { ...seeded, ...edits } : {};
 
   // Before finance approval a line has no approved figure to show yet.
   const approvedKnown = mode === 'approve' || payment.status === 'finance_approved' || payment.status === 'paid';
@@ -240,7 +243,7 @@ export function PayAppLinesDialog({
                               step="0.01"
                               max={claimed}
                               value={typed[ln.id] ?? ''}
-                              onChange={(e) => setTyped((prev) => ({ ...prev, [ln.id]: e.target.value }))}
+                              onChange={(e) => setEdits((prev) => ({ ...prev, [ln.id]: e.target.value }))}
                               className="h-8 w-32 rounded-md border border-border-light bg-surface-primary px-2 text-right text-sm tabular-nums"
                               aria-label={t('subcontractors.pay_app_approved_label', {
                                 name,
