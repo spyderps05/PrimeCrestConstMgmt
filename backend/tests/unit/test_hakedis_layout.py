@@ -102,7 +102,7 @@ def test_the_standard_formulas_read_as_on_the_form() -> None:
 
 
 def test_the_deductions_total_adds_every_deduction_and_nothing_else() -> None:
-    for layout in (TR, LAYOUT_PRESETS["TR_PRIVATE"]):
+    for layout in (TR, LAYOUT_PRESETS["TR_PRIVATE"], LAYOUT_PRESETS["PK"]):
         by_key = {line.key: line for line in layout}
         deductions = tuple(line.key for line in layout if line.section == "deductions")
         assert by_key["deductions_total"].operands == deductions
@@ -114,7 +114,8 @@ def test_every_preset_is_a_valid_layout() -> None:
         validate_layout(layout)
         order = evaluation_order(layout)
         assert set(order) == {line.key for line in layout}, name
-        assert order.index("payable") > order.index("deductions_total") > order.index("vat")
+        vat = next(line.key for line in layout if line.tax_kind == "vat_computed")
+        assert order.index("payable") > order.index("deductions_total") > order.index(vat)
 
 
 def test_the_works_list_columns_carry_the_forms_letters() -> None:

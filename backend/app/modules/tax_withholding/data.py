@@ -37,6 +37,22 @@ from __future__ import annotations
 
 from typing import Any
 
+from app.core.payment_taxes.data_pk import ROWS as _PK_ROWS
+
+
+def _pk_current_rate(code: str) -> str:
+    """The section 153 rate in force now, read off the payment tax table.
+
+    The certificate and this scheme then cannot disagree about a figure: the
+    table is the one source, and the scheme carries its open-ended row (the
+    latest Finance Act). A missing row is a broken table and fails at import.
+    """
+    for row in _PK_ROWS:
+        if row.code == code and row.effective_to is None and row.rate_pct is not None:
+            return format(row.rate_pct, "f")
+    raise LookupError(f"no open-ended Pakistan payment tax row {code!r}")
+
+
 # ── Withholding schemes ──────────────────────────────────────────────────────
 #
 # ``bands`` are ordered from the lowest rate to the highest. ``rate_pct`` is a
@@ -212,6 +228,61 @@ WITHHOLDING_REGIMES: tuple[dict[str, Any], ...] = (
             "Applies when the payee has not provided a certified taxpayer identification "
             "number, or the authority has notified the payer to withhold. The evidence is the "
             "signed request-for-taxpayer-identification form on file."
+        ),
+    },
+    {
+        # Section 153(1)(c) of the Income Tax Ordinance, 2001: income tax
+        # withheld from a payment under a works contract. The rates are those
+        # of app.core.payment_taxes.data_pk, which records the FBR rate cards
+        # they were read from; see that module for sources and history.
+        "country_code": "PK",
+        "scheme_code": "PK_ITO_153_CONTRACTS",
+        "scheme_name": "Withholding on contract payments (Income Tax Ordinance 2001 s.153(1)(c))",
+        "legal_reference": "Income Tax Ordinance, 2001, s.153(1)(c); First Schedule Part III Division III",
+        "authority": "Federal Board of Revenue",
+        "currency_code": "PKR",
+        "default_band_code": "OTHER_NON_ATL",
+        # The rate card takes "the gross amount payable": no carve-out for
+        # materials, and the sales tax on the invoice stays in the base until
+        # a Pakistani tax adviser says otherwise.
+        "materials_excluded": False,
+        "vat_excluded": False,
+        # The Active Taxpayer List is rebuilt for every tax year, so a check
+        # against it is good for one year at most.
+        "verification_validity_months": 12,
+        "threshold_amount": None,
+        "bands": [
+            {
+                "code": "COMPANY_ATL",
+                "label": "Company on the Active Taxpayer List",
+                "rate_pct": _pk_current_rate("PK_153_1C_COMPANY_ATL"),
+                "requires_verification": True,
+            },
+            {
+                "code": "OTHER_ATL",
+                "label": "Individual or association of persons on the Active Taxpayer List",
+                "rate_pct": _pk_current_rate("PK_153_1C_OTHER_ATL"),
+                "requires_verification": True,
+            },
+            {
+                "code": "COMPANY_NON_ATL",
+                "label": "Company not on the Active Taxpayer List",
+                "rate_pct": _pk_current_rate("PK_153_1C_COMPANY_NON_ATL"),
+                "requires_verification": False,
+            },
+            {
+                "code": "OTHER_NON_ATL",
+                "label": "Individual or association of persons not on the Active Taxpayer List",
+                "rate_pct": _pk_current_rate("PK_153_1C_OTHER_NON_ATL"),
+                "requires_verification": False,
+            },
+        ],
+        "notes": (
+            "The band follows from two facts about the payee: whether it is a company, and whether it is "
+            "on the FBR Active Taxpayer List on the day of payment. Off the list the rate is doubled. "
+            "Record the ATL check (the payee's NTN and the date it was verified) as the party standing; "
+            "a payee with no standing on file is deducted at the highest band. Rates from the FBR "
+            "withholding rate card; the Ordinance prevails over the card."
         ),
     },
 )

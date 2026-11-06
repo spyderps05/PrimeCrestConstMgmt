@@ -94,6 +94,7 @@ from app.modules.contracts.hakedis import (
 )
 from app.modules.contracts.hakedis_layout import (
     DEFAULT_LAYOUTS,
+    OFFICIAL_FORM_COUNTRIES,
     ColumnDef,
     HakedisSettings,
     contractor_label_key,
@@ -1107,7 +1108,9 @@ def _render(
     ]
     fine: list[str] = []
     fine_summary: list[str] = []
-    standard = DEFAULT_LAYOUTS.get((inp.country_code or "").strip().upper())
+    country = (inp.country_code or "").strip().upper()
+    # Only a layout transcribed from an official form may name that form.
+    standard = DEFAULT_LAYOUTS.get(country) if country in OFFICIAL_FORM_COUNTRIES else None
     if standard is not None and [(line.key, line.letter) for line in inp.layout] == [
         (line.key, line.letter) for line in standard
     ]:

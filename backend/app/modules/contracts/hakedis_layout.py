@@ -38,6 +38,7 @@ __all__ = [
     "INPUT_SOURCES",
     "LAYOUT_PRESETS",
     "LOCALES",
+    "OFFICIAL_FORM_COUNTRIES",
     "TAX_KINDS",
     "WORKS_COLUMNS",
     "WORKS_DEFAULT_COLUMNS",
@@ -226,15 +227,81 @@ _TR_PRIVATE: tuple[SummaryLineDef, ...] = (
     _line("payable", "", "difference", ("accrued", "deductions_total"), section="result"),
 )
 
+_PK_DEDUCTIONS: tuple[str, ...] = (
+    "income_tax_153",
+    "sales_tax_withholding",
+    "retention",
+    "advance_recovery",
+    "employer_supplied_materials",
+    "delay_penalty",
+    "other_deductions",
+)
+
+# A Pakistani interim payment certificate (IPC) as contracts under the PEC
+# and FIDIC-based forms usually lay it out: the gross value of work to date,
+# less the previous certificates, plus the provincial sales tax on services,
+# then the statutory and contractual deductions. No single official form was
+# found, so this is a house arrangement, not a transcription, and a contract
+# adjusts it like any other layout. The income tax line is section 153(1)(c)
+# of the Income Tax Ordinance, 2001, at the rate of the payee class the person
+# picks (company or not, on the Active Taxpayer List or not); the sales tax
+# withholding line is the provincial withholding agent rule, which has no
+# shipped fraction and is decided per certificate.
+_PK_STANDARD: tuple[SummaryLineDef, ...] = (
+    _line("work_done", "A", "input", ("work_cumulative",), section="work"),
+    _line("price_adjustment", "B", "manual", section="work"),
+    _line("total", "C", "sum", ("work_done", "price_adjustment"), section="work"),
+    _line("previous_certificates", "D", "input", ("previous_certified_total",), section="certificate"),
+    _line("this_certificate", "E", "difference", ("total", "previous_certificates"), section="certificate"),
+    _line("sales_tax", "F", "tax", ("this_certificate",), tax_kind="vat_computed", section="certificate"),
+    _line("accrued", "G", "sum", ("this_certificate", "sales_tax"), section="certificate"),
+    _line(
+        "income_tax_153",
+        "a",
+        "tax",
+        ("this_certificate",),
+        sign=-1,
+        tax_kind="income_withheld",
+        section="deductions",
+    ),
+    _line(
+        "sales_tax_withholding",
+        "b",
+        "tax",
+        ("sales_tax",),
+        sign=-1,
+        tax_kind="vat_withheld",
+        section="deductions",
+    ),
+    _line("retention", "c", "retention", ("this_certificate",), sign=-1, section="deductions"),
+    _line("advance_recovery", "d", "manual", ("this_certificate",), sign=-1, section="deductions"),
+    _line("employer_supplied_materials", "e", "manual", sign=-1, section="deductions"),
+    _line("delay_penalty", "f", "manual", sign=-1, section="deductions"),
+    _line("other_deductions", "g", "manual", sign=-1, section="deductions"),
+    _line("deductions_total", "H", "sum", _PK_DEDUCTIONS, sign=-1, section="result"),
+    _line("payable", "", "difference", ("accrued", "deductions_total"), section="result"),
+)
+
 #: The standard layout per ISO 3166-1 alpha-2 country code. Presence here is
 #: what makes the certificate available for a project in that country.
-DEFAULT_LAYOUTS: dict[str, tuple[SummaryLineDef, ...]] = {"TR": _TR_STANDARD}
+DEFAULT_LAYOUTS: dict[str, tuple[SummaryLineDef, ...]] = {"TR": _TR_STANDARD, "PK": _PK_STANDARD}
+
+#: Countries whose standard layout is a transcription of an official form,
+#: so a certificate that keeps it line for line may name the form it follows.
+OFFICIAL_FORM_COUNTRIES: frozenset[str] = frozenset({"TR"})
 
 #: Named layouts a contract may start from with ``{"preset": "<name>"}``.
-LAYOUT_PRESETS: dict[str, tuple[SummaryLineDef, ...]] = {"TR": _TR_STANDARD, "TR_PRIVATE": _TR_PRIVATE}
+LAYOUT_PRESETS: dict[str, tuple[SummaryLineDef, ...]] = {
+    "TR": _TR_STANDARD,
+    "TR_PRIVATE": _TR_PRIVATE,
+    "PK": _PK_STANDARD,
+}
 
 #: Who signs, in printed order, per country: the standard form's three blocks.
-DEFAULT_SIGNATURE_ROLES: dict[str, tuple[str, ...]] = {"TR": ("contractor", "prepared_by", "approved_by")}
+DEFAULT_SIGNATURE_ROLES: dict[str, tuple[str, ...]] = {
+    "TR": ("contractor", "prepared_by", "approved_by"),
+    "PK": ("contractor", "prepared_by", "approved_by"),
+}
 
 
 # ── Works list columns ────────────────────────────────────────────────────
@@ -375,6 +442,9 @@ _TR: dict[str, str] = {
     "line.employer_supplied_materials": "İşveren Malzemesi Mahsubu",
     "line.hse_penalty": "İş Sağlığı ve Güvenliği Cezaları",
     "line.materials_on_site": "Malzeme İhzaratı",
+    "line.sales_tax": "Hizmetlere İl Satış Vergisi",
+    "line.income_tax_153": "Gelir Vergisi Kesintisi (ITO 2001 m.153)",
+    "line.sales_tax_withholding": "Satış Vergisi Tevkifatı",
     "section.deductions": "Kesintiler ve Mahsuplar",
     # Works list, unit price (form 3/7-b)
     "col.unit_price.seq": "Sıra No",
@@ -541,6 +611,9 @@ _EN: dict[str, str] = {
     "line.employer_supplied_materials": "Set-off for Employer-supplied Materials",
     "line.hse_penalty": "Health and Safety Penalties",
     "line.materials_on_site": "Materials on Site",
+    "line.sales_tax": "Provincial Sales Tax on Services",
+    "line.income_tax_153": "Income Tax Withheld (ITO 2001 s.153)",
+    "line.sales_tax_withholding": "Sales Tax Withheld",
     "section.deductions": "Deductions and Set-offs",
     "col.unit_price.seq": "No.",
     "col.unit_price.code": "Item Code",
