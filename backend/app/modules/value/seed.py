@@ -30,11 +30,12 @@ Timestamps are anchored to the run date, never hardcoded, so the chart still
 shows the last three months a year from now.
 
 Two gates, both of which have to open. A project must belong to the demo estate
-(:func:`_is_demo_project`), and it must carry no activity at all - a project with
-activity is one somebody has worked on, and the activity log is the
-contemporaneous record a dispute is reconstructed from. The second gate is also
-what makes the seeder idempotent: after the first pass the rows it wrote answer
-it.
+(:func:`_is_demo_project`) - that is the gate that keeps invented rows out of a
+customer's real log - and it must carry none of this seeder's own rows yet,
+which is what makes the seeder idempotent. The second gate looks only at rows
+stamped with this seeder's marker: the governance seed and the other demo
+seeders run earlier through services that log activity, so a gate on "any
+activity at all" found every demo project already worked on and seeded none.
 
 Every project handed in is considered. There is no "flagship plus a few" cap,
 which is how a screen ends up permanently empty on the projects that fell
@@ -235,21 +236,23 @@ async def _seed_project(
     """Seed one project's assisted-work history. Returns counts (zeros when skipped)."""
     empty = {"projects": 0, "activity_rows": 0, "credited_rows": 0}
 
-    # The gate is the dashboard's own scope predicate, so what decides here is
-    # exactly what the screen would read. Any row at all and the seeder declines.
+    # Idempotency gate: this seeder's own rows, and nothing else. Whether the
+    # project may be seeded at all was settled by the demo-estate gate in the
+    # caller, which keeps a customer's live project (and its activity log, the
+    # contemporaneous record a dispute is reconstructed from) out of reach.
     #
-    # Declining, not just skipping a repeat: ``enrich_all`` hands this seeder
-    # every project in the database, which on a real installation means a
-    # customer's live ones, and the activity log is the contemporaneous record a
-    # dispute is later reconstructed from. Fabricated rows do not belong in it.
-    # A project with any activity is a project somebody has worked on.
-    #
-    # The demo estate is written straight through the ORM rather than through the
-    # API that logs activity, so a demo project reaches this seeder with none -
-    # which is also what makes the seeder idempotent, because after the first
-    # pass the rows it wrote are what answer this query.
+    # It used to be "any activity at all". The governance seed and several
+    # module seeders run before this one through services that log activity,
+    # so every demo project arrived carrying a few rows and the dashboard was
+    # left empty on all of them.
     scoped = (
-        (await session.execute(select(ActivityLog.id).where(_project_scope(project_id)).limit(1))).scalars().first()
+        (
+            await session.execute(
+                select(ActivityLog.id).where(_project_scope(project_id), ActivityLog.request_id == _MARKER).limit(1)
+            )
+        )
+        .scalars()
+        .first()
     )
     if scoped is not None:
         return empty
@@ -350,10 +353,8 @@ async def seed_value_demo(
     Args:
         session: Async DB session. The caller commits.
         project_ids: Projects to consider - every one of them, never a first few.
-            A project outside the demo estate is left alone, and so is one that
-            already carries any activity: a real project because its log is a
-            record of work that happened, a re-run because the rows the first
-            pass wrote are themselves activity.
+            A project outside the demo estate is left alone, and so is a demo
+            project that already carries this seeder's own rows (a re-run).
 
     Returns:
         Dict with per-entity insert counts across every project seeded.

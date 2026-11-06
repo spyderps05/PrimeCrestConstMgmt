@@ -588,15 +588,15 @@ async def test_a_second_value_pass_adds_no_activity(pg_session) -> None:
     assert after == first
 
 
-async def test_a_project_that_has_been_worked_on_gets_no_seeded_activity(pg_session) -> None:
-    """A live project must be declined, not merely de-duplicated.
+async def test_a_demo_project_other_seeders_logged_on_still_gets_its_history(pg_session) -> None:
+    """Activity written by other demo seeders must not close the gate.
 
-    The boot enrichment hands every project in the database to this seeder,
-    including a customer's own on a real installation, and the activity log is
-    the contemporaneous record a dispute is later reconstructed from. Idempotency
-    alone would not stop that: a marker check finds no marker on a live project
-    and seeds it. So the gate is any activity at all, and one real row is enough
-    to close it.
+    The governance seed and several module seeders run before this one through
+    services that log activity, so every demo project reaches the value seeder
+    with a few rows already. A gate on "any activity at all" therefore seeded
+    nothing anywhere (``projects: 0`` on every demo). The gate is the seeder's
+    own marker; keeping real projects out is the demo-estate gate's job, which
+    ``test_none_of_the_three_touch_a_project_outside_the_demo_estate`` covers.
     """
     project_id = await _make_project(pg_session, "Quayside")
     pg_session.add(
@@ -616,16 +616,12 @@ async def test_a_project_that_has_been_worked_on_gets_no_seeded_activity(pg_sess
 
     counts = await seed_value_demo(pg_session, [project_id])
     await pg_session.flush()
+    assert counts["projects"] == 1, counts
+    assert counts["activity_rows"] > 0, counts
 
-    assert counts["activity_rows"] == 0, (
-        f"{counts['activity_rows']} fabricated row(s) were written into a project that already has a record of work"
-    )
-    remaining = (
-        await pg_session.execute(
-            select(func.count()).select_from(ActivityLog).where(ActivityLog.parent_entity_id == str(project_id)),
-        )
-    ).scalar_one()
-    assert remaining == 1, f"the project's log went from 1 row to {remaining}"
+    again = await seed_value_demo(pg_session, [project_id])
+    await pg_session.flush()
+    assert again["activity_rows"] == 0, f"the second pass wrote {again['activity_rows']} row(s) again"
 
 
 async def test_the_admin_factors_panel_shows_something_tuned(pg_session) -> None:
