@@ -77,6 +77,9 @@ _STATES = frozenset(
 )
 _LEAD_BASES = frozenset({"from_order", "from_approved_drawings"})
 _SLOT_STATES = frozenset({"held", "requested"})
+#: Countries whose demo projects are not told the default story: their demos
+#: (houses, a road, a school, a health unit) have no engineered plant to order.
+_NO_DEFAULT_STORY_COUNTRIES = frozenset({"PK"})
 
 # A project before its construction gate, in days from the seed day.
 GATE_TARGET_DAYS = 21
@@ -647,9 +650,16 @@ async def seed_plant_register_demo(session: AsyncSession, project_ids: Iterable[
         if has is not None:
             continue
         project = await session.get(Project, pid)
-        story = resolve_story(
-            demo_module_story(demo_id, "plant_register"), _catalogue_codes(), getattr(project, "locale", None) or "en"
-        )
+        own_story = demo_module_story(demo_id, "plant_register")
+        if not own_story and (getattr(project, "country_code", None) or "").upper() in _NO_DEFAULT_STORY_COUNTRIES:
+            # The default story is a large building's engineered plant (MV
+            # switchgear, 2500 kVA transformers), each ordered on a purchase
+            # order with no vendor and no price. Told on a Pakistani house,
+            # road or school it fills the order list with empty orders, so
+            # those demos get a register only when they bring their own story.
+            totals["notes"].append({"project_id": str(pid), "note": "no_story_for_country"})
+            continue
+        story = resolve_story(own_story, _catalogue_codes(), getattr(project, "locale", None) or "en")
         try:
             async with session.begin_nested():
                 counts = await _seed_project(

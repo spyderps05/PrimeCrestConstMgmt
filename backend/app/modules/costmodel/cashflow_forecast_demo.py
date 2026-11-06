@@ -35,6 +35,30 @@ def _shift(day: date, months: int) -> date:
     return date(idx // 12, idx % 12 + 1, min(day.day, 28))
 
 
+async def _project_supplier(session: AsyncSession, project_id: uuid.UUID) -> tuple[str | None, str]:
+    """``(contact id, company)`` of the first supplier the demo seeded for this project.
+
+    The order goes to a firm the project already deals with, so the order list
+    never shows a row without a vendor. A subcontractor stands in when the
+    project has no supplier; with neither, the order has no vendor.
+    """
+    from app.modules.contacts.models import Contact
+
+    found = (
+        await session.execute(
+            select(Contact.id, Contact.contact_type, Contact.company_name, Contact.metadata_)
+            .where(Contact.contact_type.in_(("supplier", "subcontractor")))
+            .order_by(Contact.created_at, Contact.id)
+        )
+    ).all()
+    ours = [row for row in found if str((row.metadata_ or {}).get("project_id") or "") == str(project_id)]
+    for wanted in ("supplier", "subcontractor"):
+        for row in ours:
+            if row.contact_type == wanted:
+                return str(row.id), row.company_name or ""
+    return None, ""
+
+
 async def seed_cashflow_forecast_demo(
     session: AsyncSession, project_id: uuid.UUID, *, dip: bool, today: date | None = None
 ) -> int:
@@ -119,10 +143,12 @@ async def seed_cashflow_forecast_demo(
         )
     )
     po_value = q2(value * Decimal("0.12"))
+    vendor_id, vendor_name = await _project_supplier(session, project_id)
     rows.append(
         PurchaseOrder(
             project_id=project_id,
             po_number=f"CF-{tag}-PO1",
+            vendor_contact_id=vendor_id,
             currency_code=currency,
             amount_subtotal=str(po_value),
             amount_total=str(po_value),
@@ -130,6 +156,8 @@ async def seed_cashflow_forecast_demo(
             issue_date=today.isoformat(),
             delivery_date=_shift(today, 1).isoformat(),
             payment_terms="Net 30",
+            notes=f"{vendor_name} - materials supply" if vendor_name else "Materials supply",
+            metadata_=meta,
         )
     )
 
