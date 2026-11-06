@@ -536,6 +536,13 @@ class DemoTemplate:
     claim_retention: float = 0.05
     # True seeds one purchase requisition per tender package, lines from that package's BOQ positions.
     seed_requisitions: bool = False
+    # Optional: hand-written module rows, keyed like the dict ``_generate_module_data``
+    # returns ("contacts", "rfis", "risks", "change_orders", ...). A key given here
+    # replaces the generated list for that module and every other key keeps its
+    # generated rows, so a pack can author the registers a reader looks at first in
+    # its own market's words without restating the rest. Each row must have the
+    # exact shape the generated row for the same key has.
+    module_data: dict[str, list] = field(default_factory=dict)
 
 
 # ---------------------------------------------------------------------------
@@ -2577,6 +2584,9 @@ _AUTHORITY_BY_COUNTRY: dict[str, str] = {
     "RO": "Inspectoratul de Stat în Construcții",
     "GR": "η Υπηρεσία Δόμησης (ΥΔΟΜ)",
     "UA": "Державна інспекція архітектури та містобудування",
+    # The development or building control authority of the city: LDA in Lahore,
+    # SBCA in Karachi, FDA in Faisalabad. The role, since the body changes by city.
+    "PK": "the building control authority",
 }
 
 # The provision a formal notice is raised under, per country, so the register's
@@ -7085,7 +7095,7 @@ def _generate_module_data(
             )
         )
 
-    return {
+    generated: dict[str, list] = {
         "contacts": contacts,
         "tasks": tasks,
         "rfis": rfis,
@@ -7116,6 +7126,12 @@ def _generate_module_data(
         "risks": risks,
         "change_orders": change_orders,
     }
+    # A pack's own rows win over the derived ones, key by key. Copied so a seeder
+    # that appends to a list cannot write back into the template.
+    for key, rows in (template.module_data or {}).items():
+        if rows:
+            generated[key] = [dict(row) if isinstance(row, dict) else row for row in rows]
+    return generated
 
 
 # ---------------------------------------------------------------------------
