@@ -46685,6 +46685,7 @@ const resource = {
     "tax_withholding.scheme_threshold": "استثنیٰ کی حد {{amount}}۔",
     "tax_withholding.scheme_rules": "کرنسی {{currency}}۔ میٹریل {{materials}}، VAT {{vat}}۔ تصدیق {{months}} مہینے چلتی ہے۔",
     "tax_withholding.scheme_retired": "منسوخ شدہ",
+    "tax_withholding.pk_hint": "پاکستان: ہر ادائیگی سے پہلے وصول کنندہ کا این ٹی این ایف بی آر کی فعال ٹیکس دہندگان کی فہرست میں چیک کریں اور اسے فریق کی حیثیت کے طور پر درج کریں۔ پاکستانی منصوبوں کے عبوری ادائیگی سرٹیفکیٹ دفعہ 153 کی یہی شرحیں، وصول کنندہ کی قسم کے مطابق، صوبائی سیلز ٹیکس برائے خدمات کے ساتھ استعمال کرتے ہیں۔",
     "tax_withholding.reasons_title": "سکیم نے مکمل طور پر کیا کہا",
     "tax_withholding.reasons_note": "اوپر کے فلیگز اسی سے نکالے گئے ہیں، جو مکمل تفصیل ہے۔",
     "tax_withholding.rate_value": "بینڈ {{band}} پر {{rate}}%",

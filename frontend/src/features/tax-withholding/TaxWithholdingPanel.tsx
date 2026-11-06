@@ -786,6 +786,15 @@ function SchemeCard({ regime }: { regime: Regime }) {
           {[regime.legal_reference, regime.authority].filter(Boolean).join(' · ')}
         </p>
       )}
+      {regime.notes && <p className="mt-1 text-xs text-content-secondary">{regime.notes}</p>}
+      {regime.country_code === 'PK' && (
+        <p className="mt-1 text-xs text-content-secondary" data-testid="tax-withholding-pk-hint">
+          {t('tax_withholding.pk_hint', {
+            defaultValue:
+              "Pakistan: check the payee's NTN on the FBR Active Taxpayer List before each payment and record it as the party standing. Interim payment certificates of Pakistani projects use the same section 153 rates, picked per payee class, alongside the provincial sales tax on services.",
+          })}
+        </p>
+      )}
 
       <table className="mt-2 w-full text-sm">
         <thead>

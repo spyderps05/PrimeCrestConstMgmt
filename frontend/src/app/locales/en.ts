@@ -955,6 +955,7 @@ const resource = {
     "tax_withholding.scheme_threshold": "Exemption limit {{amount}}.",
     "tax_withholding.scheme_rules": "Currency {{currency}}. Materials {{materials}}, VAT {{vat}}. Verification runs {{months}} months.",
     "tax_withholding.scheme_retired": "Retired",
+    "tax_withholding.pk_hint": "Pakistan: check the payee's NTN on the FBR Active Taxpayer List before each payment and record it as the party standing. Interim payment certificates of Pakistani projects use the same section 153 rates, picked per payee class, alongside the provincial sales tax on services.",
     "tax_withholding.reasons_title": "What the scheme said, in full",
     "tax_withholding.reasons_note": "The flags above are drawn from this, which is the whole account.",
     "tax_withholding.rate_value": "{{rate}}% on band {{band}}",
