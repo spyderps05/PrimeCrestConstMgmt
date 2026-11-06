@@ -734,6 +734,64 @@ function isExpectedMissingClaimInvoice(url: string, status: number, message: str
 }
 
 /**
+ * Project set-up records whose read answers 404 when the project has none yet.
+ * Each page shows that 404 as its first-visit state with a "set up" action, so
+ * it is not a fault worth a bug report. A match needs the documented body too
+ * (`detail.code` or the exact `detail` text): a bare 404 on the same path means
+ * the project is not visible, and that stays recorded.
+ */
+interface EmptyRecordRule {
+  path: RegExp;
+  /** `detail.code` of the documented 404 body. */
+  code?: string;
+  /** Or the exact `detail` text, for modules that answer with a plain string. */
+  detail?: string;
+}
+
+const UUID_RE = '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}';
+
+function emptyRecord(module: string, record: string, match: { code: string } | { detail: string }): EmptyRecordRule {
+  return { path: new RegExp(`^(?:/api)?/v1/${module}/projects/${UUID_RE}/${record}/?(?:\\?[^#]*)?$`), ...match };
+}
+
+/** Exported for testability. */
+export const EXPECTED_EMPTY_RECORDS: readonly EmptyRecordRule[] = [
+  emptyRecord('quality[-_]concept', 'concept', { code: 'concept_missing' }),
+  emptyRecord('procurement[-_]concept', 'concept', { code: 'concept_missing' }),
+  emptyRecord('permits', 'roadmap', { code: 'roadmap_missing' }),
+  emptyRecord('staffing', 'plan', { code: 'plan_missing' }),
+  emptyRecord('engineering[-_]brief', 'brief', { code: 'brief_missing' }),
+  emptyRecord('project[-_]handbook', 'handbook', { code: 'handbook_missing' }),
+  emptyRecord('commitment[-_]release', 'matrix', { code: 'matrix_missing' }),
+  emptyRecord('delivery[-_]model', 'model', { code: 'model_missing' }),
+  emptyRecord('project[-_]governance', 'model', { code: 'model_missing' }),
+  emptyRecord('stakeholders', 'settings', { code: 'settings_missing' }),
+  emptyRecord('design[-_]management', 'setup', { code: 'setup_missing' }),
+  emptyRecord('site[-_]prep', 'plan', { detail: 'Mobilisation plan not found for this project' }),
+  emptyRecord('closeout', 'package', { detail: 'No closeout package for this project' }),
+];
+
+/** True for a 404 that one of EXPECTED_EMPTY_RECORDS documents as "none yet". */
+export function isExpectedEmptyRecord(url: string, status: number, message: string): boolean {
+  if (status !== 404) return false;
+  const rules = EXPECTED_EMPTY_RECORDS.filter((r) => r.path.test(url));
+  if (rules.length === 0) return false;
+  let detail: unknown;
+  try {
+    const body: unknown = JSON.parse(message);
+    if (typeof body !== 'object' || body === null || Array.isArray(body) || !('detail' in body)) return false;
+    detail = body.detail;
+  } catch {
+    return false;
+  }
+  return rules.some((r) =>
+    r.code !== undefined
+      ? typeof detail === 'object' && detail !== null && 'code' in detail && detail.code === r.code
+      : detail === r.detail,
+  );
+}
+
+/**
  * Log an API error (4xx / 5xx responses).
  */
 export function logApiError(
@@ -747,7 +805,11 @@ export function logApiError(
   // a path regex may want to see.
   // An absent claim invoice is handled by its preview. Require the documented
   // JSON detail too: a generic routing 404 on this path remains a real error.
-  if (isExpectedMissingClaimInvoice(url, status, message) || shouldSuppress({ path: url, status })) {
+  if (
+    isExpectedMissingClaimInvoice(url, status, message) ||
+    isExpectedEmptyRecord(url, status, message) ||
+    shouldSuppress({ path: url, status })
+  ) {
     return;
   }
 
