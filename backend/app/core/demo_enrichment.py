@@ -231,6 +231,7 @@ async def enrich_projects(project_ids: list[uuid.UUID]) -> dict[str, Any]:
         from app.modules.finance.einvoice_settings_seed import seed_einvoice_settings_demo
         from app.modules.forms.submissions_seed import seed_forms_submissions_demo
         from app.modules.full_evm.seed import seed_full_evm_demo
+        from app.modules.fx.seed import seed_fx_demo
         from app.modules.hse_advanced.seed import seed_hse_advanced_demo
         from app.modules.hse_frame.seed import seed_hse_frame_demo
         from app.modules.interface_management.seed import seed_interface_management_demo
@@ -345,6 +346,10 @@ async def enrich_projects(project_ids: list[uuid.UUID]) -> dict[str, Any]:
         # A None marker means the seeder self-guards against duplicates.
         _module_seeders = [
             ("crm", None, lambda s: seed_crm_demo(s)),
+            # The rupee demo projects pin their contract base-date rate set before anything priced or
+            # bought in a foreign currency is seeded below. Skips non-PKR projects and any project that
+            # already has a policy, so a re-run is a no-op.
+            ("fx", None, lambda s: seed_fx_demo(s, _demo_pids)),
             ("service", None, lambda s: seed_service_demo(s, _demo_pids)),
             ("bid_management", None, lambda s: seed_bid_management_demo(s, _demo_pids)),
             ("hse_advanced", None, lambda s: seed_hse_advanced_demo(s, _demo_pids)),
