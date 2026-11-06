@@ -116,6 +116,7 @@ describe("the unset default ('auto') renders exactly what the language rendered 
 describe('each supported preference value renders its own order', () => {
   const EXPECTED: Record<Exclude<DateFormat, 'auto'>, string> = {
     'DD.MM.YYYY': '14.03.2026',
+    'DD/MM/YYYY': '14/03/2026',
     'MM/DD/YYYY': '03/14/2026',
     'YYYY-MM-DD': '2026-03-14',
   };
