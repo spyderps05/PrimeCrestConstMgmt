@@ -1421,6 +1421,64 @@ def _read_demo_backfill_version() -> str | None:
         return None
 
 
+#: Database-side half of the demo-backfill marker. The marker FILE lives in the
+#: data dir, which outlives (and can be shared by) more than one database: a
+#: reinstall, a new ``DATABASE_URL`` or a wiped embedded cluster all keep the
+#: file while the database starts empty. Read on its own the file made such a
+#: brand-new database look like one whose demos had been removed, and the boot
+#: tombstoned every demo before installing any. The flag below is written into
+#: the database (``oe_process_settings``) next to every file stamp, so the file
+#: only speaks for the database that carries the flag.
+DEMO_BACKFILL_DB_FLAG = "flag:seeds/demo_backfill_marker"
+
+
+async def _demo_backfill_marker_is_this_databases() -> bool:
+    """Whether the demo-backfill marker file was stamped against this database.
+
+    True when the database carries :data:`DEMO_BACKFILL_DB_FLAG`. A database
+    from before the flag existed carries none; its marker is honoured only when
+    the database is evidently not new, i.e. it already holds a project or a
+    demo-removal record. A brand-new database holds neither at this point of the
+    boot (the demo seed runs after), so a stale marker left behind by another
+    database is ignored. Never raises; an unreadable database reads as new.
+    """
+    try:
+        from app.core.processes.store import DbProcessStore
+
+        if (await DbProcessStore().load()).get(DEMO_BACKFILL_DB_FLAG):
+            return True
+        from sqlalchemy import select as _select
+
+        from app.database import async_session_factory
+        from app.modules.projects.models import DemoProjectTombstone, Project
+
+        async with async_session_factory() as session:
+            if (await session.execute(_select(Project.id).limit(1))).first() is not None:
+                return True
+            return (await session.execute(_select(DemoProjectTombstone.id).limit(1))).first() is not None
+    except Exception:  # noqa: BLE001 - an unreadable database is treated as new
+        logger.debug("Could not tell whether the demo marker belongs to this database", exc_info=True)
+        return False
+
+
+async def _demo_backfill_version_for_this_database() -> str | None:
+    """The marker-file version, but only when the marker belongs to this database."""
+    version = _read_demo_backfill_version()
+    if version is None:
+        return None
+    return version if await _demo_backfill_marker_is_this_databases() else None
+
+
+async def _mark_demo_backfill_in_database() -> None:
+    """Record in the database that the marker file now speaks for it. Never raises."""
+    try:
+        from app.core.processes.store import DbProcessStore
+
+        await DbProcessStore().save(DEMO_BACKFILL_DB_FLAG, True, updated_by="seed")
+    except Exception:  # noqa: BLE001 - a missing flag only means the seeds run again
+        logger.debug("Could not record the demo backfill flag in the database", exc_info=True)
+
+
 def _write_demo_backfill_version(version: str) -> None:
     """Stamp the demo-backfill sentinel with the current app version.
 
@@ -1751,7 +1809,8 @@ async def _seed_demo_account(*, defer_projects: bool = False) -> Callable[[], Aw
                 await backfill_removed_demo_records(
                     tb_session,
                     _boot_demo_ids(active),
-                    seeded_before=_read_demo_backfill_version() is not None or read_demo_seed_choice() is False,
+                    seeded_before=(await _demo_backfill_version_for_this_database()) is not None
+                    or read_demo_seed_choice() is False,
                 )
                 await tb_session.commit()
         except Exception:
@@ -1854,7 +1913,9 @@ async def _seed_demo_account(*, defer_projects: bool = False) -> Callable[[], Aw
                 _seed_fast_startup = os.environ.get("OE_TEST_FAST_STARTUP", "").lower() in ("1", "true", "yes")
                 _running_version = get_settings().app_version
                 _backfill_current = (
-                    not _seed_fast_startup and project_count > 0 and _read_demo_backfill_version() == _running_version
+                    not _seed_fast_startup
+                    and project_count > 0
+                    and (await _demo_backfill_version_for_this_database()) == _running_version
                 )
                 if _seed_fast_startup:
                     # The flagship installer writes a 6640-element model and ~16MB of
@@ -1993,6 +2054,7 @@ async def _seed_demo_account(*, defer_projects: bool = False) -> Callable[[], Aw
                     # until the next app upgrade.
                     if _backfill_ok:
                         _write_demo_backfill_version(_running_version)
+                        await _mark_demo_backfill_in_database()
                     else:
                         logger.info(
                             "Demo backfill marker not stamped - at least one seeder failed; will retry next boot"

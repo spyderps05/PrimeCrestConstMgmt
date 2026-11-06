@@ -38,6 +38,8 @@ def _clean_env(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> Iterator[None
     fake_home.mkdir()
     monkeypatch.setattr(Path, "home", staticmethod(lambda: fake_home))
     monkeypatch.delenv("OE_CLI_DATA_DIR", raising=False)
+    monkeypatch.delenv("OE_DATA_DIR", raising=False)
+    monkeypatch.delenv("DATA_DIR", raising=False)
     monkeypatch.delenv("OE_PARTNER_PACK", raising=False)
     monkeypatch.delenv("DATABASE_URL", raising=False)
     reset_cache()

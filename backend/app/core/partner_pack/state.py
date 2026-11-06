@@ -51,19 +51,23 @@ def _resolve_state_dir(data_dir: Path | None = None) -> Path:
 
     Resolution order:
       1. Explicit ``data_dir`` argument (tests, callers with a known dir).
-      2. The ACTIVE runtime data dir: ``OE_CLI_DATA_DIR``, exported by the
-         CLI/desktop launcher (``serve --data-dir``). Each instance keeps its
-         applied pack inside its own data dir, so a custom ``--data-dir``
-         never inherits (or gets hijacked by) the default install's state.
-      3. Legacy fallback (no CLI env, e.g. bare uvicorn): the shared
+      2. The ACTIVE runtime data dir, in the platform-wide override order
+         (``OE_DATA_DIR`` > ``DATA_DIR`` > ``OE_CLI_DATA_DIR``, the same order
+         ``app.config`` and ``app.core.storage`` use). ``OE_CLI_DATA_DIR`` is
+         exported by the CLI/desktop launcher (``serve --data-dir``); an
+         operator running bare uvicorn sets ``OE_DATA_DIR``. Each instance keeps
+         its applied pack inside its own data dir, so a custom data dir never
+         inherits (or gets hijacked by) the default install's state.
+      3. Legacy fallback (no override at all): the shared
          ``module_state._resolve_data_dir`` resolution, which ends at
          ``~/.openestimate`` - unchanged for existing default installs.
     """
     if data_dir is not None:
         return data_dir
-    override = os.environ.get("OE_CLI_DATA_DIR", "").strip()
-    if override:
-        return Path(override).expanduser()
+    for env_name in ("OE_DATA_DIR", "DATA_DIR", "OE_CLI_DATA_DIR"):
+        override = os.environ.get(env_name, "").strip()
+        if override:
+            return Path(override).expanduser()
     return _resolve_data_dir(None)
 
 
