@@ -83,6 +83,24 @@ def test_label_names_book_edition_and_district() -> None:
     assert pack_cost_base.book_label(source) == "Punjab MRS 1st Biannual 2099, Lahore"
 
 
+def test_label_does_not_repeat_a_book_name_the_edition_carries() -> None:
+    source = {"name": "MES Schedule of Rates (Military Engineer Services, Pakistan)", "edition": "MES SR 2014"}
+    assert pack_cost_base.book_label(source) == "MES SR 2014"
+
+
+def test_same_as_references_resolve_and_abbreviations_expand() -> None:
+    items = [
+        {"code": "4-7", "description": "Burnt brick work, in wall over 115mm thick, laid and jointed in CM 1:3"},
+        {"code": "4-9", "description": "Same as item 04-7, but CM 1:6"},
+        {"code": "4-10", "description": "Same as item 09-9, but missing parent"},
+    ]
+    resolved = pack_cost_base._resolve_references(items)
+    assert resolved == {1: "Burnt brick work, in wall over 115mm thick, laid and jointed in CM 1:3; but CM 1:6"}
+    text = pack_cost_base._search_text(resolved[1])
+    assert "brickwork brick masonry" in text
+    assert "cement sand mortar 1:6" in text
+
+
 def test_manifest_without_cost_base_is_ignored() -> None:
     assert pack_cost_base.pack_cost_base_settings(SimpleNamespace(metadata={}, default_currency="PKR")) is None
 

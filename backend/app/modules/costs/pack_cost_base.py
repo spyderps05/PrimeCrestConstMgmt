@@ -58,7 +58,7 @@ from importlib import resources
 from pathlib import Path
 from typing import Any
 
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.modules.costs.models import CostItem
@@ -143,7 +143,13 @@ def book_label(source: dict[str, Any]) -> str:
     }.get(region, "")
     if acronym and province and not source.get("short_name"):
         name = f"{province} {acronym.group(1)}".strip()
-    parts = [p for p in (name, str(source.get("edition") or "").strip()) if p]
+    edition = str(source.get("edition") or "").strip()
+    # An edition that already names its book ("MES Schedule of Rates - 2014
+    # (First Edition, August 2014)") is the whole label on its own.
+    first_word = name.split()[0].lower() if name.split() else ""
+    if first_word and edition.lower().startswith(first_word) and not source.get("short_name"):
+        name = ""
+    parts = [p for p in (name, edition) if p]
     label = " ".join(parts)
     district = str(source.get("district") or "").strip()
     if district:
@@ -221,8 +227,80 @@ def _iso_date(value: Any) -> date | None:
         return None
 
 
+#: Bumped whenever the way a book becomes rows changes, so an unchanged file is
+#: still re-imported once after an upgrade of this loader.
+LOADER_VERSION = "2"
+
+
 def _digest(raw: bytes) -> str:
-    return hashlib.sha256(raw).hexdigest()[:16]
+    return hashlib.sha256(LOADER_VERSION.encode() + b"\0" + raw).hexdigest()[:16]
+
+
+# ── description text for search ─────────────────────────────────────────────
+
+# "Same as item 04-7, but CM 1:6": a schedule of rates prints a variant as a
+# reference to its parent item. The reference alone tells neither a reader nor
+# the matcher what the work is, so the parent's text is put in front of it.
+_SAME_AS_RE = re.compile(r"^\s*same\s+as\s+(?:item\s+)?(?:no\.?\s*)?([0-9]+(?:[-./][0-9]+)+)\s*[,.;:]?\s*(.*)$", re.I)
+
+# Abbreviations the Pakistani schedules print, spelled out in the matching text
+# (``descriptions["en"]``). The ``description`` column keeps the book's wording.
+_ABBREVIATIONS: tuple[tuple[re.Pattern[str], str], ...] = tuple(
+    (re.compile(pattern, re.I), repl)
+    for pattern, repl in (
+        (r"\bC\.?M\.?(?=\s*\d)", "cement sand mortar"),
+        (r"\bP\.?C\.?C\b", "plain cement concrete"),
+        (r"\bR\.?C\.?C\b", "reinforced cement concrete"),
+        (r"\bC\.?C\b(?=\s*(?:type|\d|\())", "cement concrete"),
+        (r"\bG\.?I\b", "galvanised iron"),
+        (r"\bupto\b", "up to"),
+        (r"\bincl\b\.?", "including"),
+        (r"\bbrick\s+work\b", "brickwork brick masonry"),
+        (r"\bG\.F\b", "ground floor"),
+    )
+)
+
+
+def _code_key(code: str) -> str:
+    """``"04-07"`` and ``"4-7"`` name the same item."""
+    return "-".join(str(int(p)) if p.isdigit() else p for p in re.split(r"[-./]", code.strip()))
+
+
+def _resolve_references(items: list[Any]) -> dict[int, str]:
+    """``{index: resolved description}`` for items printed as "Same as item X, but ...".
+
+    Resolved against the book's own items, one level deep per pass and at most
+    three passes, so a chain of references reads in full while a cycle cannot
+    loop. Unresolvable references are left as printed.
+    """
+    texts: dict[str, str] = {}
+    for item in items:
+        if isinstance(item, dict) and item.get("code") and item.get("description"):
+            texts.setdefault(_code_key(str(item["code"])), " ".join(str(item["description"]).split()))
+    out: dict[int, str] = {}
+    for idx, item in enumerate(items):
+        if not isinstance(item, dict):
+            continue
+        text = " ".join(str(item.get("description") or "").split())
+        for _ in range(3):
+            m = _SAME_AS_RE.match(text)
+            if not m:
+                break
+            parent = texts.get(_code_key(m.group(1)))
+            if not parent or parent == text:
+                break
+            text = f"{parent.rstrip('. ')}; {m.group(2)}".rstrip("; ")
+        if text != " ".join(str(item.get("description") or "").split()):
+            out[idx] = text
+    return out
+
+
+def _search_text(description: str) -> str:
+    """The description with the book's abbreviations spelled out."""
+    text = description
+    for pattern, repl in _ABBREVIATIONS:
+        text = pattern.sub(repl, text)
+    return text
 
 
 # ── writing the rows ────────────────────────────────────────────────────────
@@ -238,10 +316,12 @@ def _row_values(
     currency: str,
     digest: str,
     pack_slug: str,
+    resolved: str | None = None,
 ) -> dict[str, Any] | None:
     """Column values for one book item, or ``None`` when it cannot be priced."""
     printed = str(item.get("code") or "").strip()
-    description = " ".join(str(item.get("description") or "").split())
+    as_printed = " ".join(str(item.get("description") or "").split())
+    description = resolved or as_printed
     unit = str(item.get("unit") or "").strip()[:_MAX_UNIT]
     rate = _decimal(item.get("rate_pkr", item.get("rate")))
     if not printed or not description or not unit or rate is None:
@@ -279,10 +359,12 @@ def _row_values(
         "rate_as_printed": item.get("rate_as_printed"),
         "kind": kind,
     }
+    if description != as_printed:
+        metadata["description_as_printed"] = as_printed
     return {
         "code": code,
         "description": description,
-        "descriptions": {"en": description},
+        "descriptions": {"en": _search_text(description)},
         "unit": unit,
         "rate": str(rate),
         "currency": currency,
@@ -325,8 +407,9 @@ async def load_book(
     digest = _digest(raw)
     result = BookResult(book_id=book_id, file=file_name, status="unchanged", label=label)
 
+    resolved = _resolve_references(items)
     rows: dict[str, dict[str, Any]] = {}
-    for item in items:
+    for idx, item in enumerate(items):
         values = (
             _row_values(
                 item,
@@ -337,6 +420,7 @@ async def load_book(
                 currency=currency,
                 digest=digest,
                 pack_slug=pack_slug,
+                resolved=resolved.get(idx),
             )
             if isinstance(item, dict)
             else None
@@ -350,31 +434,28 @@ async def load_book(
     from app.core import cost_scope
 
     prefix = f"{book_id}/"
-    with cost_scope.system_scope():
-        existing = (
-            (
+    scope = (CostItem.region == region, CostItem.code.startswith(prefix, autoescape=True))
+    if not force:
+        # Cheap probe first, so an unchanged book costs one aggregate per boot
+        # rather than loading thousands of rows: same row count, every row
+        # active and every row stamped with this file's digest.
+        stamp = CostItem.metadata_["book_digest"].as_string()
+        with cost_scope.system_scope():
+            count, n_active, n_current = (
                 await session.execute(
-                    select(CostItem).where(
-                        CostItem.region == region,
-                        CostItem.code.startswith(prefix, autoescape=True),
-                    )
+                    select(
+                        func.count(),
+                        func.count().filter(CostItem.is_active.is_(True)),
+                        func.count().filter(stamp == digest),
+                    ).where(*scope)
                 )
-            )
-            .scalars()
-            .all()
-        )
-    by_code = {row.code: row for row in existing}
+            ).one()
+        if count and count == n_active == n_current == len(rows):
+            return result
 
-    if (
-        not force
-        and existing
-        and len(by_code) == len(rows)
-        and all(
-            row.is_active and row.code in rows and (row.metadata_ or {}).get("book_digest") == digest
-            for row in existing
-        )
-    ):
-        return result
+    with cost_scope.system_scope():
+        existing = (await session.execute(select(CostItem).where(*scope))).scalars().all()
+    by_code = {row.code: row for row in existing}
 
     for code, values in rows.items():
         row = by_code.get(code)

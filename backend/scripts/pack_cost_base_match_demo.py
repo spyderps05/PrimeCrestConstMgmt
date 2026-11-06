@@ -43,22 +43,25 @@ def _bill_lines() -> list[tuple[str, str, str, float]]:
 
 
 def _book_items(book_dir: Path) -> list[SimpleNamespace]:
-    from app.modules.costs.pack_cost_base import book_label
+    from app.modules.costs.pack_cost_base import _resolve_references, _search_text, book_label
 
     items = []
     for path in sorted(book_dir.glob("*.json")):
         doc = json.loads(path.read_text(encoding="utf-8-sig"))
         src = doc["source"]
         label = book_label(src)
-        for it in doc.get("items", []):
+        resolved = _resolve_references(doc.get("items", []))
+        for idx, it in enumerate(doc.get("items", [])):
             if it.get("rate_pkr") is None or not it.get("description"):
                 continue
+            # The same text the loader writes: references resolved, abbreviations spelled out.
+            desc = resolved.get(idx) or " ".join(it["description"].split())
             items.append(
                 SimpleNamespace(
                     id=uuid.uuid4(),
                     code=f"{src['id']}/{it['code']}",
-                    description=it["description"],
-                    descriptions={"en": it["description"]},
+                    description=desc,
+                    descriptions={"en": _search_text(desc)},
                     unit=it.get("unit") or "",
                     rate=str(it["rate_pkr"]),
                     label=label,
@@ -86,7 +89,7 @@ def main() -> int:
         return 1
     print(f"{len(items)} book items from {sorted(p.name for p in args.dir.glob('*.json'))}\n")
     by_ref = {str(i.id): i for i in items}
-    cands = [Candidate(ref=str(i.id), text=i.description, unit=i.unit, payload={}) for i in items]
+    cands = [Candidate(ref=str(i.id), text=i.descriptions["en"], unit=i.unit, payload={}) for i in items]
 
     lines = _bill_lines()
     if not args.all:
