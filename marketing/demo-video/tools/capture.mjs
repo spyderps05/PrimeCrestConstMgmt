@@ -440,7 +440,7 @@ SHOTS["qs-boq-editor"] = () =>
 SHOTS["qs-takeoff"] = () =>
   record("qs-takeoff", { project: proj(P.lahore) }, async (page, mark) => {
     await go(page, "/bim", 9000);
-    await hideCard(page, "BIM converters", "DWG Converter", 1);
+    await hideCard(page, "BIM converters", "Show details", 0);
     await wait(2500);
     await page.mouse.move(680, 520);
     mark();
@@ -458,8 +458,142 @@ SHOTS["qs-takeoff"] = () =>
     await wait(1500);
   }, { dur: 5 });
 
-// The BOQ checked against the Pakistan rule set (AI cost matching needs a
-// regional cost base, and the Pakistan pack ships none, so it is not filmed).
+// AI cost match: lines of the Lahore house BOQ matched against the loaded
+// Pakistan rate books. The run is created through the API (same body the
+// "Match a bill" composer sends); the project's province (Punjab) ranks the
+// Punjab MRS book first.
+const MATCH_LINES = [
+  ["06.06", "Reinforced cement concrete 1:2:4 in roof slabs", "m3", "58"],
+  ["06.01", "Plain cement concrete 1:4:8 under foundations", "m3", "18"],
+  ["07.02", "First class brick masonry in cement sand mortar 1:6 in superstructure", "m3", "135"],
+  ["06.11", "Steel reinforcement Grade 60 deformed bars, cut, bent and fixed", "t", "15"],
+  ["03.01", "Excavation for foundations in ordinary soil, lift up to 1.5 m", "m3", "165"],
+];
+const MATCH_RUN_NAME = "10-marla house BOQ vs Punjab MRS 2-2026, Lahore";
+
+SHOTS["qs-cost-match"] = () =>
+  still("qs-cost-match", { project: proj(P.lahore) }, async (page) => {
+    const runs = items(await api(`/v1/cost-match/runs/?project_id=${P.lahore.id}`, {}, session.token));
+    for (const r of runs) await api(`/v1/cost-match/runs/${r.id}`, { method: "DELETE" }, session.token).catch(() => {});
+    await api(
+      "/v1/cost-match/runs/",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          project_id: P.lahore.id,
+          name: MATCH_RUN_NAME,
+          source_label: "Bill of quantities, House on a 10-marla plot, Lahore",
+          cost_source: "rate_book",
+          region: "PK",
+          source_locale: "en",
+          lines: MATCH_LINES.map(([ref, description, unit, quantity]) => ({ source_ref: ref, description, unit, quantity })),
+        }),
+      },
+      session.token,
+    );
+    await go(page, "/cost-match", 1500);
+    await collapseInsights(page);
+    await hideCard(page, "Connects with:", "Connects with:");
+    await page.getByText(MATCH_RUN_NAME).first().click().catch(() => {});
+    await settle(page, 1500);
+    await page.getByRole("button", { name: /every line/i }).first().click().catch(() => {});
+    await settle(page, 1500);
+    // the QS confirms the first suggestion: it shows as "Priced against"
+    await page.getByRole("button", { name: "Confirm", exact: true }).first().click().catch(() => {});
+    await settle(page, 1500);
+    await scrollTo(page, `text=${MATCH_RUN_NAME}`, 70);
+  });
+
+// FBR s.153(1)(c) income tax withheld on a subcontractor payment: the
+// Withholding Tax page works out PA-003 of the Lahore house subcontract
+// (PKR 1,054,661, Ravi Homes, a company on the Active Taxpayer List: 7.5%).
+// (The interim payment certificate's own s.153 line is held on these demo
+// certificates, see CAPTURE-LIST.md, so the page is filmed instead.)
+SHOTS["accounts-withholding"] = () =>
+  still("accounts-withholding", { project: proj(P.lahore) }, async (page) => {
+    // Ravi Homes (the Lahore house subcontractor) checked on the FBR Active
+    // Taxpayer List: recorded once as its standing under the s.153 scheme.
+    const regimes = items(await api("/v1/tax-withholding/regimes/", {}, session.token));
+    let pk = regimes.find((r) => r.scheme_code === "PK_ITO_153_CONTRACTS");
+    if (!pk) {
+      await api("/v1/tax-withholding/regimes/seed", { method: "POST" }, session.token).catch(() => {});
+      pk = items(await api("/v1/tax-withholding/regimes/", {}, session.token)).find((r) => r.scheme_code === "PK_ITO_153_CONTRACTS");
+    }
+    const subs = items(await api("/v1/subcontractors/subcontractors/?limit=100", {}, session.token));
+    const ravi = subs.find((x) => /Ravi Homes/.test(x.legal_name));
+    const standings = items(await api("/v1/tax-withholding/party-status/", {}, session.token));
+    if (pk && ravi && !standings.some((x) => x.party_id === ravi.id && x.regime_id === pk.id)) {
+      await api(
+        "/v1/tax-withholding/party-status/",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            party_id: ravi.id,
+            party_type: "subcontractor",
+            party_name: "Ravi Homes",
+            regime_id: pk.id,
+            band_code: "COMPANY_ATL",
+            verification_reference: "ATL check, NTN on record",
+            verified_on: "2026-07-01",
+            valid_from: "2026-07-01",
+            valid_to: "2027-06-30",
+            status: "active",
+          }),
+        },
+        session.token,
+      );
+    }
+    await go(page, "/tax-withholding", 1500);
+    await collapseInsights(page);
+    await hideCard(page, "How construction tax withholding works, and what it protects", "Connects with");
+    const install = page.getByRole("button", { name: /install the shipped schemes/i }).first();
+    if (await install.isVisible().catch(() => false)) {
+      await install.click();
+      await page.waitForLoadState("networkidle", { timeout: 20000 }).catch(() => {});
+      await wait(2500);
+    }
+    // keep only the Pakistan scheme card: hide the DE/GB/IE/IT/US cards
+    await page
+      .evaluate(() => {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        const ends = [];
+        let n;
+        while ((n = walker.nextNode())) if (/^Currency [A-Z]{3}\./.test(n.textContent.trim())) ends.push(n.parentElement);
+        for (const e of ends) {
+          let card = e;
+          while (card && !(card.textContent.includes("BAND") || card.textContent.includes("Band")) ) card = card.parentElement;
+          if (card && !card.textContent.includes("153") && card.getBoundingClientRect().height < 700) card.style.display = "none";
+        }
+      })
+      .catch(() => {});
+    await wait(500);
+    // work out the deduction on PA-003 of the Lahore house subcontract (PKR 1,054,661, company on the ATL)
+    const selects = page.locator("main select");
+    const scheme = selects.filter({ hasText: "Pick a scheme" }).first();
+    const schemeOpt = await scheme.locator("option").evaluateAll((os) => (os.find((o) => /153/.test(o.textContent)) || {}).value);
+    if (schemeOpt) await scheme.selectOption(schemeOpt);
+    await wait(800);
+    await page.getByLabel(/gross amount/i).first().fill("1054661").catch((e) => console.log("  gross:", e.message.split("\n")[0]));
+    await page.getByLabel(/^currency$/i).first().fill("PKR").catch(() => {});
+    const band = selects.filter({ hasText: "Let the scheme decide" }).first();
+    const bandOpt = await band.locator("option").evaluateAll((os) => (os.find((o) => /^Company on the Active Taxpayer List/.test(o.textContent.trim())) || {}).value);
+    if (bandOpt) await band.selectOption(bandOpt);
+    const party = selects.filter({ hasText: "No standing on record" }).first();
+    const partyOpt = await party.locator("option").evaluateAll((os) => (os.find((o) => /Ravi Homes/.test(o.textContent)) || {}).value);
+    if (partyOpt) await party.selectOption(partyOpt);
+    await wait(500);
+    await page.getByRole("button", { name: /work out the deduction/i }).first().click().catch((e) => console.log("  work out:", e.message.split("\n")[0]));
+    await page.waitForLoadState("networkidle", { timeout: 20000 }).catch(() => {});
+    await wait(2000);
+    await page.mouse.move(5, 5);
+    // the empty "verifications running out" block sits between the preview and the schemes
+    await hideCard(page, "Verifications running out", "Nothing lapsing soon");
+    await wait(300);
+    await scrollTo(page, "text=Schemes and the rates they apply", 90);
+  });
+
+// The BOQ checked against the Pakistan rule set (not in the film since the
+// AI cost match scene came back; kept for reference).
 SHOTS["qs-validation"] = () =>
   still("qs-validation", { project: { ...proj(P.lahore) } }, async (page) => {
     await go(page, "/validation");
@@ -552,9 +686,23 @@ SHOTS["offline-field-time"] = () =>
 SHOTS["lang-urdu"] = () =>
   still("lang-urdu", { lang: "ur", project: proj(P.school) }, async (page) => {
     await go(page, "/dashboard", 2500);
-    // "cases for your market" falls back to German examples; the release-notes strip is noise
-    await hideCard(page, "Hessen BIM Pack", "آپ کی مارکیٹ کے کیسز");
+    // the release-notes strip is noise ("cases for your market" now shows Pakistan cases)
     await hideCard(page, "v18.9.0", "tour");
+    // the Urdu locale still carries the upstream "#1 open-source construction ERP" badge
+    // (dashboard.open_source_badge); PrimeCrest is proprietary, so it stays out of the film
+    await page
+      .evaluate(() => {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        let n;
+        while ((n = walker.nextNode())) {
+          if (n.textContent.includes("اوپن سورس")) {
+            const el = n.parentElement;
+            const chip = el.parentElement && el.parentElement.children.length <= 3 ? el.parentElement : el;
+            chip.style.display = "none";
+          }
+        }
+      })
+      .catch(() => {});
     await wait(500);
   });
 
