@@ -13,7 +13,9 @@
  *
  * Usage (from repo root; needs the stack from scripts/dev/run-local.* running):
  *   node scripts/dev/qa-crawl.mjs [--base http://127.0.0.1:5810] [--api http://127.0.0.1:8810]
- *        [--out <dir>] [--only <substring>] [--limit N] [--wait 2500]
+ *        [--out <dir>] [--only <substr>[,<substr>...]] [--limit N] [--wait 2500]
+ *   --only keeps the routes whose pattern contains any of the comma-separated substrings;
+ *   a pattern that ends in "$" must match the end of the route pattern exactly (e.g. "/teams$").
  * Env: QA_EMAIL / QA_PASSWORD (default demo@primecrest.pk / DemoPass1234!)
  * Output: <out>/results.json, <out>/summary.md, <out>/<slug>.png
  */
@@ -161,7 +163,12 @@ const params = token ? await buildParams(token) : {};
 console.log('params', params);
 
 let routes = discoverRoutes();
-if (args.only) routes = routes.filter((r) => r.pattern.includes(args.only));
+if (args.only) {
+  const wanted = args.only.split(',').map((s) => s.trim()).filter(Boolean);
+  routes = routes.filter((r) =>
+    wanted.some((w) => (w.endsWith('$') ? r.pattern.endsWith(w.slice(0, -1)) : r.pattern.includes(w))),
+  );
+}
 if (args.limit) routes = routes.slice(0, Number(args.limit));
 console.log(`${routes.length} routes`);
 
