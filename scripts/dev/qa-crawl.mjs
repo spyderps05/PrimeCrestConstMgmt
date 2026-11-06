@@ -140,16 +140,22 @@ await Promise.all([
 ]);
 await page.waitForTimeout(2000);
 const loginOk = !new URL(page.url()).pathname.startsWith('/login');
-const token = await page.evaluate(() => {
-  for (const s of [localStorage, sessionStorage])
-    for (let i = 0; i < s.length; i++) {
-      const v = s.getItem(s.key(i)) ?? '';
-      const m = v.match(/eyJ[\w-]+\.[\w-]+\.[\w-]+/);
-      if (m) return m[0];
-    }
-  return null;
-});
+// The SPA may keep its token in memory or an httpOnly cookie, so get a separate API token
+// for param discovery straight from the login endpoint.
+let token = null;
+try {
+  const r = await fetch(`${API}/api/v1/users/auth/login/`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ email: EMAIL, password: PASSWORD }),
+  });
+  token = r.ok ? (await r.json()).access_token ?? null : null;
+} catch {}
 console.log(`login ${loginOk ? 'OK' : 'FAILED'} -> ${page.url()} token=${token ? 'yes' : 'no'}`);
+if (!loginOk) {
+  await page.screenshot({ path: path.join(OUT, 'login-failed.png') });
+  throw new Error('UI login failed; see login-failed.png');
+}
 
 const params = token ? await buildParams(token) : {};
 console.log('params', params);
