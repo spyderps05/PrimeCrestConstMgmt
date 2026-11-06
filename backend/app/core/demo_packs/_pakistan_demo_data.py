@@ -292,7 +292,7 @@ _CONTACTS: dict[str, list[_Contact]] = {
     "faisalabad-road": [
         (
             "client",
-            "Highways Division Faisalabad",
+            "Highways Division Faisalabad, Government of the Punjab",
             "Asif",
             "Nawaz",
             "xen@highways-fsd.example",

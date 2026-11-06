@@ -183,6 +183,20 @@ def test_demo_template_follows_the_pakistan_stack(demo_id: str, tax_rate: float)
     assert tpl.progress_claims
 
 
+
+@pytest.mark.parametrize("demo_id", ["bhu-punjab", "school-karachi", "lahore-house", "faisalabad-road"])
+def test_the_demo_client_is_the_client_in_the_contacts(demo_id: str) -> None:
+    """The project metadata and the client contact name the same employer, so no screen contradicts another."""
+    from app.core.demo_packs._pakistan_demo_data import module_data_for
+
+    tpl = _load(_ROOT / "backend/app/core/demo_packs" / f"{demo_id}.py").TEMPLATE
+    clients = [c for c in module_data_for(demo_id)["contacts"] if c.get("contact_type") == "client"]
+    assert clients, demo_id
+    # A private client is addressed with an honorific in the metadata ("Mr. Kashif Mehmood").
+    named = tpl.project_metadata["client"].removeprefix("Mr. ").removeprefix("Mrs. ")
+    assert named in {c["company_name"] for c in clients}
+
+
 def test_pack_manifest() -> None:
     import sys
 

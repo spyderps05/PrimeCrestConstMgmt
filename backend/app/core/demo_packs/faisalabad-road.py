@@ -252,7 +252,7 @@ TEMPLATE = DemoTemplate(
     claim_retention=0.10,
     project_metadata={
         "address": "Jhang Road, Faisalabad 38000, Punjab, Pakistan",
-        "client": "Faisalabad Development Authority",
+        "client": "Highways Division Faisalabad, Government of the Punjab",
         "consultant": "Indus Highway Consultants",
         "structural_engineer": "Indus Highway Consultants",
         "quantity_surveyor": "Saleem Cost Consultants",
