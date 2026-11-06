@@ -41,7 +41,7 @@ import re
 import uuid
 from typing import Any
 
-from sqlalchemy import Select, func, or_, select, update
+from sqlalchemy import Select, case, func, or_, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 from sqlalchemy.orm.attributes import set_committed_value
@@ -57,6 +57,7 @@ from app.modules.cost_match.models import (
     MatchResult,
     MatchRun,
 )
+from app.modules.costs.matcher import PUBLIC_BASE_SOURCES
 from app.modules.costs.models import CostItem
 from app.modules.costs.repository import synonym_text_predicate
 
@@ -378,7 +379,12 @@ class CostBaseRepository:
         applies the same filter.
         """
         stmt = select(CostItem).where(CostItem.is_active.is_(True))
-        if cost_source:
+        if cost_source == "cwicr":
+            # The run default, "the open cost base": CWICR plus the schedules of
+            # rates a country pack ships (source ``rate_book``), which is the
+            # only open base a market without a CWICR region (Pakistan) has.
+            stmt = stmt.where(CostItem.source.in_(PUBLIC_BASE_SOURCES))
+        elif cost_source:
             stmt = stmt.where(CostItem.source == cost_source)
         if region:
             stmt = stmt.where(CostItem.region == region)
@@ -398,10 +404,12 @@ class CostBaseRepository:
         """Cost items worth scoring against ``text``, bounded by ``limit``.
 
         Recall comes from the shared multilingual predicate, so a Russian or
-        Spanish line still reaches a German or English base row. Ordering is
-        by ``code`` so the pool is deterministic: the same submission scored
-        twice must produce the same result, and an arbitrary database order
-        under a LIMIT would break that.
+        Spanish line still reaches a German or English base row. Rows that
+        answer more of the line's terms come first, then ``code`` breaks ties,
+        so the pool is deterministic (the same submission scored twice must
+        produce the same result) and, on a base larger than ``limit``, the
+        rows sharing most words with the line are the ones that get scored
+        rather than the lowest codes that share a single common word.
 
         Returns an empty list for a blank query rather than the first
         ``limit`` rows of the catalogue, which would be a suggestion with no
@@ -414,8 +422,9 @@ class CostBaseRepository:
         ]
         if not clauses:
             return []
+        relevance = sum((case((clause, 1), else_=0) for clause in clauses[1:]), case((clauses[0], 1), else_=0))
         stmt = self._scoped(cost_source=cost_source, region=region, catalog_id=catalog_id)
-        stmt = stmt.where(or_(*clauses)).order_by(CostItem.code, CostItem.id).limit(limit)
+        stmt = stmt.where(or_(*clauses)).order_by(relevance.desc(), CostItem.code, CostItem.id).limit(limit)
         result = await self.session.execute(stmt)
         return list(result.scalars().all())
 

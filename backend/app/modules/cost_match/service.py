@@ -216,8 +216,16 @@ def _to_candidate(item: CostItem, locale: str) -> Candidate:
             "unit_rate": item.rate,
             "currency": item.currency,
             "code": item.code,
+            "source_book": _source_book(item),
         },
     )
+
+
+def _source_book(item: CostItem) -> str:
+    """Book and edition of a row loaded from a pack's schedule of rates, else ``""``."""
+    if item.source != "rate_book" or not isinstance(item.classification, dict):
+        return ""
+    return str(item.classification.get("collection") or "")
 
 
 def _tier_for(confidence: Decimal, factors: dict[str, Any], has_candidate: bool) -> str:
@@ -257,6 +265,7 @@ def _candidate_snapshot(candidate: Candidate, score: MatchScore) -> dict[str, An
         "unit": candidate.unit or "",
         "rate": None if rate is None else format(rate, "f"),
         "currency": str(payload.get("currency") or ""),
+        "source_book": str(payload.get("source_book") or ""),
         "confidence": format(_quantise_confidence(score.confidence), "f"),
         "band": score.band,
         "reason_codes": list(score.reasons),

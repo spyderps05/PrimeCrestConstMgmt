@@ -404,6 +404,49 @@ def _step_locale(slug: str) -> StepResult:
     return StepResult(step="locale", status="ok", detail={"locale": locale})
 
 
+async def _load_pack_rate_books(slug: str) -> tuple[list[dict[str, Any]], int, str | None, list[dict[str, str]]]:
+    """Load the schedules of rates the pack itself ships (``cost_base/*.json``).
+
+    Returns ``(bases, items, region, errors)``: one ``bases`` row per book in
+    the shape the CWICR rows use, the item count, the cost region the books
+    were written under (``None`` when nothing loaded) and per-book errors.
+    A pack that declares no cost base returns empty values. Fail-soft.
+    """
+    from app.core.partner_pack.discovery import get_pack_by_slug
+    from app.database import async_session_factory
+    from app.modules.costs.pack_cost_base import load_pack_cost_base
+
+    m = get_pack_by_slug(slug)
+    if m is None:
+        return [], 0, None, []
+    try:
+        async with async_session_factory() as session:
+            result = await load_pack_cost_base(session, m)
+            await session.commit()
+    except Exception as exc:  # noqa: BLE001 - fail-soft like every CWICR region
+        logger.warning("full-install cost_db: pack rate books of %s failed: %s", slug, exc)
+        return [], 0, None, [{"region": slug, "db_id": slug, "error": str(exc)}]
+    if result is None:
+        return [], 0, None, []
+    bases: list[dict[str, Any]] = []
+    errors: list[dict[str, str]] = []
+    for book in result.books:
+        row: dict[str, Any] = {
+            "slug": book.book_id or book.file,
+            "db_id": result.region,
+            "label": book.label,
+            "kind": "pack_rate_book",
+        }
+        if book.status == "error":
+            row.update({"status": "error", "reason_code": "load_failed", "error": book.error})
+            errors.append({"region": book.book_id or book.file, "db_id": result.region, "error": book.error})
+        else:
+            row.update({"status": "ok", "items": book.items, "already_loaded": book.status == "unchanged"})
+        bases.append(row)
+    loaded = any(b.get("status") == "ok" for b in bases)
+    return bases, result.items, (result.region if loaded else None), errors
+
+
 async def _step_cost_db(slug: str) -> tuple[StepResult, list[str]]:
     """Step 3 - load the CWICR cost DB for each resolvable region.
 
@@ -447,7 +490,15 @@ async def _step_cost_db(slug: str) -> tuple[StepResult, list[str]]:
                 {"region": region_slug, "db_id": db_id, "error": str(exc), "reason_code": _load_failure_reason(exc)}
             )
 
+    book_bases, book_items, book_region, book_errors = await _load_pack_rate_books(slug)
+    items += book_items
+    errors.extend(book_errors)
+    if book_region and book_region not in loaded:
+        loaded.append(book_region)
+
     detail: dict[str, Any] = {"regions": loaded, "items": items}
+    if book_bases:
+        detail["bases"] = book_bases
     if skipped:
         detail["skipped"] = skipped
     if errors:
@@ -456,7 +507,7 @@ async def _step_cost_db(slug: str) -> tuple[StepResult, list[str]]:
     status = _cost_db_status(loaded, errors)
     if status == "error":
         _mark_cost_base_not_loaded(detail, loaded)
-    if not regions:
+    if not regions and not loaded:
         detail.setdefault("reason", "no cwicr_regions declared")
     return StepResult(step="cost_db", status=status, detail=detail), loaded
 
@@ -877,6 +928,15 @@ async def _step_cost_db_detailed(slug: str, cost_regions: list[str] | None = Non
                 }
             )
 
+    # The pack's own schedules of rates are not a choice in the dialog: they
+    # ship with the pack and come with activating it.
+    book_bases, book_items, book_region, book_errors = await _load_pack_rate_books(slug)
+    bases.extend(book_bases)
+    items += book_items
+    errors.extend(book_errors)
+    if book_region and book_region not in loaded:
+        loaded.append(book_region)
+
     detail: dict[str, Any] = {"regions": loaded, "items": items, "resources": resources, "bases": bases}
     if skipped:
         detail["skipped"] = skipped
@@ -886,7 +946,9 @@ async def _step_cost_db_detailed(slug: str, cost_regions: list[str] | None = Non
     status = _cost_db_status(loaded, errors)
     if status == "error":
         _mark_cost_base_not_loaded(detail, loaded)
-    if not declared:
+    if book_region:
+        pass  # the pack's own books loaded; no "nothing declared" reason applies
+    elif not declared:
         detail.setdefault("reason", "no cwicr_regions declared")
         detail["reason_code"] = "no_regions_declared"
     elif not regions:

@@ -22,8 +22,11 @@ MANIFEST = PartnerPackManifest(
     ),
     default_locale="en-GB",
     additional_locales={"ur": "locales/ur.json"},
-    # No CWICR region: Pakistani rates come from the provincial MRS / CSR files through the importer
-    # described in rates.json, never from a bundled cost base.
+    # No CWICR region. Pakistani rates come from the rate books this pack ships under cost_base/
+    # (Punjab MRS, provincial CSR, MES SR: one JSON file per book, see metadata["cost_base_dir"]),
+    # loaded into the shared cost base under region "PK" at boot and on pack install by
+    # app.modules.costs.pack_cost_base. The MES "x % above / below SR" tender premium is a BOQ
+    # markup of category tender_adjustment, not a change to the book rates.
     cwicr_regions=[],
     default_currency="PKR",
     default_tax_template=None,
@@ -117,6 +120,11 @@ MANIFEST = PartnerPackManifest(
         "rate_books": ["Punjab Market Rate System (MRS)", "Composite Schedule of Rates (CSR), provincial", "NHA composite rates"],
         "code_library_path": "codes.json",
         "rate_book_path": "rates.json",
+        # Schedules of rates shipped with the pack, one <book_id>.json per book, loaded into the
+        # cost base (region below, PKR) by app.modules.costs.pack_cost_base. Idempotent: a book is
+        # re-imported only when its file changes (new edition), keyed by (book id, code).
+        "cost_base_dir": "cost_base",
+        "cost_base_region": "PK",
         # The phase model the demo projects are told on. Pinned by the demo file only: no
         # default_for_* flag, so a new project still gets the platform's default model.
         "catalogues": [

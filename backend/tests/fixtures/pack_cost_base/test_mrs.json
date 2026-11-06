@@ -1,0 +1,64 @@
+{
+  "source": {
+    "id": "test_mrs",
+    "name": "Market Rate System (MRS)",
+    "publisher": "Test fixture, not a real rate book",
+    "edition": "1st Biannual 2099",
+    "effective_from": "2099-01-01",
+    "region": "PK-PB",
+    "district": "Lahore",
+    "urls": ["https://example.invalid/test-mrs"],
+    "retrieved": "2026-11-06",
+    "notes": "Synthetic rates for the pack cost base loader tests. Not prices."
+  },
+  "items": [
+    {
+      "code": "T-03-01",
+      "chapter": "Earthwork",
+      "description": "Excavation in foundation trenches in ordinary soil up to 1.5 m depth",
+      "unit": "m3",
+      "unit_as_printed": "%cft",
+      "rate_pkr": 100.0,
+      "rate_as_printed": 283.17,
+      "kind": "item"
+    },
+    {
+      "code": "T-06-02",
+      "chapter": "Concrete",
+      "description": "Plain cement concrete 1:4:8 under foundations",
+      "unit": "m3",
+      "unit_as_printed": "%cft",
+      "rate_pkr": 200.0,
+      "rate_as_printed": 566.34,
+      "kind": "item"
+    },
+    {
+      "code": "T-07-12",
+      "chapter": "Brickwork",
+      "description": "Pacca brickwork in foundation and plinth in cement sand mortar 1:6",
+      "unit": "m3",
+      "unit_as_printed": "%cft",
+      "rate_pkr": 300.0,
+      "rate_as_printed": 849.5,
+      "kind": "item"
+    },
+    {
+      "code": "T-11-04",
+      "chapter": "Plastering",
+      "description": "Cement sand plaster 1:4, 13 mm thick, to walls",
+      "unit": "m2",
+      "unit_as_printed": "%sft",
+      "rate_pkr": 40.0,
+      "rate_as_printed": 371.61,
+      "kind": "item"
+    },
+    {
+      "code": "T-99-99",
+      "chapter": "Broken",
+      "description": "Row without a rate is skipped",
+      "unit": "m3",
+      "rate_pkr": null,
+      "kind": "item"
+    }
+  ]
+}

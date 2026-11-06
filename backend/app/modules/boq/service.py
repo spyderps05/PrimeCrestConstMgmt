@@ -10717,6 +10717,76 @@ class BOQService:
         limit: int = 15,
         min_score: float = 0.3,
     ) -> dict[str, Any]:
+        """Search cost items: vector similarity first, lexical when it finds nothing.
+
+        A workspace without a vector index (no Qdrant / LanceDB, or a region
+        that was never vectorised, such as a country pack's own schedule of
+        rates) used to answer every search with nothing. The lexical matcher
+        reads the SQL cost table directly, so it is the fallback whenever the
+        vector path returns no result.
+        """
+        found = await self._vector_search_cost_items(query, unit, region, limit, min_score)
+        if found.get("results"):
+            return found
+        lexical = await self._lexical_search_cost_items(query, unit, region, limit, min_score)
+        if lexical:
+            return {**found, "results": lexical, "total_found": len(lexical)}
+        return found
+
+    async def _lexical_search_cost_items(
+        self,
+        query: str,
+        unit: str | None,
+        region: str | None,
+        limit: int,
+        min_score: float,
+    ) -> list[dict[str, Any]]:
+        """Rows of the cost table ranked by the lexical matcher, in search-result shape."""
+        from app.modules.costs.matcher import match_cwicr_items
+        from app.modules.costs.models import CostItem
+
+        try:
+            matches = await match_cwicr_items(
+                self.session, query, unit=unit or None, top_k=max(1, min(limit, 30)), region=region or None
+            )
+        except Exception:
+            logger.debug("Lexical fallback failed for search_cost_items", exc_info=True)
+            return []
+        matches = [m for m in matches if m.score >= min_score]
+        if unit:
+            matches = [m for m in matches if not m.unit or m.unit.lower().strip() == unit.lower().strip()]
+        if not matches:
+            return []
+        ids = [uuid.UUID(m.cost_item_id) for m in matches]
+        rows = (await self.session.execute(select(CostItem).where(CostItem.id.in_(ids)))).scalars().all()
+        by_id = {str(r.id): r for r in rows}
+        out: list[dict[str, Any]] = []
+        for m in matches:
+            item = by_id.get(m.cost_item_id)
+            out.append(
+                {
+                    "id": m.cost_item_id,
+                    "code": m.code,
+                    "description": m.description,
+                    "unit": m.unit,
+                    "rate": round(float(m.unit_rate), 2),
+                    "region": (item.region if item else "") or "",
+                    "score": round(float(m.score), 4),
+                    "classification": (item.classification or {}) if item else {},
+                    "components": (item.components or []) if item else [],
+                    "currency": m.currency or "",
+                }
+            )
+        return out
+
+    async def _vector_search_cost_items(
+        self,
+        query: str,
+        unit: str | None = None,
+        region: str | None = None,
+        limit: int = 15,
+        min_score: float = 0.3,
+    ) -> dict[str, Any]:
         """Search cost items using vector similarity.
 
         Encodes query text, searches the vector DB, filters by min_score and

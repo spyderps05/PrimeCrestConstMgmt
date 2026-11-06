@@ -288,7 +288,14 @@ export function CwicrMatchPanel(props: CwicrMatchPanelProps) {
             {results.map((row) => (
               <tr key={row.cost_item_id} data-testid={`cwicr-match-row-${row.code}`}>
                 <td>{row.code}</td>
-                <td title={row.description}>{row.description}</td>
+                <td title={row.description}>
+                  {row.description}
+                  {row.source_book ? (
+                    <div className="text-2xs text-content-tertiary" data-testid="cwicr-match-source-book">
+                      {row.source_book}
+                    </div>
+                  ) : null}
+                </td>
                 <td>{row.unit}</td>
                 <td>
                   <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem' }}>

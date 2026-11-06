@@ -35,7 +35,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field
-from sqlalchemy import or_, select
+from sqlalchemy import case, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.modules.costs.models import CostItem
@@ -51,6 +51,11 @@ _MAX_TOP_K = 50
 _CANDIDATE_CAP = 400
 """Hard cap on rows pulled from DB before fuzzy ranking. Keeps the
 P95 latency bounded on a 55 000-row CWICR table."""
+
+PUBLIC_BASE_SOURCES: tuple[str, ...] = ("cwicr", "rate_book")
+"""Sources searched when the caller names none: the open CWICR base and the
+schedules of rates a country pack ships (``costs.pack_cost_base``). User and
+commercial catalogues stay out unless asked for."""
 
 _LEXICAL_WEIGHT_HYBRID = 0.6
 _SEMANTIC_WEIGHT_HYBRID = 0.4
@@ -90,6 +95,13 @@ class MatchResult(BaseModel):
         default="lexical",
         description="Which matching channel produced this result: lexical | semantic | hybrid",
     )
+    source_book: str = Field(
+        default="",
+        description=(
+            "For a row from a country pack's schedule of rates, the book and edition it was "
+            "taken from (e.g. 'Punjab MRS 2nd Biannual 2025, Lahore'); empty otherwise."
+        ),
+    )
 
 
 @dataclass
@@ -122,7 +134,7 @@ async def match_cwicr_items(
     semantic: bool = False,
     mode: str = "lexical",
     region: str | None = None,
-    source: str | None = "cwicr",
+    source: str | tuple[str, ...] | None = PUBLIC_BASE_SOURCES,
 ) -> list[MatchResult]:
     """Return up to ``top_k`` :class:`MatchResult` rows ranked by relevance.
 
@@ -149,8 +161,9 @@ async def match_cwicr_items(
     region
         Optional region filter (e.g. ``DE_BERLIN``). Forwarded to the SQL.
     source
-        Filter by ``CostItem.source``. Defaults to ``cwicr`` (the open
-        cost database). Pass ``None`` to disable the filter.
+        Filter by ``CostItem.source``: one source, a tuple of sources, or
+        ``None`` for no filter. Defaults to :data:`PUBLIC_BASE_SOURCES` (the
+        open CWICR database plus the rate books a country pack ships).
     """
     q = (query or "").strip()
     if not q:
@@ -248,24 +261,35 @@ async def _load_candidates(
     query: str,
     *,
     region: str | None,
-    source: str | None,
+    source: str | tuple[str, ...] | None,
     cap: int,
 ) -> list[_Candidate]:
-    """Pull a bounded candidate window via OR-ILIKE on description + code."""
+    """Pull a bounded candidate window via OR-ILIKE on description + code.
+
+    The window is ordered by how many query tokens a description contains, so
+    on a base larger than ``cap`` the rows sharing the most words with the
+    query are the ones that reach the scorer, not whichever rows the planner
+    happened to read first.
+    """
     tokens = _query_tokens(query)
     base = select(CostItem).where(CostItem.is_active.is_(True))
     if region:
         base = base.where(CostItem.region == region)
-    if source:
+    if isinstance(source, tuple):
+        base = base.where(CostItem.source.in_(source))
+    elif source:
         base = base.where(CostItem.source == source)
 
     conditions: list[Any] = []
+    hits: list[Any] = []
     for tok in tokens:
         if len(tok) < 3:
             continue
         pattern = f"%{tok}%"
-        conditions.append(CostItem.description.ilike(pattern))
+        desc_hit = CostItem.description.ilike(pattern)
+        conditions.append(desc_hit)
         conditions.append(CostItem.code.ilike(pattern))
+        hits.append(case((desc_hit, 1), else_=0))
 
     if conditions:
         base = base.where(or_(*conditions))
@@ -273,6 +297,8 @@ async def _load_candidates(
     # scan rather than returning empty - caller may still want a unit-only
     # filter to surface something.
 
+    if hits:
+        base = base.order_by(sum(hits[1:], hits[0]).desc(), CostItem.code)
     stmt = base.limit(cap)
     result = await session.execute(stmt)
     rows: list[CostItem] = list(result.scalars().all())
@@ -503,10 +529,20 @@ def _to_match_result(item: CostItem, *, score: float, channel: str) -> MatchResu
         currency=_resolve_currency(item.currency, getattr(item, "region", None)),
         score=round(min(max(score, 0.0), 1.0), 4),
         source=channel,
+        source_book=_source_book(item),
     )
 
 
+def _source_book(item: CostItem) -> str:
+    """The rate book label a pack-shipped row carries, or ``""``."""
+    if getattr(item, "source", None) != "rate_book":
+        return ""
+    cls = getattr(item, "classification", None)
+    return str(cls.get("collection") or "") if isinstance(cls, dict) else ""
+
+
 __all__ = [
+    "PUBLIC_BASE_SOURCES",
     "MatchResult",
     "match_cwicr_for_position",
     "match_cwicr_items",

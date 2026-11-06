@@ -210,6 +210,9 @@ export interface CwicrMatchResult {
   score: number;
   /** Channel that produced the score: 'lexical' | 'semantic' | 'hybrid'. */
   source: string;
+  /** Book and edition for a row from a country pack's schedule of rates
+   *  (e.g. "Punjab MRS 2nd Biannual 2025, Lahore"); empty otherwise. */
+  source_book?: string;
   /**
    * Optional variant count when the matched CostItem carries
    * `metadata_.variant_stats.count >= 2`.  Present only when the backend

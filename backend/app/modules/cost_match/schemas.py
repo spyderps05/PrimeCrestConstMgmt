@@ -129,6 +129,9 @@ class MatchCandidate(BaseModel):
     unit: str = ""
     rate: Decimal | None = None
     currency: str = ""
+    # Book and edition when the item comes from a country pack's schedule of
+    # rates ("Punjab MRS 2nd Biannual 2025, Lahore"); empty for other bases.
+    source_book: str = ""
     confidence: Decimal = Decimal("0")
     band: str = ""
     reason_codes: list[str] = Field(default_factory=list)
