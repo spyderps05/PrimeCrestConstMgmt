@@ -22,6 +22,7 @@ from decimal import Decimal
 from typing import Any
 
 from sqlalchemy import select
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.modules.guarantees import logic
@@ -43,9 +44,8 @@ def _q(value: Decimal) -> Decimal:
     return value.quantize(Decimal("0.01"))
 
 
-async def _facility(session: AsyncSession, bank: str, currency: str, limit: Decimal) -> GuaranteeFacility:
-    name = f"Guarantee line {currency}"
-    found = (
+async def _find_facility(session: AsyncSession, bank: str, currency: str, name: str) -> GuaranteeFacility | None:
+    return (
         await session.execute(
             select(GuaranteeFacility).where(
                 GuaranteeFacility.bank_name == bank,
@@ -54,12 +54,33 @@ async def _facility(session: AsyncSession, bank: str, currency: str, limit: Deci
             )
         )
     ).scalar_one_or_none()
+
+
+async def _facility(session: AsyncSession, bank: str, currency: str, limit: Decimal) -> GuaranteeFacility:
+    """Get or create the shared credit line every demo of one currency draws on.
+
+    Several demos install concurrently (onboarding provisions them as parallel
+    jobs, each on its own session), and demos of one currency share this line.
+    A plain read-then-insert lets two of them both miss and both insert, and the
+    loser fails its whole install on ``uq_guarantees_facility``. The insert runs
+    in a savepoint, so losing that race only rolls the savepoint back and the
+    winner's committed row is read instead.
+    """
+    name = f"Guarantee line {currency}"
+    found = await _find_facility(session, bank, currency, name)
     if found is not None:
         return found
     row = GuaranteeFacility(name=name, bank_name=bank, currency=currency, limit_amount=limit)
-    session.add(row)
-    await session.flush()
-    return row
+    try:
+        async with session.begin_nested():
+            session.add(row)
+            await session.flush()
+        return row
+    except IntegrityError:
+        found = await _find_facility(session, bank, currency, name)
+        if found is None:
+            raise
+        return found
 
 
 def _event(row: Guarantee, action: str, when: date, **kw: Any) -> GuaranteeEvent:
