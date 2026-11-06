@@ -350,6 +350,7 @@ REGION_ALIAS_TO_COUNTRY: Mapping[str, str] = MappingProxyType(
         "JAPAN": "JP",
         "KOREA": "KR",
         "INDIA": "IN",
+        "PAKISTAN": "PK",
         "SOUTHAFRICA": "ZA",
         "AUSTRALIA": "AU",
         "NEWZEALAND": "NZ",

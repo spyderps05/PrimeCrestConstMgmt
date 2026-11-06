@@ -398,6 +398,7 @@ PROJECT_REGION_LABELS: dict[str, tuple[str | None, str | None]] = {
     "Japan": ("JP", "ja"),
     "Korea": ("KR", "ko"),
     "India": ("IN", "en"),
+    "Pakistan": ("PK", "en"),  # PEC and PPRA bidding documents are in English
     "SoutheastAsia": (None, None),  # Indonesian, Thai, Vietnamese, English
     "MiddleEast": (None, "ar"),
     "GulfStates": (None, "ar"),

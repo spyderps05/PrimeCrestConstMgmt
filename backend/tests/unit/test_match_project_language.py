@@ -68,6 +68,7 @@ def test_no_stale_label_entries() -> None:
         ("Mexico", "es", "MX"),
         ("NewZealand", "en", "NZ"),
         ("SouthAfrica", "en", "ZA"),
+        ("Pakistan", "en", "PK"),
         ("LatinAmerica", "es", None),
         ("GulfStates", "ar", None),
         ("Nordics", None, None),
@@ -84,7 +85,7 @@ def test_form_label_resolves(region: str, language: str | None, country: str | N
 @pytest.mark.parametrize("region", _form_region_values())
 def test_no_form_label_is_read_as_english_by_default(region: str) -> None:
     """Only labels that really are English-speaking resolve to "en"."""
-    english = {"UK", "Ireland", "US", "Canada", "India", "SouthAfrica", "EastAfrica", "Australia", "NewZealand"}
+    english = {"UK", "Ireland", "US", "Canada", "India", "Pakistan", "SouthAfrica", "EastAfrica", "Australia", "NewZealand"}
     if region in english:
         assert project_language(region) == "en"
     else:
