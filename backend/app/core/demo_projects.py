@@ -192,6 +192,23 @@ def _sum_positions(positions: list[Position]) -> float:
     return sum(float(p.total) for p in positions if p.unit != "")
 
 
+def _planned_cash_flow(total: float, months: int) -> list[float]:
+    """Monthly planned outflow on a triangular spend profile that adds up to ``total``.
+
+    The cash-flow plan, the budget lines and the bill then state one figure.
+    The profile used to divide by ``months * 0.55`` instead of by its own
+    weights, which left the cumulative plan at about 91 percent of the bill.
+    """
+    if months <= 0:
+        return []
+    mid = months / 2
+    weights = [1 - abs(m - mid) / mid for m in range(months)]
+    weight_sum = sum(weights)
+    if weight_sum <= 0:
+        return [total / months] * months
+    return [total * w / weight_sum for w in weights]
+
+
 def _tender_scopes(items: list[Position], package_count: int) -> list[list[Position]]:
     """Split the priced lines into one contiguous scope per tender package.
 
@@ -13167,11 +13184,12 @@ async def install_demo_project(
         session.add(bl)
 
     # ── 7. Cash Flow (5D) ─────────────────────────────────────────────
+    # The planned outflow adds up to the bill's direct total (see
+    # ``_planned_cash_flow``), the same figure the budget lines above carry.
+    planned_months = _planned_cash_flow(grand_total, total_months)
     cum_p, cum_a = 0.0, 0.0
     for m in range(total_months):
-        mid = total_months / 2
-        w = 1 - abs(m - mid) / mid
-        monthly = grand_total * w / (total_months * 0.55)
+        monthly = planned_months[m]
         cum_p += monthly
         act_m = monthly * 0.92 if m < total_months * 0.6 else 0
         cum_a += act_m

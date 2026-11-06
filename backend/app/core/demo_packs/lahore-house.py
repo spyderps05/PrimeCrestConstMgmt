@@ -290,6 +290,12 @@ TEMPLATE = DemoTemplate(
         "mrs_source": _MRS,
         "contract_form": "pec_civil_works",
         "contract_price_pkr": 29296150,
+        "bill_total_pkr": 39081064.10,
+        "contract_price_note": (
+            "The contract price is the bill amount at item rates. The bill then adds overhead, profit and the "
+            "provincial sales tax on services, and closes at bill_total_pkr. The cost plan, budget lines and "
+            "cash-flow plan are on the contract price."
+        ),
         "tax_note": "Punjab sales tax on services at the standard 16 percent, as its own line. Federal GST is the goods line.",
     },
     module_data=module_data_for("lahore-house"),

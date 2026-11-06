@@ -534,6 +534,12 @@ TEMPLATE = DemoTemplate(
         ),
         "contract_form": "pec_sbd_2023_12",
         "contract_price_pkr": 164779340,
+        "bill_total_pkr": 217920677.15,
+        "contract_price_note": (
+            "The contract price is the bill amount at item rates. The bill then adds overhead, profit and the "
+            "provincial sales tax on services, and closes at bill_total_pkr. The cost plan, budget lines and "
+            "cash-flow plan are on the contract price."
+        ),
         "procurement_rules": "Sindh Public Procurement Rules, 2010",
         "performance_security_percent": "10",
         "retention_money_limit_percent": "5",

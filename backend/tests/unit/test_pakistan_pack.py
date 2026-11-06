@@ -133,6 +133,64 @@ def _direct_cost(template) -> int:
     return int(round(total))
 
 
+def _bill_total(template) -> Decimal:
+    """The bill's grand total the way the BOQ list computes it: direct cost, then each markup in order."""
+    cent = Decimal("0.01")
+    direct = sum(
+        (Decimal(str(item[3])) * Decimal(str(item[4]))).quantize(cent)
+        for section in template.sections
+        for item in section[3]
+    )
+    running = direct
+    for _name, pct, _category, apply_to in template.markups:
+        base = running if apply_to in ("cumulative", "subtotal") else direct
+        running += base * Decimal(str(pct)) / Decimal("100")
+    return running.quantize(cent)
+
+
+@pytest.mark.parametrize(
+    ("demo_id", "bill_total"),
+    [
+        ("lahore-house", Decimal("39081064.10")),
+        ("school-karachi", Decimal("217920677.15")),
+        ("bhu-punjab", Decimal("67627797.00")),
+        ("faisalabad-road", Decimal("364772962.00")),
+    ],
+)
+def test_demo_headline_figures_agree(demo_id: str, bill_total: Decimal) -> None:
+    """Contract price, bill and bill total state one set of figures.
+
+    The contract price is the bill amount at item rates; the cost plan, budget
+    lines and cash-flow plan are seeded from the same sections, so they carry
+    it too. The bill total adds overhead, profit and the provincial sales tax
+    and is the figure the BOQ editor closes on. Both live in the metadata, so
+    no screen quotes a number the project record does not state.
+    """
+    template = _load(_ROOT / f"backend/app/core/demo_packs/{demo_id}.py").TEMPLATE
+    meta = template.project_metadata
+    assert _direct_cost(template) == meta["contract_price_pkr"]
+    assert _bill_total(template) == bill_total
+    assert Decimal(str(meta["bill_total_pkr"])).quantize(Decimal("0.01")) == bill_total
+    assert "bill_total_pkr" in meta["contract_price_note"]
+
+    # The seeded cash-flow plan spends exactly the contract price over the programme.
+    from app.core.demo_projects import _planned_cash_flow
+
+    plan = _planned_cash_flow(float(meta["contract_price_pkr"]), template.total_months)
+    assert len(plan) == template.total_months
+    assert sum(plan) == pytest.approx(meta["contract_price_pkr"], abs=0.01)
+
+
+@pytest.mark.parametrize("months", [1, 2, 10, 11, 12, 14])
+def test_planned_cash_flow_adds_up_to_the_total(months: int) -> None:
+    from app.core.demo_projects import _planned_cash_flow
+
+    plan = _planned_cash_flow(1_000_000.0, months)
+    assert len(plan) == months
+    assert all(m >= 0 for m in plan)
+    assert sum(plan) == pytest.approx(1_000_000.0, abs=0.01)
+
+
 def test_demo_jobs_offer_the_form_that_fits_the_price() -> None:
     bhu = _load(_ROOT / "backend/app/core/demo_packs/bhu-punjab.py").TEMPLATE
     house = _load(_ROOT / "backend/app/core/demo_packs/lahore-house.py").TEMPLATE
@@ -183,7 +241,6 @@ def test_demo_template_follows_the_pakistan_stack(demo_id: str, tax_rate: float)
     assert len(tax) == 1 and tax[0][1] == tax_rate
     assert tpl.claim_retention == 0.10
     assert tpl.progress_claims
-
 
 
 @pytest.mark.parametrize("demo_id", ["bhu-punjab", "school-karachi", "lahore-house", "faisalabad-road"])

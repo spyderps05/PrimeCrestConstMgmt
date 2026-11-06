@@ -512,6 +512,12 @@ TEMPLATE = DemoTemplate(
         "contract": "Public works under the older PEC civil-works form, with monthly interim payment certificates",
         "contract_form": "pec_civil_works",
         "contract_price_pkr": 50695500,
+        "bill_total_pkr": 67627797.00,
+        "contract_price_note": (
+            "The contract price is the bill amount at item rates. The bill then adds overhead, profit and the "
+            "provincial sales tax on services, and closes at bill_total_pkr. The cost plan, budget lines and "
+            "cash-flow plan are on the contract price."
+        ),
         "procurement_rules": "Punjab Procurement Rules 2014",
         "tax_note": (
             "All rates are without sales tax. The provincial sales tax on services is applied as a line of its own "
