@@ -319,7 +319,7 @@ def converted_rate(rate: Decimal | str | float | None, query_unit: str | None, i
 
 
 def conversion_note(query_unit: str | None, item_unit: str | None) -> str:
-    """"1 t = 1000 kg" for a convertible pair, empty otherwise."""
+    """ "1 t = 1000 kg" for a convertible pair, empty otherwise."""
     if unit_relation(query_unit, item_unit) != UNIT_CONVERTIBLE:
         return ""
     factor = unit_factor(query_unit, item_unit)

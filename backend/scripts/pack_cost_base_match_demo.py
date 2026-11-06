@@ -152,7 +152,17 @@ def main() -> int:
     if not args.all and args.demo == "lahore-house":
         lines = [ln for ln in lines if ln[0] in DEFAULT_LINES]
     counts = dict.fromkeys(
-        ("lines", "reviewable", "unit ok", "no variant", "hit", "own book", "lex own book", "lex unit ok", "lex no variant"),
+        (
+            "lines",
+            "reviewable",
+            "unit ok",
+            "no variant",
+            "hit",
+            "own book",
+            "lex own book",
+            "lex unit ok",
+            "lex no variant",
+        ),
         0,
     )
     for ordinal, desc, unit, rate in lines:
@@ -169,7 +179,12 @@ def main() -> int:
             unit_ok = unit_relation(unit, hit.unit) != UNIT_INCOMPATIBLE
             no_variant = not is_unwanted_variant(desc, hit.description)
             own = book_rank(book_region(hit), own_region) == 0
-            for key, flag in (("reviewable", reviewable), ("unit ok", unit_ok), ("no variant", no_variant), ("own book", own)):
+            for key, flag in (
+                ("reviewable", reviewable),
+                ("unit ok", unit_ok),
+                ("no variant", no_variant),
+                ("own book", own),
+            ):
                 counts[key] += int(flag)
             counts["hit"] += int(reviewable and unit_ok and no_variant)
             per_line = ""
@@ -190,7 +205,10 @@ def main() -> int:
         )
         print()
     n = max(counts["lines"], 1)
-    print("Summary (cost-match top hit): " + ", ".join(f"{k} {v}/{n} ({100 * v / n:.0f}%)" if k != "lines" else f"{v} lines" for k, v in counts.items()))
+    print(
+        "Summary (cost-match top hit): "
+        + ", ".join(f"{k} {v}/{n} ({100 * v / n:.0f}%)" if k != "lines" else f"{v} lines" for k, v in counts.items())
+    )
     return 0
 
 

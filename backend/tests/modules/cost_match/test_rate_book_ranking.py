@@ -178,7 +178,9 @@ def test_lexical_scorer_penalises_a_variant() -> None:
         _row("Dismantling plain cement concrete 1:2:4", "m3", "PK-PB", "old"),
         _row("Plain cement concrete 1:2:4 in foundation", "m3", "PK-PB", "new"),
     ]
-    scored = _score_lexical([_Candidate(item=r) for r in rows], query="Plain cement concrete 1:2:4", unit="m3", lang=None)
+    scored = _score_lexical(
+        [_Candidate(item=r) for r in rows], query="Plain cement concrete 1:2:4", unit="m3", lang=None
+    )
     by = {c.item.code: c.lexical for c in scored}
     assert by["new"] > by["old"]
 
@@ -223,7 +225,9 @@ def test_lexical_scorer_boosts_convertible_and_penalises_incompatible_units() ->
         _row("Steel reinforcement bars Grade 60", "kg", "PK-PB", "kg"),
         _row("Steel reinforcement bars Grade 60", "t", "PK-PB", "t"),
     ]
-    scored = _score_lexical([_Candidate(item=r) for r in rows], query="Steel reinforcement bars Grade 60", unit="t", lang=None)
+    scored = _score_lexical(
+        [_Candidate(item=r) for r in rows], query="Steel reinforcement bars Grade 60", unit="t", lang=None
+    )
     by = {c.item.code: c.lexical for c in scored}
     assert by["t"] >= by["kg"] > by["pcs"]
 
