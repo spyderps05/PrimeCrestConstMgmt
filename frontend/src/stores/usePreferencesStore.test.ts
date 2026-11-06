@@ -198,10 +198,16 @@ describe('usePreferencesStore', () => {
       expect(usePreferencesStore.getState().dateFormat).toBe('DD.MM.YYYY');
     });
 
-    it('leaves an order outside the vocabulary alone, landing on automatic', async () => {
-      // The regional packs also ship DD/MM/YYYY and YYYY/MM/DD, which this
-      // toggle has no button for.
+    it('adopts the slash-separated day-first order the Pakistan pack ships', async () => {
       mockApiGet.mockResolvedValueOnce({ date_format: 'DD/MM/YYYY' });
+      await usePreferencesStore.getState().hydrateFromServer();
+      expect(usePreferencesStore.getState().dateFormat).toBe('DD/MM/YYYY');
+    });
+
+    it('leaves an order outside the vocabulary alone, landing on automatic', async () => {
+      // The regional packs also ship YYYY/MM/DD, which this toggle has no
+      // button for. (DD/MM/YYYY, the Pakistan order, is in the vocabulary.)
+      mockApiGet.mockResolvedValueOnce({ date_format: 'YYYY/MM/DD' });
       await usePreferencesStore.getState().hydrateFromServer();
       expect(usePreferencesStore.getState().dateFormat).toBe('auto');
     });

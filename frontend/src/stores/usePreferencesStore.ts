@@ -298,7 +298,7 @@ const LEGACY_ACCOUNT_DATE_FORMAT = 'DD.MM.YYYY';
  * rendering exactly as it does today instead of switching to numeric dates on
  * the next sign-in. The two orders the column default can never produce, and
  * an explicit `auto`, are always adopted. A value outside the vocabulary (the
- * regional packs also ship `DD/MM/YYYY` and `YYYY/MM/DD`) is left alone rather
+ * regional packs also ship `YYYY/MM/DD`) is left alone rather
  * than forced, so it falls through to the `'auto'` default on a fresh browser.
  */
 function adoptServerDateFormat(server: string, local: DateFormat): DateFormat | undefined {

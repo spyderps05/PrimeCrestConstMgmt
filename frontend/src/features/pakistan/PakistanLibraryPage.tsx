@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { apiGet } from '@/shared/lib/api';
+import { fmtList, fmtNumber } from '@/shared/lib/formatters';
 import { PageHeader } from '@/shared/ui/PageHeader';
 
 type Instrument = {
@@ -94,7 +95,7 @@ export function PakistanLibraryPage() {
           <section>
             <h2 className="mb-3 text-lg font-semibold">Contract forms</h2>
             <p className="mb-3 text-sm">
-              A job above Rs {library.contract_forms.threshold_pkr.toLocaleString('en-PK')} is offered the December 2023 form.
+              A job above Rs {fmtNumber(library.contract_forms.threshold_pkr, 0)} is offered the December 2023 form.
               A smaller job is offered the older civil-works form.
             </p>
             <ul className="space-y-3">
@@ -119,7 +120,7 @@ export function PakistanLibraryPage() {
               </a>
             </p>
             <p className="mb-2 text-sm">
-              Districts loaded as slots: {library.rates.districts.map((d) => d.district).join(', ')}.
+              Districts loaded as slots: {fmtList(library.rates.districts.map((d) => d.district))}.
             </p>
             {library.rates.districts.every((d) => (d.items?.length ?? 0) === 0) ? (
               <p className="mb-2 text-sm">

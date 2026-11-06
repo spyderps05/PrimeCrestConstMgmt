@@ -1,7 +1,7 @@
 // DDC-CWICR-OE: DataDrivenConstruction · PrimeCrest
 // Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 //
-// Without the DDC converter an IFC upload imports its elements with empty
+// Without the PrimeCrest CAD converter an IFC upload imports its elements with empty
 // quantities and the backend stores the model as `degraded` with a reason code.
 // The dock reported that as a plain success and the viewer said nothing. Both
 // now show a translated warning keyed by the code.
@@ -63,7 +63,7 @@ describe('QuantityWarningBanner', () => {
     );
     const banner = screen.getByTestId('bim-quantity-warning');
     expect(banner).toHaveTextContent('Imported without quantities');
-    expect(banner).toHaveTextContent('the DDC converter is not available on this server');
+    expect(banner).toHaveTextContent('the PrimeCrest CAD converter is not available on this server');
   });
 
   it('stays away from a ready model', () => {
