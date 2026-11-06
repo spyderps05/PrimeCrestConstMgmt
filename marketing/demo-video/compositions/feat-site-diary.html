@@ -19,9 +19,9 @@
     #root .notch { position: absolute; left: 50%; top: 20px; width: 110px; height: 26px; margin-left: -55px; border-radius: 13px; background: #0C161E; z-index: 3; }
     #root .body { position: relative; width: 100%; height: 792px; overflow: hidden; background: #F6F3EE;
        }
-    #root .cam { position: absolute; inset: 0; transform-origin: 50% 45%; }
+    #root .cam { position: absolute; inset: 0; transform-origin: 50% 35%; }
     #root .media { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-    #root .callout { position: absolute; left: 31%; top: 29%; width: 38%; height: 32%;
+    #root .callout { position: absolute; left: 15.7%; top: 27.6%; width: 82.8%; height: 21.8%;
       border: 5px solid #C4622D; border-radius: 10px; box-shadow: 0 0 0 4000px rgba(18, 32, 43, 0.18); }
     #root .tag { position: absolute; left: 1744px; top: 98px; transform-origin: 100% 50%;
       background: #C4622D; color: #F6F3EE; font-weight: 800; font-size: 28px; padding: 12px 22px; border-radius: 6px; white-space: nowrap; }
@@ -55,24 +55,13 @@
       <div class="chrome"><b></b><b></b><b></b><span class="url">primecrest.pk/projects/bhu-punjab/daily-diary</span></div>
       <div class="body">
         <div id="site-diary-cam" class="cam">
-          <div class="fb">
-          <div class="fb-side"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="fb-main">
-            <div class="fb-skel"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="fb-card">
-              <div class="fb-k">CAPTURE PENDING · screenshot (.png)</div>
-              <div class="fb-file">captures/site-daily-diary.png</div>
-              <div class="fb-route">/projects/{bhu-punjab}/daily-diary</div>
-              <div class="fb-show">Daily diary entry: weather, labour count, work done, photos attached</div>
-            </div>
-          </div>
-        </div>
-          
+          <img id="site-diary-media" class="clip media" src="captures/site-daily-diary.png" alt="" data-start="0" data-duration="6" data-track-index="1" />
+          <div id="site-diary-callout" class="callout"></div>
         </div>
       </div>
     </div>
     <div id="site-diary-wipe" class="wipe"></div>
-    <div id="site-diary-tag" class="tag"><span class="tag-in">BHU Chak 45, Punjab</span></div>
+    <div id="site-diary-tag" class="tag"><span class="tag-in">BHU Chak 45, Punjab · 54 on site</span></div>
   </div>
   <script>
     (function () {
@@ -90,7 +79,7 @@
       // slow push toward the feature
       tl.fromTo(q("cam"), { scale: 1 }, { scale: 1.1, duration: 4.75, ease: "sine.inOut" }, t0 + 0.2);
       // callout frames the part the caption talks about
-      // no capture yet: no callout over the placeholder card
+      tl.fromTo(q("callout"), { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, t0 + 0.75);
       tl.fromTo(q("tag"), { opacity: 0, scale: 0.6, xPercent: -100 }, { opacity: 1, scale: 1, xPercent: -100, duration: 0.3, ease: "back.out(2.2)" }, t0 + 0.95);
       tl.to(q("tag"), { opacity: 0, duration: 0.12 }, 5.86);
       window.__timelines["site-diary"] = tl;

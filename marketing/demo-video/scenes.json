@@ -11,9 +11,21 @@
       "src": "compositions/hook.html",
       "duration": 8,
       "captions": [
-        { "start": 0.3, "end": 2.5, "text": "Budgets *blow up*." },
-        { "start": 2.6, "end": 4.9, "text": "Paperwork *piles up*." },
-        { "start": 5.0, "end": 7.85, "text": "Site updates *vanish* in WhatsApp." }
+        {
+          "start": 0.3,
+          "end": 2.5,
+          "text": "Budgets *blow up*."
+        },
+        {
+          "start": 2.6,
+          "end": 4.9,
+          "text": "Paperwork *piles up*."
+        },
+        {
+          "start": 5.0,
+          "end": 7.85,
+          "text": "Site updates *vanish* in WhatsApp."
+        }
       ]
     },
     {
@@ -21,7 +33,13 @@
       "type": "custom",
       "src": "compositions/brand.html",
       "duration": 4,
-      "captions": [{ "start": 0.9, "end": 3.85, "text": "One platform. *Office to site.*" }]
+      "captions": [
+        {
+          "start": 0.9,
+          "end": 3.85,
+          "text": "One platform. *Office to site.*"
+        }
+      ]
     },
     {
       "id": "owner-portfolio",
@@ -30,12 +48,27 @@
       "personaIntro": true,
       "duration": 6,
       "capture": "owner-portfolio",
-      "route": "/portfolio",
+      "route": "/projects",
       "tag": "4 projects · Lahore · Karachi · Punjab · Faisalabad",
-      "show": "Portfolio page with all four Pakistan demo projects listed, status and budget columns visible",
-      "focus": [0.5, 0.45],
-      "zoom": 1.1,
-      "captions": [{ "start": 1.0, "end": 5.85, "text": "Every project. *One screen.*" }]
+      "show": "Projects page: the four Pakistan demo projects with PKR totals",
+      "focus": [
+        0.55,
+        0.35
+      ],
+      "zoom": 1.08,
+      "captions": [
+        {
+          "start": 1.0,
+          "end": 5.85,
+          "text": "Every project. *One screen.*"
+        }
+      ],
+      "box": [
+        0.155,
+        0.055,
+        0.83,
+        0.1
+      ]
     },
     {
       "id": "owner-cashflow",
@@ -43,12 +76,27 @@
       "persona": "OWNER",
       "duration": 4,
       "capture": "owner-cashflow",
-      "route": "/portfolio",
-      "tag": "Monthly in / out · PKR",
-      "show": "Portfolio cash-flow widget: monthly inflow/outflow bars and cumulative line in PKR",
-      "focus": [0.55, 0.55],
-      "zoom": 1.16,
-      "captions": [{ "start": 0.3, "end": 3.85, "text": "Cash flow in *PKR*, month by month." }]
+      "route": "/5d",
+      "tag": "School, Karachi · peak funding Rs 4.3 Cr",
+      "show": "5D cost model: cash-flow forecast with monthly inflow/outflow bars and cumulative line",
+      "focus": [
+        0.58,
+        0.42
+      ],
+      "zoom": 1.14,
+      "captions": [
+        {
+          "start": 0.3,
+          "end": 3.85,
+          "text": "Cash flow in *PKR*, month by month."
+        }
+      ],
+      "box": [
+        0.168,
+        0.225,
+        0.405,
+        0.093
+      ]
     },
     {
       "id": "owner-cost-budget",
@@ -57,11 +105,26 @@
       "duration": 4,
       "capture": "owner-cost-budget",
       "route": "/cost-control",
-      "tag": "School, Karachi · Rs 16.5 Cr",
+      "tag": "School, Karachi · Rs 16.5 Cr plan",
       "show": "Cost control for the Karachi school: budget vs committed vs actual, variance column",
-      "focus": [0.5, 0.5],
-      "zoom": 1.14,
-      "captions": [{ "start": 0.3, "end": 3.85, "text": "Cost vs budget, *before* it overruns." }]
+      "focus": [
+        0.6,
+        0.3
+      ],
+      "zoom": 1.12,
+      "captions": [
+        {
+          "start": 0.3,
+          "end": 3.85,
+          "text": "Cost vs budget, *before* it overruns."
+        }
+      ],
+      "box": [
+        0.155,
+        0.16,
+        0.83,
+        0.105
+      ]
     },
     {
       "id": "owner-approvals",
@@ -69,12 +132,27 @@
       "persona": "OWNER",
       "duration": 4,
       "capture": "owner-approvals",
-      "route": "/governance?tab=approvals",
-      "tag": "Approval routes",
-      "show": "Approvals tab with a pending item and the Approve button visible",
-      "focus": [0.6, 0.4],
+      "route": "/changeorders",
+      "tag": "CO-004 · Rs 8.7 lakh · awaiting owner",
+      "show": "Submitted change order with the Approve button",
+      "focus": [
+        0.8,
+        0.25
+      ],
       "zoom": 1.16,
-      "captions": [{ "start": 0.3, "end": 3.85, "text": "Approvals in *one click*." }]
+      "captions": [
+        {
+          "start": 0.3,
+          "end": 3.85,
+          "text": "Approvals in *one click*."
+        }
+      ],
+      "box": [
+        0.892,
+        0.176,
+        0.054,
+        0.042
+      ]
     },
     {
       "id": "pm-schedule",
@@ -87,9 +165,24 @@
       "route": "/schedule",
       "tag": "Faisalabad city road · 14 months",
       "show": "4D Schedule Gantt for the Faisalabad road: bars, dependencies, critical path highlighted; scroll the timeline",
-      "focus": [0.55, 0.5],
+      "focus": [
+        0.62,
+        0.72
+      ],
       "zoom": 1.08,
-      "captions": [{ "start": 1.0, "end": 5.85, "text": "4D schedule. *Gantt* to critical path." }]
+      "captions": [
+        {
+          "start": 1.0,
+          "end": 5.85,
+          "text": "4D schedule. *Gantt* to critical path."
+        }
+      ],
+      "box": [
+        0.157,
+        0.378,
+        0.828,
+        0.052
+      ]
     },
     {
       "id": "pm-risks",
@@ -98,11 +191,26 @@
       "duration": 4,
       "capture": "pm-risk-register",
       "route": "/risks",
-      "tag": "Risk register",
+      "tag": "School, Karachi · 10 risks scored",
       "show": "Risk register with probability x impact scores, owners and the heat matrix",
-      "focus": [0.45, 0.5],
-      "zoom": 1.14,
-      "captions": [{ "start": 0.3, "end": 3.85, "text": "Risks scored and *owned*." }]
+      "focus": [
+        0.55,
+        0.3
+      ],
+      "zoom": 1.1,
+      "captions": [
+        {
+          "start": 0.3,
+          "end": 3.85,
+          "text": "Risks scored and *owned*."
+        }
+      ],
+      "box": [
+        0.157,
+        0.07,
+        0.828,
+        0.31
+      ]
     },
     {
       "id": "pm-change-orders",
@@ -111,11 +219,26 @@
       "duration": 4,
       "capture": "pm-change-orders",
       "route": "/changeorders",
-      "tag": "Change orders",
+      "tag": "School, Karachi · 5 change orders",
       "show": "Change orders list with cost impact in PKR and status (pending / approved)",
-      "focus": [0.5, 0.45],
-      "zoom": 1.14,
-      "captions": [{ "start": 0.3, "end": 3.85, "text": "Change orders with *cost impact*." }]
+      "focus": [
+        0.7,
+        0.45
+      ],
+      "zoom": 1.12,
+      "captions": [
+        {
+          "start": 0.3,
+          "end": 3.85,
+          "text": "Change orders with *cost impact*."
+        }
+      ],
+      "box": [
+        0.795,
+        0.345,
+        0.065,
+        0.3
+      ]
     },
     {
       "id": "qs-boq",
@@ -125,12 +248,27 @@
       "duration": 6,
       "capture": "qs-boq-editor",
       "kind": "video",
-      "route": "/projects/{lahore-house}/boq",
-      "tag": "10-marla house, Lahore · Rs 22.6 lakh",
+      "route": "/boq/lahore-house",
+      "tag": "10-marla house, Lahore · Rs 3.9 Cr BOQ",
       "show": "BOQ editor for the Lahore house: MRS chapter sections, quantities, PKR rates, overhead / profit / Punjab sales tax 16% markups and the grand total",
-      "focus": [0.5, 0.5],
-      "zoom": 1.08,
-      "captions": [{ "start": 1.0, "end": 5.85, "text": "BOQ with Punjab *MRS rates*." }]
+      "focus": [
+        0.62,
+        0.55
+      ],
+      "zoom": 1.06,
+      "captions": [
+        {
+          "start": 1.0,
+          "end": 5.85,
+          "text": "BOQ with Punjab *MRS rates*."
+        }
+      ],
+      "box": [
+        0.864,
+        0.215,
+        0.12,
+        0.113
+      ]
     },
     {
       "id": "qs-takeoff",
@@ -139,25 +277,55 @@
       "duration": 4,
       "capture": "qs-takeoff",
       "kind": "video",
-      "route": "/takeoff",
-      "tag": "PDF · DWG · BIM takeoff",
-      "show": "PDF takeoff: a drawing with an area being measured, quantity appearing in the side panel",
-      "focus": [0.45, 0.5],
-      "zoom": 1.1,
-      "captions": [{ "start": 0.3, "end": 3.85, "text": "Take off from *CAD, BIM and PDF*." }]
+      "route": "/bim",
+      "tag": "Lahore house · IFC model takeoff",
+      "show": "BIM takeoff: IFC model with filtered quantities (area, length) ready to link to the BOQ",
+      "focus": [
+        0.62,
+        0.55
+      ],
+      "zoom": 1.08,
+      "captions": [
+        {
+          "start": 0.3,
+          "end": 3.85,
+          "text": "Take off from *CAD, BIM and PDF*."
+        }
+      ],
+      "box": [
+        0.84,
+        0.6,
+        0.153,
+        0.215
+      ]
     },
     {
       "id": "qs-ai-match",
       "type": "feature",
       "persona": "QS / ESTIMATOR",
       "duration": 4,
-      "capture": "qs-ai-cost-match",
-      "route": "/cost-match",
-      "tag": "AI cost matching",
-      "show": "Cost Match results: BOQ descriptions matched to cost-database items with confidence scores",
-      "focus": [0.55, 0.5],
-      "zoom": 1.14,
-      "captions": [{ "start": 0.3, "end": 3.85, "text": "*AI* matches items to cost rates." }]
+      "capture": "qs-validation",
+      "route": "/validation",
+      "tag": "966 checks · 98% quality score",
+      "show": "BOQ validation: quality score, errors, warnings and the rule findings",
+      "focus": [
+        0.45,
+        0.42
+      ],
+      "zoom": 1.12,
+      "captions": [
+        {
+          "start": 0.3,
+          "end": 3.85,
+          "text": "Every BOQ *checked* before it goes out."
+        }
+      ],
+      "box": [
+        0.157,
+        0.333,
+        0.83,
+        0.073
+      ]
     },
     {
       "id": "site-diary",
@@ -167,11 +335,26 @@
       "duration": 6,
       "capture": "site-daily-diary",
       "route": "/projects/{bhu-punjab}/daily-diary",
-      "tag": "BHU Chak 45, Punjab",
-      "show": "Daily diary entry: weather, labour count, work done, photos attached",
-      "focus": [0.5, 0.45],
+      "tag": "BHU Chak 45, Punjab · 54 on site",
+      "show": "Daily diary: weather, labour and equipment, entries for the day",
+      "focus": [
+        0.5,
+        0.35
+      ],
       "zoom": 1.1,
-      "captions": [{ "start": 1.0, "end": 5.85, "text": "Daily diary: *weather, labour, photos.*" }]
+      "captions": [
+        {
+          "start": 1.0,
+          "end": 5.85,
+          "text": "Daily diary: *weather, labour, site log.*"
+        }
+      ],
+      "box": [
+        0.157,
+        0.276,
+        0.828,
+        0.218
+      ]
     },
     {
       "id": "site-punch",
@@ -180,11 +363,26 @@
       "duration": 4,
       "capture": "site-punch-list",
       "route": "/punchlist",
-      "tag": "Punch list",
+      "tag": "BHU Chak 45 · 12 open snags",
       "show": "Punch list items with photo thumbnails, assignee, status open / closed",
-      "focus": [0.5, 0.5],
-      "zoom": 1.14,
-      "captions": [{ "start": 0.3, "end": 3.85, "text": "Punch lists *closed*, not forgotten." }]
+      "focus": [
+        0.5,
+        0.3
+      ],
+      "zoom": 1.1,
+      "captions": [
+        {
+          "start": 0.3,
+          "end": 3.85,
+          "text": "Punch lists *closed*, not forgotten."
+        }
+      ],
+      "box": [
+        0.157,
+        0.173,
+        0.828,
+        0.098
+      ]
     },
     {
       "id": "site-rfi",
@@ -193,11 +391,26 @@
       "duration": 4,
       "capture": "site-rfi-inspections",
       "route": "/rfi",
-      "tag": "RFIs · Inspections",
+      "tag": "School, Karachi · RFI-003 answered",
       "show": "RFI list with due dates and responses; (alt) /inspections with pass/fail results",
-      "focus": [0.5, 0.45],
-      "zoom": 1.14,
-      "captions": [{ "start": 0.3, "end": 3.85, "text": "RFIs and inspections, *on record*." }]
+      "focus": [
+        0.55,
+        0.68
+      ],
+      "zoom": 1.12,
+      "captions": [
+        {
+          "start": 0.3,
+          "end": 3.85,
+          "text": "RFIs and inspections, *on record*."
+        }
+      ],
+      "box": [
+        0.183,
+        0.71,
+        0.795,
+        0.088
+      ]
     },
     {
       "id": "site-mobile",
@@ -206,12 +419,27 @@
       "duration": 4,
       "capture": "site-mobile-field",
       "frame": "phone",
-      "route": "/field",
-      "tag": "Mobile · field app",
-      "show": "Field app at phone size (390x844): today's tasks / quick diary / photo capture",
-      "focus": [0.5, 0.5],
+      "route": "/projects/bhu-punjab/daily-diary",
+      "tag": "Phone · daily diary on site",
+      "show": "The app at phone size (390x844): today's diary with weather and labour",
+      "focus": [
+        0.5,
+        0.55
+      ],
       "zoom": 1.06,
-      "captions": [{ "start": 0.3, "end": 3.85, "text": "Works on the *phone*, on site." }]
+      "captions": [
+        {
+          "start": 0.3,
+          "end": 3.85,
+          "text": "Works on the *phone*, on site."
+        }
+      ],
+      "box": [
+        0.04,
+        0.435,
+        0.92,
+        0.255
+      ]
     },
     {
       "id": "proc-po",
@@ -222,11 +450,26 @@
       "duration": 6,
       "capture": "proc-purchase-orders",
       "route": "/procurement",
-      "tag": "Requisitions · POs · deliveries",
+      "tag": "Faisalabad road · 14 POs · Rs 4.6 Cr",
       "show": "Procurement: requisitions and purchase orders with suppliers, PKR amounts and status",
-      "focus": [0.5, 0.45],
-      "zoom": 1.1,
-      "captions": [{ "start": 1.0, "end": 5.85, "text": "Requisition to *PO* to delivery." }]
+      "focus": [
+        0.6,
+        0.55
+      ],
+      "zoom": 1.08,
+      "captions": [
+        {
+          "start": 1.0,
+          "end": 5.85,
+          "text": "Requisition to *PO* to delivery."
+        }
+      ],
+      "box": [
+        0.535,
+        0.295,
+        0.15,
+        0.69
+      ]
     },
     {
       "id": "proc-subcontractors",
@@ -235,24 +478,55 @@
       "duration": 4,
       "capture": "proc-subcontractors",
       "route": "/subcontractors",
-      "tag": "Subcontractors",
+      "tag": "Faisalabad road · pay held on expired insurance",
       "show": "Subcontractor register: packages, contract values, payment applications",
-      "focus": [0.5, 0.5],
-      "zoom": 1.14,
-      "captions": [{ "start": 0.3, "end": 3.85, "text": "Subcontractors and *payments*, tracked." }]
+      "focus": [
+        0.5,
+        0.6
+      ],
+      "zoom": 1.12,
+      "captions": [
+        {
+          "start": 0.3,
+          "end": 3.85,
+          "text": "Subcontractors and *payments*, tracked."
+        }
+      ],
+      "box": [
+        0.165,
+        0.662,
+        0.81,
+        0.093
+      ]
     },
     {
       "id": "accounts-tax",
       "type": "feature",
       "persona": "ACCOUNTS",
       "duration": 4,
-      "capture": "accounts-tax-withholding",
-      "route": "/tax-withholding",
-      "tag": "ITO s.153(1)(c) · PRA 16% · SRB 15%",
-      "show": "Withholding tax page with Pakistan rows (company / non-company, ATL / non-ATL) applied to a payment certificate",
-      "focus": [0.5, 0.5],
-      "zoom": 1.14,
-      "captions": [{ "start": 0.3, "end": 3.85, "text": "*FBR* withholding. *PRA and SRB* sales tax." }]
+      "capture": "accounts-sales-tax",
+      "route": "/tax-rates",
+      "tag": "PRA 16% Punjab · SRB 15% Sindh",
+      "show": "Tax rates for Pakistan by province: Punjab (PRA), then Sindh (SRB)",
+      "focus": [
+        0.2,
+        0.25
+      ],
+      "zoom": 1.35,
+      "captions": [
+        {
+          "start": 0.3,
+          "end": 3.85,
+          "text": "Provincial sales tax, *PRA to SRB.*"
+        }
+      ],
+      "kind": "video",
+      "box": [
+        0.155,
+        0.21,
+        0.74,
+        0.21
+      ]
     },
     {
       "id": "lang-urdu",
@@ -262,32 +536,68 @@
       "personaIntro": true,
       "duration": 6,
       "capture": "lang-urdu",
-      "route": "/dashboard  (language switched to Urdu)",
+      "route": "/dashboard",
       "tag": "اردو / English",
       "show": "Dashboard with the interface language set to Urdu (RTL layout)",
-      "focus": [0.5, 0.45],
-      "zoom": 1.1,
-      "captions": [{ "start": 1.0, "end": 5.85, "text": "Urdu or English. *Your call.*" }]
+      "focus": [
+        0.6,
+        0.45
+      ],
+      "zoom": 1.08,
+      "captions": [
+        {
+          "start": 1.0,
+          "end": 5.85,
+          "text": "Urdu or English. *Your call.*"
+        }
+      ],
+      "box": [
+        0.015,
+        0.775,
+        0.828,
+        0.135
+      ]
     },
     {
       "id": "desktop-offline",
       "type": "feature",
       "persona": "ANYWHERE",
       "duration": 4,
-      "capture": "desktop-offline",
-      "route": "PrimeCrest Desktop (Windows installer)",
-      "tag": "Windows desktop · works offline",
-      "show": "The PrimeCrest desktop window (Tauri shell) running with network disconnected",
-      "focus": [0.5, 0.5],
-      "zoom": 1.08,
-      "captions": [{ "start": 0.3, "end": 3.85, "text": "Runs *offline* on your desktop." }]
+      "capture": "offline-field-time",
+      "route": "/field-time",
+      "tag": "No signal · kept on the device",
+      "show": "Field time with the network cut: the day is kept on the device and sent when the signal returns",
+      "focus": [
+        0.55,
+        0.04
+      ],
+      "zoom": 1.05,
+      "captions": [
+        {
+          "start": 0.3,
+          "end": 3.85,
+          "text": "No signal on site? It works *offline*."
+        }
+      ],
+      "box": [
+        0.145,
+        0.0,
+        0.85,
+        0.205
+      ]
     },
     {
       "id": "cta",
       "type": "custom",
       "src": "compositions/cta.html",
       "duration": 10,
-      "captions": [{ "start": 1.2, "end": 9.8, "text": "Built for Pakistan. *Book your demo.*" }]
+      "captions": [
+        {
+          "start": 1.2,
+          "end": 9.8,
+          "text": "Built for Pakistan. *Book your demo.*"
+        }
+      ]
     }
   ]
 }

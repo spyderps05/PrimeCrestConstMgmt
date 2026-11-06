@@ -19,9 +19,9 @@
     #root .notch { position: absolute; left: 50%; top: 20px; width: 110px; height: 26px; margin-left: -55px; border-radius: 13px; background: #0C161E; z-index: 3; }
     #root .body { position: relative; width: 100%; height: 792px; overflow: hidden; background: #F6F3EE;
        }
-    #root .cam { position: absolute; inset: 0; transform-origin: 55.00000000000001% 50%; }
+    #root .cam { position: absolute; inset: 0; transform-origin: 45% 42%; }
     #root .media { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-    #root .callout { position: absolute; left: 36%; top: 34%; width: 38%; height: 32%;
+    #root .callout { position: absolute; left: 15.7%; top: 33.3%; width: 83%; height: 7.3%;
       border: 5px solid #C4622D; border-radius: 10px; box-shadow: 0 0 0 4000px rgba(18, 32, 43, 0.18); }
     #root .tag { position: absolute; left: 1744px; top: 98px; transform-origin: 100% 50%;
       background: #C4622D; color: #F6F3EE; font-weight: 800; font-size: 28px; padding: 12px 22px; border-radius: 6px; white-space: nowrap; }
@@ -52,27 +52,16 @@
     <div id="qs-ai-match-persona" class="persona"><span id="qs-ai-match-persona-t">QS / ESTIMATOR</span></div>
     
     <div id="qs-ai-match-win" class="win" data-layout-allow-overflow>
-      <div class="chrome"><b></b><b></b><b></b><span class="url">primecrest.pk/cost-match</span></div>
+      <div class="chrome"><b></b><b></b><b></b><span class="url">primecrest.pk/validation</span></div>
       <div class="body">
         <div id="qs-ai-match-cam" class="cam">
-          <div class="fb">
-          <div class="fb-side"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="fb-main">
-            <div class="fb-skel"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="fb-card">
-              <div class="fb-k">CAPTURE PENDING · screenshot (.png)</div>
-              <div class="fb-file">captures/qs-ai-cost-match.png</div>
-              <div class="fb-route">/cost-match</div>
-              <div class="fb-show">Cost Match results: BOQ descriptions matched to cost-database items with confidence scores</div>
-            </div>
-          </div>
-        </div>
-          
+          <img id="qs-ai-match-media" class="clip media" src="captures/qs-validation.png" alt="" data-start="0" data-duration="4" data-track-index="1" />
+          <div id="qs-ai-match-callout" class="callout"></div>
         </div>
       </div>
     </div>
     <div id="qs-ai-match-wipe" class="wipe"></div>
-    <div id="qs-ai-match-tag" class="tag"><span class="tag-in">AI cost matching</span></div>
+    <div id="qs-ai-match-tag" class="tag"><span class="tag-in">966 checks · 98% quality score</span></div>
   </div>
   <script>
     (function () {
@@ -86,9 +75,9 @@
       tl.set(q("wipe"), { opacity: 1 }, t0);
       tl.to(q("wipe"), { opacity: 0, duration: 0.08 }, t0 + 0.5);
       // slow push toward the feature
-      tl.fromTo(q("cam"), { scale: 1 }, { scale: 1.14, duration: 3.75, ease: "sine.inOut" }, t0 + 0.2);
+      tl.fromTo(q("cam"), { scale: 1 }, { scale: 1.12, duration: 3.75, ease: "sine.inOut" }, t0 + 0.2);
       // callout frames the part the caption talks about
-      // no capture yet: no callout over the placeholder card
+      tl.fromTo(q("callout"), { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, t0 + 0.75);
       tl.fromTo(q("tag"), { opacity: 0, scale: 0.6, xPercent: -100 }, { opacity: 1, scale: 1, xPercent: -100, duration: 0.3, ease: "back.out(2.2)" }, t0 + 0.95);
       tl.to(q("tag"), { opacity: 0, duration: 0.12 }, 3.86);
       window.__timelines["qs-ai-match"] = tl;
