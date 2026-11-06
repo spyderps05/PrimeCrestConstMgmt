@@ -3111,6 +3111,11 @@ def _register_module_rule_sets(rule_sets: list[str]) -> None:
 async def _get_or_create_owner(session: AsyncSession) -> uuid.UUID:
     """Find the showcase owner or create the demo user to own the project."""
     user = await find_showcase_owner(session)
+    if user is None:
+        # Two installs of different demos on a fresh database would both create the owner here and one would
+        # die on the unique email. Serialise the creation and look again once the lock is ours.
+        await _lock_demo_install(session, "__showcase_owner__")
+        user = await find_showcase_owner(session)
 
     if user is None:
         # Only reached with no active account at all. A deactivated demo row
@@ -12601,6 +12606,27 @@ async def _seed_requisitions(
     return created
 
 
+async def _lock_demo_install(session: AsyncSession, demo_id: str) -> None:
+    """Take the transaction-scoped PostgreSQL advisory lock that serialises installs of ``demo_id``.
+
+    Transaction-scoped, so it is released by the caller's commit or rollback and cannot leak; keyed on the
+    demo id, so two different demos still install side by side. Across processes too, which an in-process
+    lock would not cover. A database that is not PostgreSQL has no advisory locks and is left alone.
+    """
+    from sqlalchemy import text
+
+    try:
+        dialect = session.get_bind().dialect.name
+    except Exception:  # noqa: BLE001 - an unbound session simply takes no lock
+        return
+    if dialect != "postgresql":
+        return
+    await session.execute(
+        text("SELECT pg_advisory_xact_lock(hashtext(:key))"),
+        {"key": f"oe_demo_install:{demo_id}"},
+    )
+
+
 async def install_demo_project(
     session: AsyncSession,
     demo_id: str,
@@ -12639,6 +12665,13 @@ async def install_demo_project(
     if template is None:
         valid = ", ".join(sorted(DEMO_TEMPLATES.keys()))
         raise ValueError(f"Unknown demo_id '{demo_id}'. Valid options: {valid}")
+
+    # One install of a demo at a time. The boot installer runs in the background while a person can already
+    # ask for the same demo (``/partner-pack/full-install``, ``/api/demo/install``); both used to pass the
+    # duplicate check below before either had committed, and the second died on a duplicate key or left two
+    # copies. The lock lives until this session's transaction ends, so the second caller waits, then finds
+    # the first one's project and answers ``already_installed``.
+    await _lock_demo_install(session, demo_id)
 
     if respect_retirement and demo_id in await retired_demo_ids(session):
         logger.info("Demo '%s' was removed by the user - not installing it again", demo_id)

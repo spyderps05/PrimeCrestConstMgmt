@@ -26,11 +26,47 @@ No new DB tables: this only orchestrates seeders that already exist.
 
 from __future__ import annotations
 
+import asyncio
+import functools
 import logging
 import uuid
-from typing import Any
+import weakref
+from collections.abc import Awaitable, Callable
+from typing import Any, TypeVar
 
 logger = logging.getLogger(__name__)
+
+_T = TypeVar("_T")
+
+# One enrichment at a time per event loop. The boot backfill enriches every project in the background while a
+# person can already run ``/partner-pack/full-install``, which enriches the projects it just installed. Two
+# passes over the same project raced each other's get-or-create (the governance model, ``uq_oe_gov_model_project``)
+# and one of them lost on a duplicate key. Every seeder is idempotent, so the second pass, run after the
+# first, finds the rows written and fills only what is still missing. Kept per loop: an asyncio lock is bound
+# to the loop it first waits on.
+_ENRICH_LOCKS: weakref.WeakKeyDictionary[asyncio.AbstractEventLoop, asyncio.Lock] = weakref.WeakKeyDictionary()
+
+
+def _enrich_lock() -> asyncio.Lock:
+    loop = asyncio.get_running_loop()
+    lock = _ENRICH_LOCKS.get(loop)
+    if lock is None:
+        lock = _ENRICH_LOCKS[loop] = asyncio.Lock()
+    return lock
+
+
+def _one_at_a_time(fn: Callable[..., Awaitable[_T]]) -> Callable[..., Awaitable[_T]]:
+    """Run ``fn`` under the enrichment lock; a caller arriving while a pass is running waits for it."""
+
+    @functools.wraps(fn)
+    async def wrapper(*args: Any, **kwargs: Any) -> _T:
+        lock = _enrich_lock()
+        if lock.locked():
+            logger.info("demo enrichment: another pass is running, waiting for it to finish")
+        async with lock:
+            return await fn(*args, **kwargs)
+
+    return wrapper
 
 # The flagship reference project. Kept first in the enrichment order so the
 # seeders that cap at a few projects (advanced scheduling, QMS, supplier
@@ -159,6 +195,7 @@ async def _offline_conflict_counts(session: Any, project_id: uuid.UUID) -> dict[
     return dict.fromkeys(await seed_offline_conflict_demo(session, project_id), 1)
 
 
+@_one_at_a_time
 async def enrich_projects(project_ids: list[uuid.UUID]) -> dict[str, Any]:
     """Run every per-module demo seeder across the given projects.
 
