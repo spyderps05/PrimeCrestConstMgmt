@@ -378,7 +378,7 @@ export function BIMConverterStatusBanner({
             }),
             message: t('bim.converter_verify_old_backend_msg', {
               defaultValue:
-                'Re-check requires backend v2.6.23 or newer. Update with: pip install --upgrade openconstructionerp',
+                'Re-check requires backend v2.6.23 or newer. Update with: pip install --upgrade primecrest',
             }),
           },
           { duration: 20_000 },

@@ -337,7 +337,7 @@ export function AboutPage() {
               <p>
                 {t('about.pc_story_p2', {
                   defaultValue:
-                    'It is developed and maintained by Spyder Solutions on top of the open-source OpenConstructionERP platform, with local defaults, workflows and support for the Pakistani market.',
+                    'Spyder Solutions designs, develops and supports PrimeCrest, with local defaults, workflows and support for the Pakistani market.',
                 })}
               </p>
             </div>

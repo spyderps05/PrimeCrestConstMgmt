@@ -1096,7 +1096,7 @@ export function QuantitiesPage() {
               </div>
               <p className="mt-0.5 text-xs text-content-quaternary">
                 {t('quantities.converters_author', {
-                  defaultValue: 'Third-party converters · Open Source · Free',
+                  defaultValue: 'Third-party converters · Free',
                 })}
               </p>
             </div>
