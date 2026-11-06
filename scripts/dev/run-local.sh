@@ -46,6 +46,9 @@ export DATABASE_SYNC_URL="postgresql://primecrest:primecrest@127.0.0.1:${PG_PORT
 export SEED_DEMO=true DEMO_USER_PASSWORD='DemoPass1234!' DEMO_ESTIMATOR_PASSWORD='DemoPass1234!' DEMO_MANAGER_PASSWORD='DemoPass1234!'
 # OE_CLI_DATA_DIR keeps demo/partner-pack markers per stack (else ~/.openestimate leaks into fresh DBs).
 export OE_DATA_DIR="$ROOT/scripts/dev/.local/data" OE_CLI_DATA_DIR="$ROOT/scripts/dev/.local/data" PYTHONIOENCODING=utf-8
+# Open on the Pakistan pack like the Docker image and the CLI do (an operator-set OE_PACK wins).
+# Without an active pack the story-driven demo seeders skip the Pakistan demo projects.
+export OE_PACK="${OE_PACK:-pakistan-pk}" PRIMECREST_DEFAULT_PACK="${PRIMECREST_DEFAULT_PACK:-pakistan-pk}"
 export ALLOWED_ORIGINS="http://127.0.0.1:${FRONTEND_PORT},http://localhost:${FRONTEND_PORT}"
 
 (cd "$ROOT/backend" && PYTHONPATH=. nohup "$PYTHON" -m uvicorn app.main:create_app --factory \

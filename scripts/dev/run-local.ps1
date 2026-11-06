@@ -67,6 +67,10 @@ $env:OE_DATA_DIR = Join-Path $PSScriptRoot '.local/data'
 # Keep demo/partner-pack markers per stack. Without this the backend reads ~/.openestimate,
 # and a marker left there by any earlier install makes a FRESH database skip demo projects.
 $env:OE_CLI_DATA_DIR = $env:OE_DATA_DIR
+# Open on the Pakistan pack like the Docker image and the CLI do (an operator-set OE_PACK wins).
+# Without an active pack the story-driven demo seeders skip the Pakistan demo projects.
+if (-not $env:OE_PACK) { $env:OE_PACK = 'pakistan-pk' }
+if (-not $env:PRIMECREST_DEFAULT_PACK) { $env:PRIMECREST_DEFAULT_PACK = 'pakistan-pk' }
 $env:PYTHONPATH = '.'
 $env:PYTHONIOENCODING = 'utf-8'
 $env:ALLOWED_ORIGINS = "http://127.0.0.1:$FrontendPort,http://localhost:$FrontendPort"
