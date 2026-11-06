@@ -61365,6 +61365,14 @@ const resource = {
     "measurement_book.tab_bill": "Τρέχων λογαριασμός",
     "measurement_book.empty_title": "Δεν υπάρχουν θέσεις BOQ ακόμη",
     "measurement_book.empty_desc": "Προσθέστε πρώτα θέσεις σε προϋπολογισμό ποσοτήτων, και μετά μετρήστε τες εδώ.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Κοστολόγηση κατοικίας στη Λαχόρη με τον τιμοκατάλογο του Παντζάμπ",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Μετρήστε από τα σχέδια ένα σπίτι δέκα μάρλα, συντάξτε τον προϋπολογισμό με τον τιμοκατάλογο του Παντζάμπ σε PKR, κρατήστε χωριστά τον φέροντα οργανισμό και τα τελειώματα και ελέγξτε τον πριν τον δει ο πελάτης.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Διαγωνισμός για Βασική Μονάδα Υγείας με τους κανόνες της PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Συντάξτε την εκτίμηση του μηχανικού, δώστε τον ίδιο προϋπολογισμό σε κάθε προσφέροντα, ανοίξτε και συγκρίνετε τις προσφορές με την εκτίμηση και τεκμηριώστε την ανάθεση ώστε να αντέχει σε ένσταση.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Τιμολόγηση σχολείου στο Καράτσι με παρακράτηση φόρου",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Μετρήστε τις εργασίες της περιόδου, μετατρέψτε τις σε τρέχοντα λογαριασμό, εμφανίστε τον φόρο εισοδήματος και τον φόρο πωλήσεων που παρακρατούνται στην πηγή και παρακολουθήστε την πληρωμή που προβλέπει η σύμβαση.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Τήρηση επαρχιακού δρόμου στις επιμετρήσεις και τις δοκιμές του",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Καταγράψτε κάθε στρώση του δρόμου στο ημερολόγιο εργοταξίου, δοκιμάστε την πριν την καλύψει η επόμενη, επιμετρήστε ό,τι πέρασε και τιμολογήστε μόνο αυτό.",
   }
 } as { translation: Record<string, string> };
 

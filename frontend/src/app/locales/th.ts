@@ -61155,6 +61155,14 @@ const resource = {
     "measurement_book.tab_bill": "ใบเรียกเก็บงวดปัจจุบัน",
     "measurement_book.empty_title": "ยังไม่มีรายการ BOQ",
     "measurement_book.empty_desc": "เพิ่มรายการงานในใบประมาณปริมาณงานก่อน แล้วค่อยวัดที่นี่",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "ประมาณราคาบ้านในลาฮอร์ด้วยบัญชีราคาของปัญจาบ",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "ถอดปริมาณบ้านขนาดสิบมาร์ลาจากแบบ จัดทำบัญชีปริมาณงานด้วยบัญชีราคาของปัญจาบเป็นเงินรูปีปากีสถาน แยกงานโครงสร้างออกจากงานตกแต่ง และตรวจทานก่อนที่ลูกค้าจะเห็น",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "ประกวดราคาหน่วยบริการสุขภาพพื้นฐานตามกฎของ PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "จัดทำราคากลางของวิศวกร มอบบัญชีปริมาณงานชุดเดียวกันให้ผู้เสนอราคาทุกราย เปิดและเปรียบเทียบข้อเสนอกับราคากลาง และบันทึกการตัดสินให้ยืนหยัดได้เมื่อมีการร้องเรียน",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "เรียกเก็บเงินค่าก่อสร้างโรงเรียนในการาจีและหักภาษี ณ ที่จ่าย",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "วัดผลงานที่ทำได้ในงวดนี้ จัดทำเป็นใบเบิกงวดงาน แสดงภาษีเงินได้และภาษีขายที่หัก ณ ที่จ่าย และติดตามกำหนดชำระเงินตามสัญญา",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "ควบคุมถนนระดับอำเภอตามการวัดและการทดสอบ",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "บันทึกทุกชั้นของถนนในบันทึกประจำวันหน้างาน ทดสอบก่อนที่ชั้นถัดไปจะปิดทับ วัดส่วนที่ผ่าน และเรียกเก็บเงินเฉพาะส่วนนั้น",
   }
 } as { translation: Record<string, string> };
 

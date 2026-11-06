@@ -62020,6 +62020,14 @@ const resource = {
     "measurement_book.tab_bill": "Löpande räkning",
     "measurement_book.empty_title": "Inga BOQ-poster ännu",
     "measurement_book.empty_desc": "Lägg först till poster i en mängdförteckning och mät sedan upp dem här.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Prissätt ett hus i Lahore enligt Punjabs prisbok",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Mängdberäkna ett hus på tio marla från ritningarna, bygg mängdförteckningen på Punjabs prisbok i PKR, håll stomme och ytskikt åtskilda och granska förteckningen innan kunden ser den.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Upphandla en grundläggande vårdenhet enligt PPRA-reglerna",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Ta fram ingenjörens kalkyl, ge alla anbudsgivare samma mängdförteckning, öppna och jämför anbuden med kalkylen och dokumentera tilldelningen så att den håller vid en överprövning.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Fakturera en skola i Karachi och dra av källskatt",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Mät upp utfört arbete under perioden, gör det till en delfaktura, visa den inkomstskatt och försäljningsskatt som hålls inne vid källan och bevaka betalningsfristen i kontraktet.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Håll en distriktsväg till dess mätningar och provningar",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "För in varje lager av vägen i byggdagboken, prova det innan nästa lager täcker det, mät upp det som godkändes och fakturera bara det.",
   }
 } as { translation: Record<string, string> };
 

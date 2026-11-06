@@ -61363,6 +61363,14 @@ const resource = {
     "measurement_book.tab_bill": "Tumatakbong singil",
     "measurement_book.empty_title": "Wala pang posisyon sa BOQ",
     "measurement_book.empty_desc": "Magdagdag muna ng mga posisyon sa bill of quantities, saka sukatin dito.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Presyuhan ang isang bahay sa Lahore gamit ang Punjab rate book",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Kunin ang dami ng isang bahay na sampung marla mula sa mga drowing, buuin ang bill sa Punjab rate book sa PKR, paghiwalayin ang gray structure at finishes, at suriin ang bill bago ito makita ng kliyente.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "I-tender ang isang Basic Health Unit ayon sa mga patakaran ng PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Ihanda ang tantiya ng inhinyero, ibigay ang iisang bill sa bawat bidder, buksan at ihambing ang mga bid sa tantiya, at itala ang award para manindigan ito sa isang reklamo.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Mag-bill ng paaralan sa Karachi at ibawas ang withholding tax",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Sukatin ang nagawang trabaho sa panahong ito, gawin itong running bill, ipakita ang income tax at sales tax na kinaltas sa pinagmulan, at bantayan ang bayad na pinapayagan ng kontrata.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Panatilihin ang isang district road sa mga sukat at pagsusuri nito",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Itala ang bawat layer ng kalsada sa site diary, subukan ito bago matakpan ng susunod na layer, sukatin ang pumasa, at iyon lamang ang i-bill.",
   }
 } as { translation: Record<string, string> };
 

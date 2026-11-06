@@ -64515,6 +64515,14 @@ const resource = {
     "measurement_book.tab_bill": "الحساب الجاري",
     "measurement_book.empty_title": "لا توجد بنود BOQ بعد",
     "measurement_book.empty_desc": "أضف البنود إلى جدول الكميات أولاً، ثم قسها هنا.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "تسعير منزل في لاهور وفق دليل أسعار البنجاب",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "احسب كميات منزل بمساحة عشرة مرلة من مخططاته، وابنِ جدول الكميات على دليل أسعار البنجاب بالروبية الباكستانية، وافصل الهيكل الخرساني عن التشطيبات، وراجع الجدول قبل أن يراه العميل.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "طرح مناقصة وحدة صحية أساسية وفق قواعد PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "أعدّ تقدير المهندس، وأصدر جدول كميات واحدًا لكل مقدّم عطاء، وافتح العطاءات وقارنها بالتقدير، ووثّق الترسية بحيث تصمد أمام أي شكوى.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "فوترة مدرسة في كراتشي وخصم ضريبة الاستقطاع",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "قِس الأعمال المنجزة في هذه الفترة، وحوّلها إلى فاتورة جارية، وأظهر ضريبة الدخل وضريبة المبيعات المستقطعة من المنبع، وتابع موعد الدفع الذي يحدده العقد.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "ضبط طريق محلي وفق قياساته واختباراته",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "سجّل كل طبقة من الطريق في يومية الموقع، واختبرها قبل أن تغطيها الطبقة التالية، وقِس ما اجتاز الاختبار، ولا تفوتر إلا ذلك.",
   }
 } as { translation: Record<string, string> };
 

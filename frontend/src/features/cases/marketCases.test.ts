@@ -16,6 +16,8 @@ import { describe, expect, it } from 'vitest';
 
 import { homeMarketForLanguage } from './homeMarket';
 import {
+  FALLBACK_MARKETS,
+  fallbackMarket,
   casesForMarket,
   countCasesByMarket,
   nearestMarketsForLanguage,
@@ -197,5 +199,19 @@ describe('casesForMarket', () => {
   it('is empty for no market', () => {
     expect(casesForMarket(PLAYBOOKS, null, positionOf)).toEqual([]);
     expect(casesForMarket(PLAYBOOKS, 'ZZ', positionOf)).toEqual([]);
+  });
+});
+
+describe('fallbackMarket', () => {
+  it('starts an unplaced reader on an English-language market, never Germany', () => {
+    const markets = [...new Set(PLAYBOOKS.map((pb) => pb.region).filter(Boolean))] as string[];
+    const picked = fallbackMarket(markets);
+    expect(picked).toBe('PK');
+    expect(FALLBACK_MARKETS).not.toContain('DE');
+  });
+
+  it('skips a fallback market the catalogue has no cases for', () => {
+    expect(fallbackMarket(['DE', 'GB'])).toBe('GB');
+    expect(fallbackMarket(['DE'])).toBeNull();
   });
 });

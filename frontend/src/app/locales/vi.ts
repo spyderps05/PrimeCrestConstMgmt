@@ -61163,6 +61163,14 @@ const resource = {
     "measurement_book.tab_bill": "Bảng thanh toán lũy kế",
     "measurement_book.empty_title": "Chưa có hạng mục BOQ nào",
     "measurement_book.empty_desc": "Hãy thêm hạng mục vào bảng khối lượng trước, sau đó đo tại đây.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Lập giá một ngôi nhà ở Lahore theo sổ đơn giá Punjab",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Bóc khối lượng một ngôi nhà mười marla từ bản vẽ, lập bảng dự toán theo sổ đơn giá Punjab bằng PKR, tách phần thô và phần hoàn thiện, và kiểm tra trước khi khách hàng xem.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Đấu thầu một Trạm y tế cơ sở theo quy định PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Lập dự toán của kỹ sư, phát cùng một bảng khối lượng cho mọi nhà thầu, mở và so sánh hồ sơ dự thầu với dự toán, và ghi nhận quyết định trúng thầu để đứng vững trước khiếu nại.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Thanh toán một trường học ở Karachi và khấu trừ thuế tại nguồn",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Đo khối lượng thực hiện trong kỳ, lập thành hồ sơ thanh toán giai đoạn, thể hiện thuế thu nhập và thuế bán hàng bị khấu trừ tại nguồn, và theo dõi hạn thanh toán theo hợp đồng.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Quản lý một tuyến đường huyện theo số đo và thí nghiệm",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Ghi từng lớp đường vào nhật ký công trường, thí nghiệm trước khi lớp tiếp theo phủ lên, đo phần đạt, và chỉ thanh toán phần đó.",
   }
 } as { translation: Record<string, string> };
 

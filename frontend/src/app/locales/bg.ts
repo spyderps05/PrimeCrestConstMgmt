@@ -61409,6 +61409,14 @@ const resource = {
     "measurement_book.tab_bill": "Текуща сметка",
     "measurement_book.empty_title": "Още няма позиции по BOQ",
     "measurement_book.empty_desc": "Първо добавете позиции в количествена сметка, после ги измервайте тук.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Остойностяване на къща в Лахор по ценовия справочник на Пенджаб",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Изчислете количествата на къща от десет марла по чертежите, съставете количествената сметка по ценовия справочник на Пенджаб в PKR, разделете грубия строеж от довършителните работи и проверете сметката преди клиентът да я види.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Търг за основно здравно звено по правилата на PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Изгответе инженерната оценка, издайте една и съща сметка на всеки участник, отворете и сравнете офертите с оценката и документирайте възлагането така, че да издържи на жалба.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Фактуриране на училище в Карачи с удържане на данък при източника",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Измерете извършената през периода работа, превърнете я в текуща сметка, покажете удържания при източника подоходен данък и данък върху продажбите и следете плащането, което договорът позволява.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Контрол на общински път по измервания и изпитвания",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Записвайте всеки пласт на пътя в дневника на обекта, изпитвайте го, преди следващият пласт да го покрие, измерете преминалото изпитване и фактурирайте само него.",
   }
 } as { translation: Record<string, string> };
 

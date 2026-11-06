@@ -62957,6 +62957,14 @@ const resource = {
     "measurement_book.tab_bill": "Rachunek bieżący",
     "measurement_book.empty_title": "Brak pozycji BOQ",
     "measurement_book.empty_desc": "Najpierw dodaj pozycje do przedmiaru, a potem obmierz je tutaj.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Wycena domu w Lahaurze według cennika Pendżabu",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Przedmiaruj z rysunków dom o powierzchni dziesięciu marla, zbuduj kosztorys według cennika Pendżabu w PKR, oddziel stan surowy od wykończenia i sprawdź kosztorys, zanim zobaczy go klient.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Przetarg na podstawowy ośrodek zdrowia według zasad PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Przygotuj kosztorys inwestorski, wydaj każdemu oferentowi ten sam przedmiar, otwórz i porównaj oferty z kosztorysem oraz udokumentuj wybór tak, by obronił się przed odwołaniem.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Rozliczenie szkoły w Karaczi z potrąceniem podatku u źródła",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Obmierz roboty wykonane w okresie, zamień je w fakturę częściową, pokaż podatek dochodowy i podatek od sprzedaży pobrany u źródła i pilnuj terminu płatności, na który pozwala umowa.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Prowadzenie drogi powiatowej zgodnie z obmiarami i badaniami",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Zapisuj każdą warstwę drogi w dzienniku budowy, zbadaj ją, zanim przykryje ją następna, obmierz to, co przeszło badania, i rozliczaj tylko to.",
   }
 } as { translation: Record<string, string> };
 

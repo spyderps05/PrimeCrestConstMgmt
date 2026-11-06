@@ -64326,6 +64326,14 @@ const resource = {
     "measurement_book.tab_bill": "Décompte courant",
     "measurement_book.empty_title": "Aucun poste du devis quantitatif pour l'instant",
     "measurement_book.empty_desc": "Ajoutez d'abord les postes au métré estimatif, puis mesurez-les ici.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Chiffrer une maison à Lahore sur le bordereau de prix du Pendjab",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Métrez une maison de dix marla sur ses plans, montez le devis sur le bordereau de prix du Pendjab en PKR, séparez le gros œuvre du second œuvre et vérifiez le devis avant que le client ne le voie.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Lancer l'appel d'offres d'une unité de santé de base selon les règles de la PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Préparez l'estimation de l'ingénieur, remettez le même bordereau à chaque soumissionnaire, ouvrez et comparez les offres à l'estimation et consignez l'attribution pour qu'elle résiste à une réclamation.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Facturer une école à Karachi et déduire la retenue à la source",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Métrez les travaux de la période, transformez-les en situation de travaux, faites apparaître l'impôt sur le revenu et la taxe sur les ventes retenus à la source et suivez le délai de paiement prévu au contrat.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Tenir une route de district à ses métrés et à ses essais",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Consignez chaque couche de la route dans le journal de chantier, testez-la avant que la suivante ne la recouvre, métrez ce qui a réussi et ne facturez que cela.",
   }
 } as { translation: Record<string, string> };
 

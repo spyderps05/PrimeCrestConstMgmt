@@ -61365,6 +61365,14 @@ const resource = {
     "measurement_book.tab_bill": "صورت‌حساب جاری",
     "measurement_book.empty_title": "هنوز قلم BOQ نداریم",
     "measurement_book.empty_desc": "ابتدا اقلامی را به فهرست مقادیر اضافه کنید، سپس اینجا اندازه‌گیری کنید.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "برآورد قیمت یک خانه در لاهور با فهرست بهای پنجاب",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "مقادیر یک خانه ده مرله را از نقشه‌ها برداشت کنید، صورت‌وضعیت را با فهرست بهای پنجاب به روپیه پاکستان بسازید، سفت‌کاری و نازک‌کاری را جدا نگه دارید و پیش از دیدن کارفرما آن را بررسی کنید.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "مناقصه یک واحد بهداشت پایه طبق قواعد PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "برآورد مهندس را آماده کنید، یک فهرست مقادیر یکسان به همه مناقصه‌گران بدهید، پیشنهادها را باز کرده و با برآورد مقایسه کنید و واگذاری را طوری ثبت کنید که در برابر اعتراض بایستد.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "صورت‌وضعیت یک مدرسه در کراچی و کسر مالیات تکلیفی",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "کار انجام‌شده در این دوره را اندازه بگیرید، آن را به صورت‌وضعیت موقت تبدیل کنید، مالیات بر درآمد و مالیات بر فروش کسرشده در مبدأ را نشان دهید و موعد پرداخت قرارداد را پیگیری کنید.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "نگه داشتن یک جاده محلی مطابق اندازه‌گیری‌ها و آزمایش‌هایش",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "هر لایه جاده را در دفتر روزانه کارگاه ثبت کنید، پیش از پوشانده شدن با لایه بعدی آن را آزمایش کنید، آنچه قبول شده را اندازه بگیرید و فقط همان را صورت‌حساب کنید.",
   }
 } as { translation: Record<string, string> };
 

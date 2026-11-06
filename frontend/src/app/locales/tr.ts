@@ -62286,6 +62286,14 @@ const resource = {
     "measurement_book.tab_bill": "Cari hesap",
     "measurement_book.empty_title": "Henüz BOQ kalemi yok",
     "measurement_book.empty_desc": "Önce bir metraj cetvelinde kalem ekleyin, sonra burada ölçün.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Lahor'daki bir evi Pencap birim fiyat kitabına göre fiyatlandırma",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "On marlalık bir evin metrajını çizimlerden çıkarın, keşfi Pencap birim fiyat kitabıyla PKR olarak hazırlayın, kaba inşaatı ve ince işleri ayrı tutun ve müşteri görmeden önce keşfi kontrol edin.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "PPRA kurallarına göre bir Temel Sağlık Birimi ihalesi",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Mühendis yaklaşık maliyetini hazırlayın, her istekliye aynı metrajı verin, teklifleri açıp yaklaşık maliyetle karşılaştırın ve ihale kararını bir itiraza dayanacak şekilde kayda geçirin.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Karaçi'deki bir okulu faturalandırma ve stopaj kesintisi",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Dönemde yapılan işi ölçün, hakedişe dönüştürün, kaynakta kesilen gelir vergisini ve satış vergisini gösterin ve sözleşmenin izin verdiği ödeme tarihini takip edin.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Bir ilçe yolunu ölçümlerine ve deneylerine göre yürütme",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Yolun her katmanını şantiye defterine kaydedin, bir sonraki katman örtmeden önce deneyin, geçeni ölçün ve yalnızca onu faturalayın.",
   }
 } as { translation: Record<string, string> };
 

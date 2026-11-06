@@ -61743,6 +61743,14 @@ const resource = {
     "measurement_book.tab_bill": "Decont curent",
     "measurement_book.empty_title": "Nicio poziție BOQ încă",
     "measurement_book.empty_desc": "Adăugați întâi poziții într-un deviz, apoi măsurați-le aici.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Evaluarea unei case din Lahore după catalogul de prețuri al Punjabului",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Măsurați din planșe o casă de zece marla, întocmiți devizul după catalogul de prețuri al Punjabului în PKR, separați structura la roșu de finisaje și verificați devizul înainte să-l vadă clientul.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Licitarea unei unități sanitare de bază după regulile PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Pregătiți estimarea inginerului, dați fiecărui ofertant aceeași listă de cantități, deschideți și comparați ofertele cu estimarea și documentați atribuirea astfel încât să reziste unei contestații.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Facturarea unei școli din Karachi cu reținerea impozitului la sursă",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Măsurați lucrările executate în perioadă, transformați-le într-o situație de plată, arătați impozitul pe venit și taxa pe vânzări reținute la sursă și urmăriți termenul de plată permis de contract.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Ținerea unui drum județean la măsurătorile și încercările sale",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Înregistrați fiecare strat al drumului în jurnalul de șantier, încercați-l înainte ca stratul următor să-l acopere, măsurați ce a trecut și facturați doar atât.",
   }
 } as { translation: Record<string, string> };
 

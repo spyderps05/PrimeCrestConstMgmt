@@ -61405,6 +61405,14 @@ const resource = {
     "measurement_book.tab_bill": "Løbende regning",
     "measurement_book.empty_title": "Ingen BOQ-poster endnu",
     "measurement_book.empty_desc": "Tilføj først poster i en mængdefortegnelse, og mål dem så her.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Prissæt et hus i Lahore efter Punjabs prisbog",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Opmål et hus på ti marla fra tegningerne, byg tilbudslisten på Punjabs prisbog i PKR, hold råhus og færdiggørelse adskilt, og kontrollér listen, før kunden ser den.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Udbyd en basal sundhedsenhed efter PPRA-reglerne",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Udarbejd ingeniørens overslag, udsend den samme tilbudsliste til alle bydende, åbn og sammenlign buddene med overslaget, og dokumentér tildelingen, så den kan modstå en klage.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Fakturér en skole i Karachi og fradrag kildeskat",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Opmål det udførte arbejde i perioden, gør det til en løbende regning, vis den indkomstskat og moms, der tilbageholdes ved kilden, og følg den betalingsfrist, kontrakten giver.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Hold en distriktsvej til dens opmålinger og prøvninger",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Registrér hvert vejlag i byggedagbogen, prøv det, før næste lag dækker det, opmål det godkendte, og fakturér kun det.",
   }
 } as { translation: Record<string, string> };
 

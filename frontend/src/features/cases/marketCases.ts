@@ -155,6 +155,24 @@ export function resolveHomeMarket({
   return { market: null, source: null };
 }
 
+/**
+ * The market a card opens on when nothing about the reader names one.
+ *
+ * This used to be "the largest market", which is Germany: an English reader
+ * with no pack and a browser that names no country with cases (en-PK, say)
+ * opened the dashboard on thirteen German cases under a German flag. A market
+ * guessed for a reader should at least be one they can read, so the guess is
+ * now an English-language market, PrimeCrest's own home market first. It is
+ * still only a starting view: the card words it neutrally ("Cases by market")
+ * and every other market stays one chip away.
+ */
+export const FALLBACK_MARKETS: readonly string[] = ['PK', 'GB', 'US', 'IN', 'AU', 'CA', 'NZ', 'ZA'];
+
+/** The first fallback market the catalogue has cases for, or null. */
+export function fallbackMarket(markets: readonly string[]): string | null {
+  return FALLBACK_MARKETS.find((m) => markets.includes(m)) ?? null;
+}
+
 /** One market on the shelf: its code and how many cases carry it. */
 export interface MarketShelfEntry {
   market: string;

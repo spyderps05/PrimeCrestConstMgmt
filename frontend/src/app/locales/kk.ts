@@ -61366,6 +61366,14 @@ const resource = {
     "measurement_book.tab_bill": "Ағымдағы шот",
     "measurement_book.empty_title": "Әзірге BOQ позициялары жоқ",
     "measurement_book.empty_desc": "Алдымен көлем ведомосіне позицияларды қосып, содан кейін осында өлшеңіз.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Лахордағы үйді Пенджаб баға анықтамалығы бойынша бағалау",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Сызбалардан он марлалық үйдің көлемдерін есептеп, Пенджаб баға анықтамалығы бойынша PKR-мен смета жасаңыз, қаңқа мен әрлеуді бөлек ұстаңыз және тапсырыс беруші көргенге дейін тексеріңіз.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "PPRA ережелері бойынша негізгі медициналық пунктке тендер өткізу",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Инженерлік сметаны дайындап, әр қатысушыға бірдей көлемдер тізімін беріңіз, ұсыныстарды ашып, сметамен салыстырыңыз және шағымға төтеп беретіндей етіп жеңімпазды құжаттаңыз.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Карачидегі мектепке шот жасап, көзден ұсталатын салықты шегеру",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Осы кезеңде орындалған жұмысты өлшеп, аралық шотқа айналдырыңыз, көзден ұсталған табыс салығы мен сату салығын көрсетіңіз және келісімшартта рұқсат етілген төлем мерзімін бақылаңыз.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Аудандық жолды өлшеулері мен сынақтарына сай ұстау",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Жолдың әр қабатын құрылыс журналына жазыңыз, келесі қабат жаппай тұрып сынаңыз, сынақтан өткенін өлшеңіз және тек соған шот жазыңыз.",
   }
 } as { translation: Record<string, string> };
 

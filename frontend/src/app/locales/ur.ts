@@ -61406,6 +61406,14 @@ const resource = {
     "boq.filter_drawing_revised_zero": "ترمیم شدہ ڈرائنگز پر ({{count}})",
     "boq.filter_drawing_revised_two": "ترمیم شدہ ڈرائنگز پر ({{count}})",
     "boq.filter_drawing_revised_many": "ترمیم شدہ ڈرائنگز پر ({{count}})",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "پنجاب ریٹ بک پر لاہور کے ایک گھر کی قیمت لگائیں",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "ڈرائنگز سے دس مرلہ گھر کی مقداریں نکالیں، پنجاب ریٹ بک پر PKR میں بل بنائیں، گرے اسٹرکچر اور فنشنگ کو الگ رکھیں، اور کلائنٹ کے دیکھنے سے پہلے بل چیک کریں۔",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "PPRA قواعد کے تحت بنیادی مرکز صحت کا ٹینڈر",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "انجینئر کا تخمینہ تیار کریں، ہر بولی دہندہ کو ایک ہی بل دیں، بولیاں کھول کر تخمینے سے موازنہ کریں، اور ایوارڈ کو اس طرح ریکارڈ کریں کہ وہ کسی شکایت کے سامنے ٹھہر سکے۔",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "کراچی کے ایک اسکول کا بل اور ود ہولڈنگ ٹیکس کی کٹوتی",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "اس مدت میں ہونے والا کام ناپیں، اسے running بل میں بدلیں، ماخذ پر کاٹا گیا انکم ٹیکس اور سیلز ٹیکس دکھائیں، اور کنٹریکٹ کی اجازت کردہ ادائیگی کی تاریخ پر نظر رکھیں۔",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "ضلعی سڑک کو اس کی پیمائشوں اور ٹیسٹوں کے مطابق رکھیں",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "سڑک کی ہر تہہ کو سائٹ ڈائری میں درج کریں، اگلی تہہ سے ڈھکنے سے پہلے اس کا ٹیسٹ کریں، جو پاس ہو اسے ناپیں، اور صرف اسی کا بل بنائیں۔",
   }
 } as { translation: Record<string, string> };
 

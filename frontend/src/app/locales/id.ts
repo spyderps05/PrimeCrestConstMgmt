@@ -61154,6 +61154,14 @@ const resource = {
     "measurement_book.tab_bill": "Tagihan berjalan",
     "measurement_book.empty_title": "Belum ada posisi BOQ",
     "measurement_book.empty_desc": "Tambahkan posisi ke daftar kuantitas dulu, lalu ukur di sini.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Menghitung harga rumah di Lahore dengan buku harga Punjab",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Hitung volume rumah sepuluh marla dari gambarnya, susun RAB dengan buku harga Punjab dalam PKR, pisahkan struktur kasar dan finishing, dan periksa RAB sebelum klien melihatnya.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Menenderkan Unit Kesehatan Dasar sesuai aturan PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Siapkan estimasi insinyur, berikan daftar kuantitas yang sama kepada setiap penawar, buka dan bandingkan penawaran dengan estimasi, dan catat penetapan pemenang agar tahan terhadap sanggahan.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Menagih sekolah di Karachi dan memotong pajak pemotongan",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Ukur pekerjaan yang selesai pada periode ini, jadikan tagihan termin, tampilkan pajak penghasilan dan pajak penjualan yang dipotong di sumber, dan pantau pembayaran yang diizinkan kontrak.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Menjaga jalan kabupaten sesuai pengukuran dan pengujiannya",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Catat setiap lapisan jalan di buku harian proyek, uji sebelum lapisan berikutnya menutupinya, ukur yang lulus, dan tagih hanya itu.",
   }
 } as { translation: Record<string, string> };
 

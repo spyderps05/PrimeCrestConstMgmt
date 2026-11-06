@@ -70,6 +70,7 @@ import { regionDisplayName } from '@/features/cases/regions';
 import {
   casesForMarket,
   countCasesByMarket,
+  fallbackMarket,
   orderMarkets,
   resolveHomeMarket,
 } from '@/features/cases/marketCases';
@@ -154,7 +155,11 @@ export function DashboardMarketCasesCard() {
       }),
     [i18n.language, packCountry, markets],
   );
-  const shelf = useMemo(() => orderMarkets(counts, resolution.market), [counts, resolution.market]);
+  // The market the card leads with: the reader's own when anything named one,
+  // else an English-language market (never simply the largest, which is
+  // Germany and would greet every unplaced reader in German).
+  const lead = resolution.market ?? fallbackMarket(markets);
+  const shelf = useMemo(() => orderMarkets(counts, lead), [counts, lead]);
 
   // The chip the reader pressed, remembered together with the home market it
   // was pressed against. A language or pack change moves the home market and
@@ -164,7 +169,7 @@ export function DashboardMarketCasesCard() {
   const selected =
     pick && pick.home === resolution.market
       ? pick.market
-      : (resolution.market ?? shelf[0]?.market ?? null);
+      : (lead ?? shelf[0]?.market ?? null);
 
   const offers = useMarketPackOffers(markets);
   const cases = useMemo(() => casesForMarket(PLAYBOOKS, selected, positionOf), [selected]);
@@ -246,7 +251,7 @@ export function DashboardMarketCasesCard() {
   // Whether the subtitle still describes the market on screen: once the
   // reader presses another chip, "matched to your language" would be a
   // sentence about a market they are no longer looking at.
-  const onHomeMarket = selected === resolution.market;
+  const onHomeMarket = selected === lead;
   // Per tile, the language its title is shown in when that is not the UI
   // language. Read once here so the tiles and the legend above them agree.
   const langTags = shown.map((pb) => languageTag(keyLanguage(i18n, pb.titleKey), i18n.language));

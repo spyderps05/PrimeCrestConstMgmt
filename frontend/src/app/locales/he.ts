@@ -61702,6 +61702,14 @@ const resource = {
     "measurement_book.tab_bill": "חשבון שוטף",
     "measurement_book.empty_title": "אין עדיין סעיפי BOQ",
     "measurement_book.empty_desc": "הוסף תחילה סעיפים לכתב כמויות, ואז מדוד אותם כאן.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "תמחור בית בלאהור לפי ספר המחירים של פנג'אב",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "מדדו בית בן עשרה מרלה מהתוכניות, בנו את כתב הכמויות לפי ספר המחירים של פנג'אב ב-PKR, הפרידו בין שלד לגמרים ובדקו את הכתב לפני שהלקוח רואה אותו.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "מכרז ליחידת בריאות בסיסית לפי כללי PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "הכינו את אומדן המהנדס, מסרו לכל מציע את אותו כתב כמויות, פתחו את ההצעות והשוו אותן לאומדן ותעדו את הזכייה כך שתעמוד בפני ערר.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "חיוב בית ספר בקראצ'י וניכוי מס במקור",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "מדדו את העבודה שבוצעה בתקופה, הפכו אותה לחשבון חלקי, הציגו את מס ההכנסה ומס המכירה שנוכו במקור ועקבו אחר מועד התשלום שהחוזה מאפשר.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "שמירה על כביש מחוזי לפי המדידות והבדיקות שלו",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "רשמו כל שכבה של הכביש ביומן העבודה, בדקו אותה לפני שהשכבה הבאה מכסה אותה, מדדו את מה שעבר וחייבו רק עליו.",
   }
 } as { translation: Record<string, string> };
 

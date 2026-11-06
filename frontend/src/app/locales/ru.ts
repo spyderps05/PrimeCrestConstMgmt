@@ -64625,6 +64625,14 @@ const resource = {
     "measurement_book.tab_bill": "Текущий итог",
     "measurement_book.empty_title": "Позиций BOQ пока нет",
     "measurement_book.empty_desc": "Сначала добавьте позиции в ведомость объёмов, затем измерьте их здесь.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Оценка дома в Лахоре по ценнику Пенджаба",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Снимите объёмы дома площадью десять марла с чертежей, составьте смету по ценнику Пенджаба в PKR, разделите коробку и отделку и проверьте смету до того, как её увидит заказчик.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Тендер на базовый медицинский пункт по правилам PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Подготовьте инженерную смету, выдайте всем участникам одну и ту же ведомость, вскройте и сравните предложения со сметой и оформите выбор победителя так, чтобы он выдержал жалобу.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Счёт за школу в Карачи с удержанием налога у источника",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Измерьте работы за период, оформите промежуточный счёт, покажите подоходный налог и налог с продаж, удержанные у источника, и следите за сроком оплаты по договору.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Ведение районной дороги по обмерам и испытаниям",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Записывайте каждый слой дороги в журнал работ, испытывайте его до того, как его закроет следующий слой, обмеряйте прошедшее испытание и выставляйте счёт только за это.",
   }
 } as { translation: Record<string, string> };
 

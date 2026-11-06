@@ -61753,6 +61753,14 @@ const resource = {
     "measurement_book.tab_bill": "Tekući obračun",
     "measurement_book.empty_title": "Još nema stavki BOQ",
     "measurement_book.empty_desc": "Najprije dodajte stavke u troškovnik, a zatim ih ovdje izmjerite.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Procjena kuće u Lahoreu prema cjeniku Pendžaba",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Izmjerite iz nacrta kuću od deset marla, složite troškovnik prema cjeniku Pendžaba u PKR, odvojite grubu gradnju od završnih radova i provjerite troškovnik prije nego što ga klijent vidi.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Natječaj za osnovnu zdravstvenu jedinicu prema pravilima PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Pripremite inženjersku procjenu, dajte svakom ponuditelju isti troškovnik, otvorite i usporedite ponude s procjenom te dokumentirajte dodjelu tako da izdrži žalbu.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Obračun škole u Karachiju uz odbitak poreza po odbitku",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Izmjerite radove izvedene u razdoblju, pretvorite ih u privremenu situaciju, prikažite porez na dohodak i porez na promet zadržan na izvoru te pratite rok plaćanja koji ugovor dopušta.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Vođenje okružne ceste prema njezinim izmjerama i ispitivanjima",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Upišite svaki sloj ceste u građevinski dnevnik, ispitajte ga prije nego što ga sljedeći sloj prekrije, izmjerite ono što je prošlo i obračunajte samo to.",
   }
 } as { translation: Record<string, string> };
 

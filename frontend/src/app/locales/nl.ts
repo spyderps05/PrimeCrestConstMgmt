@@ -62286,6 +62286,14 @@ const resource = {
     "measurement_book.tab_bill": "Lopende afrekening",
     "measurement_book.empty_title": "Nog geen BOQ-posten",
     "measurement_book.empty_desc": "Voeg eerst posten toe aan een hoeveelheidsstaat en meet ze daarna hier op.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Een huis in Lahore prijzen op het Punjab-prijsboek",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Neem de hoeveelheden van een huis van tien marla af uit de tekeningen, stel de begroting op met het Punjab-prijsboek in PKR, houd ruwbouw en afbouw gescheiden en controleer de begroting voordat de opdrachtgever haar ziet.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Een basisgezondheidspost aanbesteden volgens de PPRA-regels",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Stel de ingenieursraming op, geef iedere inschrijver dezelfde staat, open en vergelijk de inschrijvingen met de raming en leg de gunning zo vast dat ze een bezwaar doorstaat.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Een school in Karachi factureren en bronbelasting inhouden",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Meet het werk van deze periode op, maak er een termijnfactuur van, toon de aan de bron ingehouden inkomstenbelasting en omzetbelasting en bewaak de betaaltermijn uit het contract.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Een districtsweg houden aan zijn metingen en proeven",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Leg elke laag van de weg vast in het bouwdagboek, beproef haar voordat de volgende laag haar bedekt, meet op wat is goedgekeurd en factureer alleen dat.",
   }
 } as { translation: Record<string, string> };
 

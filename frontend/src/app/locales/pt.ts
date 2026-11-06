@@ -64319,6 +64319,14 @@ const resource = {
     "measurement_book.tab_bill": "Conta corrente",
     "measurement_book.empty_title": "Ainda não há posições BOQ",
     "measurement_book.empty_desc": "Adicione primeiro posições ao mapa de quantidades e depois meça-as aqui.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Orçar uma casa em Lahore pela tabela de preços do Punjab",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Faça o levantamento de uma casa de dez marla a partir dos desenhos, monte o orçamento pela tabela de preços do Punjab em PKR, separe a estrutura em bruto dos acabamentos e confira o orçamento antes que o cliente o veja.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Licitar uma Unidade Básica de Saúde pelas regras da PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Prepare a estimativa do engenheiro, entregue a mesma planilha a todos os licitantes, abra e compare as propostas com a estimativa e registre a adjudicação para que resista a um recurso.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Faturar uma escola em Karachi e descontar a retenção na fonte",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Meça o trabalho executado no período, transforme-o numa medição, mostre o imposto de renda e o imposto sobre vendas retidos na fonte e acompanhe o prazo de pagamento que o contrato permite.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Manter uma estrada distrital fiel às medições e ensaios",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Registre cada camada da estrada no diário de obra, ensaie-a antes que a próxima a cubra, meça o que foi aprovado e fature apenas isso.",
   }
 } as { translation: Record<string, string> };
 

@@ -61408,6 +61408,14 @@ const resource = {
     "measurement_book.tab_bill": "चालू बिल",
     "measurement_book.empty_title": "अभी कोई BOQ मद नहीं",
     "measurement_book.empty_desc": "पहले बिल ऑफ़ क्वांटिटीज़ में मदें जोड़ें, फिर यहाँ माप लें।",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "पंजाब रेट बुक पर लाहौर के एक घर का मूल्य निर्धारण",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "ड्रॉइंग से दस मरला के घर की मात्राएँ निकालें, पंजाब रेट बुक पर PKR में बिल बनाएँ, ग्रे स्ट्रक्चर और फिनिशिंग को अलग रखें, और क्लाइंट के देखने से पहले बिल की जाँच करें।",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "PPRA नियमों के तहत बेसिक हेल्थ यूनिट का टेंडर",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "इंजीनियर का अनुमान तैयार करें, हर बोलीदाता को एक ही बिल दें, बोलियाँ खोलकर अनुमान से तुलना करें, और आवंटन को इस तरह दर्ज करें कि वह शिकायत में टिक सके।",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "कराची के एक स्कूल का बिल और स्रोत पर कर कटौती",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "इस अवधि में हुए काम को मापें, उसे रनिंग बिल में बदलें, स्रोत पर काटे गए आयकर और बिक्री कर को दिखाएँ, और अनुबंध द्वारा तय भुगतान तिथि पर नज़र रखें।",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "ज़िला सड़क को उसके माप और परीक्षणों पर बनाए रखना",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "सड़क की हर परत को साइट डायरी में दर्ज करें, अगली परत से ढकने से पहले उसका परीक्षण करें, जो पास हुआ उसे मापें, और केवल उसी का बिल बनाएँ।",
   }
 } as { translation: Record<string, string> };
 

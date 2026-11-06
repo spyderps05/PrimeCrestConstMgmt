@@ -61675,6 +61675,14 @@ const resource = {
     "measurement_book.tab_bill": "চলতি বিল",
     "measurement_book.empty_title": "এখনও কোনো BOQ অবস্থান নেই",
     "measurement_book.empty_desc": "প্রথমে পরিমাণ-তালিকায় অবস্থান যোগ করুন, তারপর এখানে পরিমাপ করুন।",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "পাঞ্জাব রেট বুক অনুযায়ী লাহোরের একটি বাড়ির দাম নির্ধারণ",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "নকশা থেকে দশ মারলার একটি বাড়ির পরিমাণ নিন, পাঞ্জাব রেট বুক অনুযায়ী PKR-এ বিল তৈরি করুন, গ্রে স্ট্রাকচার ও ফিনিশিং আলাদা রাখুন এবং ক্লায়েন্ট দেখার আগে বিলটি যাচাই করুন।",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "PPRA নিয়ম অনুযায়ী একটি বেসিক হেলথ ইউনিটের টেন্ডার",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "ইঞ্জিনিয়ারের প্রাক্কলন তৈরি করুন, প্রতিটি দরদাতাকে একই বিল দিন, দরপত্র খুলে প্রাক্কলনের সঙ্গে তুলনা করুন এবং অভিযোগের মুখেও টিকে থাকে এমনভাবে কার্যাদেশ নথিভুক্ত করুন।",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "করাচির একটি স্কুলের বিল এবং উৎসে কর কর্তন",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "এই সময়ে সম্পন্ন কাজ পরিমাপ করুন, তা চলতি বিলে রূপান্তর করুন, উৎসে কর্তিত আয়কর ও বিক্রয় কর দেখান এবং চুক্তি অনুযায়ী পেমেন্টের সময় নজরে রাখুন।",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "জেলা সড়ককে তার পরিমাপ ও পরীক্ষা অনুযায়ী রাখা",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "সাইট ডায়েরিতে সড়কের প্রতিটি স্তর লিখুন, পরের স্তর ঢাকার আগে তা পরীক্ষা করুন, যা উত্তীর্ণ হয়েছে তা পরিমাপ করুন এবং কেবল সেটুকুরই বিল করুন।",
   }
 } as { translation: Record<string, string> };
 

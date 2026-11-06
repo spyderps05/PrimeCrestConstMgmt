@@ -62627,6 +62627,14 @@ const resource = {
     "measurement_book.tab_bill": "Conto corrente",
     "measurement_book.empty_title": "Nessuna voce del computo ancora",
     "measurement_book.empty_desc": "Aggiungete prima le voci al computo metrico, poi misuratele qui.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Stimare una casa a Lahore con il prezzario del Punjab",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Computa una casa da dieci marla dai disegni, costruisci il computo metrico estimativo sul prezzario del Punjab in PKR, separa il rustico dalle finiture e controllalo prima che lo veda il committente.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Bandire la gara per un'Unità sanitaria di base secondo le regole PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Prepara la stima dell'ingegnere, consegna lo stesso computo a ogni offerente, apri e confronta le offerte con la stima e documenta l'aggiudicazione perché regga a un ricorso.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Fatturare una scuola a Karachi e trattenere la ritenuta alla fonte",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Misura i lavori eseguiti nel periodo, trasformali in uno stato di avanzamento, mostra l'imposta sul reddito e l'imposta sulle vendite trattenute alla fonte e segui la scadenza di pagamento prevista dal contratto.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Tenere una strada distrettuale alle sue misure e prove",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Registra ogni strato della strada nel giornale dei lavori, provalo prima che lo strato successivo lo copra, misura ciò che ha superato la prova e fattura solo quello.",
   }
 } as { translation: Record<string, string> };
 

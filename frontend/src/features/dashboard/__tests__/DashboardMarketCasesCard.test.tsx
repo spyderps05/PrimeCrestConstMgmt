@@ -183,6 +183,27 @@ describe('DashboardMarketCasesCard, the market it leads with', () => {
     expect(screen.getByRole('button', { name: allCasesLabel('DE') })).toBeTruthy();
   });
 
+  it('leads a reader on the Pakistan pack with the Pakistan cases', async () => {
+    packs.current = applied('pakistan-pk', 'pk', 'Pakistan');
+    await renderCard();
+
+    expect(card().getAttribute('data-market')).toBe('PK');
+    expect(card().getAttribute('data-source')).toBe('pack');
+    expect(new Set(tileMarkets())).toEqual(new Set(['PK']));
+  });
+
+  it('never opens on the German cases for a reader nothing places', async () => {
+    // Japanese names no market with cases and no pack is applied. The card
+    // used to open on the largest market, Germany; it now opens on an
+    // English-language one and claims nothing about the reader.
+    language.tag = 'ja';
+    await renderCard();
+
+    expect(card().getAttribute('data-market')).not.toBe('DE');
+    expect(card().getAttribute('data-market')).toBe('PK');
+    expect(tileMarkets()).not.toContain('DE');
+  });
+
   it('lets the pack a reader applied outrank the language they read in', async () => {
     // The shape this is for: a German-speaking estimator working on a US job.
     // Switching a pack on is a plainer statement about where someone works

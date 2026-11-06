@@ -62337,6 +62337,14 @@ const resource = {
     "measurement_book.tab_bill": "Joriy hisob",
     "measurement_book.empty_title": "Hali BOQ pozitsiyalari yoʻq",
     "measurement_book.empty_desc": "Avval miqdorlar roʻyxatiga pozitsiyalar qoʻshing, soʻng ularni shu yerda oʻlchang.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Lahordagi uyni Panjob narxlar kitobi bo'yicha baholash",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Chizmalardan o'n marlalik uyning hajmlarini hisoblang, Panjob narxlar kitobi bo'yicha PKRda smeta tuzing, karkas va pardozlash ishlarini alohida saqlang va buyurtmachi ko'rishidan oldin smetani tekshiring.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "PPRA qoidalari bo'yicha asosiy tibbiyot punktiga tender",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Muhandislik smetasini tayyorlang, har bir ishtirokchiga bir xil hajmlar ro'yxatini bering, takliflarni ochib smeta bilan solishtiring va g'olibni shikoyatga bardosh beradigan qilib hujjatlashtiring.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Karachidagi maktabga hisob yozish va manbada ushlanadigan soliqni chegirish",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Davr mobaynida bajarilgan ishni o'lchang, uni oraliq hisobga aylantiring, manbada ushlangan daromad solig'i va savdo solig'ini ko'rsating hamda shartnomada belgilangan to'lov muddatini kuzating.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Tuman yo'lini o'lchovlari va sinovlariga muvofiq yuritish",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Yo'lning har bir qatlamini qurilish jurnaliga yozing, keyingi qatlam yopmasdan oldin sinang, sinovdan o'tganini o'lchang va faqat shunga hisob yozing.",
   }
 } as { translation: Record<string, string> };
 

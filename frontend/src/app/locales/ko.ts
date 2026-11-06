@@ -61771,6 +61771,14 @@ const resource = {
     "measurement_book.tab_bill": "누계 내역",
     "measurement_book.empty_title": "아직 내역서 항목이 없습니다",
     "measurement_book.empty_desc": "먼저 내역서에 항목을 추가한 뒤 여기서 측정하십시오.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "펀자브 단가표로 라호르 주택 공사비 산정하기",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "도면에서 10마를라 주택의 물량을 산출하고, 펀자브 단가표로 PKR 내역서를 작성하며, 골조와 마감을 분리하고, 발주자가 보기 전에 내역서를 검토합니다.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "PPRA 규정에 따른 기초보건소 입찰",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "엔지니어 예정가격을 작성하고, 모든 입찰자에게 같은 내역서를 배포하며, 입찰서를 개찰해 예정가격과 비교하고, 이의 제기에도 견딜 수 있도록 낙찰을 기록합니다.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "카라치 학교 기성 청구와 원천징수세 공제",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "이번 기간의 기성을 측정해 기성 청구서로 만들고, 원천징수되는 소득세와 판매세를 표시하며, 계약상 지급 기한을 관리합니다.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "지방 도로를 측정과 시험 기준대로 관리하기",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "도로의 각 층을 공사일지에 기록하고, 다음 층이 덮기 전에 시험하며, 합격한 부분을 측정해 그만큼만 청구합니다.",
   }
 } as { translation: Record<string, string> };
 

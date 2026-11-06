@@ -63624,6 +63624,14 @@ const resource = {
     "measurement_book.tab_bill": "累计账单",
     "measurement_book.empty_title": "暂无清单项",
     "measurement_book.empty_desc": "请先在工程量清单中添加清单项，再在此处计量。",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "按旁遮普定额手册为拉合尔住宅计价",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "根据图纸计算一栋十马拉住宅的工程量，按旁遮普定额手册以巴基斯坦卢比编制工程量清单，将主体结构与装修分开，并在业主看到之前审核清单。",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "按 PPRA 规则为基层卫生站招标",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "编制工程师概算，向每位投标人发放同一份清单，开标后将各投标与概算比较，并记录中标理由，使其经得起投诉。",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "为卡拉奇的学校计量请款并扣除预扣税",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "计量本期完成的工程，编制进度款请款单，列明源头预扣的所得税和销售税，并跟踪合同允许的付款期限。",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "按计量与试验管理一条区级道路",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "在施工日志中记录道路的每一层，在下一层覆盖之前进行试验，计量合格部分，并只对合格部分请款。",
   }
 } as { translation: Record<string, string> };
 

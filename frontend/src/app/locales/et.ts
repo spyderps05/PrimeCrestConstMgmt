@@ -61355,6 +61355,14 @@ const resource = {
     "measurement_book.tab_bill": "Jooksev arve",
     "measurement_book.empty_title": "BOQ positsioone veel pole",
     "measurement_book.empty_desc": "Lisage kõigepealt positsioonid kogusteatesse ja mõõtke need siis siin.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Lahore maja hinnastamine Punjabi hinnaraamatu järgi",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Mõõda joonistelt kümne marla suurune maja, koosta mahuloend Punjabi hinnaraamatu järgi PKR-ides, hoia karkass ja viimistlus lahus ning kontrolli loend enne, kui klient seda näeb.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Esmatasandi tervisekeskuse hange PPRA reeglite järgi",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Koosta inseneri eelarve, anna igale pakkujale sama mahuloend, ava ja võrdle pakkumisi eelarvega ning dokumenteeri hankeotsus nii, et see peab vastu kaebusele.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Karachi kooli arveldamine ja kinnipeetava maksu mahaarvamine",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Mõõda perioodil tehtud töö, tee sellest jooksev arve, näita allikal kinnipeetud tulumaksu ja müügimaksu ning jälgi lepingus lubatud maksetähtaega.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Maakonnatee hoidmine mõõtmiste ja katsete järgi",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Kanna tee iga kiht ehituspäevikusse, katseta seda enne, kui järgmine kiht selle katab, mõõda läbinud osa ja esita arve ainult selle eest.",
   }
 } as { translation: Record<string, string> };
 

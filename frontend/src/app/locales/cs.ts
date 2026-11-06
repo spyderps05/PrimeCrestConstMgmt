@@ -62696,6 +62696,14 @@ const resource = {
     "measurement_book.tab_bill": "Průběžný účet",
     "measurement_book.empty_title": "Zatím žádné pozice BOQ",
     "measurement_book.empty_desc": "Nejdřív přidejte pozice do soupisu prací a pak je zde změřte.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Ocenění domu v Láhauru podle sazebníku Paňdžábu",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Vyměřte z výkresů dům o deseti marlách, sestavte rozpočet podle sazebníku Paňdžábu v PKR, oddělte hrubou stavbu od dokončovacích prací a rozpočet zkontrolujte dřív, než jej uvidí klient.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Zadání zakázky na základní zdravotní středisko podle pravidel PPRA",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Připravte rozpočet zadavatele, vydejte všem uchazečům stejný výkaz výměr, otevřete a porovnejte nabídky s rozpočtem a zdokumentujte zadání tak, aby obstálo při námitce.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Fakturace školy v Karáčí se srážkovou daní",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Změřte práce provedené v tomto období, převeďte je do průběžné faktury, uveďte daň z příjmu a daň z prodeje sraženou u zdroje a sledujte splatnost, kterou smlouva umožňuje.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Okresní silnice podle jejích měření a zkoušek",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Zapisujte každou vrstvu silnice do stavebního deníku, vyzkoušejte ji dřív, než ji zakryje další vrstva, změřte, co zkouškou prošlo, a fakturujte jen to.",
   }
 } as { translation: Record<string, string> };
 

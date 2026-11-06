@@ -61522,6 +61522,14 @@ const resource = {
     "measurement_book.tab_bill": "Учурдагы эсеп",
     "measurement_book.empty_title": "Азырынча BOQ позициялары жок",
     "measurement_book.empty_desc": "Адегенде көлөм ведомосуна позицияларды кошуп, андан кийин бул жерде өлчөңүз.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Лахордогу үйдү Пенджаб баа китеби боюнча баалоо",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Чиймелерден он марлалык үйдүн көлөмдөрүн эсептеп, Пенджаб баа китеби боюнча PKR менен смета түзүңүз, каркас менен жасалганы бөлөк кармаңыз жана заказчы көрө электе текшериңиз.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "PPRA эрежелери боюнча негизги медициналык пунктка тендер",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Инженердик сметаны даярдап, ар бир катышуучуга бирдей көлөмдөр тизмесин бериңиз, сунуштарды ачып, смета менен салыштырыңыз жана даттанууга туруштук бере тургандай кылып жеңүүчүнү документтештириңиз.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Карачидеги мектепке эсеп жазуу жана булактан кармалуучу салыкты кемитүү",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Ушул мезгилде аткарылган ишти өлчөп, аралык эсепке айлантыңыз, булактан кармалган киреше салыгын жана сатуу салыгын көрсөтүңүз жана келишимде уруксат берилген төлөм мөөнөтүн көзөмөлдөңүз.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Райондук жолду өлчөөлөрү жана сыноолору боюнча кармоо",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Жолдун ар бир катмарын курулуш журналына жазыңыз, кийинки катмар жаба электе сынаңыз, сыноодон өткөнүн өлчөңүз жана ошого гана эсеп жазыңыз.",
   }
 } as { translation: Record<string, string> };
 

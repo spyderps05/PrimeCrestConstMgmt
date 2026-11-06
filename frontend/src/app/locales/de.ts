@@ -64042,6 +64042,14 @@ const resource = {
     "measurement_book.tab_bill": "Laufende Abrechnung",
     "measurement_book.empty_title": "Noch keine Positionen im Leistungsverzeichnis",
     "measurement_book.empty_desc": "Legen Sie zuerst Positionen im Leistungsverzeichnis an, messen Sie sie dann hier auf.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Ein Haus in Lahore nach dem Punjab-Preisbuch kalkulieren",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Ein Haus mit zehn Marla aus den Plänen aufmessen, das Leistungsverzeichnis nach dem Punjab-Preisbuch in PKR aufbauen, Rohbau und Ausbau trennen und das LV prüfen, bevor der Bauherr es sieht.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Eine Basisgesundheitsstation nach den PPRA-Regeln ausschreiben",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Die Kostenschätzung des Ingenieurs aufstellen, allen Bietern dasselbe LV ausgeben, die Angebote öffnen und mit der Schätzung vergleichen und die Vergabe so dokumentieren, dass sie einer Beschwerde standhält.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Eine Schule in Karachi abrechnen und Quellensteuer abziehen",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Die Leistung des Zeitraums aufmessen, daraus eine Abschlagsrechnung machen, die an der Quelle einbehaltene Einkommen- und Umsatzsteuer ausweisen und die vertragliche Zahlungsfrist verfolgen.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Eine Bezirksstraße nach Aufmaß und Prüfungen führen",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Jede Schicht der Straße im Bautagebuch erfassen, sie prüfen, bevor die nächste Schicht sie überdeckt, das Bestandene aufmessen und nur das abrechnen.",
   }
 } as { translation: Record<string, string> };
 

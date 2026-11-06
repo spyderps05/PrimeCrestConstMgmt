@@ -61409,6 +61409,14 @@ const resource = {
     "measurement_book.tab_bill": "Juokseva lasku",
     "measurement_book.empty_title": "Ei vielä BOQ-kohtia",
     "measurement_book.empty_desc": "Lisää ensin kohdat määräluetteloon ja mittaa ne sitten täällä.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Lahoressa sijaitsevan talon hinnoittelu Punjabin hintakirjalla",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Mittaa kymmenen marlan talo piirustuksista, laadi määräluettelo Punjabin hintakirjalla PKR:nä, pidä runko ja viimeistely erillään ja tarkista luettelo ennen kuin asiakas näkee sen.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Perusterveysyksikön tarjouskilpailu PPRA-sääntöjen mukaan",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Laadi insinöörin kustannusarvio, anna kaikille tarjoajille sama määräluettelo, avaa ja vertaa tarjouksia arvioon ja kirjaa hankintapäätös niin, että se kestää valituksen.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Karachilaisen koulun laskutus ja lähdeveron vähennys",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Mittaa jakson aikana tehty työ, tee siitä juokseva lasku, näytä lähteellä pidätetty tulovero ja myyntivero ja seuraa sopimuksen mukaista maksupäivää.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Piiritien pitäminen mittaustensa ja kokeidensa mukaisena",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Kirjaa tien jokainen kerros työmaapäiväkirjaan, testaa se ennen kuin seuraava kerros peittää sen, mittaa hyväksytty osa ja laskuta vain se.",
   }
 } as { translation: Record<string, string> };
 

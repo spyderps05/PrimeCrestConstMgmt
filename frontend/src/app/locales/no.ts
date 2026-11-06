@@ -61405,6 +61405,14 @@ const resource = {
     "measurement_book.tab_bill": "Løpende regning",
     "measurement_book.empty_title": "Ingen BOQ-poster ennå",
     "measurement_book.empty_desc": "Legg først inn poster i en mengdeoversikt, og mål dem så her.",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "Prissett et hus i Lahore etter Punjabs prisbok",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "Mengdeberegn et hus på ti marla fra tegningene, bygg mengdelisten på Punjabs prisbok i PKR, hold råbygg og innredning atskilt, og kontroller listen før kunden ser den.",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "Lys ut en grunnleggende helseenhet etter PPRA-reglene",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "Utarbeid ingeniørens kalkyle, gi alle tilbydere den samme mengdelisten, åpne og sammenlign tilbudene med kalkylen, og dokumenter tildelingen slik at den tåler en klage.",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "Fakturer en skole i Karachi og trekk kildeskatt",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "Mål opp arbeidet utført i perioden, gjør det om til en avdragsfaktura, vis inntektsskatten og omsetningsavgiften som holdes tilbake ved kilden, og følg betalingsfristen kontrakten gir.",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "Hold en distriktsvei til målingene og prøvene sine",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "Før hvert lag av veien i byggedagboken, test det før neste lag dekker det, mål opp det som ble godkjent, og fakturer bare det.",
   }
 } as { translation: Record<string, string> };
 

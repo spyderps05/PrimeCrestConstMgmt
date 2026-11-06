@@ -62687,6 +62687,14 @@ const resource = {
     "measurement_book.tab_bill": "出来高累計",
     "measurement_book.empty_title": "内訳書の項目がまだありません",
     "measurement_book.empty_desc": "先に内訳書に項目を追加し、ここで計測してください。",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.title": "パンジャブ単価表でラホールの住宅を積算する",
+    "cases.price_a_lahore_house_on_the_punjab_rate_book.desc": "図面から10マルラの住宅を数量拾いし、パンジャブ単価表でPKR建ての内訳書を作成し、躯体と仕上げを分け、施主に見せる前に内訳書を確認します。",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.title": "PPRA規則に従って基礎保健ユニットを入札にかける",
+    "cases.tender_a_basic_health_unit_under_the_ppra_rules.desc": "技術者の予定価格を作成し、全入札者に同じ数量書を配布し、入札を開封して予定価格と比較し、異議申し立てに耐えられるよう落札を記録します。",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.title": "カラチの学校を請求し源泉徴収税を控除する",
+    "cases.bill_a_karachi_school_and_deduct_withholding_tax.desc": "今期の出来高を測定して出来高請求書にし、源泉で徴収される所得税と売上税を示し、契約で認められた支払期日を管理します。",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.title": "地方道路を出来形と試験に基づいて管理する",
+    "cases.keep_a_district_road_to_its_measurements_and_tests.desc": "道路の各層を工事日誌に記録し、次の層で覆われる前に試験し、合格した部分を測定して、その分だけを請求します。",
   }
 } as { translation: Record<string, string> };
 
