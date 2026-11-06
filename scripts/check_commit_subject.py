@@ -24,7 +24,7 @@ Two rules, deliberately scoped differently:
     project style, but 2094 existing messages use one, so a scan of history
     would report a decision nobody has taken rather than a defect.
 
-Three ways to run it, matching check_commit_trailers.py:
+Three ways to run it:
 
     python scripts/check_commit_subject.py                # all commits from HEAD (CI)
     python scripts/check_commit_subject.py --range A..B   # a revision range
@@ -129,8 +129,8 @@ def _dash_reasons(message: str) -> list[str]:
 def _commits(rev_range: str | None) -> list[tuple[str, str]]:
     """Return ``(sha, message)`` for each commit, framed by git's own escapes.
 
-    Same framing as check_commit_trailers.py: %x1f / %x00 keep a NUL byte off the
-    command line, which Windows forbids, and git expands them in its output.
+    %x1f / %x00 keep a NUL byte off the command line, which Windows forbids,
+    and git expands them in its output.
     """
     cmd = ["git", "log", "--format=%H%x1f%B%x00"]
     if rev_range:

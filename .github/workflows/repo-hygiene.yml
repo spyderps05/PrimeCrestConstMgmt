@@ -1,6 +1,6 @@
 # Repo hygiene gate.
 #
-# Guards: 87. They run on every push and pull request, grouped into three
+# Guards: 86. They run on every push and pull request, grouped into three
 # jobs. A guard is a named step that is not a tooling install, and that rule is
 # not a matter of taste: it is the one that reproduces both counts this header
 # carried when it was written on 2026-08-24 - twenty-one guards, over jobs of
@@ -1401,14 +1401,9 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Scan commit messages for AI attribution trailers
-        if: ${{ !cancelled() }}
-        run: python scripts/check_commit_trailers.py
-
-      # Not a duplicate of the step above. These two scripts are the pair the
-      # local .git/hooks/commit-msg shim runs, and until this step existed only
-      # one of them had a second home: check_commit_trailers.py ran here,
-      # check_commit_subject.py ran in none of the twenty workflows. Measured
+      # The local .git/hooks/commit-msg shim runs this script, and until this
+      # step existed it had no second home: check_commit_subject.py ran in none
+      # of the twenty workflows. Measured
       # 2026-08-30, it was the only one of the twenty-five scripts named in
       # .pre-commit-config.yaml with no executor anywhere.
       #
@@ -1420,8 +1415,7 @@ jobs:
       # going red, because there was nothing anywhere to go red.
       #
       # Population: no argument, so the script reads every commit reachable from
-      # HEAD, which is why the job checks out at fetch-depth 0. That is the same
-      # population the trailers step above scans. It is 5027 commits today and
+      # HEAD, which is why the job checks out at fetch-depth 0. It is 5027 commits today and
       # green. Twelve published commits carry the artefact already, one of them
       # the v14.6.0 tag, and the script exempts those by sha; a thirteenth is a
       # failure. Only the shell-artefact rule applies in this mode. The long-dash

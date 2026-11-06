@@ -2,15 +2,17 @@
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 """​‌‍⁠​‌‍⁠​‌‍⁠​‌‍⁠The hook config and the lanes may diverge, but only on purpose.
 
-``.pre-commit-config.yaml`` declares 39 hooks and exactly two of them run when
-you commit here. Thirty-five sit at the default pre-commit stage and none of
+``.pre-commit-config.yaml`` declares 51 hooks and at most one of them runs when
+you commit here. Forty-eight sit at the default pre-commit stage and none of
 those run at all, because there is no ``.git/hooks/pre-commit``. One more,
 ``conventional-pre-commit``, is staged for commit-msg and does not run either.
-One is manual by declaration. The two that run are ``check_commit_subject.py``
-and ``check_commit_trailers.py``, and they run because a hand-written
-``commit-msg`` shim calls the scripts directly rather than through pre-commit.
-The shim says so itself, and it exists because twelve commits once shipped with
-a shell fragment as their subject.
+One is manual by declaration. The one that can run is
+``check_commit_subject.py``, because a hand-written ``commit-msg`` shim calls
+the script directly rather than through pre-commit. The shim says so itself,
+and it exists because twelve commits once shipped with a shell fragment as their
+subject. (A second commit-msg guard, ``check_commit_trailers.py``, rejected AI
+co-author trailers; it was removed on 2026-11-06 together with its hook and its
+workflow step, because the owner's commits now carry such a trailer.)
 
 An earlier version of this docstring said 38 and thirty-four. Both were wrong,
 and nothing had changed in the config: the count was simply taken badly. The
@@ -19,7 +21,7 @@ numbers above come from ``yaml.safe_load`` over the file and from reading
 can answer this, since a declaration and an executable are two artefacts.
 
 That is survivable, and measurably so. Every script named by a local hook is
-also invoked by at least one workflow, 26 of 26, so nothing is guarded by the
+also invoked by at least one workflow, so nothing is guarded by the
 config alone. The traffic runs the other way. Twenty ``check_*.py`` scripts are
 invoked by a workflow and declared by no hook, and they arrived one at a time,
 by nobody adding the second half rather than by anyone deciding the second half
