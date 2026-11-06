@@ -102,45 +102,45 @@ function featureScene(s, found) {
     #root { position: absolute; inset: 0; font-family: Inter, sans-serif; }
     #root .persona { position: absolute; left: 0; top: 0; width: ${WIN.x - 40}px; height: ${winY + winH}px;
       display: flex; align-items: center; justify-content: center; }
-    #root .persona span { display: block; transform: rotate(-90deg); white-space: nowrap; color: #F2A900;
+    #root .persona span { display: block; transform: rotate(-90deg); white-space: nowrap; color: #E08A55;
       font-family: "Archivo Black", sans-serif; font-size: 56px; letter-spacing: 0.04em; }
-    #root .slam { position: absolute; left: 0; top: 330px; width: 1920px; text-align: center; color: #F2A900;
+    #root .slam { position: absolute; left: 0; top: 330px; width: 1920px; text-align: center; color: #E08A55;
       font-family: "Archivo Black", sans-serif; font-size: 170px; line-height: 1; letter-spacing: -0.01em; }
     #root .slam small { display: block; color: #FFFFFF; font-family: Inter, sans-serif; font-weight: 700;
       font-size: 34px; letter-spacing: 0.3em; margin-bottom: 18px; }
     #root .win { position: absolute; left: ${winX}px; top: ${winY}px; width: ${winW}px; height: ${winH}px;
-      border-radius: ${phone ? 46 : 14}px; overflow: hidden; background: ${phone ? "#05101F" : "#13315C"};
+      border-radius: ${phone ? 46 : 14}px; overflow: hidden; background: ${phone ? "#0C161E" : "#1A3344"};
       box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45); ${phone ? "padding: 12px;" : ""} }
-    #root .chrome { height: ${WIN.chrome}px; display: flex; align-items: center; gap: 9px; padding: 0 18px; background: #13315C; }
-    #root .chrome b { width: 13px; height: 13px; border-radius: 50%; background: #3E5C86; }
-    #root .chrome .url { margin-left: 18px; flex: 1; max-width: 760px; height: 26px; border-radius: 6px; background: #0B2545;
-      color: #C9D6E8; font-size: 16px; line-height: 26px; padding: 0 12px; white-space: nowrap; overflow: hidden; }
-    #root .notch { position: absolute; left: 50%; top: 20px; width: 110px; height: 26px; margin-left: -55px; border-radius: 13px; background: #05101F; z-index: 3; }
-    #root .body { position: relative; width: 100%; height: ${bodyH}px; overflow: hidden; background: #EEF1F5;
+    #root .chrome { height: ${WIN.chrome}px; display: flex; align-items: center; gap: 9px; padding: 0 18px; background: #1A3344; }
+    #root .chrome b { width: 13px; height: 13px; border-radius: 50%; background: #4E6575; }
+    #root .chrome .url { margin-left: 18px; flex: 1; max-width: 760px; height: 26px; border-radius: 6px; background: #12202B;
+      color: #C9D1D6; font-size: 16px; line-height: 26px; padding: 0 12px; white-space: nowrap; overflow: hidden; }
+    #root .notch { position: absolute; left: 50%; top: 20px; width: 110px; height: 26px; margin-left: -55px; border-radius: 13px; background: #0C161E; z-index: 3; }
+    #root .body { position: relative; width: 100%; height: ${bodyH}px; overflow: hidden; background: #F6F3EE;
       ${phone ? "border-radius: 36px;" : ""} }
     #root .cam { position: absolute; inset: 0; transform-origin: ${fx * 100}% ${fy * 100}%; }
     #root .media { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
     #root .callout { position: absolute; left: ${r2(bx * 100)}%; top: ${r2(by * 100)}%; width: ${r2(bw * 100)}%; height: ${r2(bh * 100)}%;
-      border: 5px solid #F2A900; border-radius: 10px; box-shadow: 0 0 0 4000px rgba(11, 37, 69, 0.18); }
+      border: 5px solid #C4622D; border-radius: 10px; box-shadow: 0 0 0 4000px rgba(18, 32, 43, 0.18); }
     #root .tag { position: absolute; left: ${winX + winW - 24}px; top: ${winY + (phone ? 40 : WIN.chrome + 22)}px; transform-origin: 100% 50%;
-      background: #F2A900; color: #0B2545; font-weight: 800; font-size: 28px; padding: 12px 22px; border-radius: 6px; white-space: nowrap; }
+      background: #C4622D; color: #F6F3EE; font-weight: 800; font-size: 28px; padding: 12px 22px; border-radius: 6px; white-space: nowrap; }
     #root .tag-in { display: block; }
-    #root .wipe { position: absolute; left: 0; top: ${winY - 20}px; width: 150px; height: ${winH + 40}px; background: #F2A900; opacity: 0; }
-    #root .fb { position: absolute; inset: 0; display: flex; background: #EEF1F5; }
-    #root .fb-side { width: 230px; background: #DDE3EB; padding: 28px 22px; display: flex; flex-direction: column; gap: 18px; }
-    #root .fb-side i { display: block; height: 16px; border-radius: 8px; background: #C3CCD8; }
-    #root .fb-side i:first-child { height: 30px; background: #0B2545; opacity: 0.25; margin-bottom: 14px; }
+    #root .wipe { position: absolute; left: 0; top: ${winY - 20}px; width: 150px; height: ${winH + 40}px; background: #C4622D; opacity: 0; }
+    #root .fb { position: absolute; inset: 0; display: flex; background: #F6F3EE; }
+    #root .fb-side { width: 230px; background: #E4DDD4; padding: 28px 22px; display: flex; flex-direction: column; gap: 18px; }
+    #root .fb-side i { display: block; height: 16px; border-radius: 8px; background: #CFC6BA; }
+    #root .fb-side i:first-child { height: 30px; background: #12202B; opacity: 0.25; margin-bottom: 14px; }
     #root .fb-main { position: relative; flex: 1; padding: 34px 40px; }
     #root .fb-skel { display: flex; flex-direction: column; gap: 22px; opacity: 0.6; }
-    #root .fb-skel i { display: block; height: 58px; border-radius: 10px; background: #DDE3EB; }
+    #root .fb-skel i { display: block; height: 58px; border-radius: 10px; background: #E4DDD4; }
     #root .fb-skel i:first-child { height: 34px; width: 46%; }
     #root .fb-card { position: absolute; left: 70px; right: 70px; top: 50%; transform: translateY(-50%);
-      background: #FFFFFF; border-left: 10px solid #F2A900; border-radius: 12px; padding: 36px 44px;
-      box-shadow: 0 16px 40px rgba(11, 37, 69, 0.14); color: #0B2545; }
-    #root .fb-k { font-weight: 800; font-size: 22px; letter-spacing: 0.14em; color: #8A6400; }
+      background: #FFFFFF; border-left: 10px solid #C4622D; border-radius: 12px; padding: 36px 44px;
+      box-shadow: 0 16px 40px rgba(18, 32, 43, 0.14); color: #12202B; }
+    #root .fb-k { font-weight: 800; font-size: 22px; letter-spacing: 0.14em; color: #8F431C; }
     #root .fb-file { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 40px; margin-top: 14px; word-break: break-all; }
-    #root .fb-route { font-family: "JetBrains Mono", monospace; font-size: 26px; margin-top: 10px; color: #3E5C86; }
-    #root .fb-show { font-size: 26px; line-height: 1.35; margin-top: 18px; color: #22344F; }
+    #root .fb-route { font-family: "JetBrains Mono", monospace; font-size: 26px; margin-top: 10px; color: #4E6575; }
+    #root .fb-show { font-size: 26px; line-height: 1.35; margin-top: 18px; color: #2A3640; }
     #root .fb-phone .fb-main { padding: 70px 22px 22px; }
     #root .fb-phone .fb-card { left: 18px; right: 18px; padding: 24px 22px; }
     #root .fb-phone .fb-k { font-size: 16px; letter-spacing: 0.08em; }
@@ -174,7 +174,7 @@ function featureScene(s, found) {
       tl.fromTo(q("persona-t"), { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 1.0);`
           : `tl.fromTo(q("persona-t"), { opacity: 1 }, { opacity: 1, duration: 0.01 }, 0);`
       }
-      // amber slab sweeps across, the window is revealed behind its trailing edge
+      // copper slab sweeps across, the window is revealed behind its trailing edge
       tl.fromTo(q("wipe"), { x: ${winX - 160} }, { x: ${winX + winW + 20}, duration: 0.5, ease: "power3.inOut" }, t0);
       tl.fromTo(q("win"), { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.5, ease: "power3.inOut" }, t0);
       tl.set(q("wipe"), { opacity: 1 }, t0);
@@ -227,9 +227,9 @@ function captionsComp(total, groups) {
     #root { position: absolute; inset: 0; pointer-events: none; }
     #root .cap { position: absolute; left: 0; top: 898px; width: 1920px; text-align: center; overflow: visible; }
     #root .cap-in { display: block; font-family: "Archivo Black", sans-serif; font-size: 62px; line-height: 1.1;
-      color: #FFFFFF; letter-spacing: -0.005em; text-shadow: 0 4px 0 rgba(5, 16, 31, 0.55); }
+      color: #FFFFFF; letter-spacing: -0.005em; text-shadow: 0 4px 0 rgba(12, 22, 30, 0.55); }
     #root .w { display: inline-block; }
-    #root .acc { color: #F2A900; }
+    #root .acc { color: #E08A55; }
   </style>
   <div id="root" data-composition-id="captions" data-width="${W}" data-height="${H}">
 ${items}
@@ -257,12 +257,12 @@ function indexHtml(total, hosts) {
     <title>PrimeCrest Construction Management - product demo</title>
     ${GSAP}
     <style>
-      :root { --navy: #0B2545; --amber: #F2A900; --ink: #FFFFFF; }
+      :root { --ground: #12202B; --accent: #E08A55; --ink: #FFFFFF; }
       * { margin: 0; padding: 0; box-sizing: border-box; }
-      html, body { margin: 0; width: ${W}px; height: ${H}px; overflow: hidden; background: var(--navy); }
+      html, body { margin: 0; width: ${W}px; height: ${H}px; overflow: hidden; background: var(--ground); }
       #root { position: relative; width: 100%; height: 100%; font-family: Inter, sans-serif; }
-      /* blueprint ground: navy with a faint 48 px drafting grid */
-      #bg { position: absolute; inset: 0; background-color: var(--navy);
+      /* blueprint ground: ink with a faint 48 px drafting grid */
+      #bg { position: absolute; inset: 0; background-color: var(--ground);
         background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
           linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
         background-size: 48px 48px; }

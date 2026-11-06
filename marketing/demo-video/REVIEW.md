@@ -3,7 +3,7 @@
 ## Creative calls
 - The tour is organised by persona: Owner, PM, QS, Site, Procurement and Accounts, then Anywhere. Each section opens with a 1 s role "slam" and keeps the role name as a vertical label in the left gutter, so the viewer always knows whose day this scene belongs to.
 - The hook is drawn, not captured. It has three beats on the bar lines: a budget overrun (Rs 4.0 Cr becomes Rs 5.6 Cr, stamped "+40%"), a pile of paper forms (DPR, IPC, MB, PO, RFI, BOQ, GRN), and a site WhatsApp-style group flooding with Urdu/English messages. The chat is generic, with no WhatsApp logo or branding.
-- One reusable feature-scene template: the amber wipe reveals the window, the camera pushes slowly toward the focus point, an amber callout frames the feature, and an amber tag carries a real demo-pack fact.
+- One reusable feature-scene template: the copper wipe reveals the window, the camera pushes slowly toward the focus point, a copper callout frames the feature, and a copper tag carries a real demo-pack fact.
 - A missing capture shows a clearly labelled "CAPTURE PENDING" card naming the file, route and required state, never an invented dashboard. The callout is hidden until a real capture exists.
 - The music is original and synthesised locally (120 BPM, Am F C G). Every cut sits on a bar line, and the persona sections get a snare fill and a crash.
 
@@ -14,5 +14,5 @@
 
 ## Weakest shots / next steps
 - The fallback cards are stand-ins. The film comes alive once the 19 captures land; then retune `focus` and `box` per scene in `scenes.json` so the callout frames the real control.
-- The brand mark is a drawn peak, used as a placeholder until a real PrimeCrest logo SVG exists.
+- The brand mark is the app's own PC shield (`frontend/src/shared/ui/Logo.tsx`, `assets/brand/primecrest-mark.svg`) inlined as SVG, with the wordmark outlined in Fraunces.
 - The 4 s feature scenes are fast by design. If viewers find them too quick, raise the key scenes to 6 s in `scenes.json`. The film stays on the beat as long as durations stay even.

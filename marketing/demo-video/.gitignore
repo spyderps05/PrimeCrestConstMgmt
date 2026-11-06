@@ -10,6 +10,9 @@ assets/audio/*.wav
 captures/*.mp4
 captures/*.webm
 captures/*.mov
+# The repo root ignores *.png / *.jpg; screenshots in captures/ are film sources, so commit them.
+!captures/*.png
+!captures/*.jpg
 
 node_modules/
 assets/audio/cuts.json

@@ -5,11 +5,11 @@
     /* beat 1: budget vs actual */
     #root .b1 { position: absolute; left: 260px; top: 250px; width: 1400px; }
     #root .row { position: relative; height: 120px; margin-bottom: 70px; }
-    #root .lbl { font-weight: 800; font-size: 34px; letter-spacing: 0.12em; margin-bottom: 14px; color: #C9D6E8; }
+    #root .lbl { font-weight: 800; font-size: 34px; letter-spacing: 0.12em; margin-bottom: 14px; color: #C9D1D6; }
     #root .bar { position: absolute; left: 0; top: 56px; height: 64px; border-radius: 8px; transform-origin: 0 50%; }
-    #root .bar-budget { width: 860px; background: #3E5C86; }
+    #root .bar-budget { width: 860px; background: #4E6575; }
     #root .bar-actual { width: 1240px; background: #E8492F; }
-    #root .bar-actual-ok { width: 860px; background: #F2A900; }
+    #root .bar-actual-ok { width: 860px; background: #E08A55; }
     #root .limit { position: absolute; left: 860px; top: 0px; width: 0; height: 330px; border-left: 5px dashed #FFFFFF; }
     #root .num { position: absolute; right: 0; top: -6px; font-family: "Archivo Black", sans-serif; font-size: 52px; }
     #root .stamp { position: absolute; left: 1010px; top: 300px; font-family: "Archivo Black", sans-serif; font-size: 120px;
@@ -18,7 +18,7 @@
     /* beat 2: paper stack */
     #root .b2 { position: absolute; left: 0; top: 0; width: 1920px; height: 860px; }
     #root .sheet { position: absolute; width: 340px; height: 440px; background: #F7F4EC; border-radius: 6px;
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35); padding: 34px 30px; color: #0B2545; }
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35); padding: 34px 30px; color: #12202B; }
     #root .sheet h4 { font-family: "Archivo Black", sans-serif; font-size: 44px; margin-bottom: 22px; }
     #root .sheet i { display: block; height: 12px; margin-bottom: 18px; background: #CFC8B8; border-radius: 6px; }
     #root .sheet i:nth-child(3n) { width: 70%; }
@@ -28,11 +28,11 @@
     /* beat 3: chat flood */
     #root .b3 { position: absolute; left: 560px; top: 40px; width: 800px; height: 820px; }
     #root .phone { position: absolute; inset: 0; background: #E9E4DC; border-radius: 40px; overflow: hidden;
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5); border: 14px solid #05101F; }
-    #root .bar-top { height: 96px; background: #1F3B57; display: flex; align-items: center; padding: 0 30px; gap: 20px; }
-    #root .av { width: 56px; height: 56px; border-radius: 50%; background: #F2A900; }
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5); border: 14px solid #0C161E; }
+    #root .bar-top { height: 96px; background: #1A3344; display: flex; align-items: center; padding: 0 30px; gap: 20px; }
+    #root .av { width: 56px; height: 56px; border-radius: 50%; background: #C4622D; }
     #root .grp { font-weight: 800; font-size: 30px; color: #FFFFFF; }
-    #root .grp small { display: block; font-weight: 500; font-size: 22px; color: #C9D6E8; }
+    #root .grp small { display: block; font-weight: 500; font-size: 22px; color: #C9D1D6; }
     #root .badge { margin-left: auto; min-width: 92px; height: 52px; border-radius: 26px; background: #E8492F; color: #FFFFFF;
       font-family: "Archivo Black", sans-serif; font-size: 30px; line-height: 52px; text-align: center; padding: 0 14px; }
     #root .feed { position: absolute; left: 0; right: 0; top: 96px; bottom: 0; }
@@ -96,7 +96,7 @@
             tl.fromTo("#hook-bud", { scaleX: 0.35 }, { scaleX: 1, duration: 0.45, ease: "power3.out" }, 0);
       tl.fromTo("#hook-limit", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 0.4);
       tl.fromTo("#hook-act", { scaleX: 0.12 }, { scaleX: 1, duration: 1.1, ease: "power2.in" }, 0.45);
-      tl.fromTo("#hook-act", { backgroundColor: "#F2A900" }, { backgroundColor: "#E8492F", duration: 0.3 }, 1.0);
+      tl.fromTo("#hook-act", { backgroundColor: "#E08A55" }, { backgroundColor: "#E8492F", duration: 0.3 }, 1.0);
       const n = { v: 0 };
       tl.fromTo(n, { v: 0.7 }, { v: 5.6, duration: 1.1, ease: "power2.in",
         onUpdate: () => { const el = document.getElementById("hook-actn"); if (el) el.textContent = "Rs " + n.v.toFixed(1) + " Cr"; } }, 0.45);

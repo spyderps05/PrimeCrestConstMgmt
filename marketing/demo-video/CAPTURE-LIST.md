@@ -10,7 +10,7 @@ The demo film needs these screens. Save each file into `marketing/demo-video/cap
 - **Clean frame:** no dev tools, no toasts, no cookie or onboarding pop-ups, no debug banners, mouse cursor hidden for screenshots, and no personal emails. Log in as a demo user named like "Ahmed Raza (Director)".
 - **Screenshots** are PNG of the viewport only. Do not capture the browser chrome, because the film draws its own.
 - **Recordings** (`.mp4`) are 1920x1080, 30 fps, H.264, yuv420p, 6–8 s, no audio. Use smooth, deliberate cursor moves, keep the first and last 0.5 s still, and hold each result for at least 1 s.
-- **Focus area:** each scene pushes in toward a focus point and frames a region with an amber callout (`focus` and the optional `box` in `scenes.json`, as fractions of the frame). Keep the feature described below inside the middle 60% of the frame. If it sits elsewhere, update `focus` and `box` in `scenes.json` for that scene.
+- **Focus area:** each scene pushes in toward a focus point and frames a region with a copper callout (`focus` and the optional `box` in `scenes.json`, as fractions of the frame). Keep the feature described below inside the middle 60% of the frame. If it sits elsewhere, update `focus` and `box` in `scenes.json` for that scene.
 
 `{lahore-house}` and the like mean the project id of that demo pack. Open the project from `/projects` and copy the id from the URL.
 
@@ -41,4 +41,4 @@ The demo film needs these screens. Save each file into `marketing/demo-video/cap
 ## Optional upgrades
 
 - Any `.png` slot can be supplied as an `.mp4` of the same name for more motion. When both exist, `build.mjs` uses the `.mp4`.
-- A real PrimeCrest logo file (SVG) can replace the drawn peak mark in `compositions/brand.html` and `compositions/cta.html`.
+- `compositions/brand.html` and `compositions/cta.html` carry the real PrimeCrest mark (from `assets/brand/primecrest-mark.svg`).
