@@ -9,6 +9,8 @@
   "match.reason.unit_match": "Die Einheiten sind kompatibel.",
   "match.reason.unit_mismatch": "Die Einheiten unterscheiden sich, das senkt die Konfidenz.",
   "match.reason.unit_unknown": "Die Einheit konnte nicht verglichen werden.",
+  "match.reason.unit_converted": "Die Einheiten unterscheiden sich, lassen sich aber umrechnen; den Preis je Einheit vergleichen.",
+  "match.reason.variant_unwanted": "Dies ist eine Abbruch-, Rückbau- oder Reparaturposition, die die Beschreibung nicht verlangt.",
   "match.hint.empty_query": "Geben Sie eine Material- oder Leistungsbeschreibung ein, um die Kostendatenbank zu durchsuchen.",
   "match.hint.no_candidates": "Für diesen Katalog sind noch keine Kostenpositionen geladen. Laden Sie zuerst eine regionale Kostenbasis.",
   "match.hint.no_good_match": "Kein sicherer Treffer gefunden. Versuchen Sie weniger Wörter, nur den Materialnamen oder die Beschreibung in einer anderen Sprache."

@@ -9,6 +9,8 @@
   "match.reason.unit_match": "Le unità di misura sono compatibili.",
   "match.reason.unit_mismatch": "Le unità di misura differiscono, il che riduce la affidabilità.",
   "match.reason.unit_unknown": "Non è stato possibile confrontare l'unità di misura.",
+  "match.reason.unit_converted": "Units differ but convert into each other; compare the rate per unit.",
+  "match.reason.variant_unwanted": "This is a dismantling, removal or repair item, which the description does not ask for.",
   "match.hint.empty_query": "Inserite la descrizione di un materiale o di una lavorazione per cercare nel database dei costi.",
   "match.hint.no_candidates": "Per questo catalogo non sono ancora caricate voci di costo. Caricate prima una base dei costi regionale.",
   "match.hint.no_good_match": "Nessuna corrispondenza affidabile trovata. Provate con meno parole, solo con il nome del materiale o con la descrizione in un'altra lingua."

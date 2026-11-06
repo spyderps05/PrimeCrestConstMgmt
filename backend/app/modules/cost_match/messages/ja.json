@@ -9,6 +9,8 @@
   "match.reason.unit_match": "単位は互換性があります。",
   "match.reason.unit_mismatch": "単位が異なるため、信頼度が下がります。",
   "match.reason.unit_unknown": "単位を比較できませんでした。",
+  "match.reason.unit_converted": "Units differ but convert into each other; compare the rate per unit.",
+  "match.reason.variant_unwanted": "This is a dismantling, removal or repair item, which the description does not ask for.",
   "match.hint.empty_query": "コストデータベースを検索するため、材料または作業の説明を入力してください。",
   "match.hint.no_candidates": "このカタログにはまだコスト項目が読み込まれていません。先に地域のコスト基準を読み込んでください。",
   "match.hint.no_good_match": "確実な一致が見つかりませんでした。単語を減らす、材料名だけを入力する、または別の言語で説明してみてください。"

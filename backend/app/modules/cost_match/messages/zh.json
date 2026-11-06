@@ -9,6 +9,8 @@
   "match.reason.unit_match": "单位兼容。",
   "match.reason.unit_mismatch": "单位不同，因此置信度降低。",
   "match.reason.unit_unknown": "无法比较单位。",
+  "match.reason.unit_converted": "Units differ but convert into each other; compare the rate per unit.",
+  "match.reason.variant_unwanted": "This is a dismantling, removal or repair item, which the description does not ask for.",
   "match.hint.empty_query": "请输入材料或工作描述，以搜索成本数据库。",
   "match.hint.no_candidates": "该目录尚未加载任何成本项，请先加载区域成本基础数据。",
   "match.hint.no_good_match": "未找到可靠的匹配。请尝试减少词语、仅输入材料名称，或使用其他语言描述。"

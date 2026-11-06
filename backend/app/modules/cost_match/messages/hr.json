@@ -9,6 +9,8 @@
   "match.reason.unit_match": "Jedinice su usklađene.",
   "match.reason.unit_mismatch": "Jedinice se razlikuju, što smanjuje pouzdanost.",
   "match.reason.unit_unknown": "Jedinica se nije mogla usporediti.",
+  "match.reason.unit_converted": "Units differ but convert into each other; compare the rate per unit.",
+  "match.reason.variant_unwanted": "This is a dismantling, removal or repair item, which the description does not ask for.",
   "match.hint.empty_query": "Unesite opis materijala ili radova za pretraživanje baze troškova.",
   "match.hint.no_candidates": "Za ovaj katalog još nisu učitane stavke troškova. Prvo učitajte regionalnu bazu troškova.",
   "match.hint.no_good_match": "Nije pronađeno pouzdano podudaranje. Pokušajte s manje riječi, samo s nazivom materijala ili s opisom na drugom jeziku."

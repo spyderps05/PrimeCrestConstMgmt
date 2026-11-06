@@ -93,6 +93,7 @@ from app.modules.cost_match.validators import (
     merge_reports,
 )
 from app.modules.costs.models import CostItem
+from app.modules.costs.rate_book_ranking import book_region, province_adjustment, province_for_project
 
 logger = logging.getLogger(__name__)
 
@@ -201,14 +202,17 @@ def _localized_description(item: CostItem, locale: str) -> str:
     return item.description or ""
 
 
-def _to_candidate(item: CostItem, locale: str) -> Candidate:
+def _to_candidate(item: CostItem, locale: str, *, province: str | None = None) -> Candidate:
     """Wrap a cost item as a matcher candidate, money untouched.
 
     The rate travels in ``payload`` as the Decimal-string the base stores, so
     it reaches :func:`~matcher.suggestion_rate` without ever passing through a
-    float.
+    float. ``province`` sets the candidate's ordering preference: a row of
+    that province's schedule of rates before the national one, another
+    province's last.
     """
     return Candidate(
+        preference=province_adjustment(book_region(item), province),
         ref=str(item.id),
         text=_localized_description(item, locale),
         unit=item.unit,
@@ -281,6 +285,7 @@ class CostMatchService:
         self.result_repo = MatchResultRepository(session)
         self.decision_repo = MatchDecisionRepository(session)
         self.base_repo = CostBaseRepository(session)
+        self._province_cache: dict[uuid.UUID, str | None] = {}
 
     # ── creating and scoring a run ──────────────────────────────────────
 
@@ -371,6 +376,21 @@ class CostMatchService:
         )
         return run
 
+    async def _province_of(self, run: MatchRun) -> str | None:
+        """The province of the run's project, read once per run."""
+        cache = self._province_cache
+        if run.project_id in cache:
+            return cache[run.project_id]
+        province: str | None = None
+        try:
+            from app.modules.projects.models import Project  # noqa: PLC0415
+
+            province = province_for_project(await self.session.get(Project, run.project_id))
+        except Exception:  # noqa: BLE001 - ranking hint only; scoring works without it
+            logger.debug("cost match: province of project %s not resolved", run.project_id, exc_info=True)
+        cache[run.project_id] = province
+        return province
+
     async def _score_line(
         self,
         *,
@@ -387,12 +407,14 @@ class CostMatchService:
         code never decides the tier on its own - it only widens what the
         matcher gets to look at.
         """
+        province = await self._province_of(run)
         items = await self.base_repo.find_candidates(
             description,
             cost_source=run.cost_source,
             region=run.region,
             catalog_id=run.catalog_id,
             limit=run.candidate_limit,
+            province=province,
         )
         if source_ref:
             coded = await self.base_repo.find_by_code(
@@ -404,7 +426,7 @@ class CostMatchService:
             if coded is not None and all(existing.id != coded.id for existing in items):
                 items = [coded, *items]
 
-        candidates = [_to_candidate(item, run.source_locale) for item in items]
+        candidates = [_to_candidate(item, run.source_locale, province=province) for item in items]
         outcome = best_match(
             description,
             candidates,

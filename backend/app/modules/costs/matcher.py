@@ -39,6 +39,14 @@ from sqlalchemy import case, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.modules.costs.models import CostItem
+from app.modules.costs.rate_book_ranking import (
+    UNIT_ADJUST,
+    VARIANT_PENALTY,
+    book_region,
+    is_unwanted_variant,
+    province_adjustment,
+    unit_relation,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -111,6 +119,18 @@ class _Candidate:
     item: CostItem
     lexical: float = 0.0
     semantic: float = 0.0
+    preference: float = 0.0
+    """Ordering only: the province rule's plus or minus (see :func:`rank_key`)."""
+
+
+def rank_key(score: float, cand: _Candidate) -> tuple[float, str]:
+    """Sort key of a scored candidate: best first, then code for stable output.
+
+    The province preference orders near-equal rows (two books printing the
+    same item) without changing the score shown, which a clamp at 1.0 would
+    otherwise hide.
+    """
+    return (-(score + cand.preference), cand.item.code or "")
 
 
 class _SemanticDepsMissing(RuntimeError):
@@ -135,6 +155,7 @@ async def match_cwicr_items(
     mode: str = "lexical",
     region: str | None = None,
     source: str | tuple[str, ...] | None = PUBLIC_BASE_SOURCES,
+    province: str | None = None,
 ) -> list[MatchResult]:
     """Return up to ``top_k`` :class:`MatchResult` rows ranked by relevance.
 
@@ -164,6 +185,10 @@ async def match_cwicr_items(
         Filter by ``CostItem.source``: one source, a tuple of sources, or
         ``None`` for no filter. Defaults to :data:`PUBLIC_BASE_SOURCES` (the
         open CWICR database plus the rate books a country pack ships).
+    province
+        Optional ISO 3166-2 province of the project (``PK-PB``). Rows from
+        that province's schedule of rates rank first, the national schedule
+        next, other provinces last. Nothing is filtered out.
     """
     q = (query or "").strip()
     if not q:
@@ -182,7 +207,7 @@ async def match_cwicr_items(
         return []
 
     # ── Score candidates ────────────────────────────────────────────────
-    scored = _score_lexical(candidates, query=q, unit=unit, lang=lang)
+    scored = _score_lexical(candidates, query=q, unit=unit, lang=lang, province=province)
 
     use_semantic = effective_mode in {"semantic", "hybrid"}
     semantic_ok = False
@@ -212,7 +237,7 @@ async def match_cwicr_items(
         final.append((score, channel, cand))
 
     # Sort by score desc, then by code asc for stable output.
-    final.sort(key=lambda t: (-t[0], t[2].item.code))
+    final.sort(key=lambda t: rank_key(t[0], t[2]))
 
     return [_to_match_result(cand.item, score=score, channel=channel) for score, channel, cand in final[:top_k]]
 
@@ -228,6 +253,7 @@ async def match_cwicr_for_position(
     mode: str = "lexical",
     lang: str | None = None,
     region: str | None = None,
+    province: str | None = None,
 ) -> list[MatchResult]:
     """Look up a :class:`Position` and run the matcher on its description.
 
@@ -241,6 +267,8 @@ async def match_cwicr_for_position(
     pos = await session.get(Position, position_id)
     if pos is None:
         raise LookupError(f"Position {position_id} not found")
+    if province is None:
+        province = await _province_of_position(session, pos)
 
     return await match_cwicr_items(
         session,
@@ -250,7 +278,23 @@ async def match_cwicr_for_position(
         top_k=top_k,
         mode=mode,
         region=region,
+        province=province,
     )
+
+
+async def _province_of_position(session: AsyncSession, pos: Any) -> str | None:
+    """The province of the project a position's bill belongs to, if it says."""
+    try:
+        from app.modules.boq.models import BOQ
+        from app.modules.costs.rate_book_ranking import province_for_project
+        from app.modules.projects.models import Project
+
+        boq = await session.get(BOQ, pos.boq_id) if getattr(pos, "boq_id", None) else None
+        project = await session.get(Project, boq.project_id) if boq is not None else None
+        return province_for_project(project)
+    except Exception:  # noqa: BLE001 - ranking hint only; matching works without it
+        logger.debug("CWICR matcher: province of position %s not resolved", getattr(pos, "id", None), exc_info=True)
+        return None
 
 
 # ── Candidate loading ──────────────────────────────────────────────────────
@@ -328,6 +372,7 @@ def _score_lexical(
     query: str,
     unit: str | None,
     lang: str | None,
+    province: str | None = None,
 ) -> list[_Candidate]:
     """Compute ``cand.lexical`` (0..1) for every candidate.
 
@@ -336,6 +381,12 @@ def _score_lexical(
     raw 0..100 ratio is normalized to 0..1, then we apply small additive
     bonuses for unit-of-measure match and lang-key presence - both
     capped so the final score never exceeds 1.0.
+
+    Three ranking rules from :mod:`app.modules.costs.rate_book_ranking` sit
+    on top: the unit relation (same unit and a convertible unit up, a unit of
+    another dimension down), a dismantling/repair variant the query does not
+    ask for down, and, when ``province`` is given, a rate-book row from that
+    province's schedule up and one from another province's down.
     """
     try:
         from rapidfuzz import fuzz
@@ -371,10 +422,14 @@ def _score_lexical(
         # because codes are sparse signal.
         code_ratio = float(fuzz.token_set_ratio(q, (item.code or "").lower())) * 0.6
         raw = max(best, code_ratio) / 100.0  # Normalize 0..1.
+        if is_unwanted_variant(query, item.description or ""):
+            raw *= VARIANT_PENALTY
 
         bonus = 0.0
-        if unit_norm and (item.unit or "").strip().lower() == unit_norm:
-            bonus += _UNIT_BONUS
+        if unit_norm:
+            bonus += UNIT_ADJUST[unit_relation(unit_norm, item.unit or "")]
+        if province:
+            c.preference = province_adjustment(book_region(item), province)
         if lang_norm and isinstance(item.descriptions, dict):
             if lang_norm in {k.lower() for k in item.descriptions if isinstance(k, str)}:
                 bonus += _LANG_BONUS

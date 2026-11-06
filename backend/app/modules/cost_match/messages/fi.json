@@ -9,6 +9,8 @@
   "match.reason.unit_match": "Yksiköt ovat yhteensopivia.",
   "match.reason.unit_mismatch": "Yksiköt eroavat, mikä heikentää luotettavuutta.",
   "match.reason.unit_unknown": "Yksikköä ei voitu verrata.",
+  "match.reason.unit_converted": "Units differ but convert into each other; compare the rate per unit.",
+  "match.reason.variant_unwanted": "This is a dismantling, removal or repair item, which the description does not ask for.",
   "match.hint.empty_query": "Kirjoita materiaalin tai työn kuvaus hakeaksesi kustannustietokannasta.",
   "match.hint.no_candidates": "Tälle luettelolle ei ole vielä ladattu kustannuseriä. Lataa ensin alueellinen kustannuspohja.",
   "match.hint.no_good_match": "Luotettavaa osumaa ei löytynyt. Kokeile vähemmän sanoja, pelkkää materiaalin nimeä tai kuvausta toisella kielellä."

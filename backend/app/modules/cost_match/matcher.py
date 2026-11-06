@@ -55,6 +55,13 @@ from decimal import Decimal
 from typing import Any
 
 from app.modules.cost_match.messages import DEFAULT_LOCALE, translate
+from app.modules.costs.rate_book_ranking import (
+    UNIT_CONVERTIBLE,
+    VARIANT_PENALTY,
+    is_unwanted_variant,
+    unit_factor,
+    unit_relation,
+)
 
 # ── Confidence bands ────────────────────────────────────────────────────────
 
@@ -66,6 +73,9 @@ REVIEW_CONFIDENCE = 0.45
 
 _UNIT_MISMATCH_PENALTY = 0.55
 """Multiplier applied when query and candidate units differ in dimension."""
+
+_SAME_UNIT_NUDGE = 0.02
+"""Ordering nudge for a candidate in the line's own unit over a convertible one."""
 
 _COVERAGE_WEIGHT = 0.65
 _OVERLAP_WEIGHT = 0.35
@@ -160,6 +170,8 @@ _CONCEPT_SYNONYMS: dict[str, tuple[str, ...]] = {
     "formwork": (
         "formwork",
         "shuttering",
+        "centering",
+        "centring",
         "schalung",
         "coffrage",
         "encofrado",
@@ -406,6 +418,8 @@ _UNIT_DIMENSION: dict[str, str] = {
     "lm": "length",
     "lfm": "length",
     "rm": "length",
+    "rmt": "length",
+    "rft": "length",
     "in": "length",
     "inch": "length",
     "ft": "length",
@@ -426,6 +440,7 @@ _UNIT_DIMENSION: dict[str, str] = {
     "sqft": "area",
     "ft2": "area",
     "yd2": "area",
+    "sft": "area",
     "sqyd": "area",
     # volume
     "m3": "volume",
@@ -437,6 +452,7 @@ _UNIT_DIMENSION: dict[str, str] = {
     "ft3": "volume",
     "yd3": "volume",
     "cuyd": "volume",
+    "cft": "volume",
     "l": "volume",
     "liter": "volume",
     "litre": "volume",
@@ -483,6 +499,8 @@ _UNIT_DIMENSION: dict[str, str] = {
     "jour": "time",
     # lump sum
     "ls": "sum",
+    "lsum": "sum",
+    "job": "sum",
     "lumpsum": "sum",
     "psch": "sum",
     "pauschal": "sum",
@@ -535,6 +553,10 @@ class Candidate:
     text: str
     unit: str | None = None
     payload: Mapping[str, Any] | None = None
+    preference: float = 0.0
+    """Ordering only, never shown as confidence: a small plus or minus that
+    puts near-equal candidates in a better order (the project's own province
+    book before another province's; see ``costs.rate_book_ranking``)."""
 
 
 @dataclass(frozen=True)
@@ -594,13 +616,26 @@ def score_match(
 
     # Unit relationship first: it can only reduce a score, never inflate it.
     compat = units_compatible(query_unit, candidate_unit)
-    if compat is True:
+    if compat is True and unit_relation(query_unit, candidate_unit) == UNIT_CONVERTIBLE:
+        # t against kg: the same thing priced in another unit. Kept, and the
+        # conversion is stated so the rate is read per the line's unit.
+        reasons.append("unit_converted")
+        factor = unit_factor(query_unit, candidate_unit)
+        if factor is not None:
+            factors["unit_conversion"] = float(factor)
+    elif compat is True:
         reasons.append("unit_match")
     elif compat is False:
         factors["unit_factor"] = _UNIT_MISMATCH_PENALTY
         reasons.append("unit_mismatch")
     elif query_unit or candidate_unit:
         reasons.append("unit_unknown")
+
+    if is_unwanted_variant(query, candidate_text):
+        # "Dismantling cement concrete" for a line that pours new concrete.
+        factors["variant_factor"] = VARIANT_PENALTY
+        reasons.append("variant_unwanted")
+    variant = factors.get("variant_factor", 1.0)
 
     if not q_tokens or not c_tokens:
         reasons.append("weak_overlap")
@@ -611,7 +646,7 @@ def score_match(
         factors["exact"] = 1.0
         factors["query_coverage"] = 1.0
         factors["term_overlap"] = 1.0
-        confidence = round(1.0 * factors["unit_factor"], 4)
+        confidence = round(1.0 * factors["unit_factor"] * variant, 4)
         reasons.insert(0, "exact_match")
         return MatchScore(confidence=confidence, band=_band(confidence), factors=factors, reasons=reasons)
 
@@ -624,7 +659,7 @@ def score_match(
     factors["term_overlap"] = round(overlap, 4)
 
     base = _COVERAGE_WEIGHT * coverage + _OVERLAP_WEIGHT * overlap
-    confidence = round(base * factors["unit_factor"], 4)
+    confidence = round(base * factors["unit_factor"] * variant, 4)
 
     if coverage >= 0.99:
         reasons.insert(0, "strong_overlap")
@@ -700,13 +735,19 @@ def best_match(
             hint=no_match_hint("no_candidates", locale=locale),
         )
 
-    # Stable sort: highest confidence first, input order breaks ties.
-    ordered = sorted(
-        enumerate(scored),
-        key=lambda pair: (-pair[1][1].confidence, pair[0]),
-    )
+    # Stable sort: highest rank first, input order breaks ties. The rank is the
+    # confidence plus the candidate's own preference and a nudge for a unit
+    # that is the line's own; the confidence shown stays the plain score.
+    def rank(pair: tuple[int, tuple[Candidate, MatchScore]]) -> float:
+        cand, score = pair[1]
+        nudge = 0.0
+        if "unit_match" in score.reasons and score.factors.get("exact", 0.0) < 1.0:
+            nudge = _SAME_UNIT_NUDGE
+        return round(score.confidence + cand.preference + nudge, 6)
+
+    ordered = sorted(enumerate(scored), key=lambda pair: (-rank(pair), pair[0]))
     top_index, (best_cand, best_score) = ordered[0]
-    tie = len(ordered) > 1 and ordered[1][1][1].confidence == best_score.confidence
+    tie = len(ordered) > 1 and rank(ordered[1]) == rank(ordered[0])
 
     alternatives = [(cand, score) for _, (cand, score) in ordered[:top_n]]
     is_confident = best_score.confidence >= HIGH_CONFIDENCE

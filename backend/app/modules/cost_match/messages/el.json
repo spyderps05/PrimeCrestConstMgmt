@@ -9,6 +9,8 @@
   "match.reason.unit_match": "Οι μονάδες είναι συμβατές.",
   "match.reason.unit_mismatch": "Οι μονάδες διαφέρουν, γεγονός που μειώνει την αξιοπιστία.",
   "match.reason.unit_unknown": "Η μονάδα δεν μπόρεσε να συγκριθεί.",
+  "match.reason.unit_converted": "Units differ but convert into each other; compare the rate per unit.",
+  "match.reason.variant_unwanted": "This is a dismantling, removal or repair item, which the description does not ask for.",
   "match.hint.empty_query": "Εισαγάγετε περιγραφή υλικού ή εργασίας για αναζήτηση στη βάση κόστους.",
   "match.hint.no_candidates": "Δεν έχουν φορτωθεί ακόμη στοιχεία κόστους για αυτόν τον κατάλογο. Φορτώστε πρώτα μια περιφερειακή βάση κόστους.",
   "match.hint.no_good_match": "Δεν βρέθηκε αξιόπιστη αντιστοιχία. Δοκιμάστε λιγότερες λέξεις, μόνο το όνομα του υλικού ή την περιγραφή σε άλλη γλώσσα."

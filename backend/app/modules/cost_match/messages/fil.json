@@ -9,6 +9,8 @@
   "match.reason.unit_match": "Compatible ang mga unit.",
   "match.reason.unit_mismatch": "Magkaiba ang mga unit, kaya bumababa ang kumpiyansa.",
   "match.reason.unit_unknown": "Hindi maihambing ang unit.",
+  "match.reason.unit_converted": "Units differ but convert into each other; compare the rate per unit.",
+  "match.reason.variant_unwanted": "This is a dismantling, removal or repair item, which the description does not ask for.",
   "match.hint.empty_query": "Maglagay ng deskripsyon ng materyal o gawain para maghanap sa cost database.",
   "match.hint.no_candidates": "Wala pang cost item na nakakarga para sa catalogue na ito. Mag-load muna ng regional cost base.",
   "match.hint.no_good_match": "Walang tiyak na tugmang nahanap. Subukan ang mas kaunting salita, ang pangalan lang ng materyal, o ang deskripsyon sa ibang wika."

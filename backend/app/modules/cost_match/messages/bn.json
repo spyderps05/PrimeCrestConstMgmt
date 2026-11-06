@@ -9,6 +9,8 @@
   "match.reason.unit_match": "একক সামঞ্জস্যপূর্ণ।",
   "match.reason.unit_mismatch": "একক আলাদা, যা আস্থা কমিয়ে দেয়।",
   "match.reason.unit_unknown": "একক তুলনা করা যায়নি।",
+  "match.reason.unit_converted": "Units differ but convert into each other; compare the rate per unit.",
+  "match.reason.variant_unwanted": "This is a dismantling, removal or repair item, which the description does not ask for.",
   "match.hint.empty_query": "খরচের ডেটাবেসে খোঁজার জন্য একটি উপাদান বা কাজের বর্ণনা লিখুন।",
   "match.hint.no_candidates": "এই ক্যাটালগের জন্য এখনও কোনো খরচের আইটেম লোড হয়নি। আগে একটি আঞ্চলিক খরচের ভিত্তি লোড করুন।",
   "match.hint.no_good_match": "নির্ভরযোগ্য মিল পাওয়া যায়নি। কম শব্দ ব্যবহার করুন, শুধু উপাদানের নাম লিখুন, অথবা অন্য ভাষায় বর্ণনা দিন।"

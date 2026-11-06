@@ -9,6 +9,8 @@
   "match.reason.unit_match": "Өлчөм бирдиктери шайкеш.",
   "match.reason.unit_mismatch": "Өлчөм бирдиктери башкача, бул ишенимди төмөндөтөт.",
   "match.reason.unit_unknown": "Өлчөм бирдиги салыштырылган жок.",
+  "match.reason.unit_converted": "Units differ but convert into each other; compare the rate per unit.",
+  "match.reason.variant_unwanted": "This is a dismantling, removal or repair item, which the description does not ask for.",
   "match.hint.empty_query": "Чыгаша маалымат базасынан издөө үчүн материалдын же иштин сүрөттөмөсүн жазыңыз.",
   "match.hint.no_candidates": "Бул каталог үчүн азырынча чыгаша позициялары жүктөлгөн жок. Адегенде аймактык чыгаша базасын жүктөңүз.",
   "match.hint.no_good_match": "Ишенимдүү дал келүү табылган жок. Сөздөрдү азайтып көрүңүз, материалдын атын гана же сүрөттөмөнү башка тилде жазыңыз."

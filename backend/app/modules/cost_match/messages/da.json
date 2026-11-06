@@ -9,6 +9,8 @@
   "match.reason.unit_match": "Enhederne er kompatible.",
   "match.reason.unit_mismatch": "Enhederne er forskellige, hvilket sænker sikkerheden.",
   "match.reason.unit_unknown": "Enheden kunne ikke sammenlignes.",
+  "match.reason.unit_converted": "Units differ but convert into each other; compare the rate per unit.",
+  "match.reason.variant_unwanted": "This is a dismantling, removal or repair item, which the description does not ask for.",
   "match.hint.empty_query": "Indtast en beskrivelse af et materiale eller et arbejde for at søge i omkostningsdatabasen.",
   "match.hint.no_candidates": "Der er endnu ingen omkostningsposter indlæst for dette katalog. Indlæs først et regionalt omkostningsgrundlag.",
   "match.hint.no_good_match": "Ingen sikker match fundet. Prøv færre ord, materialets navn alene, eller beskrivelsen på et andet sprog."

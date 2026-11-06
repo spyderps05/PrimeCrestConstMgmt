@@ -9,6 +9,8 @@
   "match.reason.unit_match": "O'lchov birliklari mos keladi.",
   "match.reason.unit_mismatch": "O'lchov birliklari farq qiladi, bu ishonchni pasaytiradi.",
   "match.reason.unit_unknown": "O'lchov birligini solishtirib bo'lmadi.",
+  "match.reason.unit_converted": "Units differ but convert into each other; compare the rate per unit.",
+  "match.reason.variant_unwanted": "This is a dismantling, removal or repair item, which the description does not ask for.",
   "match.hint.empty_query": "Xarajatlar bazasidan qidirish uchun material yoki ish tavsifini kiriting.",
   "match.hint.no_candidates": "Bu katalog uchun hali xarajat bandlari yuklanmagan. Avval mintaqaviy xarajatlar bazasini yuklang.",
   "match.hint.no_good_match": "Ishonchli moslik topilmadi. Kamroq so'z sinab ko'ring, faqat material nomini yozing yoki tavsifni boshqa tilda kiriting."

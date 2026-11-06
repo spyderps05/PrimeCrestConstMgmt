@@ -9,6 +9,8 @@
   "match.reason.unit_match": "Ühikud on ühilduvad.",
   "match.reason.unit_mismatch": "Ühikud erinevad, mis vähendab usaldusväärsust.",
   "match.reason.unit_unknown": "Ühikut ei õnnestunud võrrelda.",
+  "match.reason.unit_converted": "Units differ but convert into each other; compare the rate per unit.",
+  "match.reason.variant_unwanted": "This is a dismantling, removal or repair item, which the description does not ask for.",
   "match.hint.empty_query": "Sisestage materjali või töö kirjeldus, et otsida kulude andmebaasist.",
   "match.hint.no_candidates": "Sellele kataloogile pole veel kulureaid laaditud. Laadige kõigepealt piirkondlik kulubaas.",
   "match.hint.no_good_match": "Kindlat vastet ei leitud. Proovige vähem sõnu, ainult materjali nime või kirjeldust teises keeles."

@@ -9,6 +9,8 @@
   "match.reason.unit_match": "Birimler uyumlu.",
   "match.reason.unit_mismatch": "Birimler farklı, bu da güveni düşürür.",
   "match.reason.unit_unknown": "Birim karşılaştırılamadı.",
+  "match.reason.unit_converted": "Units differ but convert into each other; compare the rate per unit.",
+  "match.reason.variant_unwanted": "This is a dismantling, removal or repair item, which the description does not ask for.",
   "match.hint.empty_query": "Maliyet veritabanında aramak için bir malzeme veya iş açıklaması girin.",
   "match.hint.no_candidates": "Bu katalog için henüz maliyet kalemi yüklenmedi. Önce bölgesel bir maliyet tabanı yükleyin.",
   "match.hint.no_good_match": "Güvenilir bir eşleşme bulunamadı. Daha az kelime deneyin, yalnızca malzeme adını yazın ya da açıklamayı başka bir dilde girin."

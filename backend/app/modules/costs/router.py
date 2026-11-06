@@ -74,6 +74,7 @@ from app.modules.costs.matcher import (
 )
 from app.modules.costs.models import CostItem
 from app.modules.costs.pricelist_router import router as pricelist_router
+from app.modules.costs.rate_book_ranking import province_from_text
 from app.modules.costs.region_currency import REGION_CURRENCY
 from app.modules.costs.repository import synonym_text_predicate  # noqa: F401
 from app.modules.costs.resource_pricing import ResourcePriceService
@@ -7741,6 +7742,7 @@ async def match_cwicr(
         top_k=request.top_k,
         mode=request.mode,
         region=request.region,
+        province=province_from_text(request.province),
     )
 
 

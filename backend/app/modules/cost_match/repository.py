@@ -59,6 +59,7 @@ from app.modules.cost_match.models import (
 )
 from app.modules.costs.matcher import PUBLIC_BASE_SOURCES
 from app.modules.costs.models import CostItem
+from app.modules.costs.rate_book_ranking import PROVINCE_CODES as _PROVINCE_CODES
 from app.modules.costs.repository import synonym_text_predicate
 
 # Tiers that a person has to look at before anything can be priced. Confident
@@ -400,6 +401,7 @@ class CostBaseRepository:
         region: str | None = None,
         catalog_id: uuid.UUID | None = None,
         limit: int = 40,
+        province: str | None = None,
     ) -> list[CostItem]:
         """Cost items worth scoring against ``text``, bounded by ``limit``.
 
@@ -414,6 +416,12 @@ class CostBaseRepository:
         Returns an empty list for a blank query rather than the first
         ``limit`` rows of the catalogue, which would be a suggestion with no
         evidence behind it.
+
+        With ``province`` (``PK-PB``), rows that answer as many terms are
+        taken from that province's schedule of rates first, the national
+        schedule next and other provinces last, so a bounded pool on a base of
+        several provincial books is not filled by whichever book sorts first
+        by code.
         """
         clauses = [
             predicate
@@ -424,7 +432,17 @@ class CostBaseRepository:
             return []
         relevance = sum((case((clause, 1), else_=0) for clause in clauses[1:]), case((clauses[0], 1), else_=0))
         stmt = self._scoped(cost_source=cost_source, region=region, catalog_id=catalog_id)
-        stmt = stmt.where(or_(*clauses)).order_by(relevance.desc(), CostItem.code, CostItem.id).limit(limit)
+        order: list[Any] = [relevance.desc()]
+        if province:
+            book_region = CostItem.metadata_["rate_book"]["region"].as_string()
+            order.append(
+                case(
+                    (book_region == province, 0),
+                    (book_region.in_(_PROVINCE_CODES), 2),
+                    else_=1,
+                )
+            )
+        stmt = stmt.where(or_(*clauses)).order_by(*order, CostItem.code, CostItem.id).limit(limit)
         result = await self.session.execute(stmt)
         return list(result.scalars().all())
 

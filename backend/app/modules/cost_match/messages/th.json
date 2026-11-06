@@ -9,6 +9,8 @@
   "match.reason.unit_match": "หน่วยนับเข้ากันได้",
   "match.reason.unit_mismatch": "หน่วยนับไม่ตรงกัน ทำให้ความมั่นใจลดลง",
   "match.reason.unit_unknown": "ไม่สามารถเปรียบเทียบหน่วยนับได้",
+  "match.reason.unit_converted": "Units differ but convert into each other; compare the rate per unit.",
+  "match.reason.variant_unwanted": "This is a dismantling, removal or repair item, which the description does not ask for.",
   "match.hint.empty_query": "ป้อนคำอธิบายวัสดุหรืองานเพื่อค้นหาในฐานข้อมูลต้นทุน",
   "match.hint.no_candidates": "ยังไม่มีรายการต้นทุนที่โหลดสำหรับแคตตาล็อกนี้ กรุณาโหลดฐานข้อมูลต้นทุนระดับภูมิภาคก่อน",
   "match.hint.no_good_match": "ไม่พบผลการจับคู่ที่เชื่อถือได้ ลองใช้คำให้น้อยลง ใช้เฉพาะชื่อวัสดุ หรือใช้คำอธิบายเป็นภาษาอื่น"

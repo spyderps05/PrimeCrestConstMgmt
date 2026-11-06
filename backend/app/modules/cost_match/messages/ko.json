@@ -9,6 +9,8 @@
   "match.reason.unit_match": "단위가 호환됩니다.",
   "match.reason.unit_mismatch": "단위가 달라 신뢰도가 낮아집니다.",
   "match.reason.unit_unknown": "단위를 비교할 수 없습니다.",
+  "match.reason.unit_converted": "Units differ but convert into each other; compare the rate per unit.",
+  "match.reason.variant_unwanted": "This is a dismantling, removal or repair item, which the description does not ask for.",
   "match.hint.empty_query": "비용 데이터베이스에서 검색하려면 자재 또는 작업 설명을 입력하세요.",
   "match.hint.no_candidates": "이 카탈로그에 아직 비용 항목이 로드되지 않았습니다. 먼저 지역 비용 기준을 불러오세요.",
   "match.hint.no_good_match": "확실한 일치 항목을 찾지 못했습니다. 단어를 줄이거나, 자재 이름만 입력하거나, 다른 언어로 설명해 보세요."

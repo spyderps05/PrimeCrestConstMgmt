@@ -726,6 +726,14 @@ class CwicrMatchRequest(BaseModel):
         description="Matcher mode: lexical | semantic | hybrid",
     )
     region: str | None = Field(default=None, max_length=50, description="Restrict to a single region")
+    province: str | None = Field(
+        default=None,
+        max_length=80,
+        description=(
+            "Province of the project, as a code (PK-PB) or a place name (Lahore). Rows from that "
+            "province's schedule of rates rank first, the national schedule next; nothing is filtered."
+        ),
+    )
 
 
 class CwicrMatchFromPositionRequest(BaseModel):
