@@ -14,7 +14,7 @@
  * Usage (from repo root; needs the stack from scripts/dev/run-local.* running):
  *   node scripts/dev/qa-crawl.mjs [--base http://127.0.0.1:5810] [--api http://127.0.0.1:8810]
  *        [--out <dir>] [--only <substring>] [--limit N] [--wait 2500]
- * Env: QA_EMAIL / QA_PASSWORD (default demo@openconstructionerp.com / DemoPass1234!)
+ * Env: QA_EMAIL / QA_PASSWORD (default demo@primecrest.pk / DemoPass1234!)
  * Output: <out>/results.json, <out>/summary.md, <out>/<slug>.png
  */
 import { readFileSync, readdirSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
@@ -35,7 +35,7 @@ const BASE = args.base ?? 'http://127.0.0.1:5810';
 const API = args.api ?? 'http://127.0.0.1:8810';
 const OUT = path.resolve(args.out ?? path.join(here, '.local', 'qa-crawl'));
 const WAIT = Number(args.wait ?? 2500);
-const EMAIL = process.env.QA_EMAIL ?? 'demo@openconstructionerp.com';
+const EMAIL = process.env.QA_EMAIL ?? 'demo@primecrest.pk';
 const PASSWORD = process.env.QA_PASSWORD ?? 'DemoPass1234!';
 
 // Resolve playwright from frontend/node_modules (or the main checkout as a fallback).
