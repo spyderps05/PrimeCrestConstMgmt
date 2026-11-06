@@ -31,6 +31,7 @@ def _no_ai_keys_from_this_machine(monkeypatch: pytest.MonkeyPatch, tmp_path) -> 
     """The "no key" tests must not see a key exported on the machine running them."""
     isolate_ai_keys(monkeypatch, tmp_path / "home")
 
+
 # ── extract_json ─────────────────────────────────────────────────────────────
 
 
