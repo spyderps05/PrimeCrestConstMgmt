@@ -97,12 +97,13 @@ describe('the Pakistan withholding scheme', () => {
     renderPanel();
     const name = await screen.findByText(PK.scheme_name, { selector: 'span' });
     const card = name.closest('li') as HTMLElement;
-    for (const [label, rate] of [
+    const bands: [string, string][] = [
       ['Company on the Active Taxpayer List', '7.5%'],
       ['Company not on the Active Taxpayer List', '15%'],
       ['Individual or association of persons on the Active Taxpayer List', '8%'],
       ['Individual or association of persons not on the Active Taxpayer List', '16%'],
-    ]) {
+    ];
+    for (const [label, rate] of bands) {
       const row = within(card).getByText(label).closest('tr') as HTMLElement;
       expect(within(row).getByText(rate)).toBeInTheDocument();
     }
