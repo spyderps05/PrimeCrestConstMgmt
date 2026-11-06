@@ -490,3 +490,27 @@ def test_a_project_says_whether_its_country_has_a_certificate_layout(country_cod
     assert project.is_hakedis_eligible is expected
     assert project.is_hakedis_eligible is has_layout((country_code or "").strip().upper())
     assert project.model_dump()["is_hakedis_eligible"] is expected
+
+
+# ── Which taxes a certificate asks a person to decide ─────────────────────
+
+
+def test_turkish_layout_asks_for_all_three_taxes() -> None:
+    from app.modules.contracts.hakedis_layout import DEFAULT_LAYOUTS, choice_kinds_for_layout
+
+    assert choice_kinds_for_layout(DEFAULT_LAYOUTS["TR"]) == ("vat_withholding", "income_withholding", "stamp_duty")
+
+
+def test_pakistani_layout_has_no_stamp_duty_choice() -> None:
+    from app.modules.contracts.hakedis_layout import DEFAULT_LAYOUTS, choice_kinds_for_layout
+
+    # Section 153 income tax and the provincial sales tax withholding are
+    # printed; the PK form prints no stamp duty, so nobody is asked for it.
+    assert choice_kinds_for_layout(DEFAULT_LAYOUTS["PK"]) == ("vat_withholding", "income_withholding")
+
+
+def test_a_layout_without_tax_lines_asks_for_nothing() -> None:
+    from app.modules.contracts.hakedis_layout import DEFAULT_LAYOUTS, choice_kinds_for_layout
+
+    without_taxes = tuple(line for line in DEFAULT_LAYOUTS["PK"] if line.op != "tax")
+    assert choice_kinds_for_layout(without_taxes) == ()

@@ -33,6 +33,7 @@ from app.core.payment_taxes import Choice
 
 __all__ = [
     "DEFAULT_LAYOUTS",
+    "NOT_ON_LAYOUT_REASON",
     "DEFAULT_SIGNATURE_ROLES",
     "HAKEDIS_LABELS",
     "INPUT_SOURCES",
@@ -45,6 +46,7 @@ __all__ = [
     "ColumnDef",
     "HakedisSettings",
     "SummaryLineDef",
+    "choice_kinds_for_layout",
     "contractor_label_key",
     "currency_label",
     "is_foreign_currency",
@@ -784,6 +786,32 @@ def label_filled(
         return text.format_map(_Params(params))
     except (IndexError, ValueError):
         return text
+
+
+#: The tax a person decides for each figure a ``tax`` line can print. The
+#: payable VAT follows the withheld VAT and the computed VAT needs no choice.
+_CHOICE_OF_FIGURE: dict[str, str] = {
+    "vat_withheld": "vat_withholding",
+    "vat_payable": "vat_withholding",
+    "income_withheld": "income_withholding",
+    "stamp_duty": "stamp_duty",
+}
+
+#: Why a tax the layout does not print is stored as not applicable.
+NOT_ON_LAYOUT_REASON = "Not on this certificate layout."
+
+
+def choice_kinds_for_layout(layout: Sequence[SummaryLineDef]) -> tuple[str, ...]:
+    """The taxes a person must decide on a certificate with this layout, in the usual order.
+
+    A tax whose figure no line prints is not asked for: the Pakistani layout
+    prints no stamp duty, so a Pakistani certificate never waits on a stamp
+    duty choice.
+    """
+    printed = {
+        _CHOICE_OF_FIGURE[line.tax_kind] for line in layout if line.op == "tax" and line.tax_kind in _CHOICE_OF_FIGURE
+    }
+    return tuple(kind for kind in ("vat_withholding", "income_withholding", "stamp_duty") if kind in printed)
 
 
 def tax_choice(settings: HakedisSettings, tax: str) -> Choice:

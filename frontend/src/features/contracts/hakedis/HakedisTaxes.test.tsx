@@ -293,6 +293,30 @@ describe('HakedisTaxes', () => {
     await waitFor(() => expect(onUpdated).toHaveBeenCalledTimes(1));
   });
 
+  it('asks only for the taxes the layout prints (no stamp duty on a Pakistani certificate)', async () => {
+    renderTaxes(certificate({ taxes: taxes({ choice_kinds: ['vat_withholding', 'income_withholding'] }) }));
+    expect(screen.queryByTestId('hakedis-tax-option-stamp_duty-unset')).toBeNull();
+    expect(radio('hakedis-tax-option-vat_withholding-unset').checked).toBe(true);
+
+    fireEvent.click(screen.getByTestId('hakedis-tax-option-vat_withholding-601'));
+    await waitFor(() => expect(previewMock).toHaveBeenCalledTimes(1));
+    saveMock.mockResolvedValue(certificate({ taxes: STORED_DRAFT }));
+    fireEvent.click(screen.getByTestId('hakedis-taxes-save'));
+    await waitFor(() =>
+      expect(saveMock).toHaveBeenCalledWith(
+        CLAIM,
+        {
+          vat_withholding: { state: 'selected', code: '601', reason: '' },
+          income_withholding: { ...UNSET },
+          buyer_is_designated: null,
+          work_value_incl_vat: null,
+          work_value_note: '',
+        },
+        'en',
+      ),
+    );
+  });
+
   it('sends the buyer facts with the preview', async () => {
     renderTaxes(certificate());
     fireEvent.change(screen.getByTestId('hakedis-taxes-buyer'), { target: { value: 'yes' } });

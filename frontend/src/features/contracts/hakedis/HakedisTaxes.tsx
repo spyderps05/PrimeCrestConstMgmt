@@ -120,8 +120,12 @@ export function HakedisTaxes({ source, doc, locale, numberLocale, canEdit, onUpd
     buyerDesignated !== taxes.buyer_is_designated ||
     workValuePayload !== (taxes.work_value_incl_vat ?? null) ||
     workValueNote.trim() !== taxes.work_value_note;
-  const choicesChanged = HAKEDIS_TAX_CHOICE_KINDS.some((kind) => !sameChoice(drafts[kind], storedChoice(kind)));
-  const complete = HAKEDIS_TAX_CHOICE_KINDS.every((kind) => choiceIsComplete(drafts[kind]));
+  // Only the taxes this certificate's layout prints are asked for: a Pakistani
+  // certificate prints no stamp duty, so it never shows or waits on that choice.
+  const kinds = taxes.choice_kinds ?? HAKEDIS_TAX_CHOICE_KINDS;
+  const asked = (kind: HakedisTaxChoiceKind) => kinds.includes(kind);
+  const choicesChanged = kinds.some((kind) => !sameChoice(drafts[kind], storedChoice(kind)));
+  const complete = kinds.every((kind) => choiceIsComplete(drafts[kind]));
   const dirty = choicesChanged || factsChanged;
 
   // The inputs of a preview are the certificate's own amounts, as the server
@@ -222,10 +226,12 @@ export function HakedisTaxes({ source, doc, locale, numberLocale, canEdit, onUpd
   });
 
   const save = () => {
+    // A tax the layout does not print is left out; the server records it as
+    // not applicable to this certificate.
     saveMut.mutate({
-      vat_withholding: trimmed(drafts.vat_withholding),
-      income_withholding: trimmed(drafts.income_withholding),
-      stamp_duty: trimmed(drafts.stamp_duty),
+      ...(asked('vat_withholding') ? { vat_withholding: trimmed(drafts.vat_withholding) } : {}),
+      ...(asked('income_withholding') ? { income_withholding: trimmed(drafts.income_withholding) } : {}),
+      ...(asked('stamp_duty') ? { stamp_duty: trimmed(drafts.stamp_duty) } : {}),
       buyer_is_designated: buyerDesignated,
       work_value_incl_vat: workValuePayload,
       work_value_note: workValueNote.trim(),
@@ -359,8 +365,8 @@ export function HakedisTaxes({ source, doc, locale, numberLocale, canEdit, onUpd
         </fieldset>
       )}
 
-      <div className="grid gap-3 xl:grid-cols-3">
-        {HAKEDIS_TAX_CHOICE_KINDS.map((kind) => {
+      <div className={clsx('grid gap-3', kinds.length >= 3 ? 'xl:grid-cols-3' : 'xl:grid-cols-2')}>
+        {kinds.map((kind) => {
           const figureKind = FIGURE_OF_CHOICE[kind];
           return (
             <TaxCard

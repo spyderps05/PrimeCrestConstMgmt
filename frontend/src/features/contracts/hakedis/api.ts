@@ -197,6 +197,8 @@ export interface HakedisTaxes {
   buyer_is_designated: boolean | null;
   work_value_incl_vat: string | null;
   work_value_note: string;
+  /** The taxes the layout prints, so the ones a person is asked to decide. Absent on older servers. */
+  choice_kinds?: HakedisTaxChoiceKind[];
   categories: Partial<Record<HakedisTaxChoiceKind, HakedisTaxCategory[]>>;
 }
 

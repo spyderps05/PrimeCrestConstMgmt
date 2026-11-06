@@ -186,6 +186,8 @@ TEMPLATE = DemoTemplate(
         "Bidding Documents are the form offered. Punjab Procurement Rules 2014 apply."
     ),
     region="PK",
+    # Punjab: the PRA sales tax on services and the Punjab MRS rate book apply.
+    subdivision_code="PK-PB",
     classification_standard="masterformat",
     currency="PKR",
     locale="en",

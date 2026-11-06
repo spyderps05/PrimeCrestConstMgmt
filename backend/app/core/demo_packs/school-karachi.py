@@ -441,6 +441,9 @@ TEMPLATE = DemoTemplate(
         "Pakistan Standard Bidding Documents are the form offered. Sindh Public Procurement Rules, 2010 apply."
     ),
     region="PK",
+    # Sindh: the SRB sales tax on services applies; there is no Sindh rate book
+    # yet, so cost matching prefers the national MES schedule.
+    subdivision_code="PK-SD",
     classification_standard="masterformat",
     currency="PKR",
     locale="en",

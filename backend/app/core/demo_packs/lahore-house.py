@@ -198,6 +198,8 @@ TEMPLATE = DemoTemplate(
         "finishes are under way."
     ),
     region="PK",
+    # Punjab: the PRA sales tax on services and the Punjab MRS rate book apply.
+    subdivision_code="PK-PB",
     classification_standard="masterformat",
     currency="PKR",
     locale="en",

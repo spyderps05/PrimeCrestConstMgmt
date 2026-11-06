@@ -63,8 +63,10 @@ from app.modules.contracts.hakedis import (
 from app.modules.contracts.hakedis_layout import (
     HAKEDIS_LABELS,
     LOCALES,
+    NOT_ON_LAYOUT_REASON,
     HakedisSettings,
     SummaryLineDef,
+    choice_kinds_for_layout,
     has_layout,
     label,
     label_parts,
@@ -1318,6 +1320,13 @@ async def save_taxes(
         kind: (choices.get(kind) or view.choices.get(kind) or Choice("unset"))
         for kind in certificate_taxes.TAX_CHOICE_KINDS
     }
+    # A tax the layout prints no line for is not a decision anyone is asked to
+    # make (no stamp duty on a Pakistani certificate). Left unset it would hold
+    # its figure and block confirmation for a line nobody can see.
+    asked = set(choice_kinds_for_layout(document.settings.layout))
+    for kind, choice in merged.items():
+        if kind not in asked and choice.state == "unset":
+            merged[kind] = Choice("not_applicable", reason=NOT_ON_LAYOUT_REASON)
     request = certificate_taxes.CertificateTaxRequest(
         project_id=source.project_id,
         source_kind=source.kind,
@@ -1724,6 +1733,8 @@ def document_payload(
             "buyer_is_designated": view.buyer_is_designated,
             "work_value_incl_vat": _plain(view.work_value_incl_vat),
             "work_value_note": view.work_value_note,
+            # The taxes the screen asks a person to decide: those the layout prints.
+            "choice_kinds": list(choice_kinds_for_layout(document.settings.layout)),
             "categories": (
                 {kind: [] for kind in certificate_taxes.TAX_CHOICE_KINDS}
                 if document.frozen

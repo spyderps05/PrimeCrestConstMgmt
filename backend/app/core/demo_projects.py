@@ -5467,6 +5467,105 @@ def _country_code_for(template: DemoTemplate) -> str:
     return _COUNTRY_ISO2.get(str(addr.get("country", "")), "")
 
 
+#: The certificate tax choices a Pakistani demo subcontract states. The
+#: subcontractor is a company on the FBR Active Taxpayer List, so income tax is
+#: withheld under section 153(1)(c) at the company rate for listed payees
+#: (7.5 %); the provincial sales tax on services (Punjab PRA 16 %, Sindh SRB
+#: 15 %, from the project's province) is charged on the certificate and paid
+#: over in full; and the Pakistani certificate prints no stamp duty.
+_PK_DEMO_HAKEDIS: dict = {
+    "taxes": {
+        "income_withholding": {"state": "selected", "code": "PK_153_1C_COMPANY_ATL"},
+        "vat_withholding": {
+            "state": "not_applicable",
+            "reason": (
+                "The sales tax on services is paid in full to the subcontractor, "
+                "who deposits it with the provincial revenue authority."
+            ),
+        },
+        "stamp_duty": {"state": "not_applicable", "reason": "Not on this certificate layout."},
+    }
+}
+
+
+#: Lines of the PK certificate a person states by hand that the demo periods
+#: do not use, with the note a quantity surveyor would write.
+_PK_DEMO_NOT_APPLICABLE_LINES: tuple[tuple[str, str], ...] = (
+    ("price_adjustment", "No price adjustment is due in this period."),
+    ("advance_recovery", "No mobilisation advance was paid under this subcontract."),
+    ("employer_supplied_materials", "No materials were supplied by the contractor."),
+    ("delay_penalty", "The work is on programme; no delay damages."),
+    ("other_deductions", "No other deductions."),
+)
+
+
+async def _store_pk_demo_certificate_taxes(
+    session: AsyncSession, agreement: object, pay_apps: list, *, user_id: str
+) -> int:
+    """Store the taxes of every demo payment certificate of a Pakistani subcontract.
+
+    So the demo certificates open with their deductions worked out (income tax
+    withheld, sales tax on services) instead of every tax line held until
+    someone decides it. The choices are the agreement's own
+    (:data:`_PK_DEMO_HAKEDIS`) and the buyer, our company, is a withholding
+    agent. Certificates already paid are stored as they would have been while
+    they were still open. Best effort: a certificate that cannot be computed is
+    skipped and the demo installs without its taxes.
+    """
+    try:
+        from dataclasses import replace  # noqa: PLC0415
+
+        from app.modules.contracts import hakedis_document  # noqa: PLC0415
+        from app.modules.subcontractors.service import SubcontractorService  # noqa: PLC0415
+    except Exception:  # noqa: BLE001 - module not installed
+        return 0
+    service = SubcontractorService(session)
+    stored = 0
+    certified_before = Decimal("0")
+    for pay_app in pay_apps:
+        try:
+            async with session.begin_nested():
+                source = replace(await service.hakedis_source(pay_app, agreement, language="en"), editable=True)
+                # The lines a quantity surveyor states by hand: nothing to adjust
+                # or deduct in these periods, and line D is what the earlier
+                # (settled) certificates paid. Without them line E, the base of
+                # both taxes, stays held and no tax can be worked out.
+                for key, note in _PK_DEMO_NOT_APPLICABLE_LINES:
+                    await hakedis_document.save_line(
+                        session,
+                        source,
+                        key,
+                        state="not_applicable",
+                        amount=None,
+                        pct=None,
+                        note=note,
+                        user_id=user_id,
+                    )
+                if source.prior:
+                    await hakedis_document.save_line(
+                        session,
+                        source,
+                        "previous_certificates",
+                        state="value",
+                        amount=certified_before,
+                        pct=None,
+                        note="",
+                        user_id=user_id,
+                    )
+                await hakedis_document.save_taxes(
+                    session,
+                    source,
+                    choices={},
+                    buyer_facts={"buyer_is_designated": True},
+                    user_id=user_id,
+                )
+            stored += 1
+        except Exception:  # noqa: BLE001 - a demo certificate without taxes is still a demo
+            logger.warning("demo: taxes of %s not stored", getattr(pay_app, "application_number", "?"), exc_info=True)
+        certified_before += Decimal(str(pay_app.approved_gross_amount or pay_app.gross_amount or 0))
+    return stored
+
+
 def _add_months(moment: datetime, months: int) -> datetime:
     """``moment`` shifted by whole months, on the same day of the month (day 1 in the demos)."""
     total = moment.month - 1 + months
@@ -12273,7 +12372,11 @@ async def _seed_module_data(
             retention_percent=Decimal("5.0"),
             status="active",
             created_by=owner_str,
-            metadata_={"demo_id": demo_id, "is_demo": True},
+            metadata_={
+                "demo_id": demo_id,
+                "is_demo": True,
+                **({"hakedis": _PK_DEMO_HAKEDIS} if country == "PK" else {}),
+            },
         )
         session.add(agreement)
         await session.flush()
@@ -12297,6 +12400,7 @@ async def _seed_module_data(
         _cent = Decimal("0.01")
         _prev_gross = Decimal("0")
         _prev_ret = Decimal("0")
+        _pay_apps: list[PaymentApplication] = []
         for _k, _pct in enumerate(_claim_pcts):
             cum_gross = (agr_value * _pct).quantize(_cent, rounding=ROUND_HALF_UP)
             cum_ret = (cum_gross * _ret_rate).quantize(_cent, rounding=ROUND_HALF_UP)
@@ -12360,7 +12464,12 @@ async def _seed_module_data(
                 )
             )
             await session.flush()
+            _pay_apps.append(pay_app)
         results["subcontractors"] = 1
+        if country == "PK":
+            results["certificate_taxes"] = await _store_pk_demo_certificate_taxes(
+                session, agreement, _pay_apps, user_id=owner_str
+            )
     except Exception:
         logger.debug("Subcontractors module not loaded, skipping demo chain", exc_info=True)
 

@@ -425,6 +425,8 @@ TEMPLATE = DemoTemplate(
         "standard bidding documents with monthly interim payment certificates."
     ),
     region="PK",
+    # Punjab: the PRA sales tax on services and the Punjab MRS rate book apply.
+    subdivision_code="PK-PB",
     classification_standard="masterformat",
     currency="PKR",
     locale="en",
