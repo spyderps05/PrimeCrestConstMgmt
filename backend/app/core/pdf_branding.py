@@ -74,7 +74,7 @@ DEFAULT_BRAND = "PrimeCrest"
 #: Kept module-level (not configurable in this MVP) so every PDF stays
 #: visually consistent; a future template engine may make these per-workspace.
 _FOOTER_COLOR = "#999999"
-_HEADER_COLOR = "#12202B"
+_HEADER_COLOR = "#0B2545"  # Crest Navy, assets/brand/BRAND.md
 
 #: Header logo box (points). The logo is scaled to fit inside this box while
 #: keeping its aspect ratio; a wordmark therefore stays legible and a square
