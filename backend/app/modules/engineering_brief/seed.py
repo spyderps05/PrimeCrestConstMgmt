@@ -13,6 +13,13 @@ The brief is submitted when the service finds nothing blocking, so the governanc
 review. Approval goes through the gate, never through a seeder. Only projects carrying the demo marker
 are touched; a project that already has a brief is skipped, so a re-run never duplicates. The story of each project is a file of the pack
 (``demo/<project>-engineering_brief.json``).
+
+The baseline requirements added in front of the story's own depend on the market. A German demo
+project gets the German building baseline (DIN 18040, GEG 2024) and German documents. A Pakistani
+building gets an English baseline on the Pakistani codes (Building Code of Pakistan, PEC, NEECA,
+the provincial building regulations the story names), and a Pakistani road or other infrastructure
+project gets none: its story carries the requirements that fit it. A story may pin either choice
+with ``"baseline"`` (``"de"``, ``"pk_building"`` or ``"none"``) and ``"locale"``.
 """
 
 from __future__ import annotations
@@ -165,7 +172,217 @@ _COMMON: tuple[_REQ, ...] = (
 )
 
 
-async def _study_report(session: AsyncSession, project_id: uuid.UUID, actor: Any, row: dict[str, Any]) -> uuid.UUID:
+# The Pakistani building baseline. English, on the codes a Pakistani building is approved and checked against.
+# ``{lbo}`` is the provincial or authority building regulation the story names (LDA, SBCA/Karachi, Punjab bye-laws).
+_COMMON_PK_BUILDING: tuple[_REQ, ...] = (
+    (
+        "performance",
+        "Building",
+        "Gross floor area",
+        "max",
+        "{bgf}",
+        "m2",
+        "must",
+        "analysis",
+        "Client",
+        "client",
+        "Approved space programme",
+    ),
+    (
+        "performance",
+        "Structure",
+        "Live load, typical floor",
+        "min",
+        "{live}",
+        "kN/m2",
+        "must",
+        "analysis",
+        "Structural engineer",
+        "designer",
+        "Building Code of Pakistan (loading provisions)",
+    ),
+    (
+        "standards",
+        "Structure",
+        "Seismic design",
+        "equals",
+        "BCP-SP 2021 seismic zone of the site",
+        "",
+        "must",
+        "analysis",
+        "Structural engineer",
+        "designer",
+        "Building Code of Pakistan, Seismic Provisions (BCP-SP 2021)",
+    ),
+    (
+        "standards",
+        "Building approval",
+        "Occupancy classification",
+        "equals",
+        "{gk}",
+        "",
+        "must",
+        "inspection",
+        "Building control authority",
+        "authority",
+        "{lbo}",
+    ),
+    (
+        "standards",
+        "Design professionals",
+        "Design signed by PEC-registered engineers",
+        "exists",
+        "",
+        "",
+        "must",
+        "inspection",
+        "Pakistan Engineering Council",
+        "authority",
+        "PEC Act 1976 and PEC bye-laws",
+    ),
+    (
+        "standards",
+        "Accessibility",
+        "Requirement",
+        "equals",
+        "Accessibility Code of Pakistan 2006",
+        "",
+        "must",
+        "inspection",
+        "Client",
+        "client",
+        "{lbo}",
+    ),
+    (
+        "energy_efficiency",
+        "Building envelope",
+        "Energy standard",
+        "equals",
+        "{energy}",
+        "",
+        "must",
+        "analysis",
+        "Client",
+        "client",
+        "NEECA, Building Code of Pakistan (Energy Provisions)",
+    ),
+    (
+        "site_conditions",
+        "Subsoil",
+        "Foundation design from a geotechnical investigation",
+        "exists",
+        "",
+        "",
+        "should",
+        "inspection",
+        "Geotechnical engineer",
+        "designer",
+        "Geotechnical investigation report",
+    ),
+    (
+        "operation_maintenance",
+        "Building services",
+        "Maintenance access to each plant item",
+        "exists",
+        "",
+        "",
+        "should",
+        "inspection",
+        "Facility management",
+        "client",
+        "Operation concept",
+    ),
+    (
+        "safety_security",
+        "External works",
+        "Lighting at entrances",
+        "min",
+        "10",
+        "lx",
+        "could",
+        "test",
+        "Client",
+        "client",
+        "BS EN 12464-2",
+    ),
+)
+
+# The baseline set for each market kind. A road or other infrastructure project takes none: a building baseline
+# (floor area, occupancy, accessibility) means nothing there, and its story carries what fits it.
+_BASELINES: dict[str, tuple[_REQ, ...]] = {"de": _COMMON, "pk_building": _COMMON_PK_BUILDING, "none": ()}
+
+# Words in a story's facility class or a project type that mark a project as infrastructure rather than a building.
+_INFRA_WORDS = ("road", "highway", "bridge", "culvert", "carriageway", "pipeline", "canal", "railway", "infrastructure")
+
+_STUDY_LABELS: dict[str, dict[str, str]] = {
+    "de": {
+        "subject": "Gegenstand",
+        "content": "Inhalt",
+        "scope": "Untersuchungsumfang",
+        "result": "Ergebnis",
+        "assessment": "Bewertung",
+        "author": "Verfasser",
+        "date": "Datum",
+        "suitable": "geeignet",
+        "conditional": "bedingt geeignet",
+        "unsuitable": "nicht geeignet",
+        "date_format": "%d.%m.%Y",
+    },
+    "en": {
+        "subject": "Subject",
+        "content": "Content",
+        "scope": "Scope of investigation",
+        "result": "Result",
+        "assessment": "Assessment",
+        "author": "Author",
+        "date": "Date",
+        "suitable": "suitable",
+        "conditional": "conditionally suitable",
+        "unsuitable": "unsuitable",
+        "date_format": "%d/%m/%Y",
+    },
+}
+
+
+def _is_pakistani(project: Any) -> bool:
+    region = str(getattr(project, "region", "") or "").strip().upper()
+    country = str(getattr(project, "country_code", "") or "").strip().upper()
+    currency = str(getattr(project, "currency", "") or "").strip().upper()
+    return region == "PK" or country == "PK" or currency == "PKR"
+
+
+def _is_infrastructure(project: Any, story: dict[str, Any]) -> bool:
+    text = " ".join(
+        str(x or "") for x in (getattr(project, "project_type", None), (story.get("format") or {}).get("gk"))
+    ).lower()
+    return any(word in text for word in _INFRA_WORDS)
+
+
+def _market(project: Any, story: dict[str, Any]) -> tuple[str, str]:
+    """``(baseline kind, document locale)`` for this project: the story's own choice first, else its market."""
+    kind = story.get("baseline")
+    if kind not in _BASELINES:
+        if _is_pakistani(project):
+            kind = "none" if _is_infrastructure(project, story) else "pk_building"
+        else:
+            kind = "de"
+    locale = story.get("locale")
+    if not isinstance(locale, str) or not locale.strip():
+        locale = "de" if kind == "de" else "en"
+    return kind, locale.strip()
+
+
+def _requirement_rows(kind: str, story: dict[str, Any]) -> list[_REQ]:
+    """The baseline of ``kind``, then the story's own rows. A story row replaces a baseline row on the same subject."""
+    extra = [tuple(str(r.get(k, "") or "") for k in _KEYS) for r in story.get("requirements", [])]
+    own = {(row[1].strip().lower(), row[2].strip().lower()) for row in extra}
+    base = [row for row in _BASELINES[kind] if (row[1].strip().lower(), row[2].strip().lower()) not in own]
+    return [*base, *extra]  # type: ignore[list-item]
+
+
+async def _study_report(
+    session: AsyncSession, project_id: uuid.UUID, actor: Any, row: dict[str, Any], locale: str = "de"
+) -> uuid.UUID:
     """The study report as a PDF in the documents module, written through its own upload path."""
     from io import BytesIO
 
@@ -177,14 +394,15 @@ async def _study_report(session: AsyncSession, project_id: uuid.UUID, actor: Any
 
     title, scope, author, offset = row["title"], row["scope"], row["author"], row["days"]
     result, conclusion = row["result"], row["conclusion"]
-    labels = {"suitable": "geeignet", "conditional": "bedingt geeignet", "unsuitable": "nicht geeignet"}
+    lang = "de" if locale.lower().startswith("de") else "en"
+    t = _STUDY_LABELS[lang]
     day = date.today() + timedelta(days=offset)
     doc = ex._doc(
         title,
-        [RegisterColumn("Gegenstand", weight=1, wrap=True), RegisterColumn("Inhalt", weight=4, wrap=True)],
-        [["Untersuchungsumfang", scope], ["Ergebnis", result], ["Bewertung", labels.get(conclusion, "")]],
-        [("Verfasser", author), ("Datum", day.strftime("%d.%m.%Y"))],
-        "de",
+        [RegisterColumn(t["subject"], weight=1, wrap=True), RegisterColumn(t["content"], weight=4, wrap=True)],
+        [[t["scope"], scope], [t["result"], result], [t["assessment"], t.get(conclusion, "")]],
+        [(t["author"], author), (t["date"], day.strftime(t["date_format"]))],
+        lang,
     )
     name = title.replace("/", "-")
     upload = UploadFile(file=BytesIO(ex.render(doc, "pdf")), filename=f"{name}.pdf")
@@ -217,6 +435,7 @@ async def _seed_project(session: AsyncSession, project_id: uuid.UUID, story: dic
 
     project = await session.get(Project, project_id)
     actor = project.owner_id
+    kind, locale = _market(project, story)
     svc = EngineeringBriefService(session)
     counts = {
         "requirements": 0,
@@ -240,8 +459,7 @@ async def _seed_project(session: AsyncSession, project_id: uuid.UUID, story: dic
     )
 
     created: list[Any] = []
-    extra = [tuple(r.get(k, "") for k in _KEYS) for r in story.get("requirements", [])]
-    for row in (*_COMMON, *extra):
+    for row in _requirement_rows(kind, story):
         cat, entity, attr, ctype, value, unit, prio, verif, orig, role, src = _fill(row, story["format"])
         data = {
             "category": cat,
@@ -289,7 +507,7 @@ async def _seed_project(session: AsyncSession, project_id: uuid.UUID, story: dic
     made = await svc.milestones_from_catalogue(project_id, None, actor)
     counts["milestones"] += len(made)
     if catalogue.gate_kind is not None:
-        gates = await svc.milestones_from_gates(project_id, actor, "de")
+        gates = await svc.milestones_from_gates(project_id, actor, locale)
         counts["milestones"] += len(gates)
         # A gate without a target date still gets a believable one: after the previous gate and never before today.
         # A gate already decided was decided on its day; it is not given a date ahead of it.
@@ -326,7 +544,7 @@ async def _seed_project(session: AsyncSession, project_id: uuid.UUID, story: dic
                 "study_date": date.today() + timedelta(days=row["days"]),
                 "result": row["result"],
                 "conclusion": row["conclusion"],
-                "document_id": await _study_report(session, project_id, actor, row),
+                "document_id": await _study_report(session, project_id, actor, row, locale),
             },
             actor,
         )
@@ -339,7 +557,7 @@ async def _seed_project(session: AsyncSession, project_id: uuid.UUID, story: dic
             async with session.begin_nested():
                 await svc.submit(project_id, actor)
             counts["submitted"] = 1
-            await svc.issue_specification(project_id, actor, story.get("issue_note", ""), locale="de")
+            await svc.issue_specification(project_id, actor, story.get("issue_note", ""), locale=locale)
             counts["issued"] = 1
         except Exception:
             logger.info("engineering brief demo left as draft for %s", project_id, exc_info=True)
