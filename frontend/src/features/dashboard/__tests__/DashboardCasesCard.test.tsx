@@ -44,6 +44,7 @@ import { dealCaseFaces } from '@/features/cases/caseFaces';
 import { startHereVideo } from '@/features/videos/academy';
 import { dashboardVideos } from '@/features/videos/DashboardVideosStrip';
 import { useVideosStore } from '@/features/videos/useVideosStore';
+import { VIDEO_GUIDES_ENABLED } from '@/features/videos/enabled';
 
 vi.mock('react-i18next', () => {
   const t = (key: string, opts?: Record<string, unknown>) => {
@@ -284,7 +285,15 @@ describe('DashboardCasesCard faces', () => {
   });
 });
 
-describe('DashboardCasesCard video guides', () => {
+describe.skipIf(VIDEO_GUIDES_ENABLED)('DashboardCasesCard with video guides switched off', () => {
+  it('draws no video strip', async () => {
+    renderCard();
+    await screen.findByTestId('dashboard-cases-card');
+    expect(screen.queryByTestId('dashboard-videos')).toBeNull();
+  });
+});
+
+describe.skipIf(!VIDEO_GUIDES_ENABLED)('DashboardCasesCard video guides', () => {
   beforeEach(() => {
     localStorage.clear();
     useVideosStore.setState({ role: 'estimator', market: 'any', started: {}, watched: {} });

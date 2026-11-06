@@ -81,6 +81,7 @@ import { MarketPackPanel } from "./MarketPackPanel";
 import { FlowGlyph, flowGlyphFor, type FlowGlyphKind } from "./flowGlyphs";
 import { normalizeCaseRoute } from "./playbookModules";
 import { VIDEO_COUNT_BY_CASE } from "@/features/videos/academyIndex.generated";
+import { VIDEO_GUIDES_ENABLED } from "@/features/videos/enabled";
 import { compareNames } from '@/shared/lib/collator';
 
 /** Returns true for seeded sample projects (they carry `metadata.demo_id`). */
@@ -1222,7 +1223,7 @@ export function PlaybookRunner({ playbook, onBack }: PlaybookRunnerProps) {
         </div>
       </header>
 
-      {VIDEO_COUNT_BY_CASE[playbook.id] ? (
+      {VIDEO_GUIDES_ENABLED && VIDEO_COUNT_BY_CASE[playbook.id] ? (
         <Suspense fallback={null}>
           <CaseVideos caseId={playbook.id} />
         </Suspense>

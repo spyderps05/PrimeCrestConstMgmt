@@ -25,6 +25,7 @@ import { NlRuleBuilderPanel } from '@/features/compliance';
 import { useModuleRouteElements } from '@/modules/ModuleRoutes';
 import { DatabaseSetupPage } from '@/features/setup';
 import { ModuleVideosSlot } from '@/features/videos/ModuleVideosSlot';
+import { VIDEO_GUIDES_ENABLED } from '@/features/videos/enabled';
 import { Logo, ShortcutsDialog, CommandPalette, ToastContainer, DemoReadOnlyDialog, BackgroundInstallBanner, ErrorBoundary, NotFoundPage, ProductTour, OfflineBanner, DesktopPortBanner, PWAInstallPrompt } from '@/shared/ui';
 import { AdminOnly } from '@/shared/auth/AdminOnly';
 import GlobalSearchModal from '@/features/search/GlobalSearchModal';
@@ -959,9 +960,11 @@ function AppShell() {
           <Suspense fallback={<PageLoadingInline />}>
             {/* "Videos for this step": renders nothing on a screen with no
                 videos, and a failure in it must never take the page down. */}
-            <ErrorBoundary key={`videos:${location.pathname}`} fallback={null}>
-              <ModuleVideosSlot />
-            </ErrorBoundary>
+            {VIDEO_GUIDES_ENABLED && (
+              <ErrorBoundary key={`videos:${location.pathname}`} fallback={null}>
+                <ModuleVideosSlot />
+              </ErrorBoundary>
+            )}
             <ErrorBoundary key={location.pathname}>
               <PageTitleContext.Provider value={setTitle}>
                 <Outlet />
@@ -1673,7 +1676,10 @@ export default function App() {
             and the form has no business loading for the ones who do not.
             /cases/new is declared before the stepper for readability only -
             the router ranks a static segment above a dynamic one regardless. */}
-        <Route path="/videos" element={<P title="Videos"><VideosPage /></P>} />
+        <Route
+          path="/videos"
+          element={VIDEO_GUIDES_ENABLED ? <P title="Videos"><VideosPage /></P> : <Navigate to="/" replace />}
+        />
         <Route path="/packs" element={<P title="Packs"><PacksPage /></P>} />
         <Route path="/packs/focus" element={<P title="Packs"><PackFocusPage /></P>} />
         <Route path="/packs/:slug" element={<P title="Packs"><PackDetailPage /></P>} />

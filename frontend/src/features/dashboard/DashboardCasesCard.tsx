@@ -52,6 +52,7 @@ import { iconFor } from '@/features/cases/icons';
 import { CaseArt } from '@/features/cases/CaseArt';
 import { useDashboardLayoutStore } from '@/stores/useDashboardLayoutStore';
 import { DASHBOARD_WIDGET_BY_ID } from './widgetRegistry';
+import { VIDEO_GUIDES_ENABLED } from '@/features/videos/enabled';
 
 // The video half of the card. Lazy, so the video catalogue arrives with this
 // card and not with the dashboard's own chunk.
@@ -478,9 +479,11 @@ export function DashboardCasesCard() {
           card is for, and a row of bright thumbnails at its top pulled the eye
           away from them. The fallback holds the row's height so nothing
           jumps. */}
-      <Suspense fallback={<div className="mt-3 h-24" aria-hidden="true" />}>
-        <DashboardVideosStrip count={shape.count} columns={shape.columns} tileVisibility={shape.tileVisibility} />
-      </Suspense>
+      {VIDEO_GUIDES_ENABLED && (
+        <Suspense fallback={<div className="mt-3 h-24" aria-hidden="true" />}>
+          <DashboardVideosStrip count={shape.count} columns={shape.columns} tileVisibility={shape.tileVisibility} />
+        </Suspense>
+      )}
     </div>
   );
 }

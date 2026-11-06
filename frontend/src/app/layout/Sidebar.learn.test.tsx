@@ -115,7 +115,7 @@ describe('the featured article', () => {
 });
 
 describe('the Learn card', () => {
-  it('opens the menu, above Pinned, with Videos, Cases and Packs', () => {
+  it('opens the menu, above Pinned, with Cases, Packs and the Pakistan library', () => {
     localStorage.setItem('oce-pinned-routes', JSON.stringify(['/boq']));
     renderSidebar();
 
@@ -123,13 +123,13 @@ describe('the Learn card', () => {
     const hrefs = within(learn)
       .getAllByRole('link')
       .map((a) => a.getAttribute('href'));
-    expect(hrefs).toEqual(['/videos', '/cases', '/packs']);
+    expect(hrefs).toEqual(['/cases', '/packs', '/pakistan']);
 
     const firstLinks = within(nav())
       .getAllByRole('link')
       .slice(0, 4)
       .map((a) => a.getAttribute('href'));
-    expect(firstLinks).toEqual(['/videos', '/cases', '/packs', '/boq']);
+    expect(firstLinks).toEqual(['/cases', '/packs', '/pakistan', '/boq']);
   });
 
   it('marks Packs as the current page on a single pack too', () => {

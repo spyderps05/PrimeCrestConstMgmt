@@ -105,7 +105,7 @@ import {
   MonitorPlay,
   KeyRound,
 } from 'lucide-react';
-
+import { VIDEO_GUIDES_ENABLED } from '@/features/videos/enabled';
 
 export interface NavItem {
   labelKey: string;
@@ -230,7 +230,10 @@ export const navGroups: NavGroup[] = [
     defaultLabel: 'Learn',
     defaultOpen: true,
     items: [
-      { labelKey: 'nav.videos', defaultLabel: 'Video guides', to: '/videos', icon: MonitorPlay },
+      // Video guides play upstream YouTube lessons; off until PrimeCrest has its own.
+      ...(VIDEO_GUIDES_ENABLED
+        ? [{ labelKey: 'nav.videos', defaultLabel: 'Video guides', to: '/videos', icon: MonitorPlay }]
+        : []),
       { labelKey: 'nav.cases', to: '/cases', icon: Route },
       { labelKey: 'nav.packs', defaultLabel: 'Packs', to: '/packs', icon: PackageOpen },
       { labelKey: 'nav.pakistan_library', defaultLabel: 'Pakistan library', to: '/pakistan', icon: BookOpen },
