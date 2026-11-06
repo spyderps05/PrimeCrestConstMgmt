@@ -4,7 +4,7 @@
 
 A person who installs the platform for themselves with the demo seed on signs
 in through the "Admin" tile on the login page, which is the password-free demo
-login for ``demo@openconstructionerp.com``. Everything a new install is for
+login for ``demo@primecrest.pk``. Everything a new install is for
 (installing a country pack, a cost base, switching modules) is admin only, so
 that account has to be an administrator there, including on an install created
 by an older release or by a seeder script that wrote the row as a viewer.

@@ -23,7 +23,7 @@ import * as path from 'path';
 
 const API = process.env.OE_TEST_API_URL ?? process.env.OE_TEST_BASE_URL ?? 'http://127.0.0.1:8000';
 const BASE = process.env.OE_TEST_BASE_URL ?? 'http://127.0.0.1:8000';
-const DEMO_EMAIL = process.env.OE_TEST_DEMO_EMAIL ?? 'demo@openconstructionerp.com';
+const DEMO_EMAIL = process.env.OE_TEST_DEMO_EMAIL ?? 'demo@primecrest.pk';
 
 // 16:9 to match the homepage media boxes. deviceScaleFactor 2 keeps it crisp;
 // the CI step downscales to a sensible GIF width.

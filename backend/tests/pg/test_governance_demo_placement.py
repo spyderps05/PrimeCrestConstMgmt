@@ -42,9 +42,9 @@ from tests._pg import isolated_engine
 
 pytestmark = pytest.mark.asyncio
 
-DEMO = "demo@openconstructionerp.com"
-MANAGER = "manager@openconstructionerp.com"
-ESTIMATOR = "estimator@openconstructionerp.com"
+DEMO = "demo@primecrest.pk"
+MANAGER = "manager@primecrest.pk"
+ESTIMATOR = "estimator@primecrest.pk"
 PACK_MODEL = "pack_model"
 PACK_PATH = "catalogues/phase_model/pack_model_v1.json"
 DEMO_PATH = "demo/demo_project.json"

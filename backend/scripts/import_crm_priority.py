@@ -32,7 +32,7 @@ Usage::
     python -m backend.scripts.import_crm_priority \\
         --xlsx "C:/path/to/crm_priority.xlsx" \\
         [--db backend/openestimate.db] \\
-        [--owner-email demo@openconstructionerp.com] \\
+        [--owner-email demo@primecrest.pk] \\
         [--dry-run]
 """
 
@@ -471,7 +471,7 @@ def main() -> int:
     parser.add_argument("--db", help="Path to openestimate.db (auto-detected by default)")
     parser.add_argument(
         "--owner-email",
-        default="demo@openconstructionerp.com",
+        default="demo@primecrest.pk",
         help="User email whose tenant the contacts attach to (default: demo admin)",
     )
     parser.add_argument(

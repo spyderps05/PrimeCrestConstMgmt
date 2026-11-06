@@ -31,7 +31,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 const API = process.env.OE_TEST_API_URL ?? 'http://127.0.0.1:8000';
-const DEMO_EMAIL = process.env.OE_TEST_DEMO_EMAIL ?? 'demo@openconstructionerp.com';
+const DEMO_EMAIL = process.env.OE_TEST_DEMO_EMAIL ?? 'demo@primecrest.pk';
 const OUT = path.join(process.cwd(), 'qa-routes');
 const ROUTES_DIR = path.join(OUT, 'routes');
 const PARAMS_CACHE = path.join(OUT, 'params.json');

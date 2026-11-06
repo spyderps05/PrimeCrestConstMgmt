@@ -11,7 +11,7 @@ Cases:
     * a second bootstrap reuses the same owner row (no duplicate)
     * bootstrap is 403 when desktop mode is off
     * bootstrap is 403 when a real registered user exists but no local owner
-    * seeded demo accounts (``*@openconstructionerp.com``) do not flip
+    * seeded demo accounts (``*@primecrest.pk``) do not flip
       ``fresh_install`` to False
 
 These tests drive the service layer directly against a transaction-isolated
@@ -343,13 +343,13 @@ async def test_routes_mounted_under_api_v1_auth(
 
 @pytest.mark.asyncio
 async def test_demo_seed_emails_do_not_break_fresh_install(session: AsyncSession) -> None:
-    """Seeded demo accounts (*@openconstructionerp.com) keep the DB fresh."""
+    """Seeded demo accounts (*@primecrest.pk) keep the DB fresh."""
     from app.modules.users.models import User
     from app.modules.users.service import hash_password
 
     demo = User(
         id=uuid.uuid4(),
-        email="demo@openconstructionerp.com",
+        email="demo@primecrest.pk",
         hashed_password=hash_password("DemoPass1234!"),
         full_name="Demo User",
         role="admin",

@@ -93,7 +93,7 @@ async def test_case_and_padding_do_not_get_a_message_past_the_guard() -> None:
     backend = MemoryEmailBackend()
     service = EmailService(backend)
 
-    result = await service.send(_message("  Demo@PrimeCrest.com  "))
+    result = await service.send(_message("  Demo@PrimeCrest.PK  "))
 
     assert result.ok is False
     assert backend.sent == []
@@ -119,8 +119,8 @@ async def test_an_ordinary_recipient_still_goes_out() -> None:
 
 def test_is_demo_account_says_no_to_a_lookalike() -> None:
     """A neighbouring address on the same domain is not a demo login."""
-    assert is_demo_account("demo@openconstructionerp.com") is True
-    assert is_demo_account("demo.user@openconstructionerp.com") is False
-    assert is_demo_account("info@openconstructionerp.com") is False
+    assert is_demo_account("demo@primecrest.pk") is True
+    assert is_demo_account("demo.user@primecrest.pk") is False
+    assert is_demo_account("info@primecrest.pk") is False
     assert is_demo_account(None) is False
     assert is_demo_account("") is False

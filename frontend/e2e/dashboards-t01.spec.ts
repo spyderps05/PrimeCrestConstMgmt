@@ -42,7 +42,7 @@ async function shot(page: Page, name: string): Promise<void> {
 }
 
 async function injectAuth(page: Page): Promise<string> {
-  const credentials = { email: 'test@openestimate.com', password: 'OpenEstimate2024!' };
+  const credentials = { email: 'test@primecrest.pk', password: 'OpenEstimate2024!' };
 
   let loginRes = await page.request.post(`${BACKEND}/api/v1/users/auth/login/`, {
     data: credentials,
@@ -63,7 +63,7 @@ async function injectAuth(page: Page): Promise<string> {
     localStorage.setItem('oe_access_token', tokens.access);
     localStorage.setItem('oe_refresh_token', tokens.refresh);
     localStorage.setItem('oe_remember', '1');
-    localStorage.setItem('oe_user_email', 'test@openestimate.com');
+    localStorage.setItem('oe_user_email', 'test@primecrest.pk');
     localStorage.setItem('oe_onboarding_completed', 'true');
     localStorage.setItem('oe_welcome_dismissed', 'true');
     localStorage.setItem('oe_tour_completed', 'true');

@@ -34,9 +34,9 @@ from tests._pg import isolated_engine
 
 pytestmark = pytest.mark.asyncio
 
-DEMO = "demo@openconstructionerp.com"
-MANAGER = "manager@openconstructionerp.com"
-ESTIMATOR = "estimator@openconstructionerp.com"
+DEMO = "demo@primecrest.pk"
+MANAGER = "manager@primecrest.pk"
+ESTIMATOR = "estimator@primecrest.pk"
 
 
 @pytest_asyncio.fixture

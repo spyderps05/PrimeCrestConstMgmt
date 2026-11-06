@@ -46,7 +46,7 @@ from app.main import create_app
 
 #: A seeded demo tile whose role is below admin, so the superseded-admin rule
 #: never applies to it, whatever else the shared database holds.
-DEMO_TILE_EMAIL = "manager@openconstructionerp.com"
+DEMO_TILE_EMAIL = "manager@primecrest.pk"
 
 
 @pytest_asyncio.fixture(scope="module")
@@ -154,7 +154,7 @@ class TestDemoLoginToggle:
         set_demo_login_enabled(False)
         resp = await demo_client.post(
             "/api/v1/users/auth/login/",
-            json={"email": "demo@openconstructionerp.com", "password": "wrong-on-purpose"},
+            json={"email": "demo@primecrest.pk", "password": "wrong-on-purpose"},
         )
         assert resp.status_code == 401, resp.text
 

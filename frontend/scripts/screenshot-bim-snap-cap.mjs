@@ -17,7 +17,7 @@ import path from 'node:path';
 
 const BASE = process.env.OE_FRONTEND_URL || 'http://localhost:5180';
 const API = process.env.OE_API_URL || 'http://localhost:8000';
-const DEMO_EMAIL = 'demo@openconstructionerp.com';
+const DEMO_EMAIL = 'demo@primecrest.pk';
 const OUT_DIR = path.resolve('qa-tests/_w66-bim-snap-cap');
 
 function log(...args) {

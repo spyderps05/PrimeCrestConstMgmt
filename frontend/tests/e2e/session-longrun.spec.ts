@@ -29,7 +29,7 @@ import { spawn } from 'node:child_process';
 import { test, expect, type BrowserContext, type Page } from '@playwright/test';
 
 const API_URL = process.env.OE_TEST_API_URL ?? 'http://localhost:8000';
-const EMAIL = process.env.OE_TEST_DEMO_EMAIL ?? 'demo@openconstructionerp.com';
+const EMAIL = process.env.OE_TEST_DEMO_EMAIL ?? 'demo@primecrest.pk';
 const PASSWORD = process.env.OE_TEST_DEMO_PASSWORD ?? 'OpenEstimate2024!';
 const SOAK_MINUTES = Number(process.env.SESSION_SOAK_MINUTES ?? 70);
 const INTERVAL_MS = Number(process.env.SESSION_SOAK_INTERVAL_S ?? 20) * 1000;

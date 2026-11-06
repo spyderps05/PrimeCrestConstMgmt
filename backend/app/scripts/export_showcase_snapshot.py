@@ -159,7 +159,7 @@ def export(db_path: str, out_path: Path = SNAPSHOT_PATH) -> dict:
     for slug in ("demo", "estimator", "manager"):
         row = cur.execute(
             "SELECT id FROM oe_users_user WHERE email=?",
-            (f"{slug}@openconstructionerp.com",),
+            (f"{slug}@primecrest.pk",),
         ).fetchone()
         if row:
             users[slug] = row[0]

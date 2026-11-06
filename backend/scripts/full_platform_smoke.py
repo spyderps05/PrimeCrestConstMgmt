@@ -33,7 +33,7 @@ import httpx
 # ── Configuration ─────────────────────────────────────────────────────────────
 
 BASE_URL = "http://localhost:8000"
-DEMO_EMAIL = "demo@openconstructionerp.com"
+DEMO_EMAIL = "demo@primecrest.pk"
 DEMO_PASSWORD = "DemoPass1234!"
 
 LOCALES = ["en", "de", "ru", "fr", "ar"]
@@ -1321,7 +1321,7 @@ def test_user_management(api: API, suite: PlatformTestSuite) -> None:
     print("\n── 31. USER MANAGEMENT ──")
 
     # Register new user
-    email = f"test-{uuid.uuid4().hex[:8]}@openconstructionerp.com"
+    email = f"test-{uuid.uuid4().hex[:8]}@primecrest.pk"
     r = api.post(
         "/api/v1/users/auth/register",
         json={

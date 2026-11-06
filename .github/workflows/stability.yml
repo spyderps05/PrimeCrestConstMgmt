@@ -158,7 +158,7 @@ jobs:
           # /api/health can answer before the showcase projects are written.
           for i in $(seq 1 120); do
             tok=$(curl -s -X POST "http://127.0.0.1:${APP_PORT}/api/v1/users/auth/demo-login/" \
-              -H 'Content-Type: application/json' -d '{"email":"demo@openconstructionerp.com"}' \
+              -H 'Content-Type: application/json' -d '{"email":"demo@primecrest.pk"}' \
               | python3 -c 'import sys,json; print(json.load(sys.stdin).get("access_token",""))' 2>/dev/null || true)
             if [ -n "$tok" ]; then
               n=$(curl -s -H "Authorization: Bearer $tok" "http://127.0.0.1:${APP_PORT}/api/v1/projects/?limit=100" \
@@ -343,7 +343,7 @@ jobs:
           for i in $(seq 1 60); do
             status=$(curl -s -o /tmp/login.json -w "%{http_code}" -X POST \
               http://127.0.0.1:8080/api/v1/users/auth/demo-login/ \
-              -H 'Content-Type: application/json' -d '{"email":"demo@openconstructionerp.com"}' || true)
+              -H 'Content-Type: application/json' -d '{"email":"demo@primecrest.pk"}' || true)
             if [ "$status" = "200" ] && grep -q access_token /tmp/login.json; then
               echo "demo login OK"; exit 0
             fi

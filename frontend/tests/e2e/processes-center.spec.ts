@@ -15,7 +15,7 @@ import { test, expect, type Page, type Route } from '@playwright/test';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 
-const DEMO_EMAIL = 'demo@openconstructionerp.com';
+const DEMO_EMAIL = 'demo@primecrest.pk';
 const REAL = process.env.E2E_PROCESSES_REAL === '1';
 const SHOTS = process.env.PROCESSES_SHOTS;
 

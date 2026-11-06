@@ -55,4 +55,4 @@ def test_the_banner_still_hands_over_the_address_and_the_credentials(capsys) -> 
     """The reason it is printed early, and so the half that must survive any rewording."""
     output = _banner(capsys)
     assert "http://127.0.0.1:8080" in output
-    assert "demo@openconstructionerp.com" in output
+    assert "demo@primecrest.pk" in output

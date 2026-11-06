@@ -8,7 +8,7 @@ import { test, type Page } from '@playwright/test';
 import * as path from 'node:path';
 
 const DEMO_USER = {
-  email: process.env.E2E_USER_EMAIL ?? 'demo@openconstructionerp.com',
+  email: process.env.E2E_USER_EMAIL ?? 'demo@primecrest.pk',
 };
 
 async function login(page: Page): Promise<void> {

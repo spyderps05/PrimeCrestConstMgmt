@@ -136,7 +136,7 @@ class UserRepository:
         deactivated, or whose operator never registered, that rule handed
         admin to whoever reached the public form first.
 
-        The seeded demo account ``demo@openconstructionerp.com`` is intentionally
+        The seeded demo account ``demo@primecrest.pk`` is intentionally
         excluded: a fresh ``pip install primecrest`` ships with
         that admin already in the DB, and counting it would dead-lock the
         bootstrap path - every self-registered user would be created

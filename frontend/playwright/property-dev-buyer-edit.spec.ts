@@ -34,7 +34,7 @@ const SCREENSHOT_DIR = '.tests-artifacts/r6/property_dev/buyer_edit';
 // brief referenced "demo-admin@…" / "demo-viewer@…" placeholders but the
 // platform only ships demo / estimator / manager seeds — use the real
 // ones, fall back to the viewer-less skip path documented inline.
-const DEMO_ADMIN = 'demo@openconstructionerp.com';
+const DEMO_ADMIN = 'demo@primecrest.pk';
 // "estimator" maps to Role.EDITOR via permission_registry — close enough
 // to a real "viewer-less" scenario for the negative gating leg, since
 // editors can already update buyers. We therefore skip the viewer test

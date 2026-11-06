@@ -85,7 +85,7 @@ async def fresh_project(world: World) -> uuid.UUID:
 
     pid = uuid.uuid4()
     async with world.factory() as s:
-        owner = (await s.execute(select(User.id).where(User.email == "demo@openconstructionerp.com"))).scalar_one()
+        owner = (await s.execute(select(User.id).where(User.email == "demo@primecrest.pk"))).scalar_one()
         s.add(
             Project(
                 id=pid,
@@ -111,7 +111,7 @@ async def admin_id(world: World) -> uuid.UUID:
     from app.modules.users.models import User
 
     async with world.factory() as s:
-        return (await s.execute(select(User.id).where(User.email == "demo@openconstructionerp.com"))).scalar_one()
+        return (await s.execute(select(User.id).where(User.email == "demo@primecrest.pk"))).scalar_one()
 
 
 def _items(resp: Any) -> list[dict[str, Any]]:

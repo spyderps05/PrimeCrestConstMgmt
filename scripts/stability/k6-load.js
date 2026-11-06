@@ -11,7 +11,7 @@
 //   BASE_URL     app root, default http://127.0.0.1:8080
 //   VUS          virtual users, default 20
 //   DURATION     steady-state duration, default 5m
-//   DEMO_EMAIL   seeded demo admin, default demo@openconstructionerp.com
+//   DEMO_EMAIL   seeded demo admin, default demo@primecrest.pk
 //   SUMMARY_OUT  path for the JSON summary, default k6-summary.json
 
 import http from 'k6/http';
@@ -19,7 +19,7 @@ import { check, fail, sleep } from 'k6';
 
 const BASE = (__ENV.BASE_URL || 'http://127.0.0.1:8080').replace(/\/$/, '');
 const API = `${BASE}/api/v1`;
-const DEMO_EMAIL = __ENV.DEMO_EMAIL || 'demo@openconstructionerp.com';
+const DEMO_EMAIL = __ENV.DEMO_EMAIL || 'demo@primecrest.pk';
 const SEARCH_TERMS = ['concrete', 'rebar', 'brick', 'excavation', 'formwork', 'insulation'];
 
 export const options = {

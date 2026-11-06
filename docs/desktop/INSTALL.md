@@ -51,7 +51,7 @@ The very first time you open the app it sets up its local database, and that tak
 
 Once the app is ready you will reach the sign-in screen. A demo account is ready to go so you can look around right away.
 
-Email: demo@openconstructionerp.com
+Email: demo@primecrest.pk
 Password: DemoPass1234!
 
 Sign in with those and you are in. You can create your own account and projects from there.

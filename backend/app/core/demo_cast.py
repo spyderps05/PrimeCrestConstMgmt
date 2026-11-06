@@ -48,8 +48,8 @@ logger = logging.getLogger(__name__)
 
 #: The demo login behind each part. Both are in ``demo_accounts.DEMO_ACCOUNT_EMAILS``.
 CAST: dict[str, str] = {
-    "decider": "manager@openconstructionerp.com",
-    "cost": "estimator@openconstructionerp.com",
+    "decider": "manager@primecrest.pk",
+    "cost": "estimator@primecrest.pk",
 }
 
 #: The project team the cast is put on when it is not on the project yet.

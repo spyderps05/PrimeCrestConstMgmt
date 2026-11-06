@@ -43,7 +43,7 @@ PACK_SLUG = "germany-de"
 #: The account behind the "Admin" tile on the login page. The other seeded
 #: accounts are read from ``app.core.demo_accounts`` so a renamed one shows up
 #: here as a failure rather than as a case nobody runs.
-DEMO_ADMIN = "demo@openconstructionerp.com"
+DEMO_ADMIN = "demo@primecrest.pk"
 
 
 class _Rebinder:
@@ -393,7 +393,7 @@ async def test_a_real_administrator_ends_the_demo_administrator(self_installed) 
     assert r.json()["detail"]["error"] == "demo_admin_superseded", r.text
 
     # The other demo tiles are not administrators and keep working.
-    await _demo_login(client, "manager@openconstructionerp.com")
+    await _demo_login(client, "manager@primecrest.pk")
 
 
 async def test_the_public_demo_tiles_still_sign_in_next_to_a_real_administrator(self_installed, monkeypatch) -> None:

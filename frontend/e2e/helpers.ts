@@ -20,7 +20,7 @@ import { type Page, expect } from '@playwright/test';
 // Operators whose install generated its own demo password (the platform mints
 // one per install unless OE_DEMO_PASSWORD is set) override both values here.
 export const TEST_USER = {
-  email: process.env.E2E_USER_EMAIL ?? 'demo@openconstructionerp.com',
+  email: process.env.E2E_USER_EMAIL ?? 'demo@primecrest.pk',
   password: process.env.E2E_USER_PASSWORD ?? 'DemoPass1234!',
 };
 

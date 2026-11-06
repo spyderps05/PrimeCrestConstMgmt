@@ -72,7 +72,7 @@ _SLOW_SECONDS = 10.0
 #: transport buffers the whole body, so an event stream always runs to it.
 _HARD_TIMEOUT_SECONDS = 15.0
 
-_DEMO_ADMIN = "demo@openconstructionerp.com"
+_DEMO_ADMIN = "demo@primecrest.pk"
 
 #: Query values the frontend sends on list screens.
 _LIST_LIMIT = 50

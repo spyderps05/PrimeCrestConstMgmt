@@ -6,7 +6,7 @@
 # - Frontend: vite on 127.0.0.1:5810 with /api proxied to :8810 via VITE_API_TARGET.
 # Usage: scripts/dev/run-local.sh [--stop]
 # Env overrides: BACKEND_PORT FRONTEND_PORT PG_PORT PG_CONTAINER PYTHON
-# Demo login: demo@openconstructionerp.com / DemoPass1234!
+# Demo login: demo@primecrest.pk / DemoPass1234!
 set -euo pipefail
 
 BACKEND_PORT="${BACKEND_PORT:-8810}"
@@ -60,5 +60,5 @@ echo "Waiting for backend on :$BACKEND_PORT (first boot creates schema + seeds d
 for _ in $(seq 1 600); do curl -fsS "http://127.0.0.1:${BACKEND_PORT}/api/health" >/dev/null 2>&1 && break; sleep 2; done
 echo "Backend : http://127.0.0.1:${BACKEND_PORT}  (docs: /api/docs)"
 echo "Frontend: http://127.0.0.1:${FRONTEND_PORT}"
-echo "Login   : demo@openconstructionerp.com / DemoPass1234!"
+echo "Login   : demo@primecrest.pk / DemoPass1234!"
 echo "Logs    : $LOG_DIR   Stop: scripts/dev/run-local.sh --stop"

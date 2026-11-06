@@ -321,7 +321,7 @@ export function LoginPage() {
   // install. The tiles sign in through /auth/demo-login/ instead.
   const demoAccounts = [
     {
-      email: 'demo@openconstructionerp.com',
+      email: 'demo@primecrest.pk',
       name: 'Imran Shah',
       role: t('auth.demo_role_admin', 'Administrator'),
       color: 'bg-blue-500',
@@ -329,7 +329,7 @@ export function LoginPage() {
       portrait: '/assets/demo-people/imran-shah.jpg',
     },
     {
-      email: 'manager@openconstructionerp.com',
+      email: 'manager@primecrest.pk',
       name: 'Hassan Raza',
       role: t('auth.demo_role_manager', 'Manager'),
       color: 'bg-[#7cd0ff]',

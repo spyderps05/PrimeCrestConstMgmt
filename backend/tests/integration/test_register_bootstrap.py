@@ -113,7 +113,7 @@ async def test_existing_real_viewer_blocks_bootstrap(session):
 
 @pytest.mark.asyncio
 async def test_demo_admin_seed_does_not_block_bootstrap(session):
-    """The seeded demo admin (demo@openconstructionerp.com) must not block the
+    """The seeded demo admin (demo@primecrest.pk) must not block the
     first real registrant from claiming admin.
 
     Without this carve-out, every fresh ``pip install primecrest``
@@ -130,7 +130,7 @@ async def test_demo_admin_seed_does_not_block_bootstrap(session):
 
     demo = User(
         id=_uuid.uuid4(),
-        email="demo@openconstructionerp.com",
+        email="demo@primecrest.pk",
         hashed_password=hash_password("DemoPass1234!"),
         full_name="Demo User",
         role="admin",
@@ -142,7 +142,7 @@ async def test_demo_admin_seed_does_not_block_bootstrap(session):
     await session.commit()
 
     repo = UserRepository(session)
-    assert await repo.has_admin() is False, "has_admin must ignore the seeded demo@openconstructionerp.com admin"
+    assert await repo.has_admin() is False, "has_admin must ignore the seeded demo@primecrest.pk admin"
 
     first = await _service(session).register(_payload(f"first-{_uuid.uuid4().hex[:6]}@bootstrap.io"))
     await session.commit()
@@ -154,7 +154,7 @@ async def test_demo_admin_seed_does_not_block_bootstrap(session):
 async def test_only_the_first_registrant_on_the_demo_domain_is_bootstrapped(session):
     """An address on the demo accounts' domain is a real user like any other.
 
-    The carve-out above used to be the whole ``@openconstructionerp.com``
+    The carve-out above used to be the whole ``@primecrest.pk``
     domain, so a registrant on it counted as neither a real user nor a real
     admin, and on a fresh install every one of them was handed admin. Only the
     seeded addresses themselves are exempt now.
@@ -162,13 +162,13 @@ async def test_only_the_first_registrant_on_the_demo_domain_is_bootstrapped(sess
     from app.modules.users.repository import UserRepository
 
     svc = _service(session)
-    first = await svc.register(_payload(f"first-{uuid.uuid4().hex[:6]}@openconstructionerp.com"))
+    first = await svc.register(_payload(f"first-{uuid.uuid4().hex[:6]}@primecrest.pk"))
     await session.commit()
     assert first.role == "admin", "the first registrant on a fresh install is still the bootstrap admin"
 
     repo = UserRepository(session)
     assert await repo.has_admin() is True, "an admin on the demo domain who is not a seeded login is real"
 
-    second = await svc.register(_payload(f"second-{uuid.uuid4().hex[:6]}@openconstructionerp.com"))
+    second = await svc.register(_payload(f"second-{uuid.uuid4().hex[:6]}@primecrest.pk"))
     await session.commit()
     assert second.role != "admin", "a second registrant on the demo domain must not be handed admin"

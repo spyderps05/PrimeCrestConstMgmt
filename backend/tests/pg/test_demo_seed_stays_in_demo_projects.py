@@ -980,7 +980,7 @@ async def test_an_install_that_removed_its_demos_before_the_record_existed_gets_
     async with boot_factory() as s:
         assert set(main._boot_demo_ids(pack)) <= await retired_demo_ids(s)
         # The boot really ran: it created the demo account it always creates.
-        assert (await s.execute(select(User.id).where(User.email == "demo@openconstructionerp.com"))).first()
+        assert (await s.execute(select(User.id).where(User.email == "demo@primecrest.pk"))).first()
     leaked = {m.__name__: n for m in _PROJECT_SCOPED if (n := await _rows(boot_factory, m, real))}
     assert leaked == {}
 
@@ -1014,7 +1014,7 @@ async def test_the_boot_keeps_deleted_and_then_purged_demos_away(boot_factory, m
     async with boot_factory() as s:
         # A real hash: the boot checks the stored one against the env password.
         demo_user = User(
-            email="demo@openconstructionerp.com",
+            email="demo@primecrest.pk",
             hashed_password=hash_password("demo-password-for-tests"),
             full_name="Demo",
             role="admin",

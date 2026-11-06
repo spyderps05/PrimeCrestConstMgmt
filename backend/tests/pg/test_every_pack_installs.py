@@ -537,7 +537,7 @@ async def test_a_showcase_template_no_pack_installs_still_installs(demo_id: str,
 _GOVERNANCE_LOGGERS = ("app.modules.project_governance", "app.core.demo_cast")
 
 
-_DEMO_LOGINS = ("estimator@openconstructionerp.com", "manager@openconstructionerp.com")
+_DEMO_LOGINS = ("estimator@primecrest.pk", "manager@primecrest.pk")
 
 
 async def _governance_of(factory, project_id: uuid.UUID) -> dict[str, Any]:

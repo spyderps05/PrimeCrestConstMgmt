@@ -4,9 +4,9 @@
  * The platform seeds three demo accounts on every boot (see
  * ``backend/app/main.py::_seed_demo_account``):
  *
- *   - ``demo@openconstructionerp.com``        role=admin   (full access)
- *   - ``manager@openconstructionerp.com``     role=manager (legal + finance gates)
- *   - ``estimator@openconstructionerp.com``   role=editor  (sales + ops)
+ *   - ``demo@primecrest.pk``        role=admin   (full access)
+ *   - ``manager@primecrest.pk``     role=manager (legal + finance gates)
+ *   - ``estimator@primecrest.pk``   role=editor  (sales + ops)
  *
  * The /auth/demo-login/ endpoint hands out tokens against those whitelisted
  * emails without a password — so the suite never has to know the random
@@ -22,9 +22,9 @@ import { type APIRequestContext, type BrowserContext, type Page, request } from 
 export type DemoRole = 'admin' | 'manager' | 'editor' | 'viewer';
 
 export const DEMO_ACCOUNTS: Record<Exclude<DemoRole, 'viewer'>, string> = {
-  admin: 'demo@openconstructionerp.com',
-  manager: 'manager@openconstructionerp.com',
-  editor: 'estimator@openconstructionerp.com',
+  admin: 'demo@primecrest.pk',
+  manager: 'manager@primecrest.pk',
+  editor: 'estimator@primecrest.pk',
 };
 
 export const BACKEND_URL = process.env.PROPDEV_BACKEND_URL ?? 'http://localhost:8000';

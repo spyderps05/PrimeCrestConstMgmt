@@ -14,7 +14,7 @@ Verifies that:
 Usage: python scripts/test_cost_import.py
 
 Requires the backend to be running on http://localhost:8000 with the demo
-account seeded (`demo@openconstructionerp.com`).
+account seeded (`demo@primecrest.pk`).
 """
 
 from __future__ import annotations
@@ -27,7 +27,7 @@ from pathlib import Path
 import requests
 
 API = "http://localhost:8000/api/v1"
-DEMO_EMAIL = "demo@openconstructionerp.com"
+DEMO_EMAIL = "demo@primecrest.pk"
 TEMPLATES = Path(__file__).resolve().parents[1] / "data" / "templates"
 CSV_PATH = TEMPLATES / "example_us_construction.csv"
 JSON_PATH = TEMPLATES / "cost_database_with_assemblies.json"

@@ -11,7 +11,7 @@
     (VITE_API_TARGET).
   Logs go to scripts/dev/.local/logs/ (gitignored). Stop with: .\scripts\dev\run-local.ps1 -Stop
 
-  Demo login: demo@openconstructionerp.com / DemoPass1234!  (set via DEMO_USER_PASSWORD)
+  Demo login: demo@primecrest.pk / DemoPass1234!  (set via DEMO_USER_PASSWORD)
 
 .PARAMETER Python
   Python interpreter with backend deps installed. Default: H:/PrimeCrestConstMgmt/backend/.venv/Scripts/python.exe
@@ -91,5 +91,5 @@ for ($i = 0; $i -lt 600; $i++) {
 }
 Write-Host "Backend : http://127.0.0.1:$BackendPort  (docs: /api/docs)"
 if (-not $NoFrontend) { Write-Host "Frontend: http://127.0.0.1:$FrontendPort" }
-Write-Host "Login   : demo@openconstructionerp.com / DemoPass1234!"
+Write-Host "Login   : demo@primecrest.pk / DemoPass1234!"
 Write-Host "Logs    : $LogDir   Stop: .\scripts\dev\run-local.ps1 -Stop"

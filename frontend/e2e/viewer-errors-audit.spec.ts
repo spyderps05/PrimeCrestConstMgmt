@@ -9,17 +9,17 @@ import { test, type Page } from '@playwright/test';
 async function injectAuth(page: Page): Promise<void> {
   const login = await page.request.post(
     'http://localhost:8000/api/v1/users/auth/login/',
-    { data: { email: 'test@openestimate.com', password: 'OpenEstimate2024!' } },
+    { data: { email: 'test@primecrest.pk', password: 'OpenEstimate2024!' } },
   );
   const b = login.ok()
     ? await login.json()
     : (await page.request
         .post('http://localhost:8000/api/v1/users/auth/register/', {
-          data: { email: 'test@openestimate.com', password: 'OpenEstimate2024!', full_name: 'E2E' },
+          data: { email: 'test@primecrest.pk', password: 'OpenEstimate2024!', full_name: 'E2E' },
         })
         .then(() =>
           page.request.post('http://localhost:8000/api/v1/users/auth/login/', {
-            data: { email: 'test@openestimate.com', password: 'OpenEstimate2024!' },
+            data: { email: 'test@primecrest.pk', password: 'OpenEstimate2024!' },
           }),
         )
         .then((r) => r.json()));
@@ -27,7 +27,7 @@ async function injectAuth(page: Page): Promise<void> {
     localStorage.setItem('oe_access_token', t.a);
     localStorage.setItem('oe_refresh_token', t.r);
     localStorage.setItem('oe_remember', '1');
-    localStorage.setItem('oe_user_email', 'test@openestimate.com');
+    localStorage.setItem('oe_user_email', 'test@primecrest.pk');
     localStorage.setItem('oe_onboarding_completed', 'true');
     localStorage.setItem('oe_welcome_dismissed', 'true');
     localStorage.setItem('oe_tour_completed', 'true');

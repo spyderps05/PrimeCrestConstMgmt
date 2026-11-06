@@ -17,7 +17,7 @@ import { test, expect, type Page } from '@playwright/test';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const DEMO_EMAIL = 'demo@openconstructionerp.com';
+const DEMO_EMAIL = 'demo@primecrest.pk';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SCREENSHOT_DIR = path.resolve(HERE, '..', '..', '..', 'screenshots');
 

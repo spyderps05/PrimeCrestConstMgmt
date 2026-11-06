@@ -29,7 +29,7 @@ const SCREENSHOT_DIR = path.resolve(
 );
 
 const DEMO_USER = {
-  email: process.env.E2E_USER_EMAIL ?? 'demo@openconstructionerp.com',
+  email: process.env.E2E_USER_EMAIL ?? 'demo@primecrest.pk',
   password: process.env.E2E_USER_PASSWORD ?? 'DemoPass1234!',
 };
 

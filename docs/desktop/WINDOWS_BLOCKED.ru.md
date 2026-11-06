@@ -68,7 +68,7 @@ docker compose pull app
 docker compose up -d
 ```
 
-3. Откройте в браузере **http://localhost:8080** и войдите как `demo@openconstructionerp.com` / `DemoPass1234!`.
+3. Откройте в браузере **http://localhost:8080** и войдите как `demo@primecrest.pk` / `DemoPass1234!`.
 
 В файле `.env` лежат пароль базы данных и секрет для входа, сохраните его. В следующий раз достаточно `docker compose up -d` в той же папке.
 
@@ -100,7 +100,7 @@ py -3.12 -m pip install --upgrade openconstructionerp
 py -3.12 -m openconstructionerp
 ```
 
-3. Первый запуск создаёт локальную базу данных и загружает демо-данные, это занимает около минуты. Дальше приложение работает на **http://localhost:8080**; вход `demo@openconstructionerp.com` / `DemoPass1234!`. В следующий раз нужна только вторая команда.
+3. Первый запуск создаёт локальную базу данных и загружает демо-данные, это занимает около минуты. Дальше приложение работает на **http://localhost:8080**; вход `demo@primecrest.pk` / `DemoPass1234!`. В следующий раз нужна только вторая команда.
 
 ## Проверьте, что файл настоящий
 

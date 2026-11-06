@@ -25,7 +25,7 @@ import * as path from 'path';
 
 const API = process.env.OE_TEST_API_URL ?? process.env.OE_TEST_BASE_URL ?? 'http://127.0.0.1:8000';
 const BASE = process.env.OE_TEST_BASE_URL ?? 'http://127.0.0.1:8000';
-const DEMO_EMAIL = process.env.OE_TEST_DEMO_EMAIL ?? 'demo@openconstructionerp.com';
+const DEMO_EMAIL = process.env.OE_TEST_DEMO_EMAIL ?? 'demo@primecrest.pk';
 
 const VIEWPORT = { width: 1440, height: 900 };
 // Roughly how long each clip should be. Settle + interaction fill this window.

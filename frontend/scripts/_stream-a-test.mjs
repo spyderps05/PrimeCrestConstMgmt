@@ -19,7 +19,7 @@ function log(...m) {
 async function login() {
   const r = await fetch(`${BACKEND}/api/v1/users/auth/demo-login/`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: 'demo@openconstructionerp.com' }),
+    body: JSON.stringify({ email: 'demo@primecrest.pk' }),
   });
   if (!r.ok) throw new Error('demo-login failed: ' + r.status);
   return await r.json();
@@ -204,7 +204,7 @@ await page.goto(FRONTEND + '/', { waitUntil: 'domcontentloaded' });
 await page.evaluate(t => {
   localStorage.setItem('oe_access_token', t.a);
   localStorage.setItem('oe_refresh_token', t.r);
-  localStorage.setItem('oe_user_email', 'demo@openconstructionerp.com');
+  localStorage.setItem('oe_user_email', 'demo@primecrest.pk');
 }, { a: tokens.access_token, r: tokens.refresh_token });
 
 // ===== WAVE 1 =====

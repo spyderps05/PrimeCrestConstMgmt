@@ -380,7 +380,7 @@ SCRIPT
     fi
     echo ""
     echo "  That starts the server and serves http://localhost:$OE_PORT"
-    echo "  Sign in with:  demo@openconstructionerp.com  /  DemoPass1234!"
+    echo "  Sign in with:  demo@primecrest.pk  /  DemoPass1234!"
     echo ""
     echo "  Or start it right now:  $OE_INSTALL_DIR/start.sh --open"
 }

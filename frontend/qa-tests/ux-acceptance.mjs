@@ -40,7 +40,7 @@ import { dirname, join } from 'node:path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const BASE = process.env.BASE || 'http://localhost:5173';
 const OUTROOT = join(__dirname, 'ux-acceptance');
-const DEMO_EMAIL = 'demo@openconstructionerp.com';
+const DEMO_EMAIL = 'demo@primecrest.pk';
 
 // Representative locale set: English baseline, the lowest-coverage locales
 // (nl/fr), a Cyrillic, a CJK trio, and the RTL case. Override with --locales.

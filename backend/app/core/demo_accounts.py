@@ -22,26 +22,43 @@ would slip past a guard and bounce.
 
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from sqlalchemy.ext.asyncio import AsyncSession
+
 #: Logins seeded for the public walkthrough. Never mailable, see the module
 #: docstring. Mirrors the specs in ``app.main._seed_demo_account``.
 DEMO_ACCOUNT_EMAILS: frozenset[str] = frozenset(
     {
-        "demo@openconstructionerp.com",
-        "estimator@openconstructionerp.com",
-        "manager@openconstructionerp.com",
+        "demo@primecrest.pk",
+        "estimator@primecrest.pk",
+        "manager@primecrest.pk",
     }
 )
+
+
+#: Addresses the same three demo logins carried before the PrimeCrest
+#: rebrand, mapped to the address each one has now. An existing database still
+#: holds rows under the old addresses; :func:`rename_legacy_demo_accounts`
+#: moves them across at startup so the seeder finds them instead of creating
+#: a second set of demo users beside them.
+LEGACY_DEMO_ACCOUNT_RENAMES: dict[str, str] = {
+    "demo@openconstructionerp.com": "demo@primecrest.pk",
+    "estimator@openconstructionerp.com": "estimator@primecrest.pk",
+    "manager@openconstructionerp.com": "manager@primecrest.pk",
+}
 
 
 #: The account that owns the showcase projects. Seeders used to take the first
 #: row with role ``admin``, which on a live installation is a real person, and
 #: could be one whose account had been deactivated.
-SHOWCASE_OWNER_EMAIL = "demo@openconstructionerp.com"
+SHOWCASE_OWNER_EMAIL = "demo@primecrest.pk"
 
 
 #: The account behind the "Admin" tile on the login page. When it is and is
 #: not an administrator is decided in ``app.core.demo_admin``.
-DEMO_ADMIN_EMAIL = "demo@openconstructionerp.com"
+DEMO_ADMIN_EMAIL = "demo@primecrest.pk"
 
 
 #: The ``ADMIN_EMAIL`` each seeder script under ``app/scripts`` registers.
@@ -69,7 +86,9 @@ SEEDED_ADMIN_EMAILS: frozenset[str] = frozenset(
 #: deletes, so putting an admin address in it would hand out a password-free
 #: login to an administrator account. The two questions happen to have had the
 #: same answer for three addresses; they are not the same question.
-NON_MAILBOX_LOGINS: frozenset[str] = DEMO_ACCOUNT_EMAILS | SEEDED_ADMIN_EMAILS
+NON_MAILBOX_LOGINS: frozenset[str] = (
+    DEMO_ACCOUNT_EMAILS | SEEDED_ADMIN_EMAILS | frozenset(LEGACY_DEMO_ACCOUNT_RENAMES)
+)
 
 
 #: Top-level names that can never hold a mailbox (RFC 2606, RFC 6761).
@@ -118,3 +137,35 @@ def is_non_mailbox_login(email: str | None) -> bool:
     if not email:
         return False
     return email.strip().lower() in NON_MAILBOX_LOGINS
+
+
+async def rename_legacy_demo_accounts(session: AsyncSession) -> list[str]:
+    """Move demo users still on a pre-rebrand address to the current one.
+
+    Idempotent: a row is renamed only when its old address exists and nothing
+    holds the new one yet. When both exist (someone already seeded the new
+    accounts beside the old ones) the old row is left alone rather than
+    merged, since it may own data. Returns the old addresses that were moved.
+    The caller commits.
+    """
+    from sqlalchemy import func, select
+
+    from app.modules.users.models import User
+
+    moved: list[str] = []
+    for old, new in LEGACY_DEMO_ACCOUNT_RENAMES.items():
+        legacy = (
+            await session.execute(select(User).where(func.lower(User.email) == old))
+        ).scalar_one_or_none()
+        if legacy is None:
+            continue
+        current = (
+            await session.execute(select(User.id).where(func.lower(User.email) == new))
+        ).first()
+        if current is not None:
+            continue
+        legacy.email = new
+        moved.append(old)
+    if moved:
+        await session.flush()
+    return moved

@@ -225,7 +225,7 @@ function WidgetSkeleton() {
  * Examples:
  *   "artem.boiko@acme.io" → "Artem"
  *   "j_smith42@x.com"     → "J"
- *   "demo@openconstructionerp.com" → "Demo"
+ *   "demo@primecrest.pk" → "Demo"
  *   "@x.com" / "" / null  → undefined
  */
 function deriveGreetingName(email: string | null | undefined): string | undefined {

@@ -207,7 +207,7 @@ BASE=http://localhost:8000
 ```bash
 TOKEN=$(curl -s -X POST "$BASE/api/v1/users/auth/login/" \
   -H "Content-Type: application/json" \
-  -d '{"email": "demo@openconstructionerp.com", "password": "your-password"}' \
+  -d '{"email": "demo@primecrest.pk", "password": "your-password"}' \
   | jq -r '.access_token')
 
 echo "$TOKEN"

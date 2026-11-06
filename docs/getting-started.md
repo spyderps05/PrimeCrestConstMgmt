@@ -26,7 +26,7 @@ openconstructionerp
 
 The package ships the FastAPI backend and a pre-built React frontend in a single wheel. On first run it sets up an embedded PostgreSQL instance, loads demo data, and opens your browser at [localhost:8080](http://localhost:8080).
 
-**Demo login:** `demo@openconstructionerp.com` / `DemoPass1234!`
+**Demo login:** `demo@primecrest.pk` / `DemoPass1234!`
 
 > **Running on a VPS or remote server?** The default binds to localhost only.
 > To make the app reachable over the network, start it with:
@@ -65,7 +65,7 @@ docker compose up -d
 
 The app runs at [localhost:8080](http://localhost:8080).
 
-**Demo login:** `demo@openconstructionerp.com` / `DemoPass1234!`
+**Demo login:** `demo@primecrest.pk` / `DemoPass1234!`
 
 ## Prerequisites
 

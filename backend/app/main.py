@@ -1511,9 +1511,9 @@ async def _seed_demo_account(*, defer_projects: bool = False) -> Callable[[], Aw
 
     Idempotent - safe to call on every startup. Creates:
 
-    * demo@openconstructionerp.com        (role=admin - full walkthrough)
-    * estimator@openconstructionerp.com   (role=estimator)
-    * manager@openconstructionerp.com     (role=manager)
+    * demo@primecrest.pk        (role=admin - full walkthrough)
+    * estimator@primecrest.pk   (role=estimator)
+    * manager@primecrest.pk     (role=manager)
 
     Each password is read from the environment if set
     (``DEMO_USER_PASSWORD``, ``DEMO_ESTIMATOR_PASSWORD``,
@@ -1562,19 +1562,19 @@ async def _seed_demo_account(*, defer_projects: bool = False) -> Callable[[], Aw
     # ``backend/tests/integration/test_demo_login_endpoint.py``).
     demo_account_specs: list[dict[str, str]] = [
         {
-            "email": "demo@openconstructionerp.com",
+            "email": "demo@primecrest.pk",
             "env_var": "DEMO_USER_PASSWORD",
             "full_name": "Imran Shah",
             "role": "admin",
         },
         {
-            "email": "estimator@openconstructionerp.com",
+            "email": "estimator@primecrest.pk",
             "env_var": "DEMO_ESTIMATOR_PASSWORD",
             "full_name": "Usman Ali",
             "role": "editor",
         },
         {
-            "email": "manager@openconstructionerp.com",
+            "email": "manager@primecrest.pk",
             "env_var": "DEMO_MANAGER_PASSWORD",
             "full_name": "Hassan Raza",
             "role": "manager",
@@ -1601,7 +1601,7 @@ async def _seed_demo_account(*, defer_projects: bool = False) -> Callable[[], Aw
             for acct in demo_account_specs:
                 exists = (await session.execute(select(User).where(User.email == acct["email"]))).scalar_one_or_none()
                 if exists is not None:
-                    if acct["email"] == "demo@openconstructionerp.com":
+                    if acct["email"] == "demo@primecrest.pk":
                         demo = exists
                     if exists.full_name in _legacy_demo_names:
                         exists.full_name = acct["full_name"]
@@ -1635,7 +1635,7 @@ async def _seed_demo_account(*, defer_projects: bool = False) -> Callable[[], Aw
                 )
                 session.add(user)
                 await session.flush()
-                if acct["email"] == "demo@openconstructionerp.com":
+                if acct["email"] == "demo@primecrest.pk":
                     demo = user
                 logger.info(
                     "Demo user created: %s (password source: %s)",
@@ -1661,10 +1661,10 @@ async def _seed_demo_account(*, defer_projects: bool = False) -> Callable[[], Aw
 
             # 2. Capture the demo user ids while the session is open.
             estimator_user = (
-                await session.execute(select(User).where(User.email == "estimator@openconstructionerp.com"))
+                await session.execute(select(User).where(User.email == "estimator@primecrest.pk"))
             ).scalar_one_or_none()
             manager_user = (
-                await session.execute(select(User).where(User.email == "manager@openconstructionerp.com"))
+                await session.execute(select(User).where(User.email == "manager@primecrest.pk"))
             ).scalar_one_or_none()
             demo_user_id = str(demo.id)
             estimator_user_id = str(estimator_user.id) if estimator_user else ""
@@ -5157,6 +5157,22 @@ def create_app() -> FastAPI:
             os.environ.get(var, "").lower() in ("1", "true", "yes")
             for var in ("OE_TEST_FAST_STARTUP", "OE_DEMO_SEED_INLINE")
         )
+        # Databases created before the PrimeCrest rebrand hold the demo users
+        # under their old addresses. Move them first, whether or not demo
+        # seeding is on, so the seeder finds them rather than adding a second
+        # set and so the old rows keep their demo-account status.
+        try:
+            from app.core.demo_accounts import rename_legacy_demo_accounts
+            from app.database import async_session_factory as _rename_session_factory
+
+            async with _rename_session_factory() as _rename_session:
+                _moved = await rename_legacy_demo_accounts(_rename_session)
+                if _moved:
+                    await _rename_session.commit()
+                    logger.info("Renamed legacy demo accounts: %s", ", ".join(_moved))
+        except Exception:
+            logger.warning("Legacy demo account rename failed (non-fatal)", exc_info=True)
+
         _demo_projects_seed = await _seed_demo_account(defer_projects=_defer_demo)
 
         # Baseline seeds, once per app version: a completed seed leaves a
@@ -5364,7 +5380,7 @@ def create_app() -> FastAPI:
             # operator at that file beats baking a fixed password into
             # every running instance.
             logger.info(
-                "Demo login: demo@openconstructionerp.com "
+                "Demo login: demo@primecrest.pk "
                 "(password from DEMO_USER_PASSWORD env var or "
                 "~/.openestimator/.demo_credentials.json)"
             )

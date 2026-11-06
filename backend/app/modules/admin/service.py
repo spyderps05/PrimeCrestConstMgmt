@@ -165,7 +165,7 @@ async def reset_demo_data(session: AsyncSession) -> dict:
         deleted_projects = result.rowcount or 0
         await session.flush()
 
-    # Re-seed the canonical 5 demo projects under demo@openconstructionerp.com.
+    # Re-seed the canonical 5 demo projects under demo@primecrest.pk.
     seeded = 0
     seeded_demo_ids: list[str] = []
     try:

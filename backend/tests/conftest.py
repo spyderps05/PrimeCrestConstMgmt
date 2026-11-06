@@ -508,7 +508,7 @@ os.environ.setdefault("EXPOSE_DEV_AUTH_SECRETS", "true")
 os.environ.setdefault("REGISTRATION_MODE", "open")
 
 # ── Skip demo account seeding for tests ───────────────────────────────────
-# The startup lifespan creates demo@openconstructionerp.com (and two sibling
+# The startup lifespan creates demo@primecrest.pk (and two sibling
 # accounts) every time create_app() boots. Although has_admin() is designed
 # to exclude those demo emails from the bootstrap check, the seeding still
 # costs time and writes rows that can interact with per-module auth fixtures.

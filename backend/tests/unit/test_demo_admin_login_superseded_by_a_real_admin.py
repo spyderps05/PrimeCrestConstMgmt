@@ -27,8 +27,8 @@ from fastapi import HTTPException
 
 from tests._pg import transactional_session
 
-DEMO_ADMIN = "demo@openconstructionerp.com"
-DEMO_MANAGER = "manager@openconstructionerp.com"
+DEMO_ADMIN = "demo@primecrest.pk"
+DEMO_MANAGER = "manager@primecrest.pk"
 
 
 @pytest_asyncio.fixture

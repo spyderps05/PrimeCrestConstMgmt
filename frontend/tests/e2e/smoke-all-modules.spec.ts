@@ -18,7 +18,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 const API = process.env.OE_TEST_API_URL ?? 'http://127.0.0.1:8000';
-const DEMO_EMAIL = process.env.OE_TEST_DEMO_EMAIL ?? 'demo@openconstructionerp.com';
+const DEMO_EMAIL = process.env.OE_TEST_DEMO_EMAIL ?? 'demo@primecrest.pk';
 
 // Exact text WebKit and Chromium raise as a pageerror; see the handler below.
 const RESIZE_OBSERVER_LOOP = 'ResizeObserver loop completed with undelivered notifications.';

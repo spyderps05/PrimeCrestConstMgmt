@@ -78,9 +78,9 @@ let cachedAuth: AuthTokens | null = null;
 async function acquireAuth(page: Page): Promise<AuthTokens> {
   if (cachedAuth) return cachedAuth;
 
-  // Step 1: Login the existing viewer user (test@openestimate.com)
+  // Step 1: Login the existing viewer user (test@primecrest.pk)
   const loginRes = await page.request.post('http://localhost:8000/api/v1/users/auth/login/', {
-    data: { email: 'test@openestimate.com', password: 'OpenEstimate2024!' },
+    data: { email: 'test@primecrest.pk', password: 'OpenEstimate2024!' },
   });
 
   let accessToken: string;
@@ -94,10 +94,10 @@ async function acquireAuth(page: Page): Promise<AuthTokens> {
   } else {
     // Register then login
     await page.request.post('http://localhost:8000/api/v1/users/auth/register/', {
-      data: { email: 'test@openestimate.com', password: 'OpenEstimate2024!', full_name: 'E2E Audit' },
+      data: { email: 'test@primecrest.pk', password: 'OpenEstimate2024!', full_name: 'E2E Audit' },
     });
     const retry = await page.request.post('http://localhost:8000/api/v1/users/auth/login/', {
-      data: { email: 'test@openestimate.com', password: 'OpenEstimate2024!' },
+      data: { email: 'test@primecrest.pk', password: 'OpenEstimate2024!' },
     });
     const body = await retry.json();
     accessToken = body.access_token;
@@ -135,7 +135,7 @@ async function acquireAuth(page: Page): Promise<AuthTokens> {
   cachedAuth = {
     accessToken,
     refreshToken,
-    email: 'test@openestimate.com',
+    email: 'test@primecrest.pk',
     role,
     newAdminEmail,
   };

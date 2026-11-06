@@ -8,7 +8,7 @@ admin was deactivated: the next registrant, whoever it was, got admin.
 
 The rule now is: admin only while no real user row exists at all (active or
 inactive) and no real active admin exists. Seeded demo accounts
-(``*@openconstructionerp.com``) and the desktop owner are not real users. Once
+(``*@primecrest.pk``) and the desktop owner are not real users. Once
 anybody real is on record a registrant never becomes admin, and the service
 logs a warning naming the recovery command, ``promote-admin``, which is
 covered here too.
@@ -33,9 +33,9 @@ from tests._pg import transactional_session
 
 SERVICE_LOGGER = "app.modules.users.service"
 DEMO_EMAILS = (
-    "demo@openconstructionerp.com",
-    "estimator@openconstructionerp.com",
-    "manager@openconstructionerp.com",
+    "demo@primecrest.pk",
+    "estimator@primecrest.pk",
+    "manager@primecrest.pk",
 )
 
 
@@ -168,7 +168,7 @@ def test_demo_seeder_creates_only_demo_domain_accounts():
 
     emails = set(re.findall(r'"email":\s*"([^"]+)"', inspect.getsource(_seed_demo_account)))
     assert emails == set(DEMO_EMAILS), emails
-    assert all(e.endswith("@openconstructionerp.com") for e in emails)
+    assert all(e.endswith("@primecrest.pk") for e in emails)
 
 
 # ── any real user closes the bootstrap ──────────────────────────────────────

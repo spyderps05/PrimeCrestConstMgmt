@@ -24,7 +24,7 @@ const SCREENSHOT_DIR = path.resolve(__dirname, '../../screenshots');
 // instructions. The task spec said ``demo123`` but the dev DB has
 // ``DemoPass1234!`` — keep both as fallbacks via env override.
 const DEMO_USER = {
-  email: process.env.E2E_USER_EMAIL ?? 'demo@openconstructionerp.com',
+  email: process.env.E2E_USER_EMAIL ?? 'demo@primecrest.pk',
   password: process.env.E2E_USER_PASSWORD ?? 'DemoPass1234!',
 };
 

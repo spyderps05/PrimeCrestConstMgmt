@@ -17,8 +17,8 @@
  * so they exercise the owner check on its own.
  *
  * Two non-admin tenants:
- *   - Tenant A := estimator@openconstructionerp.com (role=editor)
- *   - Tenant B := manager@openconstructionerp.com   (role=manager)
+ *   - Tenant A := estimator@primecrest.pk (role=editor)
+ *   - Tenant B := manager@primecrest.pk   (role=manager)
  *
  * Tenant A creates a full graph; we then probe ~25 endpoints from
  * Tenant B and assert each one returns 404 (or 403 where the endpoint

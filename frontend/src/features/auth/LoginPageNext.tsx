@@ -183,8 +183,8 @@ export function LoginPageNext() {
   // random one per install, so any literal printed here would be wrong on every
   // install. The tiles sign in through /auth/demo-login/ instead.
   const demoAccounts = [
-    { email: 'demo@openconstructionerp.com', name: 'Imran Shah', role: t('auth.demo_role_admin', 'Administrator'), color: 'bg-blue-500', letter: 'I', portrait: '/assets/demo-people/imran-shah.jpg' },
-    { email: 'manager@openconstructionerp.com', name: 'Hassan Raza', role: t('auth.demo_role_manager', 'Manager'), color: 'bg-amber-500', letter: 'H', portrait: '/assets/demo-people/hassan-raza.jpg' },
+    { email: 'demo@primecrest.pk', name: 'Imran Shah', role: t('auth.demo_role_admin', 'Administrator'), color: 'bg-blue-500', letter: 'I', portrait: '/assets/demo-people/imran-shah.jpg' },
+    { email: 'manager@primecrest.pk', name: 'Hassan Raza', role: t('auth.demo_role_manager', 'Manager'), color: 'bg-amber-500', letter: 'H', portrait: '/assets/demo-people/hassan-raza.jpg' },
   ];
 
   const handleDemoLogin = async (demoEmail: string) => {

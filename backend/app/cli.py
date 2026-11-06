@@ -356,7 +356,7 @@ def print_startup_banner(
         print(f"  {bar}     {_dim('frontend not bundled, API only at ' + url + '/api/docs')}")
     print(f"  {bar}")
     print(f"  {bar}  {_bold('Log in with the demo account')}")
-    print(f"  {bar}     demo@openconstructionerp.com  {_dim('/')}  DemoPass1234!")
+    print(f"  {bar}     demo@primecrest.pk  {_dim('/')}  DemoPass1234!")
     print(f"  {bar}")
     print(f"  {bar}  {_dim('Stop'.ljust(11))} Ctrl+C")
     print(f"  {bar}  {_dim('Start again'.ljust(11))} {_amber('primecrest')}")
@@ -1941,7 +1941,7 @@ def print_welcome(*, next_command_hint: bool = True) -> None:
     print(f"  {bar}")
     print(f"  {bar}  {_bold('Then log in')}")
     print(f"  {bar}     {_amber(url)}")
-    print(f"  {bar}     demo@openconstructionerp.com  {_dim('/')}  DemoPass1234!")
+    print(f"  {bar}     demo@primecrest.pk  {_dim('/')}  DemoPass1234!")
     print()
     print(f"  {_dim('Advanced:')}  primecrest serve {_dim('|')} init-db {_dim('|')} doctor {_dim('|')} --help")
     print()
@@ -2807,7 +2807,7 @@ def _build_parser() -> argparse.ArgumentParser:
             "Quick start, one command does everything:\n"
             "    primecrest\n\n"
             "It creates the local database, loads the demo data, starts the server\n"
-            "and opens http://127.0.0.1:8080 (demo@openconstructionerp.com / DemoPass1234!)."
+            "and opens http://127.0.0.1:8080 (demo@primecrest.pk / DemoPass1234!)."
         ),
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )

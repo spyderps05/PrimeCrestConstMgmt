@@ -26,7 +26,7 @@ from pathlib import Path
 import httpx
 import psutil
 
-DEMO_EMAIL = "demo@openconstructionerp.com"
+DEMO_EMAIL = "demo@primecrest.pk"
 DEMO_PASSWORD = "ColdStartProbe-2026!"
 
 
