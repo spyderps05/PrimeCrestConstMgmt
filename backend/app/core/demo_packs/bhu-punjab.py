@@ -2,6 +2,7 @@
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 from __future__ import annotations
 
+from app.core.demo_packs._pakistan_demo_data import module_data_for
 from app.core.demo_projects import DemoTemplate
 
 # ---------------------------------------------------------------------------
@@ -460,11 +461,46 @@ TEMPLATE = DemoTemplate(
         ("Ravi Construction", "tenders@ravi-construction.example", 1.03),
         ("Punjab Civil Works Company", "tenders@punjab-civil-works.example", 1.0),
     ],
+    tender_packages=[
+        (
+            "Main building contract - structure and masonry",
+            "Main building contract: earthwork, concrete frame, steel, brickwork, roof waterproofing and every item not tendered separately.",
+            "awarded",
+            [
+                ("Sahiwal Builders", "tenders@sahiwal-builders.example", 0.98),
+                ("Ravi Construction", "tenders@ravi-construction.example", 1.02),
+                ("Punjab Civil Works Company", "tenders@punjab-civil-works.example", 1.0),
+            ],
+        ),
+        (
+            "Finishes - floors, doors, windows and paint",
+            "Plaster, floor and wall tiles, doors, windows, false ceiling and painting.",
+            "evaluating",
+            [
+                ("Ravi Construction", "tenders@ravi-construction.example", 0.99),
+                ("Punjab Civil Works Company", "tenders@punjab-civil-works.example", 1.03),
+            ],
+        ),
+        (
+            "Plumbing, electrical and solar services",
+            "Water supply, sanitary fixtures, wiring, lighting, fans and the solar system for the vaccine store.",
+            "issued",
+            [
+                ("Punjab Civil Works Company", "tenders@punjab-civil-works.example", 0.97),
+                ("Sahiwal Builders", "tenders@sahiwal-builders.example", 1.04),
+            ],
+        ),
+    ],
+    seed_requisitions=True,
     progress_claims=(0.15, 0.38, 0.62),
     claim_retention=0.10,
     project_metadata={
         "address": "Chak 45 Road, Union Council 12, 57000 Sahiwal, Punjab, Pakistan",
-        "client": "District Health Authority (fictitious)",
+        "client": "District Health Authority, Sahiwal",
+        "architect": "Punjab Health Facilities Consultants",
+        "structural_engineer": "Engr. Waqas Ahmed and Partners",
+        "main_contractor": "Sahiwal Builders",
+        "parties_note": "The client office, consultants and firms are invented for the walkthrough.",
         "gfa_m2": 450,
         "site_area_marla": 20,
         "storeys": 1,
@@ -486,4 +522,5 @@ TEMPLATE = DemoTemplate(
             "The mobilization advance of the standard form is flagged for expert review and not modelled."
         ),
     },
+    module_data=module_data_for("bhu-punjab"),
 )

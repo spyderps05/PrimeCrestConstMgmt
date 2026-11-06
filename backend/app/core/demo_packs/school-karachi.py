@@ -2,6 +2,7 @@
 # Copyright (c) 2026 Artem Boiko / DataDrivenConstruction
 from __future__ import annotations
 
+from app.core.demo_packs._pakistan_demo_data import module_data_for
 from app.core.demo_projects import DemoTemplate
 
 # ---------------------------------------------------------------------------
@@ -476,11 +477,47 @@ TEMPLATE = DemoTemplate(
         ("Indus Construction", "tenders@indus-construction.example", 1.02),
         ("Sindh Civil Works Company", "tenders@sindh-civil-works.example", 1.0),
     ],
+    tender_packages=[
+        (
+            "Main building contract - structure and masonry",
+            "Main building contract: earthwork, concrete frame, steel, brickwork, roof waterproofing and every item not tendered separately.",
+            "awarded",
+            [
+                ("Karachi Builders", "tenders@karachi-builders.example", 0.98),
+                ("Indus Construction", "tenders@indus-construction.example", 1.02),
+                ("Sindh Civil Works Company", "tenders@sindh-civil-works.example", 1.0),
+            ],
+        ),
+        (
+            "Finishes - floors, doors, windows and paint",
+            "Plaster, floor and wall tiles, doors, windows, false ceiling and painting.",
+            "evaluating",
+            [
+                ("Indus Construction", "tenders@indus-construction.example", 0.99),
+                ("Sindh Civil Works Company", "tenders@sindh-civil-works.example", 1.03),
+            ],
+        ),
+        (
+            "Plumbing and electrical services",
+            "Water supply, sanitary fixtures, hand-wash stations, wiring, lighting and fans.",
+            "issued",
+            [
+                ("Sindh Civil Works Company", "tenders@sindh-civil-works.example", 0.97),
+                ("Karachi Builders", "tenders@karachi-builders.example", 1.04),
+            ],
+        ),
+    ],
+    seed_requisitions=True,
     progress_claims=(0.15, 0.38, 0.62),
     claim_retention=0.10,
     project_metadata={
         "address": "Block 7, Gulshan-e-Iqbal, 75300 Karachi, Sindh, Pakistan",
-        "client": "School Education Department (fictitious)",
+        "client": "School Education Department, Karachi",
+        "architect": "Clifton Design Associates",
+        "structural_engineer": "Memon Structural Engineers",
+        "quantity_surveyor": "Gulshan Cost Consultants",
+        "main_contractor": "Karachi Builders",
+        "parties_note": "The client office, consultants and firms are invented for the walkthrough.",
         "gfa_m2": 1600,
         "site_area_marla": 80,
         "site_area_kanal": 4,
@@ -511,4 +548,5 @@ TEMPLATE = DemoTemplate(
             "This walkthrough still withholds 10 percent on each progress claim."
         ),
     },
+    module_data=module_data_for("school-karachi"),
 )

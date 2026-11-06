@@ -335,6 +335,10 @@ BUNDLE_MAP: dict[str, str] = {
     "hospital-lyon": "commercial_rvt",
     "bhu-punjab": "commercial_rvt",
     "school-karachi": "commercial_rvt",
+    "lahore-house": "residential_ifc",
+    # A road has no building model of its own; it takes the coordinated bundle,
+    # as infrastructure-capetown does, so its BCF register and federation fill.
+    "faisalabad-road": "commercial_rvt",
     "infrastructure-capetown": "commercial_rvt",
     "it-park-bangalore": "commercial_rvt",
     "mixed-use-barcelona": "commercial_rvt",
