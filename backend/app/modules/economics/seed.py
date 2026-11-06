@@ -342,6 +342,25 @@ def load_profile(story: dict[str, Any], locale: str, today: date) -> Profile:
     )
 
 
+def frame_depth(codes: Iterable[str]) -> int:
+    """The shallowest cut of ``codes`` whose groups do not overlap one another.
+
+    A frame line covers every code under it, and the frame skips a group that overlaps one already made. At
+    depth 1 a DIN 276 code (``331``) becomes its cost group ``300``, but a MasterFormat code (``01 54 00``)
+    becomes ``000000``, the code of the whole classification, which overlaps every other division: the frame
+    kept that one line and dropped the rest of the bill. The first depth that keeps the groups apart is the
+    first level of the standard (cost groups, divisions, elements), whatever the standard is called.
+    """
+    from app.modules.economics.classification import normalise, overlaps, truncate
+
+    present = [c for c in codes if normalise(c)]
+    for depth in range(1, 5):
+        keys = sorted({truncate(c, depth) for c in present})
+        if not any(overlaps(a, b) for i, a in enumerate(keys) for b in keys[i + 1 :]):
+            return depth
+    return 1
+
+
 def round_up(value: Decimal) -> Decimal:
     """``value`` up to the next whole step of 100 000; a zero stays zero."""
     return (value / STEP).to_integral_value(rounding=ROUND_CEILING) * STEP
@@ -461,7 +480,8 @@ async def _seed_project(
         from app.modules.costmodel.service import CostSpineService
 
         await CostSpineService(session).generate_from_boq(pid, bill.boq_id)
-    frame = await service.generate_frame(pid, depth=1, amounts="estimate", replace=True, actor_id=owner)
+    depth = frame_depth(leaf.code for leaf in bill.leaves if leaf.code)
+    frame = await service.generate_frame(pid, depth=depth, amounts="estimate", replace=True, actor_id=owner)
     for line in frame:
         line.amount = round_up(line.amount)
     await session.flush()
