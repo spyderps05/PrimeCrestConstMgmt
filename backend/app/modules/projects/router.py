@@ -1043,11 +1043,29 @@ async def dashboard_cards(
         for pid, cnt in boq_count_rows:
             boq_counts[str(pid)] = cnt
 
-        # Get all BOQ IDs grouped by project
-        boq_rows = (await session.execute(select(BOQ.id, BOQ.project_id).where(BOQ.project_id.in_(project_ids)))).all()
+        # The bills that make up each project's value. A project's control
+        # budget, superseded revisions, scenarios and variants restate scope
+        # another bill already prices, so summing every bill counted the same
+        # work twice (see ``project_value``).
+        from app.modules.projects.project_value import bill_ref_from_row, value_bill_ids
+
+        boq_rows = (
+            await session.execute(
+                select(
+                    BOQ.id,
+                    BOQ.project_id,
+                    BOQ.estimate_type,
+                    BOQ.parent_estimate_id,
+                    BOQ.variation_request_id,
+                    BOQ.branch_of_id,
+                    BOQ.metadata_,
+                ).where(BOQ.project_id.in_(project_ids))
+            )
+        ).all()
         boq_id_to_project: dict[str, str] = {}
-        for bid, pid in boq_rows:
-            boq_id_to_project[str(bid)] = str(pid)
+        for pid, bill_ids in value_bill_ids(bill_ref_from_row(r) for r in boq_rows).items():
+            for bid in bill_ids:
+                boq_id_to_project[bid] = pid
 
         if boq_id_to_project:
             all_boq_ids = [uuid.UUID(bid) for bid in boq_id_to_project]
@@ -1311,11 +1329,37 @@ async def project_dashboard(
                 )
             ).scalar_one()
 
-            total_result = (
+            # Only the bills that make up the project's value: its control
+            # budget, superseded revisions and alternatives restate the scope
+            # of the estimate, so summing them all counted it twice.
+            from app.modules.projects.project_value import bill_ref_from_row, value_bill_ids
+
+            bill_rows = (
                 await session.execute(
-                    select(func.sum(numeric_value(Position.total))).where(Position.boq_id.in_(boq_ids))
+                    select(
+                        BOQ.id,
+                        BOQ.project_id,
+                        BOQ.estimate_type,
+                        BOQ.parent_estimate_id,
+                        BOQ.variation_request_id,
+                        BOQ.branch_of_id,
+                        BOQ.metadata_,
+                    ).where(BOQ.project_id == project_id)
                 )
-            ).scalar_one()
+            ).all()
+            value_ids = [
+                uuid.UUID(bid)
+                for bid in value_bill_ids(bill_ref_from_row(r) for r in bill_rows).get(str(project_id), set())
+            ]
+            total_result = (
+                (
+                    await session.execute(
+                        select(func.sum(numeric_value(Position.total))).where(Position.boq_id.in_(value_ids))
+                    )
+                ).scalar_one()
+                if value_ids
+                else 0.0
+            )
             boq_total_value = round(total_result or 0.0, 2)
 
             markups_from_boq = (
